@@ -80,6 +80,10 @@ on `L²(du)` is not built here.  Only one velocity component is carried, and
 nothing here claims global regularity for the classical Navier–Stokes equation.
 -/
 
+namespace BookProof.NavierStokesFlow
+
+namespace AffineFiber
+
 namespace PairShift
 
 variable (P : PairShift ι)

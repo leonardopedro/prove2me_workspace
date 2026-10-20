@@ -21,6 +21,7 @@ noncomputable section
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxOrder
 
 variable {m : ℕ}
 

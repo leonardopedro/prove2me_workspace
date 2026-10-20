@@ -12,6 +12,8 @@ import Mathlib
 import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_hashimoto_selects
 
 
 /-!

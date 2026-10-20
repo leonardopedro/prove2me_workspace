@@ -9,6 +9,26 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_FockSecondQuantization_support_up
+import Theorems.Thm_BookProof_FockSecondQuantization_support_dn
+import Theorems.Thm_BookProof_FockSecondQuantization_dn_of_ne
+import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
+import Theorems.Thm_BookProof_FockSecondQuantization_creA_apply
+import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
+import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_eq_sum
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp_of_subset
+import Definitions.Def_ChapterDegKatoEsa
+import Theorems.Thm_BookProof_FockSecondQuantization_up_dn
+import Theorems.Thm_BookProof_FockSecondQuantization_support_subset_modes
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_left
+import Theorems.Thm_BookProof_FockSecondQuantization_modes_left_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_modes_right_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_toLpL_apply
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp
+import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Theorems.Thm_BookProof_EsaClosure_positiveExtension_eq_closure_of_esa
 
 
 /-!
@@ -75,6 +95,7 @@ Everything in this module is `sorry`-free and `axiom`-free.
 -/
 
 namespace BookProof.FockSecondQuantization
+open BookProof.DegKatoEsa
 
 /-- `up_self` — the occupation number of mode `j` after adding one quantum there.  The
 published `Def_ChapterFockSecondQuantization` text predates this lemma, so it is

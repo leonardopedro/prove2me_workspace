@@ -26,6 +26,16 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterWallEsaSemibounded
 import Mathlib
+import Definitions.Def_ChapterScalaronWallEsa
+import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Theorems.Thm_BookProof_ScalaronFiberFL_norm_sq_le_quadForm
+import Theorems.Thm_BookProof_ScalaronFiberFL_norm_derivL2_sq_le
+import Theorems.Thm_BookProof_ScalaronFiberFL_ham_x_comm
+import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_symmetric
+import Theorems.Thm_BookProof_FarisLavine_commForm_eq
+import Theorems.Thm_BookProof_ScalaronFiberFL_hamS_apply
 
 
 /-!
@@ -59,6 +69,8 @@ open BookProof.DirectSumEsa BookProof.ScalaronFiberFL
 open BookProof.WallEsaSemibounded
 
 namespace BookProof.ScalaronFiberFL
+open BookProof.ScalaronWallEsa
+open BookProof.StrichartzWave
 
 /-- `ham_eq_toLp` — the fibre Hamiltonian on the core agrees with the `L²` image of the
 Schwartz-space form.  The published `Def_ChapterScalaronFiberFL` text predates this
@@ -76,6 +88,10 @@ theorem ham_eq_toLp (W : WallPot) (s : ℝ) (f : ccSchwartz ℝ) :
   exact (map_add (toLpCLM ℂ ℂ 2 (volume : Measure ℝ)) _ _).symm
 
 end BookProof.ScalaronFiberFL
+
+namespace BookProof.ScalaronOuterFockFL
+
+noncomputable section
 
 /-! ## 0. Generic estimates for a positive symmetric operator and its shift -/
 

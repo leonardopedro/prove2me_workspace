@@ -8,6 +8,7 @@ import Definitions.Def_ChapterFockOneParticleGap
 import Definitions.Def_ChapterFockNumberPreservingGap
 import Definitions.Def_ChapterFockInteractionStability
 import Definitions.Def_ChapterFockSecondQuantization
+import Theorems.Thm_BookProof_FockSecondQuantization_toLpL_apply
 open BookProof.FockFieldPerturbation
 
 

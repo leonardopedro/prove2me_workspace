@@ -81,6 +81,8 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.NavierStokesGaugeY
 
+open MvPolynomial
+
 /-- `genY_apply` — the gauge generator `G_j` acts as the stated first-order differential
 operator.  The published `Def_ChapterNavierStokesGaugeY` text predates this lemma, so it
 is restated here for the consumer. -/

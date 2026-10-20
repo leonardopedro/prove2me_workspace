@@ -1,6 +1,7 @@
 -- Generated from ChapterUnboundedPosition.lean — solution of BookProof.ChapterUnboundedPosition.mulOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 
 
@@ -13,6 +14,10 @@ open BookProof.ChapterContinuityUnitaryInfinite (L2Z)
 set_option maxHeartbeats 1000000 in
 theorem solution (f : ℤ → ℝ) (psi phi : mulDomain f) :
     ⟪mulOp f psi, (phi : L2Z)⟫_ℂ = ⟪(psi : L2Z), mulOp f phi⟫_ℂ := by
-    rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
-    refine tsum_congr fun k => ?_
-    simp only [mulOp_appl
+  -- `mulOp_apply` lives in the source chapter, not the def bundle: unfold it here.
+  have mulOp_apply : ∀ (rho : mulDomain f) (k : ℤ),
+      ((mulOp f rho : L2Z) : ℤ → ℂ) k = (f k : ℂ) * ((rho : L2Z) : ℤ → ℂ) k := fun _ _ => rfl
+  rw [lp.inner_eq_tsum, lp.inner_eq_tsum]
+  refine tsum_congr fun k => ?_
+  simp only [mulOp_apply, RCLike.inner_apply, map_mul, Complex.conj_ofReal]
+  ring

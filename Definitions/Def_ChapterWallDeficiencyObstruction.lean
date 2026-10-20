@@ -11,6 +11,8 @@ import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
 import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Theorems.Thm_BookProof_ScalaronWallEsa_ode_solution_eq_zero
+import Theorems.Thm_BookProof_WeakSecondDeriv_integrable_test_smul
+import Theorems.Thm_BookProof_WeakSecondDeriv_IsTestFun_deriv
 
 
 /-!

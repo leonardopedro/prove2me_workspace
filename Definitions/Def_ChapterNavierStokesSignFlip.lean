@@ -14,6 +14,15 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_coe
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_basisState_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_zero
+import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne
+import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
+import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_supported
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 
 
 /-!
@@ -63,6 +72,7 @@ the classical Navier–Stokes equation.
 open scoped ENNReal
 
 namespace BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.AffineFiber
 
 namespace SignFlip
 

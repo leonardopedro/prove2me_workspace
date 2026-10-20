@@ -5,6 +5,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_NsLagrangianDet_volPot_eval_nonneg
+import Theorems.Thm_BookProof_NsLagrangianDet_conjP_volPot
 
 
 /-!

@@ -297825,3 +297825,781 @@ Note: It is not possible to treat `qgSectorExt_rel` )
 00:10:14 sync: read 11529 problem publish job(s)
 00:10:27 sync: read 1179 definition publish job(s)
 00:11:15 sync: read 11529 problem publish job(s)
+07:33:35 sync: read 1179 definition publish job(s)
+07:38:36 sync: read 1179 definition publish job(s)
+07:39:21 sync: read 11529 problem publish job(s)
+07:39:21 submitting sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+07:39:21 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op)
+07:39:21 submitting sol:BookProof_ChapterH6_krylovRetainsDominantSpectrum (attempt 1)
+07:39:22 sol:BookProof_ChapterH6_krylovRetainsDominantSpectrum: accepted, waiting on the compiler
+07:39:22 submitting sol:BookProof_QuantumGravity3DGauge_qgCCR (attempt 1)
+07:39:22 sol:BookProof_QuantumGravity3DGauge_qgCCR: DONE
+07:39:23 submitting sol:BookProof_QuantumGravity3DGauge_qgWeylProd_symmetricOn (attempt 1)
+07:39:23 sol:BookProof_QuantumGravity3DGauge_qgWeylProd_symmetricOn: DONE
+07:39:23 submitting sol:BookProof_QuantumGravity3DGauge_qg3D_quadForm (attempt 1)
+07:39:23 sol:BookProof_QuantumGravity3DGauge_qg3D_quadForm: DONE
+07:39:24 submitting sol:BookProof_ChapterFreeFieldBornFiberSpectrum_unifDist_mem_simplex (attempt 1)
+07:39:25 sol:BookProof_ChapterFreeFieldBornFiberSpectrum_unifDist_mem_simplex: accepted, waiting on the compiler
+07:39:25 submitting sol:BookProof_ChapterFreeFieldBornFiberSpectrum_posSupport_unifDist_card (attempt 1)
+07:39:26 sol:BookProof_ChapterFreeFieldBornFiberSpectrum_posSupport_unifDist_card: accepted, waiting on the compiler
+07:39:26 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose (attempt 1)
+07:39:26 sol:BookProof_QuantumGravityFock_qgCCR_bose: WAIT (theorem not published yet)
+07:39:26 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne (attempt 1)
+07:39:26 sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne: WAIT (theorem not published yet)
+07:39:26 submitting sol:BookProof_QuantumGravityFock_bosOp_ghostOp_comm (attempt 1)
+07:39:26 sol:BookProof_QuantumGravityFock_bosOp_ghostOp_comm: DONE
+07:39:26 submitting sol:BookProof_QuantumGravityFock_qgCCR (attempt 1)
+07:39:27 sol:BookProof_QuantumGravityFock_qgCCR: DONE
+07:39:27 submitting sol:BookProof_QuantumGravityFock_bosOp_even (attempt 1)
+07:39:27 sol:BookProof_QuantumGravityFock_bosOp_even: DONE
+07:39:27 submitting sol:BookProof_QuantumGravityFock_qgGhostModes_eq (attempt 1)
+07:39:27 sol:BookProof_QuantumGravityFock_qgGhostModes_eq: DONE
+07:39:27 submitting sol:BookProof_QuantumGravityFock_qgGhostCar_book (attempt 1)
+07:39:28 sol:BookProof_QuantumGravityFock_qgGhostCar_book: DONE
+07:39:28 submitting sol:BookProof_QuantumGravityFock_qgGradedHam_isSymmetricDom (attempt 1)
+07:39:28 sol:BookProof_QuantumGravityFock_qgGradedHam_isSymmetricDom: DONE
+07:39:28 submitting sol:BookProof_QuantumGravityFock_qgGradedHam_symmetricOn (attempt 1)
+07:39:28 sol:BookProof_QuantumGravityFock_qgGradedHam_symmetricOn: DONE
+07:39:28 submitting sol:BookProof_QuantumGravityFock_qgGradedFock_esa (attempt 1)
+07:39:29 sol:BookProof_QuantumGravityFock_qgGradedFock_esa: DONE
+07:39:29 submitting sol:BookProof_QuantumGravityFock_qgGradedFock_essentiallySelfAdjointOn (attempt 1)
+07:39:29 sol:BookProof_QuantumGravityFock_qgGradedFock_essentiallySelfAdjointOn: DONE
+07:39:29 submitting sol:BookProof_QuantumGravityFock_qgDGamma_esa (attempt 1)
+07:39:29 sol:BookProof_QuantumGravityFock_qgDGamma_esa: DONE
+07:39:29 submitting sol:BookProof_YangMillsFockGapChain_isPosCol_shiftCol_opCol_of_form_gap (attempt 1)
+07:39:30 sol:BookProof_YangMillsFockGapChain_isPosCol_shiftCol_opCol_of_form_gap: accepted, waiting on the compiler
+07:39:31 submitting sol:BookProof_YangMillsFockGapChain_ym_quadForm_eq (attempt 1)
+07:39:32 sol:BookProof_YangMillsFockGapChain_ym_quadForm_eq: accepted, waiting on the compiler
+07:39:32 submitting sol:BookProof_YangMillsFockGapChain_ym_fock_vacuum_annihilated (attempt 1)
+07:39:32 sol:BookProof_YangMillsFockGapChain_ym_fock_vacuum_annihilated: accepted, waiting on the compiler
+07:39:33 submitting sol:BookProof_YangMillsFockGapChain_ym_isPosCol_shiftCol (attempt 1)
+07:39:33 sol:BookProof_YangMillsFockGapChain_ym_isPosCol_shiftCol: accepted, waiting on the compiler
+07:39:34 submitting sol:BookProof_YangMillsFockGapChain_ym_fock_gap_of_field_perturbation (attempt 1)
+07:39:35 sol:BookProof_YangMillsFockGapChain_ym_fock_gap_of_field_perturbation: accepted, waiting on the compiler
+07:39:35 submitting sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+07:39:35 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: WAIT (guard defer: sibling theorem not published on the platform: BookProof_BookBrstYangMills_bookConstraintAlgebra)
+07:39:35 submitting sol:BookProof_ChapterCoherentGeometry_bornWeight_eq_scoreSoftmax_neg_dist_sq (attempt 1)
+07:39:36 sol:BookProof_ChapterCoherentGeometry_bornWeight_eq_scoreSoftmax_neg_dist_sq: accepted, waiting on the compiler
+07:39:36 submitting sol:BookProof_FockFieldPerturbation_annVec_apply (attempt 1)
+07:39:36 sol:BookProof_FockFieldPerturbation_annVec_apply: DONE
+07:39:36 submitting sol:BookProof_FockFieldPerturbation_fieldVec_apply (attempt 1)
+07:39:37 sol:BookProof_FockFieldPerturbation_fieldVec_apply: DONE
+07:39:37 submitting sol:BookProof_FockFieldPerturbation_l2norm_nonneg (attempt 1)
+07:39:37 sol:BookProof_FockFieldPerturbation_l2norm_nonneg: DONE
+07:39:37 submitting sol:BookProof_FockFieldPerturbation_l2norm_eq_zero (attempt 1)
+07:39:37 sol:BookProof_FockFieldPerturbation_l2norm_eq_zero: DONE
+07:39:37 submitting sol:BookProof_FockFieldPerturbation_creVec_numberCol (attempt 1)
+07:39:38 sol:BookProof_FockFieldPerturbation_creVec_numberCol: DONE
+07:39:38 submitting sol:BookProof_FockFieldPerturbation_numberQuad_eq_sum (attempt 1)
+07:39:38 sol:BookProof_FockFieldPerturbation_numberQuad_eq_sum: DONE
+07:39:38 submitting sol:BookProof_FockFieldPerturbation_numberQuad_nonneg (attempt 1)
+07:39:38 sol:BookProof_FockFieldPerturbation_numberQuad_nonneg: DONE
+07:39:38 submitting sol:BookProof_FockFieldPerturbation_sum_sq_annA_le (attempt 1)
+07:39:39 sol:BookProof_FockFieldPerturbation_sum_sq_annA_le: DONE
+07:39:39 submitting sol:BookProof_FockFieldPerturbation_norm_annVec_le (attempt 1)
+07:39:39 sol:BookProof_FockFieldPerturbation_norm_annVec_le: DONE
+07:39:39 submitting sol:BookProof_FockFieldPerturbation_inner_creVec_annVec (attempt 1)
+07:39:39 sol:BookProof_FockFieldPerturbation_inner_creVec_annVec: DONE
+07:39:39 submitting sol:BookProof_FockFieldPerturbation_two_mul_sqrt_le (attempt 1)
+07:39:40 sol:BookProof_FockFieldPerturbation_two_mul_sqrt_le: DONE
+07:39:40 submitting sol:BookProof_FockFieldPerturbation_number_le_dGamma_quadForm (attempt 1)
+07:39:40 sol:BookProof_FockFieldPerturbation_number_le_dGamma_quadForm: DONE
+07:39:40 submitting sol:BookProof_FockFieldPerturbation_fieldVec_relative_form_bound (attempt 1)
+07:39:41 sol:BookProof_FockFieldPerturbation_fieldVec_relative_form_bound: DONE
+07:39:41 submitting sol:BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation (attempt 1)
+07:39:41 sol:BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation: DONE
+07:39:41 submitting sol:BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation_pos (attempt 1)
+07:39:41 sol:BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation_pos: DONE
+07:39:41 submitting sol:BookProof_FockFieldPerturbation_fieldVec_unbounded (attempt 1)
+07:39:42 sol:BookProof_FockFieldPerturbation_fieldVec_unbounded: accepted, waiting on the compiler
+07:39:42 submitting sol:BookProof_FriedrichsCanonical_mem_formDomain (attempt 1)
+07:39:43 sol:BookProof_FriedrichsCanonical_mem_formDomain: accepted, waiting on the compiler
+07:39:43 submitting sol:BookProof_FriedrichsCanonical_exists_formExt_eq (attempt 1)
+07:39:44 sol:BookProof_FriedrichsCanonical_exists_formExt_eq: accepted, waiting on the compiler
+07:39:44 submitting sol:BookProof_FriedrichsCanonical_eq_zero_of_inner_coe_eq_zero (attempt 1)
+07:39:45 sol:BookProof_FriedrichsCanonical_eq_zero_of_inner_coe_eq_zero: accepted, waiting on the compiler
+07:39:45 submitting sol:BookProof_FriedrichsCanonical_isSemibounded_of_isPositive_shift (attempt 1)
+07:39:46 sol:BookProof_FriedrichsCanonical_isSemibounded_of_isPositive_shift: accepted, waiting on the compiler
+07:39:47 submitting sol:BookProof_FriedrichsCanonical_isPositive_shift_of_isSemibounded (attempt 1)
+07:39:47 sol:BookProof_FriedrichsCanonical_isPositive_shift_of_isSemibounded: accepted, waiting on the compiler
+07:39:48 submitting sol:BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense (attempt 1)
+07:39:48 sol:BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense: accepted, waiting on the compiler
+07:40:40 sol:BookProof_ChapterFreeFieldBornFiberSpectrum_unifDist_mem_simplex: DONE
+07:40:52 submitting sol:BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_essentiallySelfAdjointOn_core (attempt 1)
+07:40:52 sol:BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_essentiallySelfAdjointOn_core: DONE
+07:40:52 submitting sol:BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core (attempt 1)
+07:40:52 sol:BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core: DONE
+07:40:52 submitting sol:BookProof_NavierStokesFlow_matrixFlow_neg_hasDerivAt (attempt 1)
+07:40:52 sol:BookProof_NavierStokesFlow_matrixFlow_neg_hasDerivAt: DONE
+07:40:53 submitting sol:BookProof_NavierStokesFlow_matrixFlow_mul_neg (attempt 1)
+07:40:53 sol:BookProof_NavierStokesFlow_matrixFlow_mul_neg: DONE
+07:40:53 submitting sol:BookProof_NavierStokesFlow_matrixFlow_vec_hasDerivAt (attempt 1)
+07:40:53 sol:BookProof_NavierStokesFlow_matrixFlow_vec_hasDerivAt: DONE
+07:40:53 submitting sol:BookProof_NavierStokesFlow_matrixFlow_unique (attempt 1)
+07:40:53 sol:BookProof_NavierStokesFlow_matrixFlow_unique: DONE
+07:40:54 submitting sol:BookProof_NavierStokesFlow_matrixFlow_cauchy_existsUnique (attempt 1)
+07:40:54 sol:BookProof_NavierStokesFlow_matrixFlow_cauchy_existsUnique: DONE
+07:40:54 submitting sol:BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow (attempt 1)
+07:40:54 sol:BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow: DONE
+07:40:54 submitting sol:BookProof_NavierStokesFlow_nsCauchy_existsUnique (attempt 1)
+07:40:54 sol:BookProof_NavierStokesFlow_nsCauchy_existsUnique: DONE
+07:40:55 submitting sol:BookProof_NavierStokesFlow_nsFlow_energy_conserved (attempt 1)
+07:40:55 sol:BookProof_NavierStokesFlow_nsFlow_energy_conserved: DONE
+07:40:55 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_flowUnitary_group (attempt 1)
+07:40:55 sol:BookProof_NavierStokesFlow_LagrangianNS_flowUnitary_group: DONE
+07:40:55 submitting sol:BookProof_NavierStokesFlow_LagrangianNS_cauchy_existsUnique (attempt 1)
+07:40:55 sol:BookProof_NavierStokesFlow_LagrangianNS_cauchy_existsUnique: DONE
+07:40:56 submitting sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_pos (attempt 1)
+07:40:56 sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_pos: DONE
+07:40:56 submitting sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_ge (attempt 1)
+07:40:56 sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiWeight_ge: DONE
+07:40:56 submitting sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiFun_defFun (attempt 1)
+07:40:56 sol:BookProof_NavierStokesFlow_JacobiDeficiency_jacobiFun_defFun: DONE
+07:40:57 submitting sol:BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded (attempt 1)
+07:40:57 sol:BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded: DONE
+07:40:57 submitting sol:BookProof_NavierStokesFlow_FullEsa_NSFullData_advection_isSymmetricDom (attempt 1)
+07:40:57 sol:BookProof_NavierStokesFlow_FullEsa_NSFullData_advection_isSymmetricDom: DONE
+07:40:57 submitting sol:BookProof_NavierStokesFlow_FullEsa_NSFullData_hamiltonian_isSymmetricDom (attempt 1)
+07:40:58 sol:BookProof_NavierStokesFlow_FullEsa_NSFullData_hamiltonian_isSymmetricDom: DONE
+07:40:58 submitting sol:BookProof_NavierStokesFlow_LagrangianEsa_latticeLag_hFull_ne_zero (attempt 1)
+07:40:58 sol:BookProof_NavierStokesFlow_LagrangianEsa_latticeLag_hFull_ne_zero: DONE
+07:40:58 submitting sol:BookProof_NsPartialFourier_fourier_vecMomentumOp_apply (attempt 1)
+07:40:58 sol:BookProof_NsPartialFourier_fourier_vecMomentumOp_apply: DONE
+07:40:58 submitting sol:BookProof_NsPartialFourier_nsPartialFourier_norm (attempt 1)
+07:40:59 sol:BookProof_NsPartialFourier_nsPartialFourier_norm: DONE
+07:40:59 submitting sol:BookProof_ChapterObservableExpectation_bayesPosterior_nonneg (attempt 1)
+07:41:00 sol:BookProof_ChapterObservableExpectation_bayesPosterior_nonneg: accepted, waiting on the compiler
+07:41:00 sol:BookProof_ChapterH6_krylovRetainsDominantSpectrum: DONE
+07:41:00 sol:BookProof_ChapterFreeFieldBornFiberSpectrum_posSupport_unifDist_card: DONE
+07:41:02 sol:BookProof_ChapterCoherentGeometry_bornWeight_eq_scoreSoftmax_neg_dist_sq: DONE
+07:41:13 submitting sol:BookProof_ChapterObservableExpectation_bayes_posterior_expectation_mem_convexHull (attempt 1)
+07:41:14 sol:BookProof_ChapterObservableExpectation_bayes_posterior_expectation_mem_convexHull: accepted, waiting on the compiler
+07:41:14 submitting sol:BookProof_PermSector_isReducingProjection_bosonicProj (attempt 1)
+07:41:14 sol:BookProof_PermSector_isReducingProjection_bosonicProj: DONE
+07:41:14 submitting sol:BookProof_PermSector_isReducingProjection_fermionicProj (attempt 1)
+07:41:14 sol:BookProof_PermSector_isReducingProjection_fermionicProj: DONE
+07:41:14 submitting sol:BookProof_QgOuterFockFL_mem_dsDom (attempt 1)
+07:41:15 sol:BookProof_QgOuterFockFL_mem_dsDom: accepted, waiting on the compiler
+07:41:15 submitting sol:BookProof_QgOuterFockFL_qgOuterFriedN_symmetricOn (attempt 1)
+07:41:16 sol:BookProof_QgOuterFockFL_qgOuterFriedN_symmetricOn: DONE
+07:41:16 submitting sol:BookProof_QgOuterFockFL_qgOuterFriedN_quadForm_nonneg (attempt 1)
+07:41:16 sol:BookProof_QgOuterFockFL_qgOuterFriedN_quadForm_nonneg: DONE
+07:41:16 submitting sol:BookProof_QgOuterFockFullFL_qgSector_gradFun_le (attempt 1)
+07:41:16 sol:BookProof_QgOuterFockFullFL_qgSector_gradFun_le: DONE
+07:41:17 submitting sol:BookProof_QgOuterFockFullFL_qgSectorExt_symmetricOn (attempt 1)
+07:41:17 sol:BookProof_QgOuterFockFullFL_qgSectorExt_symmetricOn: DONE
+07:41:17 submitting sol:BookProof_QgOuterFockFullFL_qgSectorExt_core (attempt 1)
+07:41:17 sol:BookProof_QgOuterFockFullFL_qgSectorExt_core: DONE
+07:41:17 submitting sol:BookProof_QgOuterFockFullFL_qgSectorExt_commForm_le (attempt 1)
+07:41:18 sol:BookProof_QgOuterFockFullFL_qgSectorExt_commForm_le: DONE
+07:41:18 submitting sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero (attempt 1)
+07:41:19 sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero: accepted, waiting on the compiler
+07:41:19 sol:BookProof_YangMillsFockGapChain_isPosCol_shiftCol_opCol_of_form_gap: DONE
+07:41:19 sol:BookProof_YangMillsFockGapChain_ym_quadForm_eq: DONE
+07:41:20 sol:BookProof_YangMillsFockGapChain_ym_fock_gap_of_field_perturbation: DONE
+07:41:20 sol:BookProof_FockFieldPerturbation_fieldVec_unbounded: DONE
+07:41:31 submitting sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero_euclidean (attempt 1)
+07:41:32 sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero_euclidean: accepted, waiting on the compiler
+07:41:32 submitting sol:BookProof_ReducedEsa_commutes_symProj (attempt 1)
+07:41:33 sol:BookProof_ReducedEsa_commutes_symProj: accepted, waiting on the compiler
+07:41:33 submitting sol:BookProof_ReducedEsa_commutes_asymProj (attempt 1)
+07:41:34 sol:BookProof_ReducedEsa_commutes_asymProj: accepted, waiting on the compiler
+07:41:36 sol:BookProof_FriedrichsCanonical_eq_zero_of_inner_coe_eq_zero: DONE
+07:41:47 sol:BookProof_YangMillsFockGapChain_ym_fock_vacuum_annihilated: DONE
+07:41:47 sol:BookProof_FriedrichsCanonical_exists_formExt_eq: DONE
+07:41:48 sol:BookProof_FriedrichsCanonical_isSemibounded_of_isPositive_shift: DONE
+07:41:59 sol:BookProof_YangMillsFockGapChain_ym_isPosCol_shiftCol: DONE
+07:41:59 sol:BookProof_FriedrichsCanonical_mem_formDomain: DONE
+07:42:00 sol:BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense: DONE
+07:42:10 sol:BookProof_FriedrichsCanonical_isPositive_shift_of_isSemibounded: DONE
+07:42:10 sol:BookProof_ChapterObservableExpectation_bayesPosterior_nonneg: DONE
+07:42:30 sol:BookProof_ChapterObservableExpectation_bayes_posterior_expectation_mem_convexHull: DONE
+07:42:40 sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero: DONE
+07:42:49 sol:BookProof_ChapterRadialLaplacian_helmholtz_sbessel_zero_euclidean: DONE
+07:42:58 sol:BookProof_QgOuterFockFL_mem_dsDom: DONE
+07:42:59 sol:BookProof_ReducedEsa_commutes_asymProj: DONE
+07:43:07 sol:BookProof_ReducedEsa_commutes_symProj: DONE
+07:43:07 summary: 6515 done, 3245 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+07:43:07 chunk: 80 item(s) resolved in 226s
+07:43:17 sync: read 1179 definition publish job(s)
+07:44:01 sync: read 11529 problem publish job(s)
+07:44:01 submitting sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+07:44:02 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op)
+07:44:02 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose (attempt 1)
+07:44:02 sol:BookProof_QuantumGravityFock_qgCCR_bose: WAIT (theorem not published yet)
+07:44:02 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne (attempt 1)
+07:44:02 sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne: WAIT (theorem not published yet)
+07:44:02 submitting sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+07:44:02 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: WAIT (guard defer: sibling theorem not published on the platform: BookProof_BookBrstYangMills_bookConstraintAlgebra)
+07:44:03 submitting sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant (attempt 2)
+07:44:03 sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant: WAIT (guard defer: platform rejected the current text: verdict ERROR: Failed to materialize the target's dependencies: DB error looking up import 'Definitio)
+07:44:03 submitting sol:BookProof_ShiftedQuadraticDegenerate_exists_shiftedH_diagonal_flow (attempt 1)
+07:44:04 sol:BookProof_ShiftedQuadraticDegenerate_exists_shiftedH_diagonal_flow: accepted, waiting on the compiler
+07:44:04 submitting sol:BookProof_ChapterSoftmaxDivergence_klDiv_eq_crossEntropy_sub_shannonEntropy (attempt 1)
+07:44:05 sol:BookProof_ChapterSoftmaxDivergence_klDiv_eq_crossEntropy_sub_shannonEntropy: accepted, waiting on the compiler
+07:44:05 submitting sol:BookProof_ChapterSpectralDirectSum_mem_cyclicSubspace_cyclicEmbedding (attempt 1)
+07:44:06 sol:BookProof_ChapterSpectralDirectSum_mem_cyclicSubspace_cyclicEmbedding: accepted, waiting on the compiler
+07:44:06 submitting sol:BookProof_ChapterSpectralDirectSum_range_cyclicEmbedding (attempt 1)
+07:44:07 sol:BookProof_ChapterSpectralDirectSum_range_cyclicEmbedding: accepted, waiting on the compiler
+07:44:07 submitting sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_le_orthogonal (attempt 1)
+07:44:08 sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_le_orthogonal: accepted, waiting on the compiler
+07:44:08 submitting sol:BookProof_ChapterSpectralDirectSum_orthogonalFamily_cyclicEmbedding (attempt 1)
+07:44:09 sol:BookProof_ChapterSpectralDirectSum_orthogonalFamily_cyclicEmbedding: accepted, waiting on the compiler
+07:44:09 submitting sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_orthogonalCyclicFamily (attempt 1)
+07:44:11 sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_orthogonalCyclicFamily: accepted, waiting on the compiler
+07:44:11 submitting sol:BookProof_ChapterSpectralDirectSum_countable_orthogonalCyclicFamily (attempt 1)
+07:44:12 sol:BookProof_ChapterSpectralDirectSum_countable_orthogonalCyclicFamily: accepted, waiting on the compiler
+07:44:12 submitting sol:BookProof_ChapterTrajectory_dslit_coherentFinal (attempt 1)
+07:44:13 sol:BookProof_ChapterTrajectory_dslit_coherentFinal: accepted, waiting on the compiler
+07:44:13 submitting sol:BookProof_ChapterTrajectory_dslit_interference (attempt 1)
+07:44:14 sol:BookProof_ChapterTrajectory_dslit_interference: accepted, waiting on the compiler
+07:44:14 submitting sol:BookProof_TruncationGapLift_basis_mem_tailSpan (attempt 1)
+07:44:15 sol:BookProof_TruncationGapLift_basis_mem_tailSpan: accepted, waiting on the compiler
+07:44:15 submitting sol:BookProof_TruncationGapLift_gap_of_uniform_truncated_gap (attempt 1)
+07:44:16 sol:BookProof_TruncationGapLift_gap_of_uniform_truncated_gap: accepted, waiting on the compiler
+07:44:16 submitting sol:BookProof_TruncationGapLift_gap_of_le_ritzInf_and_tail (attempt 1)
+07:44:17 sol:BookProof_TruncationGapLift_gap_of_le_ritzInf_and_tail: accepted, waiting on the compiler
+07:44:17 submitting sol:BookProof_TruncationGapLift_ym_fock_gap_of_truncated_gap_and_tail (attempt 1)
+07:44:18 sol:BookProof_TruncationGapLift_ym_fock_gap_of_truncated_gap_and_tail: accepted, waiting on the compiler
+07:44:18 submitting sol:BookProof_TruncationGapLift_ym_fock_mass_gap_of_truncated_gap_and_tail (attempt 1)
+07:44:19 sol:BookProof_TruncationGapLift_ym_fock_mass_gap_of_truncated_gap_and_tail: accepted, waiting on the compiler
+07:44:19 submitting sol:BookProof_TruncationGapLift_ym_fock_gap_of_band_and_tail (attempt 1)
+07:44:20 sol:BookProof_TruncationGapLift_ym_fock_gap_of_band_and_tail: accepted, waiting on the compiler
+07:45:24 sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_le_orthogonal: DONE
+07:45:35 submitting sol:BookProof_ChapterUnitaryTransport_adjointDomain_mulOp (attempt 1)
+07:45:36 sol:BookProof_ChapterUnitaryTransport_adjointDomain_mulOp: accepted, waiting on the compiler
+07:45:37 sol:BookProof_ChapterSoftmaxDivergence_klDiv_eq_crossEntropy_sub_shannonEntropy: DONE
+07:45:38 sol:BookProof_ChapterSpectralDirectSum_orthogonalFamily_cyclicEmbedding: DONE
+07:45:38 sol:BookProof_ChapterSpectralDirectSum_inner_eq_zero_of_orthogonalCyclicFamily: DONE
+07:45:38 sol:BookProof_ChapterSpectralDirectSum_countable_orthogonalCyclicFamily: DONE
+07:45:39 sol:BookProof_ChapterTrajectory_dslit_coherentFinal: DONE
+07:45:39 sol:BookProof_ChapterTrajectory_dslit_interference: DONE
+07:45:49 submitting sol:BookProof_ChapterUnitaryTransport_mulOp_isSelfAdjointOn (attempt 1)
+07:45:50 sol:BookProof_ChapterUnitaryTransport_mulOp_isSelfAdjointOn: accepted, waiting on the compiler
+07:45:50 submitting sol:BookProof_WeakSecondDeriv_absolutelyContinuous_test (attempt 1)
+07:45:51 sol:BookProof_WeakSecondDeriv_absolutelyContinuous_test: accepted, waiting on the compiler
+07:45:51 submitting sol:BookProof_ChapterWeakValue_hadamard_psi0 (attempt 1)
+07:45:52 sol:BookProof_ChapterWeakValue_hadamard_psi0: accepted, waiting on the compiler
+07:45:52 submitting sol:BookProof_ChapterWeakValue_dslit_weakValue (attempt 1)
+07:45:53 sol:BookProof_ChapterWeakValue_dslit_weakValue: accepted, waiting on the compiler
+07:45:53 submitting sol:BookProof_WeylHamiltonian_weylHamiltonian_isPositive (attempt 1)
+07:45:54 sol:BookProof_WeylHamiltonian_weylHamiltonian_isPositive: accepted, waiting on the compiler
+07:45:54 submitting sol:BookProof_WeylHamiltonian_weylHamiltonian_expectation_nonneg (attempt 1)
+07:45:55 sol:BookProof_WeylHamiltonian_weylHamiltonian_expectation_nonneg: accepted, waiting on the compiler
+07:45:56 sol:BookProof_ChapterSpectralDirectSum_mem_cyclicSubspace_cyclicEmbedding: DONE
+07:45:56 sol:BookProof_ChapterSpectralDirectSum_range_cyclicEmbedding: DONE
+07:45:57 sol:BookProof_TruncationGapLift_basis_mem_tailSpan: DONE
+07:45:57 sol:BookProof_TruncationGapLift_gap_of_uniform_truncated_gap: DONE
+07:45:58 sol:BookProof_TruncationGapLift_ym_fock_mass_gap_of_truncated_gap_and_tail: DONE
+07:46:08 submitting sol:BookProof_WeylHamiltonian_weylHamiltonian_isSelfAdjoint (attempt 1)
+07:46:10 sol:BookProof_WeylHamiltonian_weylHamiltonian_isSelfAdjoint: accepted, waiting on the compiler
+07:46:10 submitting sol:BookProof_Complexification_cxConj_isConjugation (attempt 1)
+07:46:11 sol:BookProof_Complexification_cxConj_isConjugation: DONE
+07:46:11 submitting sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH (attempt 1)
+07:46:11 sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_CanonicalVector_velH_crd, BookProof_NavierStokesFlow_CanonicalV)
+07:46:11 submitting sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn (attempt 1)
+07:46:11 sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+07:46:12 submitting sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly (attempt 1)
+07:46:12 sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_integral_comp_rotIso, BookProof_QuadraticRotation_pgFun_rotPol)
+07:46:12 submitting sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum (attempt 1)
+07:46:12 sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+07:46:12 submitting sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint (attempt 1)
+07:46:13 sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_quadOpMat_rotConj_essentiallySelfAdjoint, BookProof_QuadraticR)
+07:46:13 submitting sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm (attempt 1)
+07:46:13 sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_WallPot_one_le_pot, BookProof_ScalaronFiberFL_cc_integrable, Boo)
+07:46:13 submitting sol:BookProof_ScalaronFiberFL_ham_x_comm (attempt 1)
+07:46:14 sol:BookProof_ScalaronFiberFL_ham_x_comm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_integral_x_wronskian, BookProof_ScalaronFiberFL_inner_xCc_ham, B)
+07:46:14 submitting sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal (attempt 1)
+07:46:14 sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp, BookProof_ChapterH8_coordIncl_adjoi)
+07:46:14 sol:BookProof_ShiftedQuadraticDegenerate_exists_shiftedH_diagonal_flow: DONE
+07:46:15 sol:BookProof_TruncationGapLift_gap_of_le_ritzInf_and_tail: DONE
+07:46:26 sol:BookProof_TruncationGapLift_ym_fock_gap_of_truncated_gap_and_tail: DONE
+07:46:26 sol:BookProof_TruncationGapLift_ym_fock_gap_of_band_and_tail: DONE
+07:46:57 sol:BookProof_ChapterUnitaryTransport_adjointDomain_mulOp: DONE
+07:46:57 sol:BookProof_ChapterWeakValue_hadamard_psi0: DONE
+07:47:17 sol:BookProof_ChapterWeakValue_dslit_weakValue: DONE
+07:47:17 sol:BookProof_WeylHamiltonian_weylHamiltonian_isPositive: DONE
+07:47:27 sol:BookProof_WeylHamiltonian_weylHamiltonian_expectation_nonneg: DONE
+07:47:36 sol:BookProof_WeylHamiltonian_weylHamiltonian_isSelfAdjoint: DONE
+07:47:44 sol:BookProof_ChapterUnitaryTransport_mulOp_isSelfAdjointOn: DONE
+07:47:45 sol:BookProof_WeakSecondDeriv_absolutelyContinuous_test: DONE
+07:47:45 summary: 6540 done, 3220 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+07:47:45 chunk: 25 item(s) resolved in 223s
+07:47:54 sync: read 1179 definition publish job(s)
+07:48:38 sync: read 11529 problem publish job(s)
+07:48:38 submitting sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+07:48:38 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op)
+07:48:39 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose (attempt 1)
+07:48:39 sol:BookProof_QuantumGravityFock_qgCCR_bose: WAIT (theorem not published yet)
+07:48:39 submitting sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne (attempt 1)
+07:48:39 sol:BookProof_QuantumGravityFock_qgCCR_bose_of_ne: WAIT (theorem not published yet)
+07:48:39 submitting sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+07:48:39 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: WAIT (guard defer: sibling theorem not published on the platform: BookProof_BookBrstYangMills_bookConstraintAlgebra)
+07:48:39 submitting sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant (attempt 2)
+07:48:40 sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant: WAIT (guard defer: platform rejected the current text: verdict ERROR: Failed to materialize the target's dependencies: DB error looking up import 'Definitio)
+07:48:40 submitting sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH (attempt 1)
+07:48:40 sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_CanonicalVector_velH_crd, BookProof_NavierStokesFlow_CanonicalV)
+07:48:40 submitting sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn (attempt 1)
+07:48:40 sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+07:48:40 submitting sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly (attempt 1)
+07:48:41 sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_integral_comp_rotIso, BookProof_QuadraticRotation_pgFun_rotPol)
+07:48:41 submitting sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum (attempt 1)
+07:48:41 sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+07:48:41 submitting sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint (attempt 1)
+07:48:41 sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_quadOpMat_rotConj_essentiallySelfAdjoint, BookProof_QuadraticR)
+07:48:42 submitting sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm (attempt 1)
+07:48:42 sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_WallPot_one_le_pot, BookProof_ScalaronFiberFL_cc_integrable, Boo)
+07:48:42 submitting sol:BookProof_ScalaronFiberFL_ham_x_comm (attempt 1)
+07:48:42 sol:BookProof_ScalaronFiberFL_ham_x_comm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_integral_x_wronskian, BookProof_ScalaronFiberFL_inner_xCc_ham, B)
+07:48:43 submitting sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal (attempt 1)
+07:48:43 sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp, BookProof_ChapterH8_coordIncl_adjoi)
+07:48:43 summary: 6540 done, 3220 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+07:48:43 chunk: 0 item(s) resolved in 5s
+09:15:47 sync: read 1179 definition publish job(s)
+09:16:30 sync: read 11529 problem publish job(s)
+09:16:31 submitting sol:BookProof_QuantumGravityFock_qgGradedFock_stone_flow (attempt 1)
+09:16:31 sol:BookProof_QuantumGravityFock_qgGradedFock_stone_flow: DONE
+09:16:31 submitting sol:BookProof_QuantumGravityFock_qgTwoLevel_esa (attempt 1)
+09:16:31 sol:BookProof_QuantumGravityFock_qgTwoLevel_esa: DONE
+09:16:31 submitting sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_not_bounded (attempt 1)
+09:16:32 sol:BookProof_NavierStokesFlow_FockLagrangian_momFock_not_bounded: DONE
+09:16:32 summary: 6543 done, 3217 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+09:16:32 chunk: 3 item(s) resolved in 1s
+09:16:41 sync: read 1179 definition publish job(s)
+09:17:27 sync: read 11529 problem publish job(s)
+09:17:28 summary: 6543 done, 3217 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+09:17:28 chunk: 0 item(s) resolved in 0s
+09:19:58 sync: read 1179 definition publish job(s)
+09:20:53 sync: read 11529 problem publish job(s)
+09:20:53 submitting sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+09:20:53 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op)
+09:20:53 submitting sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+09:20:54 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: WAIT (guard defer: sibling theorem not published on the platform: BookProof_BookBrstYangMills_bookConstraintAlgebra)
+09:20:54 submitting sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant (attempt 2)
+09:20:54 sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant: WAIT (guard defer: platform rejected the current text: verdict ERROR: Failed to materialize the target's dependencies: DB error looking up import 'Definitio)
+09:20:54 submitting sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH (attempt 1)
+09:20:55 sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_CanonicalVector_velH_crd, BookProof_NavierStokesFlow_CanonicalV)
+09:20:55 submitting sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn (attempt 1)
+09:20:55 sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+09:20:55 submitting sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly (attempt 1)
+09:20:55 sol:BookProof_QuadraticRotation_inner_pgLp_rotPoly: DONE
+09:20:55 submitting sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum (attempt 1)
+09:20:56 sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+09:20:56 submitting sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint (attempt 1)
+09:20:56 sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_quadOpMat_rotConj_essentiallySelfAdjoint, BookProof_QuadraticR)
+09:20:56 submitting sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm (attempt 1)
+09:20:57 sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_WallPot_one_le_pot, BookProof_ScalaronFiberFL_cc_integrable, Boo)
+09:20:57 submitting sol:BookProof_ScalaronFiberFL_ham_x_comm (attempt 1)
+09:20:57 sol:BookProof_ScalaronFiberFL_ham_x_comm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_integral_x_wronskian, BookProof_ScalaronFiberFL_inner_xCc_ham, B)
+09:20:57 submitting sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal (attempt 1)
+09:20:57 sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp, BookProof_ChapterH8_coordIncl_adjoi)
+09:20:57 summary: 6544 done, 3216 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+09:20:57 chunk: 1 item(s) resolved in 4s
+09:21:07 sync: read 1179 definition publish job(s)
+09:21:57 sync: read 11529 problem publish job(s)
+09:21:57 submitting sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+09:21:57 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op)
+09:21:57 submitting sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+09:21:57 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: WAIT (guard defer: sibling theorem not published on the platform: BookProof_BookBrstYangMills_bookConstraintAlgebra)
+09:21:58 submitting sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant (attempt 2)
+09:21:58 sol:BookProof_ChapterSchurIrreducible_rangeClosure_invariant: WAIT (guard defer: platform rejected the current text: verdict ERROR: Failed to materialize the target's dependencies: DB error looking up import 'Definitio)
+09:21:58 submitting sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH (attempt 1)
+09:21:58 sol:BookProof_NavierStokesFlow_CanonicalVector_canH_eq_velH: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_CanonicalVector_velH_crd, BookProof_NavierStokesFlow_CanonicalV)
+09:21:58 submitting sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn (attempt 1)
+09:21:59 sol:BookProof_NavierStokesFlow_IkebeKato_diagMax_essentiallySelfAdjointOn: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+09:21:59 submitting sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum (attempt 1)
+09:21:59 sol:BookProof_NavierStokesFlow_IkebeKato_ikebeKato_momentum: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_IkebeKato_commForm_self)
+09:21:59 submitting sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint (attempt 1)
+09:21:59 sol:BookProof_QuadraticRotation_quadOpMat_essentiallySelfAdjoint: WAIT (guard defer: sibling theorem not published on the platform: BookProof_QuadraticRotation_quadOpMat_rotConj_essentiallySelfAdjoint, BookProof_QuadraticR)
+09:21:59 submitting sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm (attempt 1)
+09:22:00 sol:BookProof_ScalaronFiberFL_norm_sq_le_quadForm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_WallPot_one_le_pot, BookProof_ScalaronFiberFL_cc_integrable, Boo)
+09:22:00 submitting sol:BookProof_ScalaronFiberFL_ham_x_comm (attempt 1)
+09:22:00 sol:BookProof_ScalaronFiberFL_ham_x_comm: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ScalaronFiberFL_integral_x_wronskian, BookProof_ScalaronFiberFL_inner_xCc_ham, B)
+09:22:00 submitting sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal (attempt 1)
+09:22:00 sol:BookProof_ChapterH8_sirk_band_refinement_of_orthonormal: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterH8_orthonormalEmbedding_adjoint_comp, BookProof_ChapterH8_coordIncl_adjoi)
+09:22:00 summary: 6544 done, 3216 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+09:22:00 chunk: 0 item(s) resolved in 4s
+16:24:48 sync: read 1179 definition publish job(s)
+16:25:46 sync: read 11529 problem publish job(s)
+16:27:42 sync: read 1179 definition publish job(s)
+16:28:49 sync: read 11529 problem publish job(s)
+16:30:20 sync: read 1179 definition publish job(s)
+16:31:25 sync: read 11529 problem publish job(s)
+16:31:59 sync: read 1179 definition publish job(s)
+16:32:56 sync: read 11529 problem publish job(s)
+16:32:56 submitting def:ChapterStoneSeparable (attempt 1)
+16:32:58 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq, BookProof.ChapterUnboundedPosition.mulOp_sy)
+16:32:58 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:32:58 chunk: 0 item(s) resolved in 2s
+16:33:09 sync: read 1179 definition publish job(s)
+16:34:07 sync: read 11529 problem publish job(s)
+16:34:07 submitting thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector (attempt 1)
+16:34:07 thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector: title clamped to 179 chars (server limit 200)
+16:34:08 thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector: accepted, waiting on the compiler
+16:34:08 submitting thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector (attempt 1)
+16:34:09 thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector: accepted, waiting on the compiler
+16:34:53 thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector: DONE
+16:34:53 thm:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector: DONE
+16:34:53 summary: 6842 done, 2893 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:34:53 chunk: 2 item(s) resolved in 47s
+16:35:03 sync: read 1179 definition publish job(s)
+16:35:56 sync: read 11531 problem publish job(s)
+16:35:56 submitting sol:BookProof_QuantumGravityFock_qgFock_hashimoto_selects (attempt 1)
+16:35:56 sol:BookProof_QuantumGravityFock_qgFock_hashimoto_selects: DONE
+16:35:56 submitting sol:BookProof_YangMillsFockGapChain_ym_fock_gap_of_nested_ritz_bands (attempt 1)
+16:35:57 sol:BookProof_YangMillsFockGapChain_ym_fock_gap_of_nested_ritz_bands: DONE
+16:35:57 submitting sol:BookProof_FriedrichsCanonical_semiboundedFriedrichsOp_isSemiboundedSelfAdjointExtension (attempt 1)
+16:35:58 sol:BookProof_FriedrichsCanonical_semiboundedFriedrichsOp_isSemiboundedSelfAdjointExtension: accepted, waiting on the compiler
+16:35:58 submitting sol:BookProof_ChapterSeparableL2Model_continuous_coordMap (attempt 1)
+16:35:58 sol:BookProof_ChapterSeparableL2Model_continuous_coordMap: DONE
+16:35:58 submitting sol:BookProof_TruncationGapLift_quadForm_ge_of_le_ritzInf_on (attempt 1)
+16:35:58 sol:BookProof_TruncationGapLift_quadForm_ge_of_le_ritzInf_on: DONE
+16:37:39 sol:BookProof_FriedrichsCanonical_semiboundedFriedrichsOp_isSemiboundedSelfAdjointExtension: DONE
+16:37:39 summary: 6549 done, 3211 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:37:39 chunk: 5 item(s) resolved in 103s
+16:37:49 sync: read 1179 definition publish job(s)
+16:38:38 sync: read 11531 problem publish job(s)
+16:39:14 sync: read 1179 definition publish job(s)
+16:40:04 sync: read 11531 problem publish job(s)
+16:40:04 submitting def:ChapterStoneSeparable (attempt 1)
+16:40:06 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq, BookProof.ChapterUnboundedPosition.mulOp_sy)
+16:40:06 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:40:06 chunk: 0 item(s) resolved in 2s
+16:40:17 sync: read 1179 definition publish job(s)
+16:41:14 sync: read 11531 problem publish job(s)
+16:41:14 submitting sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector (attempt 1)
+16:41:15 sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector: accepted, waiting on the compiler
+16:41:15 submitting sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector (attempt 1)
+16:41:16 sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector: accepted, waiting on the compiler
+16:42:52 sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_symSector: DONE
+16:42:53 sol:BookProof_ReducedEsa_essentiallySelfAdjointOn_asymSector: DONE
+16:42:53 summary: 6551 done, 3209 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:42:53 chunk: 2 item(s) resolved in 99s
+16:43:05 sync: read 1179 definition publish job(s)
+16:44:01 sync: read 11531 problem publish job(s)
+16:44:35 sync: read 1179 definition publish job(s)
+16:45:35 sync: read 11531 problem publish job(s)
+16:45:35 submitting def:ChapterStoneSeparable (attempt 1)
+16:45:37 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq, BookProof.ChapterUnboundedPosition.mulOp_sy)
+16:45:37 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:45:37 chunk: 0 item(s) resolved in 2s
+17:56:01 sync: read 1179 definition publish job(s)
+17:56:58 sync: read 11531 problem publish job(s)
+17:56:58 submitting sol:BookProof_ChapterA_IsRReal_isIrreducible (attempt 2)
+17:56:59 sol:BookProof_ChapterA_IsRReal_isIrreducible: DONE
+17:56:59 submitting sol:BookProof_ChapterAttentionOutput_norm_headOutput_le (attempt 1)
+17:56:59 sol:BookProof_ChapterAttentionOutput_norm_headOutput_le: DONE
+17:56:59 submitting sol:BookProof_ChapterAttentionOutput_headOutput_const (attempt 1)
+17:56:59 sol:BookProof_ChapterAttentionOutput_headOutput_const: DONE
+17:57:00 submitting sol:BookProof_ChapterAttentionOutputVariance_headOutput_minimizes (attempt 1)
+17:57:00 sol:BookProof_ChapterAttentionOutputVariance_headOutput_minimizes: DONE
+17:57:00 submitting sol:BookProof_ChapterAttentionOutputVariance_outputVariance_scoreSoftmax_eq_zero_iff (attempt 1)
+17:57:00 sol:BookProof_ChapterAttentionOutputVariance_outputVariance_scoreSoftmax_eq_zero_iff: DONE
+17:57:00 submitting sol:BookProof_ChapterAttentionRetrieval_bornWeight_ge_of_dist_margin (attempt 1)
+17:57:01 sol:BookProof_ChapterAttentionRetrieval_bornWeight_ge_of_dist_margin: DONE
+17:57:01 submitting sol:BookProof_ChapterAttentionSink_scoreSoftmax_sink_lt (attempt 1)
+17:57:01 sol:BookProof_ChapterAttentionSink_scoreSoftmax_sink_lt: DONE
+17:57:01 submitting sol:BookProof_ChapterAttentionSink_sum_scoreSoftmax_sink_succ (attempt 1)
+17:57:01 sol:BookProof_ChapterAttentionSink_sum_scoreSoftmax_sink_succ: DONE
+17:57:02 submitting sol:BookProof_ChapterAttentionSink_shannonEntropy_sink (attempt 1)
+17:57:02 sol:BookProof_ChapterAttentionSink_shannonEntropy_sink: DONE
+17:57:02 submitting sol:BookProof_ChapterCrossEntropyGradient_convexOn_crossEntropyLoss (attempt 1)
+17:57:02 sol:BookProof_ChapterCrossEntropyGradient_convexOn_crossEntropyLoss: DONE
+17:57:03 submitting sol:BookProof_FockFieldPerturbation_abs_re_inner_fieldVec_le (attempt 1)
+17:57:03 sol:BookProof_FockFieldPerturbation_abs_re_inner_fieldVec_le: DONE
+17:57:03 submitting sol:BookProof_ChapterLogPartitionConvex_logPartition_isGreatest (attempt 1)
+17:57:03 sol:BookProof_ChapterLogPartitionConvex_logPartition_isGreatest: DONE
+17:57:03 submitting sol:BookProof_ChapterRadialLaplacian_laplacian_sbessel_zero (attempt 1)
+17:57:04 sol:BookProof_ChapterRadialLaplacian_laplacian_sbessel_zero: DONE
+17:57:04 submitting sol:BookProof_ChapterSinusoidalPosition_scoreSoftmax_sinusoidal_ge (attempt 1)
+17:57:04 sol:BookProof_ChapterSinusoidalPosition_scoreSoftmax_sinusoidal_ge: DONE
+17:57:04 submitting sol:BookProof_ChapterSoftmaxDivergence_klDiv_scoreSoftmax (attempt 1)
+17:57:04 sol:BookProof_ChapterSoftmaxDivergence_klDiv_scoreSoftmax: DONE
+17:57:05 submitting sol:BookProof_ChapterSoftmaxDivergence_logPartition_tangent_le (attempt 1)
+17:57:05 sol:BookProof_ChapterSoftmaxDivergence_logPartition_tangent_le: DONE
+17:57:05 submitting sol:BookProof_ChapterSoftmaxMaxEntropy_shannonEntropy_scoreSoftmax (attempt 1)
+17:57:05 sol:BookProof_ChapterSoftmaxMaxEntropy_shannonEntropy_scoreSoftmax: DONE
+17:57:05 submitting sol:BookProof_ChapterSoftmaxMaxEntropy_shannonEntropy_le_of_meanScore_eq (attempt 1)
+17:57:06 sol:BookProof_ChapterSoftmaxMaxEntropy_shannonEntropy_le_of_meanScore_eq: DONE
+17:57:06 submitting sol:BookProof_ChapterSoftmaxMaxEntropy_softmax_free_energy_le (attempt 1)
+17:57:06 sol:BookProof_ChapterSoftmaxMaxEntropy_softmax_free_energy_le: DONE
+17:57:06 summary: 6570 done, 3190 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:57:06 chunk: 19 item(s) resolved in 8s
+17:57:17 sync: read 1179 definition publish job(s)
+17:58:16 sync: read 11531 problem publish job(s)
+17:58:16 summary: 6570 done, 3190 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:58:16 chunk: 0 item(s) resolved in 0s
+22:30:23 sync: read 1186 definition publish job(s)
+22:31:19 sync: read 11531 problem publish job(s)
+22:31:19 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+22:31:19 def:ChapterScalaronOuterFockFL: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterScalaronOuterFockFL.lean:69:8: error(lean.unknownIdentifier): Unknown identifier `)
+22:31:20 submitting def:ChapterFockSchurEsa (attempt 1)
+22:31:20 def:ChapterFockSchurEsa: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterFockSchurEsa.lean:122:53: error(lean.unknownIdentifier): Unknown identifier `suppo)
+22:31:20 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:31:20 waiting on unpublished def bundle(s): ChapterNavierStokesSignFlip (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (1 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronOuterFockFL (1 item(s))
+22:31:20 chunk: 0 item(s) resolved in 0s
+22:36:10 sync: read 1187 definition publish job(s)
+22:37:00 sync: read 11531 problem publish job(s)
+22:37:00 processing def:ChapterScalaronOuterFockFL (attempt 1)
+22:37:00 def:ChapterScalaronOuterFockFL: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterScalaronOuterFockFL.lean:69:8: error(lean.unknownIdentifier): Unknown identifier `) - job in flight, no attempt consumed
+22:37:00 processing def:ChapterFockSchurEsa (attempt 1)
+22:37:00 def:ChapterFockSchurEsa: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterFockSchurEsa.lean:122:53: error(lean.unknownIdentifier): Unknown identifier `suppo) - job in flight, no attempt consumed
+22:37:01 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:37:01 waiting on unpublished def bundle(s): ChapterNavierStokesSignFlip (1 item(s)), ChapterQgContinuumModeInstance (1 item(s)), ChapterQgTimeStepping (1 item(s)), ChapterQgTruncationResolvent (1 item(s)), ChapterQgVielbeinModeInstance (1 item(s)), ChapterScalaronOuterFockFL (1 item(s))
+22:37:01 chunk: 2 item(s) processed in 0s
+22:39:46 sync: read 1187 definition publish job(s)
+22:40:38 sync: read 11531 problem publish job(s)
+22:40:38 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:40:38 waiting on unpublished def bundle(s): ChapterNavierStokesSignFlip (1 item(s))
+22:40:38 chunk: 0 item(s) processed in 0s
+22:41:10 sync: read 1187 definition publish job(s)
+22:41:58 sync: read 11531 problem publish job(s)
+22:41:59 processing def:ChapterNavierStokesSignFlip (attempt 1)
+22:41:59 def:ChapterNavierStokesSignFlip: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterNavierStokesSignFlip.lean:343:7: error(lean.unknownIdentifier): Unknown identifier) - job in flight, no attempt consumed
+22:41:59 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:41:59 chunk: 1 item(s) processed in 0s
+23:20:50 sync: read 1187 definition publish job(s)
+23:21:37 sync: read 11531 problem publish job(s)
+23:21:37 processing def:ChapterBookBrstGaugeFixing (attempt 2)
+23:21:37 def:ChapterBookBrstGaugeFixing: WAIT (guard defer: def gate: candidate build: FAIL Definitions/Def_ChapterBookBrstGaugeFixing.lean:369:2: error: Type mismatch) - job in flight, no attempt consumed
+23:21:38 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:21:38 chunk: 1 item(s) processed in 0s
+00:56:29 sync: read 1187 definition publish job(s)
+00:57:21 sync: read 11531 problem publish job(s)
+00:57:21 processing def:ChapterBookBrstGaugeFixing (attempt 2)
+00:57:26 def:ChapterBookBrstGaugeFixing: WAIT (theorem dependency not proved yet: BookProof.BookBrstYangMills.bookConstraintAlgebra) - job in flight, no attempt consumed
+00:57:26 summary: 580 done, 110 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+00:57:26 chunk: 1 item(s) processed in 5s
+01:09:42 sync: read 1187 definition publish job(s)
+01:10:34 sync: read 11531 problem publish job(s)
+01:10:34 processing sol:BookProof_BookBrstYangMills_bookConstraintAlgebra (attempt 1)
+01:10:34 sol:BookProof_BookBrstYangMills_bookConstraintAlgebra: WAIT (theorem not published yet) - job in flight, no attempt consumed
+01:10:34 summary: 6570 done, 3190 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:10:34 chunk: 1 item(s) processed in 0s
+01:10:57 sync: read 1187 definition publish job(s)
+01:11:49 sync: read 11531 problem publish job(s)
+01:11:49 processing thm:BookProof_BookBrstYangMills_bookConstraintAlgebra (attempt 1)
+01:11:49 thm:BookProof_BookBrstYangMills_bookConstraintAlgebra: WAIT (guard defer: stub sanity: stub does not end with exactly one `:= by sorry`) - job in flight, no attempt consumed
+01:11:49 summary: 6842 done, 2893 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:11:49 chunk: 1 item(s) processed in 0s
+01:21:31 sync: read 1187 definition publish job(s)
+01:22:23 sync: read 11531 problem publish job(s)
+01:22:23 processing thm:BookProof_BookBrstYangMills_bookConstraintAlgebra (attempt 1)
+01:22:23 thm:BookProof_BookBrstYangMills_bookConstraintAlgebra: WAIT (guard defer: stub sanity: stub does not end with exactly one `:= by sorry`) - job in flight, no attempt consumed
+01:22:23 summary: 6842 done, 2893 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:22:23 chunk: 1 item(s) processed in 0s
+01:24:55 sync: read 1187 definition publish job(s)
+01:25:46 sync: read 11531 problem publish job(s)
+01:25:46 processing thm:BookProof_BookBrstYangMills_bookConstraintAlgebra (attempt 1)
+01:27:01 thm:BookProof_BookBrstYangMills_bookConstraintAlgebra: DONE
+01:27:01 summary: 6843 done, 2892 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:27:01 chunk: 1 item(s) processed in 75s
+01:27:55 sync: read 1187 definition publish job(s)
+01:28:43 sync: read 11532 problem publish job(s)
+01:28:43 processing sol:BookProof_BookBrstYangMills_bookConstraintAlgebra (attempt 1)
+01:30:34 sol:BookProof_BookBrstYangMills_bookConstraintAlgebra: DONE
+01:30:34 summary: 6571 done, 3189 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:30:34 chunk: 1 item(s) processed in 111s
+02:40:07 sync: read 1187 definition publish job(s)
+02:40:57 sync: read 11532 problem publish job(s)
+02:40:57 processing def:ChapterBookBrstGaugeFixing (attempt 2)
+02:42:00 def:ChapterBookBrstGaugeFixing: DONE
+02:42:00 summary: 581 done, 109 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:42:00 chunk: 1 item(s) processed in 63s
+02:42:45 sync: read 1188 definition publish job(s)
+02:43:30 sync: read 11532 problem publish job(s)
+02:44:10 sync: read 1188 definition publish job(s)
+02:44:54 sync: read 11532 problem publish job(s)
+02:45:40 sync: read 1188 definition publish job(s)
+02:46:26 sync: read 11532 problem publish job(s)
+02:46:26 processing sol:BookProof_BookBrstYangMills_bookOmega_nilpotent (attempt 1)
+02:46:26 sol:BookProof_BookBrstYangMills_bookOmega_nilpotent: DONE
+02:46:26 summary: 6572 done, 3188 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:46:26 chunk: 1 item(s) processed in 0s
+02:46:43 sync: read 1188 definition publish job(s)
+02:47:28 sync: read 11532 problem publish job(s)
+02:47:28 processing sol:BookProof_NavierStokesFlow_FullEsa_latticeAdvectionCLM_isSelfAdjoint (attempt 1)
+02:47:28 sol:BookProof_NavierStokesFlow_FullEsa_latticeAdvectionCLM_isSelfAdjoint: DONE
+02:47:29 summary: 6573 done, 3187 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:47:29 chunk: 1 item(s) processed in 0s
+02:47:44 sync: read 1188 definition publish job(s)
+02:48:27 sync: read 11532 problem publish job(s)
+02:48:27 processing def:ChapterStoneSeparable (attempt 1)
+02:48:30 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq, BookProof.ChapterUnboundedPosition.mulOp_sy) - job in flight, no attempt consumed
+02:48:30 summary: 581 done, 109 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:48:30 chunk: 1 item(s) processed in 3s
+02:50:42 sync: read 1188 definition publish job(s)
+02:51:32 sync: read 11532 problem publish job(s)
+02:51:32 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+02:51:32 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op) - job in flight, no attempt consumed
+02:51:32 summary: 6573 done, 3187 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:51:32 chunk: 1 item(s) processed in 0s
+02:52:01 sync: read 1188 definition publish job(s)
+02:52:50 sync: read 11532 problem publish job(s)
+02:52:50 processing thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+02:52:50 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain) - job in flight, no attempt consumed
+02:52:51 summary: 6843 done, 2892 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:52:51 chunk: 1 item(s) processed in 0s
+02:54:43 sync: read 1188 definition publish job(s)
+02:55:38 sync: read 11532 problem publish job(s)
+02:55:38 processing thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+02:55:38 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: WAIT (guard defer: sibling theorem not published on the platform: BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain) - job in flight, no attempt consumed
+02:55:38 summary: 6843 done, 2892 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+02:55:38 chunk: 1 item(s) processed in 0s
+03:01:29 sync: read 1188 definition publish job(s)
+03:02:24 sync: read 11532 problem publish job(s)
+03:02:24 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain (attempt 1)
+03:02:24 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain: DONE
+03:02:24 summary: 6574 done, 3186 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:02:24 chunk: 1 item(s) processed in 0s
+03:02:50 sync: read 1188 definition publish job(s)
+03:03:37 sync: read 11532 problem publish job(s)
+03:03:37 processing thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+03:03:37 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: WAIT (guard defer: offline mirror: L:20:35: error(lean.invalidField): Invalid field `domain_le_genDomain`: The environment does not contain `BookProof.Chapt) - job in flight, no attempt consumed
+03:03:38 summary: 6843 done, 2892 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:03:38 chunk: 1 item(s) processed in 0s
+03:14:11 sync: read 1188 definition publish job(s)
+03:15:11 sync: read 8300 problem publish job(s)
+03:16:05 sync: read 1188 definition publish job(s)
+03:16:12 sync: read 1400 problem publish job(s)
+03:16:12 processing thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+03:17:08 thm:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: DONE
+03:17:08 summary: 6844 done, 2891 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:17:08 chunk: 1 item(s) processed in 57s
+03:17:32 sync: read 1188 definition publish job(s)
+03:18:26 sync: read 11533 problem publish job(s)
+03:18:26 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq (attempt 1)
+03:20:35 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_stoneGroup_eq: DONE
+03:20:35 summary: 6575 done, 3185 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:20:35 chunk: 1 item(s) processed in 129s
+03:21:06 sync: read 1188 definition publish job(s)
+03:21:55 sync: read 11533 problem publish job(s)
+03:21:55 processing def:ChapterStoneSeparable (attempt 1)
+03:21:59 def:ChapterStoneSeparable: WAIT (theorem dependency not proved yet: BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.gen_stoneGroup_eq, BookProof.ChapterUnboundedPosition.mulOp_sy) - job in flight, no attempt consumed
+03:21:59 summary: 581 done, 109 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:21:59 chunk: 1 item(s) processed in 3s
+03:23:45 sync: read 1188 definition publish job(s)
+03:24:38 sync: read 11533 problem publish job(s)
+03:25:39 sync: read 1188 definition publish job(s)
+03:26:33 sync: read 11533 problem publish job(s)
+03:31:46 sync: read 1188 definition publish job(s)
+03:32:33 sync: read 11533 problem publish job(s)
+03:32:33 processing thm:BookProof_ChapterUnboundedPosition_mulOp_symmetric (attempt 1)
+03:33:03 thm:BookProof_ChapterUnboundedPosition_mulOp_symmetric: DONE
+03:33:03 summary: 6845 done, 2890 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:33:03 chunk: 1 item(s) processed in 30s
+03:33:36 sync: read 1188 definition publish job(s)
+03:34:21 sync: read 11534 problem publish job(s)
+03:34:21 processing sol:BookProof_ChapterUnboundedPosition_mulOp_symmetric (attempt 1)
+03:35:27 sol:BookProof_ChapterUnboundedPosition_mulOp_symmetric: FAIL (verdict CE: Compile error in your proof:
+line 19: Unknown identifier `mulOp_apply`
+line 16: unsolved goals
+f : ℤ → ℝ
+psi phi : ↥(mulDomain f)
+k : ℤ
+⊢ )
+03:35:27 summary: 6575 done, 3185 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:35:27 chunk: 1 item(s) processed in 66s
+03:40:19 sync: read 1188 definition publish job(s)
+03:41:10 sync: read 11534 problem publish job(s)
+03:41:10 processing sol:BookProof_ChapterUnboundedPosition_mulOp_symmetric (attempt 2)
+03:43:08 sol:BookProof_ChapterUnboundedPosition_mulOp_symmetric: DONE
+03:43:08 summary: 6576 done, 3184 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:43:08 chunk: 1 item(s) processed in 117s
+03:43:41 sync: read 1188 definition publish job(s)
+03:44:32 sync: read 11534 problem publish job(s)
+03:45:51 sync: read 1188 definition publish job(s)
+03:46:39 sync: read 11534 problem publish job(s)
+03:52:04 sync: read 1188 definition publish job(s)
+03:53:20 sync: read 1188 definition publish job(s)
+03:54:10 sync: read 11534 problem publish job(s)
+03:55:06 sync: read 1188 definition publish job(s)
+03:55:56 sync: read 11534 problem publish job(s)
+03:56:22 sync: read 1188 definition publish job(s)
+03:57:11 sync: read 11534 problem publish job(s)
+03:57:11 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 1)
+03:58:10 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: FAIL (verdict CE: Compile error in your proof:
+line 20: Unknown identifier `UnboundedSelfAdjoint`
+
+Note: It is not possible to treat `UnboundedSelfAdjoint` )
+03:58:10 summary: 6576 done, 3184 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+03:58:10 chunk: 1 item(s) processed in 59s
+04:04:28 sync: read 1188 definition publish job(s)
+04:05:15 sync: read 11534 problem publish job(s)
+04:05:15 processing sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op (attempt 2)
+04:07:29 sol:BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_genOp_eq_op: DONE
+04:07:29 summary: 6577 done, 3183 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+04:07:29 chunk: 1 item(s) processed in 134s
+04:08:07 sync: read 1188 definition publish job(s)
+04:08:57 sync: read 11534 problem publish job(s)
+04:09:45 sync: read 1188 definition publish job(s)
+04:10:42 sync: read 11534 problem publish job(s)
+04:10:42 processing def:ChapterStoneSeparable (attempt 1)
+04:11:30 def:ChapterStoneSeparable: DONE
+04:11:31 summary: 582 done, 108 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+04:11:31 chunk: 1 item(s) processed in 48s
+06:58:38 sync: read 1189 definition publish job(s)
+06:59:24 sync: read 11534 problem publish job(s)
+06:59:56 sync: read 1189 definition publish job(s)
+07:00:47 sync: read 11534 problem publish job(s)
+07:00:47 submitting thm:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt (attempt 1)
+07:00:48 thm:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt: title clamped to 179 chars (server limit 200)
+07:00:48 thm:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt: accepted, waiting on the compiler
+07:00:48 submitting thm:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt (attempt 1)
+07:00:49 thm:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt: accepted, waiting on the compiler
+07:00:50 submitting thm:BookProof_ChapterStoneSeparable_stone_exists_unique_group (attempt 1)
+07:00:50 thm:BookProof_ChapterStoneSeparable_stone_exists_unique_group: title clamped to 179 chars (server limit 200)
+07:00:51 thm:BookProof_ChapterStoneSeparable_stone_exists_unique_group: accepted, waiting on the compiler
+07:00:51 submitting thm:BookProof_ChapterStoneSeparable_stone_exists_unique_generator (attempt 1)
+07:00:51 thm:BookProof_ChapterStoneSeparable_stone_exists_unique_generator: accepted, waiting on the compiler
+07:00:52 submitting thm:BookProof_ChapterStoneSeparable_mulSA_position_unbounded (attempt 1)
+07:00:53 thm:BookProof_ChapterStoneSeparable_mulSA_position_unbounded: accepted, waiting on the compiler
+07:00:53 submitting thm:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup (attempt 1)
+07:00:53 thm:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup: title clamped to 179 chars (server limit 200)
+07:00:54 thm:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup: accepted, waiting on the compiler
+07:00:54 submitting thm:BookProof_ChapterStoneSeparable_stoneU_mulSA (attempt 1)
+07:00:55 thm:BookProof_ChapterStoneSeparable_stoneU_mulSA: accepted, waiting on the compiler
+07:01:26 thm:BookProof_ChapterStoneSeparable_stone_exists_unique_generator: DONE
+07:01:36 thm:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt: DONE
+07:01:37 thm:BookProof_ChapterStoneSeparable_stoneU_mulSA: DONE
+07:01:46 thm:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt: DONE
+07:01:46 thm:BookProof_ChapterStoneSeparable_stone_exists_unique_group: DONE
+07:01:46 thm:BookProof_ChapterStoneSeparable_mulSA_position_unbounded: DONE
+07:01:47 thm:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup: DONE
+07:01:47 summary: 6852 done, 2883 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+07:01:47 chunk: 7 item(s) resolved in 60s
+07:01:56 sync: read 1189 definition publish job(s)
+07:02:42 sync: read 11541 problem publish job(s)
+07:03:15 sync: read 1189 definition publish job(s)
+07:04:00 sync: read 11541 problem publish job(s)
+07:04:00 submitting sol:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt (attempt 1)
+07:04:02 sol:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt: accepted, waiting on the compiler
+07:04:02 submitting sol:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt (attempt 1)
+07:04:03 sol:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt: accepted, waiting on the compiler
+07:04:03 submitting sol:BookProof_ChapterStoneSeparable_stone_exists_unique_group (attempt 1)
+07:04:04 sol:BookProof_ChapterStoneSeparable_stone_exists_unique_group: accepted, waiting on the compiler
+07:04:04 submitting sol:BookProof_ChapterStoneSeparable_stone_exists_unique_generator (attempt 1)
+07:04:05 sol:BookProof_ChapterStoneSeparable_stone_exists_unique_generator: accepted, waiting on the compiler
+07:04:06 submitting sol:BookProof_ChapterStoneSeparable_mulSA_position_unbounded (attempt 1)
+07:04:07 sol:BookProof_ChapterStoneSeparable_mulSA_position_unbounded: accepted, waiting on the compiler
+07:04:07 submitting sol:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup (attempt 1)
+07:04:08 sol:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup: accepted, waiting on the compiler
+07:04:08 submitting sol:BookProof_ChapterStoneSeparable_stoneU_mulSA (attempt 1)
+07:04:09 sol:BookProof_ChapterStoneSeparable_stoneU_mulSA: accepted, waiting on the compiler
+07:05:30 sol:BookProof_ChapterStoneSeparable_eq_stoneU_of_hasDerivAt: DONE
+07:05:31 sol:BookProof_ChapterStoneSeparable_mulSA_position_unbounded: DONE
+07:05:40 sol:BookProof_ChapterStoneSeparable_gen_eq_of_hasDerivAt: DONE
+07:05:50 sol:BookProof_ChapterStoneSeparable_hasDerivAt_phaseGroup: DONE
+07:05:58 sol:BookProof_ChapterStoneSeparable_stone_exists_unique_group: DONE
+07:05:59 sol:BookProof_ChapterStoneSeparable_stone_exists_unique_generator: DONE
+07:06:16 sol:BookProof_ChapterStoneSeparable_stoneU_mulSA: DONE
+07:06:16 summary: 6584 done, 3176 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+07:06:16 chunk: 7 item(s) resolved in 136s
+07:06:25 sync: read 1189 definition publish job(s)
+07:07:09 sync: read 11541 problem publish job(s)
+07:10:37 sync: read 1189 definition publish job(s)
+07:11:21 sync: read 11541 problem publish job(s)
+07:13:02 sync: read 1189 definition publish job(s)
+07:13:47 sync: read 11541 problem publish job(s)
+07:15:24 sync: read 1189 definition publish job(s)
+07:16:11 sync: read 11541 problem publish job(s)

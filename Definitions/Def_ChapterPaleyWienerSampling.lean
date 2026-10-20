@@ -33,6 +33,22 @@ integrable, and its Fourier transform `𝓕 f` vanishes outside the band `|ξ| �
 Everything is `sorry`-free and uses only the standard axioms.
 -/
 
+namespace BookProof.ChapterPaleyWienerSampling
+
+open MeasureTheory Complex AddCircle Set
+open scoped Real FourierTransform
+open BookProof.ChapterShannonSampling (sinc bandSignal exists_rep half_add_period)
+
+/-- A *band-limited function of bandwidth `T`*: a continuous integrable function on the line
+whose Fourier transform vanishes outside the band `|ξ| ≤ T/2`. -/
+structure BandLimited (T : ℝ) (f : ℝ → ℂ) : Prop where
+  /-- The function is continuous. -/
+  continuous : Continuous f
+  /-- The function is integrable, so that its Fourier transform is defined. -/
+  integrable : Integrable f
+  /-- The Fourier transform vanishes outside the band. -/
+  spectrum_support : ∀ ξ : ℝ, T / 2 < |ξ| → 𝓕 f ξ = 0
+
 namespace BandLimited
 
 variable {T : ℝ} {f g : ℝ → ℂ}

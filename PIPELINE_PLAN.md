@@ -10063,3 +10063,343 @@ Verification: `regate_bundles` OK; `blocked_by=None`,
 (TAG=drain68) submits it.  Published + Proved it flips the next links of the
 `ChapterQgFourierElimination`/`QgContinuum...` chains toward the other 13
 unpublished def roots.
+
+# §2.65 — 19 Oct — published def BODIES are immutable: 7 empty def bundles stall 422 thms / 421 sols; drain exhausts at +12
+
+## Where the plan stands (measured 19 Oct, `--check` / `--status`)
+
+- plan **20388** items (689 defs, 9841 thms, 9841 sols); state **13964 done /
+  6221 pending / 2 failed / 200 parked** (3 orphans ignored).
+- pending by kind: `sol 3216, thm 2895, def 110`.
+- publish-jobs history: `definition` **583 PUBLISHED / 596 FAILED**;
+  `problem` **6851 PUBLISHED / 4678 FAILED**.
+- skill/platform version: **0.12.6 vs 0.13.0** — the cached skill is stale;
+  `git tag` tops out at `v0.9.9`, so the self-check's `git pull --tags` cannot
+  close the gap.  Recorded, not acted on.
+
+## The sol fix-queue census (`debug/sol_fix_queue.py`, cached verdicts)
+
+Of **2851** pending sols with a local source:
+
+| class | n | actionability |
+|---|---:|---|
+| `pub-sib` | 1505 | publication gate (needs sibling thm) |
+| `pub-def` | 768 | publication gate (needs def) |
+| `SUBMIT` | 316 | guard defers nothing |
+| `miss-ident` | 100 | **real defect** |
+| `other-defect` | 109 | mixed; many are `offline mirror:` artifacts |
+| `goals` | 31 | **real defect** |
+| `miss-namespace` | 20 | **real defect** (§2.65 root below) |
+| `miss-const` | 2 | **real defect** |
+
+277 sols have their OWN target thm already published (`thm:done` +
+`theorem_id` + local file) — that is the user's "failed sol submissions"
+set.  **267 of the 277 FAIL the cached offline check**, only 10 are `ok`.
+So the sol backlog is not a submission-throughput problem: it is gated.
+
+## Root cause: 275 published definitions carry fewer decls than local; 7 are empty shells
+
+Comparing `/tmp/published_mirror/Definitions/*.lean` against the local
+`Definitions/*.lean` by declaration count.  **Correction (same day):** the
+first pass of this census counted only `def|abbrev|instance|structure|
+inductive|class` and reported 14; including `theorem` the number is **275
+published defs carry fewer declarations than the local source**, of which **7
+publish zero**.  The mirror itself is trustworthy: cross-checked against
+`GET /theorems/:id` `definition` for the top 12 offenders, **mirror == live on
+12/12**.
+
+**Read the 275 as an upper bound.** Part of that delta is by design — a
+chapter source is split into a def bundle plus `Theorems/Thm_*` stubs, so
+defs legitimately shed theorems that were extracted into Thm modules.  The
+unambiguous floor is the **7 empty ones**, which lose *everything* and which
+the live API confirms (e.g. `ChapterFockWeightedSchurEsa` live decls = 0).
+
+The 7 that publish **zero** declarations:
+
+| definition | pub decls | loc decls | pub lines | loc lines | thms (done) | sols (done) |
+|---|---:|---:|---:|---:|---:|---:|
+| `ChapterCarlemanTwoStep` | 0 | 9 | 9 | 208 | 139 (1) | 139 (0) |
+| `ChapterCarlemanSimplex` | 0 | 13 | 16 | 311 | 71 (1) | 70 (0) |
+| `ChapterModeQuadraticEsa` | 0 | 6 | 16 | 484 | 60 (1) | 60 (0) |
+| `ChapterFockWeightedSchurEsa` | 0 | 8 | 9 | 851 | 53 (0) | 53 (0) |
+| `ChapterQgTimeIndependentFlow` | 0 | 2 | 9 | 149 | 50 (0) | 50 (0) |
+| `ChapterGradedBandSchurEsa` | 0 | 1 | 15 | 162 | 27 (0) | 27 (0) |
+| `ChapterQgBrstDerivativeGauge` | 0 | 7 | 9 | 239 | 22 (0) | 22 (0) |
+| **total** | | | | | **422 (3)** | **421 (0)** |
+
+The other rows in the original 14-row pass were partial under the `def`-only
+count (`ChapterCarlemanUnboundedHop` 8/38, `ChapterStrichartzWave` 10/27,
+`ChapterNavierStokesLagrangianKatoRellich` 5/10, `ChapterNavierStokesLagrangianEsa`
+13/15, `ChapterHermiteQuadraticEsa` 2/3, `ChapterShiftedQuadraticEsa` 7/8,
+`ChapterYangMillsAbelianNoGap` 7/8).  Two concrete cases beyond the empty 7,
+both live-verified at `pub=3` / `pub=2` decls against `loc=51` / `loc=20`:
+`ChapterHermiteBandCalculusHigher` (179 published lines vs 448 local) and
+`ChapterHermiteBandCalculus` (180 vs 510).  These two are the reason
+`Sol_BookProof_HermiteBandHigher_IsBandR_add/_smul` fail with
+`Unknown constant \`BookProof.HermiteBand.Band.add\``: the published bundle
+never defines `BookProof.HermiteBandHigher.Band`, so `Band.add` resolves
+across to the *lower* `BookProof.HermiteBand.Band`, which is a plain `def`
+with no `add` field.
+
+**Total direct dependents of the empty 7: 422 thms and 421 sols
+(3 thms done, 0 sols done).**  Direct dependents of the original 14-name
+set are 1215 thms / 1054 sols.
+
+The published shell is a generated placeholder — either the 16-line form with
+the literal marker `-- Definitions to be added from source chapter`, or the
+9-line form without it (so a marker-only grep undercounts: 2 vs the real 7).
+It also declares `namespace BookProof.Chapter<X>` where the local source
+declares `BookProof.<X>`, which is why the failures surface as
+`unknown namespace \`BookProof.CarlemanSimplex\`` rather than as a missing
+import.  Namespace census over the mirror: 544/578 identical to local, 6
+published with no namespace at all, 23 differing.
+
+## Why the pipeline never noticed: the `reused: true` short-circuit
+
+`upload_pipeline.py` def submit path (`~line 812`):
+
+```python
+existing_id = _find_definition_node(chapter)
+if existing_id:
+    st["items"][item] = {"status": "done", "def_id": existing_id, "reused": True}
+    return None
+```
+
+The node pre-exists (a wave script published the shells early), so the def is
+marked `done` **without ever POSTing the real `body`** — which is read into
+`body` one line earlier and then discarded.  Both offenders carry
+`"reused": true, "reused_status": "published", "synced_from": "publish-jobs"`,
+so `--status` reports them healthy.  A `done` def whose published body has
+zero declarations is invisible to every current check.
+
+## A definition body cannot be replaced — all three routes verified
+
+1. `PATCH /theorems/:id {"definition": ...}` →
+   `{"error": "Unknown field(s): definition. Allowed: natural_language_statement, theorem_title, source, tags, deprecated, reason"}`
+2. `POST /submit-definition` with the same `definition_name` →
+   `{"error": "A theorem or definition with name \"ChapterCarlemanSimplex\" already exists"}`
+3. `PATCH {deprecated:true}` **then** resubmit the same name → same
+   `already exists`; deprecation does not free the name.  (State restored,
+   `deprecated:false` sent, node verified back to its pre-test condition.)
+
+So this is the def-side twin of §2.64's parked decision: the documented remedy
+is retire-and-replace under a **new** `definition_name`, which forces a
+rewrite of every downstream `import Definitions.Def_<old>` — here across ~843
+files (422 thms + 421 sols) for the empty 7 alone.  **Parked, user decision**
+(§2.64 parked the 58-node statement twin).
+
+## Drain result this session
+
+`debug/drain_now.sh` (TAG=drain20, LOOPS=60) ran to natural exhaustion:
+**`DRAIN DONE`, done 13964 → 13976 (+12)**, then `no progress in a full round,
+stopping`.  Round 3 already read `thm uploadable=0` and the one ready def
+WAITed on `theorem dependency not proved yet`.  That is the expected symptom
+of the cascade above — throughput is not the binding constraint.
+
+Cosmetic: `drain_now.sh: line 49: [: : integer expression expected` fires on
+round 1 because `last` starts empty and is compared with `-eq` before the
+`i -gt 1` guard short-circuits.  Harmless (round 2 follows), but the guard
+order should be swapped.
+
+## Next actions (ordered)
+
+1. **User decision** on retire-and-replace for the 7 empty def bodies (or a
+   platform-side body-update endpoint) — nothing downstream of them moves first.
+2. Independent of that decision, work the 153 pure proof defects
+   (`miss-ident` 100 + `goals` 31 + `miss-namespace` 20 + `miss-const` 2).
+   All 20 `miss-namespace` are Carleman/KatoRellich and are already explained
+   by the empty/wrong-namespace def bodies, so the genuinely open set is ~135
+   (`miss-ident` + `goals` + `miss-const`).
+3. Re-run `sol_fix_queue.py` after each fix batch; its `stale-verdict` column
+   (currently 0 everywhere) is the signal that a cached verdict is trustworthy.
+
+# §2.66 — 19 Oct (afternoon) — the miss-ident class is a missing `open`, not a missing import: 19 sols fixed and uploaded
+
+## Diagnosis
+
+Of the 2851 pending sols, `sol_fix_queue.py` classifies **100 as `miss-ident`**
+(`Unknown identifier X`).  The obvious hypothesis — a dropped sibling import —
+is wrong for most of them, and `debug/resolve_miss_ident.py` proves it:
+
+| class | n |
+|---|---:|
+| defining module **not published** | 39 |
+| no local module declares the id at all | 26 |
+| fixable by import | 22 |
+| several candidate modules | 13 |
+
+The real mechanism for the fixable set: the platform Thm node declares the
+name **fully qualified** (`theorem BookProof.ChapterSoftmaxOrder.scoreSoftmax_pos`)
+and sits in no `namespace` block, while the generated sol references the bare
+`scoreSoftmax_pos` — and the sol imports the Thm module but never `open`s its
+namespace.  So the import is *already there* and the failure is a scope
+failure.  On 18 of the 22 the import was present all along.
+
+## Fix (`debug/fix_sol_opens.py`)
+
+For each miss-ident sol: resolve every unknown identifier to its declaring
+module and the qualifier of its resolved name, then add the smallest fix —
+`open <namespace>` and/or `import <module>` — under hard safety rules:
+
+- never import/depend on the sol's **own** target theorem (SKILL rule 2);
+- never duplicate an import;
+- only `need-open` / `need-import` / `import+open` classes are ever written;
+- backup `Solutions/Sol_<slug>.lean.bak_openfix` first, and a file that already
+  has one is skipped, so re-runs are idempotent.
+
+Result: **18 `need-open`, 3 `need-import`, 1 `import+open`, 78 blocked, 0
+own-target violations**; 22 files edited.
+
+Two traps in writing it, both caught before any file was touched:
+
+- `open` only affects declarations **after** it, so appending it at end of file
+  is a silent no-op — it must land with the file's other opens;
+- a fully-qualified declaration (`theorem A.B.c`) has no enclosing `namespace`
+  block, so the namespace to open must be derived from the *resolved name*,
+  not from a block scan;
+- `open A` does **not** expose `A.B.c` as bare `c` (only `open A.B` does), so
+  the "already open" check must be an exact match, and `open ... in` /
+  `open scoped` must be ignored.
+
+## Verification before upload
+
+`debug/check_sol_local.py --from-file` against `/tmp/published_mirror`:
+**17/22 OK**.  The 5 failures split:
+
+- **2 genuine** — reverted from `.bak_openfix`: `ChapterEntropyTemperature_…`
+  (the added import made a term *Ambiguous*) and
+  `NavierStokesFlow_matrixFlow_commute_of_commute` (a second identifier was
+  still unknown, so the import did not address it);
+- **3 local mirror artifacts** (§2.36 class): `object file … does not exist`
+  for the Thm just imported — mirror has source but no olean
+  (`…_irreducible_iff_no_conj_subsystem`), or no source at all
+  (`…_velocityOp_isSelfAdjoint`); ledger says both are `done` on the platform.
+
+Offline verdicts then refreshed for the 20 survivors with
+`check_pending_offline.py --kind sol --only …` (verified it *merges* —
+`items = dict(orig); items.update(res)` plus an atomic rename — so a scoped run
+cannot clobber the 7.4k cached verdicts): **19 ok, 1 FAIL**.  The FAIL is
+`NavierStokesFlow_FullEsa_latticeAdvectionCLM_isSelfAdjoint`, whose statement
+module `Thm_…_velocityOp_isSelfAdjoint` itself fails with
+`Unknown identifier \`LinfZ\`` — a statement-side defect, not a sol defect.
+
+## Upload
+
+`drain_sol.sh LIST=/tmp/fixed20.txt TAG=fix20` → **19/19 DONE in 8 s, 0 FAIL /
+0 WAIT / 0 park**; round 2 found nothing left and stopped.  Ledger:
+**13964 → 13992 done, 6221 → 6193 pending** (the `+12` from this morning's
+drain20 run is included in that delta).  Direct check: 19 of the 20 fixed slugs
+read `status: done`; the 20th is the statement-defective one above.
+
+## Tooling added this session
+
+| script | purpose |
+|---|---|
+| `debug/resolve_miss_ident.py` | map each unknown identifier → declaring module + publish status |
+| `debug/fix_sol_opens.py` | add the minimal `open`/`import` under the safety rules |
+| `debug/add_missing_imports.py` | import-only variant (4 candidates, subsumed by the above) |
+
+All three read `/tmp/fixq_miss-ident.txt` (regenerate with `sol_fix_queue.py`).
+
+# §2.67 — 19 Oct (evening) — V2 republish attempt: approved, executed, blocked at the unpublished roots; closure measured at 111 defs
+
+## Decision taken
+
+Surfaceed and answered: the 7 empty def bodies are immutable (§2.65), so the
+course of action chosen was **republish under new `definition_name`s** and
+rewrite downstream imports.  Executed, and it failed — in a way that is itself
+the useful measurement.
+
+## What was submitted
+
+All 7 bodies posted as `<Name>V2`, with their cross-imports among the seven
+rewritten to `V2` first so each body sees the real sibling:
+
+| job | result |
+|---|---|
+| `ChapterCarlemanSimplexV2` | FAILED — `unknown import: Def_ChapterCarlemanTwoStepV2` (ordering) |
+| `ChapterModeQuadraticEsaV2` | FAILED — `unknown import: Def_ChapterCarlemanTwoStepV2` (ordering) |
+| `ChapterGradedBandSchurEsaV2` | FAILED — `unknown import: Def_ChapterFockWeightedSchurEsaV2` (ordering) |
+| `ChapterFockWeightedSchurEsaV2` | FAILED — `unknown import: Def_ChapterFockSchurEsa` (**never published**) |
+| `ChapterQgBrstDerivativeGaugeV2` | FAILED — `unknown import: Def_ChapterQgContinuumModeInstance` (**never published**) |
+| `ChapterQgTimeIndependentFlowV2` | FAILED — `unknown import: Def_ChapterSirkSingleTimeShift` (**never published**) |
+| `ChapterCarlemanTwoStepV2` | FAILED — **real**: `Unknown identifier \`mem_cube\`` + 2 `unsolved goals` |
+
+`0/7 published`.  Failed publish jobs consume no attempts for definitions.
+
+## The `mem_cube` error is a third partial body, not a bug in our edit
+
+`Def_ChapterCarlemanTwoStep.lean` *does* `open BookProof.HermiteCarleman` (line
+48) and imports `Def_ChapterHermiteCarlemanEsa`.  The node is `done` in the
+ledger but its **stored body has 8 declarations vs 27 local, and does not
+contain `mem_cube` at all** — so `rw [innK, Finset.mem_filter, mem_cube]` has
+nothing to rewrite with and the goals survive.  Ledger status is therefore
+*not* evidence that a def body is complete.
+
+`ChapterHermiteCarlemanEsaV2` was then submitted → also FAILED:
+`unknown import: Definitions.Def_ChapterQuadratureEsa`.  The chain does not
+bottom out at the V2 nodes; it bottoms out at **unpublished roots**.
+
+## Scope, measured
+
+BFS over local `Definitions` imports starting from the 7 empty bodies,
+classifying each node by ledger status and by mirror health
+(`decls(published) >= decls(local)`):
+
+| ledger status | health | n |
+|---|---|---:|
+| `done` | **partial** | **71** |
+| `done` | full | 30 |
+| `pending` | not published | 10 |
+| | **closure total** | **111** |
+
+So the approved rename campaign is ~**71 recoveries + 10 first publishes** in
+dependency order, not 7.  (71 is an upper bound — some delta is the intended
+extraction of theorems into `Thm_*` modules; the unambiguous floor is the 7
+empty ones plus the 8 decls lost from `HermiteCarlemanEsa`.)
+
+The 10 unpublished roots are exactly the defs the pipeline's `next:` queue
+already surfaces; all 10 are blocked by their own **local candidate-build**
+failure against the published mirror, e.g.
+
+- `Def_ChapterScalaronOuterFockFL.lean:69:8` `Unknown identifier …`
+- `Def_ChapterFockSchurEsa.lean:122:53` `Unknown identifier \`support…\``
+  (the `support_up` / `up_apply'` / `ndeg_eq_sum` family, which live in the
+  partial `Def_ChapterFockSecondQuantization`)
+
+i.e. the same defect class one level down, not a new one.
+
+## Where this leaves the campaign
+
+The rename mechanism is validated (the API accepts the new names; ordering and
+missing-dep errors are precise and actionable).  What it needs is a
+**bottom-up pass**: recover/publish the 10 roots, then the partial parents, then
+the 7 targets, then rewrite downstream `import Definitions.Def_*` lines.  That
+is the same operation §2.64 performed successfully on one root, with the
+machinery already written (`debug/heal_def_missing_imports.py`,
+`regate_bundles.py`).  **Not started — sized, and surfaced for a decision.**
+
+Downstream fan-out is the reason to decide rather than charge in: the 14-name
+subset measured in §2.65 already carries 1215 thms / 1054 sols as direct
+dependents; 71 names will reach most of the plan's 9841 thms / 9841 sols.
+
+## Worked the root chain three levels deep (same defect each time)
+
+`debug/check_def_local.py` gives the untruncated error the pipeline truncates
+to ~60 chars.  Traced bottom-up:
+
+1. `def:ChapterQuadratureEsa` (pending) → guard defer:
+   `waiting on unpublished def bundle(s): ChapterNavierStokesSignFlip`.
+2. `def:ChapterNavierStokesSignFlip` (pending, the true root) → candidate build
+   `343:7: Unknown identifier \`affH_essentiallySelfAdjointOn_core\``.
+   Its import list is intact and the transitive path exists
+   (`SignFlip → AffineBlockEsa → Def_ChapterNavierStokesAffineFiberEsa`), and
+   the mirror *source* even mentions the name — but **only at line 72, inside a
+   doc comment**.  The declaration lives at local line 338 and is absent from
+   the published copy (mirror 365 lines vs local 486).
+3. So level 3 is `def:ChapterNavierStokesAffineFiberEsa` — `done` in the ledger,
+   body incomplete.  Same class as `ChapterHermiteCarlemanEsa` in §2.67 above.
+
+Every level reproduces the identical defect: **ledger `done` with a body that
+is missing declarations the local source has.**  The recovery is therefore
+genuinely bottom-up and cannot be shortcut by publishing only the 7 targets.

@@ -16,6 +16,8 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_esa_self
 
 
 /-!

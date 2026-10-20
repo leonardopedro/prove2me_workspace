@@ -84,6 +84,15 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.QgOuterFockInteractionFL
 
+open Finset MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.QgHermiteOscillator BookProof.FarisLavine
+open BookProof.DirectSumEsa
+open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockFullFL
+open BookProof.Qg3DGaugeEsa BookProof.QuantumGravity3DGauge
+open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
+
 noncomputable section
 
 /-- **A uniform family of kinetic-plus-squares Hamiltonians on the outer Fock sectors.**
@@ -144,7 +153,7 @@ def secHam (n : ℕ) : polyGaussCore (d := n * 84) →ₗ[ℂ] L2d (n * 84) :=
 
 /-- **The relative bound**, with a constant uniform in the particle number. -/
 theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := n * 84)) :
-    ‖F.secHam n u‖ ≤ F.flK * ‖harmCore u + (u : L2d (n * 84))‖ := by
+    ‖F.secHam n u‖ ≤ F.flK * ‖QgHermiteOscillator.harmCore u + (u : L2d (n * 84))‖ := by
   have hB : ∀ x : Vd (n * 84), potFun (F.vv n) x ≤ (F.a * F.b / 2) * ‖x‖ ^ 2 :=
     fun x => potFun_le_of_schur F.a_nonneg (F.row_le n) (F.col_le n) x
   have hB0 : (0 : ℝ) ≤ F.a * F.b / 2 := by
@@ -159,7 +168,7 @@ theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := n * 84)) :
 
 /-- **The Hamiltonian of the family on the finite-particle core of the outer Fock
 space.** -/
-def outerHam : qgOuterCore →ₗ[ℂ] qgOuterFock := dsOp (fun n : ℕ => F.secHam n)
+def outerHam : qgOuterCore →ₗ[ℂ] QgOuterFock.qgOuterFock := dsOp (fun n : ℕ => F.secHam n)
 
 
 

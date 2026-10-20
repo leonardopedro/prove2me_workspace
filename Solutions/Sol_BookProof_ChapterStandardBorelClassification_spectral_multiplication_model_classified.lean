@@ -1,7 +1,7 @@
 -- Generated from ChapterStandardBorelClassification.lean — solution of BookProof.ChapterStandardBorelClassification.spectral_multiplication_model_classified
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
-import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general
+import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Definitions.Def_ChapterAtomicDiagonalModel
 import Definitions.Def_ChapterLinftyMultiplication
@@ -37,7 +37,7 @@ theorem solution (T : H →L[ℂ] H) (hT : IsStarNormal T) :
         V x (mulRep (mu x) (coordFn T) u) = T (V x u)) ∧
       (∀ x : S, ∃ _ : IsProbabilityMeasure (mu x), RealizesStandardType (mu x)) := by
 
-  obtain ⟨S, mu, V, hprob, hsum, hint⟩ := spectral_multiplication_model_general T hT
+  obtain ⟨S, mu, V, hprob, hsum, hint⟩ := spectral_multiplication_model_general_inc T hT
   refine ⟨S, mu, V, hprob, hsum, hint, fun x => ?_⟩
   haveI := hprob x
   exact ⟨hprob x, standardBorel_classification_list (mu x)⟩

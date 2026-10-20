@@ -35,7 +35,8 @@ variable {d : ℕ}
 
 theorem BookProof.HermiteQuadraticEsa.harmonic_add_subquadratic_essentiallySelfAdjoint {V : Vd d → ℝ} {a b : ℝ}
     (hVc : Continuous V) (ha : 0 ≤ a) (ha1 : a < 1) (hb : 0 ≤ b)
-    (hV : ∀ x, |V x| ≤ a * harmW x + b)
-    (hsc : Continuous fun x => harmW x + V x) (hsb : ExpBounded fun x => harmW x + V x) :
+    (hV : ∀ x, |V x| ≤ a * QgHermiteOscillator.harmW x + b)
+    (hsc : Continuous fun x => QgHermiteOscillator.harmW x + V x)
+    (hsb : ExpBounded fun x => QgHermiteOscillator.harmW x + V x) :
     EssentiallySelfAdjointOn (polyGaussCore (d := d))
-      (hamCore (fun x => harmW x + V x) hsc hsb) := by sorry
+      (hamCore (fun x => QgHermiteOscillator.harmW x + V x) hsc hsb) := by sorry

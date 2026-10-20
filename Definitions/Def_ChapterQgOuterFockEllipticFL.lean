@@ -25,6 +25,8 @@ import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
 
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_esa_self
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_isPositiveSelfAdjointExtension
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsExtension
@@ -333,7 +335,7 @@ def sectorPosSym {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) (n : ℕ) 
 
 /-- The full gravity Hamiltonian of a signature on the finite-particle core of the outer
 Fock space. -/
-def outerHam (kappa : Fin 84 → ℝ) : qgOuterCore →ₗ[ℂ] qgOuterFock :=
+def outerHam (kappa : Fin 84 → ℝ) : qgOuterCore →ₗ[ℂ] QgOuterFock.qgOuterFock :=
   dsOp fun n : ℕ => sectorHam kappa n
 
 set_option maxHeartbeats 1200000 in
@@ -344,7 +346,7 @@ theorem outerHam_qgKappa : outerHam qgKappa = qgOuterHam :=
 /-- **The lifted Friedrichs comparison operator of the gravity Hamiltonian itself**, for a
 nonnegative signature: the Friedrichs extension of the positive `n`-particle operator,
 lifted to the outer Fock space. -/
-def outerComparison {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) : Comparison qgOuterFock :=
+def outerComparison {kappa : Fin 84 → ℝ} (hk : ∀ j, 0 ≤ kappa j) : Comparison QgOuterFock.qgOuterFock :=
   dsFriedComparison (fun n : ℕ => sectorPosSym hk n) fun _ => polyGaussCore_dense
 
 /-- **Essential self-adjointness on the outer Fock space, by Faris–Lavine.** -/
@@ -365,17 +367,17 @@ theorem outer_isPositiveSelfAdjointExtension {kappa : Fin 84 → ℝ} (hk : ∀ 
 
 /-- The elliptic-signature gravity Hamiltonian on the finite-particle core of the outer
 Fock space. -/
-def qgOuterEllipticHam : qgOuterCore →ₗ[ℂ] qgOuterFock := outerHam qgKappaElliptic
+def qgOuterEllipticHam : qgOuterCore →ₗ[ℂ] QgOuterFock.qgOuterFock := outerHam qgKappaElliptic
 
 /-- The lifted Friedrichs comparison operator of the elliptic gravity Hamiltonian. -/
-def qgOuterEllipticComparison : Comparison qgOuterFock :=
+def qgOuterEllipticComparison : Comparison QgOuterFock.qgOuterFock :=
   outerComparison qgKappaElliptic_nonneg
 
 /-- The domain of the lifted operator. -/
-abbrev qgOuterEllipticDom : Submodule ℂ qgOuterFock := qgOuterEllipticComparison.dom
+abbrev qgOuterEllipticDom : Submodule ℂ QgOuterFock.qgOuterFock := qgOuterEllipticComparison.dom
 
 /-- The lifted elliptic gravity Hamiltonian on the outer Fock space. -/
-abbrev qgOuterEllipticH : qgOuterEllipticDom →ₗ[ℂ] qgOuterFock := qgOuterEllipticComparison.op
+abbrev qgOuterEllipticH : qgOuterEllipticDom →ₗ[ℂ] QgOuterFock.qgOuterFock := qgOuterEllipticComparison.op
 
 set_option maxHeartbeats 1200000 in
 -- the Friedrichs domains are ranges of completion-built resolvents: defeq checks are costly

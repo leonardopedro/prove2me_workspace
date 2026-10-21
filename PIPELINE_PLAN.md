@@ -10775,3 +10775,27 @@ goals30 / other-defect97.  `resolve_miss_ident` classified the76:
 35 blocked-unpublished-module,26 not-found (real content drift — incl. the5
 SolidHarmonic ORIGINALS whose false nodes can never verify),11 ambiguous,
 2 FIXABLE-import (both applied),2 unparsed.
+
+**Closing state (drain22c, ~16:37)**:
+- drain22c: re-seeded7 `_inc` thms DONE (32s) + their7 sols DONE — the full
+  SolidHarmonic5 + MajoranaProp61 `_inc` set is now live.  Session totals on
+  the platform: **27 thms published +30 sols Proved** (drain22b:20 thm +23
+  sol incl. separable + the2 import fixes; drain22c:7 +7).
+- The5 SolidHarmonic ORIGINAL sols parked (`false statement … solved instead
+  by <name>_inc`) — their nodes are published-but-false, so no sol can ever
+  verify against them.
+- miss-namespace18 are all Carleman* — every sol already `open`s the right
+  namespace, so the real gap is the **§2.67 partial def body** (the bundle
+  dropped the decls; `Def_ChapterCarlemanTwoStep` has8 vs27 local decls).
+  Blocked on the bottom-up def-recovery campaign, not sol-fixable.
+- `/tmp/thm_unblock.txt` (3 oracle-ok thms blocking ready sols: ChapterF3 ×2,
+  SolovayCoordinates_tailTensorEquiv_map) uploaded as a one-shot chunk.
+
+**NEXT (ordered)**:
+1. gate+publish the defining thm stubs of the35
+   `blocked-unpublished-module` sols (same twin/gate/drain pattern as USM);
+2. the30 `goals` sols (real proof drift, per-sol CE in `/tmp/fixq_goals.txt`);
+3. §2.67 def-recovery (653 `pub-def` sols blocked; roots + partial parents —
+   decision surfaced in §2.67, not started);
+4. `Def_ChapterHermiteRelativeBound` content bug (unknown `pgFun_add` /
+   `posOp_apply_eq_mul`, `/tmp/hrb.log`) still blocks the republish chain.

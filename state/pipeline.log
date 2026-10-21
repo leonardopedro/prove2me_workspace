@@ -300499,3 +300499,114 @@ line 37: Unknown identifier `genY2)
 16:14:31 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
 16:14:31 chunk: 0 item(s) resolved in 11s
 16:22:24 sync: read 1205 definition publish job(s)
+16:23:18 sync: read 11729 problem publish job(s)
+16:23:58 sync: read 1205 definition publish job(s)
+16:24:53 sync: read 11729 problem publish job(s)
+16:24:53 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+16:24:58 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+16:24:58 submitting def:ChapterSqSumOuterFamily (attempt 1)
+16:25:03 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+16:25:03 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:25:03 chunk: 0 item(s) resolved in 10s
+16:25:14 sync: read 1205 definition publish job(s)
+16:26:05 sync: read 11729 problem publish job(s)
+16:26:05 submitting thm:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc (attempt 1)
+16:26:06 thm:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc: accepted, waiting on the compiler
+16:26:06 submitting thm:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc (attempt 1)
+16:26:07 thm:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc: accepted, waiting on the compiler
+16:26:07 submitting thm:BookProof_ChapterSolidHarmonic_norm_spherePt_inc (attempt 1)
+16:26:08 thm:BookProof_ChapterSolidHarmonic_norm_spherePt_inc: accepted, waiting on the compiler
+16:26:08 submitting thm:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc (attempt 1)
+16:26:09 thm:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc: title clamped to 171 chars (server limit 200)
+16:26:09 thm:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc: accepted, waiting on the compiler
+16:26:09 submitting thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc (attempt 1)
+16:26:10 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc: accepted, waiting on the compiler
+16:26:10 submitting thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc (attempt 1)
+16:26:11 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc: accepted, waiting on the compiler
+16:26:11 submitting thm:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc (attempt 1)
+16:26:12 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc: accepted, waiting on the compiler
+16:26:34 thm:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc: DONE
+16:26:34 thm:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc: DONE
+16:26:35 thm:BookProof_ChapterSolidHarmonic_norm_spherePt_inc: DONE
+16:26:35 thm:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc: DONE
+16:26:36 thm:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc: DONE
+16:26:36 thm:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc: DONE
+16:26:37 thm:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc: DONE
+16:26:37 summary: 7012 done, 2730 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:26:37 chunk: 7 item(s) resolved in 32s
+16:26:49 sync: read 1205 definition publish job(s)
+16:27:44 sync: read 11736 problem publish job(s)
+16:28:21 sync: read 1205 definition publish job(s)
+16:29:10 sync: read 11736 problem publish job(s)
+16:29:10 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+16:29:16 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+16:29:16 submitting def:ChapterSqSumOuterFamily (attempt 1)
+16:29:25 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+16:29:25 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:29:25 chunk: 0 item(s) resolved in 14s
+16:29:36 sync: read 1205 definition publish job(s)
+16:30:35 sync: read 11736 problem publish job(s)
+16:30:35 submitting sol:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc (attempt 1)
+16:30:36 sol:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc: accepted, waiting on the compiler
+16:30:36 submitting sol:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc (attempt 1)
+16:30:38 sol:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc: accepted, waiting on the compiler
+16:30:38 submitting sol:BookProof_ChapterSolidHarmonic_norm_spherePt_inc (attempt 1)
+16:30:39 sol:BookProof_ChapterSolidHarmonic_norm_spherePt_inc: accepted, waiting on the compiler
+16:30:39 submitting sol:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc (attempt 1)
+16:30:41 sol:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc: accepted, waiting on the compiler
+16:30:41 submitting sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc (attempt 1)
+16:30:42 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc: accepted, waiting on the compiler
+16:30:42 submitting sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc (attempt 1)
+16:30:43 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc: accepted, waiting on the compiler
+16:30:43 submitting sol:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc (attempt 1)
+16:30:44 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc: accepted, waiting on the compiler
+16:31:48 sol:BookProof_ChapterSolidHarmonic_inner_v_spherePt_inc: DONE
+16:31:58 sol:BookProof_ChapterSolidHarmonic_inner_e_spherePt_inc: DONE
+16:32:08 sol:BookProof_ChapterSolidHarmonic_norm_spherePt_inc: DONE
+16:32:09 sol:BookProof_ChapterSolidHarmonic_solidHarmonic_spherical_inc: DONE
+16:32:19 sol:BookProof_ChapterMajoranaProp61_prop61_isUnit_inc: DONE
+16:32:28 sol:BookProof_ChapterMajoranaProp61_prop61_star_mul_self_inc: DONE
+16:32:28 sol:BookProof_ChapterMajoranaProp61_prop61_mul_star_self_inc: DONE
+16:32:28 summary: 6750 done, 3018 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:32:28 chunk: 7 item(s) resolved in 113s
+16:32:41 sync: read 1205 definition publish job(s)
+16:33:34 sync: read 11736 problem publish job(s)
+16:34:24 sync: read 1205 definition publish job(s)
+16:35:20 sync: read 11736 problem publish job(s)
+16:35:20 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+16:36:54 def:ChapterScalaronOuterFockFL: FAIL (TimeoutExpired: Command '['curl', '-s', '-X', 'GET', 'https://prove2.me/api/v1/theorems/b1cd9f77-77ae-4c45-886c-c0805e3c4b00', '-H', 'Authorization: B)
+16:36:54 submitting def:ChapterSqSumOuterFamily (attempt 1)
+16:36:54 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.SqSumFarisLavine.norm_sqSumOp_le, BookProof.SqSumFarisLavine.potFun_le_of_schur, BookProof.QgOuterFockFL.)
+16:36:54 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:36:54 chunk: 1 item(s) resolved in 94s
+17:02:44 sync: read 1205 definition publish job(s)
+17:03:37 sync: read 11736 problem publish job(s)
+17:03:37 submitting thm:BookProof_ChapterF3_diagonal_gram_residual_orthogonal (attempt 5)
+17:03:37 thm:BookProof_ChapterF3_diagonal_gram_residual_orthogonal: WAIT (guard defer: thm gate: stub edited since the last thm build -- rebuild before submitting)
+17:03:38 submitting thm:BookProof_ChapterF3_mehler_projector_matrix (attempt 5)
+17:03:38 thm:BookProof_ChapterF3_mehler_projector_matrix: WAIT (guard defer: thm gate: stub edited since the last thm build -- rebuild before submitting)
+17:03:38 summary: 7012 done, 2730 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:03:38 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+17:03:38 chunk: 0 item(s) resolved in 0s
+17:07:01 sync: read 1205 definition publish job(s)
+17:07:50 sync: read 11736 problem publish job(s)
+17:07:50 submitting thm:BookProof_ChapterF3_diagonal_gram_residual_orthogonal (attempt 5)
+17:07:51 thm:BookProof_ChapterF3_diagonal_gram_residual_orthogonal: accepted, waiting on the compiler
+17:07:51 submitting thm:BookProof_ChapterF3_mehler_projector_matrix (attempt 5)
+17:07:52 thm:BookProof_ChapterF3_mehler_projector_matrix: accepted, waiting on the compiler
+17:08:18 thm:BookProof_ChapterF3_diagonal_gram_residual_orthogonal: DONE
+17:08:18 thm:BookProof_ChapterF3_mehler_projector_matrix: DONE
+17:08:18 summary: 7014 done, 2728 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:08:18 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+17:08:18 chunk: 2 item(s) resolved in 29s
+17:12:18 sync: read 1205 definition publish job(s)
+17:13:12 sync: read 11738 problem publish job(s)
+17:13:12 summary: 7014 done, 2728 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:13:12 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+17:13:12 chunk: 0 item(s) processed in 0s
+17:20:25 sync: read 1205 definition publish job(s)
+17:21:16 sync: read 11738 problem publish job(s)
+17:21:16 summary: 7014 done, 2728 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:21:16 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+17:21:16 chunk: 0 item(s) processed in 0s
+17:29:07 sync: read 1205 definition publish job(s)

@@ -63,7 +63,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace ShiftHamiltonian
 
-open LpNat FarisLavine IkebeKato
+open LpNat BookProof.FarisLavine IkebeKato
 
 /-- The data of an abstract shift Hamiltonian: a comparison symbol `σ ≥ 1`, an
 injective shift `s`, and a hopping amplitude `w` dominated by the symbol. -/

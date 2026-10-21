@@ -1,0 +1,28 @@
+-- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.mixedLinearOp_essentiallySelfAdjoint
+import Mathlib
+import Definitions.Def_ChapterMixedLinearEsa
+import Theorems.Thm_BookProof_MixedLinearEsa_mixedLinearOp_deficiencyTrivialAt
+import Definitions.Def_ChapterFourierMultiplierEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterStrichartzWave
+open BookProof.MixedLinearEsa
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+open BookProof.StrichartzWave
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+set_option maxHeartbeats 1000000 in
+theorem solution (b m : V) :
+    EssentiallySelfAdjointOn (schwartzDomain V) (opL2 (mixedLinearOp b m)) :=
+  ⟨mixedLinearOp_deficiencyTrivialAt b m (by simp),
+      mixedLinearOp_deficiencyTrivialAt b m (by simp)⟩

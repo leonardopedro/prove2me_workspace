@@ -1,0 +1,27 @@
+-- Generated from ChapterResidualStream.lean — solution of BookProof.ChapterResidualStream.norm_residual_sub_self_le
+import Mathlib
+import Definitions.Def_ChapterResidualStream
+import Theorems.Thm_BookProof_ChapterResidualStream_norm_residual_sub_self
+import Theorems.Thm_BookProof_ChapterAttentionOutput_norm_headOutput_le
+open BookProof.ChapterResidualStream
+
+
+
+open scoped BigOperators
+
+noncomputable section
+
+
+open BookProof.ChapterSoftmaxSharpness BookProof.ChapterAttentionOutput
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
+
+variable {m : ℕ} {E : Type*} [NormedAddCommGroup E]
+
+set_option maxHeartbeats 1000000 in
+theorem solution [NormedSpace ℝ E] (beta : ℝ) (s : Fin m → ℝ)
+    {v : Fin m → E} {C : ℝ} (hv : ∀ j, ‖v j‖ ≤ C) (i : Fin m) (x : E) :
+    ‖residual (fun _ => headOutput beta s v) x - x‖ ≤ C := by
+
+  rw [norm_residual_sub_self]
+  exact norm_headOutput_le beta s hv i

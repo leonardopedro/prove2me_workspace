@@ -298603,3 +298603,219 @@ Note: It is not possible to treat `UnboundedSelfAdjoint` )
 07:13:47 sync: read 11541 problem publish job(s)
 07:15:24 sync: read 1189 definition publish job(s)
 07:16:11 sync: read 11541 problem publish job(s)
+18:30:31 sync: read 1189 definition publish job(s)
+18:31:30 sync: read 11541 problem publish job(s)
+18:32:02 sync: read 1189 definition publish job(s)
+18:32:57 sync: read 11541 problem publish job(s)
+18:32:57 submitting def:ChapterA2e (attempt 1)
+18:33:00 def:ChapterA2e: accepted, waiting on the compiler
+18:33:00 submitting def:ChapterVonNeumannCore (attempt 1)
+18:33:04 def:ChapterVonNeumannCore: accepted, waiting on the compiler
+18:33:05 submitting def:ChapterPaleyWienerSampling (attempt 1)
+18:33:07 def:ChapterPaleyWienerSampling: accepted, waiting on the compiler
+18:33:08 submitting def:ChapterFockPairPerturbation (attempt 1)
+18:33:16 def:ChapterFockPairPerturbation: accepted, waiting on the compiler
+18:33:46 def:ChapterVonNeumannCore: DONE
+18:33:46 def:ChapterPaleyWienerSampling: DONE
+18:34:04 def:ChapterA2e: DONE
+18:34:38 def:ChapterFockPairPerturbation: DONE
+18:34:38 summary: 586 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:34:38 chunk: 4 item(s) resolved in 102s
+18:34:49 sync: read 1193 definition publish job(s)
+18:35:42 sync: read 11541 problem publish job(s)
+18:36:19 sync: read 1193 definition publish job(s)
+18:37:26 sync: read 11541 problem publish job(s)
+18:37:26 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier (attempt 1)
+18:37:27 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier: accepted, waiting on the compiler
+18:37:27 submitting thm:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae (attempt 1)
+18:37:28 thm:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae: accepted, waiting on the compiler
+18:37:28 submitting thm:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp (attempt 1)
+18:37:29 thm:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp: accepted, waiting on the compiler
+18:37:29 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal (attempt 1)
+18:37:30 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal: accepted, waiting on the compiler
+18:37:30 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp (attempt 1)
+18:37:31 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp: accepted, waiting on the compiler
+18:37:31 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc (attempt 1)
+18:37:33 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: accepted, waiting on the compiler
+18:37:33 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq (attempt 1)
+18:37:34 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq: accepted, waiting on the compiler
+18:37:34 submitting thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples (attempt 1)
+18:37:35 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: accepted, waiting on the compiler
+18:37:57 thm:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae: DONE
+18:37:57 thm:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp: DONE
+18:38:07 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier: DONE
+18:38:08 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal: DONE
+18:38:08 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp: DONE
+18:38:09 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: DONE
+18:38:18 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: DONE
+18:38:27 thm:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq: DONE
+18:38:27 summary: 6860 done, 2875 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:38:27 chunk: 8 item(s) resolved in 61s
+18:38:38 sync: read 1193 definition publish job(s)
+18:39:33 sync: read 11549 problem publish job(s)
+18:40:10 sync: read 1193 definition publish job(s)
+18:41:14 sync: read 11549 problem publish job(s)
+18:41:14 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier (attempt 1)
+18:41:15 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier: accepted, waiting on the compiler
+18:41:15 submitting sol:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae (attempt 1)
+18:41:16 sol:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae: accepted, waiting on the compiler
+18:41:16 submitting sol:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp (attempt 1)
+18:41:18 sol:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp: accepted, waiting on the compiler
+18:41:18 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal (attempt 1)
+18:41:19 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal: accepted, waiting on the compiler
+18:41:19 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp (attempt 1)
+18:41:20 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp: accepted, waiting on the compiler
+18:41:20 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc (attempt 1)
+18:41:22 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: accepted, waiting on the compiler
+18:41:22 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq (attempt 1)
+18:41:23 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq: accepted, waiting on the compiler
+18:41:23 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples (attempt 1)
+18:41:24 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: accepted, waiting on the compiler
+18:42:28 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: FAIL (verdict CE: Compile error in your proof:
+line 25: Unknown identifier `ChapterShannonSampling.bandSignal_hasSum_sinc`
+line 23: unsolved goals
+T : ℝ
+hT )
+18:42:37 sol:BookProof_ChapterPaleyWienerSampling_bandSignal_congr_ae: DONE
+18:42:38 sol:BookProof_ChapterPaleyWienerSampling_bandSignal_bandSpectrumLp: DONE
+18:42:49 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: FAIL (verdict CE: Compile error in your proof:
+line 26: Unknown identifier `ChapterShannonSampling.hasSum_sq_samples`
+line 23: unsolved goals
+T : ℝ
+hT : Fac)
+18:42:58 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal: DONE
+18:42:58 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp: DONE
+18:43:07 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_integrable_fourier: DONE
+18:43:41 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_eq_of_samples_eq: DONE
+18:43:41 summary: 6590 done, 3170 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:43:41 chunk: 8 item(s) resolved in 147s
+18:54:11 retry-failed: re-armed 0 item(s)
+18:54:24 sync: read 1193 definition publish job(s)
+18:55:16 sync: read 11549 problem publish job(s)
+18:55:16 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc (attempt 2)
+18:55:17 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: accepted, waiting on the compiler
+18:55:17 submitting sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples (attempt 2)
+18:55:18 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: accepted, waiting on the compiler
+18:56:19 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: FAIL (verdict CE: Compile error in your proof:
+line 26: Unknown identifier `hasSum_sq_samples`
+line 23: unsolved goals
+T : ℝ
+hT : Fact (0 < T)
+f : ℝ → ℂ
+hf )
+18:56:44 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sinc: DONE
+18:56:45 summary: 6591 done, 3169 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:56:45 chunk: 2 item(s) resolved in 89s
+19:03:46 retry-failed: re-armed 0 item(s)
+19:03:56 sync: read 1193 definition publish job(s)
+19:04:46 sync: read 11549 problem publish job(s)
+19:04:46 processing sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples (attempt 3)
+19:06:10 sol:BookProof_ChapterPaleyWienerSampling_BandLimited_hasSum_sq_samples: DONE
+19:06:10 summary: 6592 done, 3168 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+19:06:10 chunk: 1 item(s) processed in 84s
+19:09:23 sync: read 1193 definition publish job(s)
+19:10:19 sync: read 11549 problem publish job(s)
+19:10:56 sync: read 1193 definition publish job(s)
+19:11:47 sync: read 11549 problem publish job(s)
+19:59:45 sync: read 1193 definition publish job(s)
+20:01:13 sync: read 11549 problem publish job(s)
+20:03:59 sync: read 1193 definition publish job(s)
+20:05:04 sync: read 11549 problem publish job(s)
+20:07:10 sync: read 1193 definition publish job(s)
+20:08:01 sync: read 11549 problem publish job(s)
+20:49:34 sync: read 1193 definition publish job(s)
+20:50:29 sync: read 11549 problem publish job(s)
+20:51:10 sync: read 1193 definition publish job(s)
+20:52:01 sync: read 11549 problem publish job(s)
+21:47:27 sync: read 1193 definition publish job(s)
+21:48:19 sync: read 11549 problem publish job(s)
+21:48:19 processing def:ChapterNsLagrangianDetConvolution (attempt 1)
+21:48:28 def:ChapterNsLagrangianDetConvolution: DONE
+21:48:29 summary: 586 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+21:48:29 chunk: 1 item(s) processed in 9s
+22:35:44 sync: read 1193 definition publish job(s)
+22:36:44 sync: read 11549 problem publish job(s)
+22:36:44 processing def:ChapterNavierStokesIkebeKato (attempt 1)
+22:36:52 def:ChapterNavierStokesIkebeKato: DONE
+22:36:53 summary: 586 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:36:53 chunk: 1 item(s) processed in 9s
+22:44:11 sync: read 1193 definition publish job(s)
+22:45:04 sync: read 11549 problem publish job(s)
+22:45:04 processing def:ChapterFarisLavineCore (attempt 1)
+22:45:12 def:ChapterFarisLavineCore: DONE
+22:45:12 summary: 586 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+22:45:12 chunk: 1 item(s) processed in 9s
+23:33:38 sync: read 1193 definition publish job(s)
+23:34:33 sync: read 11549 problem publish job(s)
+23:34:33 submitting def:ChapterFarisLavineCore (attempt 1)
+23:34:36 def:ChapterFarisLavineCore: FAIL (submit-definition rejected: {"error": "A theorem or definition with name \"ChapterFarisLavineCore\" already exists"})
+23:34:36 summary: 585 done, 105 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+23:34:36 chunk: 1 item(s) resolved in 3s
+23:59:38 sync: read 1193 definition publish job(s)
+00:00:38 sync: read 11549 problem publish job(s)
+00:19:58 sync: read 1193 definition publish job(s)
+00:21:01 sync: read 11549 problem publish job(s)
+00:21:01 submitting thm:BookProof_NavierStokesFlow_AffineFiber_affData_shift₁ (attempt 1)
+00:21:01 thm:BookProof_NavierStokesFlow_AffineFiber_affData_shift₁: WAIT (guard park: name restriction: non-ASCII theorem_name (server: theorem_name must be a valid Lean identifier; park and transliterate the declaration nam)
+00:21:01 summary: 6860 done, 2874 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+00:21:01 chunk: 0 item(s) resolved in 0s
+01:11:20 sync: read 1193 definition publish job(s)
+01:12:11 sync: read 11549 problem publish job(s)
+01:12:11 submitting def:ChapterNsAffineFiberGaps (attempt 1)
+01:12:13 def:ChapterNsAffineFiberGaps: accepted, waiting on the compiler
+01:12:38 def:ChapterNsAffineFiberGaps: DONE
+01:12:38 summary: 587 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:12:38 chunk: 1 item(s) resolved in 27s
+01:42:00 sync: read 1194 definition publish job(s)
+01:42:53 sync: read 11549 problem publish job(s)
+01:42:53 submitting def:ChapterNavierStokesSignFlip (attempt 1)
+01:42:58 def:ChapterNavierStokesSignFlip: WAIT (theorem dependency not proved yet: BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData.shiftH_coe)
+01:42:58 summary: 587 done, 104 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:42:58 chunk: 0 item(s) resolved in 5s
+01:44:36 sync: read 1194 definition publish job(s)
+01:45:27 sync: read 11549 problem publish job(s)
+01:45:27 submitting thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe (attempt 1)
+01:45:28 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: accepted, waiting on the compiler
+01:46:02 thm:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: DONE
+01:46:02 summary: 6861 done, 2873 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:46:02 chunk: 1 item(s) resolved in 35s
+01:46:43 sync: read 1194 definition publish job(s)
+01:47:30 sync: read 11550 problem publish job(s)
+01:47:30 submitting sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe (attempt 1)
+01:47:31 sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: accepted, waiting on the compiler
+01:48:47 sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: FAIL (verdict CE: Compile error in your proof:
+line 15: Unknown identifier `ShiftData`
+
+Note: It is not possible to treat `ShiftData` as an implicitly bound)
+01:48:47 summary: 6592 done, 3168 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:48:47 chunk: 1 item(s) resolved in 76s
+01:52:14 sync: read 1194 definition publish job(s)
+01:53:02 sync: read 11550 problem publish job(s)
+01:53:02 submitting sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe (attempt 2)
+01:53:04 sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: accepted, waiting on the compiler
+01:54:19 sol:BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_coe: DONE
+01:54:19 summary: 6593 done, 3167 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:54:19 chunk: 1 item(s) resolved in 76s
+01:55:07 sync: read 1194 definition publish job(s)
+01:55:56 sync: read 11550 problem publish job(s)
+01:55:56 submitting def:ChapterNavierStokesSignFlip (attempt 1)
+01:56:03 def:ChapterNavierStokesSignFlip: accepted, waiting on the compiler
+01:57:18 def:ChapterNavierStokesSignFlip: DONE
+01:57:19 summary: 588 done, 103 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+01:57:19 chunk: 1 item(s) resolved in 82s
+06:31:31 sync: read 1195 definition publish job(s)
+06:32:17 sync: read 11550 problem publish job(s)
+06:43:46 sync: read 1195 definition publish job(s)
+06:44:32 sync: read 11550 problem publish job(s)
+06:45:14 sync: read 1195 definition publish job(s)
+06:46:06 sync: read 11550 problem publish job(s)
+06:50:56 sync: read 1195 definition publish job(s)
+06:51:48 sync: read 11550 problem publish job(s)
+06:51:48 submitting sol:BookProof_NavierStokesFlow_AffineBlock_affBlockH_not_bounded (attempt 2)
+06:51:48 sol:BookProof_NavierStokesFlow_AffineBlock_affBlockH_not_bounded: DONE
+06:51:49 submitting sol:BookProof_NavierStokesFlow_AffineFiber_affH_coord_succ (attempt 1)
+06:51:49 sol:BookProof_NavierStokesFlow_AffineFiber_affH_coord_succ: DONE
+06:51:49 submitting sol:BookProof_NavierStokesFlow_AffineFiber_affH_coord_succ_succ (attempt 1)
+06:51:49 sol:BookProof_NavierStokesFlow_AffineFiber_affH_coord_succ_succ: DONE
+06:51:50 summary: 6596 done, 3162 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+06:51:50 chunk: 3 item(s) resolved in 2s

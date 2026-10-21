@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 open BookProof.NavierStokesFlow
+open BookProof.NavierStokesFlow.ShiftHamiltonian
 open BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
 
 

@@ -1,0 +1,34 @@
+-- Generated from ChapterWeylSL2Group.lean — solution of BookProof.ChapterWeylSL2Group.rho_mem_of_isInv
+import Mathlib
+import Definitions.Def_ChapterWeylSL2Group
+import Theorems.Thm_BookProof_ChapterWeylSL2Group_pow_mem_of_mem
+open BookProof.ChapterWeylSL2Group
+
+
+
+
+open BookProof.ChapterWeylSl2
+
+universe u
+
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+
+variable {V : Type u} [AddCommGroup V] [Module ℂ V]
+variable {rho : Representation ℂ (Matrix.SpecialLinearGroup (Fin 2) ℂ) V} {R : Sl2Rep V} {N : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (h : IsExpOfSl2 rho R N) {W : Submodule ℂ V} (hW : R.IsInv W) :
+    ∀ t : ℂ, (∀ v ∈ W, rho (uPlus t) v ∈ W) ∧ (∀ v ∈ W, rho (uMinus t) v ∈ W) := by
+
+  intro t
+  constructor
+  · intro v hv
+    rw [h.expE t]
+    simp only [LinearMap.coe_sum, Finset.sum_apply, LinearMap.smul_apply]
+    exact Submodule.sum_mem _ fun k _ =>
+      Submodule.smul_mem _ _ (pow_mem_of_mem hW.1 hv k)
+  · intro v hv
+    rw [h.expF t]
+    simp only [LinearMap.coe_sum, Finset.sum_apply, LinearMap.smul_apply]
+    exact Submodule.sum_mem _ fun k _ =>
+      Submodule.smul_mem _ _ (pow_mem_of_mem hW.2.1 hv k)

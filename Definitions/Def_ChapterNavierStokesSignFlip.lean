@@ -12,6 +12,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_support_hFun
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_coe
 
 import Definitions.Def_ChapterNavierStokesAffineBlockEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom_prime
 import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_affH_essentiallySelfAdjointOn_core
@@ -23,6 +24,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_embFun_of_ne
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_supported
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNsAffineFiberGaps
 
 
 /-!
@@ -379,7 +381,10 @@ theorem saffH_coord_succ {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (n : ℕ) :
     have h := hFun_shift_of_single (affData hκ (abs_nonneg c)).snd
       (X := ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ)) (o := n)
       (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+    -- `affData_amp₂` is not in the published `AffineFiberEsa` copy (leaf-dropped);
+    -- the `rfl` fact is inlined so no extra import is needed.
+    have hamp₂ : (affData hκ (abs_nonneg c)).amp₂ = shear |c| := rfl
+    simpa [hamp₂] using h
   rw [saffH_coe, hfst, hsnd, zero_add, ← mul_assoc, mul_comm (esgn c) Complex.I, mul_assoc,
     esgn_mul_shear]
 
@@ -405,7 +410,9 @@ theorem saffH_coord_succ_succ {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (n : ℕ) :
     have h := hFun_shift_of_single (affData hκ (abs_nonneg c)).fst
       (X := ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ)) (o := n)
       (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+    -- `affData_amp₁` is leaf-dropped from the published copy; inlined `rfl` fact.
+    have hamp₁ : (affData hκ (abs_nonneg c)).amp₁ = amp κ := rfl
+    simpa [hamp₁] using h
   rw [saffH_coe, hfst, hsnd, mul_zero, add_zero]
 
 /-- With a non-zero constant part — **of either sign** — the affine fiber
@@ -516,10 +523,10 @@ block. -/
 theorem blockVec_sblockH (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (v : lpFiniteModes (ℕ × J)) (j : J) :
     blockVec ((sblockH κ c hκ v : L2I (ℕ × J))) j
       = saffH (hκ j) (c j)
-          ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom' _ v j⟩ := by
+          ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom_prime _ v j⟩ := by
   refine lp.ext (funext fun n => ?_)
   rw [show ((saffH (hκ j) (c j)
-      ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom' _ v j⟩ :
+      ⟨blockVec ((v : L2I (ℕ × J))) j, AffineBlock.blockVec_mem_maxDom_prime _ v j⟩ :
         L2I ℕ) : ℕ → ℂ) n = _ from saffH_coe (hκ j) (c j) _ n]
   rfl
 
@@ -536,8 +543,8 @@ theorem sblockH_symmetricOn (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) :
             (blockVec ((sblockH κ c hκ y : L2I (ℕ × J))) j) := by
     intro j
     rw [blockVec_sblockH κ c hκ x j, blockVec_sblockH κ c hκ y j]
-    exact saffH_symmetricOn (hκ j) (c j) ⟨_, AffineBlock.blockVec_mem_maxDom' _ x j⟩
-      ⟨_, AffineBlock.blockVec_mem_maxDom' _ y j⟩
+    exact saffH_symmetricOn (hκ j) (c j) ⟨_, AffineBlock.blockVec_mem_maxDom_prime _ x j⟩
+      ⟨_, AffineBlock.blockVec_mem_maxDom_prime _ y j⟩
   simp only [heq] at h1
   exact h1.unique h2
 

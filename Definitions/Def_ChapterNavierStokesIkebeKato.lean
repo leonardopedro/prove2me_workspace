@@ -1,6 +1,8 @@
 import Mathlib
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
 
 /-!
 # The Ikebe–Kato input in the momentum representation
@@ -336,6 +338,85 @@ theorem coe_sum_single [DecidableEq ι] (S : Finset ι) (u : ι → ℂ) (k : ι
 
 
 
+
+/-- Truncations lie in the finite-mode domain. -/
+theorem sum_single_mem_finiteModes [DecidableEq ι] (S : Finset ι) (u : ι → ℂ) :
+    (∑ i ∈ S, lp.single 2 i (u i) : L2I ι) ∈ lpFiniteModes ι :=
+  Submodule.sum_mem _ fun i _ => lpSingle_mem_lpFiniteModes i (u i)
+
+
+/-- **The finite-mode states are a core for the comparison operator.**  Every
+state of the maximal domain is approximated, simultaneously in the norm and in
+the graph norm of `N`, by its finite truncations: the momentum-representation
+form of "`C_c^∞` is a core". -/
+theorem exists_finiteModes_graph_approx (c : ι → ℝ) (x : maxDom c) (ε : ℝ) (hε : 0 < ε) :
+    ∃ y : maxDom c, (y : L2I ι) ∈ lpFiniteModes ι ∧
+      ‖(y : L2I ι) - (x : L2I ι)‖ < ε ∧ ‖diagMax c y - diagMax c x‖ < ε := by
+  classical
+  set u : ι → ℂ := fun k => ((x : L2I ι) : ι → ℂ) k with hu
+  set v : ι → ℂ := fun k => ((diagMax c x : L2I ι) : ι → ℂ) k with hv
+  have hxsum : HasSum (fun i => lp.single 2 i (u i)) ((x : L2I ι)) :=
+    lp.hasSum_single (by norm_num) _
+  have hvsum : HasSum (fun i => lp.single 2 i (v i)) ((diagMax c x : L2I ι)) :=
+    lp.hasSum_single (by norm_num) _
+  have hx1 : ∀ᶠ S : Finset ι in Filter.atTop,
+      ‖(∑ i ∈ S, lp.single 2 i (u i) : L2I ι) - (x : L2I ι)‖ < ε := by
+    have hmet := Metric.tendsto_atTop.mp hxsum
+    obtain ⟨S₀, hS₀⟩ := hmet ε hε
+    filter_upwards [Filter.eventually_ge_atTop S₀] with S hS
+    have := hS₀ S hS
+    rwa [dist_eq_norm] at this
+  have hx2 : ∀ᶠ S : Finset ι in Filter.atTop,
+      ‖(∑ i ∈ S, lp.single 2 i (v i) : L2I ι) - (diagMax c x : L2I ι)‖ < ε := by
+    have hmet := Metric.tendsto_atTop.mp hvsum
+    obtain ⟨S₀, hS₀⟩ := hmet ε hε
+    filter_upwards [Filter.eventually_ge_atTop S₀] with S hS
+    have := hS₀ S hS
+    rwa [dist_eq_norm] at this
+  obtain ⟨S, hS1, hS2⟩ := (hx1.and hx2).exists
+  refine ⟨⟨(∑ i ∈ S, lp.single 2 i (u i) : L2I ι),
+    finiteModes_le_maxDom c (sum_single_mem_finiteModes S u)⟩,
+    sum_single_mem_finiteModes S u, hS1, ?_⟩
+  have hdiag : (diagMax c ⟨(∑ i ∈ S, lp.single 2 i (u i) : L2I ι),
+      finiteModes_le_maxDom c (sum_single_mem_finiteModes S u)⟩ : L2I ι)
+      = (∑ i ∈ S, lp.single 2 i (v i) : L2I ι) := by
+    refine lp.ext (funext fun k => ?_)
+    rw [diagMax_coe, coe_sum_single, coe_sum_single]
+    by_cases hk : k ∈ S
+    · simp [hk, hv, hu]
+    · simp [hk]
+  rw [hdiag]
+  exact hS2
+
+/-! ## Essential self-adjointness: the Ikebe–Kato input, proved -/
+
+
+/-- **Essential self-adjointness from the two Faris–Lavine inequalities, with no
+further hypothesis.**  Let `N` be multiplication by a non-negative symbol on its
+maximal domain in `ℓ²(ι)` — the comparison operator of the momentum
+representation — and let `H` be *any* symmetric operator on that domain with
+
+* the relative bound `‖H x‖² ≤ a‖N x‖² + b‖x‖²`, and
+* the commutator form bound `± i[H, N] ≤ c N`.
+
+Then `H` is essentially self-adjoint on the finite-mode core.  Neither the
+Faris–Lavine criterion nor the Ikebe–Kato theorem is assumed: the first is
+`BookProof.FarisLavine.essentiallySelfAdjointOn_core_of_farisLavine`, the second
+is the package `diagMax_quadForm_nonneg` + `diagMax_add_one_surjective` +
+`exists_finiteModes_graph_approx` proved above. -/
+theorem essentiallySelfAdjointOn_finiteModes_of_farisLavine_bounds
+    (c : ι → ℝ) (hc : ∀ k, 0 ≤ c k) (H : maxDom c →ₗ[ℂ] L2I ι) (a b cst : ℝ)
+    (hH : SymmetricOn (maxDom c) H) (hcst : 0 ≤ cst)
+    (hrel : ∀ x : maxDom c, ‖H x‖ ^ 2 ≤ a * ‖diagMax c x‖ ^ 2 + b * ‖(x : L2I ι)‖ ^ 2)
+    (hcomm : ∀ x : maxDom c, |commForm H (diagMax c) x| ≤ cst * quadForm (diagMax c) x) :
+    EssentiallySelfAdjointOn (lpFiniteModes ι)
+      (H.comp (Submodule.inclusion (finiteModes_le_maxDom c))) := by
+  refine essentiallySelfAdjointOn_core_of_farisLavine (finiteModes_le_maxDom c)
+    H (diagMax c) a b cst hH (diagMax_symmetricOn c) hcst (diagMax_quadForm_nonneg c hc)
+    (diagMax_add_one_surjective c hc) hcomm hrel ?_
+  intro x ε hε
+  obtain ⟨y, hy1, hy2, hy3⟩ := exists_finiteModes_graph_approx c x ε hε
+  exact ⟨y, hy1, hy2, hy3⟩
 
 end IkebeKato
 

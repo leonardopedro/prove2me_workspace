@@ -9079,6 +9079,19 @@
     "faris-lavine",
     "spectral-theory"
    ]
+  },
+  "ChapterNsAffineFiberGaps": {
+   "definition_name": "ChapterNsAffineFiberGaps",
+   "namespace": "BookProof.NavierStokesFlow",
+   "file": "Definitions/Def_ChapterNsAffineFiberGaps.lean",
+   "title": "Navier\u2013Stokes affine-fiber leaf-gap carrier",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (module `BookProof.NsAffineFiberGaps`, source chapter `BookProof/ChapterNsAffineFiberGaps.lean`): Navier\u2013Stokes affine-fiber leaf-gap carrier\n\nThe published copy of `Def_ChapterNavierStokesAffineFiberEsa` was leaf-dropped: four `rfl` lemmas that the source chapter declares are absent from it, so every bundle or solution that cites them dies server-side with `Unknown identifier` (\u00a72.59 leaf-selection gaps). Published bundles are immutable, so the fix is this auxiliary bundle, which re-carries exactly the dropped cluster in its original namespaces:\n\n* `PairShift.fst_shift` / `PairShift.snd_shift` \u2014 `P.fst.shift = P.shift\u2081` and `P.snd.shift = P.shift\u2082` (the component shifts of a pair shift). * `affData_shift\u2081` / `affData_shift\u2082` \u2014 the affine fiber field adds exactly `n \u21a6 n + 2` (constant part) and `n \u21a6 n + 1` (linear part) to the Hermite level.\n\nConsumers add a single `import Definitions.Def_ChapterNsAffineFiberGaps`. The workspace copy of `Def_ChapterNavierStokesAffineFiberEsa` has these four declarations stripped, so the name is declared exactly once in every environment (platform, published mirror, candidate mirror).",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesAffineFiberEsa.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
   }
  },
  "thms": {

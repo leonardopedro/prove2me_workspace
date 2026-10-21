@@ -1,0 +1,30 @@
+-- Generated from ChapterWeylCauchyRiemann.lean — solution of BookProof.WeylCauchyRiemann.hasCompactSupport_slice_re
+import Mathlib
+import Definitions.Def_ChapterWeylCauchyRiemann
+open BookProof.WeylCauchyRiemann
+
+
+
+
+open MeasureTheory Metric Set Filter Complex BookProof.RadialMollifier
+open scoped Convolution Topology ContDiff
+
+noncomputable section
+
+set_option maxHeartbeats 1000000 in
+theorem solution {ψ : ℂ → ℂ} (hψc : HasCompactSupport ψ) (y : ℝ) :
+    HasCompactSupport (fun t : ℝ => ψ ((t : ℂ) + y * Complex.I)) := by
+
+  obtain ⟨M, hM⟩ := hψc.isCompact.isBounded.subset_closedBall 0
+  refine HasCompactSupport.of_support_subset_isCompact (isCompact_Icc (a := -M) (b := M)) ?_
+  intro t ht
+  have hmem : (t : ℂ) + y * Complex.I ∈ tsupport ψ := subset_tsupport ψ ht
+  have := hM hmem
+  simp only [mem_closedBall, dist_zero_right] at this
+  have hrele : |t| ≤ ‖(t : ℂ) + y * Complex.I‖ := by
+    have hre : ((t : ℂ) + y * Complex.I).re = t := by simp
+    calc |t| = |((t : ℂ) + y * Complex.I).re| := by rw [hre]
+      _ ≤ ‖(t : ℂ) + y * Complex.I‖ := Complex.abs_re_le_norm _
+  rw [mem_Icc]
+  constructor <;> [linarith [abs_le.1 (le_trans hrele this) |>.1];
+    linarith [abs_le.1 (le_trans hrele this) |>.2]]

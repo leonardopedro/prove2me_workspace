@@ -1,0 +1,19 @@
+-- Generated from ChapterTempleSeparationNecessary.lean — solution of BookProof.TempleSeparationNecessary.norm_trial
+import Mathlib
+import Definitions.Def_ChapterTempleSeparationNecessary
+import Definitions.Def_ChapterRitzCertificate
+import Definitions.Def_ChapterNavierStokesFarisLavineLift
+open BookProof.TempleSeparationNecessary
+
+
+
+noncomputable section
+
+
+open BookProof.RitzCertificate
+open BookProof.NavierStokesFlow.FarisLavineLift
+open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
+
+set_option maxHeartbeats 1000000 in
+theorem solution : ‖trial‖ = 1 := by
+ simp [trial]

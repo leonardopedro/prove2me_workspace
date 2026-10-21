@@ -1,0 +1,20 @@
+-- Generated from ChapterPinDoubleCover.lean — solution of BookProof.ChapterPinDoubleCover.LamZ_fiber_card
+import Mathlib
+import Definitions.Def_ChapterPinDoubleCover
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterLorentzGroup
+open BookProof.ChapterPinDoubleCover
+
+
+
+open Matrix
+
+
+open BookProof.ChapterA3
+open Classical
+open BookProof.LorentzGroup
+
+set_option maxHeartbeats 1000000 in
+theorem solution :
+    ∀ d ∈ Delta, (Omega.filter (fun S => LamZ S = d)).card = 2 := by
+ decide

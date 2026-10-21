@@ -100,7 +100,7 @@ namespace BookProof.NavierStokesFlow
 
 namespace AffineFiber
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 variable {ι : Type*}
 
@@ -108,9 +108,41 @@ variable {ι : Type*}
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
 
+/-- The commutator form `⟪x, i[H, N]x⟫` is additive in `H`. -/
+theorem commForm_add (H₁ H₂ N : D →ₗ[ℂ] F) (x : D) :
+    commForm (H₁ + H₂) N x = commForm H₁ N x + commForm H₂ N x := by
+  simp only [commForm, LinearMap.add_apply, inner_add_left, inner_add_right]
+  have : Complex.I * (inner ℂ (H₁ x) (N x) + inner ℂ (H₂ x) (N x)
+      - (inner ℂ (N x) (H₁ x) + inner ℂ (N x) (H₂ x)))
+      = Complex.I * (inner ℂ (H₁ x) (N x) - inner ℂ (N x) (H₁ x))
+        + Complex.I * (inner ℂ (H₂ x) (N x) - inner ℂ (N x) (H₂ x)) := by ring
+  rw [this, Complex.add_re]
+
 
 
 /-! ## Two matrix entries of a shift Hamiltonian -/
+
+open ShiftHamiltonian in
+/-- The `s o`-th coordinate of `H x` when `x` is the basis vector at `o`: the
+hopping amplitude `w(o)`, times `i`. -/
+theorem hFun_shift_of_single (S : ShiftData ι) {X : ι → ℂ} {o : ι}
+    (hXo : X o = 1) (hnext : X (S.shift (S.shift o)) = 0) :
+    S.hFun X (S.shift o) = Complex.I * ((S.amp o : ℝ) : ℂ) := by
+  unfold ShiftData.hFun
+  rw [ShiftData.hop_shift, hXo, mul_one, hnext, mul_zero, sub_zero]
+
+open ShiftHamiltonian in
+/-- A coordinate at which the state vanishes both one step back and one step
+forward along the shift carries no matrix entry. -/
+theorem hFun_eq_zero (S : ShiftData ι) {X : ι → ℂ} {β : ι}
+    (hpre : ∀ α, S.shift α = β → X α = 0) (hX : X (S.shift β) = 0) : S.hFun X β = 0 := by
+  unfold ShiftData.hFun
+  have hhop : S.hop (fun α => (S.amp α : ℂ) * X α) β = 0 := by
+    by_cases hb : ∃ α, S.shift α = β
+    · obtain ⟨α, rfl⟩ := hb
+      rw [ShiftData.hop_shift, hpre α rfl, mul_zero]
+    · exact ShiftData.hop_eq_zero S _ hb
+  rw [hhop, hX, mul_zero, sub_zero, mul_zero]
 
 
 
@@ -224,8 +256,9 @@ noncomputable def pairH : maxDom P.sym →ₗ[ℂ] L2I ι :=
 
 @[simp] theorem fst_sym : P.fst.sym = P.sym := rfl
 @[simp] theorem snd_sym : P.snd.sym = P.sym := rfl
-@[simp] theorem fst_shift : P.fst.shift = P.shift₁ := rfl
-@[simp] theorem snd_shift : P.snd.shift = P.shift₂ := rfl
+-- `fst_shift`/`snd_shift` moved to `Def_ChapterNsAffineFiberGaps`: the
+-- published copy of this bundle is leaf-dropped, so these re-carried in the
+-- immutable carrier bundle instead (single provider everywhere).
 @[simp] theorem fst_amp : P.fst.amp = P.amp₁ := rfl
 @[simp] theorem snd_amp : P.snd.amp = P.amp₂ := rfl
 
@@ -490,11 +523,8 @@ theorem affH_essentiallySelfAdjointOn_core {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0
 
 /-! ## The `±1`-hopping is genuinely present -/
 
-@[simp] theorem affData_shift₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
-    (affData hκ hc).shift₁ = fun n : ℕ => n + 2 := rfl
-
-@[simp] theorem affData_shift₂ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
-    (affData hκ hc).shift₂ = fun n : ℕ => n + 1 := rfl
+-- `affData_shift₁`/`affData_shift₂` moved to `Def_ChapterNsAffineFiberGaps`
+-- (published copy is leaf-dropped; immutable, so the carrier carries them).
 
 @[simp] theorem affData_amp₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     (affData hκ hc).amp₁ = amp κ := rfl
@@ -520,21 +550,28 @@ theorem affH_coord_succ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) (n : ℕ) :
     ((affH hκ hc (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 1)
       = Complex.I * ((shear c n : ℝ) : ℂ) := by
   have hX := basisState_coe κ c n
+  -- the two `rfl` lemmas `affData_shift₁`/`PairShift.fst_shift` now live in
+  -- `Def_ChapterNsAffineFiberGaps` (published copy is leaf-dropped); inlined
+  -- here so this workspace copy stays self-contained.
+  have hshift₁ : (affData hκ hc).shift₁ = fun m : ℕ => m + 2 := rfl
+  have hfst_shift : (affData hκ hc).fst.shift = (affData hκ hc).shift₁ := rfl
+  have hshift₂ : (affData hκ hc).shift₂ = fun m : ℕ => m + 1 := rfl
+  have hsnd_shift : (affData hκ hc).snd.shift = (affData hκ hc).shift₂ := rfl
   have hfst : (affData hκ hc).fst.hFun ((basisState κ c n : L2I ℕ) : ℕ → ℂ) (n + 1) = 0 := by
     refine hFun_eq_zero _ (fun α hα => ?_) ?_
-    · simp only [affData_shift₁] at hα
+    · simp only [hshift₁] at hα
       rw [hX]
       have : α ≠ n := by omega
       simp [this]
-    · simp only [PairShift.fst_shift, affData_shift₁, hX]
+    · simp only [hfst_shift, hshift₁, hX]
       norm_num
       omega
   have hsnd : (affData hκ hc).snd.hFun ((basisState κ c n : L2I ℕ) : ℕ → ℂ) (n + 1)
       = Complex.I * ((shear c n : ℝ) : ℂ) := by
     have h := hFun_shift_of_single (affData hκ hc).snd
       (X := ((basisState κ c n : L2I ℕ) : ℕ → ℂ)) (o := n)
-      (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+      (by simp [hX]) (by simp [hX, hsnd_shift, hshift₂]; omega)
+    simpa [hshift₂] using h
   change ((PairShift.pairH (affData hκ hc) (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 1) = _
   have hp1 := PairShift.pairH_coe (P := affData hκ hc) (basisState κ c n) (n + 1)
   refine hp1.trans ?_
@@ -546,21 +583,26 @@ theorem affH_coord_succ_succ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) (n : �
     ((affH hκ hc (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 2)
       = Complex.I * ((amp κ n : ℝ) : ℂ) := by
   have hX := basisState_coe κ c n
+  -- `affData_shift₂`/`PairShift.snd_shift` live in `Def_ChapterNsAffineFiberGaps`.
+  have hshift₂ : (affData hκ hc).shift₂ = fun m : ℕ => m + 1 := rfl
+  have hsnd_shift : (affData hκ hc).snd.shift = (affData hκ hc).shift₂ := rfl
+  have hshift₁ : (affData hκ hc).shift₁ = fun m : ℕ => m + 2 := rfl
+  have hfst_shift : (affData hκ hc).fst.shift = (affData hκ hc).shift₁ := rfl
   have hsnd : (affData hκ hc).snd.hFun ((basisState κ c n : L2I ℕ) : ℕ → ℂ) (n + 2) = 0 := by
     refine hFun_eq_zero _ (fun α hα => ?_) ?_
-    · simp only [affData_shift₂] at hα
+    · simp only [hshift₂] at hα
       rw [hX]
       have : α ≠ n := by omega
       simp [this]
-    · simp only [PairShift.snd_shift, affData_shift₂, hX]
+    · simp only [hsnd_shift, hshift₂, hX]
       norm_num
       omega
   have hfst : (affData hκ hc).fst.hFun ((basisState κ c n : L2I ℕ) : ℕ → ℂ) (n + 2)
       = Complex.I * ((amp κ n : ℝ) : ℂ) := by
     have h := hFun_shift_of_single (affData hκ hc).fst
       (X := ((basisState κ c n : L2I ℕ) : ℕ → ℂ)) (o := n)
-      (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+      (by simp [hX]) (by simp [hX, hfst_shift, hshift₁]; omega)
+    simpa [hshift₁] using h
   change ((PairShift.pairH (affData hκ hc) (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 2) = _
   have hp2 := PairShift.pairH_coe (P := affData hκ hc) (basisState κ c n) (n + 2)
   refine hp2.trans ?_

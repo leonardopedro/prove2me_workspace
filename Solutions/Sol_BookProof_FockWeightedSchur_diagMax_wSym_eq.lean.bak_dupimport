@@ -1,0 +1,42 @@
+-- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.diagMax_wSym_eq
+import Mathlib
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Theorems.Thm_BookProof_FockSecondQuantization_coe_fockEquiv_symm
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_coe
+import Definitions.Def_ChapterCoreBoundsEsa
+import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterStoneBridge
+import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+open BookProof.FockWeightedSchur
+
+
+
+
+open BookProof.FockSecondQuantization BookProof.CoreBounds BookProof.FockSchur
+open BookProof.FarisLavine BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open BookProof.FockSecondQuantization
+open BookProof.NavierStokesFlow.IkebeKato
+
+noncomputable section
+
+variable {w : ℕ → ℝ}
+variable {col : ℕ → (ℕ →₀ ℂ)} {K B : ℝ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (x : lpFiniteModes Conf) :
+    (diagMax (wSym w) (inclC (wSym w) x) : Fock) = toLp (wgt w (fockEquiv.symm x)) := by
+
+  refine lp.ext (funext fun α => ?_)
+  rw [diagMax_coe]
+  have hx : ((x : Fock) : Conf → ℂ) α = (fockEquiv.symm x) α := by
+    rw [coe_fockEquiv_symm x]
+    rfl
+  rw [inclC_coe, hx]
+  rfl

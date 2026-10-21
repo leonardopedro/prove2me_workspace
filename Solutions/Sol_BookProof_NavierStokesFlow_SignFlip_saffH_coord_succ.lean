@@ -1,12 +1,11 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.saffH_coord_succ
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_basisState_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNsAffineFiberGaps
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterStoneResolvent
@@ -47,6 +46,8 @@ theorem solution {κ : ℝ} (hκ : 0 ≤ κ) (c : ℝ) (n : ℕ) :
     have h := hFun_shift_of_single (affData hκ (abs_nonneg c)).snd
       (X := ((basisState κ |c| n : L2I ℕ) : ℕ → ℂ)) (o := n)
       (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+    -- `affData_amp₂` is leaf-dropped from the published bundle: inlined `rfl` fact.
+    have hamp₂ : ∀ m, (affData hκ (abs_nonneg c)).amp₂ m = shear |c| m := fun _ => rfl
+    simpa [hamp₂] using h
   rw [saffH_coe, hfst, hsnd, zero_add, ← mul_assoc, mul_comm (esgn c) Complex.I, mul_assoc,
     esgn_mul_shear]

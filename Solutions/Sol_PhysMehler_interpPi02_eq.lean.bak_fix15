@@ -1,0 +1,20 @@
+-- Generated from PhysMehler.lean — solution of PhysMehler.interpPi02_eq
+import Mathlib
+import Definitions.Def_PhysMehler
+open PhysMehler
+
+
+
+open MeasureTheory Set Filter TopologicalSpace
+open scoped ENNReal Topology BigOperators
+
+noncomputable section
+
+
+open PhysMeasureBasis PhysFunctionalAnalysis PhysHSGaussian
+
+set_option maxHeartbeats 1000000 in
+theorem solution {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
+    [CompleteSpace H] [MeasurableSpace H]
+    (p : ℕ → ℕ → Bool) (F : Formalism H) (z : ZFSet) :
+    interpPi02 p F z ↔ Pi02 p := Iff.rfl

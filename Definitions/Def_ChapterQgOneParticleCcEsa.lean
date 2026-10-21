@@ -442,6 +442,8 @@ theorem fderiv_fderiv_cut (R : ℝ) (x : Vd d) :
   exact h4.fderiv
 
 set_option maxHeartbeats 8000000 in
+set_option trace.profiler true in
+set_option trace.profiler.threshold 1000 in
 /-- **The derivative bounds of the scaled cut-off**: `|∂ⱼχ_R| ≤ C/R` and `|Δχ_R| ≤ C/R²`,
 with a constant that does not depend on `R`. -/
 theorem exists_cut_derivative_bounds (d : ℕ) :

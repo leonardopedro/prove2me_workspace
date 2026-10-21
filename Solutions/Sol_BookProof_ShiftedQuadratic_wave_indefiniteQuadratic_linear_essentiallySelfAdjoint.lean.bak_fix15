@@ -1,0 +1,31 @@
+-- Generated from ChapterShiftedQuadraticEsa.lean — solution of BookProof.ShiftedQuadratic.wave_indefiniteQuadratic_linear_essentiallySelfAdjoint
+import Mathlib
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Theorems.Thm_BookProof_ShiftedQuadratic_shiftedHOp_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_ShiftedQuadratic_minkowskiCoeff_ne_zero
+open BookProof.ShiftedQuadratic
+
+
+
+
+open MeasureTheory MvPolynomial
+open BookProof.HermiteProductCore BookProof.HermiteProductBasis
+open BookProof.NavierStokesFlow.DifferentialL2
+open BookProof.HyperbolicQuadratic
+open BookProof.ShiftedHermiteCore
+open BookProof.FarisLavine
+open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+
+noncomputable section
+
+variable {d : ℕ}
+
+variable {d : ℕ}
+
+set_option maxHeartbeats 1000000 in
+theorem solution (n : ℕ)
+    (b b' : Fin (1 + n) → ℝ) :
+    EssentiallySelfAdjointOn
+      (polyGaussCoreT (shiftVec (minkowskiCoeff n) b) (boostVec (minkowskiCoeff n) b'))
+      (shiftedHOp (shiftVec (minkowskiCoeff n) b) (boostVec (minkowskiCoeff n) b')
+        (minkowskiCoeff n) b b') := shiftedHOp_essentiallySelfAdjoint _ b b' (minkowskiCoeff_ne_zero n)

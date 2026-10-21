@@ -10403,3 +10403,40 @@ to ~60 chars.  Traced bottom-up:
 Every level reproduces the identical defect: **ledger `done` with a body that
 is missing declarations the local source has.**  The recovery is therefore
 genuinely bottom-up and cannot be shortcut by publishing only the 7 targets.
+
+## SignFlip chain resolved: bundle published, 3 sols Proved, 2 parked (§2.46 terminal form)
+
+The bottom-up root chain above was worked to completion this session:
+
+1. `def:ChapterNavierStokesSignFlip` **published** after `ShiftData.shiftH_coe`
+   thm+sol landed (its sol needed the `ShiftHamiltonian` namespace opened — a
+   preamble defect, not a math one).  The bundle re-carries the SignFlip
+   cluster (`saffH`, `saffH_coe`, `esgn_mul_shear`, `saffH_coord_succ`, …) that
+   the published `Def_ChapterNavierStokesAffineFiberEsa` (§2.67 level-3 body
+   gap) drops; the local mirror and bundle cache now carry it.
+2. **Three sols Proved on the platform** (verified via `theorem_status`):
+   `AffineFiber_affH_coord_succ`, `AffineFiber_affH_coord_succ_succ`,
+   `AffineBlock_affBlockH_not_bounded`.  Two independent defect classes fixed:
+   * **amp leaf-gaps** — the published AffineFiberEsa copy drops
+     `affData_amp₁/₂`; sols that closed with a bare `simpa using h` stalled on
+     `↑((affData …).amp₂ n)` vs `↑(shear |c| n)`.  Fixed by inlining the
+     definitionally-true fact next to the use:
+     `have hamp₂ : ∀ m, (affData hκ (abs_nonneg c)).amp₂ m = shear |c| m := fun _ => rfl`
+     then `simpa [hamp₂] using h`.  Same for `amp₁` (= `amp κ`).
+   * **duplicate Thm imports** (§2.46) — the saffH sols imported the Thm stubs
+     for `esgn_mul_shear`/`saffH_coe` *and* the SignFlip bundle, which declares
+     both names; the stub imports were dropped.
+3. **Two sols parked permanently** (§2.46 dup class, terminal form):
+   `SignFlip_saffH_coord_succ(_succ)`.  The published bundle declares *and
+   proves* both statements inline (32 decls), so their thm statements can
+   never compile server-side (`already been declared`) and, with no thm node,
+   `do_wave_sol` can never attach a sol ("theorem not published yet").
+   `find_existing` confirms no platform node exists or can exist.  Ledger
+   records carry the park reason; the mathematics is already published inside
+   the bundle's own proofs.
+
+Lesson for future bundles: `regen_defs` leaf-closure pulls in **proven**
+theorems when a selected leaf depends on them.  That is fine — but it silently
+converts the corresponding thm/sol items into §2.46 parks.  When generating a
+bundle, grep its output for the statements of sibling thm items and park those
+up front instead of discovering the collision on a server compile.

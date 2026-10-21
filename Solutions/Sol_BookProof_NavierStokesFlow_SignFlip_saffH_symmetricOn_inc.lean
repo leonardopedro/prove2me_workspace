@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.saffH_symmetricOn_inc
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_conj_esgn
 import Theorems.Thm_BookProof_NavierStokesFlow_ShiftHamiltonian_ShiftData_shiftH_symmetricOn
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa

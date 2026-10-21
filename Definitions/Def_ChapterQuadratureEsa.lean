@@ -2,6 +2,8 @@
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
 
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
 
@@ -268,6 +270,18 @@ theorem abs_linSymb_le (b : Fin d → ℝ) (x : Vd d) :
 theorem foOp_coe (b b' : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ) :
     (foOp b b' (coreEquiv p)) = pgLp (foPoly b b' p) := coreOp_coe _ p
 
+/-- Conjugation of the coefficients is conjugation of the values at real points.
+(Inlined from the chapter source: the bundle must not import a provider bundle that
+collides with this file's own `BookProof.NavierStokesFlow` declarations.) -/
+private theorem eval_starP_qe (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
+    MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (starP p)
+      = (starRingEnd ℂ) (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p) := by
+  rw [starP, eval_map]
+  induction p using MvPolynomial.induction_on with
+  | C a => simp
+  | add p q hp hq => simp [hp, hq]
+  | mul_X p i hp => simp [hp]
+
 set_option maxHeartbeats 1600000 in
 -- a single long computation: the exponential domination bound, the moment identity and
 -- the pointwise factorisation are all elaborated inside one declaration
@@ -345,7 +359,7 @@ theorem foOp_pos_deficiencyTrivialAt (b : Fin d → ℝ) {z : ℂ} (hz : z.im �
     set p : MvPolynomial (Fin d) ℂ := starP q with hp
     have hconj : ∀ x : Vd d, (starRingEnd ℂ) (pgFun p x) = pgFun q x := by
       intro x
-      rw [pgFun, pgFun, map_mul, Complex.conj_ofReal, hp, eval_starP, Complex.conj_conj]
+      rw [pgFun, pgFun, map_mul, Complex.conj_ofReal, hp, eval_starP_qe, Complex.conj_conj]
     -- the two integrals occurring in the deficiency identity
     have hint1 : Integrable (fun x : Vd d => pgFun q x * W x) :=
       integrable_mul_of_memLp_two (memLp_pgFun q) hWmem

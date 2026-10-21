@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.hFun_flip_inc
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesShiftHamiltonian
 import Definitions.Def_ChapterStoneResolvent

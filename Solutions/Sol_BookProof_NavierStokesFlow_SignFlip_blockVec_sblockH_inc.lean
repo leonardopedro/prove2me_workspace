@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.blockVec_sblockH_inc
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom_prime
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesEsa
@@ -9,6 +8,7 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

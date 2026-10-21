@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.sblockH_symmetricOn_inc
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom_prime
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_hasSum_inner_blocks
 import Definitions.Def_ChapterFarisLavineCore
@@ -12,6 +10,7 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

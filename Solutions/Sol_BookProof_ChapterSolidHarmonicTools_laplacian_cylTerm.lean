@@ -31,7 +31,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDim
 
 @[simp] private theorem innerCLM_apply (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
 
- radial function, and the `s`-wave form of Note 68
 
 set_option maxHeartbeats 1000000 in
 

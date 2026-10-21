@@ -10547,3 +10547,231 @@ ACCEPTED, live status Proved) and `ChapterG3_eventProj_compl` (CE then
 ACCEPTED Oct-18).  Of the 171, **154 are ledger-done + Proved** (historical),
 9 parked, 8 genuinely pending (covered by the sol-gap run).  Always cross-check
 `theorem_status(ledger theorem_id)` before treating a backlog entry as live.
+
+## Session 22 (2026-10-21): SignFlip `_inc` wave-2 published; 102-def regate + sol-gap recheck; thm:sol ≈ 2:1 campaign
+
+**Published today (all verified DONE on the platform):**
+- 15 `SignFlip` `_inc` thms (11:23–11:25): conj_esgn, deficiencyTrivialAt_of_intertwine,
+  deficiencyTrivialAt_sblockH, esgn_eq, esgn_mul_shear, essentiallySelfAdjointOn_of_intertwine,
+  flipU_apply, flipU_mem_finiteModes, flipU_mem_maxDom, hFun_flip, negOne_pow_eq, saffH_coe,
+  saffH_conj_flip, saffH_coord_succ, saffH_coord_succ_succ (all `_inc`).
+- 3 sols: ClosureUniqueness_mem_factorGraph_sqOp, KatoRellich_deficiencyTrivialAt_of_dense,
+  KatoRellich_dense_range_add_bounded.
+- def `ChapterWallDeficiencyObstruction` (11:32). Its 2 standalone thm stubs
+  (IsL2Ode_continuous/memLp) FAIL publish with "already declared" — **benign**: the bundle
+  declares them inline, so the theorems are live via the bundle; their sols only need the
+  bundle import, not the Thm stub.
+
+**Gate retry (42 SignFlip stubs, `state/thm_gate.json`)**: 15 OK — every `_inc` variant.
+All 27 FAILs are non-`_inc` originals: duplicate declaration against the mirror's original
+chapter module. Expected; the `_inc` clones are the uploadable form (standing §2.46 rule).
+
+**102-pending-def regate (`/tmp/regate_pending.tsv`, `regate_bundles.py --jobs 6`): 17 OK, 85 FAIL**
+- **68 = missing dep oleans in `/tmp/def_candidate`** (staging gaps, NOT content). Heaviest
+  missing modules: Def_ChapterNonnegResolvent (4), SqSumOuterFamily (3), NsFourierElimination (3),
+  DegSchrodingerCore (3); ~15 more at 2. Iterative transitive staging loop needed (source exists
+  in workspace; copy `.lean` into mirror + compile with `-DautoImplicit=false`, `LEAN_PATH={mirror}:{base}`).
+- **10 = content bugs** (see table below).
+- 17 OK includes ChapterBddBelowWallEsa (published today) — the rest await their turn in the
+  upload queue.
+
+**Content-bug table (def, error, note):**
+| Bundle | Error | Fix direction |
+|---|---|---|
+| ChapterConformalFiberDeficiency | unknown identifier `tendsto_exp_neg_two_atBot` | missing import (Mathlib lemma) or leaf-drop |
+| ChapterEsaPairDGamma | `rewrite` failed: pattern not found | drift in rewritten term |
+| ChapterMehlerOrthogonalInvariance | unknown identifier `tailSplitEquiv_map` | provider def not imported |
+| ChapterPolarPartialIsometry | unknown namespace `BookProof.UnboundedPolar` | open/import drop |
+| ChapterPositiveSquareRootUnique | unknown namespace `BookProof.UnboundedPolar` | open/import drop |
+| ChapterQuadraticRotationPerturbed | unknown namespace `BookProof.KatoRellich` | open/import drop |
+| ChapterQuadratureEsa | `import Def_ChapterLeafGaps` collides (`environment already contains BookProof.NavierStokesFl…`) | **revert the import; inline a private `eval_starP` lemma** (LeafGaps declares same-name/same-shape lemma at root + colliding chapter content) |
+| ChapterScalaronFockGapChain | unknown identifier `fock_gap_of_one_particle_form_gap` | provider not imported |
+| +2 (YangMills*) | see /tmp/regate_pending.tsv | same class |
+
+**Sol-gap recheck (71 sols: stage missing Thm oleans → `check_sol_local` vs `/tmp/published_mirror`): 6 OK, 65 FAIL.**
+Categories: **21 still missing Thm oleans** (staging didn't produce them — check NOSRC vs thm-compile
+failure in `/tmp/stage2.log`), **9 unsolved goals** (real proof drift), rest content (Function
+expected at…, Invalid rewrite argument, Application type mismatch, Ambiguous term, Invalid simp
+theorem, one heartbeats timeout). Full per-sol errors: `/tmp/recheck2.log`. The 6 newly-OK are
+upload candidates (guard will confirm after their theorems' bundles are published).
+
+**Today's `whats_uploadable` runs**: thm=15 → all published; sol=3 → all DONE. Fresh sol
+uploadable=0 until the def regate/unpublish chain unblocks the big chapter defers
+(QuadratureEsa 107 sols, FockSchurEsa 96, QgOneParticleCcEsa 58, …).
+
+**Campaign focus (user directive)**: published theorems ≈ 2× published sols. Priority order:
+1. upload everything uploadable now (drain loop, re-run `whats_uploadable` after every publish);
+2. fix the 68 missing-olean staging gaps (unblocks most def unblocks → biggest sol wave);
+3. fix the 10 def content bugs;
+4. fix the 65 failing sols (start with 21 staging-adjacent + 9 unsolved goals), resubmit.
+
+## Session 22 continuation (21 Oct afternoon) — bare-`include` census scope fix; include-class 63 → 77; heals executed
+
+**census58 root cause + fix.** The §2.64 census matched only `include X in`
+(INC_RE required `in`), but upstream also uses the **bare section-scoped
+`include X`** form (Lean keeps it in force until the section ends; `omit X in`
+is a one-shot subtraction for the next decl).  Three bare sites exist upstream
+(a grep of `^include` minus `in` returns4 more lines, all comment prose
+`included…`, which the `^include\s` anchor rejects):
+
+| file:line | vars | scope |
+|---|---|---|
+| ChapterSolidHarmonic.lean:521 | hu hv he huv hue hve | `section Frame` →5 thms: inner_u/v/e_spherePt, norm_spherePt, solidHarmonic_spherical |
+| ChapterUnboundedSpectralModel.lean:193 | hV | `section Model` →6 decls (model_apply NOT flagged: its statement mentions `hV` itself via `model_mem T V hV u` — verified) |
+| ChapterMajoranaProp61.lean:85 |16 h-vars | →3 decls (prop61_star/mul_star/isUnit; `omit … hNE hNA in` subtracted from prop61_mul_star_self's drops) |
+
+`scan()` now tracks pending one-shot include/omit, live bare includes keyed by
+scope depth (expired at each `end` pop), and subtracts one-shot omits per decl.
+**Regression check: all66 prior members retained (0 disappeared); class =77**
+(published17 / pending35 / absent25, in_wave52).
+
+**Heals executed** (`debug/heal_include_class.py`):
+- `--fix --only UnboundedSpectralModel` →6 stubs+sols got `include hV in`
+  (model_mem, model_ae_circle, model_ae_ne_zero, model_ae_real_multiplier,
+  model_symmetry_relation, mulRep_cayleyFn_eq_zero); all thm=pending → no
+  platform mutation needed, fixed in place.
+- `--replace --only SolidHarmonic` →5 `_inc` twins (inner_u/v/e_spherePt,
+  norm_spherePt, solidHarmonic_spherical).  The originals' published statements
+  drop the6 frame hypotheses ⇒ **false** (`u = 0` refutes inner_u_spherePt:
+  LHS0 ≠ RHS `r*sinθ*cosφ`), so no original sol can ever verify against node
+  `2b876f59-bc48-45fe-8790-3ed11b39cf1b`; the `_inc` nodes carry
+  `include he hu hue huv hv hve in` in BOTH stub and sol (binder order follows
+  the shared variable block, so statements are identical).
+- `--replace --only MajoranaProp61` →3 twins (prop61_star_mul_self,
+  prop61_mul_star_self, prop61_isUnit).  `prop61_star_mul_self` was done/done —
+  its accepted sol proves the h-free statement, so its twin is redundant but
+  harmless (verbatim proven proof; forced-but-unused binders elaborate).
+
+**Platform confirmation**: `GET /theorems/2b876f59-…` formal_statement shows
+the include-drop server-side exactly as predicted (no h-binders, `:= by sorry`).
+
+**State-writer race, confirmed twice.** The heal's ledger seed for
+`inner_u_spherePt_inc` vanished: a concurrently-running upload held an in-flight
+snapshot of `pipeline.json` and wrote it back at exit (`os.replace` whole-file).
+Re-running `--replace` after the writer exited restored the seed.  Standing
+rule: **check `ps … upload_pipeline` before seeding ledger state, and re-verify
+seeds after writers drain** (the drain loop below makes this the common case).
+
+**Background jobs**: `nohup … &` inside a SYNC terminal call dies with the
+tool's process group (lost3 jobs, empty logs).  Long jobs (sol-check queues,
+failpoll) must be started with `process_type=BACKGROUND`.
+
+**Drain loop**: an externally-parented loop (bash -c `=== DRAIN LOOP …`,
+parent = freebuff terminal broker) is alive and cycling `--kind def|sol|thm`
+chunks over `/tmp/uploadable_*.txt` (30 items, parallel8, job-timeout150,
+max-seconds1080).  Uploads therefore proceed while fixes are written; new items
+only reach it when `recompute_sol_lists`/`whats_uploadable` refreshes those
+files.
+
+**Ledger snapshot14:09**: thm done6974 / pending2448 / parked139 / failed2;
+sol done6657 / pending2726 / parked114; def done598 / pending92.
+
+**In flight at end of this section**: `_one_sol.sh` queue over the14
+new/edited sols (8 `_inc` twins +6 `--fix`ed), `poll_failed_submissions
+--limit4000` refreshing the failed-sol backlog, then `gate_thm_ok.py` for the14
+edited/new thm stubs (sha1 stamps changed → prior gate verdicts stale), then a
+`whats_uploadable` refresh so the drain loop picks them up.
+
+## Session 22 continuation 2 (21 Oct, ~15:00–16:00) — UnboundedSpectralModel: bundle-shadow park+clone, import stripping, call-arity rewires
+
+**Gate outcome (14 stubs)**: 8 OK (SolidHarmonic/Majorana `_inc` twins),
+6 FAIL — all `BookProof.UnboundedSpectralModel.*` with `has already been
+declared`.  Root cause: the **published def bundle
+`Def_ChapterUnboundedSpectralModel` declares21 names inline with complete,
+sorry-free proofs** (fetched verbatim via `cache_published_bundles.py`, which
+re-synced601 bundles; the bundle even carries `include hV` itself), so the
+standalone thm stubs for those names can never compile server-side.
+
+**Measured blast radius**:19 of the20 chapter thm stubs are bundle-shadowed
+(only `unbounded_multiplication_model_separable` has a real node).  Sols import
+the sibling Thm stubs heavily (up to6 per file) — imports that can never exist
+server-side.  Actions, all executed:
+
+1. **`park_dup_thms.py --apply`** parked all19 thm+sol pairs (38 items) with
+   `duplicate declaration: … declared by published def bundle
+   ChapterUnboundedSpectralModel`; ledger now sol done6720 / pending2645 /
+   parked133.
+2. **`clone_redecl_inc.py --from-file`** cloned19 `_inc` twins (stub+sol+
+   wave+`sol_order`+ledger seed).  Unlike heal's `--replace`, this tool handles
+   *pending* bundle-shadowed stubs and renames every identifier occurrence.
+3. **Dead-import stripping**:14 twin sols + the separable sol +5 more twin
+   sols had `import Theorems.Thm_BookProof_UnboundedSpectralModel_<X>` lines
+   removed (names come from the Def bundle import, which every sol carries).
+   Same for5 twin sols importing `Thm_BookProof_ChapterStoneResolvent_
+   UnboundedSelfAdjoint_*` stubs — those are bundle-shadowed by
+   `Def_ChapterStoneResolvent` too, so their oleans can never be built
+   (`build_closure_oleans` FAIL is *expected* there; the fix is import
+   stripping, not olean building).
+4. **Local verification (mirror + fixed `_one_sol.sh`)**: **14/19 USM twin
+   sols prove as-is**; the include-heal (`include hV in`) works — model_*
+   twins all OK.  Remaining5 were olean/import gaps → stripped, re-checking.
+
+**`_one_sol.sh` bug fixed**: it discarded lean's STDOUT, where elaboration
+diagnostics are printed, so every failure showed as an empty `FAIL <slug>`.
+Now captures both streams; first real error line in the FAIL text.
+
+**Call-arity rewires (two sols)**:
+- `solidHarmonic_spherical_inc` and `prop61_isUnit_inc` call sibling frame
+  lemmas with the *upstream* arity (h-binders first, forced by upstream
+  `include`).  Their calls named the ORIGINAL stubs (no h-binders) →
+  `Application type mismatch` / `Function expected`.  Fixed by importing the
+  `_inc` twins and renaming the call sites (`inner_u_spherePt` →
+  `inner_u_spherePt_inc`, …).  The heal `--replace` twins already carried the
+  right `include` lines (15 vars for `prop61_star_mul_self_inc`, 13 = minus
+  hNE/hNA for `prop61_mul_star_self_inc`, matching the upstream `omit … in`).
+- `unbounded_multiplication_model_separable` (the chapter's only real node,
+  thm done): its sol called `spectral_multiplication_model_separable (resOp T)
+  (isStarNormal_resOp T)` against the DirectSum node that dropped `hT` →
+  rewired to the already-Proved `…_separable_inc` twin (both its thm and sol
+  are `done` on the platform, so the module import resolves server-side).
+
+**Mirror closure mechanics confirmed**: `/tmp/published_mirror` gaps die at
+the local gate with `object file … does not exist` — fixed per-batch by
+`build_closure_oleans.py` (stages Def_* from `state/published_bundles`, Thm_*
+from local stubs, compiles deps-first).  A False-positive `Mathlib` line must
+be filtered (resolved via base LEAN_PATH, not the mirror).
+
+**Drain loop ended naturally** at14:56 (`no progress in a full round`) — it
+had landed the QgOuterFockInteractionFL sol batch.  Restart planned once the
+final twin-closure + recheck chain goes green, so the wave it picks up is the
+fully-verified one (gate:19/19 USM twins OK + earlier8 OK).
+
+**Results (drain22b,15:54–16:14)** — the whole verified wave landed:
+- round 1 thm chunk: **20/20 DONE in125s** (19 USM `_inc` + SolidHarmonic
+  `inner_u_spherePt_inc`).
+- round 1/2 sol chunks: **1 +22 DONE in226s** — all19 USM `_inc` sols,
+  `inner_u_spherePt_inc`, and the2 import-fixed sols
+  (`ChapterEntropyTemperature_attentionEntropy_antitoneOn`,
+  `NavierStokesFlow_matrixFlow_commute_of_commute`).  Ledger done14327 →
+  14349.
+- The2 import fixes were applied minutes before their submit; the drain reads
+  the CURRENT workspace file at submit time, so both landed Proved.
+
+**Two more generator defects documented**:
+1. *missing `open` after import add* — `resolve_miss_ident`'s FIXABLE-import
+   class needed `open BookProof.ChapterSoftmaxOrder` in addition to the
+   import (the sol used the bare identifier).  Server accepted anyway (module
+   disambiguation differs); the local mirror needs the `open`.
+2. *name/statement mismatch* — `NavierStokesFlow_matrixFlow_commute_of_commute`:
+   the generator paired the MATRIX lemma's name (upstream line222) with
+   `nsFlow_comm_hamiltonian`'s STATEMENT (upstream line227).  The upstream
+   proof calls the matrix lemma under its own name — impossible for a sol of
+   the same dotted name.  Fixed by inlining the matrix lemma's one-line proof
+   as `private theorem mfc_flow_commute` next to the use (verbatim upstream
+   proof `(h.smul_left t).exp_left`).  Proved on the platform.
+
+**Ledger-seed clobber, second occurrence**: the SolidHarmonic/Majorana `_inc`
+seeds (written14:33 while the def chunk was in flight) came back as
+`status: None` records after the pipeline's whole-file rewrite; their thms
+were silently un-uploadable (`whats_uploadable` =0) while USM twins (seeded in
+a quiet window) all landed.  Re-seeded the14 records in a drain-idle window
+and verified `seeded: 14` + `sol_order` completeness.  Standing rule now:
+**seed AFTER the drain stops, and verify record shape (`status: pending`),
+not just key presence.**
+
+**fixq re-run (16:00)**:2664 pending sols with local source — SUBMIT399 /
+pub-def653 / pub-sib1389 / miss-ident76 / miss-namespace18 / miss-const2 /
+goals30 / other-defect97.  `resolve_miss_ident` classified the76:
+35 blocked-unpublished-module,26 not-found (real content drift — incl. the5
+SolidHarmonic ORIGINALS whose false nodes can never verify),11 ambiguous,
+2 FIXABLE-import (both applied),2 unparsed.

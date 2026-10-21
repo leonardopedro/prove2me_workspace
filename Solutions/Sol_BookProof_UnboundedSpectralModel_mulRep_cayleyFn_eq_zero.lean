@@ -25,12 +25,12 @@ open BookProof.ChapterSpectralDirectSum
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : UnboundedSelfAdjoint H) {mu : Measure (spectrum ℂ (resOp T))}
   (V : Lp ℂ 2 mu →ₗᵢ[ℂ] H)
   (hV : ∀ u : Lp ℂ 2 mu, V (mulRep mu (coordFn (resOp T)) u) = resOp T (V u))
 
 set_option maxHeartbeats 1000000 in
+include hV in
 theorem solution [IsFiniteMeasure mu] : mulRep mu (cayleyFn T) = 0 := by
 
   have hdecomp : (2 * Complex.I) • mulRep mu (cayleyFn T)

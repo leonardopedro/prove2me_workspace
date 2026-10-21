@@ -299303,3 +299303,1199 @@ but this term has type
 09:41:59 chunk: 3 item(s) resolved in 119s
 10:01:05 sync: read 1195 definition publish job(s)
 10:01:58 sync: read 11574 problem publish job(s)
+10:08:56 sync: read 1195 definition publish job(s)
+10:09:51 sync: read 11574 problem publish job(s)
+10:09:52 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc (attempt 1)
+10:09:54 thm:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc: accepted, waiting on the compiler
+10:09:54 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:09:56 thm:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc: accepted, waiting on the compiler
+10:09:56 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc (attempt 1)
+10:09:57 thm:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc: accepted, waiting on the compiler
+10:09:58 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc (attempt 1)
+10:09:59 thm:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc: accepted, waiting on the compiler
+10:10:29 thm:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc: DONE
+10:10:30 thm:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc: DONE
+10:10:39 submitting thm:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc (attempt 1)
+10:10:40 thm:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: accepted, waiting on the compiler
+10:10:41 submitting thm:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc (attempt 1)
+10:10:42 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc: accepted, waiting on the compiler
+10:10:43 thm:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc: DONE
+10:10:44 thm:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc: DONE
+10:10:53 submitting thm:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:10:54 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc: accepted, waiting on the compiler
+10:10:55 submitting thm:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc (attempt 1)
+10:10:56 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: accepted, waiting on the compiler
+10:11:16 thm:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: DONE
+10:11:16 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc: DONE
+10:11:26 submitting thm:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc (attempt 1)
+10:11:27 thm:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc: accepted, waiting on the compiler
+10:11:28 submitting thm:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc (attempt 1)
+10:11:29 thm:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc: accepted, waiting on the compiler
+10:11:30 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc: DONE
+10:11:30 thm:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: DONE
+10:12:24 thm:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc: DONE
+10:12:34 thm:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc: DONE
+10:12:34 summary: 6871 done, 2863 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+10:12:34 chunk: 10 item(s) resolved in 163s
+10:13:31 sync: read 1195 definition publish job(s)
+10:14:29 sync: read 11584 problem publish job(s)
+10:14:31 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc (attempt 1)
+10:14:32 sol:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc: accepted, waiting on the compiler
+10:14:32 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:14:33 sol:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine, BookProof_Navi)
+10:14:33 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc (attempt 1)
+10:14:34 sol:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ)
+10:14:34 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc (attempt 1)
+10:14:35 sol:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_conj_esgn)
+10:14:35 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc (attempt 1)
+10:14:36 sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: accepted, waiting on the compiler
+10:14:37 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc (attempt 1)
+10:14:38 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc: accepted, waiting on the compiler
+10:14:39 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:14:39 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core, BookProof_NavierS)
+10:14:39 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc (attempt 1)
+10:14:40 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn, BookProof_NavierStokesFlow_SignFlip)
+10:14:40 submitting sol:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc (attempt 1)
+10:14:40 sol:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc: WAIT (guard defer: sibling theorem not published on the platform: BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom, BookProof_NavierStokesFlow_SignFlip_)
+10:14:41 submitting sol:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc (attempt 1)
+10:14:42 sol:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc: accepted, waiting on the compiler
+10:15:59 sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: FAIL (verdict CE: Compile error in your proof:
+line 26: Unknown identifier `embFun`
+
+Note: It is not possible to treat `embFun` as an implicitly bound varia)
+10:16:09 sol:BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc: DONE
+10:16:10 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc: DONE
+10:16:27 sol:BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc: DONE
+10:16:28 summary: 6628 done, 3132 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+10:16:28 chunk: 4 item(s) resolved in 118s
+10:18:45 sync: read 1195 definition publish job(s)
+10:19:42 sync: read 11584 problem publish job(s)
+10:19:44 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:19:45 sol:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc: accepted, waiting on the compiler
+10:19:45 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc (attempt 1)
+10:19:47 sol:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc: accepted, waiting on the compiler
+10:19:47 submitting sol:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc (attempt 1)
+10:19:48 sol:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc: accepted, waiting on the compiler
+10:19:49 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc (attempt 2)
+10:19:50 sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: accepted, waiting on the compiler
+10:21:17 sol:BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc: DONE
+10:21:25 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc (attempt 1)
+10:21:27 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc: accepted, waiting on the compiler
+10:21:28 sol:BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc: DONE
+10:21:29 sol:BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc: DONE
+10:21:37 submitting sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc (attempt 1)
+10:21:39 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: accepted, waiting on the compiler
+10:21:39 submitting sol:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc (attempt 1)
+10:21:40 sol:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc: accepted, waiting on the compiler
+10:21:41 sol:BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc: DONE
+10:22:45 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc: DONE
+10:22:46 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: FAIL (verdict CE: Compile error in your proof:
+line 32: Unknown identifier `hasSum_inner_blocks`
+line 29: unsolved goals
+J : Type u_3
+κ c : J → ℝ
+hκ : ∀ (j )
+10:23:21 sol:BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc: DONE
+10:23:21 summary: 6634 done, 3126 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+10:23:21 chunk: 7 item(s) resolved in 219s
+10:27:51 sync: read 1195 definition publish job(s)
+10:28:46 sync: read 11584 problem publish job(s)
+10:28:47 processing sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc (attempt 2)
+10:30:12 sol:BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc: DONE
+10:30:13 summary: 6635 done, 3125 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+10:30:13 chunk: 1 item(s) processed in 87s
+10:58:07 sync: read 1195 definition publish job(s)
+10:58:58 sync: read 11584 problem publish job(s)
+10:58:59 submitting thm:BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj (attempt 1)
+10:58:59 thm:BookProof_GroupAverage_UnitaryRep_isReducingProjection_avgProj: WAIT (guard defer: stub sanity: stub does not end with exactly one `:= by sorry`)
+10:58:59 summary: 6871 done, 2863 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+10:58:59 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+10:58:59 chunk: 0 item(s) resolved in 1s
+11:00:27 sync: read 1195 definition publish job(s)
+11:01:19 sync: read 11584 problem publish job(s)
+11:01:19 summary: 6871 done, 2863 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:01:19 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+11:01:19 chunk: 0 item(s) processed in 0s
+11:01:56 sync: read 1195 definition publish job(s)
+11:02:53 sync: read 11584 problem publish job(s)
+11:02:53 summary: 6871 done, 2863 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:02:53 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
+11:02:53 chunk: 0 item(s) processed in 0s
+11:17:48 sync: read 1195 definition publish job(s)
+11:18:48 sync: read 11584 problem publish job(s)
+11:21:37 sync: read 1195 definition publish job(s)
+11:22:37 sync: read 11584 problem publish job(s)
+11:22:38 submitting thm:BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc (attempt 1)
+11:22:40 thm:BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc: accepted, waiting on the compiler
+11:22:40 submitting thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc (attempt 1)
+11:22:41 thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc: accepted, waiting on the compiler
+11:22:42 submitting thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc (attempt 1)
+11:22:43 thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc: accepted, waiting on the compiler
+11:22:44 submitting thm:BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc (attempt 1)
+11:22:45 thm:BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc: accepted, waiting on the compiler
+11:23:04 thm:BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc: DONE
+11:23:14 submitting thm:BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc (attempt 1)
+11:23:15 thm:BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc: accepted, waiting on the compiler
+11:23:16 thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc: DONE
+11:23:16 thm:BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc: DONE
+11:23:17 thm:BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc: DONE
+11:23:26 submitting thm:BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc (attempt 1)
+11:23:27 thm:BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc: accepted, waiting on the compiler
+11:23:28 submitting thm:BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc (attempt 1)
+11:23:29 thm:BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc: accepted, waiting on the compiler
+11:23:30 submitting thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc (attempt 1)
+11:23:31 thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc: accepted, waiting on the compiler
+11:23:50 thm:BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc: DONE
+11:24:00 submitting thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc (attempt 1)
+11:24:01 thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc: accepted, waiting on the compiler
+11:24:02 thm:BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc: DONE
+11:24:02 thm:BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc: DONE
+11:24:03 thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc: DONE
+11:24:12 submitting thm:BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc (attempt 1)
+11:24:13 thm:BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc: accepted, waiting on the compiler
+11:24:13 submitting thm:BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc (attempt 1)
+11:24:15 thm:BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc: accepted, waiting on the compiler
+11:24:15 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc (attempt 1)
+11:24:16 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc: accepted, waiting on the compiler
+11:24:26 thm:BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc: DONE
+11:24:36 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc (attempt 1)
+11:24:37 thm:BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc: accepted, waiting on the compiler
+11:24:38 thm:BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc: DONE
+11:24:47 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc (attempt 1)
+11:24:48 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc: accepted, waiting on the compiler
+11:24:49 thm:BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc: DONE
+11:24:50 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc: DONE
+11:24:59 submitting thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc (attempt 1)
+11:25:00 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc: accepted, waiting on the compiler
+11:25:10 thm:BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc: DONE
+11:25:37 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc: DONE
+11:25:46 thm:BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc: DONE
+11:25:46 summary: 6886 done, 2848 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:25:46 chunk: 15 item(s) resolved in 189s
+11:26:44 sync: read 1195 definition publish job(s)
+11:27:39 sync: read 11599 problem publish job(s)
+11:27:39 submitting sol:BookProof_ClosureUniqueness_mem_factorGraph_sqOp (attempt 1)
+11:27:39 sol:BookProof_ClosureUniqueness_mem_factorGraph_sqOp: DONE
+11:27:41 submitting sol:BookProof_KatoRellich_deficiencyTrivialAt_of_dense (attempt 1)
+11:27:41 sol:BookProof_KatoRellich_deficiencyTrivialAt_of_dense: DONE
+11:27:41 submitting sol:BookProof_KatoRellich_dense_range_add_bounded (attempt 1)
+11:27:42 sol:BookProof_KatoRellich_dense_range_add_bounded: DONE
+11:27:42 summary: 6638 done, 3122 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:27:42 chunk: 3 item(s) resolved in 3s
+11:27:55 sync: read 1195 definition publish job(s)
+11:28:54 sync: read 11599 problem publish job(s)
+11:29:57 sync: read 1195 definition publish job(s)
+11:30:53 sync: read 11599 problem publish job(s)
+11:30:53 submitting def:ChapterWallDeficiencyObstruction (attempt 2)
+11:31:01 def:ChapterWallDeficiencyObstruction: accepted, waiting on the compiler
+11:32:01 def:ChapterWallDeficiencyObstruction: DONE
+11:32:02 summary: 589 done, 102 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:32:02 waiting on unpublished def bundle(s): ChapterNsKoopman (1 item(s)), ChapterNsNonlinearFarisLavine (1 item(s)), ChapterWallDeficiencyObstruction (1 item(s))
+11:32:02 chunk: 1 item(s) resolved in 69s
+11:32:16 sync: read 1196 definition publish job(s)
+11:33:08 sync: read 11599 problem publish job(s)
+11:35:35 sync: read 1196 definition publish job(s)
+11:36:26 sync: read 11599 problem publish job(s)
+11:36:28 submitting thm:BookProof_WallDeficiencyObstruction_IsL2Ode_continuous (attempt 1)
+11:36:29 thm:BookProof_WallDeficiencyObstruction_IsL2Ode_continuous: accepted, waiting on the compiler
+11:36:29 submitting thm:BookProof_WallDeficiencyObstruction_IsL2Ode_memLp (attempt 1)
+11:36:31 thm:BookProof_WallDeficiencyObstruction_IsL2Ode_memLp: accepted, waiting on the compiler
+11:37:32 thm:BookProof_WallDeficiencyObstruction_IsL2Ode_continuous: FAIL (publish FAILED: formal statement does not compile: line 19: `BookProof.WallDeficiencyObstruction.IsL2Ode.continuous` has already been declared)
+11:37:42 thm:BookProof_WallDeficiencyObstruction_IsL2Ode_memLp: FAIL (publish FAILED: formal statement does not compile: line 19: `BookProof.WallDeficiencyObstruction.IsL2Ode.memLp` has already been declared)
+11:37:42 summary: 6886 done, 2848 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+11:37:42 chunk: 2 item(s) resolved in 76s
+13:19:55 sync: read 1196 definition publish job(s)
+13:20:41 sync: read 11601 problem publish job(s)
+13:21:20 sync: read 1196 definition publish job(s)
+13:22:10 sync: read 11601 problem publish job(s)
+13:22:10 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+13:22:16 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+13:22:16 submitting def:ChapterBddBelowWallEsa (attempt 1)
+13:22:18 def:ChapterBddBelowWallEsa: accepted, waiting on the compiler
+13:22:18 submitting def:ChapterNsBrstDerivativeGauge (attempt 1)
+13:22:21 def:ChapterNsBrstDerivativeGauge: accepted, waiting on the compiler
+13:22:21 submitting def:ChapterSqSumOuterFamily (attempt 1)
+13:22:25 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+13:22:25 submitting def:ChapterQgOuterFockInteractionFL (attempt 1)
+13:22:27 def:ChapterQgOuterFockInteractionFL: accepted, waiting on the compiler
+13:22:27 submitting def:ChapterQgOuterFockEllipticFL (attempt 2)
+13:22:34 def:ChapterQgOuterFockEllipticFL: accepted, waiting on the compiler
+13:22:34 submitting def:ChapterLimitCircleExample (attempt 1)
+13:22:35 def:ChapterLimitCircleExample: accepted, waiting on the compiler
+13:22:36 submitting def:ChapterBookBrstInstances (attempt 1)
+13:22:38 def:ChapterBookBrstInstances: accepted, waiting on the compiler
+13:22:38 submitting def:ChapterUnboundedSpectralModel (attempt 1)
+13:22:40 def:ChapterUnboundedSpectralModel: accepted, waiting on the compiler
+13:22:40 submitting def:ChapterFockCubicUnbounded (attempt 1)
+13:22:42 def:ChapterFockCubicUnbounded: accepted, waiting on the compiler
+13:23:03 def:ChapterNsBrstDerivativeGauge: DONE
+13:23:24 def:ChapterQgOuterFockInteractionFL: DONE
+13:23:25 def:ChapterLimitCircleExample: DONE
+13:23:44 def:ChapterQgOuterFockEllipticFL: DONE
+13:23:44 def:ChapterUnboundedSpectralModel: DONE
+13:23:53 def:ChapterBddBelowWallEsa: DONE
+13:23:54 def:ChapterFockCubicUnbounded: DONE
+13:24:02 def:ChapterBookBrstInstances: DONE
+13:24:02 summary: 597 done, 94 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:24:02 chunk: 8 item(s) resolved in 112s
+13:25:45 sync: read 1204 definition publish job(s)
+13:26:49 sync: read 11601 problem publish job(s)
+13:28:20 sync: read 1204 definition publish job(s)
+13:29:14 sync: read 11601 problem publish job(s)
+13:29:14 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+13:29:23 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+13:29:25 submitting def:ChapterSqSumOuterFamily (attempt 1)
+13:29:29 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+13:29:30 submitting def:ChapterFockCubicQuarticStability (attempt 1)
+13:29:31 def:ChapterFockCubicQuarticStability: accepted, waiting on the compiler
+13:30:39 def:ChapterFockCubicQuarticStability: DONE
+13:30:39 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:30:39 chunk: 1 item(s) resolved in 85s
+13:30:55 sync: read 1205 definition publish job(s)
+13:31:57 sync: read 11601 problem publish job(s)
+13:31:58 submitting thm:BookProof_BddBelowFiberSumEsa_fiberSumHam_single (attempt 1)
+13:31:59 thm:BookProof_BddBelowFiberSumEsa_fiberSumHam_single: accepted, waiting on the compiler
+13:31:59 submitting thm:BookProof_FockCubicUnbounded_confAt_self (attempt 1)
+13:32:00 thm:BookProof_FockCubicUnbounded_confAt_self: accepted, waiting on the compiler
+13:32:00 submitting thm:BookProof_FockCubicUnbounded_confAt_injective (attempt 1)
+13:32:02 thm:BookProof_FockCubicUnbounded_confAt_injective: accepted, waiting on the compiler
+13:32:02 submitting thm:BookProof_FockCubicUnbounded_up_confAt (attempt 1)
+13:32:03 thm:BookProof_FockCubicUnbounded_up_confAt: accepted, waiting on the compiler
+13:32:03 submitting thm:BookProof_FockCubicUnbounded_dn_confAt (attempt 1)
+13:32:04 thm:BookProof_FockCubicUnbounded_dn_confAt: accepted, waiting on the compiler
+13:32:04 submitting thm:BookProof_FockCubicUnbounded_confAt_ne_zero (attempt 1)
+13:32:05 thm:BookProof_FockCubicUnbounded_confAt_ne_zero: accepted, waiting on the compiler
+13:32:05 submitting thm:BookProof_FockCubicUnbounded_confNumber_confAt (attempt 1)
+13:32:07 thm:BookProof_FockCubicUnbounded_confNumber_confAt: accepted, waiting on the compiler
+13:32:07 submitting thm:BookProof_FockCubicUnbounded_cubeA_apply (attempt 1)
+13:32:08 thm:BookProof_FockCubicUnbounded_cubeA_apply: accepted, waiting on the compiler
+13:33:03 thm:BookProof_FockCubicUnbounded_confAt_self: DONE
+13:33:07 thm:BookProof_FockCubicUnbounded_confAt_injective: DONE
+13:33:17 submitting thm:BookProof_FockCubicUnbounded_cubeA_coord (attempt 1)
+13:33:18 thm:BookProof_FockCubicUnbounded_cubeA_coord: accepted, waiting on the compiler
+13:33:18 submitting thm:BookProof_FockCubicUnbounded_trial_support_subset (attempt 1)
+13:33:24 thm:BookProof_FockCubicUnbounded_trial_support_subset: accepted, waiting on the compiler
+13:33:25 thm:BookProof_FockCubicUnbounded_confAt_ne_zero: DONE
+13:33:25 thm:BookProof_FockCubicUnbounded_confNumber_confAt: DONE
+13:33:26 thm:BookProof_FockCubicUnbounded_cubeA_apply: DONE
+13:33:35 submitting thm:BookProof_FockCubicUnbounded_trial_at_n (attempt 1)
+13:33:36 thm:BookProof_FockCubicUnbounded_trial_at_n: accepted, waiting on the compiler
+13:33:36 submitting thm:BookProof_FockCubicUnbounded_trial_at_n3 (attempt 1)
+13:33:37 thm:BookProof_FockCubicUnbounded_trial_at_n3: accepted, waiting on the compiler
+13:33:37 submitting thm:BookProof_FockCubicUnbounded_trial_at_other (attempt 1)
+13:33:38 thm:BookProof_FockCubicUnbounded_trial_at_other: accepted, waiting on the compiler
+13:33:39 thm:BookProof_FockCubicUnbounded_up_confAt: DONE
+13:33:39 thm:BookProof_FockCubicUnbounded_dn_confAt: DONE
+13:33:50 submitting thm:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal (attempt 1)
+13:34:20 thm:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal: WAIT (submit-problem rejected: null)
+13:34:21 submitting thm:BookProof_FockCubicUnbounded_trial_norm_sq (attempt 1)
+13:34:22 thm:BookProof_FockCubicUnbounded_trial_norm_sq: accepted, waiting on the compiler
+13:34:22 submitting thm:BookProof_FockCubicUnbounded_trial_numberQuad (attempt 1)
+13:34:23 thm:BookProof_FockCubicUnbounded_trial_numberQuad: accepted, waiting on the compiler
+13:34:23 thm:BookProof_BddBelowFiberSumEsa_fiberSumHam_single: FAIL (publish FAILED: formal statement does not compile: line 26: Unknown identifier `single_mem_dsCore`
+
+Note: It is not possible to treat `single_mem_dsCo)
+13:34:23 thm:BookProof_FockCubicUnbounded_cubeA_coord: DONE
+13:34:24 thm:BookProof_FockCubicUnbounded_trial_at_n: DONE
+13:34:25 thm:BookProof_FockCubicUnbounded_trial_at_n3: DONE
+13:34:34 submitting thm:BookProof_FockCubicUnbounded_trial_cubic_form (attempt 1)
+13:34:35 thm:BookProof_FockCubicUnbounded_trial_cubic_form: accepted, waiting on the compiler
+13:34:35 submitting thm:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound (attempt 1)
+13:34:35 thm:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound: title clamped to 179 chars (server limit 200)
+13:34:36 thm:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound: accepted, waiting on the compiler
+13:34:36 submitting thm:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic (attempt 1)
+13:34:36 thm:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic: title clamped to 179 chars (server limit 200)
+13:34:37 thm:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic: accepted, waiting on the compiler
+13:34:37 submitting thm:BookProof_FockCubicUnbounded_quartA_single_confAt (attempt 1)
+13:34:37 thm:BookProof_FockCubicUnbounded_quartA_single_confAt: title clamped to 179 chars (server limit 200)
+13:34:38 thm:BookProof_FockCubicUnbounded_quartA_single_confAt: accepted, waiting on the compiler
+13:34:48 thm:BookProof_FockCubicUnbounded_trial_support_subset: DONE
+13:34:59 submitting thm:BookProof_FockCubicUnbounded_trial_quartic_form (attempt 1)
+13:34:59 thm:BookProof_FockCubicUnbounded_trial_quartic_form: accepted, waiting on the compiler
+13:35:00 thm:BookProof_FockCubicUnbounded_trial_at_other: DONE
+13:35:00 thm:BookProof_FockCubicUnbounded_trial_norm_sq: DONE
+13:35:10 submitting thm:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below (attempt 1)
+13:35:11 thm:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below: title clamped to 179 chars (server limit 200)
+13:35:11 thm:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:35:11 submitting thm:BookProof_BddBelowWallEsa_abs_bumpG'_le (attempt 1)
+13:35:12 thm:BookProof_BddBelowWallEsa_abs_bumpG'_le: accepted, waiting on the compiler
+13:35:13 thm:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound: DONE
+13:35:14 thm:BookProof_FockCubicUnbounded_quartA_single_confAt: DONE
+13:35:23 submitting thm:BookProof_BddBelowWallEsa_continuous_zeta' (attempt 1)
+13:35:24 thm:BookProof_BddBelowWallEsa_continuous_zeta': accepted, waiting on the compiler
+13:35:24 submitting thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta' (attempt 1)
+13:35:25 thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta': accepted, waiting on the compiler
+13:35:36 thm:BookProof_FockCubicUnbounded_trial_numberQuad: DONE
+13:35:46 submitting thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq (attempt 1)
+13:35:47 thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq: accepted, waiting on the compiler
+13:35:47 thm:BookProof_FockCubicUnbounded_trial_cubic_form: DONE
+13:35:48 thm:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic: DONE
+13:35:48 thm:BookProof_FockCubicUnbounded_trial_quartic_form: DONE
+13:35:48 thm:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below: DONE
+13:35:58 submitting thm:BookProof_BddBelowWallEsa_abs_zeta'_le (attempt 1)
+13:35:58 thm:BookProof_BddBelowWallEsa_abs_zeta'_le: WAIT (submit-problem rejected: null)
+13:35:58 submitting thm:BookProof_BddBelowWallEsa_wallHam_essentiallySelfAdjoint_of_bddBelow' (attempt 1)
+13:35:59 thm:BookProof_BddBelowWallEsa_wallHam_essentiallySelfAdjoint_of_bddBelow': accepted, waiting on the compiler
+13:35:59 submitting thm:BookProof_LimitCircleExample_one_add_sq_pos (attempt 1)
+13:36:00 thm:BookProof_LimitCircleExample_one_add_sq_pos: accepted, waiting on the compiler
+13:36:00 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcP (attempt 1)
+13:36:01 thm:BookProof_LimitCircleExample_hasDerivAt_lcP: accepted, waiting on the compiler
+13:36:01 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcP' (attempt 1)
+13:36:02 thm:BookProof_LimitCircleExample_hasDerivAt_lcP': accepted, waiting on the compiler
+13:36:03 thm:BookProof_BddBelowWallEsa_wallHam_essentiallySelfAdjoint_of_bddBelow': FAIL (publish FAILED: formal statement does not compile: DB error looking up import 'Definitions.Def_ChapterScalaronWallEsa': <ConnectionTerminated error_co)
+13:36:12 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcQ (attempt 1)
+13:36:13 thm:BookProof_LimitCircleExample_hasDerivAt_lcQ: accepted, waiting on the compiler
+13:36:56 thm:BookProof_BddBelowWallEsa_abs_bumpG'_le: DONE
+13:37:07 thm:BookProof_BddBelowWallEsa_continuous_zeta': DONE
+13:37:07 thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta': DONE
+13:37:08 thm:BookProof_LimitCircleExample_one_add_sq_pos: DONE
+13:37:09 thm:BookProof_LimitCircleExample_hasDerivAt_lcP': DONE
+13:37:18 thm:BookProof_LimitCircleExample_hasDerivAt_lcQ: DONE
+13:37:26 thm:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq: DONE
+13:37:35 thm:BookProof_LimitCircleExample_hasDerivAt_lcP: DONE
+13:37:35 summary: 6914 done, 2820 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:37:35 chunk: 30 item(s) resolved in 338s
+13:37:45 sync: read 1205 definition publish job(s)
+13:38:34 sync: read 11631 problem publish job(s)
+13:38:34 submitting sol:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form (attempt 1)
+13:38:35 sol:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form: accepted, waiting on the compiler
+13:40:57 sol:BookProof_BddBelowFiberSumEsa_qgFiberSum_nonneg_form: DONE
+13:40:57 summary: 6639 done, 3121 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:40:57 chunk: 1 item(s) resolved in 143s
+13:42:37 sync: read 1205 definition publish job(s)
+13:43:27 sync: read 11631 problem publish job(s)
+13:44:12 sync: read 1205 definition publish job(s)
+13:44:59 sync: read 11631 problem publish job(s)
+13:44:59 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+13:45:04 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+13:45:05 submitting def:ChapterSqSumOuterFamily (attempt 1)
+13:45:08 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+13:45:08 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:45:08 chunk: 0 item(s) resolved in 9s
+13:45:18 sync: read 1205 definition publish job(s)
+13:46:08 sync: read 11631 problem publish job(s)
+13:46:08 submitting thm:BookProof_FockCubicQuarticStability_quart_form_eq (attempt 1)
+13:46:09 thm:BookProof_FockCubicQuarticStability_quart_form_eq: accepted, waiting on the compiler
+13:46:10 submitting thm:BookProof_FockCubicQuarticStability_quart_form_nonneg (attempt 1)
+13:46:10 thm:BookProof_FockCubicQuarticStability_quart_form_nonneg: accepted, waiting on the compiler
+13:46:11 submitting thm:BookProof_FockCubicQuarticStability_cubic_form_eq (attempt 1)
+13:46:11 thm:BookProof_FockCubicQuarticStability_cubic_form_eq: accepted, waiting on the compiler
+13:46:12 submitting thm:BookProof_FockCubicQuarticStability_norm_creA_sq (attempt 1)
+13:46:13 thm:BookProof_FockCubicQuarticStability_norm_creA_sq: accepted, waiting on the compiler
+13:46:13 submitting thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul (attempt 1)
+13:46:14 thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul: accepted, waiting on the compiler
+13:46:14 submitting thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad (attempt 1)
+13:46:15 thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad: accepted, waiting on the compiler
+13:46:15 submitting thm:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below (attempt 1)
+13:46:15 thm:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below: title clamped to 179 chars (server limit 200)
+13:46:16 thm:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:46:16 submitting thm:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below (attempt 1)
+13:46:17 thm:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:46:49 thm:BookProof_FockCubicQuarticStability_quart_form_nonneg: DONE
+13:46:51 thm:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below: DONE
+13:46:59 submitting thm:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below (attempt 1)
+13:46:59 thm:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below: title clamped to 179 chars (server limit 200)
+13:47:00 thm:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:47:00 submitting thm:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general (attempt 1)
+13:47:01 thm:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general: accepted, waiting on the compiler
+13:47:01 thm:BookProof_FockCubicQuarticStability_quart_form_eq: DONE
+13:47:02 thm:BookProof_FockCubicQuarticStability_cubic_form_eq: DONE
+13:47:02 thm:BookProof_FockCubicQuarticStability_norm_creA_sq: DONE
+13:47:02 thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul: DONE
+13:47:03 thm:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad: DONE
+13:47:03 thm:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below: DONE
+13:47:12 submitting thm:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below (attempt 1)
+13:47:12 thm:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below: title clamped to 179 chars (server limit 200)
+13:47:13 thm:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:47:13 submitting thm:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below (attempt 1)
+13:47:14 thm:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:47:14 submitting thm:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal (attempt 1)
+13:47:14 thm:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal: accepted, waiting on the compiler
+13:47:15 submitting thm:BookProof_BddBelowWallEsa_abs_zeta'_le (attempt 1)
+13:47:16 thm:BookProof_BddBelowWallEsa_abs_zeta'_le: accepted, waiting on the compiler
+13:47:16 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcQ' (attempt 1)
+13:47:17 thm:BookProof_LimitCircleExample_hasDerivAt_lcQ': accepted, waiting on the compiler
+13:47:17 submitting thm:BookProof_LimitCircleExample_contDiff_lcV (attempt 1)
+13:47:18 thm:BookProof_LimitCircleExample_contDiff_lcV: accepted, waiting on the compiler
+13:47:38 thm:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below: DONE
+13:47:39 thm:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general: DONE
+13:47:49 submitting thm:BookProof_LimitCircleExample_lcSol_ne_zero (attempt 1)
+13:47:50 thm:BookProof_LimitCircleExample_lcSol_ne_zero: accepted, waiting on the compiler
+13:47:50 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcLogFun (attempt 1)
+13:47:51 thm:BookProof_LimitCircleExample_hasDerivAt_lcLogFun: accepted, waiting on the compiler
+13:47:52 thm:BookProof_LimitCircleExample_hasDerivAt_lcQ': DONE
+13:47:52 thm:BookProof_LimitCircleExample_contDiff_lcV: DONE
+13:48:01 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcSol (attempt 1)
+13:48:02 thm:BookProof_LimitCircleExample_hasDerivAt_lcSol: accepted, waiting on the compiler
+13:48:02 submitting thm:BookProof_LimitCircleExample_lcLog_ode (attempt 1)
+13:48:03 thm:BookProof_LimitCircleExample_lcLog_ode: accepted, waiting on the compiler
+13:48:25 thm:BookProof_LimitCircleExample_hasDerivAt_lcLogFun: DONE
+13:48:34 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcLog' (attempt 1)
+13:48:35 thm:BookProof_LimitCircleExample_hasDerivAt_lcLog': accepted, waiting on the compiler
+13:48:36 thm:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below: DONE
+13:48:36 thm:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal: DONE
+13:48:37 thm:BookProof_LimitCircleExample_lcLog_ode: DONE
+13:48:46 submitting thm:BookProof_LimitCircleExample_hasDerivAt_lcSol' (attempt 1)
+13:48:47 thm:BookProof_LimitCircleExample_hasDerivAt_lcSol': accepted, waiting on the compiler
+13:48:47 submitting thm:BookProof_LimitCircleExample_norm_lcSol (attempt 1)
+13:48:48 thm:BookProof_LimitCircleExample_norm_lcSol: accepted, waiting on the compiler
+13:48:48 submitting thm:BookProof_LimitCircleExample_lcSol_sq_le (attempt 1)
+13:48:49 thm:BookProof_LimitCircleExample_lcSol_sq_le: accepted, waiting on the compiler
+13:48:49 thm:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below: DONE
+13:48:49 thm:BookProof_BddBelowWallEsa_abs_zeta'_le: DONE
+13:48:50 thm:BookProof_LimitCircleExample_lcSol_ne_zero: DONE
+13:48:50 thm:BookProof_LimitCircleExample_hasDerivAt_lcSol: DONE
+13:49:00 submitting thm:BookProof_LimitCircleExample_continuous_lcSol (attempt 1)
+13:49:00 thm:BookProof_LimitCircleExample_continuous_lcSol: accepted, waiting on the compiler
+13:49:01 submitting thm:BookProof_LimitCircleExample_memLp_lcSol (attempt 1)
+13:49:02 thm:BookProof_LimitCircleExample_memLp_lcSol: accepted, waiting on the compiler
+13:49:02 submitting thm:BookProof_LimitCircleExample_lcSol_isL2Ode (attempt 1)
+13:49:03 thm:BookProof_LimitCircleExample_lcSol_isL2Ode: accepted, waiting on the compiler
+13:49:03 submitting thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_I (attempt 1)
+13:49:04 thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_I: accepted, waiting on the compiler
+13:49:14 thm:BookProof_LimitCircleExample_hasDerivAt_lcLog': DONE
+13:49:25 submitting thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_negI (attempt 1)
+13:49:26 thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_negI: accepted, waiting on the compiler
+13:49:26 thm:BookProof_LimitCircleExample_hasDerivAt_lcSol': DONE
+13:49:27 thm:BookProof_LimitCircleExample_norm_lcSol: DONE
+13:49:37 submitting thm:BookProof_LimitCircleExample_lcV_not_essentiallySelfAdjoint (attempt 1)
+13:49:38 thm:BookProof_LimitCircleExample_lcV_not_essentiallySelfAdjoint: accepted, waiting on the compiler
+13:49:38 thm:BookProof_LimitCircleExample_continuous_lcSol: DONE
+13:49:39 thm:BookProof_LimitCircleExample_lcSol_isL2Ode: DONE
+13:49:48 thm:BookProof_LimitCircleExample_lcSol_sq_le: DONE
+13:49:49 thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_I: FAIL (publish FAILED: formal statement does not compile: line 21: Unknown identifier `contDiff_lcV`
+
+Note: It is not possible to treat `contDiff_lcV` as an )
+13:49:58 thm:BookProof_LimitCircleExample_memLp_lcSol: DONE
+13:50:16 thm:BookProof_LimitCircleExample_lcV_not_essentiallySelfAdjoint: FAIL (publish FAILED: formal statement does not compile: line 21: Unknown identifier `contDiff_lcV`
+
+Note: It is not possible to treat `contDiff_lcV` as an )
+13:50:49 thm:BookProof_LimitCircleExample_lcV_not_deficiencyTrivialAt_negI: FAIL (publish FAILED: formal statement does not compile: line 21: Unknown identifier `contDiff_lcV`
+
+Note: It is not possible to treat `contDiff_lcV` as an )
+13:50:49 summary: 6941 done, 2793 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:50:49 chunk: 30 item(s) resolved in 281s
+13:50:59 sync: read 1205 definition publish job(s)
+13:51:48 sync: read 11661 problem publish job(s)
+13:51:48 submitting sol:BookProof_FockCubicUnbounded_confAt_self (attempt 1)
+13:51:49 sol:BookProof_FockCubicUnbounded_confAt_self: accepted, waiting on the compiler
+13:51:49 submitting sol:BookProof_FockCubicUnbounded_confAt_injective (attempt 1)
+13:51:50 sol:BookProof_FockCubicUnbounded_confAt_injective: accepted, waiting on the compiler
+13:51:50 submitting sol:BookProof_FockCubicUnbounded_up_confAt (attempt 1)
+13:51:51 sol:BookProof_FockCubicUnbounded_up_confAt: accepted, waiting on the compiler
+13:51:51 submitting sol:BookProof_FockCubicUnbounded_dn_confAt (attempt 1)
+13:51:52 sol:BookProof_FockCubicUnbounded_dn_confAt: accepted, waiting on the compiler
+13:51:52 submitting sol:BookProof_FockCubicUnbounded_confAt_ne_zero (attempt 1)
+13:51:53 sol:BookProof_FockCubicUnbounded_confAt_ne_zero: accepted, waiting on the compiler
+13:51:54 submitting sol:BookProof_FockCubicUnbounded_confNumber_confAt (attempt 1)
+13:51:55 sol:BookProof_FockCubicUnbounded_confNumber_confAt: accepted, waiting on the compiler
+13:51:55 submitting sol:BookProof_FockCubicUnbounded_cubeA_apply (attempt 1)
+13:51:56 sol:BookProof_FockCubicUnbounded_cubeA_apply: accepted, waiting on the compiler
+13:51:56 submitting sol:BookProof_FockCubicUnbounded_cubeA_coord (attempt 1)
+13:51:57 sol:BookProof_FockCubicUnbounded_cubeA_coord: accepted, waiting on the compiler
+13:52:42 sol:BookProof_FockCubicUnbounded_cubeA_apply: FAIL (verdict ERROR: Failed to resolve platform imports: DB error looking up import 'Theorems.Thm_BookProof_FockSecondQuantization_creA_apply': [Errno 104] )
+13:52:50 submitting sol:BookProof_FockCubicUnbounded_trial_support_subset (attempt 1)
+13:52:51 sol:BookProof_FockCubicUnbounded_trial_support_subset: accepted, waiting on the compiler
+13:53:12 sol:BookProof_FockCubicUnbounded_confAt_self: DONE
+13:53:22 submitting sol:BookProof_FockCubicUnbounded_trial_at_n (attempt 1)
+13:53:23 sol:BookProof_FockCubicUnbounded_trial_at_n: accepted, waiting on the compiler
+13:53:35 sol:BookProof_FockCubicUnbounded_confAt_injective: DONE
+13:53:35 sol:BookProof_FockCubicUnbounded_up_confAt: DONE
+13:53:36 sol:BookProof_FockCubicUnbounded_dn_confAt: DONE
+13:53:36 sol:BookProof_FockCubicUnbounded_confAt_ne_zero: DONE
+13:53:45 submitting sol:BookProof_FockCubicUnbounded_trial_at_n3 (attempt 1)
+13:53:46 sol:BookProof_FockCubicUnbounded_trial_at_n3: accepted, waiting on the compiler
+13:53:46 submitting sol:BookProof_FockCubicUnbounded_trial_at_other (attempt 1)
+13:53:48 sol:BookProof_FockCubicUnbounded_trial_at_other: accepted, waiting on the compiler
+13:53:48 submitting sol:BookProof_FockCubicUnbounded_trial_norm_sq (attempt 1)
+13:53:49 sol:BookProof_FockCubicUnbounded_trial_norm_sq: accepted, waiting on the compiler
+13:53:49 submitting sol:BookProof_FockCubicUnbounded_trial_numberQuad (attempt 1)
+13:53:50 sol:BookProof_FockCubicUnbounded_trial_numberQuad: accepted, waiting on the compiler
+13:53:51 sol:BookProof_FockCubicUnbounded_confNumber_confAt: DONE
+13:53:51 sol:BookProof_FockCubicUnbounded_cubeA_coord: DONE
+13:54:01 submitting sol:BookProof_FockCubicUnbounded_trial_cubic_form (attempt 1)
+13:54:02 sol:BookProof_FockCubicUnbounded_trial_cubic_form: accepted, waiting on the compiler
+13:54:02 submitting sol:BookProof_FockCubicUnbounded_quartA_single_confAt (attempt 1)
+13:54:03 sol:BookProof_FockCubicUnbounded_quartA_single_confAt: accepted, waiting on the compiler
+13:54:35 sol:BookProof_FockCubicUnbounded_trial_support_subset: FAIL (verdict CE: Compile error in your proof:
+line 30: Ambiguous term
+  trial
+Possible interpretations:
+  BookProof.TempleSeparationNecessary.trial : E2
+  )
+13:54:45 submitting sol:BookProof_FockCubicUnbounded_trial_quartic_form (attempt 1)
+13:54:46 sol:BookProof_FockCubicUnbounded_trial_quartic_form: accepted, waiting on the compiler
+13:55:08 sol:BookProof_FockCubicUnbounded_trial_at_other: FAIL (verdict CE: Compile error in your proof:
+line 28: Ambiguous term
+  trial
+Possible interpretations:
+  BookProof.TempleSeparationNecessary.trial : E2
+  )
+13:55:18 submitting sol:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below (attempt 1)
+13:55:19 sol:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below: accepted, waiting on the compiler
+13:55:19 sol:BookProof_FockCubicUnbounded_trial_at_n: FAIL (verdict CE: Compile error in your proof:
+line 29: Ambiguous term
+  trial
+Possible interpretations:
+  BookProof.TempleSeparationNecessary.trial : E2
+  )
+13:55:20 sol:BookProof_FockCubicUnbounded_trial_at_n3: FAIL (verdict CE: Compile error in your proof:
+line 30: Ambiguous term
+  trial
+Possible interpretations:
+  BookProof.TempleSeparationNecessary.trial : E2
+  )
+13:55:21 sol:BookProof_FockCubicUnbounded_quartA_single_confAt: FAIL (verdict CE: Compile error in your proof:
+line 30: unsolved goals
+k m : ℕ
+z : ℂ
+⊢ (creA k) ((creA k) ((annA k) ((annA k) fun₀ | confAt k 0 => z))) = 0
+)
+13:55:30 submitting sol:BookProof_BddBelowWallEsa_abs_bumpG'_le (attempt 1)
+13:55:31 sol:BookProof_BddBelowWallEsa_abs_bumpG'_le: accepted, waiting on the compiler
+13:55:31 submitting sol:BookProof_BddBelowWallEsa_continuous_zeta' (attempt 1)
+13:55:32 sol:BookProof_BddBelowWallEsa_continuous_zeta': accepted, waiting on the compiler
+13:55:32 submitting sol:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq (attempt 1)
+13:55:34 sol:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq: accepted, waiting on the compiler
+13:55:45 sol:BookProof_FockCubicUnbounded_trial_norm_sq: DONE
+13:55:45 sol:BookProof_FockCubicUnbounded_trial_numberQuad: DONE
+13:55:55 submitting sol:BookProof_LimitCircleExample_one_add_sq_pos (attempt 1)
+13:55:56 sol:BookProof_LimitCircleExample_one_add_sq_pos: accepted, waiting on the compiler
+13:55:56 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcP (attempt 1)
+13:55:57 sol:BookProof_LimitCircleExample_hasDerivAt_lcP: accepted, waiting on the compiler
+13:56:08 sol:BookProof_FockCubicUnbounded_trial_cubic_form: DONE
+13:56:18 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcP' (attempt 1)
+13:56:19 sol:BookProof_LimitCircleExample_hasDerivAt_lcP': accepted, waiting on the compiler
+13:56:20 sol:BookProof_FockCubicUnbounded_trial_quartic_form: FAIL (verdict CE: Compile error in your proof:
+line 42: Ambiguous term
+  trial
+Possible interpretations:
+  BookProof.TempleSeparationNecessary.trial : E2
+  )
+13:56:30 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcQ (attempt 1)
+13:56:31 sol:BookProof_LimitCircleExample_hasDerivAt_lcQ: accepted, waiting on the compiler
+13:57:14 sol:BookProof_FockCubicUnbounded_trial_cubic_quartic_bounded_below: DONE
+13:57:15 sol:BookProof_BddBelowWallEsa_hasCompactSupport_zeta'_sq: FAIL (verdict ERROR: Failed to resolve platform imports: DB error looking up import 'Definitions.Def_ChapterScalaronWallEsa': <ConnectionTerminated error_co)
+13:57:24 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcQ' (attempt 1)
+13:57:25 sol:BookProof_LimitCircleExample_hasDerivAt_lcQ': accepted, waiting on the compiler
+13:57:36 sol:BookProof_BddBelowWallEsa_abs_bumpG'_le: DONE
+13:57:36 sol:BookProof_LimitCircleExample_one_add_sq_pos: DONE
+13:57:37 sol:BookProof_LimitCircleExample_hasDerivAt_lcP: DONE
+13:57:46 sol:BookProof_BddBelowWallEsa_continuous_zeta': DONE
+13:57:55 sol:BookProof_LimitCircleExample_hasDerivAt_lcP': DONE
+13:58:13 sol:BookProof_LimitCircleExample_hasDerivAt_lcQ: DONE
+13:59:04 sol:BookProof_LimitCircleExample_hasDerivAt_lcQ': DONE
+13:59:04 summary: 6657 done, 3103 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+13:59:04 chunk: 26 item(s) resolved in 436s
+14:00:46 sync: read 1205 definition publish job(s)
+14:01:45 sync: read 11661 problem publish job(s)
+14:02:29 sync: read 1205 definition publish job(s)
+14:03:27 sync: read 11661 problem publish job(s)
+14:03:27 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+14:03:33 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+14:03:33 submitting def:ChapterSqSumOuterFamily (attempt 1)
+14:03:36 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+14:03:36 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:03:36 chunk: 0 item(s) resolved in 9s
+14:03:47 sync: read 1205 definition publish job(s)
+14:04:41 sync: read 11661 problem publish job(s)
+14:04:41 submitting thm:BookProof_LimitCircleExample_exists_smooth_potential_not_essentiallySelfAdjoint (attempt 1)
+14:04:42 thm:BookProof_LimitCircleExample_exists_smooth_potential_not_essentiallySelfAdjoint: title clamped to 179 chars (server limit 200)
+14:04:42 thm:BookProof_LimitCircleExample_exists_smooth_potential_not_essentiallySelfAdjoint: accepted, waiting on the compiler
+14:04:42 submitting thm:BookProof_NsBrstDerivativeGauge_genU_leibniz (attempt 1)
+14:04:44 thm:BookProof_NsBrstDerivativeGauge_genU_leibniz: accepted, waiting on the compiler
+14:04:44 submitting thm:BookProof_NsBrstDerivativeGauge_genU_ccr_u (attempt 1)
+14:04:45 thm:BookProof_NsBrstDerivativeGauge_genU_ccr_u: accepted, waiting on the compiler
+14:04:45 submitting thm:BookProof_NsBrstDerivativeGauge_genU_ccr_x (attempt 1)
+14:04:46 thm:BookProof_NsBrstDerivativeGauge_genU_ccr_x: accepted, waiting on the compiler
+14:04:46 submitting thm:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL (attempt 1)
+14:04:47 thm:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL: accepted, waiting on the compiler
+14:04:47 submitting thm:BookProof_NsBrstDerivativeGauge_genU_uField (attempt 1)
+14:04:48 thm:BookProof_NsBrstDerivativeGauge_genU_uField: accepted, waiting on the compiler
+14:04:48 submitting thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol (attempt 1)
+14:04:50 thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol: accepted, waiting on the compiler
+14:04:50 submitting thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero (attempt 1)
+14:04:52 thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero: accepted, waiting on the compiler
+14:05:36 thm:BookProof_NsBrstDerivativeGauge_genU_ccr_u: DONE
+14:05:37 thm:BookProof_NsBrstDerivativeGauge_genU_ccr_x: DONE
+14:05:38 thm:BookProof_NsBrstDerivativeGauge_genU_uField: DONE
+14:05:47 submitting thm:BookProof_NsBrstDerivativeGauge_genY2_comm_genU (attempt 1)
+14:05:48 thm:BookProof_NsBrstDerivativeGauge_genY2_comm_genU: accepted, waiting on the compiler
+14:05:48 submitting thm:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2 (attempt 1)
+14:05:49 thm:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2: accepted, waiting on the compiler
+14:05:49 submitting thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one (attempt 1)
+14:05:50 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one: accepted, waiting on the compiler
+14:05:51 thm:BookProof_NsBrstDerivativeGauge_genU_leibniz: DONE
+14:05:52 thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol: DONE
+14:06:01 submitting thm:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one (attempt 1)
+14:06:02 thm:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one: accepted, waiting on the compiler
+14:06:02 submitting thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero (attempt 1)
+14:06:04 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero: accepted, waiting on the compiler
+14:06:04 thm:BookProof_LimitCircleExample_exists_smooth_potential_not_essentiallySelfAdjoint: DONE
+14:06:04 thm:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL: DONE
+14:06:05 thm:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero: DONE
+14:06:14 submitting thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX (attempt 1)
+14:06:16 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX: accepted, waiting on the compiler
+14:06:16 submitting thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm (attempt 1)
+14:06:17 thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm: accepted, waiting on the compiler
+14:06:17 submitting thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm (attempt 1)
+14:06:18 thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm: accepted, waiting on the compiler
+14:06:39 thm:BookProof_NsBrstDerivativeGauge_genY2_comm_genU: DONE
+14:06:40 thm:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2: DONE
+14:06:41 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero: DONE
+14:06:50 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_nilpotent (attempt 1)
+14:06:51 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_nilpotent: accepted, waiting on the compiler
+14:06:51 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_nilpotent (attempt 1)
+14:06:52 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_nilpotent: accepted, waiting on the compiler
+14:06:52 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2 (attempt 1)
+14:06:53 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2: accepted, waiting on the compiler
+14:06:53 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_one: DONE
+14:06:53 thm:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one: DONE
+14:06:54 thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm: DONE
+14:07:03 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm (attempt 1)
+14:07:04 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm: accepted, waiting on the compiler
+14:07:05 submitting thm:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker (attempt 1)
+14:07:06 thm:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker: accepted, waiting on the compiler
+14:07:06 submitting thm:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul (attempt 1)
+14:07:07 thm:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul: accepted, waiting on the compiler
+14:07:07 thm:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX: DONE
+14:07:17 submitting thm:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul (attempt 1)
+14:07:18 thm:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul: accepted, waiting on the compiler
+14:07:19 thm:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm: DONE
+14:07:29 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul (attempt 1)
+14:07:30 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul: accepted, waiting on the compiler
+14:07:30 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_nilpotent: DONE
+14:07:31 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_nilpotent: DONE
+14:07:31 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2: DONE
+14:07:41 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul (attempt 1)
+14:07:42 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul: accepted, waiting on the compiler
+14:07:42 submitting thm:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul (attempt 1)
+14:07:43 thm:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul: accepted, waiting on the compiler
+14:07:43 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero (attempt 1)
+14:07:44 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero: accepted, waiting on the compiler
+14:07:44 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm: DONE
+14:07:45 thm:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul: DONE
+14:07:54 submitting thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero (attempt 1)
+14:07:55 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero: accepted, waiting on the compiler
+14:07:55 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg (attempt 1)
+14:07:56 thm:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg: accepted, waiting on the compiler
+14:07:57 thm:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker: DONE
+14:08:07 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn (attempt 1)
+14:08:08 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn: accepted, waiting on the compiler
+14:08:19 thm:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul: DONE
+14:08:19 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul: DONE
+14:08:20 thm:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul: DONE
+14:08:29 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul: DONE
+14:08:30 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero: DONE
+14:08:39 thm:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero: DONE
+14:08:57 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn: DONE
+14:09:05 thm:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg: DONE
+14:09:05 summary: 6971 done, 2763 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:09:05 chunk: 30 item(s) resolved in 264s
+14:09:16 sync: read 1205 definition publish job(s)
+14:10:07 sync: read 11691 problem publish job(s)
+14:10:07 submitting sol:BookProof_FockCubicQuarticStability_quart_form_eq (attempt 1)
+14:10:08 sol:BookProof_FockCubicQuarticStability_quart_form_eq: accepted, waiting on the compiler
+14:10:08 submitting sol:BookProof_FockCubicQuarticStability_quart_form_nonneg (attempt 1)
+14:10:09 sol:BookProof_FockCubicQuarticStability_quart_form_nonneg: accepted, waiting on the compiler
+14:10:09 submitting sol:BookProof_FockCubicQuarticStability_cubic_form_eq (attempt 1)
+14:10:11 sol:BookProof_FockCubicQuarticStability_cubic_form_eq: accepted, waiting on the compiler
+14:10:11 submitting sol:BookProof_FockCubicQuarticStability_norm_creA_sq (attempt 1)
+14:10:12 sol:BookProof_FockCubicQuarticStability_norm_creA_sq: accepted, waiting on the compiler
+14:10:12 submitting sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul (attempt 1)
+14:10:13 sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul: accepted, waiting on the compiler
+14:10:13 submitting sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad (attempt 1)
+14:10:14 sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad: accepted, waiting on the compiler
+14:10:14 submitting sol:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below (attempt 1)
+14:10:16 sol:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+14:10:16 submitting sol:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below (attempt 1)
+14:10:17 sol:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below: accepted, waiting on the compiler
+14:11:54 sol:BookProof_FockCubicQuarticStability_quart_form_nonneg: DONE
+14:11:55 sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_mul: DONE
+14:12:04 submitting sol:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below (attempt 1)
+14:12:05 sol:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+14:12:05 submitting sol:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general (attempt 1)
+14:12:06 sol:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general: accepted, waiting on the compiler
+14:12:07 sol:BookProof_FockCubicQuarticStability_quart_form_eq: DONE
+14:12:07 sol:BookProof_FockCubicQuarticStability_cubic_form_eq: DONE
+14:12:08 sol:BookProof_FockCubicQuarticStability_sq_norm_annA_le_numberQuad: DONE
+14:12:09 sol:BookProof_FockCubicQuarticStability_numberForm_cubic_quartic_bounded_below: DONE
+14:12:17 submitting sol:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below (attempt 1)
+14:12:18 sol:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below: accepted, waiting on the compiler
+14:12:19 submitting sol:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below (attempt 1)
+14:12:20 sol:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below: accepted, waiting on the compiler
+14:12:20 submitting sol:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal (attempt 1)
+14:12:21 sol:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal: accepted, waiting on the compiler
+14:12:21 submitting sol:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound (attempt 1)
+14:12:22 sol:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound: accepted, waiting on the compiler
+14:12:23 sol:BookProof_FockCubicQuarticStability_norm_creA_sq: DONE
+14:12:33 submitting sol:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic (attempt 1)
+14:12:35 sol:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic: accepted, waiting on the compiler
+14:13:08 sol:BookProof_FockCubicQuarticStability_mode_cubic_quartic_bounded_below: DONE
+14:13:19 submitting sol:BookProof_BddBelowWallEsa_abs_zeta'_le (attempt 1)
+14:13:20 sol:BookProof_BddBelowWallEsa_abs_zeta'_le: accepted, waiting on the compiler
+14:14:04 sol:BookProof_FockCubicQuarticStability_trial_cubic_quartic_bounded_below_general: DONE
+14:14:05 sol:BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below: DONE
+14:14:15 submitting sol:BookProof_LimitCircleExample_contDiff_lcV (attempt 1)
+14:14:16 sol:BookProof_LimitCircleExample_contDiff_lcV: accepted, waiting on the compiler
+14:14:16 submitting sol:BookProof_LimitCircleExample_lcSol_ne_zero (attempt 1)
+14:14:17 sol:BookProof_LimitCircleExample_lcSol_ne_zero: accepted, waiting on the compiler
+14:14:17 sol:BookProof_FockCubicQuarticStability_multiMode_cubic_quartic_bounded_below: DONE
+14:14:18 sol:BookProof_FockCubicQuarticStability_dGamma_cubic_quartic_bounded_below: DONE
+14:14:18 sol:BookProof_FockCubicUnbounded_trial_vacuum_orthogonal: DONE
+14:14:19 sol:BookProof_FockCubicUnbounded_fock_gap_fails_for_cubic: DONE
+14:14:28 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcLogFun (attempt 1)
+14:14:30 sol:BookProof_LimitCircleExample_hasDerivAt_lcLogFun: accepted, waiting on the compiler
+14:14:30 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcSol (attempt 1)
+14:14:31 sol:BookProof_LimitCircleExample_hasDerivAt_lcSol: accepted, waiting on the compiler
+14:14:31 submitting sol:BookProof_LimitCircleExample_lcLog_ode (attempt 1)
+14:14:32 sol:BookProof_LimitCircleExample_lcLog_ode: accepted, waiting on the compiler
+14:14:32 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcLog' (attempt 1)
+14:14:33 sol:BookProof_LimitCircleExample_hasDerivAt_lcLog': accepted, waiting on the compiler
+14:14:34 sol:BookProof_FockCubicUnbounded_cubic_no_relative_form_bound: DONE
+14:14:45 submitting sol:BookProof_LimitCircleExample_hasDerivAt_lcSol' (attempt 1)
+14:14:47 sol:BookProof_LimitCircleExample_hasDerivAt_lcSol': accepted, waiting on the compiler
+14:14:58 sol:BookProof_BddBelowWallEsa_abs_zeta'_le: DONE
+14:15:08 submitting sol:BookProof_LimitCircleExample_norm_lcSol (attempt 1)
+14:15:09 sol:BookProof_LimitCircleExample_norm_lcSol: accepted, waiting on the compiler
+14:15:53 sol:BookProof_LimitCircleExample_contDiff_lcV: DONE
+14:16:04 submitting sol:BookProof_LimitCircleExample_lcSol_sq_le (attempt 1)
+14:16:05 sol:BookProof_LimitCircleExample_lcSol_sq_le: accepted, waiting on the compiler
+14:16:05 sol:BookProof_LimitCircleExample_lcSol_ne_zero: DONE
+14:16:15 submitting sol:BookProof_LimitCircleExample_continuous_lcSol (attempt 1)
+14:16:17 sol:BookProof_LimitCircleExample_continuous_lcSol: accepted, waiting on the compiler
+14:16:17 sol:BookProof_LimitCircleExample_hasDerivAt_lcLogFun: DONE
+14:16:18 sol:BookProof_LimitCircleExample_lcLog_ode: DONE
+14:16:18 sol:BookProof_LimitCircleExample_hasDerivAt_lcLog': DONE
+14:16:28 submitting sol:BookProof_LimitCircleExample_memLp_lcSol (attempt 1)
+14:16:29 sol:BookProof_LimitCircleExample_memLp_lcSol: accepted, waiting on the compiler
+14:16:29 submitting sol:BookProof_LimitCircleExample_lcSol_isL2Ode (attempt 1)
+14:16:30 sol:BookProof_LimitCircleExample_lcSol_isL2Ode: accepted, waiting on the compiler
+14:16:30 submitting sol:BookProof_ChapterSolidHarmonic_sum_nullCLM_sq (attempt 1)
+14:16:31 sol:BookProof_ChapterSolidHarmonic_sum_nullCLM_sq: DONE
+14:16:31 submitting sol:BookProof_ChapterSolidHarmonic_radialFactor_euler (attempt 1)
+14:16:31 sol:BookProof_ChapterSolidHarmonic_radialFactor_euler: DONE
+14:16:32 sol:BookProof_LimitCircleExample_hasDerivAt_lcSol: DONE
+14:16:32 sol:BookProof_LimitCircleExample_norm_lcSol: DONE
+14:16:42 sol:BookProof_LimitCircleExample_hasDerivAt_lcSol': DONE
+14:17:48 sol:BookProof_LimitCircleExample_lcSol_sq_le: DONE
+14:17:48 sol:BookProof_LimitCircleExample_continuous_lcSol: DONE
+14:18:15 sol:BookProof_LimitCircleExample_lcSol_isL2Ode: DONE
+14:18:23 sol:BookProof_LimitCircleExample_memLp_lcSol: DONE
+14:18:24 summary: 6687 done, 3073 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:18:24 chunk: 30 item(s) resolved in 497s
+14:20:04 sync: read 1205 definition publish job(s)
+14:21:08 sync: read 11691 problem publish job(s)
+14:21:52 sync: read 1205 definition publish job(s)
+14:22:51 sync: read 11691 problem publish job(s)
+14:22:51 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+14:22:57 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+14:22:57 submitting def:ChapterSqSumOuterFamily (attempt 1)
+14:23:01 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+14:23:01 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:23:01 chunk: 0 item(s) resolved in 11s
+14:23:13 sync: read 1205 definition publish job(s)
+14:24:13 sync: read 11691 problem publish job(s)
+14:24:13 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn (attempt 1)
+14:24:15 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn: accepted, waiting on the compiler
+14:24:15 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_commForm_le (attempt 1)
+14:24:16 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_commForm_le: accepted, waiting on the compiler
+14:24:16 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn (attempt 1)
+14:24:17 thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn: accepted, waiting on the compiler
+14:24:17 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa (attempt 1)
+14:24:18 thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa: accepted, waiting on the compiler
+14:24:19 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn (attempt 1)
+14:24:19 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn: accepted, waiting on the compiler
+14:24:20 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core (attempt 1)
+14:24:20 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core: title clamped to 179 chars (server limit 200)
+14:24:21 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core: accepted, waiting on the compiler
+14:24:21 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel (attempt 1)
+14:24:22 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel: accepted, waiting on the compiler
+14:24:22 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secData_commForm_le (attempt 1)
+14:24:23 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secData_commForm_le: accepted, waiting on the compiler
+14:25:08 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_commForm_le: FAIL (publish FAILED: formal statement does not compile: line 42: Ambiguous term
+  harmCore
+Possible interpretations:
+  QgOuterFockFL.harmCore : ↥polyGaussC)
+14:25:18 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le (attempt 1)
+14:25:19 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le: accepted, waiting on the compiler
+14:25:20 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn: DONE
+14:25:20 thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn: DONE
+14:25:21 thm:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa: DONE
+14:25:21 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core: DONE
+14:25:22 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel: DONE
+14:25:22 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secData_commForm_le: DONE
+14:25:31 submitting thm:BookProof_QgOuterFockInteractionFL_QgFamily_esa_farisLavine (attempt 1)
+14:25:32 thm:BookProof_QgOuterFockInteractionFL_QgFamily_esa_farisLavine: accepted, waiting on the compiler
+14:25:32 submitting thm:BookProof_QgOuterFockInteractionFL_nextPart_ne (attempt 1)
+14:25:33 thm:BookProof_QgOuterFockInteractionFL_nextPart_ne: accepted, waiting on the compiler
+14:25:33 submitting thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_farisLavine (attempt 1)
+14:25:34 thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_farisLavine: accepted, waiting on the compiler
+14:25:34 submitting thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_core (attempt 1)
+14:25:36 thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_core: accepted, waiting on the compiler
+14:25:36 submitting thm:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2 (attempt 1)
+14:25:37 thm:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2: accepted, waiting on the compiler
+14:25:37 submitting thm:BookProof_QgOuterFockInteractionFL_torsionVec_self (attempt 1)
+14:25:39 thm:BookProof_QgOuterFockInteractionFL_torsionVec_self: accepted, waiting on the compiler
+14:25:39 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn: DONE
+14:25:50 submitting thm:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles (attempt 1)
+14:25:51 thm:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles: accepted, waiting on the compiler
+14:25:52 thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_core: FAIL (publish FAILED: formal statement does not compile: DB error looking up import 'Definitions.Def_ChapterFockOneParticleGap': <ConnectionTerminated error)
+14:26:02 submitting thm:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial (attempt 1)
+14:26:03 thm:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial: accepted, waiting on the compiler
+14:26:03 thm:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le: DONE
+14:26:14 submitting thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable (attempt 1)
+14:26:15 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable: accepted, waiting on the compiler
+14:26:15 thm:BookProof_QgOuterFockInteractionFL_QgFamily_esa_farisLavine: FAIL (publish FAILED: formal statement does not compile: line 41: Invalid field `secExt_rel`: The environment does not contain `BookProof.QgOuterFockInterac)
+14:26:15 thm:BookProof_QgOuterFockInteractionFL_nextPart_ne: DONE
+14:26:26 thm:BookProof_QgOuterFockInteractionFL_qgInteracting_esa_farisLavine: FAIL (publish FAILED: formal statement does not compile: line 40: Invalid field `secExt_rel`: The environment does not contain `BookProof.QgOuterFockInterac)
+14:26:36 thm:BookProof_QgOuterFockInteractionFL_torsionVec_self: DONE
+14:26:37 thm:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles: DONE
+14:26:55 thm:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2: DONE
+14:27:21 thm:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial: DONE
+14:27:22 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable: DONE
+14:27:22 summary: 6985 done, 2750 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:27:22 chunk: 18 item(s) resolved in 189s
+14:27:33 sync: read 1205 definition publish job(s)
+14:28:35 sync: read 11709 problem publish job(s)
+14:28:35 submitting sol:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL (attempt 1)
+14:28:37 sol:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL: accepted, waiting on the compiler
+14:28:37 submitting sol:BookProof_NsBrstDerivativeGauge_genU_uField (attempt 1)
+14:28:38 sol:BookProof_NsBrstDerivativeGauge_genU_uField: accepted, waiting on the compiler
+14:28:38 submitting sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol (attempt 1)
+14:28:39 sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol: accepted, waiting on the compiler
+14:28:39 submitting sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero (attempt 1)
+14:28:40 sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero: accepted, waiting on the compiler
+14:28:40 submitting sol:BookProof_NsBrstDerivativeGauge_genY2_comm_genU (attempt 1)
+14:28:41 sol:BookProof_NsBrstDerivativeGauge_genY2_comm_genU: accepted, waiting on the compiler
+14:28:42 submitting sol:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2 (attempt 1)
+14:28:43 sol:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2: accepted, waiting on the compiler
+14:28:43 submitting sol:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one (attempt 1)
+14:28:44 sol:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one: accepted, waiting on the compiler
+14:28:44 submitting sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero (attempt 1)
+14:28:45 sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero: accepted, waiting on the compiler
+14:30:00 sol:BookProof_NsBrstDerivativeGauge_pderiv_u_mul_uL: DONE
+14:30:11 submitting sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX (attempt 1)
+14:30:12 sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX: accepted, waiting on the compiler
+14:30:13 sol:BookProof_NsBrstDerivativeGauge_genU_uField: DONE
+14:30:14 sol:BookProof_NsBrstDerivativeGauge_genY2_comm_genU: FAIL (verdict CE: Compile error in your proof:
+line 33: Unknown identifier `genY2_apply`
+line 24: unsolved goals
+i j : Fin 3
+p : NSAlg
+h :
+  ∀ (k : Fin 3),
+)
+14:30:15 sol:BookProof_NsBrstDerivativeGauge_nsHamAlgX_one: FAIL (verdict CE: Compile error in your proof:
+line 28: Ambiguous term
+  mulOp
+Possible interpretations:
+  BookProof.ChapterF7.mulOp : (v : ℝ → ℝ) →
+    (Fu)
+14:30:23 submitting sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm (attempt 1)
+14:30:25 sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm: accepted, waiting on the compiler
+14:30:25 submitting sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm (attempt 1)
+14:30:26 sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm: accepted, waiting on the compiler
+14:30:26 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2 (attempt 1)
+14:30:27 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2: accepted, waiting on the compiler
+14:30:28 sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol_ne_zero: DONE
+14:30:29 sol:BookProof_NsBrstDerivativeGauge_genY2_comm_nsHamAlg2: DONE
+14:30:29 sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_one_ne_zero: DONE
+14:30:39 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm (attempt 1)
+14:30:40 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm: accepted, waiting on the compiler
+14:30:40 submitting sol:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker (attempt 1)
+14:30:42 sol:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker: accepted, waiting on the compiler
+14:30:42 submitting sol:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul (attempt 1)
+14:30:43 sol:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul: accepted, waiting on the compiler
+14:30:44 sol:BookProof_NsBrstDerivativeGauge_genU_nsSymbol: DONE
+14:30:54 submitting sol:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul (attempt 1)
+14:30:56 sol:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul: accepted, waiting on the compiler
+14:31:40 sol:BookProof_NsBrstDerivativeGauge_nsHamAlg_ne_nsHamAlgX: DONE
+14:31:51 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul (attempt 1)
+14:31:52 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul: accepted, waiting on the compiler
+14:32:03 sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint_comm: DONE
+14:32:03 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_comm_hamiltonian2: DONE
+14:32:13 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul (attempt 1)
+14:32:15 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul: accepted, waiting on the compiler
+14:32:15 submitting sol:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul (attempt 1)
+14:32:16 sol:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul: accepted, waiting on the compiler
+14:32:17 sol:BookProof_NsBrstDerivativeGauge_nsGaugeConstraint2_comm: DONE
+14:32:18 sol:BookProof_NsBrstDerivativeGauge_nsBos_nsGh_apply_tmul: DONE
+14:32:18 sol:BookProof_NsBrstDerivativeGauge_glin_bos_apply_tmul: DONE
+14:32:27 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero (attempt 1)
+14:32:29 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero: accepted, waiting on the compiler
+14:32:29 submitting sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero (attempt 1)
+14:32:30 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero: accepted, waiting on the compiler
+14:32:30 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg (attempt 1)
+14:32:31 sol:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg: accepted, waiting on the compiler
+14:32:31 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_hamiltonian2_comm: DONE
+14:32:32 sol:BookProof_NsBrstDerivativeGauge_nsHamiltonian2_mapsTo_ker: DONE
+14:32:42 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn (attempt 1)
+14:32:44 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn: accepted, waiting on the compiler
+14:32:44 submitting sol:BookProof_ChapterSolidHarmonicTools_hasFDerivAt_cylTerm (attempt 1)
+14:32:44 sol:BookProof_ChapterSolidHarmonicTools_hasFDerivAt_cylTerm: DONE
+14:32:44 submitting sol:BookProof_ChapterSolidHarmonicTools_laplacian_cylTerm (attempt 1)
+14:32:44 sol:BookProof_ChapterSolidHarmonicTools_laplacian_cylTerm: DONE
+14:32:44 submitting sol:BookProof_ChapterSolidHarmonicTools_laplacian_angular_mul (attempt 1)
+14:32:45 sol:BookProof_ChapterSolidHarmonicTools_laplacian_angular_mul: DONE
+14:33:27 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_apply_tmul: DONE
+14:33:38 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_apply_tmul: DONE
+14:33:48 sol:BookProof_NsBrstDerivativeGauge_ghostComponent_tmul: DONE
+14:34:08 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge2_ne_zero: FAIL (verdict CE: Compile error in your proof:
+line 33: Unknown identifier `genY2_apply`
+line 33: `simp` made no progress
+line 37: Unknown identifier `genY2)
+14:34:17 sol:BookProof_NsBrstDerivativeGauge_nsDerivBrstCharge_ne_zero: DONE
+14:34:26 sol:BookProof_QgOuterFockInteractionFL_QgFamily_flc_nonneg: DONE
+14:35:00 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_symmetricOn: DONE
+14:35:00 summary: 6710 done, 3051 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:35:00 chunk: 26 item(s) resolved in 384s
+14:36:43 sync: read 1205 definition publish job(s)
+14:37:45 sync: read 11709 problem publish job(s)
+14:38:24 sync: read 1205 definition publish job(s)
+14:39:23 sync: read 11709 problem publish job(s)
+14:39:23 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+14:39:29 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+14:39:29 submitting def:ChapterSqSumOuterFamily (attempt 1)
+14:39:33 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+14:39:33 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:39:33 chunk: 0 item(s) resolved in 10s
+14:39:45 sync: read 1205 definition publish job(s)
+14:40:44 sync: read 11709 problem publish job(s)
+14:40:44 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn (attempt 1)
+14:40:46 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn: accepted, waiting on the compiler
+14:40:46 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn (attempt 1)
+14:40:48 sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn: accepted, waiting on the compiler
+14:40:48 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa (attempt 1)
+14:40:49 sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa: accepted, waiting on the compiler
+14:40:49 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn (attempt 1)
+14:40:51 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn: accepted, waiting on the compiler
+14:40:51 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core (attempt 1)
+14:40:52 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core: accepted, waiting on the compiler
+14:40:52 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel (attempt 1)
+14:40:53 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel: accepted, waiting on the compiler
+14:40:53 submitting sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le (attempt 1)
+14:40:54 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le: accepted, waiting on the compiler
+14:40:55 submitting sol:BookProof_QgOuterFockInteractionFL_nextPart_ne (attempt 1)
+14:40:56 sol:BookProof_QgOuterFockInteractionFL_nextPart_ne: accepted, waiting on the compiler
+14:41:51 sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_esa: FAIL (verdict ERROR: Failed to resolve platform imports: DB error looking up import 'Definitions.Def_ChapterNavierStokesFockContinuum': <ConnectionTerminate)
+14:42:00 submitting sol:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2 (attempt 1)
+14:42:02 sol:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2: accepted, waiting on the compiler
+14:42:48 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_core: DONE
+14:42:49 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_commForm_le: DONE
+14:42:58 submitting sol:BookProof_QgOuterFockInteractionFL_torsionVec_self (attempt 1)
+14:42:59 sol:BookProof_QgOuterFockInteractionFL_torsionVec_self: accepted, waiting on the compiler
+14:42:59 submitting sol:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles (attempt 1)
+14:43:01 sol:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles: accepted, waiting on the compiler
+14:43:01 sol:BookProof_QgOuterFockInteractionFL_QgFamily_outerHam_symmetricOn: DONE
+14:43:02 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_symmetricOn: DONE
+14:43:02 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secExt_rel: DONE
+14:43:12 submitting sol:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial (attempt 1)
+14:43:13 sol:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial: accepted, waiting on the compiler
+14:43:14 sol:BookProof_QgOuterFockInteractionFL_nextPart_ne: DONE
+14:43:23 sol:BookProof_QgOuterFockInteractionFL_QgFamily_secHam_essentiallySelfAdjointOn: DONE
+14:43:34 sol:BookProof_QgOuterFockInteractionFL_qgInt_coupling_nontrivial: FAIL (verdict ERROR: Failed to materialize the target's dependencies: DB error looking up import 'Definitions.Def_ChapterH8': <ConnectionTerminated error_co)
+14:43:42 sol:BookProof_QgOuterFockInteractionFL_torsionIdx1_ne_torsionIdx2: DONE
+14:44:44 sol:BookProof_QgOuterFockInteractionFL_torsionVec_self: DONE
+14:45:02 sol:BookProof_QgOuterFockInteractionFL_qgCoupling_spans_two_particles: DONE
+14:45:02 summary: 6720 done, 3048 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:45:02 chunk: 12 item(s) resolved in 258s
+14:46:45 sync: read 1205 definition publish job(s)
+14:48:00 sync: read 11709 problem publish job(s)
+14:48:39 sync: read 1205 definition publish job(s)
+14:49:46 sync: read 11709 problem publish job(s)
+14:49:46 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+14:49:52 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+14:49:53 submitting def:ChapterSqSumOuterFamily (attempt 1)
+14:49:57 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+14:49:57 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:49:57 chunk: 0 item(s) resolved in 10s
+14:51:38 sync: read 1205 definition publish job(s)
+14:52:44 sync: read 11709 problem publish job(s)
+14:53:18 sync: read 1205 definition publish job(s)
+14:54:30 sync: read 11709 problem publish job(s)
+14:54:30 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+14:54:35 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+14:54:35 submitting def:ChapterSqSumOuterFamily (attempt 1)
+14:54:39 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+14:54:39 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+14:54:39 chunk: 0 item(s) resolved in 9s
+15:21:22 sync: read 1205 definition publish job(s)
+15:22:30 sync: read 11709 problem publish job(s)
+15:24:58 sync: read 1205 definition publish job(s)
+15:25:49 sync: read 11709 problem publish job(s)
+15:55:11 sync: read 1205 definition publish job(s)
+15:56:03 sync: read 11709 problem publish job(s)
+15:56:42 sync: read 1205 definition publish job(s)
+15:57:02 sync: read 1205 definition publish job(s)
+15:57:36 sync: read 11709 problem publish job(s)
+15:57:36 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+15:57:42 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+15:57:42 submitting def:ChapterSqSumOuterFamily (attempt 1)
+15:57:46 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+15:57:46 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+15:57:46 chunk: 0 item(s) resolved in 10s
+15:57:56 sync: read 11709 problem publish job(s)
+15:57:57 sync: read 1205 definition publish job(s)
+15:58:49 sync: read 11709 problem publish job(s)
+15:58:49 submitting thm:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc (attempt 1)
+15:58:50 thm:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc: accepted, waiting on the compiler
+15:58:51 submitting thm:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc (attempt 1)
+15:58:52 thm:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc: accepted, waiting on the compiler
+15:58:52 submitting thm:BookProof_UnboundedSpectralModel_cayley_pointwise_inc (attempt 1)
+15:58:53 thm:BookProof_UnboundedSpectralModel_cayley_pointwise_inc: accepted, waiting on the compiler
+15:58:53 submitting thm:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc (attempt 1)
+15:58:54 thm:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc: accepted, waiting on the compiler
+15:58:54 submitting thm:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc (attempt 1)
+15:58:54 thm:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc: title clamped to 183 chars (server limit 200)
+15:58:55 thm:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc: accepted, waiting on the compiler
+15:58:55 submitting thm:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc (attempt 1)
+15:58:56 thm:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc: accepted, waiting on the compiler
+15:58:56 submitting thm:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc (attempt 1)
+15:58:57 thm:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc: accepted, waiting on the compiler
+15:58:57 submitting thm:BookProof_UnboundedSpectralModel_model_ae_circle_inc (attempt 1)
+15:58:58 thm:BookProof_UnboundedSpectralModel_model_ae_circle_inc: accepted, waiting on the compiler
+15:58:58 submitting thm:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc (attempt 1)
+15:58:59 thm:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc: accepted, waiting on the compiler
+15:58:59 submitting thm:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc (attempt 1)
+15:59:00 thm:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc: accepted, waiting on the compiler
+15:59:00 submitting thm:BookProof_UnboundedSpectralModel_model_apply_inc (attempt 1)
+15:59:01 thm:BookProof_UnboundedSpectralModel_model_apply_inc: accepted, waiting on the compiler
+15:59:01 submitting thm:BookProof_UnboundedSpectralModel_model_mem_inc (attempt 1)
+15:59:02 thm:BookProof_UnboundedSpectralModel_model_mem_inc: accepted, waiting on the compiler
+15:59:02 submitting thm:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc (attempt 1)
+15:59:02 thm:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc: title clamped to 183 chars (server limit 200)
+15:59:03 thm:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc: accepted, waiting on the compiler
+15:59:03 submitting thm:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc (attempt 1)
+15:59:04 thm:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc: accepted, waiting on the compiler
+15:59:04 submitting thm:BookProof_UnboundedSpectralModel_op_resOp_inc (attempt 1)
+15:59:06 thm:BookProof_UnboundedSpectralModel_op_resOp_inc: accepted, waiting on the compiler
+15:59:06 submitting thm:BookProof_UnboundedSpectralModel_resOp_eq_res_inc (attempt 1)
+15:59:07 thm:BookProof_UnboundedSpectralModel_resOp_eq_res_inc: accepted, waiting on the compiler
+15:59:20 thm:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc: DONE
+15:59:22 thm:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc: DONE
+15:59:34 submitting thm:BookProof_UnboundedSpectralModel_resOp_injective_inc (attempt 1)
+15:59:35 thm:BookProof_UnboundedSpectralModel_resOp_injective_inc: accepted, waiting on the compiler
+15:59:35 submitting thm:BookProof_UnboundedSpectralModel_resOp_mem_inc (attempt 1)
+15:59:37 thm:BookProof_UnboundedSpectralModel_resOp_mem_inc: accepted, waiting on the compiler
+15:59:52 thm:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc: DONE
+15:59:53 thm:BookProof_UnboundedSpectralModel_cayley_pointwise_inc: DONE
+15:59:53 thm:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc: DONE
+15:59:54 thm:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc: DONE
+15:59:54 thm:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc: DONE
+16:00:05 submitting thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc (attempt 1)
+16:00:07 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc: accepted, waiting on the compiler
+16:00:08 submitting thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc (attempt 1)
+16:00:08 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc: title clamped to 183 chars (server limit 200)
+16:00:09 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc: accepted, waiting on the compiler
+16:00:10 thm:BookProof_UnboundedSpectralModel_model_ae_circle_inc: DONE
+16:00:13 thm:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc: DONE
+16:00:14 thm:BookProof_UnboundedSpectralModel_model_mem_inc: DONE
+16:00:15 thm:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc: DONE
+16:00:15 thm:BookProof_UnboundedSpectralModel_op_resOp_inc: DONE
+16:00:17 thm:BookProof_UnboundedSpectralModel_resOp_mem_inc: DONE
+16:00:28 thm:BookProof_UnboundedSpectralModel_model_apply_inc: DONE
+16:00:33 thm:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc: DONE
+16:00:43 thm:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc: DONE
+16:00:44 thm:BookProof_UnboundedSpectralModel_resOp_eq_res_inc: DONE
+16:00:44 thm:BookProof_UnboundedSpectralModel_resOp_injective_inc: DONE
+16:00:46 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc: DONE
+16:00:54 thm:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc: DONE
+16:00:54 summary: 7005 done, 2737 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:00:54 chunk: 20 item(s) resolved in 125s
+16:01:08 sync: read 1205 definition publish job(s)
+16:02:00 sync: read 11729 problem publish job(s)
+16:02:01 submitting sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable (attempt 1)
+16:02:02 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable: accepted, waiting on the compiler
+16:04:16 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_separable: DONE
+16:04:16 summary: 6721 done, 3047 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:04:16 chunk: 1 item(s) resolved in 135s
+16:04:26 sync: read 1205 definition publish job(s)
+16:05:17 sync: read 11729 problem publish job(s)
+16:05:56 sync: read 1205 definition publish job(s)
+16:06:48 sync: read 11729 problem publish job(s)
+16:06:48 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+16:06:53 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+16:06:53 submitting def:ChapterSqSumOuterFamily (attempt 1)
+16:06:57 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+16:06:57 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:06:57 chunk: 0 item(s) resolved in 9s
+16:07:08 sync: read 1205 definition publish job(s)
+16:07:58 sync: read 11729 problem publish job(s)
+16:07:58 submitting sol:BookProof_ChapterEntropyTemperature_attentionEntropy_antitoneOn (attempt 1)
+16:07:59 sol:BookProof_ChapterEntropyTemperature_attentionEntropy_antitoneOn: DONE
+16:07:59 submitting sol:BookProof_NavierStokesFlow_matrixFlow_commute_of_commute (attempt 1)
+16:07:59 sol:BookProof_NavierStokesFlow_matrixFlow_commute_of_commute: DONE
+16:07:59 submitting sol:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc (attempt 1)
+16:08:00 sol:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc: accepted, waiting on the compiler
+16:08:01 submitting sol:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc (attempt 1)
+16:08:02 sol:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc: accepted, waiting on the compiler
+16:08:02 submitting sol:BookProof_UnboundedSpectralModel_cayley_pointwise_inc (attempt 1)
+16:08:03 sol:BookProof_UnboundedSpectralModel_cayley_pointwise_inc: accepted, waiting on the compiler
+16:08:03 submitting sol:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc (attempt 1)
+16:08:05 sol:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc: accepted, waiting on the compiler
+16:08:05 submitting sol:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc (attempt 1)
+16:08:06 sol:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc: accepted, waiting on the compiler
+16:08:07 submitting sol:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc (attempt 1)
+16:08:08 sol:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc: accepted, waiting on the compiler
+16:08:08 submitting sol:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc (attempt 1)
+16:08:09 sol:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc: accepted, waiting on the compiler
+16:08:09 submitting sol:BookProof_UnboundedSpectralModel_model_ae_circle_inc (attempt 1)
+16:08:10 sol:BookProof_UnboundedSpectralModel_model_ae_circle_inc: accepted, waiting on the compiler
+16:08:10 submitting sol:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc (attempt 1)
+16:08:11 sol:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc: accepted, waiting on the compiler
+16:08:11 submitting sol:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc (attempt 1)
+16:08:13 sol:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc: accepted, waiting on the compiler
+16:08:13 submitting sol:BookProof_UnboundedSpectralModel_model_apply_inc (attempt 1)
+16:08:14 sol:BookProof_UnboundedSpectralModel_model_apply_inc: accepted, waiting on the compiler
+16:08:14 submitting sol:BookProof_UnboundedSpectralModel_model_mem_inc (attempt 1)
+16:08:16 sol:BookProof_UnboundedSpectralModel_model_mem_inc: accepted, waiting on the compiler
+16:08:16 submitting sol:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc (attempt 1)
+16:08:17 sol:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc: accepted, waiting on the compiler
+16:08:17 submitting sol:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc (attempt 1)
+16:08:18 sol:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc: accepted, waiting on the compiler
+16:08:18 submitting sol:BookProof_UnboundedSpectralModel_op_resOp_inc (attempt 1)
+16:08:19 sol:BookProof_UnboundedSpectralModel_op_resOp_inc: accepted, waiting on the compiler
+16:08:19 submitting sol:BookProof_UnboundedSpectralModel_resOp_eq_res_inc (attempt 1)
+16:08:20 sol:BookProof_UnboundedSpectralModel_resOp_eq_res_inc: accepted, waiting on the compiler
+16:09:26 sol:BookProof_ChapterSolidHarmonic_inner_u_spherePt_inc: DONE
+16:09:26 sol:BookProof_UnboundedSpectralModel_adjoint_resCLM_inc: DONE
+16:09:27 sol:BookProof_UnboundedSpectralModel_cayley_pointwise_inc: DONE
+16:09:27 sol:BookProof_UnboundedSpectralModel_cayley_real_multiplier_inc: DONE
+16:09:27 sol:BookProof_UnboundedSpectralModel_cayley_symbol_identity_inc: DONE
+16:09:39 submitting sol:BookProof_UnboundedSpectralModel_resOp_injective_inc (attempt 1)
+16:09:41 sol:BookProof_UnboundedSpectralModel_resOp_injective_inc: accepted, waiting on the compiler
+16:09:41 submitting sol:BookProof_UnboundedSpectralModel_resOp_mem_inc (attempt 1)
+16:09:42 sol:BookProof_UnboundedSpectralModel_resOp_mem_inc: accepted, waiting on the compiler
+16:09:42 submitting sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc (attempt 1)
+16:09:43 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc: accepted, waiting on the compiler
+16:09:43 submitting sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc (attempt 1)
+16:09:44 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc: accepted, waiting on the compiler
+16:09:45 sol:BookProof_UnboundedSpectralModel_isStarNormal_resOp_inc: DONE
+16:09:45 sol:BookProof_UnboundedSpectralModel_model_ae_circle_inc: DONE
+16:09:46 sol:BookProof_UnboundedSpectralModel_model_ae_real_multiplier_inc: DONE
+16:09:48 sol:BookProof_UnboundedSpectralModel_op_resOp_inc: DONE
+16:09:48 sol:BookProof_UnboundedSpectralModel_resOp_eq_res_inc: DONE
+16:09:58 sol:BookProof_UnboundedSpectralModel_exists_resOp_eq_inc: DONE
+16:10:09 sol:BookProof_UnboundedSpectralModel_model_ae_ne_zero_inc: DONE
+16:10:20 sol:BookProof_UnboundedSpectralModel_model_apply_inc: DONE
+16:10:21 sol:BookProof_UnboundedSpectralModel_mulRep_cayleyFn_eq_zero_inc: DONE
+16:10:31 sol:BookProof_UnboundedSpectralModel_model_mem_inc: DONE
+16:10:32 sol:BookProof_UnboundedSpectralModel_model_symmetry_relation_inc: DONE
+16:11:10 sol:BookProof_UnboundedSpectralModel_resOp_injective_inc: DONE
+16:11:10 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_cyclic_inc: DONE
+16:11:19 sol:BookProof_UnboundedSpectralModel_unbounded_multiplication_model_general_inc: DONE
+16:11:45 sol:BookProof_UnboundedSpectralModel_resOp_mem_inc: DONE
+16:11:45 summary: 6743 done, 3025 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:11:45 chunk: 22 item(s) resolved in 226s
+16:11:56 sync: read 1205 definition publish job(s)
+16:12:51 sync: read 11729 problem publish job(s)
+16:13:27 sync: read 1205 definition publish job(s)
+16:14:19 sync: read 11729 problem publish job(s)
+16:14:19 submitting def:ChapterScalaronOuterFockFL (attempt 1)
+16:14:26 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+16:14:27 submitting def:ChapterSqSumOuterFamily (attempt 1)
+16:14:31 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+16:14:31 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+16:14:31 chunk: 0 item(s) resolved in 11s
+16:22:24 sync: read 1205 definition publish job(s)

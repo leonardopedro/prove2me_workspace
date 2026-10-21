@@ -26,5 +26,6 @@ variable (T : UnboundedSelfAdjoint H) {mu : Measure (spectrum ℂ (resOp T))}
   (V : Lp ℂ 2 mu →ₗᵢ[ℂ] H)
   (hV : ∀ u : Lp ℂ 2 mu, V (mulRep mu (coordFn (resOp T)) u) = resOp T (V u))
 
+include hV in
 theorem BookProof.UnboundedSpectralModel.model_ae_real_multiplier [IsFiniteMeasure mu] :
     ∀ᵐ z ∂mu, 1 + Complex.I * z.1 = ((z.1.re / ‖z.1‖ ^ 2 : ℝ) : ℂ) * z.1 := by sorry

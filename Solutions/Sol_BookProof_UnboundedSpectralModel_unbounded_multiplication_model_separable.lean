@@ -1,12 +1,14 @@
 -- Generated from ChapterUnboundedSpectralModel.lean — solution of BookProof.UnboundedSpectralModel.unbounded_multiplication_model_separable
 import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
-import Theorems.Thm_BookProof_UnboundedSpectralModel_isStarNormal_resOp
-import Theorems.Thm_BookProof_UnboundedSpectralModel_model_mem
-import Theorems.Thm_BookProof_UnboundedSpectralModel_model_apply
-import Theorems.Thm_BookProof_UnboundedSpectralModel_model_ae_circle
-import Theorems.Thm_BookProof_UnboundedSpectralModel_model_ae_ne_zero
-import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable
+-- sibling Thm stub imports dropped: Def_ChapterUnboundedSpectralModel (the
+-- published bundle) declares and proves isStarNormal_resOp / model_mem /
+-- model_apply / model_ae_circle / model_ae_ne_zero inline, so the Thm_ modules
+-- can never be published ("already been declared") and would be unknown
+-- imports server-side.
+-- original node dropped the IsStarNormal hypothesis (include-drop §2.64);
+-- use the healed `_inc` twin whose binder list matches this call.
+import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_separable_inc
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterAbelianGelfandModel
@@ -49,7 +51,7 @@ theorem solution [TopologicalSpace.SeparableSpace H]
             = V x (u + Complex.I • mulRep (mu x) (coordFn (resOp T)) u)) := by
 
   obtain ⟨S, mu, V, hcount, hprob, hsum, hint⟩ :=
-    spectral_multiplication_model_separable (resOp T) (isStarNormal_resOp T)
+    spectral_multiplication_model_separable_inc (resOp T) (isStarNormal_resOp T)
   refine ⟨S, mu, V, hcount, hprob, hsum, ?_, ?_⟩
   · intro x
     have := hprob x

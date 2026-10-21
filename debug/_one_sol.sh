@@ -11,14 +11,17 @@ base=$(cd "$PROJ" && lake env bash -c 'printf %s "$LEAN_PATH"')
 lean=$(cd "$PROJ" && lake env bash -c 'command -v lean')
 tmp=$(mktemp -d)
 cp "$src" "$tmp/S.lean"
-LEAN_PATH="/tmp/published_mirror:$base" timeout 600 "$lean" "$tmp/S.lean" >/dev/null 2>"$tmp/err"
+# lean prints elaboration diagnostics on STDOUT — capture both, or every
+# failure looks like an empty "FAIL <slug> " with no cause.
+LEAN_PATH="/tmp/published_mirror:$base" timeout 600 "$lean" "$tmp/S.lean" >"$tmp/out" 2>"$tmp/err"
 rc=$?
 if [ $rc -eq 0 ]; then
   echo "OK $slug"
 elif [ $rc -eq 124 ]; then
   echo "TIMEOUT $slug"
 else
-  echo "FAIL $slug $(grep -m1 error "$tmp/err" | sed 's/.*error[^ ]* //' | cut -c1-90)"
+  err=$(grep -m1 -i error "$tmp/out" "$tmp/err" 2>/dev/null | sed 's/^.*error[^ ]*: //' | cut -c1-100)
+  echo "FAIL $slug :: $err"
 fi
 exit 0
 rm -rf "$tmp"

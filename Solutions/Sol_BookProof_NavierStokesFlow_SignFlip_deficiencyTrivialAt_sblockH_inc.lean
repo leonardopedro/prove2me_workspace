@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesSignFlip.lean — solution of BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_sblockH_inc
 import Mathlib
 import Definitions.Def_ChapterNavierStokesSignFlip
-import Theorems.Thm_BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun
 import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_inner_of_block_supported
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
@@ -10,6 +9,7 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.SignFlip
+open BookProof.NavierStokesFlow.BilinearEsa
 
 
 

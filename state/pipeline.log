@@ -300610,3 +300610,109 @@ line 37: Unknown identifier `genY2)
 17:21:16 waiting on unpublished def bundle(s): ChapterSolovayCoordinates (1 item(s))
 17:21:16 chunk: 0 item(s) processed in 0s
 17:29:07 sync: read 1205 definition publish job(s)
+17:30:10 sync: read 11738 problem publish job(s)
+17:30:10 processing def:ChapterSolovayCoordinates (attempt 2)
+17:30:10 def:ChapterSolovayCoordinates: WAIT (guard defer: platform rejected the current text: publish FAILED: definition does not compile: line 40: Unknown identifier `PhysHSGaussian.gammaMeasure) - job in flight, no attempt consumed
+17:30:10 summary: 598 done, 93 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:30:10 chunk: 1 item(s) processed in 0s
+17:37:24 sync: read 1205 definition publish job(s)
+17:38:16 sync: read 11738 problem publish job(s)
+17:38:16 processing def:ChapterSolovayCoordinates (attempt 2)
+17:39:00 def:ChapterSolovayCoordinates: DONE
+17:39:00 summary: 599 done, 92 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:39:00 chunk: 1 item(s) processed in 44s
+17:42:48 sync: read 1206 definition publish job(s)
+17:43:41 sync: read 11738 problem publish job(s)
+17:43:41 processing thm:BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map (attempt 1)
+17:44:41 thm:BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map: DONE
+17:44:41 summary: 7015 done, 2727 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:44:41 chunk: 1 item(s) processed in 60s
+17:48:24 sync: read 1206 definition publish job(s)
+17:49:22 sync: read 11739 problem publish job(s)
+17:49:57 sync: read 1206 definition publish job(s)
+17:50:53 sync: read 11739 problem publish job(s)
+17:50:53 submitting def:ChapterScalaronOuterFockFL (attempt 2)
+17:51:00 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+17:51:00 submitting def:ChapterSqSumOuterFamily (attempt 1)
+17:51:04 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+17:51:04 submitting def:ChapterSolovayHilbertTensor (attempt 1)
+17:51:05 def:ChapterSolovayHilbertTensor: WAIT (theorem dependency not proved yet: BookProof.ChapterSolovayCoordinates.tailTensorEquiv_map)
+17:51:05 summary: 599 done, 92 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:51:05 chunk: 0 item(s) resolved in 12s
+17:51:18 sync: read 1206 definition publish job(s)
+17:52:11 sync: read 11739 problem publish job(s)
+17:52:12 submitting thm:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal (attempt 1)
+17:52:13 thm:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal: accepted, waiting on the compiler
+17:52:13 submitting thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm (attempt 1)
+17:52:14 thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm: accepted, waiting on the compiler
+17:52:14 submitting thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi (attempt 1)
+17:52:15 thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi: accepted, waiting on the compiler
+17:52:15 submitting thm:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map (attempt 1)
+17:52:16 thm:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map: accepted, waiting on the compiler
+17:52:16 submitting thm:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map (attempt 1)
+17:52:17 thm:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map: accepted, waiting on the compiler
+17:52:37 thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi: DONE
+17:53:05 thm:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal: DONE
+17:53:05 thm:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm: DONE
+17:53:14 thm:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map: DONE
+17:53:15 thm:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map: DONE
+17:53:15 summary: 7020 done, 2722 pending, 2 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:53:15 chunk: 5 item(s) resolved in 63s
+17:53:25 sync: read 1206 definition publish job(s)
+17:54:14 sync: read 11744 problem publish job(s)
+17:54:14 submitting sol:BookProof_ChapterF3_diagonal_gram_residual_orthogonal (attempt 1)
+17:54:15 sol:BookProof_ChapterF3_diagonal_gram_residual_orthogonal: accepted, waiting on the compiler
+17:54:15 submitting sol:BookProof_ChapterF3_mehler_projector_matrix (attempt 1)
+17:54:16 sol:BookProof_ChapterF3_mehler_projector_matrix: accepted, waiting on the compiler
+17:54:17 submitting sol:BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map (attempt 1)
+17:54:18 sol:BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map: accepted, waiting on the compiler
+17:55:21 sol:BookProof_ChapterF3_diagonal_gram_residual_orthogonal: DONE
+17:55:38 sol:BookProof_ChapterF3_mehler_projector_matrix: DONE
+17:55:39 sol:BookProof_ChapterSolovayCoordinates_tailTensorEquiv_map: DONE
+17:55:39 summary: 6753 done, 3010 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:55:39 chunk: 3 item(s) resolved in 85s
+17:55:49 sync: read 1206 definition publish job(s)
+17:56:41 sync: read 11744 problem publish job(s)
+17:57:19 sync: read 1206 definition publish job(s)
+17:58:09 sync: read 11744 problem publish job(s)
+17:58:09 submitting def:ChapterScalaronOuterFockFL (attempt 2)
+17:58:14 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+17:58:15 submitting def:ChapterSqSumOuterFamily (attempt 1)
+17:58:18 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+17:58:18 submitting def:ChapterSolovayHilbertTensor (attempt 1)
+17:58:20 def:ChapterSolovayHilbertTensor: accepted, waiting on the compiler
+17:59:19 def:ChapterSolovayHilbertTensor: DONE
+17:59:19 summary: 600 done, 91 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+17:59:19 chunk: 1 item(s) resolved in 70s
+17:59:31 sync: read 1207 definition publish job(s)
+18:00:26 sync: read 11744 problem publish job(s)
+18:00:26 submitting sol:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal (attempt 1)
+18:00:27 sol:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal: accepted, waiting on the compiler
+18:00:27 submitting sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm (attempt 1)
+18:00:28 sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm: accepted, waiting on the compiler
+18:00:28 submitting sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi (attempt 1)
+18:00:30 sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi: accepted, waiting on the compiler
+18:00:30 submitting sol:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map (attempt 1)
+18:00:31 sol:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map: accepted, waiting on the compiler
+18:00:31 submitting sol:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map (attempt 1)
+18:00:33 sol:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map: accepted, waiting on the compiler
+18:01:32 sol:BookProof_ChapterSolovayCoordinates_finiteCoordinateMarginal: DONE
+18:01:42 sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi_symm: DONE
+18:02:20 sol:BookProof_ChapterSolovayCoordinates_enlargeEquiv_map: DONE
+18:02:37 sol:BookProof_ChapterSolovayCoordinates_infinitePi_map_sumPiEquivProdPi: DONE
+18:02:46 sol:BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map: DONE
+18:02:46 summary: 6758 done, 3005 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:02:46 chunk: 5 item(s) resolved in 140s
+18:03:01 sync: read 1207 definition publish job(s)
+18:03:58 sync: read 11744 problem publish job(s)
+18:04:34 sync: read 1207 definition publish job(s)
+18:05:36 sync: read 10100 problem publish job(s)
+18:05:36 submitting def:ChapterScalaronOuterFockFL (attempt 2)
+18:05:42 def:ChapterScalaronOuterFockFL: WAIT (theorem dependency not proved yet: BookProof.ScalaronFiberFL.WallPot.core_le_dom, BookProof.ScalaronFiberFL.norm_xCc_sq_le, BookProof.ScalaronFiberFL.)
+18:05:42 submitting def:ChapterSqSumOuterFamily (attempt 1)
+18:05:46 def:ChapterSqSumOuterFamily: WAIT (theorem dependency not proved yet: BookProof.QgOuterFock.sqSumOp_essentiallySelfAdjointOn)
+18:05:46 submitting def:ChapterTensorCompleteness (attempt 1)
+18:05:48 def:ChapterTensorCompleteness: accepted, waiting on the compiler
+18:06:39 def:ChapterTensorCompleteness: DONE
+18:06:39 summary: 601 done, 90 pending, 0 failed, 2 unsubmittable (source missing from this checkout) (3 out-of-order orphans ignored)
+18:06:39 chunk: 1 item(s) resolved in 63s

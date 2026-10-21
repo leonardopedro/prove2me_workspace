@@ -32,8 +32,6 @@ noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (d : CoreData F) (hesa : EssentiallySelfAdjointOn d.C.dom d.ext) :
     EssentiallySelfAdjointOn d.C₀ d.H₀ := by

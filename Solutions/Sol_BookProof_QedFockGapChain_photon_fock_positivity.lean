@@ -30,8 +30,6 @@ open BookProof.HermiteCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (p : ℕ → ℝ) :
     dGamma (opCol hermiteBasis (diagOnePart hermiteBasis (photonDispersion p))) vac = 0 ∧

@@ -31,8 +31,6 @@ open Module
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℝ} (hm : 0 ≤ m) (p : ℕ → ℝ) (k : ℕ) :
     m ≤ freeDispersion m p k := by

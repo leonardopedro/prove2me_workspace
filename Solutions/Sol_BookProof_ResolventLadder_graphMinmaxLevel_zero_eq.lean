@@ -35,8 +35,6 @@ open BookProof.RitzMinMax
 open BookProof.ChapterSirkRitzSpectrum
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T : Submodule ℂ (F × F)}
 
 set_option maxHeartbeats 1000000 in

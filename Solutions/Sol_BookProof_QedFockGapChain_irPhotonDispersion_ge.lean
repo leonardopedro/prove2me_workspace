@@ -25,8 +25,6 @@ open MeasureTheory
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (mu : ℝ) (p : ℕ → ℝ) (k : ℕ) :
     mu ≤ irPhotonDispersion mu p k := le_max_left _ _

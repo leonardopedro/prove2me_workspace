@@ -24,8 +24,6 @@ open BookProof.RitzMinMax
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {R : F →L[ℂ] F} (hsa : IsSelfAdjoint R)
     (hpos : ∀ x : F, 0 ≤ (inner ℂ x (R x) : ℂ).re) (x : F) :

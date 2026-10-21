@@ -39,8 +39,6 @@ open Filter Topology
 open BookProof.RitzMinMax
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T : Submodule ℂ (F × F)}
 
 set_option maxHeartbeats 1000000 in

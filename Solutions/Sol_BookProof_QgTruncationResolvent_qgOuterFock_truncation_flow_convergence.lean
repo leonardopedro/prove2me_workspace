@@ -38,8 +38,6 @@ open BookProof.StoneBridge
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {ι : Type*}
 variable (W : WallPot) (Q : QgModeData ι)
 

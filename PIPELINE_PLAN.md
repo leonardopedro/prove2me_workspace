@@ -10440,3 +10440,110 @@ theorems when a selected leaf depends on them.  That is fine — but it silently
 converts the corresponding thm/sol items into §2.46 parks.  When generating a
 bundle, grep its output for the statements of sibling thm items and park those
 up front instead of discovering the collision on a server compile.
+
+## SignFlip `_inc` recovery batch + drain burn lesson (session 21 continuation)
+
+The broad drain (`debug/drain_now.sh`) afterwards burned **24 thm jobs** on
+SignFlip statements, every one `publish FAILED: ... has already been
+declared` — the whole chapter is bundle-shadowed (all 26 thm/sol pairs).  The
+drain then stopped ("no progress in a full round").  Resolution, following the
+established `_inc` precedent (`references/wave_upload.json` entries whose `nl`
+says "Replaces the unuploadable node ... the `_inc` suffix publishes the same
+statement as its own node"):
+
+1. **Parked all 52 originals** (24 pending thm + 24 pending sol; the earlier 2
+   saffH parks included) with the §2.46 reason.  `blocked_by` did NOT detect
+   this class (returned `None`) — its dup check needs the same bundle-decl
+   sweep used here (thm stub statement name ∈ published bundle decls).
+2. **Generated 26 `_inc` twins**: `Thm_..._SignFlip_<name>_inc.lean`
+   (statement renamed `X` → `X_inc`), `Sol_..._inc.lean` (verbatim proof —
+   the sol declares `solution`, no collision), and wave entries + `sol_order`
+   appends.  **Gotcha**: `WAVE_ORDER` iterates `WAVE["sol_order"]`, not the
+   `thms` dict — a wave entry absent from `sol_order` is invisible to the
+   pipeline (chunk: 0 items).
+3. Two stub repairs surfaced only after renaming (the originals' collision
+   error had pre-empted them): `sblockFun_embFun_inc` needed
+   `import Definitions.Def_ChapterNavierStokesBilinearEsa` + its `open`
+   (`embFun` lives in `BilinearEsa`); `blockVec_sblockH_inc` needs
+   `set_option maxHeartbeats 40000000 in` (its `saffH ⟨…⟩` coercion blows the
+   default; the server elaborated the identical original signature, so the
+   timeout is a local-speed artifact).
+4. **Gate mechanics**: new thm stubs are refused by the submission guard
+   ("stub not covered by the last thm build") until `state/thm_gate.json`
+   carries a compile verdict with the file's sha1 stamp.  The full
+   `build_candidate_mirror.py` rebuild is hours; `debug/gate_thm_ok.py` runs
+   the identical oracle (same `lean -DautoImplicit=false`, cwd=MIRROR,
+   stamp contract) on just the requested slugs and merges verdicts.
+
+**Standing rules added**: after publishing a def bundle, sweep every pending
+thm stub whose statement name the bundle declares and park+`_inc`-twin them
+BEFORE the next drain; add every new wave entry to `sol_order`.
+
+**Current ledger shape**: ~6861 thm done vs ~3400 sol done (≈2×).  The sol
+deficit is the active campaign: every `thm:... done` + `sol:... pending`
+pair is a submittable proof (local gate = `_one_sol.sh` against the
+published mirror), and the failed-sol backlog (verdict `Failed` with CEs)
+carries fixable preamble/leaf-gap defects of the classes above.
+
+## Failed-sol campaign: +11 proved, three systematic defects found (session 21b)
+
+`debug/poll_failed_submissions.py --limit 4000` produced the authoritative
+backlog: **171 failed sols** (94 `Unknown identifier`, 27 `unknown import`,
+11 ambiguity, 8 platform-DB, 7 type-mismatch, 24 other), against a ledger that
+showed 0 failed — the platform, not the ledger, holds the truth.  Fixed and
+**Proved this session** (11): `SchurIrreducible_rangeClosure_invariant`
+(platform-DB, re-armed), `Rpseudoreal_realCommutant_eq_quaternion`,
+`SmCar_inner_creat_left`, `PvmFibreInducedSystem_induced_system_of_isHilbertSum`,
+`AbelianGelfandModel_state_is_vector_state_of_multiplication`,
+`AbelianCyclicCommutant_abelian_algebra_maximal_abelian_of_cyclic`,
+`AbelianCyclicModel_abelian_algebra_multiplication_model`,
+`QgPhysicalSectorIdentity_matrixModel_c_ne_zero` + `_lagrange_term_zero`,
+`HashimotoShiftInvert_galerkinCompression_shiftInvert_tendsto`,
+plus a 5-sol Complexification batch re-polled to done.  Ledger: 6625 thm-done.
+
+Defect classes and their fixes:
+
+1. **Duplicate `variable` blocks** (the `Unknown identifier hT/F/Dom` class) —
+   the generator merges a statement's variable lines twice; the second block
+   shadows the first, so the theorem binds a DIFFERENT `F`/`Dom` than the
+   proof uses.  Fixed mechanically in **394 non-Proved sols**: the variable
+   region is replaced by the thm stub's own variable commands (continuation
+   lines included — the first attempt dropped `{Dom : Submodule ℂ F}` because
+   it only matched lines starting with `variable`).  Proved sols are never
+   touched (provenance).  The thm stubs for 15 of them carry the same dup —
+   their published statements predate it, so only the sol side matters.
+2. **Leaf-dropped `rfl`/`simp` facts** — `qembed_apply`, `creat_apply`/
+   `annih_apply`/`flipOcc_apply`/`conj_jwSign`, `Qm_ne_zero`+
+   `matrixModel_c_ne_zero`, `affData_amp₁/₂`: inlined verbatim from the
+   source chapter as `private` lemmas next to their use.  (`qembed_apply` is
+   a `lemma` in source, which is why `theorem`-pattern scans missed it.)
+3. **Call-arity drift on published thm nodes** — the authoritative signature
+   is the platform's `formal_statement`, NOT the local stub (stubs were
+   regenerated with different `variable` explicitness after publication):
+   `commutant_repSet_isCommutative (gelfandRep rho) hS hR`,
+   `cyclic_representation_multiplication_model (gelfandRep rho) xi hxi`,
+   `exists_probabilityMeasure_of_state psi hpsione` (2 args; the node is
+   Disproved — its `include hpos in` was dropped by the generator, making it
+   false for general `psi` — yet the constant still imports fine).
+
+**`include`-drop root cause**: the source uses `include hcyc in` /
+`include hpos in` to force hypotheses that the statement text never mentions;
+the stub generator drops the directive, so published statements lose those
+binders and get **Disproved** by counterexample (`commutant_repSet_isCommutative`,
+`cyclic_representation_multiplication_model`, `exists_probabilityMeasure_of_state`
+all Disproved).  A generator fix should emit `include ... in` — recorded as a
+standing rule below.
+
+**Pipeline gotcha**: `--only-file` with an EMPTY file sets `ONLY_ITEMS = None`
+(the `or None` idiom) and silently runs an UNFILTERED chunk — always assert
+the list is non-empty before invoking.
+
+**Audit correction — `failed_submissions.json` is a FAILURE HISTORY, not a
+current-failure list.**  `poll_failed_submissions.py` collects only
+non-accepted submissions (its docstring), so a node proved by a later
+ACCEPTED submission still appears with its historical CEs.  Spot-checked:
+`BandEnclosure_fock_mass_gap_of_nested_ritz_bands` (CE×5 Sep-12/13, then
+ACCEPTED, live status Proved) and `ChapterG3_eventProj_compl` (CE then
+ACCEPTED Oct-18).  Of the 171, **154 are ledger-done + Proved** (historical),
+9 parked, 8 genuinely pending (covered by the sol-gap run).  Always cross-check
+`theorem_status(ledger theorem_id)` before treating a backlog entry as live.

@@ -38,8 +38,6 @@ open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℝ} (hm : 0 < m) (p : ℕ → ℝ) :
     (∃ (Dom : Submodule ℂ Fock) (A : Dom →ₗ[ℂ] Fock),

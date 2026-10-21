@@ -13,8 +13,6 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in

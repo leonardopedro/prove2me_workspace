@@ -20,8 +20,6 @@ open Filter Topology NormedSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {A : F →L[ℂ] F} (hA : IsSelfAdjoint A) (t : ℝ) : 0 ≤ expNeg A t := by
 

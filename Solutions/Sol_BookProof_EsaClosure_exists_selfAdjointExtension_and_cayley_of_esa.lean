@@ -15,9 +15,6 @@ open BookProof.FarisLavine BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 variable [CompleteSpace F] {Dom : Submodule ℂ F}
 

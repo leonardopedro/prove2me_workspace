@@ -22,8 +22,6 @@ open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {R : F →L[ℂ] F} (hsa : IsSelfAdjoint R) (x y : F) :
     (inner ℂ x (R y) : ℂ).re = (inner ℂ y (R x) : ℂ).re := by

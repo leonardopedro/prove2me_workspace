@@ -17,8 +17,6 @@ open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemi
 open Filter Topology NormedSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T : Submodule ℂ (F × F)}
 
 set_option maxHeartbeats 1000000 in

@@ -23,6 +23,13 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteS
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 
+-- `qembed_apply` is leaf-dropped from the published Def_ChapterA2c bundle:
+-- inlined verbatim from the source chapter (an `rfl` fact).
+private lemma qembed_apply (θ : AntiUnitary V) (hθ : ∀ x, θ (θ x) = -x) (q : Quaternion ℝ) :
+    qembed θ hθ q
+      = algebraMap ℝ (V →L[ℝ] V) q.re + q.imI • mulI + q.imJ • thetaR θ
+        + q.imK • (mulI * thetaR θ) := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (M : System ℂ V) (hSchur : IsSchurFull M)
     {θ : AntiUnitary V} (hθ : ∀ x, θ (θ x) = -x) (hθc : CommutesAntiUnitary M θ)

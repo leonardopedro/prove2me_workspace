@@ -24,8 +24,6 @@ open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (S : Finset ℕ) (G : ℕ → ℕ → ℝ) :
     ∑ i ∈ S, ∑ j ∈ S.erase i, G i j = ∑ j ∈ S, ∑ i ∈ S.erase j, G i j := by

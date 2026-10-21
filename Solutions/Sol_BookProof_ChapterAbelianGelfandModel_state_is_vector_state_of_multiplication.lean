@@ -46,7 +46,7 @@ theorem solution (phi : A →ₗ[ℂ] ℂ)
       rw [map_mul, map_star]
     simpa [hpsi, h] using hpos (G.symm g)
   have hpsione : psi 1 = 1 := by simpa [hpsi] using hone
-  obtain ⟨mu, hmu, hint⟩ := exists_probabilityMeasure_of_state psi hpsipos hpsione
+  obtain ⟨mu, hmu, hint⟩ := exists_probabilityMeasure_of_state psi hpsione
   refine ⟨mu, hmu, norm_oneVec mu, ?_⟩
   intro a
   have h1 : phi a = psi (G a) := by simp [hpsi, hG]

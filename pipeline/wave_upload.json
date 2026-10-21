@@ -148318,6 +148318,318 @@
     "timepiece",
     "theorems"
    ]
+  },
+  "BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.blockVec_sblockH_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH_inc.lean",
+   "title": "The Lean 4 theorem `blockVec_sblockH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `blockVec_sblockH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.conj_esgn_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc.lean",
+   "title": "The Lean 4 theorem `conj_esgn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `conj_esgn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_conj_esgn`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_of_intertwine_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc.lean",
+   "title": "The Lean 4 theorem `deficiencyTrivialAt_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `deficiencyTrivialAt_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.deficiencyTrivialAt_sblockH_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc.lean",
+   "title": "The Lean 4 theorem `deficiencyTrivialAt_sblockH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `deficiencyTrivialAt_sblockH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.esgn_eq_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc.lean",
+   "title": "The Lean 4 theorem `esgn_eq` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `esgn_eq` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_esgn_eq`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.esgn_mul_shear_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc.lean",
+   "title": "The Lean 4 theorem `esgn_mul_shear` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `esgn_mul_shear` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.essentiallySelfAdjointOn_of_intertwine_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc.lean",
+   "title": "The Lean 4 theorem `essentiallySelfAdjointOn_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `essentiallySelfAdjointOn_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.flipU_apply_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc.lean",
+   "title": "The Lean 4 theorem `flipU_apply` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `flipU_apply` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_flipU_apply`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.flipU_mem_finiteModes_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc.lean",
+   "title": "The Lean 4 theorem `flipU_mem_finiteModes` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `flipU_mem_finiteModes` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.flipU_mem_maxDom_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc.lean",
+   "title": "The Lean 4 theorem `flipU_mem_maxDom` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `flipU_mem_maxDom` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.hFun_flip_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc.lean",
+   "title": "The Lean 4 theorem `hFun_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `hFun_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_hFun_flip`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.negOne_pow_eq_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc.lean",
+   "title": "The Lean 4 theorem `negOne_pow_eq` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `negOne_pow_eq` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_coe_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc.lean",
+   "title": "The Lean 4 theorem `saffH_coe` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_coe` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_coe`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_conj_flip_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc.lean",
+   "title": "The Lean 4 theorem `saffH_conj_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_conj_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_coord_succ_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc.lean",
+   "title": "The Lean 4 theorem `saffH_coord_succ` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_coord_succ` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_coord_succ_succ_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc.lean",
+   "title": "The Lean 4 theorem `saffH_coord_succ_succ` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_coord_succ_succ` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_eq_affH_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc.lean",
+   "title": "The Lean 4 theorem `saffH_eq_affH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_eq_affH` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_essentiallySelfAdjointOn_core_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc.lean",
+   "title": "The Lean 4 theorem `saffH_essentiallySelfAdjointOn_core` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_essentiallySelfAdjointOn_core` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_ne_zero_of_shear_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc.lean",
+   "title": "The Lean 4 theorem `saffH_ne_zero_of_shear` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_ne_zero_of_shear` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.saffH_symmetricOn_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc.lean",
+   "title": "The Lean 4 theorem `saffH_symmetricOn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `saffH_symmetricOn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.sblockFun_embFun_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc.lean",
+   "title": "The Lean 4 theorem `sblockFun_embFun` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sblockFun_embFun` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.sblockH_domain_dense_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc.lean",
+   "title": "The Lean 4 theorem `sblockH_domain_dense` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sblockH_domain_dense` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.sblockH_essentiallySelfAdjointOn_core_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc.lean",
+   "title": "The Lean 4 theorem `sblockH_essentiallySelfAdjointOn_core` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sblockH_essentiallySelfAdjointOn_core` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.sblockH_symmetricOn_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc.lean",
+   "title": "The Lean 4 theorem `sblockH_symmetricOn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `sblockH_symmetricOn` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.shiftH_flip_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc.lean",
+   "title": "The Lean 4 theorem `shiftH_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `shiftH_flip` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_shiftH_flip`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc.lean"
+  },
+  "BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc": {
+   "name": "BookProof.NavierStokesFlow.SignFlip.symmetricOn_of_intertwine_inc",
+   "chapter": "ChapterNavierStokesSignFlip",
+   "file": "Theorems/Thm_BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc.lean",
+   "title": "The Lean 4 theorem `symmetricOn_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization",
+   "nl": "The Lean 4 theorem `symmetricOn_of_intertwine` in the `ChapterNavierStokesSignFlip` chapter of the timepiece formalization.\n\nReplaces the unuploadable node `BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine`, whose statement name is already declared inside its published definition bundle; the `_inc` suffix publishes the same statement as its own node.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesSignFlip.lean",
+   "tags": [
+    "timepiece"
+   ],
+   "sol": "Solutions/Sol_BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc.lean"
   }
  },
  "sol_order": [
@@ -158163,6 +158475,32 @@
   "BookProof_CoreBounds_coreExt_symmetricOn_inc",
   "BookProof_CoreBounds_coreExt_commForm_le_inc",
   "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_inc",
-  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc"
+  "BookProof_CoreBounds_essentiallySelfAdjointOn_finiteModes_of_core_bounds_comm_inc",
+  "BookProof_NavierStokesFlow_SignFlip_blockVec_sblockH_inc",
+  "BookProof_NavierStokesFlow_SignFlip_conj_esgn_inc",
+  "BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_of_intertwine_inc",
+  "BookProof_NavierStokesFlow_SignFlip_deficiencyTrivialAt_sblockH_inc",
+  "BookProof_NavierStokesFlow_SignFlip_esgn_eq_inc",
+  "BookProof_NavierStokesFlow_SignFlip_esgn_mul_shear_inc",
+  "BookProof_NavierStokesFlow_SignFlip_essentiallySelfAdjointOn_of_intertwine_inc",
+  "BookProof_NavierStokesFlow_SignFlip_flipU_apply_inc",
+  "BookProof_NavierStokesFlow_SignFlip_flipU_mem_finiteModes_inc",
+  "BookProof_NavierStokesFlow_SignFlip_flipU_mem_maxDom_inc",
+  "BookProof_NavierStokesFlow_SignFlip_hFun_flip_inc",
+  "BookProof_NavierStokesFlow_SignFlip_negOne_pow_eq_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coe_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_conj_flip_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_coord_succ_succ_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_eq_affH_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_essentiallySelfAdjointOn_core_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_ne_zero_of_shear_inc",
+  "BookProof_NavierStokesFlow_SignFlip_saffH_symmetricOn_inc",
+  "BookProof_NavierStokesFlow_SignFlip_sblockFun_embFun_inc",
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_domain_dense_inc",
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_essentiallySelfAdjointOn_core_inc",
+  "BookProof_NavierStokesFlow_SignFlip_sblockH_symmetricOn_inc",
+  "BookProof_NavierStokesFlow_SignFlip_shiftH_flip_inc",
+  "BookProof_NavierStokesFlow_SignFlip_symmetricOn_of_intertwine_inc"
  ]
 }

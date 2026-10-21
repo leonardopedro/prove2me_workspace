@@ -44,6 +44,6 @@ theorem solution (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
     rw [DenseRange, hrange]
     exact hcyc
   obtain ⟨mu, hmu, U, hU, -⟩ :=
-    cyclic_representation_multiplication_model (gelfandRep rho) xi hcyc' hxi
+    cyclic_representation_multiplication_model (gelfandRep rho) xi hxi
   refine ⟨mu, hmu, U, fun a u => ?_⟩
   rw [hU (gelfandModel A a) u, gelfandRep_gelfandModel]

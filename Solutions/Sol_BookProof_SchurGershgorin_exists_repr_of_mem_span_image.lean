@@ -24,8 +24,6 @@ open BookProof.YangMillsFriedrichs BookProof.YangMillsFockGapChain
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (b : HilbertBasis ℕ ℂ F) (T : Set ℕ) {v : F}
     (hv : v ∈ Submodule.span ℂ (b '' T)) :

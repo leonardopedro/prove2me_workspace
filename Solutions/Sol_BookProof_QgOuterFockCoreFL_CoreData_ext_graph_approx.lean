@@ -18,11 +18,6 @@ open BookProof.FarisLavine
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-
-variable (d : CoreData F)
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable (d : CoreData F)
 
 set_option maxHeartbeats 1000000 in

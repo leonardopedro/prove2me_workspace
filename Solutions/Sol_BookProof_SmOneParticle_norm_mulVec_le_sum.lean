@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSmOneParticle
 import Theorems.Thm_BookProof_SmOneParticle_unitary_entry_norm_le_one
 open BookProof.SmOneParticle
+open scoped Matrix
 
 variable {V U : Matrix (Fin 3) (Fin 3) ℂ}
 

@@ -17,9 +17,6 @@ open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
 variable [CompleteSpace F]
 variable [CompleteSpace F] {Dom : Submodule ℂ F}
 
@@ -27,7 +24,8 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution {A : Dom →ₗ[ℂ] F} (hsym : SymmetricOn Dom A) (x : Dom) :
     ‖A x + Complex.I • (x : F)‖ = ‖A x - Complex.I • (x : F)‖ := by
-  have him : (inner ℂ (A x) (x : F) : ℂ).im = 0 := inner_apply_self_im A hsym x
+  have him : (inner ℂ (A x) (x : F) : ℂ).im = 0 :=
+    BookProof.FarisLavine.inner_apply_self_im A hsym x
   have hcross : RCLike.re (inner ℂ (A x) (Complex.I • (x : F)) : ℂ) = 0 := by
     rw [inner_smul_right]; simp [him]
   have h1 : ‖A x + Complex.I • (x : F)‖ ^ 2 = ‖A x - Complex.I • (x : F)‖ ^ 2 := by

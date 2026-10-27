@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """Flip `def:<Chapter>` ledger items `done -> pending` for an additive republish.
 
+!!! 2026-10-24 EXPERIENCE: THE PLATFORM REJECTS THIS. 161 flips (3 waves)
+every single submission came back `submit-definition rejected: {"error": "A
+theorem or definition with name \"ChapterX\" already exists"}` -- matching
+PIPELINE_PLAN §2.13/§2.67 ("A definition body cannot be replaced -- all three
+routes verified"). The old claim below ("updates the bundle in place") was
+WRONG; every flipped item had to be reverted (see `unflipped_at` audit fields).
+Do not flip again unless the platform gains an update route; the documented
+remedy for stale published text is the PARKED new-name route (§2.13), which is
+a user decision.
+
 §2.49 republish loop, step 3: after `check_def_local.py` is green and
 `regate_bundles.py` merged an OK verdict into state/def_gate.json, the item is
 flipped back to `pending` so the next def chunk submits it again -- the

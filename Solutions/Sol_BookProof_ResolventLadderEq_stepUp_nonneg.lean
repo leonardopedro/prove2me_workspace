@@ -24,8 +24,6 @@ open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (c δ t : ℝ) : 0 ≤ stepUp c δ t := by
 

@@ -1,0 +1,25 @@
+-- Generated from ChapterMixedLinearEsa.lean — solution of BookProof.MixedLinearEsa.potMomOp_apply
+import Mathlib
+import Definitions.Def_ChapterMixedLinearEsa
+import Theorems.Thm_BookProof_MixedLinearEsa_momentumOp_apply
+open BookProof.MixedLinearEsa
+
+
+
+
+open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace LineDeriv
+open BookProof.StrichartzWave BookProof.FourierMultiplierEsa BookProof.FarisLavine
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+  [MeasurableSpace V] [BorelSpace V]
+
+set_option maxHeartbeats 1000000 in
+omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in
+theorem solution {W : V → ℝ} (hW : Function.HasTemperateGrowth W) (m : V) (f : 𝓢(V, ℂ))
+    (x : V) :
+    (potMomOp W m f) x = ((W x : ℝ) : ℂ) * f x + (-Complex.I) * (fderiv ℝ f x m) := by
+
+  simp [potMomOp, potentialOp_apply hW, momentumOp_apply]

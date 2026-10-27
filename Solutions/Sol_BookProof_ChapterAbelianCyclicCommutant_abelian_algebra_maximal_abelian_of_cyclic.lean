@@ -51,4 +51,4 @@ theorem solution (rho : A →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
       centralizer_repSet (gelfandRep rho) xi hcyc']
   · intro S R hS hR
     rw [← hset] at hS hR
-    exact commutant_repSet_isCommutative (gelfandRep rho) xi hcyc' hS hR
+    exact commutant_repSet_isCommutative (gelfandRep rho) hS hR

@@ -12,6 +12,9 @@ import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
+import Theorems.Thm_BookProof_ClosureUniqueness_opGraph_clExt
+import Theorems.Thm_BookProof_ClosureUniqueness_adjGraph_eq_of_clGraph_eq
+import Theorems.Thm_BookProof_ClosureUniqueness_factorGraph_eq_of_clGraph_eq
 
 
 /-!

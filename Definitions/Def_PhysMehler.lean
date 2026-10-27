@@ -38,11 +38,112 @@ not to assert it as an axiom, which is precisely the act of telling Lean to stop
 checking.
 -/
 
+namespace PhysHSGaussian
+
+open MeasureTheory Set Filter
+open scoped ENNReal Topology
+open PhysMeasureBasis
+
+/-! Inlined from `BookProof/PhysHSGaussian/Part3.lean`: the `PhysHSGaussian`
+bundle was never published, so this consumer carries the four declarations it
+needs (platform-world rule: an unpublished dep cannot be imported). -/
+
+/-- The infinite product of standard Gaussians (the law of an i.i.d. Gaussian
+    sequence). -/
+noncomputable def gammaMeasure : Measure (ℕ → ℝ) :=
+  Measure.infinitePi (fun _ : ℕ => ProbabilityTheory.gaussianReal 0 1)
+
+
+
+noncomputable instance gammaMeasure_isProbability : IsProbabilityMeasure gammaMeasure := by
+  unfold gammaMeasure; infer_instance
+
+
+
+/-- Empirical squared norm of the first `k` coordinates. -/
+def normSq (k : ℕ) (ω : ℕ → ℝ) : ℝ := ∑ i ∈ Finset.range k, (ω i)^2
+
+
+
+theorem gaussian_concentration_sphere :
+    ∀ᵐ ω ∂gammaMeasure,
+      Filter.Tendsto (fun k => normSq k ω / k) Filter.atTop (𝓝 1) := by
+  convert ProbabilityTheory.strong_law_ae _ _ _ _ using 1;
+  case convert_4 => exact ℝ;
+  case convert_10 => exact fun i ω => ( ω i ) ^ 2;
+  all_goals try infer_instance;
+  · have h_integral : ∫ x : ℕ → ℝ, x 0 ^ 2 ∂gammaMeasure = 1 := by
+      have h_gauss : ∫ x : ℝ, x ^ 2 ∂(ProbabilityTheory.gaussianReal 0 1) = 1 := by
+        have := @ProbabilityTheory.variance_id_gaussianReal 0 1;
+        rw [ ProbabilityTheory.variance, ProbabilityTheory.evariance_eq_lintegral_ofReal, ←
+          MeasureTheory.integral_eq_lintegral_of_nonneg_ae ] at this <;> norm_num at *;
+        · exact this;
+        · exact Filter.Eventually.of_forall fun x => sq_nonneg x;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      have h_gauss : ∫ x : ℕ → ℝ, x 0 ^ 2 ∂gammaMeasure = ∫ x : ℝ, x ^ 2
+        ∂(ProbabilityTheory.gaussianReal 0 1) := by
+        have h_map : MeasureTheory.Measure.map (fun x : ℕ → ℝ => x 0) gammaMeasure =
+          ProbabilityTheory.gaussianReal 0 1 := by
+          convert MeasureTheory.Measure.infinitePi_map_eval _ _ using 1
+          <;> (first | rfl | infer_instance);
+        rw [ ← h_map, MeasureTheory.integral_map ];
+        · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      linarith;
+    simp_all +decide [ div_eq_inv_mul, normSq ];
+  · have h_integrable : MeasureTheory.Integrable (fun x : ℝ => x^2) (ProbabilityTheory.gaussianReal
+    0 1) := by
+      have h_gauss_integrable : ∫ x, x ^ 2 ∂(ProbabilityTheory.gaussianReal 0 1) = 1 := by
+        have := @ProbabilityTheory.variance_id_gaussianReal 0 1;
+        rw [ ProbabilityTheory.variance, ProbabilityTheory.evariance_eq_lintegral_ofReal, ←
+          MeasureTheory.integral_eq_lintegral_of_nonneg_ae ] at this <;> norm_num at *;
+        · exact this;
+        · exact Filter.Eventually.of_forall fun x => sq_nonneg x;
+        · exact Continuous.aestronglyMeasurable ( continuous_pow 2 );
+      exact ( by contrapose! h_gauss_integrable; rw [ MeasureTheory.integral_undef
+          h_gauss_integrable ] ; norm_num );
+    have h_integrable : MeasureTheory.Integrable (fun ω : ℕ → ℝ => ω 0 ^ 2) (Measure.infinitePi (fun
+      _ : ℕ => ProbabilityTheory.gaussianReal 0 1)) := by
+      have h_map : (Measure.infinitePi (fun _ : ℕ => ProbabilityTheory.gaussianReal 0 1)).map (fun ω
+        : ℕ → ℝ => ω 0) = ProbabilityTheory.gaussianReal 0 1 := by
+        convert MeasureTheory.Measure.infinitePi_map_eval _ _ using 1;
+        exact fun _ => inferInstance
+      rw [ ← h_map ] at h_integrable;
+      rwa [ MeasureTheory.integrable_map_measure ] at h_integrable;
+      · exact h_integrable.1;
+      · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+    exact h_integrable;
+  · have h_indep : ProbabilityTheory.iIndepFun (fun i : ℕ => fun ω : ℕ → ℝ => ω i) gammaMeasure
+    := by
+      convert ProbabilityTheory.iIndepFun_infinitePi ( fun i => measurable_id ) using 1
+      <;> (first | rfl | infer_instance);
+    exact fun i j hij => h_indep.indepFun hij |> fun h => h.comp ( measurable_id.pow_const 2 ) (
+      measurable_id.pow_const 2 );
+  · intro i
+    have h_ident : ProbabilityTheory.IdentDistrib (fun ω : ℕ → ℝ => ω i) (fun ω : ℕ → ℝ => ω 0)
+      gammaMeasure gammaMeasure := by
+      constructor;
+      · exact measurable_pi_apply i |> Measurable.aemeasurable;
+      · exact measurable_pi_apply 0 |> Measurable.aemeasurable;
+      · have h_map : ∀ i : ℕ, Measure.map (fun ω : ℕ → ℝ => ω i) gammaMeasure =
+        ProbabilityTheory.gaussianReal 0 1 := by
+          intro i
+          generalize_proofs at *; (
+          convert MeasureTheory.Measure.infinitePi_map_eval ( fun _ =>
+            ProbabilityTheory.gaussianReal 0 1 ) i using 1 <;> (first | rfl | infer_instance));
+        rw [ h_map i, h_map 0 ]
+    generalize_proofs at *; (
+    exact h_ident.comp ( measurable_id.pow_const 2 ))
+
+
+
+end PhysHSGaussian
+
 namespace PhysMehler
 
-open PhysMeasureBasis PhysFunctionalAnalysis BookProof.ChapterG3.PhysHSGaussian
-open MeasureTheory Set ProbabilityTheory
-open scoped ENNReal
+open PhysMeasureBasis PhysFunctionalAnalysis PhysHSGaussian
+open MeasureTheory Set ProbabilityTheory Filter
+open scoped ENNReal Topology
 
 /-- The abstract data of a **Kopperman formalism** on a carrier Hilbert space
     `H`: separability, a countable dense decidable skeleton, and an atomless
@@ -51,7 +152,7 @@ structure Formalism (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℝ H]
     [CompleteSpace H] [MeasurableSpace H] where
   /-- The substrate is separable (Kopperman's completeness/separability axiom; in
       Lean the standard separable Hilbert space is constructed directly). -/
-  separable : SeparableSpace H
+  separable : TopologicalSpace.SeparableSpace H
   /-- The decidable dense skeleton: the computable approximants. -/
   skeleton : Set H
   skeleton_countable : skeleton.Countable
@@ -69,9 +170,9 @@ structure Formalism (H : Type*) [NormedAddCommGroup H] [InnerProductSpace ℝ H]
     Hilbert space. (Kopperman uses `L_{ω₁,ω₁}` to pin this down categorically; in
     Lean's type theory it is constructed outright, and `hilbert_classification`
     records that any two such spaces are isometrically isomorphic.) -/
-abbrev Substrate := Lp ℝ 2 unitMeasure
+noncomputable abbrev Substrate := Lp ℝ 2 unitMeasure
 
-theorem substrate_separable : SeparableSpace Substrate := l2_separable
+theorem substrate_separable : TopologicalSpace.SeparableSpace Substrate := l2_separable
 
 /-- The decidable dense skeleton exists: a countable dense subset of the
     substrate (the computable approximants of the tutorial's "decidable dense
@@ -84,7 +185,7 @@ theorem substrate_decidable_skeleton : ∃ D : Set Substrate, D.Countable ∧ De
 
 /-- The **Mehler prior**: the infinite-product Gaussian measure on coordinate
     space — Mehler's 1866 limit of the uniform measure on the `√k`-sphere. -/
-abbrev MehlerPrior : Measure (ℕ → ℝ) := gammaMeasure
+noncomputable abbrev MehlerPrior : Measure (ℕ → ℝ) := gammaMeasure
 
 theorem mehler_isProbability : IsProbabilityMeasure MehlerPrior :=
   gammaMeasure_isProbability
@@ -197,7 +298,7 @@ section Substrate
 
 /-- Equip the substrate with its Borel σ-algebra so the atomless-prior
 construction (H7) applies. -/
-local instance substrateMeasurableSpace : MeasurableSpace Substrate := borel _
+noncomputable local instance substrateMeasurableSpace : MeasurableSpace Substrate := borel _
 
 local instance substrateBorelSpace : BorelSpace Substrate := ⟨rfl⟩
 
@@ -244,7 +345,7 @@ the substrate prior of the bounded-prior model.  It is the shared analytic datum
 of the decoupled Kopperman–Solovay framework, promoted here so that the generic
 `RandomMap2` development does not have to reach into a Riemann-Hypothesis file for
 it. -/
-def rcpPriorOnSubstrate : Measure Substrate := Classical.choose exists_atomless_prob_substrate
+noncomputable def rcpPriorOnSubstrate : Measure Substrate := Classical.choose exists_atomless_prob_substrate
 
 instance rcpPriorOnSubstrate_isProb : IsProbabilityMeasure rcpPriorOnSubstrate :=
   (Classical.choose_spec exists_atomless_prob_substrate).1

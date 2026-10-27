@@ -13,8 +13,8 @@ open scoped ENNReal
 
 
 
-open LpNat FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
+open LpNat BookProof.FarisLavine IkebeKato HermiteFarisLavine ShiftHamiltonian
 
 
-theorem BookProof.NavierStokesFlow.AffineFiber.affData_shift₁₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
+theorem BookProof.NavierStokesFlow.AffineFiber.affData_shift₁ {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) :
     (affData hκ hc).shift₁ = fun n : ℕ => n + 2 := by sorry

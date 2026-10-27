@@ -291,6 +291,71 @@ theorem det_deformation_eq (kv : K → Fin 3 → ℝ) (y : DIdx K → ℝ) (a : 
 
 
 
+/-- The zero momentum occurs in `det F` (the identity part `I`). -/
+theorem zero_mem_waveSet (kv : K → Fin 3 → ℝ) : (0 : Fin 3 → ℝ) ∈ waveSet kv := by
+  classical
+  refine Finset.mem_image.mpr ⟨fun _ => none, Finset.mem_univ _, ?_⟩
+  simp [tupleWave, owv]
+
+/-- **The incompressibility residual in momentum space**:
+`det(I + ∇ξ(a)) − 1 = Σ_q (det F − 1)^(q)(y) e^{i q·a}`. -/
+theorem volume_residual_eq (kv : K → Fin 3 → ℝ) (y : DIdx K → ℝ) (a : Fin 3 → ℝ) :
+    (1 + dispGrad kv y a).det - 1 = ∑ q ∈ waveSet kv, ev y (volCoef kv q) * phase q a := by
+  classical
+  simp only [volCoef, map_sub, sub_mul, Finset.sum_sub_distrib, det_deformation_eq]
+  congr 1
+  have : ∀ q : Fin 3 → ℝ, ev y (if q = 0 then 1 else 0) * phase q a
+      = if q = 0 then 1 else 0 := by
+    intro q
+    split_ifs with h
+    · subst h; simp [phase_zero]
+    · simp
+  rw [Finset.sum_congr rfl fun q _ => this q, Finset.sum_ite_eq' , if_pos (zero_mem_waveSet kv)]
+
+omit [Fintype K] in
+theorem ev_conjP (y : DIdx K → ℝ) (p : MvPolynomial (DIdx K) ℂ) :
+    ev y (conjP p) = (starRingEnd ℂ) (ev y p) := by
+  rw [conjP, ev, eval_map]
+  induction p using MvPolynomial.induction_on with
+  | C a => simp
+  | add p q hp hq => simp [hp, hq]
+  | mul_X p i hp => simp [hp]
+
+/-- The value of the volume penalty: `V_κ(y) = (κ/2) Σ_q |(det F − 1)^(q)(y)|²`. -/
+theorem ev_volPot (kappa : ℝ) (kv : K → Fin 3 → ℝ) (y : DIdx K → ℝ) :
+    ev y (volPot kappa kv)
+      = ((kappa / 2 * ∑ q ∈ waveSet kv, Complex.normSq (ev y (volCoef kv q)) : ℝ) : ℂ) := by
+  rw [volPot, MvPolynomial.smul_eq_C_mul, map_mul, map_sum]
+  simp only [map_mul, ev_conjP]
+  rw [show ev y (C ((kappa / 2 : ℝ) : ℂ)) = ((kappa / 2 : ℝ) : ℂ) by simp [ev]]
+  push_cast
+  congr 1
+  refine Finset.sum_congr rfl fun q _ => ?_
+  rw [Complex.normSq_eq_conj_mul_self]
+
+/-- **The volume penalty is non-negative** at every real configuration. -/
+theorem volPot_eval_nonneg {kappa : ℝ} (hk : 0 ≤ kappa) (kv : K → Fin 3 → ℝ)
+    (y : DIdx K → ℝ) : 0 ≤ (ev y (volPot kappa kv)).re := by
+  rw [ev_volPot, Complex.ofReal_re]
+  exact mul_nonneg (by linarith) (Finset.sum_nonneg fun q _ => Complex.normSq_nonneg _)
+
+/-- **The zero set of the volume penalty is incompressible**: for `κ > 0`, a configuration with
+`V_κ = 0` has `det(I + ∇ξ(a)) = 1` at **every** reference point `a`. -/
+theorem det_eq_one_of_volPot_eq_zero {kappa : ℝ} (hk : 0 < kappa) (kv : K → Fin 3 → ℝ)
+    (y : DIdx K → ℝ) (h : ev y (volPot kappa kv) = 0) (a : Fin 3 → ℝ) :
+    (1 + dispGrad kv y a).det = 1 := by
+  rw [ev_volPot, Complex.ofReal_eq_zero] at h
+  have hsum : ∑ q ∈ waveSet kv, Complex.normSq (ev y (volCoef kv q)) = 0 := by
+    rcases mul_eq_zero.mp h with h1 | h1
+    · linarith
+    · exact h1
+  have hzero : ∀ q ∈ waveSet kv, ev y (volCoef kv q) = 0 := fun q hq =>
+    Complex.normSq_eq_zero.mp ((Finset.sum_eq_zero_iff_of_nonneg
+      (fun q _ => Complex.normSq_nonneg _)).mp hsum q hq)
+  have := volume_residual_eq kv y a
+  rw [Finset.sum_eq_zero fun q hq => by rw [hzero q hq, zero_mul]] at this
+  exact sub_eq_zero.mp this
+
 end
 
 end BookProof.NsLagrangianDet

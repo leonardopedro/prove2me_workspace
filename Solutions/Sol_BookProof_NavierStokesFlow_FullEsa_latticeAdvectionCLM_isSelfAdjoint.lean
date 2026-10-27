@@ -6,6 +6,7 @@ import Definitions.Def_ChapterContinuityUnitary
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_ChapterContinuityUnitaryInfinite_velocityOp_isSelfAdjoint
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 

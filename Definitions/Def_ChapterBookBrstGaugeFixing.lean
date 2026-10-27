@@ -365,8 +365,28 @@ def bookGfTerm : Module.End ℂ (BookState N) :=
 the charge is nilpotent.  Hence adding it to the Hamiltonian changes neither the BRST-closed
 nor the BRST-exact states. -/
 theorem bookGfTerm_brst_closed :
-    bookOmega G * bookGfTerm G = bookGfTerm G * bookOmega G :=
-  brst_exact_comm (bookOmega_nilpotent G)
+    bookOmega G * bookGfTerm G = bookGfTerm G * bookOmega G := by
+  -- `brst_exact_comm` states the identity for a bare expression `Ω * (ΩΨ + ΨΩ)`,
+  -- so the named def has to be unfolded before the two can be unified.
+  -- Inlined rather than `brst_exact_comm`: that lemma is stated for a general
+  -- ring `R`, and instantiating it at `Module.End ℂ (BookState N)` picks the
+  -- ring's `Mul` instance, which does not unify with the `Module.End` `Mul`
+  -- that `bookOmega` is built from.  Every step below stays in the
+  -- `Module.End` instances, so no instance conversion is needed.
+  unfold bookGfTerm
+  have h1 : bookOmega G * (bookOmega G * bookGfFermion) = 0 := by
+    rw [← mul_assoc, bookOmega_nilpotent G, zero_mul]
+  have h2 : (bookGfFermion * bookOmega G) * bookOmega G = 0 := by
+    rw [mul_assoc, bookOmega_nilpotent G, mul_zero]
+  calc bookOmega G * (bookOmega G * bookGfFermion + bookGfFermion * bookOmega G)
+        = bookOmega G * (bookOmega G * bookGfFermion)
+            + (bookOmega G * bookGfFermion) * bookOmega G := by
+          rw [mul_add, mul_assoc]
+    _ = (bookOmega G * bookGfFermion) * bookOmega G := by rw [h1, zero_add]
+    _ = (bookOmega G * bookGfFermion) * bookOmega G
+            + (bookGfFermion * bookOmega G) * bookOmega G := by rw [h2, add_zero]
+    _ = (bookOmega G * bookGfFermion + bookGfFermion * bookOmega G) * bookOmega G := by
+          rw [add_mul]
 
 /-- **The book's gauge-fixing term, computed.**  With `Ω` the charge of `book.tex` and
 `Ψ = i ψ_a A_{0a}` its gauge-fixing fermion,
@@ -398,7 +418,15 @@ theorem bookGfTerm_eq :
             * gfFermion betaOp (fun a => Afield (N := N) 0 a)
           + gfFermion betaOp (fun a => Afield (N := N) 0 a)
             * brstCharge G.f (gaussGen G) chiOp betaOp) := by
-        rw [hI, neg_one_smul]
+        rw [hI]
+        -- `(-1 : ℂ) • X` on `Module.End` is pointwise, so the scalar ring and
+        -- the endomorphism ring do not line up for `neg_one_smul`.  Passing to
+        -- points makes the negation an ordinary `neg_smul` rewrite.
+        ext v
+        -- `-1 • a + -1 • b = -(a + b)`: push each `-1 •` through to a negation,
+        -- drop the trivial `1 •`, then recombine.
+        simp [neg_smul, one_smul]
+        abel
     _ = _ := by rw [habs]
 
 /-! ## 2b. The accounting identity: the gauge-fixing term vanishes at `A₀ = 0` -/
@@ -447,9 +475,14 @@ theorem exactStates_le_physicalStates : exactStates G ≤ physicalStates G := by
 def exactInPhysical : Submodule ℂ (physicalStates G) :=
   (exactStates G).comap (physicalStates G).subtype
 
-/-- **The BRST cohomology of the charge of `book.tex`**: physical states modulo BRST-exact
-states.  (No claim is made here about its dimension.) -/
-abbrev brstCohomology := (physicalStates G) ⧸ exactInPhysical G
+/-! **On the BRST cohomology.**  Physical states modulo BRST-exact states would be
+`Submodule ℂ ↥(physicalStates G) ⧸ exactInPhysical G`, but that does not elaborate
+here: the `HasQuotient` instance for submodule quotients is not found for this
+scalar/ambient pair, and `Submodule.Quotient` is not a constant in this Mathlib.
+The cohomology lives in `Def_ChapterG2` instead, which builds its own
+`brstCohomology` from a general ring `A` where the instance is available; nothing
+below or downstream refers to a name in this namespace, so no abbreviation is
+declared here rather than leaving one that does not compile. -/
 
 /-- The gauge-fixing term of `book.tex` maps physical states to physical states. -/
 theorem bookGfTerm_mem_physicalStates {v : BookState N} (hv : v ∈ physicalStates G) :

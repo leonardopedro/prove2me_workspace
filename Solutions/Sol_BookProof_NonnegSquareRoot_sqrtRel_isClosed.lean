@@ -23,9 +23,6 @@ open BookProof.ClosureUniqueness
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T S : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (hT : IsNonnegSelfAdjoint T) :
     IsClosed ((sqrtRel hT : Submodule ℂ (F × F)) : Set (F × F)) := by

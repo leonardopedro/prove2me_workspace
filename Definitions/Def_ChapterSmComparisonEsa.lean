@@ -13,6 +13,7 @@ import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
 
 
 /-!

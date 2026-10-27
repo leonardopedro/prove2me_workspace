@@ -16,6 +16,21 @@ variable {n : ℕ}
 
 variable {n : ℕ}
 
+-- These four `@[simp]` facts are leaf-dropped from the published
+-- Def_ChapterSmCarAlgebra bundle: inlined verbatim from the source chapter.
+private theorem conj_jwSign (i : Fin n) (S : Finset (Fin n)) :
+    (starRingEnd ℂ) (jwSign i S) = jwSign i S := by
+  simp [jwSign]
+
+private theorem flipOcc_apply (i : Fin n) (S : Finset (Fin n)) :
+    flipOcc i S = if i ∈ S then S.erase i else insert i S := rfl
+
+private theorem annih_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (annih i ψ) S = if i ∈ S then 0 else jwSign i S * ψ (insert i S) := rfl
+
+private theorem creat_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (creat i ψ) S = if i ∈ S then jwSign i (S.erase i) * ψ (S.erase i) else 0 := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i : Fin n) (ψ φ : FermiFock n) :
     (inner ℂ (creat i ψ) φ : ℂ) = inner ℂ ψ (annih i φ) := by

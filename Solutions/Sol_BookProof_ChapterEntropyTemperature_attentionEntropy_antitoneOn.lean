@@ -6,6 +6,7 @@ import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_varScore_nonneg
 import Definitions.Def_ChapterAttentionEntropy
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_nonneg
 open BookProof.ChapterEntropyTemperature
 
 
@@ -17,6 +18,7 @@ noncomputable section
 
 open BookProof.ChapterAttentionEntropy BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxFluctuation
+open BookProof.ChapterSoftmaxOrder
 
 variable {m : ℕ}
 

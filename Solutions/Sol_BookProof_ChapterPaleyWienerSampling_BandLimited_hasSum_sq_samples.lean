@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterPaleyWienerSampling
 import Theorems.Thm_BookProof_ChapterPaleyWienerSampling_BandLimited_eq_bandSignal_lp
 import Theorems.Thm_BookProof_ChapterShannonSampling_half_add_period
+import Theorems.Thm_BookProof_ChapterShannonSampling_hasSum_sq_samples
 import Definitions.Def_ChapterShannonSampling
 open BookProof.ChapterPaleyWienerSampling
 open BookProof.ChapterPaleyWienerSampling.BandLimited
@@ -23,7 +24,7 @@ theorem solution (hf : BandLimited T f) :
     HasSum (fun n : ℤ => ‖f ((n : ℝ) / T)‖ ^ 2) (T * ∫ ξ : ℝ, ‖𝓕 f ξ‖ ^ 2) := by
 
   have hT0 : (0 : ℝ) < T := hT.out
-  have hbase := ChapterShannonSampling.hasSum_sq_samples (bandSpectrumLp hf)
+  have hbase := hasSum_sq_samples (bandSpectrumLp hf)
   have hcoe : ∀ n : ℤ,
       ‖bandSignal (T := T) ((bandSpectrumLp hf : Lp ℂ 2 (haarAddCircle (T := T))) :
         AddCircle T → ℂ) ((n : ℝ) / T)‖ ^ 2 = ‖f ((n : ℝ) / T)‖ ^ 2 := by

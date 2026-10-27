@@ -18,8 +18,6 @@ open scoped ComplexOrder
 open BookProof.ClosureUniqueness
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}
 
 set_option maxHeartbeats 1000000 in

@@ -1,0 +1,19 @@
+-- Generated from ChapterPinDoubleCover.lean — solution of BookProof.ChapterPinDoubleCover.LamZ_mem_Delta
+import Mathlib
+import Definitions.Def_ChapterPinDoubleCover
+import Definitions.Def_ChapterA3
+import Definitions.Def_ChapterLorentzGroup
+open BookProof.ChapterPinDoubleCover
+
+
+
+open Matrix
+
+
+open BookProof.ChapterA3
+open Classical
+open BookProof.LorentzGroup
+
+set_option maxHeartbeats 1000000 in
+theorem solution : ∀ S ∈ Omega, LamZ S ∈ Delta := by
+ decide

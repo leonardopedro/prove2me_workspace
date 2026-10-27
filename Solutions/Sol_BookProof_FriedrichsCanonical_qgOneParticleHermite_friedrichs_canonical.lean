@@ -25,8 +25,6 @@ open BookProof.YangMillsFriedrichs
 noncomputable section
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {D : Submodule ℂ F}
 
 set_option maxHeartbeats 1000000 in

@@ -17,9 +17,6 @@ open scoped ComplexOrder
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution {A : F →L[ℂ] F} (hA : 0 ≤ A) : IsSelfAdjoint A :=
   ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.2

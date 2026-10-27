@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFockLagrangian.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.mulD_real_smul
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockLagrangian
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_DominatedOn_const_mul
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow

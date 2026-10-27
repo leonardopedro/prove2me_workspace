@@ -19,6 +19,6 @@ variable {X : Type*}
 set_option maxHeartbeats 1000000 in
 theorem solution [MeasurableSpace X] (μ : Measure X)
     [IsProbabilityMeasure μ] (A : Set X) (hA : MeasurableSet A) :
-    ∫ x, eventProj A x ∂μ = (μ A).toReal := by
+    ∫ x, BookProof.ChapterG3.eventProj A x ∂μ = (μ A).toReal := by
 
-  rw [eventProj, MeasureTheory.integral_indicator_one hA, MeasureTheory.measureReal_def]
+  rw [BookProof.ChapterG3.eventProj, MeasureTheory.integral_indicator_one hA, MeasureTheory.measureReal_def]

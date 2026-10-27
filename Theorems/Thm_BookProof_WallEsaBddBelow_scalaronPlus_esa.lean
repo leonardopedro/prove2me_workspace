@@ -11,6 +11,8 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStarobinskyPotential
+import Theorems.Thm_BookProof_ScalaronEsa_contDiff_starobinskyV
+import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.Starobinsky

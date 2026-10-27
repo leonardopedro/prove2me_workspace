@@ -17,8 +17,6 @@ open Filter Topology NormedSpace
 open scoped InnerProductSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {B C : F →L[ℂ] F} {s t : ℝ}
 
 set_option maxHeartbeats 1000000 in

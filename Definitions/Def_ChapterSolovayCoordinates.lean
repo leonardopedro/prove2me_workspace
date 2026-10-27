@@ -139,3 +139,6 @@ procedures. -/
     (L₁.tensor L₂).decide x = (L₁.decide x.1 && L₂.decide x.2) := rfl
 
 end BookProof.ChapterSolovayCoordinates
+
+-- Republish attempt2 (§2.49): the earlier failure (PhysHSGaussian.gammaMeasure*
+-- unknown) is stale — those decls have since been published; text unchanged.

@@ -22,7 +22,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (hf : BandLimited T f) (x : ℝ) :
     HasSum (fun n : ℤ => f ((n : ℝ) / T) * (sinc (T * x - n) : ℝ)) (f x) := by
 
-  have hbase := ChapterShannonSampling.bandSignal_hasSum_sinc (bandSpectrumLp hf) x
+  have hbase := bandSignal_hasSum_sinc (bandSpectrumLp hf) x
   rw [← hf.eq_bandSignal_lp x] at hbase
   refine hbase.congr_fun fun n => ?_
   rw [hf.eq_bandSignal_lp ((n : ℝ) / T)]

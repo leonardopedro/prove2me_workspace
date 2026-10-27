@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_dom_le_range
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_isSelfAdjoint
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_pos
 import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_shift
@@ -26,8 +25,6 @@ open BookProof.QgOuterFockFL
 open BookProof.YangMillsFriedrichs
 
 noncomputable section
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

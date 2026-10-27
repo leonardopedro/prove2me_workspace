@@ -26,4 +26,5 @@ variable (T : UnboundedSelfAdjoint H) {mu : Measure (spectrum ℂ (resOp T))}
   (V : Lp ℂ 2 mu →ₗᵢ[ℂ] H)
   (hV : ∀ u : Lp ℂ 2 mu, V (mulRep mu (coordFn (resOp T)) u) = resOp T (V u))
 
+include hV in
 theorem BookProof.UnboundedSpectralModel.model_mem (u : Lp ℂ 2 mu) : V (mulRep mu (coordFn (resOp T)) u) ∈ T.domain := by sorry

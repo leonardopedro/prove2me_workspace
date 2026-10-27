@@ -24,7 +24,12 @@ UPSTREAM = os.environ.get(
     "UPSTREAM", "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/timepiece331/BookProof")
 
 DECL_RE = re.compile(r"^(?:(?:private|protected|noncomputable|internal)\s+)*(?:@[A-Za-z0-9_'.\[\] ]*\s*)*(theorem|lemma|def|abbrev)\s+([A-Za-z0-9_'.]+)")
-INC_RE = re.compile(r"^include\s+(.+?)\s+in\b")
+# Both `include X in decl` and the bare section-level `include X` form
+# (the SolidHarmonic/UnboundedSpectralModel/Majorana chapters use the bare
+# form exclusively; a bare include lasts until the section ends).
+INC_RE = re.compile(r"^include\s+(.+?)(?:\s+in\b.*)?$")
+OMIT_RE = re.compile(r"^omit\s+(.+?)(?:\s+in\b.*)?$")
+ONE_SHOT_RE = re.compile(r"^(?:include|omit)\s+.+?\s+in\b")
 NS_RE = re.compile(r"^namespace\s+([A-Za-z0-9_.']+)(?:\s*--.*)?$")
 SEC_RE = re.compile(r"^section(?:\s+.*)?$")
 END_RE = re.compile(r"^end(?:\s+([A-Za-z0-9_.']+))?\s*$")
@@ -42,7 +47,9 @@ def scan():
             except (OSError, UnicodeDecodeError):
                 continue
             ns_stack = []
-            pending_includes = []   # (vars, line-no)
+            pending_includes = []   # one-shot `include X in`: (vars, line-no)
+            pending_omit = []       # one-shot `omit X in`: vars for next decl
+            bare_includes = []      # bare `include X`: (vars, line-no, depth)
             for i, raw in enumerate(lines):
                 line = raw.split("--")[0].rstrip()
                 s = line.strip()
@@ -56,15 +63,35 @@ def scan():
                 m = END_RE.match(s)
                 if m and ns_stack:
                     ns_stack.pop()
+                    # a bare include dies with the scope it was opened in
+                    bare_includes = [e for e in bare_includes
+                                     if e[2] <= len(ns_stack)]
                     continue
                 m = INC_RE.match(s)
                 if m:
-                    pending_includes.append((m.group(1).split(), i + 1))
+                    if ONE_SHOT_RE.match(s):
+                        pending_includes.append((m.group(1).split(), i + 1))
+                    else:
+                        bare_includes.append(
+                            (m.group(1).split(), i + 1, len(ns_stack)))
                     continue
-                # a decl head clears any include that had no decl follow it
+                m = OMIT_RE.match(s)
+                if m:
+                    if ONE_SHOT_RE.match(s):
+                        pending_omit = m.group(1).split()
+                    else:
+                        # bare `omit X`: subtract from the live bare includes
+                        # (no bare omits exist upstream today)
+                        drop = set(m.group(1).split())
+                        bare_includes = [( [v for v in vs if v not in drop],
+                                            ln, d)
+                                          for vs, ln, d in bare_includes]
+                    continue
+                # a decl head consumes the one-shot include/omit (bare includes
+                # persist to the end of their section)
                 m = DECL_RE.match(s)
                 if m:
-                    if pending_includes:
+                    if pending_includes or bare_includes:
                         # statement text: decl head until ':=' at depth 0
                         stmt_parts = []
                         j = i
@@ -75,7 +102,13 @@ def scan():
                             j += 1
                         stmt = " ".join(stmt_parts)
                         dropped = []
-                        for vars_, inc_ln in pending_includes:
+                        cand = [([v for v in vs if v not in pending_omit], ln)
+                                for vs, ln in pending_includes]
+                        cand += [([v for v in vs if v not in pending_omit], ln)
+                                 for vs, ln, _d in bare_includes]
+                        for vars_, inc_ln in cand:
+                            if not vars_:
+                                continue
                             missing = [v for v in vars_
                                        if not re.search(r"\b%s\b" % re.escape(v), stmt)]
                             if missing:
@@ -92,9 +125,11 @@ def scan():
                                 "dropped": dropped,
                             })
                     pending_includes = []
+                    pending_omit = []
                     continue
-                # `include X in` is a command that applies to the NEXT decl;
-                # docstrings/variables in between are irrelevant (never clear).
+                # `include X in` / `omit X in` apply to the NEXT decl; bare
+                # `include X` applies to every decl until the section ends.
+                # Docstrings/variables in between are irrelevant.
     return hits
 
 

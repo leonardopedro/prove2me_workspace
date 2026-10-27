@@ -6,7 +6,7 @@ import Theorems.Thm_BookProof_UnboundedSpectralModel_model_mem
 import Theorems.Thm_BookProof_UnboundedSpectralModel_model_apply
 import Theorems.Thm_BookProof_UnboundedSpectralModel_model_ae_circle
 import Theorems.Thm_BookProof_UnboundedSpectralModel_model_ae_ne_zero
-import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general
+import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterAbelianGelfandModel
@@ -47,7 +47,7 @@ theorem solution (T : UnboundedSelfAdjoint H) :
             = V x (u + Complex.I • mulRep (mu x) (coordFn (resOp T)) u)) := by
 
   obtain ⟨S, mu, V, hprob, hsum, hint⟩ :=
-    spectral_multiplication_model_general (resOp T) (isStarNormal_resOp T)
+    spectral_multiplication_model_general_inc (resOp T) (isStarNormal_resOp T)
   refine ⟨S, mu, V, hprob, hsum, ?_, ?_⟩
   · intro x
     have := hprob x

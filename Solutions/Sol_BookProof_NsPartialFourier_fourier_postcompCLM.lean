@@ -2,12 +2,8 @@
 import Mathlib
 import Definitions.Def_ChapterNsPartialFourier
 import Theorems.Thm_BookProof_NsPartialFourier_fourier_postcompCLM_apply
-open BookProof.NsPartialFourier
-
-
-
-
 open MeasureTheory SchwartzMap FourierTransform LineDeriv
+open BookProof.NsPartialFourier
 
 noncomputable section
 
@@ -21,7 +17,7 @@ variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] [CompleteSpace G] (T : F →L[ℂ] G) (f : 𝓢(V, F)) :
-    (𝓕 (postcompCLM T f) : 𝓢(V, G)) = postcompCLM T (𝓕 f : 𝓢(V, F)) := by
+    (𝓕 (BookProof.NsPartialFourier.postcompCLM T f) : 𝓢(V, G)) = BookProof.NsPartialFourier.postcompCLM T (𝓕 f : 𝓢(V, F)) := by
 
   ext x
   simpa using fourier_postcompCLM_apply T f x

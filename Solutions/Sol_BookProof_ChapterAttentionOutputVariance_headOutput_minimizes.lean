@@ -17,6 +17,7 @@ noncomputable section
 
 open BookProof.ChapterObservableExpectation BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterSoftmaxOrder
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 

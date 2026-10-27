@@ -1,6 +1,7 @@
 -- Generated from ChapterNavierStokesAffineFiberEsa.lean — solution of BookProof.NavierStokesFlow.AffineFiber.affH_coord_succ
 import Mathlib
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNsAffineFiberGaps
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_PairShift_pairH_coe
@@ -45,7 +46,9 @@ theorem solution {κ c : ℝ} (hκ : 0 ≤ κ) (hc : 0 ≤ c) (n : ℕ) :
     have h := hFun_shift_of_single (affData hκ hc).snd
       (X := ((basisState κ c n : L2I ℕ) : ℕ → ℂ)) (o := n)
       (by simp [hX]) (by simp [hX]; omega)
-    simpa using h
+    -- `affData_amp₂` is leaf-dropped from the published bundle: inlined `rfl` fact.
+    have hamp₂ : (affData hκ hc).amp₂ = shear c := rfl
+    simpa [hamp₂] using h
   change ((PairShift.pairH (affData hκ hc) (basisState κ c n) : L2I ℕ) : ℕ → ℂ) (n + 1) = _
   have hp1 := PairShift.pairH_coe (P := affData hκ hc) (basisState κ c n) (n + 1)
   refine hp1.trans ?_

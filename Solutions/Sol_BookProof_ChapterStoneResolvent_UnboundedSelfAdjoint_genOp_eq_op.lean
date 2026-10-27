@@ -4,6 +4,7 @@ import Definitions.Def_ChapterStoneTheorem
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_domain_le_genDomain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_zero
 open BookProof.ChapterStoneMeasurable
+open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 
 

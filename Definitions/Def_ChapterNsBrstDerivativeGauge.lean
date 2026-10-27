@@ -81,6 +81,8 @@ Everything is `sorry`-free and `axiom`-free.
 
 namespace BookProof.NavierStokesGaugeY
 
+open MvPolynomial
+
 /-- `genY_apply` — the gauge generator `G_j` acts as the stated first-order differential
 operator.  The published `Def_ChapterNavierStokesGaugeY` text predates this lemma, so it
 is restated here for the consumer. -/
@@ -390,9 +392,18 @@ theorem nsHamiltonian_mapsTo_range (nu : ℂ) (w : NSGraded) :
 
 
 
-/-- The BRST cohomology of the derivative gauge: closed states modulo exact states. -/
-abbrev nsBrstCohomology : Type :=
-  (LinearMap.ker nsDerivBrstCharge) ⧸
+/-- The BRST cohomology of the derivative gauge: closed states modulo exact states.
+
+The `HasQuotient` instance is supplied explicitly rather than left to the `⧸` notation:
+the notation elaborates the class goal with its outParam argument still a metavariable,
+and in that shape the nested `AddCommGroup ↥(LinearMap.ker …)` premise of
+`Submodule.hasQuotient` fails to synthesise, although the identical instance search
+succeeds when `Submodule.hasQuotient` is applied directly. -/
+abbrev nsBrstCohomology : Type := by
+  haveI : HasQuotient ↥(LinearMap.ker nsDerivBrstCharge)
+      (Submodule ℂ ↥(LinearMap.ker nsDerivBrstCharge)) :=
+    @Submodule.hasQuotient ℂ ↥(LinearMap.ker nsDerivBrstCharge) _ _ _
+  exact (LinearMap.ker nsDerivBrstCharge) ⧸
     (LinearMap.range nsDerivBrstCharge).comap (LinearMap.ker nsDerivBrstCharge).subtype
 
 /-- **The Hamiltonian descends to the BRST cohomology of the derivative gauge.**  This is the

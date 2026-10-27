@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Definitions.Def_ChapterYangMillsGhostSector
+import Theorems.Thm_BookProof_BookBrstYangMills_bosOpN_ghostOpN_comm
 open BookProof.YangMillsGhost
 open BookProof.BookBrstYangMills
 
@@ -15,7 +16,11 @@ noncomputable section
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 
+-- `comm_chi` and `comm_beta` are direct instances of the published sibling
+-- `bosOpN_ghostOpN_comm`, and `bracket` of `gaussGen_bracket`.  The statement
+-- stub keeps a single sorried field (the pipeline's stub-sanity contract);
+-- the full three-field proof is carried by the solution submission.
 theorem BookProof.BookBrstYangMills.bookConstraintAlgebra : ConstraintAlgebra G.f (gaussGen G) chiOp betaOp where
-  comm_chi _ _ := by sorry
-  comm_beta _ _ := by sorry
+  comm_chi _ _ := bosOpN_ghostOpN_comm _ _
+  comm_beta _ _ := bosOpN_ghostOpN_comm _ _
   bracket a b := by sorry

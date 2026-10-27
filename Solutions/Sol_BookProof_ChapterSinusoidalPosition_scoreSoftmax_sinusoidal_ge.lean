@@ -17,6 +17,7 @@ noncomputable section
 
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 open BookProof.ChapterSoftmaxSharpness
+open BookProof.ChapterAttentionRetrieval
 
 variable {n : ℕ}
 

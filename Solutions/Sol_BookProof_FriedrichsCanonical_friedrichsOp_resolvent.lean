@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Theorems.Thm_BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_apply
-import Theorems.Thm_BookProof_FriedrichsExtension_FormDom_friedrichsResolvent_injective
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterYangMillsFriedrichs
@@ -22,8 +21,6 @@ open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL
 
 noncomputable section
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 

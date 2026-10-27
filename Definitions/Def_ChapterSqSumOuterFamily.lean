@@ -16,6 +16,16 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_esa_self
+import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_symmetricOn
+import Theorems.Thm_BookProof_QgOuterFock_sqSumOp_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_SqSumFarisLavine_sum_gradFun_sq_le_of_schur
+import Theorems.Thm_BookProof_SqSumFarisLavine_commForm_sqSumOp_le
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_symmetricOn
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_norm_le
 
 
 /-!
@@ -133,7 +143,7 @@ theorem outerCore_le_friedDom : outerCore dim ≤ outerFriedDom dim := by
   intro x hx
   refine ⟨fun n => polyGaussCore_le_harmFriedDom (dim n) (hx.2 n), ?_⟩
   have hfun : (fun n : ℕ => opTot (harmFried (dim n)).op ((x : outerFock dim) n))
-      = fun n : ℕ => (harmCore ⟨(x : outerFock dim) n, hx.2 n⟩ : L2d (dim n)) := by
+      = fun n : ℕ => (QgOuterFockFL.harmCore ⟨(x : outerFock dim) n, hx.2 n⟩ : L2d (dim n)) := by
     funext n
     rw [opTot_of_mem _ (polyGaussCore_le_harmFriedDom (dim n) (hx.2 n)),
       harmFried_op_core (dim n) ⟨(x : outerFock dim) n, hx.2 n⟩]
@@ -214,7 +224,7 @@ theorem secHam_essentiallySelfAdjointOn (n : ℕ) :
 
 /-- **The relative bound**, with a constant uniform in the particle number. -/
 theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
-    ‖F.secHam n u‖ ≤ F.flK * ‖harmCore u + (u : L2d (F.dim n))‖ := by
+    ‖F.secHam n u‖ ≤ F.flK * ‖QgHermiteOscillator.harmCore u + (u : L2d (F.dim n))‖ := by
   have hB : ∀ x : Vd (F.dim n), potFun (F.vv n) x ≤ (F.a * F.b / 2) * ‖x‖ ^ 2 :=
     fun x => potFun_le_of_schur F.a_nonneg (F.row_le n) (F.col_le n) x
   have hB0 : (0 : ℝ) ≤ F.a * F.b / 2 := by
@@ -226,7 +236,8 @@ theorem secHam_norm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
 /-- **The Faris–Lavine commutator bound**, with a constant uniform in the particle
 number. -/
 theorem secHam_commForm_le (n : ℕ) (u : polyGaussCore (d := F.dim n)) :
-    |commForm (F.secHam n) harmCore u| ≤ F.flc * quadForm harmCore u := by
+    |commForm (F.secHam n) QgHermiteOscillator.harmCore u|
+        ≤ F.flc * quadForm QgHermiteOscillator.harmCore u := by
   have hM : ∀ x : Vd (F.dim n),
       ∑ k : Fin (F.dim n), (gradFun (F.vv n) k x) ^ 2 ≤ (F.a * F.b) ^ 2 * ‖x‖ ^ 2 :=
     fun x => sum_gradFun_sq_le_of_schur F.a_nonneg F.b_nonneg (F.row_le n) (F.col_le n) x

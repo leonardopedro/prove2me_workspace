@@ -31,8 +31,6 @@ open Module
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (v : F) : (inner ℂ v v : ℂ) = ((‖v‖ ^ 2 : ℝ) : ℂ) := by
 

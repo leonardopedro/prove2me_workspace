@@ -21,9 +21,6 @@ open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPola
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {Dom : Submodule ℂ F}
 variable (P Q : Dom →ₗ[ℂ] F)
   (h : ∀ x y : Dom, (inner ℂ (P x) (P y) : ℂ) = inner ℂ (Q x) (Q y))
 variable [CompleteSpace F]

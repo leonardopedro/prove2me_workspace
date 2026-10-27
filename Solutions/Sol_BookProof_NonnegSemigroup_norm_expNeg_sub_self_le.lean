@@ -17,8 +17,6 @@ open scoped InnerProductSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F) (hA : 0 ≤ A) {t : ℝ} (ht : 0 ≤ t) (x : F) :
     ‖expNeg A t x - x‖ ≤ t * ‖A x‖ := by

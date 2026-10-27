@@ -1,8 +1,6 @@
 -- Generated from ChapterNavierStokesFockParcels.lean — solution of BookProof.NavierStokesFlow.FockLagrangian.bigState_symbol_ge
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFockParcels
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_momFock_total
-import Theorems.Thm_BookProof_NavierStokesFlow_FockLagrangian_bigState_coeFn
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesFockLagrangian
@@ -24,10 +22,6 @@ set_option maxHeartbeats 1000000 in
 theorem solution {K : ℝ} (hK : 1 ≤ K) :
     ∀ᵐ x ∂fockR, ((bigState K : Lp ℂ 2 fockR) : ParcelConf ℝ → ℂ) x ≠ 0
         → K ≤ |momFock.total x| := by
-  filter_upwards [bigState_coeFn K] with x hx hne
-  rw [hx] at hne
-  have hmem : x ∈ bigSet K := by
-
   filter_upwards [bigState_coeFn K] with x hx hne
   rw [hx] at hne
   have hmem : x ∈ bigSet K := by

@@ -17,6 +17,6 @@ variable {X : Type*}
 variable {X : Type*}
 
 set_option maxHeartbeats 1000000 in
-theorem solution (A : Set X) : eventProj A * eventProj A = eventProj A := by
+theorem solution (A : Set X) : BookProof.ChapterG3.eventProj A * BookProof.ChapterG3.eventProj A = BookProof.ChapterG3.eventProj A := by
 
-  funext x; by_cases h : x ∈ A <;> simp [eventProj, Set.indicator, h]
+  funext x; by_cases h : x ∈ A <;> simp [BookProof.ChapterG3.eventProj, Set.indicator, h]

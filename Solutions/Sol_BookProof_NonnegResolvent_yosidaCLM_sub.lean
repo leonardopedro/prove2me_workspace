@@ -16,9 +16,6 @@ open scoped ComplexOrder
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T : Submodule ℂ (F × F)} {a b : ℝ}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T : Submodule ℂ (F × F)} {a b : ℝ}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (hT : IsNonnegSelfAdjoint T) (ha : 0 < a) (hb : 0 < b) :
     yosidaCLM hT hb - yosidaCLM hT ha

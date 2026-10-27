@@ -13,6 +13,7 @@ open BookProof.ChapterRadialLaplacian
 open Filter Laplacian InnerProductSpace
 open scoped InnerProductSpace RealInnerProductSpace
 open BookProof.ChapterSphericalBessel
+open BookProof.ChapterSphericalBesselODE
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 

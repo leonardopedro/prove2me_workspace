@@ -19,9 +19,6 @@ open BookProof.EsaClosure
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D : Submodule ℂ F}
-
 set_option maxHeartbeats 1000000 in
 theorem solution {A : D →ₗ[ℂ] F} {p : F × F} (hp : p ∈ factorRel A) :
     ∃ y : F, (p.1, y) ∈ clGraph A ∧ (y, p.2) ∈ adjGraph A ∧

@@ -6,7 +6,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_eq_zero_iff
-import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general
+import Theorems.Thm_BookProof_ChapterSpectralDirectSum_spectral_multiplication_model_general_inc
 
 
 /-!
@@ -363,7 +363,7 @@ theorem unbounded_multiplication_model_general (T : UnboundedSelfAdjoint H) :
           T.op ⟨V x (mulRep (mu x) (coordFn (resOp T)) u), h⟩
             = V x (u + Complex.I • mulRep (mu x) (coordFn (resOp T)) u)) := by
   obtain ⟨S, mu, V, hprob, hsum, hint⟩ :=
-    spectral_multiplication_model_general (resOp T) (isStarNormal_resOp T)
+    spectral_multiplication_model_general_inc (resOp T) (isStarNormal_resOp T)
   refine ⟨S, mu, V, hprob, hsum, ?_, ?_⟩
   · intro x
     have := hprob x

@@ -23,6 +23,4 @@ variable {G : Type*} [Group G] [Fintype G]
 variable (rep : UnitaryRep G F)
 variable (G) in
 
-theorem BookProof.GroupAverage.UnitaryRep.isReducingProjection_avgProj : IsReducingProjection rep.avgProj where
-  idem x := by sorry
-  symm x y := by sorry
+theorem BookProof.GroupAverage.UnitaryRep.isReducingProjection_avgProj : IsReducingProjection rep.avgProj := by sorry

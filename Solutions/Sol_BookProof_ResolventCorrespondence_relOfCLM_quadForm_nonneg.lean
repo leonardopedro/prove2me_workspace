@@ -18,9 +18,6 @@ open scoped ComplexOrder
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (h0 : 0 ≤ R) (h1 : R ≤ 1) {p : F × F} (hp : p ∈ relOfCLM R) :
     0 ≤ (inner ℂ p.1 p.2 : ℂ).re := by

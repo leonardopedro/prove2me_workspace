@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSmOneParticle
 open BookProof.SmOneParticle
+open scoped Matrix
 
 variable {V U : Matrix (Fin 3) (Fin 3) ℂ}
 

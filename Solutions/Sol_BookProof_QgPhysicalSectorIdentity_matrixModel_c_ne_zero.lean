@@ -24,7 +24,17 @@ open scoped ENNReal
 variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 
 set_option maxHeartbeats 1000000 in
-theorem solution : (matrixModel.c : Mat2) ≠ 0 := by
+-- `Qm_ne_zero`/`matrixModel_c_ne_zero` are leaf-dropped from the published
+-- Def_ChapterGaugeFixing bundle: inlined verbatim from the source chapter.
+private theorem Qm_ne_zero : BookProof.GaugeFixing.Qm ≠ 0 := by
+  intro h
+  have h01 : BookProof.GaugeFixing.Qm 0 1 = (0 : Mat2) 0 1 := by rw [h]
+  simp [BookProof.GaugeFixing.Qm] at h01
+
+private theorem gaugeMatrixModel_c_ne_zero : (BookProof.GaugeFixing.matrixModel.c : Mat2) ≠ 0 := by
+  simpa [BookProof.GaugeFixing.matrixModel] using Qm_ne_zero
+
+theorem solution : (BookProof.QgPhysicalSectorIdentity.matrixModel.c : Mat2) ≠ 0 := by
 
   change (BookProof.GaugeFixing.matrixModel.c : Mat2) ≠ 0
-  exact BookProof.GaugeFixing.matrixModel_c_ne_zero
+  exact gaugeMatrixModel_c_ne_zero

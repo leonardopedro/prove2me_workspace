@@ -8,6 +8,7 @@ open BookProof.ChapterA
 
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+open BookProof.Complexification
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]

@@ -1,7 +1,23 @@
-
+import Mathlib
+import Mathlib
+import Definitions.Def_ChapterContinuityUnitary
+import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterDoubleSlit
+import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFreeFieldConstraint
+import Definitions.Def_ChapterGhostField
+import Definitions.Def_ChapterNavierStokesCauchy
+import Definitions.Def_ChapterNavierStokesDeficiency
+import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterTrajectory
+import Definitions.Def_ChapterU
+
 import Mathlib
 
+import Mathlib
 
 /-!
 # Shift Hamiltonians and their Faris–Lavine inequalities
@@ -41,17 +57,43 @@ which for the Navier–Stokes fiber is `½(π V + V π) = (iκ/2)(a†² − a²
   `2Δ ∑ w(β) Re(x̄_β x_{sβ})`, in general non-zero.
 -/
 
+open scoped ENNReal
+
+namespace BookProof.NavierStokesFlow
+
+namespace ShiftHamiltonian
+
+open LpNat BookProof.FarisLavine IkebeKato
+
+/-- The data of an abstract shift Hamiltonian: a comparison symbol `σ ≥ 1`, an
+injective shift `s`, and a hopping amplitude `w` dominated by the symbol. -/
+structure ShiftData (ι : Type*) where
+  /-- The symbol of the comparison operator `N`. -/
+  sym : ι → ℝ
+  /-- The shift: the hopping `β ↦ s β`. -/
+  shift : ι → ι
+  /-- The hopping amplitude. -/
+  amp : ι → ℝ
+  /-- The additive constant in the domination of the amplitude by the symbol. -/
+  K : ℝ
+  /-- The increment of the symbol along the shift. -/
+  step : ℝ
+  shift_injective : Function.Injective shift
+  amp_nonneg : ∀ β, 0 ≤ amp β
+  amp_mono : ∀ β, amp β ≤ amp (shift β)
+  K_nonneg : 0 ≤ K
+  step_nonneg : 0 ≤ step
+  sym_ge_one : ∀ β, 1 ≤ sym β
+  amp_le : ∀ β, amp β ≤ (1 / 4) * sym β + K
+  sym_step : ∀ β, sym (shift β) = sym β + step
+
 variable {ι : Type*} (S : ShiftData ι)
 
 namespace ShiftData
 
 theorem sym_nonneg (β : ι) : 0 ≤ S.sym β := le_trans zero_le_one (S.sym_ge_one β)
 
-/-- The amplitude is dominated by a multiple of the symbol (which is `≥ 1`). -/
-theorem amp_le_symbol (β : ι) : S.amp β ≤ (1 / 4 + S.K) * S.sym β := by
-  have h1 := S.amp_le β
-  have h2 := S.sym_ge_one β
-  nlinarith [S.K_nonneg]
+
 
 /-! ## Transporting a sequence along the shift -/
 
@@ -109,28 +151,11 @@ theorem norm_hop (g : ι → ℂ) (β : ι) : ‖S.hop g β‖ = S.hop (fun α =
     rw [hop_shift, hop_shift]
   · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, norm_zero]
 
-/-- Multiplying the transported sequence by a function of the index is the
-transport of the correspondingly shifted product. -/
-theorem hop_mul (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
-    S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by
-  by_cases hb : ∃ α, S.shift α = β
-  · obtain ⟨α, rfl⟩ := hb
-    rw [hop_shift, hop_shift]
-  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, zero_mul]
 
-theorem mul_hop (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
-    Y β * S.hop g β = S.hop (fun α => Y (S.shift α) * g α) β := by
-  by_cases hb : ∃ α, S.shift α = β
-  · obtain ⟨α, rfl⟩ := hb
-    rw [hop_shift, hop_shift]
-  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, mul_zero]
 
-theorem conj_hop (g : ι → ℂ) (β : ι) :
-    (starRingEnd ℂ) (S.hop g β) = S.hop (fun α => (starRingEnd ℂ) (g α)) β := by
-  by_cases hb : ∃ α, S.shift α = β
-  · obtain ⟨α, rfl⟩ := hb
-    rw [hop_shift, hop_shift]
-  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, map_zero]
+
+
+
 
 /-! ## The Hamiltonian -/
 
@@ -203,12 +228,7 @@ theorem summable_ampSeq_sq (x : maxDom S.sym) :
   Summable.of_nonneg_of_le (fun _ => sq_nonneg _) (ampSeq_sq_le S x)
     (hasSum_ampBound S x).summable
 
-theorem tsum_ampSeq_sq_le (x : maxDom S.sym) :
-    (∑' β, (S.ampSeq ((x : L2I ι) : ι → ℂ) β) ^ 2)
-      ≤ (1 / 8) * ‖(diagMax S.sym x : L2I ι)‖ ^ 2 + (2 * S.K ^ 2) * ‖(x : L2I ι)‖ ^ 2 := by
-  refine le_trans (Summable.tsum_le_tsum (ampSeq_sq_le S x) (summable_ampSeq_sq S x)
-    (hasSum_ampBound S x).summable) ?_
-  exact le_of_eq (hasSum_ampBound S x).tsum_eq
+
 
 /-- The Hamiltonian maps the maximal domain of the comparison operator into the
 Hilbert space. -/
@@ -255,8 +275,7 @@ noncomputable def shiftH : maxDom S.sym →ₗ[ℂ] L2I ι where
         Submodule.coe_smul, hFun, hop_eq_zero S _ hb]
       ring
 
-@[simp] theorem shiftH_coe (x : maxDom S.sym) (β : ι) :
-    ((shiftH S x : L2I ι) : ι → ℂ) β = S.hFun ((x : L2I ι) : ι → ℂ) β := rfl
+
 
 /-! ## The inner products of the Hamiltonian
 
@@ -270,6 +289,99 @@ noncomputable def crossA (X Y : ι → ℂ) : ι → ℂ :=
 /-- The hopping series `w(β) x̄_{sβ} y_β`. -/
 noncomputable def crossB (X Y : ι → ℂ) : ι → ℂ :=
   fun β => (S.amp β : ℂ) * (starRingEnd ℂ) (X (S.shift β)) * Y β
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-! ## The first Faris–Lavine inequality: the relative bound -/
+
+
+
+
+
+/-! ## The second Faris–Lavine inequality: the commutator form -/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- The amplitude is dominated by a multiple of the symbol (which is `≥ 1`). -/
+theorem amp_le_symbol (β : ι) : S.amp β ≤ (1 / 4 + S.K) * S.sym β := by
+  have h1 := S.amp_le β
+  have h2 := S.sym_ge_one β
+  nlinarith [S.K_nonneg]
+
+/-! ## Transporting a sequence along the shift -/
+
+/-- `S.hop g` is `g` transported along the shift: it is `g α` at `s α` and `0`
+off the range of the shift. -/
+theorem hop_mul (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
+    S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by
+  by_cases hb : ∃ α, S.shift α = β
+  · obtain ⟨α, rfl⟩ := hb
+    rw [hop_shift, hop_shift]
+  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, zero_mul]
+
+theorem mul_hop (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
+    Y β * S.hop g β = S.hop (fun α => Y (S.shift α) * g α) β := by
+  by_cases hb : ∃ α, S.shift α = β
+  · obtain ⟨α, rfl⟩ := hb
+    rw [hop_shift, hop_shift]
+  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, mul_zero]
+
+theorem conj_hop (g : ι → ℂ) (β : ι) :
+    (starRingEnd ℂ) (S.hop g β) = S.hop (fun α => (starRingEnd ℂ) (g α)) β := by
+  by_cases hb : ∃ α, S.shift α = β
+  · obtain ⟨α, rfl⟩ := hb
+    rw [hop_shift, hop_shift]
+  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, map_zero]
+
+/-! ## The Hamiltonian -/
+
+/-- The coordinates of the shift Hamiltonian:
+`(H x)_β = i ( w(s⁻¹β) x_{s⁻¹β} − w(β) x_{sβ} )`. -/
+
+theorem tsum_ampSeq_sq_le (x : maxDom S.sym) :
+    (∑' β, (S.ampSeq ((x : L2I ι) : ι → ℂ) β) ^ 2)
+      ≤ (1 / 8) * ‖(diagMax S.sym x : L2I ι)‖ ^ 2 + (2 * S.K ^ 2) * ‖(x : L2I ι)‖ ^ 2 := by
+  refine le_trans (Summable.tsum_le_tsum (ampSeq_sq_le S x) (summable_ampSeq_sq S x)
+    (hasSum_ampBound S x).summable) ?_
+  exact le_of_eq (hasSum_ampBound S x).tsum_eq
+
+/-- The Hamiltonian maps the maximal domain of the comparison operator into the
+Hilbert space. -/
+
+@[simp] theorem shiftH_coe (x : maxDom S.sym) (β : ι) :
+    ((shiftH S x : L2I ι) : ι → ℂ) β = S.hFun ((x : L2I ι) : ι → ℂ) β := rfl
+
+/-! ## The inner products of the Hamiltonian
+
+`⟪Hx, y⟫` splits into the two hopping series `A` (a hop along the shift) and `B`
+(a hop against it).  Both converge absolutely because `2ab ≤ a² + b²`. -/
 
 theorem norm_crossA (X Y : ι → ℂ) (β : ι) :
     ‖S.crossA X Y β‖ = S.ampSeq X β * ‖Y (S.shift β)‖ := by
@@ -570,6 +682,7 @@ theorem shiftH_essentiallySelfAdjointOn_core :
     (shiftH S) (1 / 2) (8 * S.K ^ 2) (2 * S.step * (1 / 4 + S.K))
     (shiftH_symmetricOn S) (by nlinarith [S.step_nonneg, S.K_nonneg])
     (shiftH_relative_bound S) (shiftH_commForm_bound S)
+
 
 end ShiftData
 

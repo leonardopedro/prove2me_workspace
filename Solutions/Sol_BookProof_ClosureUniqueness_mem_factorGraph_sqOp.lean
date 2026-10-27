@@ -16,9 +16,6 @@ open BookProof.EsaClosure
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable {D D₁ D₂ Dom Dom₁ Dom₂ : Submodule ℂ F}
-
 set_option maxHeartbeats 1000000 in
 
 theorem solution (A : D →ₗ[ℂ] F) (hsym : SymmetricOn D A)

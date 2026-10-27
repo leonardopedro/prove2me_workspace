@@ -20,9 +20,6 @@ open BookProof.ClosureUniqueness
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (hR : IsSelfAdjoint R) : adjPairs (relOfCLM R) = relOfCLM R :=
   adjPairs_eq_self_of_symmetric_of_surjective (relOfCLM_le_adjPairs hR)

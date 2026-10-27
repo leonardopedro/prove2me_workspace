@@ -19,8 +19,6 @@ open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPola
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}
 variable [CompleteSpace F]
 

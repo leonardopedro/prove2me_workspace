@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_eq_zero
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_hFun_shift_of_single
 import Theorems.Thm_BookProof_NavierStokesFlow_AffineFiber_le_amp
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterNsAffineFiberGaps
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
@@ -55,7 +56,9 @@ theorem solution (κ c : J → ℝ) (hκ : ∀ j, 0 ≤ κ j) (hc : ∀ j, 0 ≤
     have h := hFun_shift_of_single (affData (hκ j) (hc j)).fst
       (X := fun m => ((x : L2I (ℕ × J)) : ℕ × J → ℂ) (m, j)) (o := 0)
       (by simp [hX]) (by simp [hX])
-    simpa using h
+    -- `affData_amp₁` is leaf-dropped from the published bundle: inlined `rfl` fact.
+    have hamp₁ : (affData (hκ j) (hc j)).amp₁ = amp (κ j) := rfl
+    simpa [hamp₁] using h
   have hcoord : ((affBlockH κ c hκ hc x : L2I (ℕ × J)) : ℕ × J → ℂ) (2, j)
       = Complex.I * ((amp (κ j) 0 : ℝ) : ℂ) := by
     change affFun κ c hκ hc _ (2, j) = _

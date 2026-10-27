@@ -18,8 +18,6 @@ open scoped InnerProductSpace ENNReal lp
 open BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
 set_option maxHeartbeats 1000000 in

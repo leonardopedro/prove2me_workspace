@@ -51,7 +51,7 @@ theorem solution {ι : Type*} [Countable ι]
     funext i
     have hleft : U (P.p E v) i = proj μ hE (U v i) :=
       linearIsometryEquiv_intertwine hsum (P.p E) (fun _ : ι => projCLM μ hE)
-        (fun _ u => ChapterL2FibreSum.norm_proj_le μ hE u) (fun i u => hint i E hE u) v i
+        (fun _ u => BookProof.ChapterL2FibreSum.norm_proj_le μ hE u) (fun i u => hint i E hE u) v i
     have hright : F (proj μ hE (F.symm (U v))) i = proj μ hE (F (F.symm (U v)) i) :=
       fibreEquiv_proj μ hE (F.symm (U v)) i
     rw [hleft, hright, LinearIsometryEquiv.apply_symm_apply]

@@ -29,8 +29,6 @@ open BookProof.HermiteGalerkin
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
 set_option maxHeartbeats 1000000 in
 theorem solution {p : ℕ → ℝ} (hIR : ∀ ε : ℝ, 0 < ε → ∃ k, |p k| < ε)
     {m : ℝ} (hm : 0 < m) :

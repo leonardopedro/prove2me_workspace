@@ -34,8 +34,6 @@ open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ)
 
 set_option maxHeartbeats 1000000 in

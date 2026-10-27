@@ -9,6 +9,7 @@ import Definitions.Def_ChapterA2b
 import Definitions.Def_ChapterA2c
 import Mathlib
 import Theorems.Thm_BookProof_ChapterA_Rcomplex_realCommutant_eq_complex
+import Theorems.Thm_BookProof_ChapterA_Rpseudoreal_realCommutant_eq_quaternion
 
 
 /-!

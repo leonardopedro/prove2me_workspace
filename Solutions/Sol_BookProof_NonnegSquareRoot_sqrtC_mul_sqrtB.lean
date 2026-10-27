@@ -22,9 +22,6 @@ open scoped ComplexOrder
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T S : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (hT : IsNonnegSelfAdjoint T) :
     sqrtC hT * sqrtB hT = midOp (invCLM hT) := coSqrtOp_mul_sqrtOp (invCLM_nonneg hT)

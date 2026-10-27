@@ -11,6 +11,29 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_StrichartzWave_constCoeffOp_symmetric
+import Theorems.Thm_BookProof_ScalaronEsa_smoothPotential_symmetric
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_coordLine_apply
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_confV_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_confW
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_confW
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_of_le_harm
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_sectorQuadW
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hamCore_pgLp
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_harmonic_add_subquadratic_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_hasDerivAt_pgFun_coord
+import Theorems.Thm_BookProof_ScalaronEsa_mulCc_apply
+import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply
+import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
+import Theorems.Thm_BookProof_HermiteQuadraticEsa_sectorQuad_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
+import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
 import Mathlib
 
 
@@ -75,32 +98,8 @@ open BookProof.QgHermiteOscillator BookProof.HermiteQuadraticEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa
 
-namespace BookProof.StrichartzWave
-
-section InlineStrichartz
-
-variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-variable {ι : Type*} [Fintype ι]
-
-/-- `constCoeffOp_symmetric` — a constant-coefficient operator with real coefficients is
-symmetric on the Schwartz core.  The published `Def_ChapterStrichartzWave` text predates
-this lemma, so it is restated here for the consumer. -/
-theorem constCoeffOp_symmetric (c : ι → ℝ) (w : ι → V) (κ : ℝ) :
-    BookProof.FarisLavine.SymmetricOn (schwartzDomain V) (opL2 (constCoeffOp c w κ)) := by
-  intro x y
-  obtain ⟨f, rfl⟩ := (schwartzEquiv V).surjective x
-  obtain ⟨g, rfl⟩ := (schwartzEquiv V).surjective y
-  rw [opL2_apply, opL2_apply, schwartzEquiv_coe, schwartzEquiv_coe,
-    inner_toLp_eq_integral_fourier, inner_toLp_eq_integral_fourier]
-  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-  simp only [fourier_constCoeffOp_apply, map_mul, Complex.conj_ofReal]
-  ring
-
-end InlineStrichartz
-
-end BookProof.StrichartzWave
-
 noncomputable section
+
 
 /-! ## 1. The abstract transfer step -/
 
@@ -442,6 +441,9 @@ theorem fderiv_fderiv_cut (R : ℝ) (x : Vd d) :
     (scaleCLM d R)).hasFDerivAt).comp x h3
   exact h4.fderiv
 
+set_option maxHeartbeats 8000000 in
+set_option trace.profiler true in
+set_option trace.profiler.threshold 1000 in
 /-- **The derivative bounds of the scaled cut-off**: `|∂ⱼχ_R| ≤ C/R` and `|Δχ_R| ≤ C/R²`,
 with a constant that does not depend on `R`. -/
 theorem exists_cut_derivative_bounds (d : ℕ) :
@@ -1124,7 +1126,21 @@ theorem nParticleW_harm_add (V : Vd d → ℝ) (n : ℕ) :
   funext x
   simp only [nParticleW, Finset.sum_add_distrib, sum_harmW_partLM]
 
-
+/-- The perturbation stays subquadratic, with the *same* coefficient `a`. -/
+theorem abs_nParticleW_le {V : Vd d → ℝ} {a b : ℝ}
+    (hV : ∀ y, |V y| ≤ a * harmW y + b) (n : ℕ) (x : Vd (n * d)) :
+    |nParticleW V n x| ≤ a * harmW x + n * b := by
+  have hstep : |∑ k : Fin n, V (partLM n d k x)| ≤ ∑ k : Fin n, |V (partLM n d k x)| :=
+    Finset.abs_sum_le_sum_abs _ _
+  have hbound : ∑ k : Fin n, |V (partLM n d k x)|
+      ≤ ∑ k : Fin n, (a * harmW (partLM n d k x) + b) :=
+    Finset.sum_le_sum fun k _ => hV _
+  have hsum : ∑ k : Fin n, (a * harmW (partLM n d k x) + b)
+      = a * harmW x + n * b := by
+    rw [Finset.sum_add_distrib, ← Finset.mul_sum, sum_harmW_partLM]
+    simp [mul_comm]
+  rw [nParticleW]
+  linarith [hstep, hbound, hsum.le, hsum.ge]
 
 /-- **The `n`-particle `R + αR²` Hamiltonian on the compactly supported smooth core.**
 `∑ₖ (−Δ_k + ‖x_k‖²/4 + V(x_k))` is essentially self-adjoint on the compactly supported

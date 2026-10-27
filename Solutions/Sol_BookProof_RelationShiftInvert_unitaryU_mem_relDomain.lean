@@ -19,9 +19,6 @@ open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T T₁ T₂ : Submodule ℂ (F × F)}
-
 set_option maxHeartbeats 1000000 in
 theorem solution (hT : IsNonnegSelfAdjoint T)
     (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) (x : relDomain T) (t : ℝ) :

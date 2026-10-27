@@ -23,9 +23,6 @@ open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T S : Submodule ℂ (F × F)}
-
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable {T S : Submodule ℂ (F × F)}
 variable {a : ℝ}
 variable {D : Submodule ℂ F}
 

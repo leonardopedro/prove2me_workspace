@@ -1,0 +1,27 @@
+-- Generated from ChapterWeylCauchyRiemann.lean — solution of BookProof.WeylCauchyRiemann.dbar_ofReal_comp_sub
+import Mathlib
+import Definitions.Def_ChapterWeylCauchyRiemann
+open BookProof.WeylCauchyRiemann
+
+
+
+
+open MeasureTheory Metric Set Filter Complex BookProof.RadialMollifier
+open scoped Convolution Topology ContDiff
+
+noncomputable section
+
+set_option maxHeartbeats 1000000 in
+theorem solution {χ : ℂ → ℝ} (hχ : ContDiff ℝ ∞ χ) (z w : ℂ) :
+    dbar (fun v => ((χ (z - v) : ℝ) : ℂ)) w = -dbarR χ (z - w) := by
+
+  have hdiff : Differentiable ℝ χ := hχ.differentiable (by simp)
+  have h1 : HasFDerivAt (fun v : ℂ => z - v) (-ContinuousLinearMap.id ℝ ℂ) w := by
+    simpa using (hasFDerivAt_id (𝕜 := ℝ) w).const_sub z
+  have h2 : HasFDerivAt χ (fderiv ℝ χ (z - w)) (z - w) := (hdiff (z - w)).hasFDerivAt
+  have h3 : HasFDerivAt (fun v : ℂ => ((χ (z - v) : ℝ) : ℂ))
+      (Complex.ofRealCLM.comp ((fderiv ℝ χ (z - w)).comp (-ContinuousLinearMap.id ℝ ℂ))) w :=
+    (Complex.ofRealCLM.hasFDerivAt).comp w (h2.comp w h1)
+  rw [dbar, h3.fderiv, dbarR]
+  simp
+  ring

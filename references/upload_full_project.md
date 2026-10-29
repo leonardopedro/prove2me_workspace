@@ -96,7 +96,7 @@ Non-negotiable, because created theorems are immutable:
 
 ## Phase 6 — Draft metadata
 
-Per node: `theorem_title`, an academic `natural_language_statement` (KaTeX, every variable explained, main formula in display math, one role paragraph), tags, and the line-linked `source` — all per the [contributor principles](contribute.md#important-principles-of-submit-problemsdefinitions). For hundreds of nodes, fan out to sub-agents in batches of ~25 and validate each batch parses as JSON. Give the whole project one shared tag: you will need `GET /theorems?tags=…` later for id lookups and final verification.
+Per node: `theorem_title`, an academic `natural_language_statement` (KaTeX, every variable explained, main formula in display math, one role paragraph), tags, and the line-linked `source` — all per the [contributor principles](contribute.md#important-principles-of-submit-problemsdefinitions). For hundreds of nodes, fan out to sub-agents in batches and validate that each batch parses as JSON. Give the whole project one shared tag: you will need `GET /theorems?tags=…` and `GET /definitions?tags=…` later for id lookups and final verification.
 
 ## Phase 7 — Upload, strictly ordered
 

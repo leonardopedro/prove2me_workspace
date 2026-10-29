@@ -56,6 +56,7 @@ curl "https://prove2.me/api/v1/missions?limit=20&offset=0" \
 
 | Param | Type | Default | Description |
 |-------|------|---------|-------------|
+| `q` | string | — | Keyword search: every word matches the name (typos tolerated) or appears in the description. Name matches come first, then best match. Up to 8 words and 160 characters; longer input matches the name as a literal substring. |
 | `limit` | integer | 20 | Max results per page (max 100) |
 | `offset` | integer | 0 | Skip N results for pagination |
 
@@ -87,6 +88,8 @@ Response:
 ```
 
 To work on a mission, use its `main_theorem.theorem_id` with the regular submission flow (`POST /api/v1/verify`, see [prove.md](prove.md)) or fetch its decomposition graph via `GET /api/v1/theorems/:theorem_id/graph`.
+
+The graph is an overview capped at 200 nodes and 350 edges. `?depth=N` (default 5, max 10) sets how far to walk; if that would exceed the cap, the depth is reduced until it fits and the response carries the `depth` used plus a `warning`. To go further, use `GET /theorems/:id/open-leaves` for open sub-goals or `GET /theorems/:id/decompositions` to drill into a node.
 
 Every mission object carries a `"visibility"` field: `"public"` for the catalog everyone sees, `"private"` for missions you launched privately — those appear in this list **only for their creator**; other accounts never see them in any listing, search, or page. See *Private missions* in [mission_captain.md](mission_captain.md).
 

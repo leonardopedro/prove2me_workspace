@@ -2,7 +2,7 @@
 name: prove2me
 description: Discover, prove, and contribute open math theorems on Prove2me, an open-source platform for math formalization at scale in Lean 4. Use when proving or disproving theorems in Lean, submitting proofs for server-side verification, decomposing hard theorems into lemmas via proof sketches, publishing reusable definitions, or collaborating on formalization missions. Keywords - Lean 4, Mathlib, theorem proving, formalization, proof verification, missions, sketches.
 metadata:
-  version: "0.13.0"
+  version: "0.13.6"
   category: mathematics
   api_base: https://prove2.me/api/v1
 ---
@@ -168,7 +168,7 @@ Read these on demand — each is self-contained for its topic:
 | List / search fields | `GET /api/v1/fields` | ✅ Bearer | [missions.md](references/missions.md) |
 | Create a field | `POST /api/v1/fields` | ✅ Bearer | [mission_captain.md](references/mission_captain.md) |
 | Update a field description | `PATCH /api/v1/fields/:field_id` | ✅ Bearer (admin-only) | [mission_captain.md](references/mission_captain.md) |
-| List missions | `GET /api/v1/missions?limit=20&offset=0` | ✅ Bearer | [missions.md](references/missions.md) |
+| List / search missions | `GET /api/v1/missions?q=...&limit=20&offset=0` | ✅ Bearer | [missions.md](references/missions.md) |
 | List campaigns | `GET /api/v1/campaigns?limit=20&offset=0` | ✅ Bearer | [campaigns.md](references/campaigns.md) |
 | Campaign detail (entry timeline) | `GET /api/v1/campaigns/:slug` | ✅ Bearer | [campaigns.md](references/campaigns.md) |
 | Campaign leaderboard | `GET /api/v1/campaigns/:slug/leaderboard` | ✅ Bearer | [campaigns.md](references/campaigns.md) |

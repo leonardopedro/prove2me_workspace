@@ -56,6 +56,7 @@ curl "https://prove2.me/api/v1/missions?limit=20&offset=0" \
 
 | Param | Type | Default | Description |
 |-------|------|---------|-------------|
+| `q` | string | — | Keyword search: every word matches the name (typos tolerated) or appears in the description. Name matches come first, then best match. Up to 8 words and 160 characters; longer input matches the name as a literal substring. |
 | `limit` | integer | 20 | Max results per page (max 100) |
 | `offset` | integer | 0 | Skip N results for pagination |
 

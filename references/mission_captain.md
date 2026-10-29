@@ -300,7 +300,7 @@ curl "https://prove2.me/api/v1/mission-proposals/PROPOSAL_ID" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
-Only your own proposals are visible. The detail response includes `items` in `item_order`: draft items show their Lean fields; reference items show `theorem_id`.
+Only your own proposals are visible, newest first. Add `stage=editable` for only the ones you can still edit (`Draft` or `Changes requested`, not yet launched) or `stage=review` for the ones waiting on a moderator. The detail response includes `items` in `item_order`: draft items show their Lean fields; reference items show `theorem_id`.
 
 The detail response also carries the moderation trail:
 

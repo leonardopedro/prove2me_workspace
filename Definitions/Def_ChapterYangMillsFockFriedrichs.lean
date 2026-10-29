@@ -8,6 +8,15 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
+import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_smul
+import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
+import Theorems.Thm_BookProof_QgOuterFock_dsOp_quadForm_nonneg
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_positive
 import Mathlib
 
 
@@ -30,7 +39,7 @@ Hilbert space `L²(ℝ⁹⁹)` to the nested Fock space `⊕ₙ L²(ℝ^{99n})`:
 * symmetry and positivity of the quadratic form are checked sector by sector
   (`dsOp_symmetricOn`, `BookProof.QgOuterFock.dsOp_quadForm_nonneg`);
 * the finite-particle core is dense (`dsCore_dense`), so the abstract Friedrichs theorem
-  `BookProof.FriedrichsExtension.friedrichs_extension_exists` — proved in this development,
+  `BookProof.FriedrichsExtension.friedrichs_extension_exists_complete` — proved in this development,
   with no boundedness hypothesis — produces a positive self-adjoint extension of the outer
   Hamiltonian, and Stone's theorem the unitary time evolution it generates.
 
@@ -214,7 +223,7 @@ theorem ymSectorHam_quadForm_nonneg (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (
 theorem ymSector_friedrichs_extension (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 99))) (A : Dom →ₗ[ℂ] L2d (n * 99)),
       IsPositiveSelfAdjointExtension (ymSectorHam fabc n) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨polyGaussCore, ymSectorHam fabc n, ymSectorHam_symmetricOn fabc n,
       ymSectorHam_quadForm_nonneg fabc n⟩
     polyGaussCore_dense
@@ -257,7 +266,7 @@ fibrewise and therefore lift from the one-particle Hilbert space to the outer Fo
 theorem ymFock_friedrichs_extension (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     ∃ (Dom : Submodule ℂ ymFockSpace) (A : Dom →ₗ[ℂ] ymFockSpace),
       IsPositiveSelfAdjointExtension (ymFockHam fabc) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨ymFockCore, ymFockHam fabc, ymFockHam_symmetricOn fabc, ymFockHam_quadForm_nonneg fabc⟩
     ymFockCore_dense
 

@@ -18,13 +18,17 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQg3DGaugeEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FullQuadratic
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.Qg3DGaugeEsa
 open BookProof.QuantumGravity3DGauge
 open BookProof.YangMillsHermite
-open BookProof.Qg3DCrossTermEsa
 
 
 
@@ -38,7 +42,7 @@ open BookProof.QuantumGravity3DGauge
 open BookProof.Qg3DGaugeEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa BookProof.FockSecondQuantization BookProof.QuadFockEsa
+open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
 

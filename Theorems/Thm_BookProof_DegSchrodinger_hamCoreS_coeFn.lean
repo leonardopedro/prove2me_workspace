@@ -10,6 +10,9 @@ import Definitions.Def_ChapterDegSchrodingerCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.QgHermiteFriedrichs

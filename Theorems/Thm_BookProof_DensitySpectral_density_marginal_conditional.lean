@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterDensityMarginalConditional
 import Definitions.Def_ChapterB4
+import Definitions.Def_ChapterB4
 open BookProof.ChapterB4
 open BookProof.DensitySpectral
 

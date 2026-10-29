@@ -4,6 +4,7 @@ import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Definitions.Def_ChapterBookBrstYangMills
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
+import Definitions.Def_ChapterBookBrstInstances
 open BookProof.BookBrstGaugeFixing
 
 

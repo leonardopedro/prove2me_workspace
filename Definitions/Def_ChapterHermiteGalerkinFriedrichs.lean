@@ -2,6 +2,9 @@ import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_friedrichs_of_bounded
 
 
 /-!

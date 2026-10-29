@@ -5,9 +5,10 @@ import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
-open BookProof.EsaOneParticle
 
 
 

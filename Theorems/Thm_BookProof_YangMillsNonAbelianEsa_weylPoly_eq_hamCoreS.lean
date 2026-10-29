@@ -17,13 +17,19 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
-open BookProof.YangMillsNonAbelianEsa
 
 
 
@@ -31,7 +37,7 @@ open MeasureTheory MvPolynomial
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
-open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
+open BookProof.DegSchrodinger BookProof.DegKatoEsa
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section

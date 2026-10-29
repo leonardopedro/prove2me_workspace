@@ -6,6 +6,8 @@ import Definitions.Def_ChapterLimitCircleExample
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterLimitCircleExample
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.LimitCircleExample

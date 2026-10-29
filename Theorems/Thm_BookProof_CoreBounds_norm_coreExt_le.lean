@@ -6,6 +6,8 @@ import Mathlib
 import Definitions.Def_ChapterCoreBoundsEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.CoreBounds
 

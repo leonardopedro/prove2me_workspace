@@ -14,6 +14,13 @@ variable {α : Type*} [MeasurableSpace α]
 
 variable {α : Type*} [MeasurableSpace α]
 
+omit [MeasurableSpace α] in
+/-- Mirror copy of `ChapterLocalityConstraintNull.preimage_mk_graphSet` (dropped
+from the published bundle): the vertical section of a graph is a point. -/
+private theorem preimage_mk_graphSet (f : α → ℝ) (x : α) :
+    Prod.mk x ⁻¹' graphSet f = {f x} := by
+  ext v; simp [graphSet]
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution (μ : Measure α) (ν : Measure ℝ) [SFinite ν] [NullSingletonClass ν]
@@ -21,4 +28,4 @@ theorem solution (μ : Measure α) (ν : Measure ℝ) [SFinite ν] [NullSingleto
     (μ.prod ν) (graphSet f) = 0 := by
   refine Measure.measure_prod_null_of_ae_null (measurableSet_graphSet hf) ?_
   filter_upwards with x
-  simp
+  simp [preimage_mk_graphSet, MeasureTheory.measure_singleton]

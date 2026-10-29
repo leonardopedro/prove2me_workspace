@@ -5,9 +5,11 @@ import Mathlib
 import Definitions.Def_ChapterL2TensorPowerUnitary
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.TensorCore
-open BookProof.L2TensorPower
 
 
 

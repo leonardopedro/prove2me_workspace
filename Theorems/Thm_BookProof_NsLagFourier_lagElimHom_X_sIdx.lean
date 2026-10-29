@@ -4,13 +4,11 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianFourierElimination
-open BookProof.NsLagFourier
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
-open BookProof.NsFullLagrangian
 
 noncomputable section
 

@@ -10,6 +10,8 @@ open BookProof.ChapterH7
 noncomputable section
 
 open BookProof.ChapterH4 BookProof.ChapterH6
+-- the source chapter opens Matrix in-section; `ᴴ` is scoped[Matrix]
+open scoped Matrix
 
 variable {E F : Type*}
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]

@@ -6,6 +6,8 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Theorems.Thm_BookProof_NavierStokesFlow_FullEsa_IsSymmetricDom_sub
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.NavierStokesFlow.FullEsa

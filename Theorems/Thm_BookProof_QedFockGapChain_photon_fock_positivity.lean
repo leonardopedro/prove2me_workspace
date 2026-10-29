@@ -12,7 +12,6 @@ import Definitions.Def_ChapterHermiteFunctions
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.HermiteCore
-open BookProof.QedFockGapChain
 
 
 noncomputable section
@@ -21,7 +20,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FarisLavine
 open BookProof.HermiteGalerkin BookProof.HermiteCore
-open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichs
 open MeasureTheory
 
 

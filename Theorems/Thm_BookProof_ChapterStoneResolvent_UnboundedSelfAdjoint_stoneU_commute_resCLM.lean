@@ -5,6 +5,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneEvolution
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent

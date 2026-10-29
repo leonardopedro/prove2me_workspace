@@ -51,11 +51,7 @@ def constOp (c : ℝ) : Lp ℂ 2 (volume : Measure ℝ) →L[ℂ] Lp ℂ 2 (volu
 
 
 
-bm⊢
-
-    (wallHam_essentialM ^ 2 / 4 := by positivity
-    have h2 := hVc x
-    linarith
+/-! ## Instances -/
 
 end
 

@@ -10,9 +10,9 @@ import Mathlib
 import Definitions.Def_ChapterQgFourierElimination
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
-open BookProof.QgFourierElim
 
 
 
@@ -20,7 +20,6 @@ open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.QgBrstDerivativeGauge
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
-open BookProof.QgVielbeinScalaronGaugeFL
 
 noncomputable section
 

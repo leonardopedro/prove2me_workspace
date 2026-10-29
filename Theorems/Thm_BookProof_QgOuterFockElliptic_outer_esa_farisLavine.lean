@@ -13,6 +13,8 @@ import Definitions.Def_ChapterQgOuterFockEllipticFL
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgOuterFockEllipticFL
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockElliptic

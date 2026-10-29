@@ -39,7 +39,8 @@ theorem solution (k n : ℕ) (c : ℝ) :
         + Finsupp.single (confAt k (n + 3))
             (((((n : ℝ) + 3) * (((n : ℝ) + 3) - 1) : ℝ) : ℂ) * ((c : ℝ) : ℂ)) := by
     have hn3 : (((n + 3 : ℕ) : ℝ)) = (n : ℝ) + 3 := by push_cast; ring
-    rw [trial, map_add, quartA_single_confAt, quartA_single_confAt, hn3]
+    rw [BookProof.FockCubicUnbounded.trial, map_add, quartA_single_confAt,
+      quartA_single_confAt, hn3]
   have hval_n : quartA k (trial k n c) (confAt k n)
       = (((n : ℝ) * ((n : ℝ) - 1) : ℝ) : ℂ) := by
     rw [hq]

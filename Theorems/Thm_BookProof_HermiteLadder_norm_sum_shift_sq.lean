@@ -9,6 +9,7 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderShift
 import Definitions.Def_ChapterHermiteLadderOrder
+import Definitions.Def_ChapterHermiteLadderShift
 open BookProof.HermiteLadder
 
 

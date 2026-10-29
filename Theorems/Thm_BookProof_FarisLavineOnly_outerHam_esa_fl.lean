@@ -11,9 +11,11 @@ import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockCoreFL
-open BookProof.FarisLavineOnly
 
 
 open scoped ENNReal
@@ -39,7 +41,7 @@ open Finset
 open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.QgOuterFockFullFL BookProof.SqSumOuterFamily
+open BookProof.QgOuterFockFullFL
 
 
 theorem BookProof.FarisLavineOnly.outerHam_esa_fl (F : SqFamily) :

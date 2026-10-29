@@ -4,8 +4,8 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
-open BookProof.EsaOneParticle
 
 
 

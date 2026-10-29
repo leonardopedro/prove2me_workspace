@@ -8,6 +8,8 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+import Theorems.Thm_BookProof_QgTruncationResolvent_qgOuterFock_truncation_flow_convergence
+import Theorems.Thm_BookProof_QgTimeStepping_qgOuterFock_fullyDiscrete_convergence
 
 
 /-!
@@ -61,6 +63,61 @@ claim beyond the flow convergence is made.
 
 Everything is `sorry`-free and `axiom`-free.
 -/
+
+namespace BookProof.QgManifoldModeInstance
+
+open Filter Topology
+open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
+open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgOuterFockCoreFL BookProof.QgTruncationResolvent
+open BookProof.QgTimeStepping
+
+noncomputable section
+
+variable {ι : Type*}
+
+/-! ## 1. The geometric mode data on a general spatial manifold -/
+
+/-- **The vielbein mode spectrum of a general spatial manifold.**
+
+`mu a` is the Laplace-type eigenvalue of the mode `a` (the mode energy is `σ_a = 1 + μ_a`);
+`lam a` is the eigenvalue of the torsion form `δd` on that mode, which by the Hodge
+decomposition is diagonal in this basis and bounded by `μ_a`; `block a` is the finite set of
+modes the scalaron–vielbein coupling connects `a` to, and `tr a` is the trace weight of the
+mode, through which the scalaron couples.  The two sums are the Schur bounds the
+Faris–Lavine theorem needs; on the periodic box they hold with `W = 9`, on a general
+manifold they hold whenever the coupling blocks are summable against the trace weights. -/
+structure VielbeinSpectrum (ι : Type*) where
+  /-- The Laplace-type eigenvalue of the mode. -/
+  mu : ι → ℝ
+  /-- The eigenvalues are non-negative. -/
+  mu_nonneg : ∀ a, 0 ≤ mu a
+  /-- The torsion (`δd`) eigenvalue of the mode. -/
+  lam : ι → ℝ
+  /-- Torsion eigenvalues are non-negative: `δd` is a positive operator. -/
+  lam_nonneg : ∀ a, 0 ≤ lam a
+  /-- Torsion eigenvalues are dominated by the Hodge eigenvalues. -/
+  lam_le_mu : ∀ a, lam a ≤ mu a
+  /-- The finite block of modes the scalaron coupling connects a mode to. -/
+  block : ι → Finset ι
+  /-- Blocks are symmetric. -/
+  mem_block_comm : ∀ a b, b ∈ block a ↔ a ∈ block b
+  /-- Every mode lies in its own block. -/
+  self_mem_block : ∀ a, a ∈ block a
+  /-- The trace weight of the mode. -/
+  tr : ι → ℝ
+  /-- The trace weights are normalized. -/
+  abs_tr_le_one : ∀ a, |tr a| ≤ 1
+  /-- The Schur constant of the coupling blocks. -/
+  W : ℝ
+  /-- The Schur constant is non-negative. -/
+  W_nonneg : 0 ≤ W
+  /-- Schur bound: the trace weights are summable across each block. -/
+  tr_sum : ∀ a, ∑ b ∈ block a, |tr b| ≤ W
+  /-- Schur bound for the commutator: the energy spread across a block, weighted by the
+  trace weights, is bounded. -/
+  tr_spread : ∀ a, ∑ b ∈ block a, |mu a - mu b| * |tr b| ≤ W
 
 namespace VielbeinSpectrum
 

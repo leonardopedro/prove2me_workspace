@@ -180,14 +180,15 @@ def toLpL : FockAlg →ₗ[ℂ] Fock where
     rfl
   map_smul' c u := by
     refine lp.ext (funext fun α => ?_)
-    simp u _support
+    simp [toLp]
 
 theorem toLp_injective : Function.Injective toLp := by
   intro u v h
   refine Finsupp.ext fun α => ?_
   have := congrArg (fun f : Fock => (f : Conf → ℂ) α) h
-  simpa usineref]
- at this
+  simpa using this
+
+theorem toLp_mem (u : FockAlg) : toLp u ∈ lpFiniteModes Conf := u.finite_support
 
 /-- The isomorphism of the algebraic Fock space with the finite-occupation
 domain of `ℓ²(Conf)`. -/
@@ -204,7 +205,7 @@ def fockEquiv : FockAlg ≃ₗ[ℂ] lpFiniteModes Conf := by
       rfl
 
 @[simp] theorem coe_fockEquiv (u : FockAlg) : ((fockEquiv u : lpFiniteModes Conf) : Fock)
-    = toLp u m_apply]
+    = toLp u := rfl
 
 /-! ## Second quantization -/
 
@@ -217,13 +218,12 @@ operator whose `k`-th column of matrix elements is `col k` (so
 `(col k) j = ⟪e_j, A e_k⟫`). -/
 def dGamma (col : ℕ → (ℕ →₀ ℂ)) : FockAlg →ₗ[ℂ] FockAlg :=
   Finsupp.lsum ℂ fun β => LinearMap.toSpanSingleton ℂ FockAlg
-    (∑ k ∈ β.support, creVec (col k) (annA k (Finsupp.single m_apply]
+    (∑ k ∈ β.support, creVec (col k) (annA k (Finsupp.single β 1)))
 
 @[simp] theorem dGamma_single (col : ℕ → (ℕ →₀ ℂ)) (β : Conf) (c : ℂ) :
     dGamma col (Finsupp.single β c)
       = c • ∑ k ∈ β.support, creVec (col k) (annA k (Finsupp.single β 1)) := by
-  simp [dGamma, LinearMap.toSpanSingapapl ]
-  simp
+  simp [dGamma, LinearMap.toSpanSingleton]
 
 /-! ### Symmetry and positivity -/
 
@@ -234,19 +234,19 @@ def IsHermCol (col : ℕ → (ℕ →₀ ℂ)) : Prop :=
 /-- The matrix is **positive semidefinite** on every finite set of modes. -/
 def IsPosCol (col : ℕ → (ℕ →₀ ℂ)) : Prop :=
   ∀ (S : Finset ℕ) (c : ℕ → ℂ),
-    0 ≤ (∑ j ∈ S, ∑ k ∈ S, (starRingEnd ℂ) (c j) * (col k) j * croeAA_      simp
+    0 ≤ (∑ j ∈ S, ∑ k ∈ S, (starRingEnd ℂ) (c j) * (col k) j * c k).re
 
 /-- A finite set of modes large enough for both states and for the columns of
 the one-particle matrix over their modes. -/
 def closureModes (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) : Finset ℕ :=
-  (modes u ∪ modes v) ∪ (modes u ∪ modes v).biUnion fun k => (col k).sftht, nj k u) α
+  (modes u ∪ modes v) ∪ (modes u ∪ modes v).biUnion fun k => (col k).support
 
 /-! ### The second-quantized operator on the finite-occupation domain -/
 
 /-- **The second-quantized operator** on the finite-occupation domain of the Fock
 space. -/
 def dGammaOp (col : ℕ → (ℕ →₀ ℂ)) : lpFiniteModes Conf →ₗ[ℂ] Fock :=
-  (lpFiniteModes Conf).subtype.comp (fockEquiv.conj (dGammackheg eson_dense
+  (lpFiniteModes Conf).subtype.comp (fockEquiv.conj (dGamma col))
 
 /-! ## The matrix of a one-particle operator -/
 
@@ -258,12 +258,12 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 def coordFinsupp (b : HilbertBasis ℕ ℂ F) (x : F) : ℕ →₀ ℂ := by
   classical
   exact if h : x ∈ finiteModeDomain b then
-    (Finsupp.mem_span_range_iff_exists_finsupp.mp h).choose finsupp]
+    (Finsupp.mem_span_range_iff_exists_finsupp.mp h).choose else 0
 
 /-- The matrix of a one-particle operator in the basis `b`. -/
 def opCol (b : HilbertBasis ℕ ℂ F) (A : finiteModeDomain b →ₗ[ℂ] finiteModeDomain b)
     (k : ℕ) : ℕ →₀ ℂ :=
-  coordFinsupp b (A ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ : finiteModeDomn njexol hpos)
+  coordFinsupp b (A ⟨b k, Submodule.subset_span ⟨k, rfl⟩⟩ : finiteModeDomain b)
 
 end OneParticle
 
@@ -339,13 +339,13 @@ theorem finiteModeDomain_fockBasisN (ε : ℕ ≃ Conf) :
 (the same subspace as `lpFiniteModes Conf`). -/
 def dGammaOpB (ε : ℕ ≃ Conf) (col : ℕ → (ℕ →₀ ℂ)) :
     finiteModeDomain (fockBasisN ε) →ₗ[ℂ] Fock :=
-  (dGammaOp col).comp (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε)).toLinN N pos) hγ
+  (dGammaOp col).comp (LinearEquiv.ofEq _ _ (finiteModeDomain_fockBasisN ε)).toLinearMap
 
 /-- A concrete enumeration of the configurations, so that the selection theorem
 is not vacuous. -/
 def fockEnum : ℕ ≃ Conf :=
   letI : Denumerable Conf := Denumerable.ofEncodableOfInfinite _
-  (Denumerable.eqv Confpos) hγ
+  (Denumerable.eqv Conf).symm
 
 end Selection
 
@@ -364,12 +364,12 @@ vacuum.  The operator is realized as the finite-mode domain of
 the orthonormal basis `coreBasis e` of `L²(ℝ⁹⁹)`. -/
 def ymOnePart (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :
     finiteModeDomain (coreBasis e) →ₗ[ℂ] finiteModeDomain (coreBasis e) :=
-  weylOpDom (piOps (coreRepBasis e)) (magOps (coreRepBasis e)x := rfl
+  weylOpDom (piOps (coreRepBasis e)) (magOps (coreRepBasis e) fabc)
 
 /-- The matrix of the one-particle Yang–Mills Hamiltonian in the product Hermite
 basis. -/
 def ymFockCol (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) : ℕ → (ℕ →₀ ℂ) :=
-  opCol (coreBasis e) (ymOnePart e _e)abc) hγ
+  opCol (coreBasis e) (ymOnePart e fabc)
 
 end YangMills
 

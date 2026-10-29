@@ -1,7 +1,9 @@
 -- Generated from ChapterG2.lean — solution of BookProof.ChapterG2.integral_haarAverage
 import Mathlib
 import Definitions.Def_ChapterG2
+import Definitions.Def_ChapterG
 open BookProof.ChapterG2
+open BookProof.ChapterG
 
 
 

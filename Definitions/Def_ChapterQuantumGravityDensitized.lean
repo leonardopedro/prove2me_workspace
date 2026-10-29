@@ -1,6 +1,8 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_FarisLavine_mulHamiltonian_essentiallySelfAdjoint
+import Theorems.Thm_BookProof_FarisLavine_mulHamiltonian_not_bounded
 import Mathlib
 
 

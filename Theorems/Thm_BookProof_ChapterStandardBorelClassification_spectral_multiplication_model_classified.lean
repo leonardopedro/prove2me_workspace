@@ -5,6 +5,7 @@ import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterAbelianClassificationList
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterStandardBorelClassification
 
 

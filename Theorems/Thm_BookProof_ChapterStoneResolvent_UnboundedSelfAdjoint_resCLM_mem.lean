@@ -1,6 +1,7 @@
 -- Generated from ChapterStoneResolvent.lean — theorem BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.resCLM_mem
 import Mathlib
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint
 

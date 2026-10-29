@@ -17,9 +17,11 @@ import Definitions.Def_ChapterSmYukawaCoupling
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.DirectSumEsa
 open BookProof.SmHamiltonian
-open BookProof.SmYukawaCoupling
 
 
 
@@ -28,8 +30,7 @@ open MeasureTheory MvPolynomial
 open BookProof.SmHamiltonian BookProof.SmDiracYukawa BookProof.SmCar BookProof.SmOneParticle
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteProductCore
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
-open BookProof.YangMillsNonAbelianEsa BookProof.SmFullEnclosure BookProof.TensorKatoRellich
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

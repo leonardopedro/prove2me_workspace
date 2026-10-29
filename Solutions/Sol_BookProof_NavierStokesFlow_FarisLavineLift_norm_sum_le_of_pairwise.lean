@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesFarisLavineLift.lean — solution of BookProof.NavierStokesFlow.FarisLavineLift.norm_sum_le_of_pairwise
 import Mathlib
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
-import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_norm_sum_sq_eq
 import Theorems.Thm_BookProof_NavierStokesFlow_FarisLavineLift_coe_sum_apply
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FarisLavineLift

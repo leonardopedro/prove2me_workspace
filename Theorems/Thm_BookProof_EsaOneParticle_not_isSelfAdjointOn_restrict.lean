@@ -8,13 +8,15 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.GraphCore
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
-open BookProof.EsaOneParticle
 
 
 

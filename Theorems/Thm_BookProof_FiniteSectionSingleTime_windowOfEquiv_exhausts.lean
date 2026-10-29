@@ -11,6 +11,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
+import Definitions.Def_ChapterQymTimeIndependentFlow
 open BookProof.FiniteSectionSingleTime
 
 

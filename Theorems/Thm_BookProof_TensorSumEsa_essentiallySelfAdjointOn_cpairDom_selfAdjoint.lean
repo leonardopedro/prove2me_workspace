@@ -7,10 +7,11 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
-open BookProof.TensorSumEsa
 
 
 

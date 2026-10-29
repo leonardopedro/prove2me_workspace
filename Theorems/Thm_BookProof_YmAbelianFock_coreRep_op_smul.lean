@@ -22,9 +22,14 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.YmAbelianFock
 
 
 

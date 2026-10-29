@@ -29,7 +29,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (c : ι → ℝ) (w : ι → V) (x m : V)
     (hm : ∀ i, (inner ℝ m (w i) : ℝ) = 0) (t : ℝ) :
     foSymbolFn c w (x + t • m) = foSymbolFn c w x := by
-  refine foSymbolFn_congr_of_inner_eq c w fun i => ?_
+  refine foSymbolFn_congr_of_inner_eq V c w fun i => ?_
   rw [inner_add_left, real_inner_smul_left, hm i, mul_zero, add_zero]
 
 /-! ## 6. The concrete picture `ℝ_x^d × ℝ_u^m` -/

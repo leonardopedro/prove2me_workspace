@@ -7,6 +7,7 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteProductCore
 open BookProof.QuadraticRotation
 

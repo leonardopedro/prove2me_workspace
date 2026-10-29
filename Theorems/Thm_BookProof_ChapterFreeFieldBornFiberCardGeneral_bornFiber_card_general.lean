@@ -9,6 +9,7 @@ import Definitions.Def_ChapterFreeFieldBornQuotient
 import Definitions.Def_ChapterFreeFieldBornFiberCard
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
+import Definitions.Def_ChapterFreeFieldBornFiberBounds
 open BookProof.ChapterFreeFieldBornFiberCardGeneral
 
 

@@ -12,9 +12,10 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockGapChain
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteFunctions
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.FockSecondQuantization
 open BookProof.HermiteCore
-open BookProof.ScalaronFockGapChain
 
 
 noncomputable section

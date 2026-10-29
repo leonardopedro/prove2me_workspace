@@ -7,6 +7,7 @@ import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLpRestrictSplit
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpRestrictSplit
 open BookProof.ChapterAbelianClassificationList

@@ -3,6 +3,7 @@ import Definitions.Def_ChapterHermiteCarlemanEsa
 import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.CarlemanSimplex
 
 

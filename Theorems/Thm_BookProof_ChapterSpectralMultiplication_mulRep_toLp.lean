@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterAbelianGelfandModel
 import Mathlib
 import Definitions.Def_ChapterSpectralMultiplication
+import Definitions.Def_ChapterCyclicDecomposition
 open BookProof.ChapterSpectralMultiplication
 
 

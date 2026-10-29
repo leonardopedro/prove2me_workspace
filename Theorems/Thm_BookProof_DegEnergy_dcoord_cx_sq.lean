@@ -5,6 +5,7 @@ import Definitions.Def_ChapterConvolutionCalc
 import Mathlib
 import Definitions.Def_ChapterDegEnergyEstimate
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFockWeightedSchurEsa
 open BookProof.HermiteProductCore
 open BookProof.DegEnergy
 

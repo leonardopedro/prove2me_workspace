@@ -3,6 +3,7 @@ import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterH6
 import Mathlib
 import Definitions.Def_ChapterH7
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterH7
 
 

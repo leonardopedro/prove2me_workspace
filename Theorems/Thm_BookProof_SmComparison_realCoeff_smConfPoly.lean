@@ -18,11 +18,13 @@ import Definitions.Def_ChapterSmComparison
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.SmOneParticle
 open BookProof.YangMillsHermite
-open BookProof.SmComparison
 
 
 
@@ -31,7 +33,7 @@ open BookProof.SmOneParticle BookProof.SmHamiltonian
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.ScalaronWallEsa BookProof.ScalaronEsa BookProof.WallEsaBddBelow
-open BookProof.TensorSumChain BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 open BookProof.EsaClosure BookProof.GraphCore
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent
 open MeasureTheory

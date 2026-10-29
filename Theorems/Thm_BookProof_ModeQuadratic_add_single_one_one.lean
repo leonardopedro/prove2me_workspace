@@ -12,6 +12,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.ModeQuadratic
 
 

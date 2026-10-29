@@ -3,6 +3,7 @@ import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFockCubicUnbounded
 import Definitions.Def_ChapterFockFieldPerturbation
+import Theorems.Thm_BookProof_FockFieldPerturbation_fock_gap_of_field_perturbation_pos
 import Definitions.Def_ChapterFockInteractionStability
 import Definitions.Def_ChapterFockNumberPreservingGap
 import Definitions.Def_ChapterFockOneParticleGap
@@ -10,6 +11,11 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_FockNumberPreservingGap_fock_gap_of_one_particle_form_gap
+import Theorems.Thm_BookProof_FockNumberPreservingGap_shiftCol_opCol
+import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
+import Theorems.Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs
+import Theorems.Thm_BookProof_FockCubicQuarticStability_dGamma_multiMode_cubic_quartic_bounded_below
 
 
 /-!
@@ -151,7 +157,10 @@ theorem const_fock_mass_gap (b : HilbertBasis ℕ ℂ F) {m : ℝ} (hm : 0 < m) 
     have : (0 : ℝ) ≤ ‖(x : F)‖ ^ 2 := sq_nonneg _
     nlinarith
   · have hnorm : 0 < ‖toLp u‖ := by
-      have : toLp u ≠ 0 := fun hc => hu (toLp_injective (by simpa using hc))
+      have : toLp u ≠ 0 := fun hc => hu <|
+        Finsupp.ext fun α => by
+          have h := congrArg (fun f : Fock => (f : Conf → ℂ) α) hc
+          simpa [toLp] using h
       exact norm_pos_iff.mpr this
     have hquad := hgap u h0
     have hpos : 0 < m * ‖toLp u‖ ^ 2 := by positivity

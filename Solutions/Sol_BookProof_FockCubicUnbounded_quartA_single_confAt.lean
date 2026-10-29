@@ -27,8 +27,8 @@ theorem solution (k m : ℕ) (z : ℂ) :
       = Finsupp.single (confAt k m) ((((m : ℝ) * ((m : ℝ) - 1) : ℝ) : ℂ) * z) := by
 
   match m with
-  | 0 => simp [quartA, confAt_self, dn_confAt]
-  | 1 => simp [quartA, confAt_self, dn_confAt]
+  | 0 => simp [quartA, annA_single, creA_single, confAt_self, dn_confAt]
+  | 1 => simp [quartA, annA_single, creA_single, confAt_self, dn_confAt]
   | (m + 2) =>
       have e1 : m + 2 - 1 = m + 1 := by omega
       have e2 : m + 1 - 1 = m := by omega

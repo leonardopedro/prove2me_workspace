@@ -7,6 +7,9 @@ import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
 import Definitions.Def_ChapterRieszFischer
 import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterRieszFischer
+import Definitions.Def_ChapterSmCarContinuum
 open BookProof.ChapterRieszFischer
 open BookProof.SmCar
 open BookProof.SmCarContinuum

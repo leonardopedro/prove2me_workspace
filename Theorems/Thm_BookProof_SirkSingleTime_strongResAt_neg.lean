@@ -4,6 +4,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.SirkSingleTime
 
 

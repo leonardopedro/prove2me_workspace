@@ -15,8 +15,11 @@ import Definitions.Def_ChapterConvolutionCalc
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteLadderShift
 open BookProof.YangMillsHermite
-open BookProof.HermiteGraphApprox
 
 
 

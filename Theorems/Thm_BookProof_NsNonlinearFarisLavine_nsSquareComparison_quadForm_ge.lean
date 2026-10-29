@@ -7,13 +7,11 @@ import Definitions.Def_ChapterNsNonlinearFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 open BookProof.HermiteProductCore
-open BookProof.NsNonlinearFarisLavine
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.NsKoopman
 
 noncomputable section
 

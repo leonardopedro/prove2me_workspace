@@ -14,9 +14,10 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationPerturbed
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2
-open BookProof.QuadraticRotationPerturbed
 
 
 

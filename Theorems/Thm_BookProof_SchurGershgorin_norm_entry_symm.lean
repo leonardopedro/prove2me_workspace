@@ -11,6 +11,8 @@ import Mathlib
 import Definitions.Def_ChapterSchurGershgorinGap
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterSchurGershgorinGap
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteGalerkin
 open BookProof.SchurGershgorin
 

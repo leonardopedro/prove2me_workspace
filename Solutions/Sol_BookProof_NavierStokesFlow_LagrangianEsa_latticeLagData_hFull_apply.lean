@@ -26,6 +26,10 @@ variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 set_option maxHeartbeats 1000000 in
 
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+@[simp] private theorem restrictCLM_apply (A : F →L[ℂ] F) (D : Submodule ℂ F)
+    (h : ∀ v : D, A (v : F) ∈ D) (x : D) : ((restrictCLM A D h x : D) : F) = A (x : F) := rfl
+
 theorem solution (v : Fin 3 → LinfZ) (w : LinfZ) (fr : Fin 3 → ℝ) {nu : ℝ}
     (hnu : 0 ≤ nu) (x : (latticeLagData v w fr hnu).D) :
     ((latticeLagData v w fr hnu).hFull x : L2Z) = latticeLagCLM v w fr nu (x : L2Z) := by

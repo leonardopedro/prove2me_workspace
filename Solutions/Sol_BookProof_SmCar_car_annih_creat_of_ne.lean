@@ -15,18 +15,26 @@ variable {n : ℕ}
 
 variable {n : ℕ}
 
+/-- Local unfolding of `annih` — the published bundle ships only the `def`. -/
+theorem annih_eq (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (annih i ψ).ofLp S = if i ∈ S then 0 else jwSign i S * ψ.ofLp (insert i S) := rfl
+
+/-- Local unfolding of `creat` — the published bundle ships only the `def`. -/
+theorem creat_eq (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (creat i ψ).ofLp S = if i ∈ S then jwSign i (S.erase i) * ψ.ofLp (S.erase i) else 0 := rfl
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution {i j : Fin n} (hij : i ≠ j) :
-    annih i ∘ₗ creat j + creat j ∘ₗ annih i = 0 := by
+    BookProof.SmCar.annih i ∘ₗ BookProof.SmCar.creat j + BookProof.SmCar.creat j ∘ₗ BookProof.SmCar.annih i = 0 := by
   refine LinearMap.ext fun ψ => ?_
   ext S
   by_cases hi : i ∈ S
   · -- the first term vanishes; so does the second, unless `j ∈ S`, and then `i ∈ S.erase j`
     by_cases hj : j ∈ S
     · have hiR : i ∈ S.erase j := Finset.mem_erase.mpr ⟨hij, hi⟩
-      simp [hi, hj, hiR]
-    · simp [hi, hj]
+      simp [hi, hj, hiR, annih_eq, creat_eq]
+    · simp [hi, hj, annih_eq, creat_eq]
   · by_cases hj : j ∈ S
     · -- the interesting case: `i ∉ S`, `j ∈ S`
       set R : Finset (Fin n) := S.erase j with hR
@@ -43,7 +51,7 @@ theorem solution {i j : Fin n} (hij : i ≠ j) :
         jwSign_insert hinotR
       have hne : i < j ∨ j < i := lt_or_gt_of_ne hij
       simp only [LinearMap.add_apply, LinearMap.comp_apply, LinearMap.zero_apply,
-        PiLp.add_apply, PiLp.zero_apply, annih_apply, creat_apply, if_neg hi, if_pos hj,
+        PiLp.add_apply, PiLp.zero_apply, annih_eq, creat_eq, if_neg hi, if_pos hj,
         if_pos hjins, hins, if_neg hinotR, hsign1, hsign2, ← hR]
       rcases hne with hlt1 | hlt2
       · rw [if_pos hlt1, if_neg (asymm hlt1)]
@@ -52,4 +60,4 @@ theorem solution {i j : Fin n} (hij : i ≠ j) :
         ring
     · have hjins : j ∉ insert i S := by
         simp [Finset.mem_insert, hij.symm, hj]
-      simp [hi, hj, hjins]
+      simp [hi, hj, hjins, annih_eq, creat_eq]

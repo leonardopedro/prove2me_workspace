@@ -12,6 +12,21 @@ open scoped Convolution Topology ContDiff
 
 noncomputable section
 
+namespace BookProof.ChapterHolomorphic
+
+/-- Inlined from the unpublished `ChapterHolomorphic` bundle (platform-world rule:
+an unpublished dep cannot be imported). -/
+theorem cauchyRiemann_analyticOn {f : ℂ → ℂ} {s : Set ℂ} (hs : IsOpen s)
+    (hf : ∀ z ∈ s, DifferentiableAt ℝ f z)
+    (hCR : ∀ z ∈ s, fderiv ℝ f z Complex.I = Complex.I • fderiv ℝ f z 1) :
+    AnalyticOn ℂ f s := by
+  have hd : DifferentiableOn ℂ f s := fun z hz =>
+    ((differentiableAt_complex_iff_differentiableAt_real).mpr
+      ⟨hf z hz, hCR z hz⟩).differentiableWithinAt
+  exact hd.analyticOn hs
+
+end BookProof.ChapterHolomorphic
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution {g : ℂ → ℂ} {s : Set ℂ} (hs : IsOpen s)

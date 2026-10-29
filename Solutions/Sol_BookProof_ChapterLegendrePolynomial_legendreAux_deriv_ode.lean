@@ -12,7 +12,8 @@ open BookProof.ChapterLegendrePolynomial
 
 open Polynomial
 
-set_option maxHeartbeats 1000000 in
+-- The source proof runs on 4M heartbeats; the generated stub's 1M cap times out mid-`rw`.
+set_option maxHeartbeats 4000000 in
 
 theorem solution (l μ : ℕ) :
     (X ^ 2 - 1) * derivative^[2] (derivative^[μ] (legendreAux l))

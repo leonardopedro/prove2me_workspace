@@ -9,13 +9,13 @@ import Mathlib
 import Definitions.Def_ChapterSmComparisonFull
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.ScalaronEsa
-open BookProof.SmComparisonFull
 
 
 
-open BookProof.FarisLavine BookProof.TensorSumChain
-open BookProof.SmComparison BookProof.ScalaronEsa
+open BookProof.FarisLavine
+open BookProof.ScalaronEsa
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open MeasureTheory
 

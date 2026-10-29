@@ -211,6 +211,15 @@ theorem brstGaugeFixed_esa (W : WallPot) (g : ℝ) :
       (secData W (qgContinuumModes g)).ext :=
   qgContinuum_essentiallySelfAdjointOn W g
 
+/-- Local copy: the generating stub `Thm_BookProof_QgContinuumModeInstance_starobinsky_qgContinuum_esa`
+reaches this bundle's closure (via `QgOuterFockFlow`), so it cannot be imported back
+(import cycle); proved exactly as in `BookProof/ChapterQgContinuumModeInstance.lean`. -/
+theorem starobinsky_qgContinuum_esa (M alpha : ℝ) (halpha : 0 < alpha) (g : ℝ) :
+    EssentiallySelfAdjointOn
+        (secN (starobinskyWall M alpha halpha) (qgContinuumModes g)).dom
+      (secData (starobinskyWall M alpha halpha) (qgContinuumModes g)).ext :=
+  qgContinuum_essentiallySelfAdjointOn (starobinskyWall M alpha halpha) g
+
 /-- The gauge-fixed Hamiltonian with the full exponential Einstein-frame Starobinsky wall. -/
 theorem starobinsky_brstGaugeFixed_esa (M alpha : ℝ) (halpha : 0 < alpha) (g : ℝ) :
     EssentiallySelfAdjointOn

@@ -14,6 +14,9 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.HermiteGalerkin

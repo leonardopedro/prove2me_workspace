@@ -6,6 +6,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockFL
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom

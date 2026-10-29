@@ -5,10 +5,12 @@ import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
-open BookProof.EsaOneParticle
 
 
 

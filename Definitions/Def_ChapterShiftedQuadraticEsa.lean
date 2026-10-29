@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterShiftedHermiteCore
+import Theorems.Thm_BookProof_ShiftedHermiteCore_pgFunT_mulXTPoly
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
@@ -363,6 +364,10 @@ theorem shiftedHOp_coe_eq_pgLpT (a k : Vd d) (c b b' : Fin d → ℝ)
   rw [coreOpT_coe]
 
 /-! ## 6. The Minkowski corollary -/
+
+theorem minkowskiCoeff_ne_zero (n : ℕ) (i : Fin (1 + n)) : minkowskiCoeff n i ≠ 0 := by
+  by_cases h : i = 0 <;> simp [minkowskiCoeff, h]
+
 
 
 

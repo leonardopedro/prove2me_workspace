@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
+import Theorems.Thm_BookProof_StrichartzWave_mulL2_symmetric
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
 
 

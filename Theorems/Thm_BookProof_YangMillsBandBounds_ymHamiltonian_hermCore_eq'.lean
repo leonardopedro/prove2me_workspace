@@ -17,11 +17,14 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.QuadFockEsa
 open BookProof.YangMillsHermite
-open BookProof.YangMillsBandBounds
 
 
 
@@ -32,7 +35,7 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
+open BookProof.YangMillsFriedrichs
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 theorem BookProof.YangMillsBandBounds.ymHamiltonian_hermCore_eq_prime (e : ℕ ≃ (Fin 99 →₀ ℕ))

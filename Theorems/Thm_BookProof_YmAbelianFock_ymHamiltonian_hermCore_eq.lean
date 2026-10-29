@@ -22,11 +22,15 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.QuadFockEsa
 open BookProof.YangMillsHermite
-open BookProof.YmAbelianFock
 
 
 

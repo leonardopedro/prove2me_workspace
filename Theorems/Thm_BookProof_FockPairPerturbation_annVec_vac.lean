@@ -6,6 +6,7 @@ import Mathlib
 import Definitions.Def_ChapterFockPairPerturbation
 import Definitions.Def_ChapterFockOneParticleGap
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockPairPerturbation
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.FockPairPerturbation

@@ -4,6 +4,8 @@ import Definitions.Def_ChapterBrstReducedTransfer
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Definitions.Def_ChapterSmCarAlgebra
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterQgBrstCompleted
 open BookProof.SmCar
 open BookProof.QgBrstCompleted
 

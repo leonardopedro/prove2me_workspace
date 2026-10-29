@@ -10,7 +10,6 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterOperatorSeriesEsa
 import Mathlib
 import Theorems.Thm_BookProof_GaugeFixing_L_gf_evaluation
-import Theorems.Thm_BookProof_QuantumGravity3DGauge_torsionPoly_antisymm
 
 
 /-!

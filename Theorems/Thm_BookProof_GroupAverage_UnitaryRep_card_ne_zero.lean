@@ -4,8 +4,7 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
-open BookProof.GroupAverage
-open BookProof.GroupAverage
+import Definitions.Def_ChapterGroupAverageEsa
 
 
 

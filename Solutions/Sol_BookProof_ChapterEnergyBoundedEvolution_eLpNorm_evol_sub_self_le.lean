@@ -20,5 +20,10 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution {Emax : ℝ} (h : EnergyLimited E μ Emax f) (t : ℝ) :
     eLpNorm (evol E t f - f) 2 μ ≤ ENNReal.ofReal (|t| * Emax) * eLpNorm f 2 μ := by
-  have := eLpNorm_evol_sub_evol_le h 0 t
-  simpa using this
+  -- The published def bundle carries no `@[simp] evol_zero`, so we supply the base-case
+  -- identification `evol E 0 f = f` explicitly before simplifying.
+  have h0 : evol E 0 f = f := by
+    funext x
+    simp [evol]
+  have htr := eLpNorm_evol_sub_evol_le h 0 t
+  simpa [h0] using htr

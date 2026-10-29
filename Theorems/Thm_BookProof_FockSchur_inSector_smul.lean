@@ -10,6 +10,8 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFockSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.FockSchur
 

@@ -14,6 +14,9 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterNavierStokesEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.FullQuadratic
 open BookProof.QuadFockEsa
@@ -21,7 +24,7 @@ open BookProof.QuadFockEsa
 
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur
+open BookProof.HermiteBand
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic

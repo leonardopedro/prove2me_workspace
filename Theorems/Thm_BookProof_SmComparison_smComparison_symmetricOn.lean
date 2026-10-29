@@ -18,10 +18,13 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.YangMillsFriedrichs
-open BookProof.SmComparison
 
 
 
@@ -30,7 +33,7 @@ open BookProof.SmOneParticle BookProof.SmHamiltonian
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.ScalaronWallEsa BookProof.ScalaronEsa BookProof.WallEsaBddBelow
-open BookProof.TensorSumChain BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 open BookProof.EsaClosure BookProof.GraphCore
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent
 open MeasureTheory

@@ -7,7 +7,9 @@ import Definitions.Def_ChapterOperatorSeriesEsa
 import Definitions.Def_ChapterFockQuadraticEsa
 import Mathlib
 import Definitions.Def_ChapterFockDifferingBasesEsa
-open BookProof.FockDifferingBases
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 
 
 

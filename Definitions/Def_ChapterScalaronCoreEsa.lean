@@ -3,6 +3,7 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
+import Theorems.Thm_BookProof_FarisLavine_mulSymbolOp_symmetric
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterStoneBridge
@@ -10,6 +11,8 @@ import Definitions.Def_ChapterStrichartzWave
 import Theorems.Thm_BookProof_StrichartzWave_inner_toLp_left
 import Theorems.Thm_BookProof_StrichartzWave_integrable_conj_schwartz_mul
 import Mathlib
+import Theorems.Thm_BookProof_QuantumGravityDensitized_strichartz_esa_of_finiteSpeed
+import Theorems.Thm_BookProof_QuantumGravityDensitized_qgModeHamiltonian_deficiencyTrivialAt
 
 
 /-!
@@ -87,6 +90,7 @@ namespace BookProof.ScalaronEsa
 open BookProof.StrichartzWave BookProof.FarisLavine BookProof
 open BookProof.QuantumGravityDensitized BookProof.StoneBridge BookProof.NavierStokesFlow
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+open BookProof.Starobinsky
 
 noncomputable section
 
@@ -580,6 +584,11 @@ theorem qgScalaronMode_deficiencyTrivialAt {z : ℂ} (hz : z.im ≠ 0) :
       (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))
       (qgScalaronModeHamiltonian a b M alpha Rc phi) z :=
   qgModeHamiltonian_deficiencyTrivialAt a b (qgScalaronModePotential M alpha Rc phi) hz
+
+theorem qgScalaronMode_symmetric :
+    SymmetricOn (mulSymbolDomain (qgModeSymbol a b (qgScalaronModePotential M alpha Rc phi)))
+      (qgScalaronModeHamiltonian a b M alpha Rc phi) :=
+  mulSymbolOp_symmetric _ _ (fun _ => le_rfl)
 
 /-- **The continuous flow of the `R + αR²` Hamiltonian including the scalaron potential.**
 Essential self-adjointness on the dense maximal domain selects one self-adjoint operator,

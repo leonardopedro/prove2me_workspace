@@ -14,6 +14,8 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.HermiteRelative
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval

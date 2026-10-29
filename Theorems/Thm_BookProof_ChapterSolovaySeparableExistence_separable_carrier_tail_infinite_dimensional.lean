@@ -4,7 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
 import Definitions.Def_PhysMeasureBasis
 open PhysMeasureBasis
-open BookProof.ChapterSolovaySeparableExistence
 
 
 noncomputable section

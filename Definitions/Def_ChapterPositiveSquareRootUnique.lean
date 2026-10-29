@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterUnboundedPolar
 import Mathlib
 
 
@@ -531,7 +532,19 @@ theorem isNonnegSelfAdjoint_absRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (
       (inner_conj_symm _ _).symm
     rwa [hconj, Complex.conj_re] at hre
 
-
+/-- **Uniqueness of the non-negative self-adjoint square root of `A* Ā`.**  Every
+non-negative self-adjoint relation whose square is contained in `A* Ā` is `|Ā|`. -/
+theorem eq_absRel_of_isNonnegSelfAdjoint (A : D →ₗ[ℂ] F) (hT : IsNonnegSelfAdjoint T)
+    (hsq : ∀ p : F × F, (∃ w, (p.1, w) ∈ T ∧ (w, p.2) ∈ T) → p ∈ factorRel A) :
+    T = absRel A := by
+  have habs : ∀ p : F × F,
+      (∃ w, (p.1, w) ∈ absRel A ∧ (w, p.2) ∈ absRel A) → p ∈ factorRel A := by
+    intro p hp
+    have hmem : p ∈ {q : F × F | ∃ w, (q.1, w) ∈ absRel A ∧ (w, q.2) ∈ absRel A} := hp
+    rw [absRel_comp_self A] at hmem
+    exact hmem
+  exact rel_eq_of_invCLM_eq hT (isNonnegSelfAdjoint_absRel A)
+    ((invCLM_eq_cfc A hT hsq).trans (invCLM_eq_cfc A (isNonnegSelfAdjoint_absRel A) habs).symm)
 
 /-- **`|Ā| = (A* Ā)^{1/2}` is the unique non-negative self-adjoint square root.** -/
 theorem absRel_unique_nonneg_sqrt (A : D →ₗ[ℂ] F) :

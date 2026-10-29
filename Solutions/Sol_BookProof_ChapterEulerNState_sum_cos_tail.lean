@@ -14,7 +14,7 @@ theorem solution (θ : ℕ → ℝ) (m : ℕ) :
     ∑ k ∈ Finset.range m, tailProd θ k * Real.cos (θ k) ^ 2
       = 1 - tailProd θ m := by
   induction m with
-  | zero => simp
+  | zero => simp [tailProd]
   | succ m ih =>
     rw [Finset.sum_range_succ, ih, tailProd_succ]
     have : Real.cos (θ m) ^ 2 = 1 - Real.sin (θ m) ^ 2 := by

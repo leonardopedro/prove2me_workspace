@@ -9,16 +9,16 @@ import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Definitions.Def_ChapterSirkRitzMinMax
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterSirkRitzPerturbation
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.RitzMinMax
-open BookProof.ResolventLadder
 
 
 noncomputable section
 
 
 open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGalerkin
-open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
-open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
 open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

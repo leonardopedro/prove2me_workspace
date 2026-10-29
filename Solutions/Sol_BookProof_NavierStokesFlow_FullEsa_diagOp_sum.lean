@@ -12,6 +12,7 @@ open BookProof.NavierStokesFlow.FullEsa
 
 open scoped ENNReal
 open BookProof.ChapterAbelianDiagonalCountable
+open BookProof.NavierStokesFlow.DiagonalEsa
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}

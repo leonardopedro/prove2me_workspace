@@ -12,13 +12,13 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.QuantumGravity3DGauge
-open BookProof.Qg3DGaugeFL
 
 
 
 open BookProof.QuantumGravity3DGauge BookProof.Qg3DGaugeEsa
-open BookProof.QgOuterFock BookProof.FarisLavineOnly
+open BookProof.QgOuterFock
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent

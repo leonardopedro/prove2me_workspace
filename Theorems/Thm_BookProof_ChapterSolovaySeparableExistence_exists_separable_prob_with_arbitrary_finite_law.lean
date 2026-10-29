@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
 import Definitions.Def_ChapterSolovaySeparableExistence
-open BookProof.ChapterSolovaySeparableExistence
 
 
 noncomputable section

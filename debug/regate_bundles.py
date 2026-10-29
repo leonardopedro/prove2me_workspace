@@ -79,7 +79,13 @@ def main():
                 [lean, "-DautoImplicit=false", "-o", f"{src}/{m}.olean",
                  f"{src}/{m}.lean"],
                 cwd=MIRROR, env=dict(env, LEAN_PATH=f"{MIRROR}:{base}"),
-                capture_output=True, text=True, timeout=1800)
+                capture_output=True, text=True,
+                # 1800 s is the build_candidate_mirror default and it TIMED OUT
+                # on Def_ChapterQgOneParticleCcEsa (2026-10-27, gate=TIMEOUT,
+                # 181 thm stubs deferred behind it).  Long-horizon bundles are
+                # regated with REGATE_TIMEOUT=… (seconds) instead of waiting for
+                # a full candidate-mirror pass.
+                timeout=int(os.environ.get("REGATE_TIMEOUT", "1800")))
         except subprocess.TimeoutExpired:
             return kind, m, "TIMEOUT"
         out = r.stdout + r.stderr

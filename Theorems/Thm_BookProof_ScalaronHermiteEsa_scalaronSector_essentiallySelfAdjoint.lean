@@ -12,6 +12,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterScalaronHermiteEsa
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore
 open BookProof.QgHermiteOscillator

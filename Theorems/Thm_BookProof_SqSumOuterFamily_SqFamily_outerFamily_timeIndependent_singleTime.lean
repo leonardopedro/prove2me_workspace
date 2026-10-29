@@ -15,6 +15,8 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.HermiteProductCore
@@ -22,8 +24,6 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
-open BookProof.SqSumOuterFamily
-open BookProof.SqSumOuterFamily.SqFamily
 
 
 

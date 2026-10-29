@@ -7,6 +7,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterVonNeumannCore
+import Definitions.Def_ChapterUnboundedPolar
 import Mathlib
 
 

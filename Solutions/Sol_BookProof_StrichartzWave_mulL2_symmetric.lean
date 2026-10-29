@@ -1,7 +1,6 @@
 -- Generated from ChapterWaveBoundedPotential.lean — solution of BookProof.StrichartzWave.mulL2_symmetric
 import Mathlib
 import Definitions.Def_ChapterWaveBoundedPotential
-import Theorems.Thm_BookProof_StrichartzWave_mulL2_coeFn
 import Definitions.Def_ChapterStrichartzWave
 open BookProof.StrichartzWave
 

@@ -8,14 +8,13 @@ import Definitions.Def_ChapterPositiveSquareRootUnique
 import Mathlib
 import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterClosureUniqueness
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.ClosureUniqueness
-open BookProof.NonnegSquareRoot
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
-open BookProof.PositiveSquareRoot
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

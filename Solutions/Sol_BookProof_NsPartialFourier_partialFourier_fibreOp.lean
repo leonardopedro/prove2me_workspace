@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNsPartialFourier
 import Theorems.Thm_BookProof_NsPartialFourier_fourier_postcompCLM
 import Theorems.Thm_BookProof_NsPartialFourier_toLp_postcompCLM
+import Theorems.Thm_BookProof_NsPartialFourier_fibreOp_apply
 open BookProof.NsPartialFourier
 
 

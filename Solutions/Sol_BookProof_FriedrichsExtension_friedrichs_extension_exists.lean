@@ -17,15 +17,20 @@ open BookProof.FriedrichsExtension
 
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
+-- `friedrichsResolvent*`, `dom_le_range`, `friedrichsResolvent_shift` and the
+-- two children proved in `Thm_BookProof_FriedrichsExtension_FormDom_*` all
+-- live in `…FriedrichsExtension.FormDom`; without this open the platform
+-- answers "Unknown identifier `friedrichsResolvent`" (verdict CE, attempt 1).
+open BookProof.FriedrichsExtension.FormDom
 open scoped InnerProductSpace ENNReal lp
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.QgOuterFockFL
 open BookProof.YangMillsFriedrichs
 
+set_option maxHeartbeats 1000000 in
 theorem solution (P : PosSymOp F) (hdense : Dense (P.dom : Set F)) :
     ∃ (Dom : Submodule ℂ F) (A : Dom →ₗ[ℂ] F), IsPositiveSelfAdjointExtension P.op A := by
   have hinj : Function.Injective (friedrichsResolvent P) :=

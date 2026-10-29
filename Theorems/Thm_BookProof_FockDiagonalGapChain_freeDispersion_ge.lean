@@ -13,7 +13,9 @@ import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterScalaronFockGapChain
 import Mathlib
 import Definitions.Def_ChapterFockDiagonalGapChain
-open BookProof.FockDiagonalGapChain
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterTruncationGapLift
 
 
 noncomputable section
@@ -24,7 +26,7 @@ open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
 open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
-open BookProof.HermiteCore BookProof.ScalaronFockGapChain
+open BookProof.HermiteCore
 open Module
 
 

@@ -20,39 +20,6 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 
 
-private theorem exists_smooth_cutoff (R : ℝ) :
-    ∃ χ : V → ℝ, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) χ ∧ HasCompactSupport χ ∧
-      (∀ x, ‖x‖ ≤ R → χ x = 1) ∧ (∀ x, χ x ∈ Set.Icc (0 : ℝ) 1) ∧
-      (∀ x, R + 1 ≤ ‖x‖ → χ x = 0) ∧ ∃ C : ℝ, ∀ x, ‖gradient χ x‖ ≤ C := by
-  have hs : IsClosed {x : V | R + 1 ≤ ‖x‖} := isClosed_le continuous_const continuous_norm
-  have ht : IsClosed (Metric.closedBall (0 : V) R) := Metric.isClosed_closedBall
-  have hd : Disjoint {x : V | R + 1 ≤ ‖x‖} (Metric.closedBall (0 : V) R) := by
-    rw [Set.disjoint_left]
-    intro x hx hx'
-    simp only [Set.mem_setOf_eq] at hx
-    simp only [Metric.mem_closedBall, dist_zero_right] at hx'
-    linarith
-  obtain ⟨f, hf0, hf1, hfIcc⟩ :=
-    exists_contMDiffMap_zero_one_of_isClosed (modelWithCornersSelf ℝ V) hs ht hd
-  have hsmooth : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (⇑f) := contMDiff_iff_contDiff.mp f.contMDiff
-  have hcs : HasCompactSupport (⇑f) := by
-    apply HasCompactSupport.intro (isCompact_closedBall (0 : V) (R + 1))
-    intro x hx
-    apply hf0
-    simp only [Metric.mem_closedBall, dist_zero_right, not_le] at hx
-    simp only [Set.mem_setOf_eq]
-    linarith
-  refine ⟨⇑f, hsmooth, hcs, fun x hx => hf1 (by simpa [dist_zero_right] using hx), hfIcc,
-    fun x hx => hf0 hx, ?_⟩
-  have hgrad : ∀ x : V, gradient (⇑f) x = (InnerProductSpace.toDual ℝ V).symm (fderiv ℝ (⇑f) x) :=
-    fun _ => rfl
-  have hgcs : HasCompactSupport (fun x => gradient (⇑f) x) := by
-    simp only [hgrad]
-    exact (hcs.fderiv ℝ).comp_left (g := fun L => (InnerProductSpace.toDual ℝ V).symm L) (by simp)
-  have hgcont : Continuous (fun x => gradient (⇑f) x) := by
-    simp only [hgrad]
-    exact (InnerProductSpace.toDual ℝ V).symm.continuous.comp (hsmooth.continuous_fd the
-
 set_option maxHeartbeats 1000000 in
 
 theorem solution :
@@ -76,7 +43,8 @@ theorem solution :
   set L : ℕ → (V →L[ℝ] V) := fun n => (c n) • ContinuousLinearMap.id ℝ V with hL
   have hLnorm : ∀ n, ‖L n‖ ≤ 1 := by
     intro n
-    calc ‖L n‖ ≤ ‖c n‖ * ‖ContinuousLinearMap.id ℝ V‖ := norm_smul_le _ _
+    calc ‖L n‖ ≤ ‖c n‖ * ‖ContinuousLinearMap.id ℝ V‖ :=
+        norm_smul_le (c n) (ContinuousLinearMap.id ℝ V)
       _ ≤ 1 * 1 := by
           gcongr
           · rw [Real.norm_eq_abs, abs_of_pos (hcpos n)]; exact hcle n

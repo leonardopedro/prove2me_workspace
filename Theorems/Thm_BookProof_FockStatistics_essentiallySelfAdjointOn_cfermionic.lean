@@ -7,16 +7,17 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterA1c
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.ChapterA
 open BookProof.ChapterA.System
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.TensorCore
-open BookProof.GroupAverage.UnitaryRep
-open BookProof.FockStatistics
 
 
 
-open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.ReducedEsa
 
 noncomputable section
 

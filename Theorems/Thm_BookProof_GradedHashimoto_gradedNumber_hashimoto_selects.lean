@@ -16,19 +16,20 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsGhost
-open BookProof.GradedHashimoto
 
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.HashimotoShiftInvert
-open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
-open BookProof.GradedFriedrichs
+open BookProof.FockSecondQuantization
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
 
 noncomputable section

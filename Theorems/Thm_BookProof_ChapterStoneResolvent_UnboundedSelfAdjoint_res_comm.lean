@@ -3,6 +3,7 @@ import Definitions.Def_ChapterUnitaryTransport
 import Mathlib
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 

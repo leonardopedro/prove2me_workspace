@@ -11,6 +11,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterShiftedQuadraticEsa
 
 variable {d : ℕ}
 

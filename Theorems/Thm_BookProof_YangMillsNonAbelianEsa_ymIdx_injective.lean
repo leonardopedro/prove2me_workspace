@@ -15,7 +15,12 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Mathlib
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
-open BookProof.YangMillsNonAbelianEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 
 
 
@@ -23,7 +28,7 @@ open MeasureTheory MvPolynomial
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
-open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
+open BookProof.DegSchrodinger BookProof.DegKatoEsa
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 
 noncomputable section

@@ -10,8 +10,10 @@ import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterQgTimeStepping
 import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
-open BookProof.QgManifoldModeInstance
-open BookProof.QgManifoldModeInstance
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 
 
 

@@ -8,12 +8,13 @@ import Definitions.Def_ChapterA4
 import Mathlib
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterStoneResolvent
-open BookProof.PositiveSquareRoot
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterVonNeumannCore
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

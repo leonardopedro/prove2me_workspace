@@ -54,18 +54,20 @@ theorem solution
       |commForm (H n) (harmFried (n * 84)).op u| ≤ c * quadForm (harmFried (n * 84)).op u) :
     EssentiallySelfAdjointOn qgOuterFriedDom
         (dsFibOp (fun n : ℕ => harmFried (n * 84)) H K hrel) ∧
-      ∀ x : qgOuterCore, ∃ h : (x : qgOuterFock) ∈ qgOuterFriedDom,
-        dsFibOp (fun n : ℕ => harmFried (n * 84)) H K hrel ⟨(x : qgOuterFock), h⟩
+      ∀ x : qgOuterCore, ∃ h : (x : BookProof.QgOuterFockFL.qgOuterFock) ∈ qgOuterFriedDom,
+        dsFibOp (fun n : ℕ => harmFried (n * 84)) H K hrel ⟨(x : BookProof.QgOuterFockFL.qgOuterFock), h⟩
           = qgOuterHam x := by
 
   refine ⟨dsFibOp_essentiallySelfAdjointOn hc hrel hsym hcomm, fun x => ?_⟩
   refine ⟨qgOuterCore_le_friedDom x.2, ?_⟩
   refine lp.ext (funext fun n => ?_)
   have hfib : ((dsFibOp (fun n : ℕ => harmFried (n * 84)) H K hrel
-        ⟨(x : qgOuterFock), qgOuterCore_le_friedDom x.2⟩ : qgOuterFock)
+        ⟨(x : BookProof.QgOuterFockFL.qgOuterFock), qgOuterCore_le_friedDom x.2⟩ : BookProof.QgOuterFockFL.qgOuterFock)
       : ∀ n : ℕ, L2d (n * 84)) n
-      = H n ⟨((x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n,
+      = H n ⟨((x : BookProof.QgOuterFockFL.qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n,
           polyGaussCore_le_harmFriedDom (n * 84) (x.2.2 n)⟩ :=
     dsFibOp_fib hrel _ n
-  rw [hfib, hext n ⟨(x : qgOuterFock) n, x.2.2 n⟩]
-  exact (dsOp_coe (fun n : ℕ => qgSectorHam n) x n).symm
+  rw [hfib]
+  refine (hext n ⟨(x : BookProof.QgOuterFock.qgOuterFock) n, x.2.2 n⟩
+    (polyGaussCore_le_harmFriedDom (n * 84) (x.2.2 n))).trans ?_
+  exact rfl

@@ -7,14 +7,15 @@ import Definitions.Def_ChapterTensorSumChain
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.StoneBridge
-open BookProof.TensorSumChain
 
 
 
 open scoped TensorProduct
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

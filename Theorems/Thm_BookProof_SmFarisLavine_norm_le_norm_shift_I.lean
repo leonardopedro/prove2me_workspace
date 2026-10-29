@@ -12,8 +12,10 @@ import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HashimotoShiftInvert
-open BookProof.SmFarisLavine
 
 
 

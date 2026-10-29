@@ -8,12 +8,14 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore
-open BookProof.FlowDGamma
 
 
 

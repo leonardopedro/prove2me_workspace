@@ -9,15 +9,14 @@ import Definitions.Def_ChapterClosureUniqueness
 import Mathlib
 import Definitions.Def_ChapterResolventMinMaxLadder
 import Definitions.Def_ChapterStoneResolvent
-open BookProof.ResolventLadder
+import Definitions.Def_ChapterVonNeumannCore
 
 
 noncomputable section
 
 
 open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.HermiteGalerkin
-open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
-open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
+open BookProof.ClosureUniqueness
 open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

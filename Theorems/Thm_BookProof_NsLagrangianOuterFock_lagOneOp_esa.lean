@@ -19,17 +19,22 @@ import Definitions.Def_ChapterNsLagrangianOuterFockEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterNavierStokesLagrangianCanonical
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.NavierStokesFlow.ThreeComponent
-open BookProof.NsLagrangianOuterFock
 
 
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
-open BookProof.FockStatistics BookProof.PermSector BookProof.ReducedEsa
+open BookProof.PermSector BookProof.ReducedEsa
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.YangMillsHermite BookProof.HermiteProductCore
-open BookProof.YangMillsNonAbelianEsa
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LagrangianCanonical
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato

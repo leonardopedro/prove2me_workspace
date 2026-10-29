@@ -6,6 +6,7 @@ import Definitions.Def_ChapterFockFieldPerturbation
 import Mathlib
 import Definitions.Def_ChapterFockPairPerturbation
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterFockPairPerturbation
 open BookProof.FockSecondQuantization
 open BookProof.FockPairPerturbation
 

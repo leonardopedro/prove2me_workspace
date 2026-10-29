@@ -9,7 +9,10 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Mathlib
 import Definitions.Def_ChapterFermionFock
-open BookProof.FermionFock
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterVielbeinFiberFock
 
 
 

@@ -5,6 +5,8 @@ import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
 

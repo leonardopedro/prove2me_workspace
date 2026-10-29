@@ -16,6 +16,8 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.HermiteRelative
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
@@ -31,9 +33,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
-open BookProof.CarlemanSimplex
-open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

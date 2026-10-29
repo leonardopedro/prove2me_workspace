@@ -1,4 +1,10 @@
 
+import Theorems.Thm_BookProof_YangMillsHermite_starP_mul
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
+import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
@@ -92,6 +98,8 @@ open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
 noncomputable section
 
 variable {n : ℕ}
+variable {d : ℕ}
+variable {D : Submodule ℂ (L2d d)}
 
 /-! ## 1. The reduced coordinates and the substitution `σ` -/
 
@@ -561,7 +569,7 @@ theorem redHam_quadForm_nonneg (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ)
 theorem redHam_friedrichs_extension (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 6))) (A : Dom →ₗ[ℂ] L2d (n * 6)),
       IsPositiveSelfAdjointExtension (redHam nu k n) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨polyGaussCore, redHam nu k n, redHam_symmetricOn nu k n,
       redHam_quadForm_nonneg nu k n⟩
     polyGaussCore_dense
@@ -623,7 +631,7 @@ theorem nsRedFullFockHam_quadForm_nonneg (nu : ℝ) (k : Fin 3 → ℝ) (x : nsR
 theorem nsRedFullFock_friedrichs_extension (nu : ℝ) (k : Fin 3 → ℝ) :
     ∃ (Dom : Submodule ℂ nsRedFockSpace) (A : Dom →ₗ[ℂ] nsRedFockSpace),
       IsPositiveSelfAdjointExtension (nsRedFullFockHam nu k) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨nsRedFockCore, nsRedFullFockHam nu k, nsRedFullFockHam_symmetricOn nu k,
       nsRedFullFockHam_quadForm_nonneg nu k⟩
     nsRedFockCore_dense
@@ -812,7 +820,7 @@ theorem nsRedFullOuterN_isPositiveSelfAdjointExtension (nu : ℝ) (k : Fin 3 →
       refine ⟨nsRedFockCore_le_friedDom nu k x.2, ?_⟩
       refine lp.ext (funext fun n => ?_)
       rw [nsRedOuterN_apply, redFried_op_core nu k n ⟨(x : nsRedFockSpace) n, x.2.2 n⟩]
-      exact (dsOp_coe (fun n : ℕ => redHam nu k n) x n).symm)
+      exact rfl)
 
 /-- **Faris–Lavine on the reduced nested Fock space, with a perturbation of the reduced Hamiltonian
 as `H`**: if `H` is symmetric on the domain of the comparison operator and the commutator form is

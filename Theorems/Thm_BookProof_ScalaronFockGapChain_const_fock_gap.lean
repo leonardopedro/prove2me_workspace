@@ -13,10 +13,11 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockOneParticleGap
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
-open BookProof.ScalaronFockGapChain
 
 
 noncomputable section

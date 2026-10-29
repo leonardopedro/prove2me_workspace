@@ -33,9 +33,11 @@ variable (M alpha : ℝ)
 variable {X : Type*} [MeasurableSpace X]
 
 
-private theorem multOp_coeFn (φ : α → ℂ) (hφ : MemLp φ ⊤ μ) (f : Lp ℂ 2 μ) :
-    (multOp φ hφ f : α → ℂ) =ᵐ[μ] fun x => φ x * (f : α → ℂ) x :=
-  MemLp.coeFn_toLp (mul_memLp_two hφ f)
+private theorem multOp_coeFn (mu : Measure X) {g : X → ℝ} (hg : Measurable g)
+    (f : boundedEnergyCore mu g) :
+    (((multOp mu hg f : boundedEnergyCore mu g) : Lp ℂ 2 mu) : X → ℂ)
+      =ᵐ[mu] fun x => (g x : ℂ) * ((f : Lp ℂ 2 mu) : X → ℂ) x :=
+  (memLp_mul hg f.2).coeFn_toLp
 
 set_option maxHeartbeats 1000000 in
 

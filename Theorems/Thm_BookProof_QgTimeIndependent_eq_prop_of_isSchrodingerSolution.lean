@@ -5,6 +5,7 @@ import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterAbelianAtomicCondensation
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent

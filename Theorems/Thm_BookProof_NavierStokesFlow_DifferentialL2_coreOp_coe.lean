@@ -10,10 +10,7 @@ import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterQgOuterFockCoreFL
 open BookProof.HermiteProductCore
-open BookProof.QgOuterFockCoreFL
-open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.NavierStokesFlow.DifferentialL2
 
 

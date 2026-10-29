@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.YangMillsFriedrichs
 
 

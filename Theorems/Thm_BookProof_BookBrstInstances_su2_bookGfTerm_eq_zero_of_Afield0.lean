@@ -7,6 +7,8 @@ import Definitions.Def_ChapterQuantumGravityBrstCharge
 import Mathlib
 import Definitions.Def_ChapterBookBrstInstances
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.YangMillsGhost
 open BookProof.BookBrstInstances
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterQgTimeStepping.lean — solution of BookProof.QgTimeStepping.stoneU_mem_domain_two
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_mem_domain
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore

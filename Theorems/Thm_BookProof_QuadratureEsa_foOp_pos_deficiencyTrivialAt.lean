@@ -13,6 +13,8 @@ import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
 open BookProof.HermiteCore
 open BookProof.HermiteProductCore
 open BookProof.HermiteRelative

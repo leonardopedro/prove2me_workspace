@@ -12,6 +12,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterSchurGershgorinGap
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin

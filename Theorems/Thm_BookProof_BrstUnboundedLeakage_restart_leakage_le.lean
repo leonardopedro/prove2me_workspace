@@ -5,6 +5,8 @@ import Definitions.Def_ChapterBrstUnboundedLeakage
 import Definitions.Def_ChapterBrstTruncationLeakage
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterBrstTruncationLeakage
+import Definitions.Def_ChapterBrstUnboundedLeakage
 open BookProof.BrstLeakage
 open BookProof.BrstUnboundedLeakage
 
@@ -27,7 +29,4 @@ theorem BookProof.BrstUnboundedLeakage.restart_leakage_le {Om : H →L[ℂ] H}
     (hret : ∀ i, leakageIter (restartGen T Vs hVs) τ x i ∈ Vs i)
     (hD : ∀ i, ‖truncDefect T (Vs i) (hVs i)‖ ≤ D) :
     ∀ n : ℕ, ‖Om (leakageIter (restartGen T Vs hVs) τ x n)‖
-      ≤ ‖Om x‖ + n * (‖Om‖ * (D * ‖x‖ * τ))
-  | 0 => by simp
-  | n + 1 => by
-      have hxn : ‖leakageIter (restartGen T Vs hVs) τ x n‖ = ‖x‖ := by sorry
+      ≤ ‖Om x‖ + n * (‖Om‖ * (D * ‖x‖ * τ)) := by sorry

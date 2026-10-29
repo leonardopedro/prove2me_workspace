@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterGraphCoreTransfer
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
 

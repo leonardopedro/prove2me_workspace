@@ -12,6 +12,9 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.StoneBridge

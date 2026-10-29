@@ -13,17 +13,18 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
-open BookProof.YmFockFriedrichs
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.QgOuterFock BookProof.StoneBridge BookProof.Qg3DGaugeFL
+open BookProof.QgOuterFock BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent
 
 noncomputable section

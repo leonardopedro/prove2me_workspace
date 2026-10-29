@@ -16,6 +16,7 @@ import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterYangMillsHermite
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
 open BookProof.YangMillsAbelianEsa
 
 
@@ -34,9 +35,6 @@ open BookProof.YangMillsHermite
 
 noncomputable section
 
-
-@[simp] private theorem mulXPoly_apply (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    mulXPoly i p = X i * p := rfl
 
 set_option maxHeartbeats 1000000 in
 

@@ -2,7 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_vec_hasDerivAt
-import Theorems.Thm_BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow_prime
+import Theorems.Thm_BookProof_NavierStokesFlow_nsFlowUnitary_eq_matrixFlow
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
@@ -17,7 +17,11 @@ variable {n : ℕ} (d : NSTruncation n)
 set_option maxHeartbeats 1000000 in
 theorem solution (psi : Fin n → ℂ) (t : ℝ) :
     HasDerivAt (fun s : ℝ => nsFlowUnitary d s *ᵥ psi)
-      ((Complex.I • nsHamiltonian d) *ᵥ (nsFlowUnitary d t *ᵥ psi)) t :=
-  216, on the truncation. -/
-  theorem nsFlow_solves_schrodinger (psi : Fin n → ℂ) (t : ℝ) :
-      HasDerivAt (fu
+      ((Complex.I • nsHamiltonian d) *ᵥ (nsFlowUnitary d t *ᵥ psi)) t := by
+  -- the platform's `..._eq_matrixFlow_prime` record is a `HasDerivAt` statement,
+  -- not the function equation; rebuild the equation from the published
+  -- pointwise `nsFlowUnitary_eq_matrixFlow`
+  have h : nsFlowUnitary d = matrixFlow (Complex.I • nsHamiltonian d) :=
+    funext (nsFlowUnitary_eq_matrixFlow d)
+  rw [h]
+  exact matrixFlow_vec_hasDerivAt (Complex.I • nsHamiltonian d) psi t

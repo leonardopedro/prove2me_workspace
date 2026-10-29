@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterStrichartzWave
+import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterWaveBoundedPotential
 import Mathlib
 
@@ -65,6 +66,10 @@ open MeasureTheory SchwartzMap FourierTransform ComplexInnerProductSpace ENNReal
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V]
+
+lemma mulL2_coeFn (W : Lp ℂ (⊤ : ℝ≥0∞) (volume : Measure V))
+    (u : Lp ℂ 2 (volume : Measure V)) :
+    (mulL2 W u : V → ℂ) =ᵐ[(volume : Measure V)] fun x => (W x) * (u x) := by sorry
 
 /-! ## Multiplication by an unbounded real potential -/
 
@@ -407,6 +412,12 @@ lemma opL2_potentialOp_eq_mulL2 (W : V → ℝ) (hW : Function.HasTemperateGrowt
   simpa using opL2_potentialOp_apply_eq_mulL2 W hW hmem f
 
 
+
+theorem wave_add_boundedPotentialOp_essentiallySelfAdjoint (n : ℕ) (W : SpaceTime n → ℝ)
+    (hW : Function.HasTemperateGrowth W)
+    (hmem : MemLp (fun x => (W x : ℂ)) (⊤ : ℝ≥0∞) (volume : Measure (SpaceTime n))) :
+    BookProof.FarisLavine.EssentiallySelfAdjointOn (schwartzDomain (SpaceTime n))
+      (opL2 (waveOp n 0 + potentialOp W)) := by sorry
 
 /-- **Steps (a) and (b) of the localization plan.**  For a real potential `W` of temperate
 growth — a polynomial, say — and every radius `R`, there is a truncation `W_R` of temperate

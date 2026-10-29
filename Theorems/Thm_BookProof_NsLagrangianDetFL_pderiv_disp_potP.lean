@@ -8,15 +8,16 @@ import Mathlib
 import Definitions.Def_ChapterNsLagrangianDetFarisLavine
 import Definitions.Def_ChapterNsLagrangianDetConvolution
 import Definitions.Def_ChapterSqueezedGaussStates
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterYangMillsAbelianNoGap
 open BookProof.NsLagrangianDet
 open BookProof.SqueezedGaussStates
-open BookProof.NsLagrangianDetFL
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsLagrangianDet
 
 noncomputable section
 

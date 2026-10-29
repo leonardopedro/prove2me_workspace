@@ -5,6 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterHarmonicOscillatorEsa
 import Definitions.Def_ChapterHermiteFunctions
 import Theorems.Thm_BookProof_HermiteStrichartzQG_hermiteLp_mem_hermiteCore
+import Definitions.Def_ChapterHarmonicOscillatorEsa
 open BookProof.HermiteCore
 open BookProof.HarmonicOscillator
 

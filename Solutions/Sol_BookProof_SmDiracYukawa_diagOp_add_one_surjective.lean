@@ -20,6 +20,9 @@ noncomputable section
 
 variable {n : ℕ}
 
+@[simp] private theorem diagOp_apply (d : Finset (Fin n) → ℝ) (ψ : FermiFock n)
+    (S : Finset (Fin n)) : (diagOp d ψ) S = (d S : ℂ) * ψ S := rfl
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution {d : Finset (Fin n) → ℝ} (hd : ∀ S, 1 ≤ d S)

@@ -14,8 +14,11 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQuadraticRotationPerturbed
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteProductCore
-open BookProof.QuadraticRotationPerturbed
 
 
 

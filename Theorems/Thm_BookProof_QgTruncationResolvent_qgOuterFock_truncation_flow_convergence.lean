@@ -12,6 +12,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent

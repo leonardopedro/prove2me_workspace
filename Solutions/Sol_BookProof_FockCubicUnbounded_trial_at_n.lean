@@ -26,4 +26,4 @@ theorem solution (k n : ℕ) (c : ℝ) : trial k n c (confAt k n) = 1 := by
     intro h
     have := confAt_injective k h
     omega
-  simp [trial, hne]
+  simp [BookProof.FockCubicUnbounded.trial, hne]

@@ -5,6 +5,9 @@ import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
 import Definitions.Def_ChapterGaugeFixing
 import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgDerivativeRealization
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.GaugeFixing
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval

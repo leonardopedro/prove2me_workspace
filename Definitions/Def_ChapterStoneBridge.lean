@@ -1,11 +1,13 @@
 import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterEsaClosure
+import Theorems.Thm_BookProof_EsaClosure_isSelfAdjointExtension_of_positive
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterUnitaryTransport
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
 
 
 /-!

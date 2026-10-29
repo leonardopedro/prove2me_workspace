@@ -1,16 +1,12 @@
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_sub_apply_le
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_tendsto
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_norm_approxU_apply
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_yosida_zero
 
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_approxU_zero
 
 
 import Definitions.Def_ChapterStoneEvolution
 import Mathlib
+import Definitions.Def_ChapterStoneGroup
 
 
 /-!
@@ -130,6 +126,8 @@ noncomputable def stoneU (t : ℝ) : H →L[ℂ] H :=
   (T.stoneLinear t).mkContinuous 1 (fun x => by
     simp only [stoneLinear, LinearMap.coe_mk, AddHom.coe_mk, one_mul]
     exact le_of_eq (T.norm_stoneFun t x))
+
+theorem stoneU_mem_domain (t : ℝ) (x : T.domain) : T.stoneU t (x : H) ∈ T.domain := by sorry
 
 @[simp] theorem stoneU_apply (t : ℝ) (x : H) : T.stoneU t x = T.stoneFun t x := rfl
 

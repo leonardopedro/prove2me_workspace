@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroup
 import Theorems.Thm_BookProof_NonnegSemigroup_norm_expNeg_sub_self_le
-import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegResolvent

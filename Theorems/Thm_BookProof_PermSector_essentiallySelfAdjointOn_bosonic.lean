@@ -8,6 +8,7 @@ import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
 open BookProof.PermSector
 
@@ -15,7 +16,7 @@ open BookProof.PermSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
-open BookProof.GroupAverage BookProof.TensorPerm
+open BookProof.TensorPerm
 
 noncomputable section
 

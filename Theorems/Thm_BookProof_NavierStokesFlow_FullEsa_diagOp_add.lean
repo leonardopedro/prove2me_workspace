@@ -7,6 +7,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
+open BookProof.NavierStokesFlow.DiagonalEsa
 
 
 open scoped ENNReal

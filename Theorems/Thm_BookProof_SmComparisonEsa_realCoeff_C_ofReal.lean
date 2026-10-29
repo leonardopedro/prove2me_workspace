@@ -15,8 +15,11 @@ import Definitions.Def_ChapterSmFarisLavine
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.YangMillsHermite
-open BookProof.SmComparisonEsa
 
 
 
@@ -24,8 +27,8 @@ open MeasureTheory MvPolynomial
 open BookProof.FarisLavine BookProof.ScalaronEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteCore BookProof.QgHermiteFriedrichs
 open BookProof.QgOneParticleCc BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
-open BookProof.DegSchrodinger BookProof.DegKatoEsa BookProof.HermiteGraphApprox
-open BookProof.SmOneParticle BookProof.SmHamiltonian BookProof.SmFarisLavine
+open BookProof.DegSchrodinger BookProof.DegKatoEsa
+open BookProof.SmOneParticle BookProof.SmHamiltonian
 
 noncomputable section
 

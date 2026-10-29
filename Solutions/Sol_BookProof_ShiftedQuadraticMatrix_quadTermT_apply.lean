@@ -48,7 +48,7 @@ theorem solution (a k : Vd d) (A : Matrix (Fin d) (Fin d) ℝ) (p q : Fin d)
         + ((A p q * k q : ℝ) : ℂ) • momPoly p f + ((A p q * k p : ℝ) : ℂ) • momPoly q f
         + ((A p q * a q / 4 : ℝ) : ℂ) • (X p * f) + ((A p q * a p / 4 : ℝ) : ℂ) • (X q * f)
         + ((A p q * (k p * k q + a p * a q / 4) : ℝ) : ℂ) • f := by
-  simp only [LinearMap.comp_apply, momTPoly_apply, mulXTPoly_apply, map_add, map_smul,
+  simp only [LinearMap.comp_apply, _root_.momTPoly_apply, mulXTPoly_apply, map_add, map_smul,
     mul_add]
   push_cast
   module

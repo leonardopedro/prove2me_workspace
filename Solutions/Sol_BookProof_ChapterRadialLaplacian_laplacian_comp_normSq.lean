@@ -14,6 +14,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
+/-- Mirror copy of `ChapterRadialLaplacian.innerCLM_apply` (dropped from the
+published bundle): `rfl` by the definition of `innerCLM`. -/
+private theorem innerCLM_apply' (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution [FiniteDimensional ℝ E] {G : ℝ → ℝ} {x : E}
@@ -30,7 +34,7 @@ theorem solution [FiniteDimensional ℝ E] {G : ℝ → ℝ} {x : E}
             * ⟪x, (stdOrthonormalBasis ℝ E) i⟫_ℝ) := by
     intro i
     rw [iteratedFDeriv_two_apply, hsnd]
-    simp
+    simp [innerCLM_apply', (stdOrthonormalBasis ℝ E).orthonormal.1]
     ring
   simp only [hterm]
   rw [Finset.sum_add_distrib]

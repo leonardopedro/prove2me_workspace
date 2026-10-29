@@ -50,19 +50,21 @@ set_option maxHeartbeats 1000000 in
 theorem solution :
     EssentiallySelfAdjointOn qgOuterFriedDom
         (dsFibOp (fun n : ℕ => harmFried (n * 84)) F.secExt F.flK F.secExt_rel) ∧
-      ∀ x : qgOuterCore, ∃ h : (x : qgOuterFock) ∈ qgOuterFriedDom,
+      ∀ x : qgOuterCore, ∃ h : (x : BookProof.QgOuterFock.qgOuterFock) ∈ qgOuterFriedDom,
         dsFibOp (fun n : ℕ => harmFried (n * 84)) F.secExt F.flK F.secExt_rel
-            ⟨(x : qgOuterFock), h⟩ = F.outerHam x := by
+            ⟨(x : BookProof.QgOuterFock.qgOuterFock), h⟩ = F.outerHam x := by
 
   refine ⟨dsFibOp_essentiallySelfAdjointOn F.flc_nonneg F.secExt_rel F.secExt_symmetricOn
     F.secExt_commForm_le, fun x => ?_⟩
   refine ⟨qgOuterCore_le_friedDom x.2, ?_⟩
   refine lp.ext (funext fun n => ?_)
   have hfib : ((dsFibOp (fun n : ℕ => harmFried (n * 84)) F.secExt F.flK F.secExt_rel
-        ⟨(x : qgOuterFock), qgOuterCore_le_friedDom x.2⟩ : qgOuterFock)
+        ⟨(x : BookProof.QgOuterFock.qgOuterFock), qgOuterCore_le_friedDom x.2⟩ : BookProof.QgOuterFock.qgOuterFock)
       : ∀ n : ℕ, L2d (n * 84)) n
-      = F.secExt n ⟨((x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n,
+      = F.secExt n ⟨((x : BookProof.QgOuterFock.qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n,
           polyGaussCore_le_harmFriedDom (n * 84) (x.2.2 n)⟩ :=
     dsFibOp_fib F.secExt_rel _ n
-  rw [hfib, F.secExt_core n ⟨(x : qgOuterFock) n, x.2.2 n⟩]
-  exact (dsOp_coe (fun n : ℕ => F.secHam n) x n).symm
+  rw [hfib]
+  refine (F.secExt_core n ⟨(x : BookProof.QgOuterFock.qgOuterFock) n, x.2.2 n⟩
+    (polyGaussCore_le_harmFriedDom (n * 84) (x.2.2 n))).trans ?_
+  exact rfl

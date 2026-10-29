@@ -26,5 +26,3 @@ theorem solution {D : Set H} (hD : Dense D) {v w : H}
   have h2 : ⟪v - w, v⟫_ℂ = ⟪v - w, w⟫_ℂ := congrFun hall (v - w)
   have h3 : ⟪v - w, v - w⟫_ℂ = 0 := by rw [inner_sub_right, h2, sub_self]
   exact sub_eq_zero.mp (inner_self_eq_zero.mp h3)
-
-omit [TopologicalSpace.SeparableSpace H] in

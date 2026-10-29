@@ -8,13 +8,13 @@ import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
 import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockFL
-open BookProof.RelationShiftInvert
 
 
 
-open BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot BookProof.NonnegResolvent
-open BookProof.NonnegUnitaryGroup BookProof.HashimotoShiftInvert
+open BookProof.PositiveSquareRoot
+open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}

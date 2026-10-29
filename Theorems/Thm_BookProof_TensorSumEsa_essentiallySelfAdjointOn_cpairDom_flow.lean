@@ -5,8 +5,8 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
-open BookProof.TensorSumEsa
 
 
 

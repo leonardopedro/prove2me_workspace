@@ -8,11 +8,13 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.ChapterUnboundedPosition
-open BookProof.FlowDGamma
 
 
 

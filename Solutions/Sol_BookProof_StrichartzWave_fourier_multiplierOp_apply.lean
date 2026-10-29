@@ -17,12 +17,17 @@ variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDim
   [MeasurableSpace V] [BorelSpace V]
 
 
+private lemma hasTemperateGrowth_ofReal {W : V → ℝ} (hW : Function.HasTemperateGrowth W) :
+    Function.HasTemperateGrowth (fun x => (W x : ℂ)) := by
+  exact Function.HasTemperateGrowth.comp Complex.ofRealCLM.hasTemperateGrowth hW
+
 @[simp] private theorem potentialOp_apply {W : V → ℝ} (hW : Function.HasTemperateGrowth W)
     (f : 𝓢(V, ℂ)) (x : V) : potentialOp W f x = (W x : ℂ) * f x := by
   simp [potentialOp, SchwartzMap.smulLeftCLM_apply_apply (hasTemperateGrowth_ofReal hW)]
 
 set_option maxHeartbeats 1000000 in
 
+variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
 theorem solution {m : V → ℝ} (hm : Function.HasTemperateGrowth m)
     (f : 𝓢(V, ℂ)) (x : V) :
     (𝓕 (multiplierOp m f) : 𝓢(V, ℂ)) x = ((m x : ℝ) : ℂ) * (𝓕 f : 𝓢(V, ℂ)) x := by

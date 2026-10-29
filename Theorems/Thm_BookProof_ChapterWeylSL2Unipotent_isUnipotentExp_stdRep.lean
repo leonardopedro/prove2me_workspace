@@ -3,6 +3,8 @@ import Definitions.Def_ChapterWeylSl2
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Unipotent
 import Definitions.Def_ChapterWeylSL2Group
+import Definitions.Def_ChapterWeylSL2Group
+import Definitions.Def_ChapterWeylSL2Unipotent
 open BookProof.ChapterWeylSL2Group
 open BookProof.ChapterWeylSL2Unipotent
 

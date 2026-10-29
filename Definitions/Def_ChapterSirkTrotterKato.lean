@@ -1,5 +1,4 @@
 import Definitions.Def_ChapterStoneGenerator
-import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 
 

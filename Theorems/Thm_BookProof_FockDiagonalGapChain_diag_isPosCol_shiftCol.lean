@@ -14,9 +14,10 @@ import Definitions.Def_ChapterFockDiagonalGapChain
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
-open BookProof.FockDiagonalGapChain
 
 
 noncomputable section
@@ -27,7 +28,7 @@ open BookProof.FockNumberPreservingGap BookProof.FockFieldPerturbation
 open BookProof.FockCubicQuarticStability BookProof.FockCubicUnbounded
 open BookProof.FockInteractionStability
 open BookProof.FarisLavine BookProof.YangMillsFriedrichs BookProof.HermiteGalerkin
-open BookProof.HermiteCore BookProof.ScalaronFockGapChain
+open BookProof.HermiteCore
 open Module
 
 

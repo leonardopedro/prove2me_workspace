@@ -11,6 +11,8 @@ import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgTruncationResolvent

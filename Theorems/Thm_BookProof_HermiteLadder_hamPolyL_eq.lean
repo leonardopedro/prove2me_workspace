@@ -6,6 +6,9 @@ import Definitions.Def_ChapterDegSchrodingerCore
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteLadderShift
 open BookProof.QgHermiteFriedrichs
 open BookProof.HermiteLadder
 

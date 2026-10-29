@@ -12,6 +12,11 @@ variable {n : Type*} [Fintype n]
 
 variable {n : Type*} [Fintype n]
 
+/-- Mirror copy of `ChapterSpectralEnergyBound.diagOp_apply` (dropped from the
+published bundle): `rfl` by the definition of `diagOp`. -/
+private theorem diagOp_apply' (f : n → ℝ) (v : EuclideanSpace ℂ n) (i : n) :
+    diagOp f v i = (f i : ℂ) * v i := rfl
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)
@@ -19,7 +24,7 @@ theorem solution (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)
     ‖diagOp f v‖ ≤ E * ‖v‖ := by
   classical
   by_cases hv : ∀ i, v i = 0
-  · have hz : diagOp f v = 0 := by ext i; simp [hv i]
+  · have hz : diagOp f v = 0 := by ext i; simp [hv i, diagOp_apply']
     have hz' : v = 0 := by ext i; simpa using hv i
     rw [hz, hz']
     simp
@@ -29,10 +34,10 @@ theorem solution (f : n → ℝ) (E : ℝ) (v : EuclideanSpace ℂ n)
   have hsq : ∀ i, ‖diagOp f v i‖ ^ 2 ≤ E ^ 2 * ‖v i‖ ^ 2 := by
     intro i
     by_cases hvi : v i = 0
-    · simp [hvi]
+    · simp [hvi, diagOp_apply']
     · have hfi : |f i| ≤ E := h i hvi
       have hnorm : ‖diagOp f v i‖ = |f i| * ‖v i‖ := by
-        simp
+        simp [diagOp_apply']
       rw [hnorm, mul_pow]
       have h1 : |f i| ^ 2 ≤ E ^ 2 := by nlinarith [abs_nonneg (f i)]
       nlinarith [sq_nonneg ‖v i‖, norm_nonneg (v i)]

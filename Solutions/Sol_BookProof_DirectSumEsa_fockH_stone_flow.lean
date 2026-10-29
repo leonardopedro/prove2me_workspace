@@ -35,6 +35,10 @@ variable {ι : Type*} {G : ι → Type*} [∀ i, NormedAddCommGroup (G i)]
 variable {D : ∀ i, Submodule ℂ (G i)}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
+private theorem sectorEnergy_measurable {w : ℝ → ℝ} (hw : Measurable w) (n : ℕ) :
+    Measurable (sectorEnergy w n) :=
+  Finset.univ.measurable_sum fun k _ => hw.comp (measurable_pi_apply k)
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution {w : ℝ → ℝ} (hw : Measurable w) :

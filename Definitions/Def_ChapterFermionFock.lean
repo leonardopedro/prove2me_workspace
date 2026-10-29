@@ -12,8 +12,9 @@ import Mathlib
 import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
 import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
-import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
 import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_hashimoto_selects
+import Theorems.Thm_BookProof_BRSTNilpotent_brst_charge_nilpotent
 
 
 /-!
@@ -823,7 +824,7 @@ theorem dGammaF_friedrichs_extension {col : ℕ → (ℕ →₀ ℂ)} (hherm : I
     (hpos : IsPosCol col) :
     ∃ (Dom : Submodule ℂ FermiFock) (A : Dom →ₗ[ℂ] FermiFock),
       IsPositiveSelfAdjointExtension (dGammaOpF col) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨lpFiniteModes FConf, dGammaOpF col, dGammaOpF_symmetricOn hherm,
       dGammaOpF_quadForm_nonneg hpos⟩
     finiteOccupationF_dense

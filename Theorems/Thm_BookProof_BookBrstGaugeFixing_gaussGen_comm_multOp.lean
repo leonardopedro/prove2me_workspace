@@ -6,6 +6,9 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.ChapterLinftyMultiplication
 open BookProof.YangMillsGhost
 open BookProof.BookBrstGaugeFixing

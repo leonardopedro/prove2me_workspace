@@ -6,6 +6,8 @@ import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteProductCore
 open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2

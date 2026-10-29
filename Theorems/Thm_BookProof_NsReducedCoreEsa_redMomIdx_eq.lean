@@ -8,7 +8,6 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Mathlib
 import Definitions.Def_ChapterNsReducedCoreEsa
-open BookProof.NsReducedCoreEsa
 
 
 
@@ -16,7 +15,6 @@ open MvPolynomial
 open BookProof.NsFullEuler
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.YangMillsNonAbelianEsa
 
 noncomputable section
 

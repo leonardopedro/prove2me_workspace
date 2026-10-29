@@ -15,7 +15,11 @@ import Definitions.Def_ChapterHermiteLadderOrder
 import Definitions.Def_ChapterConvolutionCalc
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
-open BookProof.HermiteGraphApprox
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteLadderShift
+import Definitions.Def_ChapterShiftedQuadraticEsa
 
 
 

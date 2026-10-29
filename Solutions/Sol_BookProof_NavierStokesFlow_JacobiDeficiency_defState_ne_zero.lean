@@ -13,6 +13,8 @@ open BookProof.NavierStokesFlow.LpNat
 
 set_option maxHeartbeats 1000000 in
 
+@[simp] private theorem defState_coe : ((defState : L2N) : ℕ → ℂ) = defFun := rfl
+
 theorem solution : defState ≠ 0 := by
   intro h
   have h0 : ((defState : L2N) : ℕ → ℂ) 0 = 0 := by rw [h]; simp

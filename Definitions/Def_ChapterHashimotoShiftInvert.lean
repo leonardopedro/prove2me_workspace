@@ -130,6 +130,7 @@ noncomputable def shiftRange (A : Dom →ₗ[ℂ] F) (γ : ℝ) : Submodule ℂ 
 
 /-- **The range of `A + γ` is closed** — because `A + γ` is bounded below and
 `A` is closed. -/
+
 theorem shiftRange_isClosed {A : Dom →ₗ[ℂ] F} (hsym : SymmetricOn Dom A)
     (hpos : ∀ x : Dom, 0 ≤ quadForm A x)
     (hsa : ∀ w u : F, (∀ v : Dom, (inner ℂ (A v) w : ℂ) = inner ℂ (v : F) u) →
@@ -813,6 +814,45 @@ theorem finiteModeDomain_le_range :
 finite linear combinations of basis vectors. -/
 noncomputable def ell2ExampleMatrix : finiteModeDomain ell2Basis →ₗ[ℂ] ℓ²(ℕ, ℂ) :=
   ell2UnboundedExample.comp (Submodule.inclusion finiteModeDomain_le_range)
+
+/-- **The example is a positive self-adjoint (Friedrichs) extension of its
+matrix** — with no boundedness anywhere. -/
+theorem ell2Example_isPositiveSelfAdjointExtension :
+    IsPositiveSelfAdjointExtension ell2ExampleMatrix ell2UnboundedExample :=
+  invShiftOperator_isPositiveSelfAdjointExtension ell2ShiftInvert ell2ShiftInvert_injective 1
+    ell2ShiftInvert_isSelfAdjoint ell2ShiftInvert_le_one finiteModeDomain_le_range
+    ell2ExampleMatrix (fun _ => rfl)
+
+theorem norm_single_one (k : ℕ) : ‖(lp.single 2 k (1 : ℂ) : ℓ²(ℕ, ℂ))‖ = 1 := by
+  rw [lp.norm_single (by norm_num)]
+  simp
+
+/-- **The example really is unbounded**: the matrix elements the algorithm is
+fed satisfy no bound `‖Hx‖ ≤ C‖x‖`, because `H eₖ = k eₖ`.  So the boundedness
+hypothesis of `hermiteGalerkin_selects_friedrichs` fails here, while the
+shift-invert theorems apply. -/
+theorem ell2ExampleMatrix_unbounded (C : ℝ) :
+    ∃ x : finiteModeDomain ell2Basis, C * ‖(x : ℓ²(ℕ, ℂ))‖ < ‖ell2ExampleMatrix x‖ := by
+  obtain ⟨k, hk⟩ := exists_nat_gt C
+  have hmem : (lp.single 2 k (1 : ℂ) : ℓ²(ℕ, ℂ)) ∈ finiteModeDomain ell2Basis := by
+    rw [← ell2Basis_apply]
+    exact Submodule.subset_span ⟨k, rfl⟩
+  refine ⟨⟨lp.single 2 k (1 : ℂ), hmem⟩, ?_⟩
+  have hrange : (lp.single 2 k (1 : ℂ) : ℓ²(ℕ, ℂ))
+      ∈ LinearMap.range (ell2ShiftInvert : ℓ²(ℕ, ℂ) →ₗ[ℂ] ℓ²(ℕ, ℂ)) :=
+    finiteModeDomain_le_range hmem
+  have hpre : preim ell2ShiftInvert ⟨lp.single 2 k (1 : ℂ), hrange⟩
+      = ((k : ℂ) + 1) • lp.single 2 k (1 : ℂ) :=
+    preim_eq _ ell2ShiftInvert_injective _ (ell2ShiftInvert_smul_single k)
+  have hval : ell2ExampleMatrix ⟨lp.single 2 k (1 : ℂ), hmem⟩
+      = (k : ℂ) • lp.single 2 k (1 : ℂ) := by
+    change ell2UnboundedExample ⟨lp.single 2 k (1 : ℂ), hrange⟩ = _
+    rw [ell2UnboundedExample, invShiftOperator_apply, hpre]
+    push_cast
+    module
+  rw [hval, norm_smul, norm_single_one]
+  simp only [mul_one, Complex.norm_natCast]
+  exact hk
 
 
 

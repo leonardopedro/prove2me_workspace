@@ -3,6 +3,7 @@ import Definitions.Def_ChapterWignerSymmetry
 import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.ChapterWignerSymmetryInfinite
 
 

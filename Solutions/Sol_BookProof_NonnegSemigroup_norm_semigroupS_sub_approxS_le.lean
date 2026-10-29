@@ -1,7 +1,6 @@
 -- Generated from ChapterNonnegSemigroup.lean — solution of BookProof.NonnegSemigroup.norm_semigroupS_sub_approxS_le
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroup
-import Theorems.Thm_BookProof_NonnegResolvent_tendsto_yosidaAt
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegResolvent

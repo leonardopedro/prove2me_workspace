@@ -45,5 +45,5 @@ theorem solution (nu lam mu gg : ℝ) :
       (nsFullFockHam nu lam mu gg) (fun x => by
         refine ⟨nsFockCore_le_friedDom nu lam mu gg x.2, ?_⟩
         refine lp.ext (funext fun n => ?_)
-        rw [nsOuterN_apply, nsFried_op_core nu lam mu gg n ⟨(x : nsFockSpace) n, x.2.2 n⟩]
-        exact (dsOp_coe (fun n : ℕ => nsSectorHam nu lam mu gg n) x n).symm)
+        erw [nsOuterN_apply, nsFried_op_core nu lam mu gg n ⟨(x : nsFockSpace) n, x.2.2 n⟩]
+        exact rfl)

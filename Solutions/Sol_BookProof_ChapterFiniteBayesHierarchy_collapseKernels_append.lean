@@ -23,6 +23,6 @@ theorem solution (ks₁ ks₂ : List (S → S → ℝ)) :
     collapseKernels (ks₁ ++ ks₂) =
       compKernel (collapseKernels ks₁) (collapseKernels ks₂) := by
   induction ks₁ with
-  | nil => simp [idKernel_comp]
+  | nil => simp [idKernel_comp, collapseKernels]
   | cons k ks₁ ih => 
-    simp [ih, compKernel_assoc]
+    simp [ih, compKernel_assoc, collapseKernels]

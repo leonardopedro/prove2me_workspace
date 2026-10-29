@@ -15,6 +15,10 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock

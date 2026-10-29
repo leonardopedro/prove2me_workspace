@@ -7,6 +7,8 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 
 variable {d : ℕ}

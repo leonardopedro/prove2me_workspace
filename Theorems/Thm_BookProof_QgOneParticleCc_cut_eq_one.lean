@@ -13,6 +13,8 @@ import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOneParticleCc
 

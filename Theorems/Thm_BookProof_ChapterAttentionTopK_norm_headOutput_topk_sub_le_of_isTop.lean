@@ -6,6 +6,8 @@ import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterAttentionMasking
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterAttentionTopK
+import Definitions.Def_ChapterObservableExpectation
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionTopK

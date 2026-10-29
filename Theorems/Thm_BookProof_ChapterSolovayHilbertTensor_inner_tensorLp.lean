@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
 import Definitions.Def_ChapterSolovayHilbertTensor
+import Definitions.Def_ChapterTensorCompleteness
 open BookProof.ChapterSolovayHilbertTensor
 
 

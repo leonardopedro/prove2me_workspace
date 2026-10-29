@@ -1,6 +1,5 @@
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 
 
@@ -95,8 +94,35 @@ noncomputable def mulSymbolOp (lam s : ℕ → ℝ) (hs : ∀ n, |s n| ≤ |lam 
     exact mul_le_mul_of_nonneg_right (hs n) (norm_nonneg _)⟩
   map_add' f g := by
     ext n
-    simp only [Submodule.coe_add, lp.coeFn_add, Pi.add_apply, mul :_lm ym z z_cmpℕ,n n_surjective lam)
-    (fun x => by rw [mulHamiltonian_commForm lam x]; simp)
+    simp only [Submodule.coe_add, lp.coeFn_add, mulSymbolFun, Pi.add_apply]
+    ring
+  map_smul' c f := by ext n; simp [mulSymbolFun]; ring
+
+
+
+theorem abs_abs_le (lam : ℕ → ℝ) : ∀ n, |(|lam n|)| ≤ |lam n| := fun n => by simp
+
+/-- The comparison operator `N = |lam|`. -/
+noncomputable def mulComparison (lam : ℕ → ℝ) : mulSymbolDomain lam →ₗ[ℂ] L2Nat :=
+  mulSymbolOp lam (fun n => |lam n|) (abs_abs_le lam)
+
+/-- The operator itself, multiplication by `lam`. -/
+noncomputable def mulHamiltonian (lam : ℕ → ℝ) : mulSymbolDomain lam →ₗ[ℂ] L2Nat :=
+  mulSymbolOp lam lam (fun _ => le_rfl)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /-- The basis state `e n`, which lies in every maximal domain. -/
 noncomputable def mulBasis (lam : ℕ → ℝ) (n : ℕ) : mulSymbolDomain lam :=
@@ -107,10 +133,11 @@ noncomputable def mulBasis (lam : ℕ → ℝ) (n : ℕ) : mulSymbolDomain lam :
       by_cases hmn : m = n
       · subst hmn; simp [mulSymbolFun, lp.single_apply]
       · simp [mulSymbolFun, lp.single_apply, Pi.single_eq_of_ne hmn]
-    change Memℓp (mulSymbolFun lam ((lp.single 2 n (1 : ℂ) : L2NatulBasis lam n : L2Nat)‖ = 1 := hnorm
-    rw [hcoe] at hb
-    simpa [hnorm] using hb
-  exact absurd hn (not_lt.mpr hb')
+    change Memℓp (mulSymbolFun lam ((lp.single 2 n (1 : ℂ) : L2Nat) : ℕ → ℂ)) 2
+    rw [hval]
+    exact (lp.memℓp _).const_smul _⟩
+
+
 
 end Multiplication
 
@@ -121,9 +148,15 @@ domain in its own predicate `HasZeroDeficiencyOn`, and obtains it from a
 Faris–Lavine criterion supplied as a *named hypothesis*.  The predicate is
 literally the conjunction of the two deficiency conditions used here, so the
 theorem proved above discharges that hypothesis — in the corrected form, with `N`
-positive and `N + 1` surjective (the unrestricted relative-bound form being f((
-    (essentiallySelfAdjointOn_of_farisLavine (D.subtype.comp H) (D.subtype.comp N) c
-      hH hN hc hNpos hNsurj hcomm)
+positive and `N + 1` surjective (the unrestricted relative-bound form being false
+by `not_farisLavine_criterion_of_relative_bound`). -/
+
+section NavierStokesTieIn
+
+
+
+
+
 
 end NavierStokesTieIn
 

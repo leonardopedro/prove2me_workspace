@@ -40,6 +40,6 @@ variable {C H}
 
 set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) :
-    IsPositiveSelfAdjointExtension (harmCore (d := d)) (harmFried d).op :=
-  (harmFried d).isPositiveSelfAdjointExtension harmCore
+    IsPositiveSelfAdjointExtension (BookProof.QgOuterFockFL.harmCore (d := d)) (harmFried d).op :=
+  (harmFried d).isPositiveSelfAdjointExtension BookProof.QgOuterFockFL.harmCore
       (fun p => ⟨polyGaussCore_le_harmFriedDom d p.2, harmFried_op_core d p _⟩)

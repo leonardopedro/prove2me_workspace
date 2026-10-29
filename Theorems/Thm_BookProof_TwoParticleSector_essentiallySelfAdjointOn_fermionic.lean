@@ -7,6 +7,7 @@ import Definitions.Def_ChapterTwoParticleSectorEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TwoParticleSector_isReducingProjection_fermionicProj
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
 open BookProof.TwoParticleSector
 

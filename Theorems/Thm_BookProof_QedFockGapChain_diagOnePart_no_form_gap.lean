@@ -10,8 +10,9 @@ import Mathlib
 import Definitions.Def_ChapterQedFockGapChain
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.HermiteGalerkin
-open BookProof.QedFockGapChain
 
 
 noncomputable section
@@ -20,7 +21,7 @@ noncomputable section
 open BookProof.FockSecondQuantization BookProof.FockOneParticleGap
 open BookProof.FockNumberPreservingGap BookProof.FarisLavine
 open BookProof.HermiteGalerkin BookProof.HermiteCore
-open BookProof.FockDiagonalGapChain BookProof.YangMillsFriedrichs
+open BookProof.YangMillsFriedrichs
 open MeasureTheory
 
 

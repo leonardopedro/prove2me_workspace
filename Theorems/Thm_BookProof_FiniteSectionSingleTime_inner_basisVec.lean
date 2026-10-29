@@ -12,6 +12,9 @@ import Mathlib
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterE4
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterE4
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterQymTimeIndependentFlow
 open BookProof.ChapterE4
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FiniteSectionSingleTime

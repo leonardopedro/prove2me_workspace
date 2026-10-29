@@ -3,6 +3,7 @@ import Definitions.Def_ChapterBRSTNilpotent
 import Mathlib
 import Definitions.Def_ChapterBookBrstYangMills
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterBookBrstInstances
 
 variable {N : ℕ} (G : GaugeAlgebra N)
 

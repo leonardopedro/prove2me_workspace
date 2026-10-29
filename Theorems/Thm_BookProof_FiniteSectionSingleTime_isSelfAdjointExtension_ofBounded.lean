@@ -13,6 +13,8 @@ import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
+import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.FiniteSectionSingleTime
 

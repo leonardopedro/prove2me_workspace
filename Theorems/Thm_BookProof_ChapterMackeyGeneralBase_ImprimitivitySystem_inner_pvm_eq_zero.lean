@@ -4,12 +4,12 @@ import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterMackeyImprimitivity
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
-open BookProof.ChapterMackeyGeneralBase
-open BookProof.ChapterMackeyGeneralBase
 
 
 open scoped InnerProductSpace

@@ -14,6 +14,10 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteQuadraticEsa
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.HermiteQuadraticEsa
 open BookProof.ScalaronEsa

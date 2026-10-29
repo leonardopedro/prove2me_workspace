@@ -29,6 +29,11 @@ import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp
 import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 import Theorems.Thm_BookProof_EsaClosure_positiveExtension_eq_closure_of_esa
+import Theorems.Thm_BookProof_FockSecondQuantization_col_support_subset_closure
+import Theorems.Thm_BookProof_FockSecondQuantization_finiteOccupation_dense
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_symm
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp
+import Theorems.Thm_BookProof_FockSecondQuantization_support_annA
 
 
 /-!
@@ -96,15 +101,6 @@ Everything in this module is `sorry`-free and `axiom`-free.
 
 namespace BookProof.FockSecondQuantization
 open BookProof.DegKatoEsa
-
-/-- `up_self` — the occupation number of mode `j` after adding one quantum there.  The
-published `Def_ChapterFockSecondQuantization` text predates this lemma, so it is
-restated here for the consumer. -/
-@[simp] theorem up_self (j : ℕ) (α : Conf) : up j α j = α j + 1 := by
-  simp [up]
-
-theorem up_of_ne {i j : ℕ} (α : Conf) (h : i ≠ j) : up j α i = α i := by
-  simp [up, Finsupp.update_apply, h]
 
 end BookProof.FockSecondQuantization
 

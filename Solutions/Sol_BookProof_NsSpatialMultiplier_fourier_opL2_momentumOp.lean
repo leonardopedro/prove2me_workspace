@@ -37,12 +37,9 @@ theorem solution (m : V) (f : 𝓢(V, ℂ)) :
           2 (volume : Measure V) := by
   have hσ : Function.HasTemperateGrowth
       (fun x : V => ((2 * Real.pi * (inner ℝ x m : ℝ) : ℝ) : ℂ)) := by
-    have h := hasTemperateGrowth_foSymbol (fun _ : Fin 1 => (1 : ℝ)) (fun _ => m)
+    -- both stubs were published with `variable (V) in`, so V is explicit
+    have h := hasTemperateGrowth_foSymbol V (fun _ : Fin 1 => (1 : ℝ)) (fun _ => m)
     simpa [foSymbolFn] using h
-  refine fourier_opL2_eq_mulSymbol _ _ ?_ hσ f
+  refine fourier_opL2_eq_mulSymbol V _ _ ?_ hσ f
   intro g x
   simpa using fourier_momentumOp_apply g m x
-
-/-! ## 5. The spatial symbol is blind to the fibre -/
-
-omit [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] in

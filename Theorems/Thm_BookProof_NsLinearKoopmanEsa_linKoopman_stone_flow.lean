@@ -14,11 +14,14 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 open BookProof.FullQuadratic
 open BookProof.HermiteProductCore
 open BookProof.StoneBridge
-open BookProof.NsLinearKoopmanEsa
 
 
 
@@ -28,7 +31,6 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
-open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 

@@ -68,15 +68,99 @@ chapter.  Nothing here produces a gap for a particular Hamiltonian.
 
 noncomputable section
 
+namespace BookProof.MinMaxSpectrum
+
+open ContinuousLinearMap
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+/-- If `A ≤ B` in the C\*-order of operators then the Rayleigh quotient of `A` is
+everywhere at most that of `B`. -/
+theorem re_inner_mono_of_le {A B : F →L[ℂ] F} (hAB : A ≤ B) (x : F) :
+    (inner ℂ x (A x) : ℂ).re ≤ (inner ℂ x (B x) : ℂ).re := by
+  have h : (0 : F →L[ℂ] F) ≤ B - A := sub_nonneg.mpr hAB
+  rw [nonneg_iff_isPositive] at h
+  have h2 := h.2 x
+  rw [ContinuousLinearMap.reApplyInnerSelf, ContinuousLinearMap.sub_apply, inner_sub_left] at h2
+  have e1 : (inner ℂ (A x) x : ℂ).re = (inner ℂ x (A x) : ℂ).re := by
+    rw [← inner_conj_symm x (A x), Complex.conj_re]
+  have e2 : (inner ℂ (B x) x : ℂ).re = (inner ℂ x (B x) : ℂ).re := by
+    rw [← inner_conj_symm x (B x), Complex.conj_re]
+  simp only [RCLike.re_to_complex, Complex.sub_re, e1, e2] at h2
+  linarith
+
+/-- The continuous cutoff: `1` below `a − ε`, `0` above `a + ε`, affine in between. -/
+def cutoff (a ε : ℝ) : ℝ → ℝ := fun t => min 1 (max 0 ((a + ε - t) / (2 * ε)))
+
+theorem cutoff_continuous (a ε : ℝ) : Continuous (cutoff a ε) := by
+  unfold cutoff; fun_prop
+
+theorem cutoff_eq_one {a ε t : ℝ} (hε : 0 < ε) (h : t ≤ a - ε) : cutoff a ε t = 1 := by
+  have h1 : (1 : ℝ) ≤ (a + ε - t) / (2 * ε) := by
+    rw [le_div_iff₀ (by linarith)]
+    linarith
+  have h2 : max 0 ((a + ε - t) / (2 * ε)) = (a + ε - t) / (2 * ε) :=
+    max_eq_right (by linarith)
+  rw [cutoff, h2, min_eq_left h1]
+
+theorem cutoff_eq_zero {a ε t : ℝ} (hε : 0 < ε) (h : a + ε ≤ t) : cutoff a ε t = 0 := by
+  have h1 : (a + ε - t) / (2 * ε) ≤ 0 := div_nonpos_of_nonpos_of_nonneg (by linarith) (by linarith)
+  rw [cutoff, max_eq_left h1, min_eq_right (by norm_num)]
+
+/-- The complementary cutoff `1 − cutoff`. -/
+def cocutoff (a ε : ℝ) : ℝ → ℝ := fun t => 1 - cutoff a ε t
+
+theorem cocutoff_continuous (a ε : ℝ) : Continuous (cocutoff a ε) := by
+  unfold cocutoff; exact continuous_const.sub (cutoff_continuous a ε)
+
+/-- `‖cfc p T y‖²` read as a form of `cfc p²`. -/
+theorem norm_range_eq (T : F →L[ℂ] F) (p : ℝ → ℝ) (hp : Continuous p) (y : F) :
+    ((‖cfc p T y‖ ^ 2 : ℝ) : ℂ) = inner ℂ y ((cfc (fun t => p t * p t) T) y) := by
+  have hPsa : IsSelfAdjoint (cfc p T) := cfc_predicate p T
+  have hsym := ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mp hPsa
+  have hA : cfc (fun t => p t * p t) T = cfc p T * cfc p T :=
+    cfc_mul _ _ T hp.continuousOn hp.continuousOn
+  rw [hA]
+  have h := hsym y (cfc p T y)
+  simp only [ContinuousLinearMap.coe_coe] at h
+  rw [ContinuousLinearMap.mul_apply, ← h, inner_self_eq_norm_sq_to_K]
+  push_cast
+  rfl
+
+/-- The Rayleigh quotient of a vector in the range of `cfc p T`, read as a form of
+`cfc (t p²)`. -/
+theorem inner_range_eq (T : F →L[ℂ] F) (hT : IsSelfAdjoint T) (p : ℝ → ℝ) (hp : Continuous p)
+    (y : F) :
+    (inner ℂ (cfc p T y) (T (cfc p T y)) : ℂ)
+      = inner ℂ y ((cfc (fun t => t * (p t * p t)) T) y) := by
+  have hPsa : IsSelfAdjoint (cfc p T) := cfc_predicate p T
+  have hsym := ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mp hPsa
+  have hA : cfc (fun t => t * (p t * p t)) T = cfc p T * (T * cfc p T) := by
+    have h1 : cfc (fun t : ℝ => p t * (t * p t)) T = cfc p T * cfc (fun t : ℝ => t * p t) T := by
+      rw [cfc_mul _ _ T hp.continuousOn (by fun_prop)]
+    have h2 : cfc (fun t : ℝ => t * p t) T = T * cfc p T := by
+      rw [cfc_mul _ _ T (by fun_prop) hp.continuousOn, cfc_id' ℝ T]
+    rw [show (fun t : ℝ => t * (p t * p t)) = (fun t : ℝ => p t * (t * p t)) by funext t; ring,
+      h1, h2]
+  rw [hA]
+  have h := hsym y (T (cfc p T y))
+  simp only [ContinuousLinearMap.coe_coe] at h
+  simpa [ContinuousLinearMap.mul_apply] using h
+
+end BookProof.MinMaxSpectrum
+
 namespace BookProof.ResolventLadderEq
 
-open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum BookProof.MinMaxSpectrum
+open BookProof.RitzMinMax BookProof.ChapterSirkRitzSpectrum
 open BookProof.ResolventLadder
 open BookProof.NonnegResolvent BookProof.PositiveSquareRoot
 open BookProof.NonnegSquareRoot BookProof.ClosureUniqueness
 open Filter Topology
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+
+
+open BookProof.MinMaxSpectrum
 
 /-! ## 1. The continuous step symbol -/
 
@@ -311,7 +395,15 @@ theorem graphMinmaxLevel_le (hT : IsNonnegSelfAdjoint T)
 
 /-! ## 5. The ladder correspondence -/
 
-
+/-- **The ladder correspondence.**  Every rung of the Courant–Fischer ladder of the
+unbounded non-negative self-adjoint relation `T` is the transformed rung of the ladder of
+its bounded resolvent, read from the top. -/
+theorem graphMinmaxLevel_eq (hT : IsNonnegSelfAdjoint T)
+    (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) (k : ℕ)
+    (hne : (graphMinmaxSet T k).Nonempty)
+    (hpos : 0 < maxminLevel (res hT) k) :
+    graphMinmaxLevel T k = 1 / maxminLevel (res hT) k - 1 :=
+  le_antisymm (graphMinmaxLevel_le hT hsv k hne hpos) (resolvent_ladder_lower hT hsv k hne)
 
 /-- **The gap of the ladder of `T` is exactly the transformed gap of the resolvent's.** -/
 theorem graphMinmax_gap_eq [Nontrivial F] (hT : IsNonnegSelfAdjoint T)

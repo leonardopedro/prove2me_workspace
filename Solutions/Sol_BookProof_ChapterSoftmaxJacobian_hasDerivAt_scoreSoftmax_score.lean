@@ -35,7 +35,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (beta : ℝ) (s : Fin m → ℝ) (i j : Fin m) :
     HasDerivAt (fun t : ℝ => scoreSoftmax beta (scorePerturb s i t) j)
       (softmaxJacobian beta s i j) 0 := by
-  have hne := partition_ne_zero beta s i
+  have hne := _root_.partition_ne_zero beta s i
   have hZ := hasDerivAt_partition_score beta s i
   have hnum : HasDerivAt (fun t : ℝ => Real.exp (beta * scorePerturb s i t j))
       ((if j = i then beta else 0) * Real.exp (beta * s j)) 0 := by

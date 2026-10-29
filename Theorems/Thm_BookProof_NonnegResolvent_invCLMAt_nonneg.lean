@@ -4,11 +4,10 @@ import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegSquareRoot
 import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
-open BookProof.NonnegResolvent
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
+open BookProof.ClosureUniqueness
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

@@ -14,11 +14,13 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
 open BookProof.YangMillsHermite
-open BookProof.SmOuterFock
 
 
 

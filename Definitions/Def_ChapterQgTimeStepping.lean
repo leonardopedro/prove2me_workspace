@@ -6,6 +6,8 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterStoneBridge
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 import Mathlib
 
 

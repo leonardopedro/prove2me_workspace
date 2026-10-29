@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
 import Definitions.Def_ChapterMehlerOrthogonalInvariance
-open BookProof.ChapterMehlerOrthogonalInvariance
 
 
 open MeasureTheory ProbabilityTheory Matrix

@@ -17,11 +17,13 @@ import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSmDiracYukawa
 open BookProof.ChapterF7
 open BookProof.HermiteProductCore
 open BookProof.SmOneParticle
 open BookProof.YangMillsHermite
-open BookProof.SmYukawaCoupling
 
 
 
@@ -30,8 +32,7 @@ open MeasureTheory MvPolynomial
 open BookProof.SmHamiltonian BookProof.SmDiracYukawa BookProof.SmCar BookProof.SmOneParticle
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteProductCore
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
-open BookProof.YangMillsNonAbelianEsa BookProof.SmFullEnclosure BookProof.TensorKatoRellich
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

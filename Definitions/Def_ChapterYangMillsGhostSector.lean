@@ -8,6 +8,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
 
 
 /-!

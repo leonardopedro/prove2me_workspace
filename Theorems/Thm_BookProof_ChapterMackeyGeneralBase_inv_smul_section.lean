@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
-open BookProof.ChapterMackeyGeneralBase
 
 
 open scoped InnerProductSpace

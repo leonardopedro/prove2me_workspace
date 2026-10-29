@@ -22,6 +22,12 @@ variable {X : Type*} [MeasurableSpace X]
 
 variable {X : Type*} [MeasurableSpace X]
 
+private theorem multOp_coeFn (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
+    (f : boundedEnergyCore μ g) :
+    (((multOp μ hg f : boundedEnergyCore μ g) : Lp ℂ 2 μ) : X → ℂ)
+      =ᵐ[μ] fun x => (g x : ℂ) * ((f : Lp ℂ 2 μ) : X → ℂ) x :=
+  (memLp_mul hg f.2).coeFn_toLp
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :

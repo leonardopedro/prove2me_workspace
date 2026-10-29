@@ -10,6 +10,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
+import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTruncationResolvent
 
 

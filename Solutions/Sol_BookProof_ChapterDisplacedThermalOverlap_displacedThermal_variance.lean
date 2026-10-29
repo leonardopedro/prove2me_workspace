@@ -14,4 +14,6 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution (a : ℝ) (nbar : ℝ≥0) :
     Var[id; displacedThermal a nbar] = (nbar : ℝ) + 1 / 2 := by
-  simp [displacedThermal]
+  show Var[id; gaussianReal a (tauNN nbar)] = _
+  rw [variance_id_gaussianReal]
+  rfl

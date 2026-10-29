@@ -6,6 +6,7 @@ import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.VonNeumannCore
 
 

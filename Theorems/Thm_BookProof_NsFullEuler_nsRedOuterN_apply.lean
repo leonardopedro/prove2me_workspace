@@ -11,9 +11,9 @@ import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterLeafGaps
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
-open BookProof.NsFullEuler
 
 
 

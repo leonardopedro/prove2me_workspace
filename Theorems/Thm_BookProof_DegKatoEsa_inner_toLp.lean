@@ -12,6 +12,8 @@ import Definitions.Def_ChapterMollifierL2
 import Mathlib
 import Definitions.Def_ChapterDegKatoEsa
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.DegKatoEsa
 

@@ -15,9 +15,9 @@ import Mathlib
 import Definitions.Def_ChapterQgFullEliminated
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
-open BookProof.QgFullEliminated
 
 
 
@@ -26,7 +26,6 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 

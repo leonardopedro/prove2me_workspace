@@ -5,12 +5,12 @@ import Definitions.Def_ChapterTensorSumEsa
 import Mathlib
 import Definitions.Def_ChapterTensorSumChain
 import Definitions.Def_ChapterFarisLavineCore
-open BookProof.TensorSumChain
+import Definitions.Def_ChapterPermutationSectorEsa
 
 
 
 open scoped TensorProduct
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

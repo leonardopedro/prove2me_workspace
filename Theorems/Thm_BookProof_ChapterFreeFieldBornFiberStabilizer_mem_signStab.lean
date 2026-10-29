@@ -6,6 +6,7 @@ import Definitions.Def_ChapterFreeFieldBornFiberCardGeneral
 import Definitions.Def_ChapterFreeFieldBornFiberBounds
 import Mathlib
 import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
+import Definitions.Def_ChapterFreeFieldBornFiberStabilizer
 open BookProof.ChapterFreeFieldBornFiberStabilizer
 
 

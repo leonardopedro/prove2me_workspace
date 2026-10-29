@@ -4,6 +4,8 @@ import Definitions.Def_ChapterPvmCyclicUnitary
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
 import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterMackeyCocycle
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterMackeyCocycle
 

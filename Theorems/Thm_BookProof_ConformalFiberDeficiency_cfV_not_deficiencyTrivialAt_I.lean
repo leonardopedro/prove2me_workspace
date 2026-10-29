@@ -6,9 +6,9 @@ import Definitions.Def_ChapterConformalFiberDeficiency
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
-open BookProof.ConformalFiberDeficiency
 
 
 

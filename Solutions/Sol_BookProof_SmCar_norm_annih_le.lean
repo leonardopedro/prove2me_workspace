@@ -15,6 +15,15 @@ variable {n : ℕ}
 
 variable {n : ℕ}
 
+private theorem annih_apply (i : Fin n) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (annih i ψ) S = if i ∈ S then 0 else jwSign i S * ψ (insert i S) := rfl
+
+private theorem flipOcc_apply (i : Fin n) (S : Finset (Fin n)) :
+    flipOcc i S = if i ∈ S then S.erase i else insert i S := rfl
+
+private theorem norm_jwSign (i : Fin n) (S : Finset (Fin n)) : ‖jwSign i S‖ = 1 := by
+  simp [jwSign]
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution (i : Fin n) (ψ : FermiFock n) : ‖annih i ψ‖ ≤ ‖ψ‖ := by
@@ -27,8 +36,8 @@ theorem solution (i : Fin n) (ψ : FermiFock n) : ‖annih i ψ‖ ≤ ‖ψ‖ 
       by_cases h : i ∈ S
       · have h1 : i ∉ S.erase i := Finset.notMem_erase i S
         have h2 : insert i (S.erase i) = S := Finset.insert_erase h
-        simp [h, h1, h2]
-      · simp [h]
+        simp [h, h1, h2, flipOcc_apply, annih_apply, norm_jwSign]
+      · simp [h, flipOcc_apply, annih_apply]
     rw [hkey]
     refine Finset.sum_le_sum fun S _ => ?_
     by_cases h : i ∈ S <;> simp [h]

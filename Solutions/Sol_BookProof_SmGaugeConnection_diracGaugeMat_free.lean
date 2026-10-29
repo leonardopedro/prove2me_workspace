@@ -32,6 +32,6 @@ theorem solution (k : Fin 3 → ℝ) (m1 m2 g : ℝ)
     diracGaugeMat k m1 m2 g T (fun _ _ => (0 : ℝ))
       = diracOneParticle k m1 m2 ⊗ₖ (1 : Matrix (Fin N) (Fin N) ℂ) := by
   rw [diracGaugeMat_split]
-  simp
+  simp [conn]
 
 /-! ## 5. Second quantization on the CAR algebra -/

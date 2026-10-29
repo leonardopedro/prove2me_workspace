@@ -7,10 +7,12 @@ import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 open BookProof.ChapterUnitaryTransport
-open BookProof.EsaOneParticle
 
 
 

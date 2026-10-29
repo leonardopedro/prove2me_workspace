@@ -12,6 +12,8 @@ import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterScalaronHermiteEsa
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteCore

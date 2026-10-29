@@ -11,7 +11,9 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
-open BookProof.NsFullEuler
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
 
 
 

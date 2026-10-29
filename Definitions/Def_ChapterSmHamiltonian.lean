@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterNsKoopman
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterQgOuterFockEsa
@@ -311,7 +312,7 @@ quantization, `BookProof.SmOuterFock.smFockHam`. -/
 theorem sm_friedrichs_extension (P : SmParams) :
     ∃ (Dom : Submodule ℂ (L2d 163)) (A : Dom →ₗ[ℂ] L2d 163),
       IsPositiveSelfAdjointExtension (smHamiltonian P) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨polyGaussCore, smHamiltonian P, smHamiltonian_symmetricOn P,
       smHamiltonian_quadForm_nonneg P⟩
     polyGaussCore_dense

@@ -18,7 +18,11 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterQuadraticFockEsa
 import Mathlib
 import Definitions.Def_ChapterQg3DCrossTermEsa
-open BookProof.Qg3DCrossTermEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSirkBandLedger
 
 
 
@@ -32,7 +36,7 @@ open BookProof.QuantumGravity3DGauge
 open BookProof.Qg3DGaugeEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa BookProof.FockSecondQuantization BookProof.QuadFockEsa
+open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
 

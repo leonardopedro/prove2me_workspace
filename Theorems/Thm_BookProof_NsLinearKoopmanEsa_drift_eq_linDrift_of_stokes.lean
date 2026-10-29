@@ -14,7 +14,9 @@ import Definitions.Def_ChapterQuadraticFockEsa
 import Mathlib
 import Definitions.Def_ChapterNsLinearKoopmanEsa
 import Definitions.Def_ChapterNavierStokesFlow
-open BookProof.NsLinearKoopmanEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterSirkBandLedger
 
 
 
@@ -24,7 +26,6 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
-open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 

@@ -6,12 +6,10 @@ import Definitions.Def_ChapterNonnegResolvent
 import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterStoneEvolution
-open BookProof.NonnegUnitaryGroup
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
-open BookProof.NonnegResolvent
+open BookProof.ClosureUniqueness
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 

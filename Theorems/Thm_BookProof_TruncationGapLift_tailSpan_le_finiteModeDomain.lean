@@ -12,6 +12,8 @@ import Definitions.Def_ChapterYangMillsFockGapChain
 import Mathlib
 import Definitions.Def_ChapterTruncationGapLift
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.HermiteGalerkin
 open BookProof.TruncationGapLift
 

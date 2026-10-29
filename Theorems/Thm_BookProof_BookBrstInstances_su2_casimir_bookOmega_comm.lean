@@ -8,6 +8,9 @@ import Definitions.Def_ChapterBookBrstInstances
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterSmBrstGhost
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.ChapterLinftyMultiplication
 open BookProof.SmBrstGhost
 open BookProof.YangMillsGhost

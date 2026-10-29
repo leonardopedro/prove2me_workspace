@@ -4,6 +4,7 @@ import Definitions.Def_ChapterUnitaryTransport
 import Theorems.Thm_BookProof_ChapterUnitaryTransport_transportUnitary_add
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterUnboundedPosition
+import Definitions.Def_ChapterStoneSeparable
 open BookProof.ChapterUnitaryTransport
 
 

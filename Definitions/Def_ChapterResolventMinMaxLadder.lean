@@ -5,6 +5,15 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterSirkRitzMinMax
+import Theorems.Thm_BookProof_RitzMinMax_neg_norm_le_rayleighVal_of_unit
+import Theorems.Thm_BookProof_RitzMinMax_rayleighVal_le_norm_of_unit
+import Theorems.Thm_BookProof_RitzMinMax_exists_unit_mem
+import Theorems.Thm_BookProof_RitzMinMax_rayleighSetOn_nonempty
+import Theorems.Thm_BookProof_RitzMinMax_rayleighSetOn_span_singleton
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_sInf_spectrum_eq_rayleighInf
+import Theorems.Thm_BookProof_ChapterSirkRitzSpectrum_rayleighSet_nonempty
+import Theorems.Thm_BookProof_RitzMinMax_minmaxLevel_le_minmaxLevelIn
+import Theorems.Thm_BookProof_RitzMinMax_galerkin_minmaxLevel_tendsto
 import Mathlib
 
 
@@ -200,7 +209,6 @@ theorem res_re_inner_nonneg (hT : IsNonnegSelfAdjoint T) (x : F) : 0 ≤ rayleig
   rw [rayleighVal, hsymm]
   linarith [hsplit ▸ hre]
 
-omit [CompleteSpace F] in
 /-- Single-valuedness of the relation: an operator has at most one value at each point. -/
 theorem graph_unique (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0) {y z z' : F}
     (h : (y, z) ∈ T) (h' : (y, z') ∈ T) : z = z' := by
@@ -272,32 +280,27 @@ def maxminSet (R : F →L[ℂ] F) (k : ℕ) : Set ℝ :=
 /-- The `k`-th Courant–Fischer level of a bounded operator, **counted from the top**. -/
 def maxminLevel (R : F →L[ℂ] F) (k : ℕ) : ℝ := sSup (maxminSet R k)
 
-omit [CompleteSpace F] in
 theorem rayleighSetOn_bddBelow (R : F →L[ℂ] F) (S : Submodule ℂ F) :
     BddBelow (rayleighSetOn R S) := by
   refine ⟨-‖R‖, ?_⟩
   rintro t ⟨x, -, hx1, rfl⟩
   exact neg_norm_le_rayleighVal_of_unit R hx1
 
-omit [CompleteSpace F] in
 theorem rayleighInfOn_le_norm (R : F →L[ℂ] F) {S : Submodule ℂ F}
     (hS : 0 < Module.finrank ℂ S) : rayleighInfOn R S ≤ ‖R‖ := by
   obtain ⟨x, hx, hx1⟩ := exists_unit_mem S hS
   refine csInf_le_of_le (rayleighSetOn_bddBelow R S) (b := rayleighVal R x) ⟨x, hx, hx1, rfl⟩ ?_
   exact rayleighVal_le_norm_of_unit R hx1
 
-omit [CompleteSpace F] in
 theorem maxminSet_bddAbove (R : F →L[ℂ] F) (k : ℕ) : BddAbove (maxminSet R k) := by
   refine ⟨‖R‖, ?_⟩
   rintro t ⟨S, hrank, rfl⟩
   exact rayleighInfOn_le_norm R (by rw [hrank]; omega)
 
-omit [CompleteSpace F] in
 theorem rayleighInfOn_le_maxminLevel (R : F →L[ℂ] F) {S : Submodule ℂ F} {k : ℕ}
     (hrank : Module.finrank ℂ S = k + 1) : rayleighInfOn R S ≤ maxminLevel R k :=
   le_csSup (maxminSet_bddAbove R k) ⟨S, hrank, rfl⟩
 
-omit [CompleteSpace F] in
 /-- Below the level plus `ε` there is a unit vector of every competitor subspace. -/
 theorem exists_unit_rayleigh_lt (R : F →L[ℂ] F) {S : Submodule ℂ F} {k : ℕ}
     (hrank : Module.finrank ℂ S = k + 1) {ε : ℝ} (hε : 0 < ε) :
@@ -312,12 +315,10 @@ theorem exists_unit_rayleigh_lt (R : F →L[ℂ] F) {S : Submodule ℂ F} {k : �
   obtain ⟨x, hx, hx1, rfl⟩ := ht
   exact ⟨x, hx, hx1, htlt⟩
 
-omit [CompleteSpace F] in
 theorem rayleighInfOn_span_singleton (R : F →L[ℂ] F) {x : F} (hx1 : ‖x‖ = 1) :
     rayleighInfOn R (Submodule.span ℂ {x}) = rayleighVal R x := by
   rw [rayleighInfOn, rayleighSetOn_span_singleton R hx1, csInf_singleton]
 
-omit [CompleteSpace F] in
 /-- The top rung of the ladder ranges over the Rayleigh quotients of the unit vectors. -/
 theorem maxminSet_zero_eq_rayleighSet (R : F →L[ℂ] F) : maxminSet R 0 = rayleighSet R := by
   ext t
@@ -342,18 +343,15 @@ theorem maxminSet_zero_eq_rayleighSet (R : F →L[ℂ] F) : maxminSet R 0 = rayl
     exact ⟨Submodule.span ℂ {x}, by simpa using finrank_span_singleton hx0,
       (rayleighInfOn_span_singleton R hx1).symm⟩
 
-omit [CompleteSpace F] in
 theorem maxminLevel_zero_eq_sSup_rayleighSet (R : F →L[ℂ] F) :
     maxminLevel R 0 = sSup (rayleighSet R) := by
   rw [maxminLevel, maxminSet_zero_eq_rayleighSet]
 
-omit [CompleteSpace F] in
 theorem rayleighSet_bddAbove (R : F →L[ℂ] F) : BddAbove (rayleighSet R) := by
   refine ⟨‖R‖, ?_⟩
   rintro t ⟨x, hx1, rfl⟩
   exact rayleighVal_le_norm_of_unit R hx1
 
-omit [CompleteSpace F] in
 theorem rayleighSet_neg (R : F →L[ℂ] F) : rayleighSet (-R) = -rayleighSet R := by
   ext t
   rw [Set.mem_neg]
@@ -396,25 +394,21 @@ def graphMinmaxSet (T : Submodule ℂ (F × F)) (k : ℕ) : Set ℝ :=
 /-- The `k`-th Courant–Fischer level of the relation `T`. -/
 def graphMinmaxLevel (T : Submodule ℂ (F × F)) (k : ℕ) : ℝ := sInf (graphMinmaxSet T k)
 
-omit [CompleteSpace F] in
 theorem graphRayleighSet_nonempty {S : Submodule ℂ F} (hS : 0 < Module.finrank ℂ S)
     (hdom : InDomain T S) : (graphRayleighSet T S).Nonempty := by
   obtain ⟨y, hy, hy1⟩ := exists_unit_mem S hS
   obtain ⟨z, hz⟩ := hdom y hy
   exact ⟨_, y, z, hz, hy, hy1, rfl⟩
 
-omit [CompleteSpace F] in
 theorem graphRayleighSet_nonneg (hT : IsNonnegSelfAdjoint T) {S : Submodule ℂ F} {t : ℝ}
     (ht : t ∈ graphRayleighSet T S) : 0 ≤ t := by
   obtain ⟨y, z, hyz, -, -, rfl⟩ := ht
   exact hT.nonneg _ hyz
 
-omit [CompleteSpace F] in
 theorem graphRayleighSup_nonneg (hT : IsNonnegSelfAdjoint T) (S : Submodule ℂ F) :
     0 ≤ graphRayleighSup T S :=
   Real.sSup_nonneg fun _ ht => graphRayleighSet_nonneg hT ht
 
-omit [CompleteSpace F] in
 /-- **A closed operator is bounded on a finite-dimensional subspace of its domain**, so the
 Rayleigh values there are bounded above. -/
 theorem graphRayleighSet_bddAbove (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0)
@@ -453,7 +447,6 @@ theorem graphRayleighSet_bddAbove (hsv : ∀ w : F, ((0 : F), w) ∈ T → w = 0
     _ = ‖z‖ := by rw [hy1, one_mul]
     _ ≤ ‖Lc‖ := by rw [hz]; exact hnorm
 
-omit [CompleteSpace F] in
 theorem graphMinmaxSet_bddBelow (hT : IsNonnegSelfAdjoint T) (k : ℕ) :
     BddBelow (graphMinmaxSet T k) := by
   refine ⟨0, ?_⟩
@@ -686,11 +679,9 @@ def maxminSetIn (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ) : Set ℝ :=
 /-- The `k`-th Rayleigh–Ritz level of the truncation of `R` to `W`, counted from the top. -/
 def maxminLevelIn (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ) : ℝ := sSup (maxminSetIn R W k)
 
-omit [CompleteSpace F] in
 theorem rayleighVal_neg (R : F →L[ℂ] F) (x : F) : rayleighVal (-R) x = -rayleighVal R x := by
   simp [rayleighVal]
 
-omit [CompleteSpace F] in
 theorem rayleighSetOn_neg (R : F →L[ℂ] F) (S : Submodule ℂ F) :
     rayleighSetOn (-R) S = -rayleighSetOn R S := by
   ext t
@@ -701,12 +692,10 @@ theorem rayleighSetOn_neg (R : F →L[ℂ] F) (S : Submodule ℂ F) :
   · rintro ⟨x, hx, hx1, hval⟩
     exact ⟨x, hx, hx1, by rw [rayleighVal_neg, ← hval, neg_neg]⟩
 
-omit [CompleteSpace F] in
 theorem rayleighSup_neg (R : F →L[ℂ] F) (S : Submodule ℂ F) :
     rayleighSup (-R) S = -rayleighInfOn R S := by
   rw [rayleighSup, rayleighSetOn_neg, Real.sSup_neg, rayleighInfOn]
 
-omit [CompleteSpace F] in
 theorem minmaxSet_neg (R : F →L[ℂ] F) (k : ℕ) : minmaxSet (-R) k = -maxminSet R k := by
   ext t
   rw [Set.mem_neg]
@@ -716,13 +705,11 @@ theorem minmaxSet_neg (R : F →L[ℂ] F) (k : ℕ) : minmaxSet (-R) k = -maxmin
   · rintro ⟨S, hrank, hval⟩
     exact ⟨S, hrank, by rw [rayleighSup_neg, ← hval, neg_neg]⟩
 
-omit [CompleteSpace F] in
 /-- The ladder from the top is the ladder of `−R` from the bottom. -/
 theorem minmaxLevel_neg (R : F →L[ℂ] F) (k : ℕ) :
     minmaxLevel (-R) k = -maxminLevel R k := by
   rw [minmaxLevel, minmaxSet_neg, Real.sInf_neg, maxminLevel]
 
-omit [CompleteSpace F] in
 theorem minmaxSetIn_neg (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ) :
     minmaxSetIn (-R) W k = -maxminSetIn R W k := by
   ext t
@@ -733,12 +720,10 @@ theorem minmaxSetIn_neg (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ) :
   · rintro ⟨S, hle, hrank, hval⟩
     exact ⟨S, hle, hrank, by rw [rayleighSup_neg, ← hval, neg_neg]⟩
 
-omit [CompleteSpace F] in
 theorem minmaxLevelIn_neg (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ) :
     minmaxLevelIn (-R) W k = -maxminLevelIn R W k := by
   rw [minmaxLevelIn, minmaxSetIn_neg, Real.sInf_neg, maxminLevelIn]
 
-omit [CompleteSpace F] in
 /-- **The variational principle for the ladder from the top**: a computed Ritz level is a
 **lower** bound for the true level. -/
 theorem maxminLevelIn_le_maxminLevel (R : F →L[ℂ] F) (W : Submodule ℂ F) (k : ℕ)
@@ -751,9 +736,15 @@ theorem maxminLevelIn_le_maxminLevel (R : F →L[ℂ] F) (W : Submodule ℂ F) (
   rw [minmaxLevel_neg, minmaxLevelIn_neg] at h
   linarith
 
+/-- **The Galerkin levels of the resolvent converge to its Courant–Fischer levels from the
+top.** -/
+theorem galerkin_maxminLevel_tendsto (R : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F) (k : ℕ) :
+    Tendsto (fun m : ℕ => maxminLevelIn R (galerkinSpan b m) k) atTop
+      (nhds (maxminLevel R k)) := by
+  have h := galerkin_minmaxLevel_tendsto (-R) b k
+  simp only [minmaxLevel_neg, minmaxLevelIn_neg] at h
+  simpa using h.neg
 
-
-omit [CompleteSpace F] in
 /-- **A gap of the resolvent's ladder is eventually seen by the truncations.** -/
 theorem galerkin_maxmin_gap_eventually_pos (R : F →L[ℂ] F) (b : HilbertBasis ℕ ℂ F)
     (hgap : maxminLevel R 1 < maxminLevel R 0) :

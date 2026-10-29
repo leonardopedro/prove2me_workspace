@@ -10,12 +10,11 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterNsFullLagrangianFockEsa
-open BookProof.NsFullLagrangianEsa
 
 
 
 open MvPolynomial
-open BookProof.NsFullLagrangian BookProof.YangMillsNonAbelianEsa BookProof.YangMillsHermite
+open BookProof.NsFullLagrangian BookProof.YangMillsHermite
 open BookProof.YangMillsFriedrichs BookProof.HermiteProductCore BookProof.DirectSumEsa
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.EsaClosure
 

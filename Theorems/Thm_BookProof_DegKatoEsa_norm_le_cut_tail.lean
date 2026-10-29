@@ -12,6 +12,9 @@ import Mathlib
 import Definitions.Def_ChapterDegKatoEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.ScalaronEsa
 open BookProof.DegKatoEsa

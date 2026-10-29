@@ -14,11 +14,12 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.YangMillsFriedrichs
-open BookProof.ScalaronFockGapChain
 
 
 noncomputable section

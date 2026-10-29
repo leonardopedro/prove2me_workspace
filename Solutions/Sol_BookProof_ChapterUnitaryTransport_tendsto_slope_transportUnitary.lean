@@ -26,14 +26,14 @@ theorem solution (W : H ≃ₗᵢ[ℂ] K) (D : Submodule ℂ H) (A : D →ₗ[�
     (y : transportDomain W D) :
     Filter.Tendsto (fun t : ℝ => (t⁻¹ : ℝ) • (transportUnitary W (U t) (y : K) - (y : K)))
       (nhdsWithin 0 {0}ᶜ) (nhds (Complex.I • transportOp W D A y)) := by
-    obtain ⟨a, rfl⟩ := (transportEquiv W D).surjective y
-    rw [transportOp_apply]
-    have hW := (W.continuous.tendsto (Complex.I • A a)).comp (h a)
-    have hlim : Filter.Tendsto
-        (fun t : ℝ => W ((t⁻¹ : ℝ) • (U t (a : H) - (a : H))))
-        (nhdsWithin 0 {0}ᶜ) (nhds (W (Complex.I • A a))) := by
-      exact hW
-    rw [map_smul] at hlim
-    refine hlim.congr fun t => ?_
-    rw [map_real_smul, map_sub, transportUnitary_apply, transportEquiv_coe,
-      LinearIsometryEquiv.symm_apply
+  obtain ⟨a, rfl⟩ := (transportEquiv W D).surjective y
+  rw [transportOp_apply]
+  have hW := (W.continuous.tendsto (Complex.I • A a)).comp (h a)
+  have hlim : Filter.Tendsto
+      (fun t : ℝ => W ((t⁻¹ : ℝ) • (U t (a : H) - (a : H))))
+      (nhdsWithin 0 {0}ᶜ) (nhds (W (Complex.I • A a))) := by
+    exact hW
+  rw [map_smul] at hlim
+  refine hlim.congr fun t => ?_
+  rw [BookProof.ChapterUnitaryTransport.map_real_smul, map_sub, transportUnitary_apply,
+    transportEquiv_coe, LinearIsometryEquiv.symm_apply_apply]

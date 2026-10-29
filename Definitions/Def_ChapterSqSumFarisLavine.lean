@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterGaussCoreQuadBounds
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_norm_mul_le_of_pointwise
+import Theorems.Thm_BookProof_GaussCoreQuadBounds_cpoly_real_smul
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteQuadraticEsa

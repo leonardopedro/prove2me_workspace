@@ -13,9 +13,12 @@ import Definitions.Def_ChapterSqSumFarisLavine
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterMajoranaClifford
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterMajoranaClifford
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.MajoranaClifford
-open BookProof.SqSumOuterFamily
-open BookProof.SqSumOuterFamily.SqFamily
 
 
 

@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Theorems.Thm_BookProof_ShiftedQuadratic_minkowskiCoeff_ne_zero
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
@@ -547,6 +548,14 @@ theorem shiftedHMatOp_stone_flow {A : Matrix (Fin d) (Fin d) ℝ}
     (shiftedHMatOp_essentiallySelfAdjoint hA hdet b b')
 
 /-! ## 6. The rotated Minkowski corollary -/
+
+/-- `O diag(c) Oᵀ` is symmetric. -/
+theorem rotConj_isHermitian (O : Matrix (Fin d) (Fin d) ℝ) (c : Fin d → ℝ) :
+    (rotConj O c).IsHermitian := by
+  change (rotConj O c)ᴴ = rotConj O c
+  ext i j
+  simp only [Matrix.conjTranspose_apply, star_trivial, rotConj]
+  exact Finset.sum_congr rfl fun l _ => by ring
 
 
 

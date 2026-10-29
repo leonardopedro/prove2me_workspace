@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
+import Theorems.Thm_BookProof_QgHermiteOscillator_hamCore_add_potential
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine

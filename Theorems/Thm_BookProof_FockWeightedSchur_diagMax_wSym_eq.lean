@@ -11,6 +11,8 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FockWeightedSchur

@@ -8,6 +8,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_symm
+import Theorems.Thm_BookProof_FockSecondQuantization_inner_dGamma_nonneg
+import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_one_particle
 import Mathlib
 
 
@@ -181,7 +184,7 @@ theorem algOp_friedrichs_extension {T : Module.End ℂ (γ →₀ ℂ)}
     (hsym : IsSymAlg T) (hpos : IsPosAlg T) :
     ∃ (Dom : Submodule ℂ (L2I γ)) (A : Dom →ₗ[ℂ] L2I γ),
       IsPositiveSelfAdjointExtension (opOfAlg T) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨lpFiniteModes γ, opOfAlg T, opOfAlg_symmetricOn hsym, opOfAlg_quadForm_nonneg hpos⟩
     lpFiniteModes_dense
 
@@ -477,7 +480,14 @@ theorem dGamma_idCol_one_particle (k : ℕ) :
   rw [dGamma_one_particle, support_idCol, Finset.sum_singleton]
   simp [idCol]
 
-
+/-- Local copy: the stub `Thm_BookProof_GradedFriedrichs_dGammaF_idCol_one_particle`
+imports this bundle, so it cannot be imported back (import cycle); proved here
+from `dGammaF_one_particle` exactly as the bosonic twin above. -/
+theorem dGammaF_idCol_one_particle (k : ℕ) :
+    dGammaF idCol (Finsupp.single ({k} : FConf) 1)
+      = Finsupp.single ({k} : FConf) (1 : ℂ) := by
+  rw [dGammaF_one_particle, support_idCol, Finset.sum_singleton]
+  simp [idCol]
 
 /-- **The graded Hamiltonian is not the zero operator**: on the state with one
 boson in mode `k` and one fermion in mode `l` the total number operator

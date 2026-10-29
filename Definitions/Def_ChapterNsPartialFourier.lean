@@ -255,6 +255,14 @@ def fibreFourierCLM : Lp ℂ 2 (volume : Measure W) →L[ℂ] Lp ℂ 2 (volume :
 
 
 
+/-- In particular, the spatial transform commutes with the Fourier transform **of the fibre
+variable**: the two partial transforms of the two variables are independent. -/
+theorem nsPartialFourier_fibreFourier
+    (f : Lp (Lp ℂ 2 (volume : Measure W)) 2 (volume : Measure V)) :
+    nsPartialFourier V W (fibreOp V (fibreFourierCLM W) f)
+      = fibreOp V (fibreFourierCLM W) (nsPartialFourier V W f) :=
+  partialFourier_fibreOp _ f
+
 /-- The two partial transforms commute as operators. -/
 theorem nsPartialFourier_comp_fibreFourier_eq :
     ((nsPartialFourier V W).toLinearIsometry.toContinuousLinearMap).comp

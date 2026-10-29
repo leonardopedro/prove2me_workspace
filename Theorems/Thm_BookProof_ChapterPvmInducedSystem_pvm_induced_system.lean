@@ -7,6 +7,8 @@ import Definitions.Def_ChapterHilbertSumIntertwine
 import Mathlib
 import Definitions.Def_ChapterPvmInducedSystem
 import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterElectroweakFieldStrength
+import Definitions.Def_ChapterPvmFibreInducedSystem
 open BookProof.ChapterElectroweakFieldStrength
 open BookProof.ChapterPvmInducedSystem
 

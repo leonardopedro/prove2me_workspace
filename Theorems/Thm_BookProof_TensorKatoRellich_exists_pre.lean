@@ -5,13 +5,13 @@ import Definitions.Def_ChapterTensorSumEsa
 import Mathlib
 import Definitions.Def_ChapterTensorKatoRellich
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
-open BookProof.TensorKatoRellich
 
 
 
 open scoped TensorProduct
-open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 
 noncomputable section
 

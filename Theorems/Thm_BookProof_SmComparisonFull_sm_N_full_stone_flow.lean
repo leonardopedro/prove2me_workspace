@@ -9,14 +9,15 @@ import Definitions.Def_ChapterSmComparisonFull
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.StoneBridge
-open BookProof.SmComparisonFull
 
 
 
-open BookProof.FarisLavine BookProof.TensorSumChain
-open BookProof.SmComparison BookProof.ScalaronEsa
+open BookProof.FarisLavine
+open BookProof.ScalaronEsa
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open MeasureTheory
 

@@ -5,12 +5,10 @@ import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegSquareRoot
 import Mathlib
 import Definitions.Def_ChapterResolventCorrespondence
-open BookProof.ResolventCorrespondence
 
 
 
-open BookProof.ClosureUniqueness BookProof.UnboundedPolar BookProof.PositiveSquareRoot
-open BookProof.NonnegSquareRoot
+open BookProof.ClosureUniqueness
 open scoped ComplexOrder
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

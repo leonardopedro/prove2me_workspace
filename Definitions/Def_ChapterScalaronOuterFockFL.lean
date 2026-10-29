@@ -1,35 +1,27 @@
+import Mathlib
+-- Import list canonicalized 2026-10-23 (server-side empty-import failure,
+-- §2.68): `Mathlib` moved to the front; otherwise the set is unchanged.
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_core_le_dom
-
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
-
 import Theorems.Thm_BookProof_ScalaronFiberFL_norm_xCc_sq_le
-
 import Theorems.Thm_BookProof_ScalaronFiberFL_cc_integrable
-
 import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
-
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_comparison_core
-
-
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
-
 import Theorems.Thm_BookProof_ScalaronFiberFL_WallPot_ham_esa
-
 import Theorems.Thm_BookProof_ScalaronFiberFL_isGraphCore_of_esa
-
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_core
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_essentiallySelfAdjointOn
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
-import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
+-- QgOuterFockCoreFL stubs are selective: the *published* Def bundle (mirror
+-- olean) already declares ext_core, so that stub redeclares; but it predates
+-- commForm_congr / quadForm_congr / ext_essentiallySelfAdjointOn, so those
+-- stubs are required.
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterWallEsaSemibounded
-import Mathlib
 import Definitions.Def_ChapterScalaronWallEsa
 import Theorems.Thm_BookProof_StrichartzWave_opL2_apply
 import Theorems.Thm_BookProof_ScalaronEsa_opCc_apply

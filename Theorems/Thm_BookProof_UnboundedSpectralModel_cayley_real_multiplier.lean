@@ -6,6 +6,7 @@ import Definitions.Def_ChapterSpectralMultiplication
 import Definitions.Def_ChapterSpectralDirectSum
 import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
+import Definitions.Def_ChapterUnboundedSpectralModel
 open BookProof.UnboundedSpectralModel
 
 

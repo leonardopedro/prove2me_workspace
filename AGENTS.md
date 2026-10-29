@@ -58,3 +58,11 @@ the user explicitly asks for a compile.
    (this repo, `../timepiece`, `../test`, `../unfer`).
 3. Patterns adapted from `../typos` and `../ax` are Apache-2.0; keep the
    attribution comment in every adapted artifact.
+4. **Never keep anything in `/tmp`.** `/tmp` is tmpfs on this box: it is wiped
+   on reboot, and an OOM event takes the machine down with it (this happened
+   2026-10-27 — the whole candidate mirror, every run log, slug list and
+   helper script were lost mid-session). Anything that must outlive a single
+   command lives inside this repo: logs and generated lists in `state/`
+   (regenerable), helper scripts in `debug/`, the candidate mirror on disk
+   under `state/mirror/` via `CANDIDATE_MIRROR=$PWD/state/mirror`. `/tmp` is
+   fine only for throwaway output you would not re-run a command to recreate.

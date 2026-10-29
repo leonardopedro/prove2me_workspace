@@ -6,15 +6,15 @@ import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.KoopmanLyapunov
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.NsKoopman
 
 noncomputable section
 

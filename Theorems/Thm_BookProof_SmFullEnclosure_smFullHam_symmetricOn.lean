@@ -14,10 +14,13 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmDiracYukawa
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HermiteProductCore
 open BookProof.SmDiracYukawa
 open BookProof.SmHamiltonian
-open BookProof.SmFullEnclosure
 
 
 
@@ -25,8 +28,7 @@ open scoped TensorProduct
 open BookProof.SmHamiltonian BookProof.SmDiracYukawa BookProof.SmCar
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteProductCore
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
-open BookProof.YangMillsNonAbelianEsa
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

@@ -59,22 +59,20 @@ def SemiboundedBelowOn (D : Submodule ℂ F) (T : D →ₗ[ℂ] F) (c : ℝ) : P
 
 /-! ## The Green identity on the compactly supported smooth core -/
 
-comp_left (g := fun z : ℂ => ((‖z‖ ^ 2 x)cRdrintegral_congr_ae ?_
-  filter_upwmu x‖ ^ 2 := by
-    rw [← integral_const_mul]
-    exact integral_mono hIc hIV fun x => by
-      have := hVc x
-      nlinarith [sq_nonneg ‖(f : 𝓢(ℝ, ℂ)) x‖, norm_nonneg ((f : 𝓢(ℝ, ℂ)) x)]
-  simp only [wallHam, LinearMap.add_apply, inner_add_left, hk, hp, hn]
-  simp only [Complex.add_re, Complex.ofReal_re]
-  linarith
 
-/-- The non-negative case: for `V ≥ 0` the quadratic form of `−d²/dx² + V` is
-non-negative on the compactly supported smooth core. -/
-theorem wallHam_nonneg_form (V : ℝ → ℝ)
-    (hV : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) V) (hVnn : ∀ x, 0 ≤ V x) :
-    SemiboundedBelowOn (ccDomain ℝ) (wallHam V hV) 0 :=
-  wallHamBddBelow_semibounded V hV fun x => by simpa using hVnn x
+
+/-! ## The three pieces of the pairing -/
+
+
+
+
+
+
+
+
+/-! ## The packaging lemma -/
+
+
 
 end
 

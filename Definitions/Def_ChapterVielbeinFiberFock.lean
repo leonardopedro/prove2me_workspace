@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_ScalaronEsa_contDiff_scalaronAlong
 
 import Definitions.Def_ChapterScalaronFockEsa
 import Definitions.Def_ChapterScalaronEdge
@@ -10,6 +9,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+open BookProof.Starobinsky
 
 
 /-!

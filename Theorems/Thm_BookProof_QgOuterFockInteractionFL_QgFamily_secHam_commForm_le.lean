@@ -16,6 +16,10 @@ import Definitions.Def_ChapterMajoranaClifford
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterSqSumFarisLavine
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterMajoranaClifford
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterSqSumFarisLavine
 open BookProof.HermiteProductCore
 open BookProof.MajoranaClifford
 open BookProof.QgHermiteOscillator

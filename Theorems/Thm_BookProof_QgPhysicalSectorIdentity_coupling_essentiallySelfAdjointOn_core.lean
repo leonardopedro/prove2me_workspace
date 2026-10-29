@@ -12,6 +12,10 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterQgDerivativeRealization
 open BookProof.ChapterA3n
 open BookProof.DirectSumEsa
 open BookProof.NavierStokesFlow.IkebeKato

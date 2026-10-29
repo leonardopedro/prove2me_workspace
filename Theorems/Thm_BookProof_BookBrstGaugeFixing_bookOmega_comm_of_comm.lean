@@ -6,6 +6,8 @@ import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterSmBrstGhost
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.SmBrstGhost
 open BookProof.YangMillsGhost
 open BookProof.BookBrstGaugeFixing

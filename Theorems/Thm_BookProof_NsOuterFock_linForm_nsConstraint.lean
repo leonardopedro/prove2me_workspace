@@ -9,8 +9,10 @@ import Definitions.Def_ChapterSqSumOuterFamily
 import Mathlib
 import Definitions.Def_ChapterNsOuterFockFarisLavine
 import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.QgOuterFock
-open BookProof.NsOuterFock
 
 
 
@@ -19,7 +21,6 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
-open BookProof.SqSumOuterFamily
 
 noncomputable section
 

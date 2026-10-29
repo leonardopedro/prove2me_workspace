@@ -107,8 +107,7 @@ def rayleighInf (T : F →L[ℂ] F) : ℝ := sInf (rayleighSet T)
 
 
 
- xormal.1 0, rfl⟩⟩
 
-/-! ## 5. The headline: Ritz values converge to the bottom nftrum A hsa hpos b⟩
+/-! ## 5. The headline: Ritz values converge to the bottom of the spectrum -/
 
 end BookProof.ChapterSirkRitzSpectrum

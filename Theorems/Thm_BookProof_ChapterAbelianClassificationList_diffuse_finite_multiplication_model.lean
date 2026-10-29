@@ -7,6 +7,7 @@ import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterLpScaleMeasure
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterLpScaleMeasure
 open BookProof.ChapterAbelianClassificationList

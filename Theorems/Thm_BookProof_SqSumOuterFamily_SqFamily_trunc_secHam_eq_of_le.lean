@@ -13,10 +13,11 @@ import Definitions.Def_ChapterSqSumOuterSingleTime
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
-open BookProof.SqSumOuterFamily
-open BookProof.SqSumOuterFamily.SqFamily
 
 
 

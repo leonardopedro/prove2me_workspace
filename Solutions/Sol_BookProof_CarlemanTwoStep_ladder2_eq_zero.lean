@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_faceK
-import Theorems.Thm_BookProof_CarlemanTwoStep_rc1_nonneg
 import Theorems.Thm_BookProof_CarlemanTwoStep_rc2_nonneg
 import Theorems.Thm_BookProof_CarlemanTwoStep_flux_identity2
 import Theorems.Thm_BookProof_CarlemanTwoStep_flux_boundG

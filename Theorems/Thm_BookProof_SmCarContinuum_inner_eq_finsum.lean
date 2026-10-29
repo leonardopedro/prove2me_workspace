@@ -6,6 +6,8 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
 import Definitions.Def_ChapterRieszFischer
+import Definitions.Def_ChapterRieszFischer
+import Definitions.Def_ChapterSmCarContinuum
 open BookProof.ChapterRieszFischer
 open BookProof.SmCarContinuum
 

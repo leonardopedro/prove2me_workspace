@@ -13,6 +13,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
+/-- Mirror copy of `ChapterRadialLaplacian.innerCLM_apply` (dropped from the
+published bundle): `rfl` by the definition of `innerCLM`. -/
+private theorem innerCLM_apply' (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
 set_option maxHeartbeats 1000000 in
 
 
@@ -21,4 +25,4 @@ theorem solution (x : E) :
   have h := (hasStrictFDerivAt_norm_sq x).hasFDerivAt
   convert h using 1
   ext y
-  simp [two_smul]
+  simp [two_smul, innerCLM_apply']

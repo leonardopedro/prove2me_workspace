@@ -13,6 +13,8 @@ import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.ModeQuadratic

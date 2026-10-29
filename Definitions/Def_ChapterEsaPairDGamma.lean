@@ -5,6 +5,11 @@ import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterScalarDGammaEsa
 import Mathlib
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_bounded_dense
+import Theorems.Thm_BookProof_SecondQuantizationCore_dGamma_essentiallySelfAdjointOn_fockCore
+import Theorems.Thm_BookProof_SecondQuantizationCore_symmetricOn_fockSectorOp
+import Theorems.Thm_BookProof_ScalarDGamma_dense_fockSectorDom
 
 
 /-!
@@ -71,8 +76,8 @@ theorem norm_sum_tmul_orthonormal {m : ℕ} (x : Fin m → E) (e : Fin m → F)
       ring
     · intro h; simp at h
   have h1 : ‖(∑ i, x i ⊗ₜ[ℂ] e i : E ⊗[ℂ] F)‖ ^ 2
-      = (RCLike.re (inner ℂ (∑ i, x i ⊗ₜ[ℂ] e i : E ⊗[ℂ] F) (∑ j, x j ⊗ₜ[ℂ] e j) : ℂ)) := by
-    rw [inner_self_eq_norm_sq]
+      = (RCLike.re (inner ℂ (∑ i, x i ⊗ₜ[ℂ] e i : E ⊗[ℂ] F) (∑ i, x i ⊗ₜ[ℂ] e i) : ℂ)) := by
+    exact (inner_self_eq_norm_sq _).symm
   rw [h1, hinner, map_sum]
   exact Finset.sum_congr rfl (fun i _ => by rw [inner_self_eq_norm_sq])
 
@@ -186,6 +191,7 @@ namespace BookProof.BoundedDGamma
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorOpBound
   BookProof.SecondQuantizationCore BookProof.DirectSumEsa
 
 noncomputable section
@@ -330,6 +336,7 @@ namespace BookProof.EsaPair
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.TensorOpBound
   BookProof.SecondQuantizationCore BookProof.DirectSumEsa BookProof.BoundedDGamma
   BookProof.SecondQuantizationCore BookProof.DirectSumEsa
 
@@ -399,12 +406,6 @@ def ESAPair.ofBounded (Hs : IPSpace) (B : (⊤ : Submodule ℂ Hs.carrier) →�
   coreDomain := D
   sub_domain := le_top
   is_core := isGraphCore_of_bounded Hs B hC0 hC hdense
-
-
-
-
-/-- Inlined from the unpublished `ChapterTensorOperatorBound` bundle (platform-world rule: an unpublished dep cannot be imported). -/
-
 
 end
 

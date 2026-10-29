@@ -7,12 +7,13 @@ import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterA4
 import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
-open BookProof.PolarPartialIsometry
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterVonNeumannCore
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

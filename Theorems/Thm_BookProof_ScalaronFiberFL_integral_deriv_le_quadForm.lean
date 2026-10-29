@@ -12,6 +12,8 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL
 

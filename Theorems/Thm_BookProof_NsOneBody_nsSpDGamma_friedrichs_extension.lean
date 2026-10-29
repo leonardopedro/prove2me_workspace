@@ -16,19 +16,21 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsHermite
-open BookProof.NsOneBody
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.QgOuterFockFL
-open BookProof.NsFullEuler BookProof.FockSecondQuantization BookProof.FockSchur
+open BookProof.FockSecondQuantization BookProof.FockSchur
 open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 

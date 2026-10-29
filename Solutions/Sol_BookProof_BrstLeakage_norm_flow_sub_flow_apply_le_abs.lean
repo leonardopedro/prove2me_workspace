@@ -15,6 +15,12 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteS
 
 set_option maxHeartbeats 1000000 in
 
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+@[simp] private lemma flow_neg_gen (A : E →L[ℂ] E) (t : ℝ) : flow (-A) t = flow A (-t) := by
+  simp only [flow]
+  congr 1
+  module
+
 theorem solution {A B : E →L[ℂ] E} (hA : IsSelfAdjoint A)
     (t : ℝ) (x : E) (K : ℝ) (hK : ∀ s : ℝ, ‖(A - B) (flow B s x)‖ ≤ K) :
     ‖flow B t x - flow A t x‖ ≤ K * |t| := by

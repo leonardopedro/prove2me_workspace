@@ -5,14 +5,13 @@ import Definitions.Def_ChapterA4
 import Mathlib
 import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.YangMillsHermite
-open BookProof.KoopmanLyapunov
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.NsKoopman
 
 noncomputable section
 

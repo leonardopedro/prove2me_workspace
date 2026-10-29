@@ -45,5 +45,5 @@ theorem solution (lam lam' mu gg : ℝ) :
       (lagFullFockHam lam lam' mu gg) (fun x => by
         refine ⟨lagFockCore_le_friedDom lam lam' mu gg x.2, ?_⟩
         refine lp.ext (funext fun n => ?_)
-        rw [lagOuterN_apply, lagFried_op_core lam lam' mu gg n ⟨(x : lagFockSpace) n, x.2.2 n⟩]
-        exact (dsOp_coe (fun n : ℕ => lagSectorHam lam lam' mu gg n) x n).symm)
+        erw [lagOuterN_apply, lagFried_op_core lam lam' mu gg n ⟨(x : lagFockSpace) n, x.2.2 n⟩]
+        exact rfl)

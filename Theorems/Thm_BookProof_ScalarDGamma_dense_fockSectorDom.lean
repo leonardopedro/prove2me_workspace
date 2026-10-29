@@ -5,6 +5,9 @@ import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
 open BookProof.ScalarDGamma

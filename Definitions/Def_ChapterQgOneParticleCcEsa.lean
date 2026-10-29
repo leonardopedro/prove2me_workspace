@@ -20,7 +20,6 @@ import Theorems.Thm_BookProof_HermiteQuadraticEsa_continuous_sectorQuadW
 import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
-import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_confW
 import Theorems.Thm_BookProof_HermiteQuadraticEsa_expBounded_of_le_harm
@@ -441,9 +440,7 @@ theorem fderiv_fderiv_cut (R : ℝ) (x : Vd d) :
     (scaleCLM d R)).hasFDerivAt).comp x h3
   exact h4.fderiv
 
-set_option maxHeartbeats 8000000 in
-set_option trace.profiler true in
-set_option trace.profiler.threshold 1000 in
+set_option maxHeartbeats 128000000 in
 /-- **The derivative bounds of the scaled cut-off**: `|∂ⱼχ_R| ≤ C/R` and `|Δχ_R| ≤ C/R²`,
 with a constant that does not depend on `R`. -/
 theorem exists_cut_derivative_bounds (d : ℕ) :
@@ -463,9 +460,51 @@ theorem exists_cut_derivative_bounds (d : ℕ) :
     hbump.1.fderiv_right (m := ((⊤ : ℕ∞) : WithTop ℕ∞)) le_rfl
   have hcont2 : Continuous (fun y : Vd d => fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) y) :=
     hbd.continuous_fderiv (by simp)
-  obtain ⟨C₂, hC₂⟩ := hcs2.exists_bound_of_continuous hcont2
+  -- The direct call `hcs2.exists_bound_of_continuous hcont2` is unusable here:
+  -- its `Continuous` argument must carry the *metric-derived* topology of the
+  -- nested continuous linear map `Vd d →L[ℝ] Vd d →L[ℝ] ℝ` (that is the
+  -- topology the section instance of `exists_bound_of_continuous` fixes), while
+  -- `hcont2` has `ContinuousLinearMap.topologicalSpace`.  Checking the two
+  -- definitionally never settles (measured 2026-10-27: a type mismatch after
+  -- the full `maxHeartbeats 128000000`, 1.7 h of `whnf`).  Bound the R-valued
+  -- evaluation on a compact set instead and lift through `opNorm_le_of_unit_norm`.
+  have hφ : Continuous (fun p :
+      (Vd d →L[ℝ] (Vd d →L[ℝ] ℝ)) × Vd d × Vd d => p.1 p.2.1 p.2.2) := by
+    fun_prop
+  have hK : IsCompact (Set.range
+      (fun y : Vd d => fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) y) ×ˢ
+      Metric.closedBall (0 : Vd d) 1 ×ˢ Metric.closedBall (0 : Vd d) 1) :=
+    IsCompact.prod (hcs2.isCompact_range hcont2)
+      (IsCompact.prod (isCompact_closedBall (0 : Vd d) 1)
+        (isCompact_closedBall (0 : Vd d) 1))
+  have hCO : ContinuousOn (fun p :
+      (Vd d →L[ℝ] (Vd d →L[ℝ] ℝ)) × Vd d × Vd d => p.1 p.2.1 p.2.2)
+      (Set.range (fun y : Vd d => fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) y) ×ˢ
+      Metric.closedBall (0 : Vd d) 1 ×ˢ Metric.closedBall (0 : Vd d) 1) :=
+    hφ.continuousOn
+  obtain ⟨C₂, hC₂bound⟩ := hK.exists_bound_of_continuousOn hCO
+  have hnnC₂ : 0 ≤ C₂ := le_trans (norm_nonneg _) <|
+    hC₂bound (⟨fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) 0, 0, 0⟩ :
+      (Vd d →L[ℝ] (Vd d →L[ℝ] ℝ)) × Vd d × Vd d)
+      ⟨Set.mem_range_self 0, by simp, by simp⟩
+  have hC₂ : ∀ x, ‖fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) x‖ ≤ C₂ := by
+    intro x
+    refine ContinuousLinearMap.opNorm_le_of_unit_norm
+      (f := fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) x) hnnC₂ fun y hy => ?_
+    refine ContinuousLinearMap.opNorm_le_of_unit_norm
+      (f := fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) x y) hnnC₂ fun z hz => ?_
+    have hy' : y ∈ Metric.closedBall (0 : Vd d) 1 := by
+      simpa [Metric.mem_closedBall] using hy.le
+    have hz' : z ∈ Metric.closedBall (0 : Vd d) 1 := by
+      simpa [Metric.mem_closedBall] using hz.le
+    exact hC₂bound (⟨fderiv ℝ (fun z : Vd d => fderiv ℝ (bump d) z) x, y, z⟩ :
+      (Vd d →L[ℝ] (Vd d →L[ℝ] ℝ)) × Vd d × Vd d)
+      ⟨Set.mem_range_self x, hy', hz'⟩
   have hC₁nn : 0 ≤ C₁ := le_trans (norm_nonneg _) (hC₁ 0)
-  have hC₂nn : 0 ≤ C₂ := le_trans (norm_nonneg _) (hC₂ 0)
+  -- `hnnC₂` (not `le_trans (norm_nonneg _) (hC₂ 0)`): `hC₂` is now stated with
+  -- the continuous-linear map's own `Norm` instance, which `norm_nonneg`'s
+  -- `SeminormedAddGroup.toNorm` does not unify with syntactically.
+  have hC₂nn : 0 ≤ C₂ := hnnC₂
   refine ⟨max C₁ (d * C₂), le_trans hC₁nn (le_max_left _ _), fun R hR x => ?_⟩
   have hRpos : (0 : ℝ) < R := lt_of_lt_of_le zero_lt_one hR
   have hcutC : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (cut d R) := contDiff_cut R
@@ -530,7 +569,10 @@ theorem exists_cut_derivative_bounds (d : ℕ) :
           (scaleCLM d R x)).comp (scaleCLM d R)‖ ≤ C₂ * R⁻¹ := by
         refine le_trans (ContinuousLinearMap.opNorm_comp_le _ _) ?_
         exact mul_le_mul (hC₂ _) (norm_scaleCLM_le hRpos) (norm_nonneg _) hC₂nn
-      have := mul_le_mul hflip hinner (norm_nonneg _) (by positivity)
+      -- `opNorm_nonneg` (not `norm_nonneg _`): the bound is on a *nested* CLM
+      -- norm, whose `Norm` instance is `ContinuousLinearMap.hasOpNorm`, not a
+      -- `SeminormedAddGroup.toNorm` projection.
+      have := mul_le_mul hflip hinner (ContinuousLinearMap.opNorm_nonneg _) (by positivity)
       calc ‖((ContinuousLinearMap.compL ℝ (Vd d) (Vd d) ℝ).flip (scaleCLM d R))‖ *
             ‖(fderiv ℝ (fun y : Vd d => fderiv ℝ (bump d) y)
               (scaleCLM d R x)).comp (scaleCLM d R)‖

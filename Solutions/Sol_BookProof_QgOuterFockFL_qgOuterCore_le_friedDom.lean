@@ -42,16 +42,16 @@ set_option maxHeartbeats 1000000 in
 theorem solution : qgOuterCore ≤ qgOuterFriedDom := by
   intro x hx
   refine ⟨fun n => polyGaussCore_le_harmFriedDom (n * 84) (hx.2 n), ?_⟩
-  have hfun : (fun n : ℕ => opTot (harmFried (n * 84)).op ((x : qgOuterFock) n))
-      = fun n : ℕ => (harmCore ⟨(x : qgOuterFock) n, hx.2 n⟩ : L2d (n * 84)) := by
+  have hfun : (fun n : ℕ => opTot (harmFried (n * 84)).op ((x : BookProof.QgOuterFockFL.qgOuterFock) n))
+      = fun n : ℕ => (BookProof.QgOuterFockFL.harmCore ⟨(x : BookProof.QgOuterFockFL.qgOuterFock) n, hx.2 n⟩ : L2d (n * 84)) := by
     funext n
     rw [opTot_of_mem _ (polyGaussCore_le_harmFriedDom (n * 84) (hx.2 n)),
-      harmFried_op_core (n * 84) ⟨(x : qgOuterFock) n, hx.2 n⟩]
+      harmFried_op_core (n * 84) ⟨(x : BookProof.QgOuterFockFL.qgOuterFock) n, hx.2 n⟩]
   rw [hfun]
   refine memLp_of_finite_support (Set.Finite.subset hx.1 fun n hn => ?_)
   simp only [Set.mem_setOf_eq] at hn ⊢
   intro h0
   refine hn ?_
-  have hz : (⟨(x : qgOuterFock) n, hx.2 n⟩ : polyGaussCore (d := n * 84)) = 0 :=
+  have hz : (⟨(x : BookProof.QgOuterFockFL.qgOuterFock) n, hx.2 n⟩ : polyGaussCore (d := n * 84)) = 0 :=
     Subtype.ext h0
   rw [hz, map_zero]

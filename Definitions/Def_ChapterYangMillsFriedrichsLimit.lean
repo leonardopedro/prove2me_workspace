@@ -84,7 +84,7 @@ section ProperDomain
 
 open scoped InnerProductSpace ENNReal lp
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ Fh0nual)
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 end ProperDomain
 
@@ -101,7 +101,7 @@ respect to the Krylov flag of a seed `v`: `Pₙ A Pₙ`, where `Pₙ` is the
 orthogonal projection onto the order-`n` Krylov subspace. -/
 noncomputable def sirkCompression (A : F →L[ℂ] F) (v : F) (n : ℕ) (u : F) : F :=
   (krylovSpan A.toLinearMap v n).starProjection
-    (A ((krylovSpan A.toLinearMap v n).starProjection u)g sus ⟩
+    (A ((krylovSpan A.toLinearMap v n).starProjection u))
 
 end Sirk
 
@@ -111,7 +111,7 @@ section Weyl
 
 open BookProof.ChapterH5 BookProof.ChapterH9
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F⟩
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
 end Weyl
 

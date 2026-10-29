@@ -1,6 +1,8 @@
 import Theorems.Thm_BookProof_ChapterDutchBook_Coherent_nonneg
 
 import Definitions.Def_ChapterPositiveSquareRootUnique
+import Theorems.Thm_BookProof_FriedrichsSquare_adjPairs_factorRel
+import Definitions.Def_ChapterUnboundedPolar
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
@@ -535,7 +537,21 @@ end Shift
 
 variable {D : Submodule ℂ F}
 
-
+/-- `A* Ā` is a non-negative self-adjoint linear relation. -/
+theorem isNonnegSelfAdjoint_factorRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (factorRel A) where
+  adj := adjPairs_factorRel A
+  nonneg := by
+    intro p hp
+    obtain ⟨y, -, hval⟩ := inner_fst_add_self hp
+    have h1 : (inner ℂ p.1 p.1 : ℂ) = ((‖p.1‖ ^ 2 : ℝ) : ℂ) := by
+      rw [inner_self_eq_norm_sq_to_K]; norm_cast
+    have h2 : (inner ℂ p.1 p.2 : ℂ) = ((‖y‖ ^ 2 : ℝ) : ℂ) := by
+      have hsplit := hval
+      rw [inner_add_right, h1] at hsplit
+      push_cast at hsplit ⊢
+      linear_combination hsplit
+    rw [h2, Complex.ofReal_re]
+    positivity
 
 /-- **`|Ā|` is the square root of `A* Ā`** in the sense of `sqrtRel`. -/
 theorem absRel_eq_sqrtRel (A : D →ₗ[ℂ] F) :

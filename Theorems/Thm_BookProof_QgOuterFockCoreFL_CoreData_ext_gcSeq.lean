@@ -9,6 +9,7 @@ import Definitions.Def_ChapterQgHermiteOscillatorEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 

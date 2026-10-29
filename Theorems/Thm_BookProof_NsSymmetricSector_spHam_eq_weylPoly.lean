@@ -16,19 +16,20 @@ import Mathlib
 import Definitions.Def_ChapterNsSymmetricSector
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.NsSymmetricSector
 
 
 
 open scoped TensorProduct
 open BookProof.NsOneBody BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.GraphCore
-open BookProof.TensorCore BookProof.FockStatistics BookProof.PermSector BookProof.ReducedEsa
-open BookProof.GroupAverage BookProof.TensorPerm
+open BookProof.TensorCore BookProof.PermSector BookProof.ReducedEsa
+open BookProof.TensorPerm
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa
 
 noncomputable section
 

@@ -7,6 +7,8 @@ import Mathlib
 import Definitions.Def_ChapterSeparableL2Model
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterWignerSymmetry
+import Definitions.Def_ChapterSeparableL2Model
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterWignerSymmetry
 open BookProof.ChapterSeparableL2Model

@@ -12,10 +12,12 @@ import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
-open BookProof.NsFullEuler
 
 
 

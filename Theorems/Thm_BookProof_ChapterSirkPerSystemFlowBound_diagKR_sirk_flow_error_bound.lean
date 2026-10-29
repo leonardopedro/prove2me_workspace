@@ -24,6 +24,8 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkPerSystemFlowBound
 open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH6

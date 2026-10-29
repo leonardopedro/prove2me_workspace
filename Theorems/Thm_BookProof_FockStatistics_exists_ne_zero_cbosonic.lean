@@ -5,14 +5,14 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
-open BookProof.GroupAverage.UnitaryRep
-open BookProof.FockStatistics
 
 
 
-open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.ReducedEsa
 
 noncomputable section
 

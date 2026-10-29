@@ -11,4 +11,4 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-theorem BookProof.YangMillsFriedrichsLimit.memLp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by sorry
+theorem BookProof.YangMillsFriedrichsLimit.memℓp_one_div_succ : Memℓp (fun n : ℕ => (1 / (n + 1) : ℂ)) 2 := by sorry

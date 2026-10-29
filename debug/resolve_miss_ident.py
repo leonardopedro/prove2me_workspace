@@ -112,10 +112,14 @@ def main():
             if len(cands) > 1:
                 multi.append((i, sorted(cands)))
             for kind, mod in sorted(cands):
+                # module tails carry the source prefix (`Def_`/`Thm_`) that
+                # ledger keys drop — strip both, or every def-resolving id
+                # misclassifies as "missing" (observed:34 false blocks).
+                key = mod.split(".", 1)[1]
                 if kind == 'def':
-                    key = f'def:{mod.split(".", 1)[1]}'
+                    key = 'def:' + (key[4:] if key.startswith('Def_') else key)
                 else:
-                    key = f'thm:{mod.split(".", 1)[1][4:]}'
+                    key = 'thm:' + (key[4:] if key.startswith('Thm_') else key)
                 published = st.get(key, {}).get('status') == 'done'
                 resolved.append((i, mod,
                                  f'import-{kind}-'

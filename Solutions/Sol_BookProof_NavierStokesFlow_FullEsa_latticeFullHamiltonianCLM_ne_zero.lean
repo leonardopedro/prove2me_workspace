@@ -21,6 +21,8 @@ variable (d : NSFullData F)
 
 set_option maxHeartbeats 1000000 in
 
+@[simp] private theorem constField_apply (r : ℝ) (k : ℤ) : ((constField r : LinfZ) : ℤ → ℝ) k = r := rfl
+
 theorem solution :
     latticeFullHamiltonianCLM (fun _ => constField 1) 1 ≠ 0 := by
   intro hzero

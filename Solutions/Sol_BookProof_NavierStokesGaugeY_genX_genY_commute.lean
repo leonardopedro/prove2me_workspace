@@ -16,6 +16,10 @@ open MvPolynomial BookProof.NavierStokesFlow
 
 set_option maxHeartbeats 1000000 in
 
+private theorem genY_apply (j : Fin 3) (p : NSAlg) :
+    genY j p = pderiv (NSVar.y j) p - ∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p := by
+  simp [genY]
+
 theorem solution (j k : Fin 3) : ⁅genX j, genY k⁆ = 0 := by
   refine LinearMap.ext fun p => ?_
   simp only [Ring.lie_def, LinearMap.sub_apply, Module.End.mul_apply, LinearMap.zero_apply,

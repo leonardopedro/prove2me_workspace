@@ -504,15 +504,6 @@ theorem not_bounded_diagOp (lam : ι → ℝ) (hlam : ∀ C : ℝ, ∃ i, C < |l
 
 
 
-/-- The domain itself is a core, so the theorem applies with no side condition at all. -/
-theorem dGamma_diag_essentiallySelfAdjointOn_fockCore_self (lam : ι → ℝ)
-    (hdense : Dense (Submodule.span ℂ (Set.range E) : Set Hs.carrier)) :
-    EssentiallySelfAdjointOn
-      (dsCore (fun n : ℕ => fockSectorCore Hs (diagDomain E) (diagDomain E) n))
-      (dGammaCoreOp Hs (diagDomain E) (diagOp hE lam) (diagDomain E)) :=
-  dGamma_diag_essentiallySelfAdjointOn_fockCore hE lam hdense (diagDomain E)
-    (IsGraphCore.refl _)
-
 end Diagonal
 
 end

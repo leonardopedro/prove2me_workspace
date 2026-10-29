@@ -12,17 +12,18 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsGhostSector
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterYangMillsGhostSector
 open BookProof.FockSecondQuantization
 open BookProof.YangMillsFriedrichs
 open BookProof.YangMillsGhost
-open BookProof.GradedFriedrichs
 
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin
-open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

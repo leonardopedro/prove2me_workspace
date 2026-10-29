@@ -6,15 +6,16 @@ import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
 import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterWignerOrbitClassification
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.TensorCore
 open BookProof.ChapterWignerLittleGroup
-open BookProof.GroupAverage.UnitaryRep
-open BookProof.FockStatistics
 
 
 
-open BookProof.GroupAverage BookProof.ReducedEsa
+open BookProof.ReducedEsa
 
 noncomputable section
 

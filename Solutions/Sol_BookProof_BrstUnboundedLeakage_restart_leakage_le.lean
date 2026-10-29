@@ -35,7 +35,7 @@ theorem solution {Om : H →L[ℂ] H}
     (hD : ∀ i, ‖truncDefect T (Vs i) (hVs i)‖ ≤ D) :
     ∀ n : ℕ, ‖Om (leakageIter (restartGen T Vs hVs) τ x n)‖
       ≤ ‖Om x‖ + n * (‖Om‖ * (D * ‖x‖ * τ))
-  | 0 => by simp
+  | 0 => by simp [leakageIter]
   | n + 1 => by
       have hxn : ‖leakageIter (restartGen T Vs hVs) τ x n‖ = ‖x‖ :=
         norm_restartIter T Vs hVs τ x n
@@ -50,7 +50,7 @@ theorem solution {Om : H →L[ℂ] H}
           ≤ ‖Om (leakageIter (restartGen T Vs hVs) τ x n)‖ + ‖Om‖ * (D * ‖x‖ * τ) := by
         rw [leakageIter_succ]
         exact hstep.trans (by gcongr)
-      have hind := restart_leakage_le hcomm τ hτ x D hret hD n
+      have hind := solution hcomm τ hτ x D hret hD n
       have hcast : ((n : ℝ) + 1) * (‖Om‖ * (D * ‖x‖ * τ))
           = (n : ℝ) * (‖Om‖ * (D * ‖x‖ * τ)) + ‖Om‖ * (D * ‖x‖ * τ) := by ring
       push_cast

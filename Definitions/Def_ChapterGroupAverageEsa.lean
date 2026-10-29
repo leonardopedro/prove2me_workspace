@@ -36,6 +36,27 @@ instrument in general:
 Nothing is assumed: the module contains no `axiom` and no `sorry`.
 -/
 
+namespace BookProof.GroupAverage
+
+open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa
+noncomputable section
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+variable {G : Type*} [Group G] [Fintype G]
+
+/-- A finite group acting on an inner product space by inner-product-preserving linear maps.
+Unitarity is stated as preservation of the inner product, which for an invertible map is the
+same thing; invertibility comes from the group law. -/
+structure UnitaryRep (G : Type*) [Group G] (F : Type*) [NormedAddCommGroup F]
+    [InnerProductSpace ℂ F] where
+  /-- the operator attached to a group element -/
+  act : G → (F →ₗ[ℂ] F)
+  /-- the unit acts as the identity -/
+  act_one : ∀ x, act 1 x = x
+  /-- the action is multiplicative -/
+  act_mul : ∀ g h x, act (g * h) x = act g (act h x)
+  /-- every operator of the action preserves the inner product -/
+  act_inner : ∀ g x y, (inner ℂ (act g x) (act g y) : ℂ) = inner ℂ x y
+
 namespace UnitaryRep
 
 variable (rep : UnitaryRep G F)

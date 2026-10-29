@@ -14,6 +14,8 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterHermiteProductBasis
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductBasis
 open BookProof.FullQuadratic
 

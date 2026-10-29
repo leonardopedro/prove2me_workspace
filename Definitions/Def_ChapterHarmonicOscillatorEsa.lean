@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterStrichartzHermiteQG
+import Theorems.Thm_BookProof_HermiteCore_deriv_poly_mul_gaussH
+import Theorems.Thm_BookProof_HermiteCore_hasDerivAt_poly_mul_gaussH
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteFunctions
 import Mathlib

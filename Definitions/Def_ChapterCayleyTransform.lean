@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_res_shift
 
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato

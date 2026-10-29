@@ -24,7 +24,7 @@ theorem solution {f : E → E} {L : ℝ}
     (hf : ∀ x y, ‖f x - f y‖ ≤ L * ‖x - y‖) (x y : E) :
     ‖residual f x - residual f y‖ ≤ (1 + L) * ‖x - y‖ := by
   have hrw : residual f x - residual f y = (x - y) + (f x - f y) := by
-    rw [residual, residual]
+    rw [BookProof.ChapterResidualStream.residual, BookProof.ChapterResidualStream.residual]
     abel
   have h1 : ‖(x - y) + (f x - f y)‖ ≤ ‖x - y‖ + ‖f x - f y‖ := norm_add_le _ _
   have h2 := hf x y

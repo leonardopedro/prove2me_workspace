@@ -3,6 +3,7 @@ import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.HermiteProductBasis
 

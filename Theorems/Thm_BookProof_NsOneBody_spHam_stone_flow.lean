@@ -16,17 +16,20 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.StoneBridge
-open BookProof.NsOneBody
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.QgOuterFockFL
-open BookProof.NsFullEuler BookProof.FockSecondQuantization BookProof.FockSchur
+open BookProof.FockSecondQuantization BookProof.FockSchur
 open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 

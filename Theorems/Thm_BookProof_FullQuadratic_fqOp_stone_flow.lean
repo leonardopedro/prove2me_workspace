@@ -15,6 +15,8 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.StoneBridge
@@ -29,9 +31,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
-open BookProof.CarlemanSimplex
-open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

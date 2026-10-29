@@ -14,15 +14,16 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
 import Definitions.Def_ChapterGradedHashimoto
-open BookProof.GradedHashimoto
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterVielbeinFiberFock
 
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin BookProof.HashimotoShiftInvert
-open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
-open BookProof.GradedFriedrichs
+open BookProof.FockSecondQuantization
 open BookProof.ChapterStoneResolvent BookProof.StoneBridge
 
 noncomputable section

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionResponse
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterAttentionResponse
 open BookProof.ChapterAttentionResponse
 
 

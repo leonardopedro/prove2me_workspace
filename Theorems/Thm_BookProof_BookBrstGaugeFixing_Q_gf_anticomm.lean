@@ -4,6 +4,7 @@ import Definitions.Def_ChapterBookBrstYangMills
 import Mathlib
 import Definitions.Def_ChapterBookBrstGaugeFixing
 import Definitions.Def_ChapterBRSTNilpotent
+import Definitions.Def_ChapterBookBrstInstances
 open BookProof.BRSTNilpotent
 open BookProof.BookBrstGaugeFixing
 

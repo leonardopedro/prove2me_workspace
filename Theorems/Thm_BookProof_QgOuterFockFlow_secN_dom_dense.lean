@@ -10,6 +10,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.QgOuterFockFlow
 
 

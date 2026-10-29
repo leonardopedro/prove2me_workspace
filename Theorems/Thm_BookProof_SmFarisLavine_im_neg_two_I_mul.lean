@@ -10,7 +10,8 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
-open BookProof.SmFarisLavine
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterSmHamiltonian
 
 
 

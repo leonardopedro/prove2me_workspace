@@ -23,9 +23,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution {hD : ∀ (g : G) (x : F), x ∈ D → rep.act g x ∈ D}
     (hT : ∀ (g : G) (x : D), T ⟨rep.act g (x : F), hD g _ x.2⟩ = rep.act g (T x)) :
     Commutes T (rep.avgProj_mem hD) where
-  comm x :=
-  where
-    comm x := by
+  comm x := by
       have hsplit : (⟨rep.avgProj (x : F), rep.avgProj_mem hD _ x.2⟩ : D)
           = ((Fintype.card G : ℂ))⁻¹ • ∑ g : G, (⟨rep.act g (x : F), hD g _ x.2⟩ : D) := by
         apply Subtype.ext

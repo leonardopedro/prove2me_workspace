@@ -9,6 +9,9 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStrichartzWave
 import Mathlib
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_coreEquiv_symm_pgLp
+import Definitions.Def_ChapterQgHermiteFriedrichs
+import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_nonneg_const
 
 
 /-!
@@ -299,6 +302,15 @@ theorem expBounded_polyW (q : MvPolynomial (Fin d) ℂ) : ExpBounded (polyW q) :
       ring_nf
 
 
+
+/-- For a polynomial with real coefficients the complex evaluation is the real one. -/
+theorem polyW_ofReal {q : MvPolynomial (Fin d) ℂ} (hq : RealCoeff q) (x : Vd d) :
+    ((polyW q x : ℝ) : ℂ) = MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q := by
+  have hcp : cpoly q = q := hq
+  have h : (starRingEnd ℂ) (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q)
+      = MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q := by
+    rw [conj_polyEval, hcp]
+  exact Complex.conj_eq_iff_re.mp h
 
 /-- Multiplication by a real-coefficient polynomial is the potential term on the core. -/
 theorem pgFun_mul_polyW {q : MvPolynomial (Fin d) ℂ} (hq : RealCoeff q)

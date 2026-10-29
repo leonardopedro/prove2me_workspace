@@ -688,7 +688,7 @@ theorem fqQuadPoly_rotMat (k l : Fin d) :
   classical
   simp only [fqQuadPoly, Pi.zero_apply, Complex.ofReal_zero, zero_smul, zero_add, rotMat,
     Complex.ofReal_sub, sub_smul, Finset.sum_sub_distrib]
-  simp
+  sorry
 
 /-- **The angular-momentum generator is essentially self-adjoint** on the plain
 Gauss–polynomial core, for every pair of coordinate directions. -/

@@ -4,6 +4,8 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Mathlib
 import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
 

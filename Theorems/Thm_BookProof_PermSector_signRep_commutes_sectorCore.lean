@@ -5,12 +5,18 @@ import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterTensorPermutation
 import Mathlib
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_PermSector_signRep_mem_sectorCore
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterWignerLittleGroup
 import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterWignerOrbitClassification
 open BookProof.DirectSumEsa
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.GraphCore
@@ -22,7 +28,7 @@ open BookProof.PermSector
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
-open BookProof.GroupAverage BookProof.TensorPerm
+open BookProof.TensorPerm
 
 noncomputable section
 

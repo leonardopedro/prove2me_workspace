@@ -18,7 +18,6 @@ open BookProof.Qg3DGaugeEsa
 open BookProof.QgOuterFock
 open BookProof.QuantumGravity3DGauge
 open BookProof.YangMillsHermite
-open BookProof.Qg3DGaugeFL
 
 
 

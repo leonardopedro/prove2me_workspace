@@ -10,6 +10,7 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterFockPairPerturbation
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore

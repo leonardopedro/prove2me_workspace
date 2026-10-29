@@ -77,7 +77,10 @@ def main():
     pending = set(mods)
     failed = {}
     round_no = 0
-    while pending and round_no < 12:
+    # 12 was too small for a 193-module closure: chains nest deeper than 12
+    # waves, so the loop bailed with everything still "waiting" (2026-10-24).
+    # The docstring promises deps-first to a fixpoint; this is that promise.
+    while pending and round_no < 200:
         round_no += 1
         ready, not_yet = [], []
         for mod in sorted(pending):

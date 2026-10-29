@@ -37,4 +37,4 @@ theorem solution (k : ℕ) :
   have hsupp : (Finsupp.single k (1 : ℂ)).support = {k} :=
     Finsupp.support_single_ne_zero k one_ne_zero
   rw [fieldVec_apply, creVec_apply, annVec_apply, hsupp]
-  simp [vac, hup]
+  simp [vac, hup, creA_single, annA_single]

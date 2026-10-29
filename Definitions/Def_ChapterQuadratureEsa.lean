@@ -2,10 +2,21 @@
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
-import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coreEquiv
 
 import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
+-- §2.67 partial-bundle fix: these lemmas live in published theorem modules,
+-- not in the partial def bundles they were generated alongside.
+import Theorems.Thm_BookProof_HermiteRelative_foOp_linear_apply_eq_mul
+import Theorems.Thm_BookProof_HermiteRelative_foOp_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMvLp
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_hermiteMvLp
+import Theorems.Thm_BookProof_HermiteRelative_foOp_symmetric
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesSignFlip
@@ -485,7 +496,7 @@ theorem pgLp_sub' (p q : MvPolynomial (Fin d) ℂ) : pgLp (p - q) = pgLp p - pgL
 /-- `xᵢ = aᵢ + a†ᵢ`, on polynomial coordinates. -/
 theorem mulXPoly_eq_cre_add_ann (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     mulXPoly i p = crePoly i p + annPoly i p := by
-  simp
+  simp [mulXPoly_apply, crePoly_apply, annPoly_apply]
 
 /-- `πᵢ = (i/2)(a†ᵢ − aᵢ)`, on polynomial coordinates. -/
 theorem momPoly_eq_cre_sub_ann (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :

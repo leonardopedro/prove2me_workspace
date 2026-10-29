@@ -13,9 +13,9 @@ import Definitions.Def_ChapterSqSumOuterSingleTime
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSqSumOuterFamily
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
-open BookProof.SqSumOuterFamily
-open BookProof.SqSumOuterFamily.SqFamily
 
 
 

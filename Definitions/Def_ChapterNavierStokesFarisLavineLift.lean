@@ -1,7 +1,7 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_lpFiniteModes_dense
 
 import Definitions.Def_ChapterNavierStokesFullEsa
 import Mathlib
+import Definitions.Def_ChapterNavierStokesEsa
 
 
 /-!
@@ -53,6 +53,34 @@ project; it enters as a named hypothesis (`ns_esa_of_farisLavine_dense`).  What
 is established here is exactly which bounds survive second quantization, and in
 what form.
 -/
+
+open BookProof.NavierStokesFlow.FullEsa
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+
+/-- The data of a one-particle comparison operator on a fiber space: a dense
+domain, the momenta `πᵢ = -i ∂/∂uᵢ` and the drifts `Vᵢ(u)`, all symmetric and
+preserving the domain.  In the Navier–Stokes fiber space `Vᵢ(u) = u_{i,j}u_j −
+ν u_{i,jj}` is a *linear* function of the (independent) fiber coordinates, so
+`Vᵢ²` is a non-negative quadratic potential. -/
+structure ComparisonData (F : Type*) [NormedAddCommGroup F] [InnerProductSpace ℂ F]
+    (d : ℕ) where
+  /-- The dense domain (a core: in the Navier–Stokes fiber space, `C_c^∞`). -/
+  D : Submodule ℂ F
+  /-- The domain is dense. -/
+  dense : Dense (D : Set F)
+  /-- The momenta. -/
+  mom : Fin d → (D →ₗ[ℂ] D)
+  /-- The drift (advection) fields. -/
+  drift : Fin d → (D →ₗ[ℂ] D)
+  /-- Each momentum is symmetric. -/
+  mom_symm : ∀ i, IsSymmetricDom (mom i)
+  /-- Each drift is symmetric. -/
+  drift_symm : ∀ i, IsSymmetricDom (drift i)
+
+open BookProof.NavierStokesFlow
+
+section Comparison
 
 namespace ComparisonData
 
@@ -148,6 +176,9 @@ end ComparisonData
 
 end Comparison
 
+namespace BookProof.NavierStokesFlow
+namespace FarisLavineLift
+
 /-! ### An unconditional instance: the comparison operator in the momentum
 representation -/
 
@@ -227,6 +258,12 @@ theorem diagComparison_not_bounded (d : ℕ) (p q : Fin d → ℕ → ℝ)
   exact diagOp_not_bounded _ hunb
 
 end DiagonalComparison
+
+theorem norm_sum_sq_eq {κ : Type*} (s : Finset κ) (a : κ → F) :
+    ‖∑ k ∈ s, a k‖ ^ 2 = ∑ k ∈ s, ∑ l ∈ s, (inner ℂ (a k) (a l) : ℂ).re := by sorry
+
+theorem norm_le_norm_add_of_re_inner_nonneg {x y : F} (h : 0 ≤ (inner ℂ x y : ℂ).re) :
+    ‖x‖ ≤ ‖x + y‖ := by sorry
 
 /-! ## Lifting the two Faris–Lavine bounds over the particles of a sector -/
 
@@ -398,8 +435,13 @@ projections. -/
 noncomputable def nEx (k : Fin 2) : E2 →ₗ[ℂ] E2 :=
   LinearMap.smulRight (EuclideanSpace.projₗ (𝕜 := ℂ) k) (EuclideanSpace.single k (1 : ℂ))
 
-theorem norm_hEx (k : Fin 2) (x : E2) : ‖hEx k x‖ = ‖x k‖ := by[n=
-1 : Fin 2) (1 : ℂ)
+theorem norm_hEx (k : Fin 2) (x : E2) : ‖hEx k x‖ = ‖x k‖ := by sorry
+
+theorem norm_nEx (k : Fin 2) (x : E2) : ‖nEx k x‖ = ‖x k‖ := by sorry
+
+/-- The state on which the naive lifting fails: both coordinates equal to 1. -/
+noncomputable def vEx : E2 :=
+  EuclideanSpace.single (0 : Fin 2) (1 : ℂ) + EuclideanSpace.single (1 : Fin 2) (1 : ℂ)
 
 theorem vEx_apply (i : Fin 2) : vEx i = 1 := by
   fin_cases i <;> simp [vEx, EuclideanSpace.single_apply]

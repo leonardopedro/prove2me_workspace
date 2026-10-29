@@ -1,5 +1,7 @@
 import Definitions.Def_ChapterStoneGroup
+import Definitions.Def_ChapterStoneResolvent
 import Mathlib
+open BookProof.ChapterStoneResolvent
 
 
 /-!

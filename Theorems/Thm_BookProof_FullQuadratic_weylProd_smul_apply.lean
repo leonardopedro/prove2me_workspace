@@ -15,6 +15,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.YangMillsHermite
 open BookProof.FullQuadratic
 

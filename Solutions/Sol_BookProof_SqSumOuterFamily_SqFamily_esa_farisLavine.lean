@@ -61,5 +61,7 @@ theorem solution :
       = F.secExt n ⟨((x : outerFock F.dim) : ∀ n : ℕ, L2d (F.dim n)) n,
           polyGaussCore_le_harmFriedDom (F.dim n) (x.2.2 n)⟩ :=
     dsFibOp_fib F.secExt_rel _ n
-  rw [hfib, F.secExt_core n ⟨(x : outerFock F.dim) n, x.2.2 n⟩]
-  exact (dsOp_coe (fun n : ℕ => F.secHam n) x n).symm
+  rw [hfib]
+  refine (F.secExt_core n ⟨(x : outerFock F.dim) n, x.2.2 n⟩
+    (polyGaussCore_le_harmFriedDom (F.dim n) (x.2.2 n))).trans ?_
+  exact rfl

@@ -8,7 +8,12 @@ import Definitions.Def_ChapterObservableExpectation
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterAttentionMasking
 import Definitions.Def_ChapterAttentionOutput
+import Definitions.Def_ChapterAttentionSparse
+import Theorems.Thm_BookProof_ChapterAttentionSparse_norm_headOutput_masked_sub_le
 open BookProof.ChapterAttentionTopK
+-- attendedMass + norm_headOutput_masked_sub_le live in AttentionSparse, whose
+-- published Def bundle carries `attendedMass` but not an `open` here
+open BookProof.ChapterAttentionSparse
 
 
 

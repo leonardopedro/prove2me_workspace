@@ -379,7 +379,7 @@ noncomputable def preCoeff (γ : ℂ) (n : ℕ) : ℂ := ((n : ℂ) + 1) / (γ -
 
 theorem norm_sub_natCast_ge (γ : ℂ) (n : ℕ) : |γ.im| ≤ ‖γ - (n : ℂ)‖ := by
   have h := Complex.abs_im_le_norm (γ - (n : ℂ))
-  simpa uneg _)))
+  simpa using h
 
 theorem resCoeff_norm_le {γ : ℂ} (hγ : γ.im ≠ 0) (n : ℕ) : ‖resCoeff γ n‖ ≤ |γ.im|⁻¹ := by
   have hd : 0 < |γ.im| := abs_pos.mpr hγ
@@ -421,8 +421,7 @@ noncomputable def ell2Resolvent {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ²(ℕ, ℂ)
 /-- The auxiliary diagonal `eₙ ↦ (n+1) eₙ/(γ − n)`, a preimage of the resolvent
 under `R = (A+1)⁻¹`. -/
 noncomputable def ell2ResolventPre {γ : ℂ} (hγ : γ.im ≠ 0) : ℓ²(ℕ, ℂ) →L[ℂ] ℓ²(ℕ, ℂ) :=
-  diagCLMC (preCoeff_norm_lsielp
-act hdom
+  diagCLMC (preCoeff_norm_le hγ)
 
 end UnboundedExample
 

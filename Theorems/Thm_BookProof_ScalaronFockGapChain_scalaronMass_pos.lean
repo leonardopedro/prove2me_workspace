@@ -12,7 +12,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteFunctions
 import Mathlib
 import Definitions.Def_ChapterScalaronFockGapChain
-open BookProof.ScalaronFockGapChain
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterTruncationGapLift
 
 
 noncomputable section

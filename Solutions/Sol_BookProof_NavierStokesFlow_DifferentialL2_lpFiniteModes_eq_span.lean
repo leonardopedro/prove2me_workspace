@@ -1,7 +1,7 @@
 -- Generated from ChapterNavierStokesDifferentialL2.lean — solution of BookProof.NavierStokesFlow.DifferentialL2.lpFiniteModes_eq_span
 import Mathlib
 import Definitions.Def_ChapterNavierStokesDifferentialL2
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
+import Definitions.Def_ChapterNavierStokesEsa
 open scoped lp
 open BookProof.NavierStokesFlow.DifferentialL2
 

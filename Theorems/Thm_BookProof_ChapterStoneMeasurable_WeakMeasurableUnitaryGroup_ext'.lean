@@ -4,6 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterStoneTheorem
 import Definitions.Def_ChapterStoneMeasurable
 import Definitions.Def_ChapterStoneConverse
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable
 

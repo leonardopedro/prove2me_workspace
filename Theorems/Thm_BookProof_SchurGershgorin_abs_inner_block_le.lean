@@ -10,6 +10,8 @@ import Definitions.Def_ChapterYangMillsFockGapChain
 import Mathlib
 import Definitions.Def_ChapterSchurGershgorinGap
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterSchurGershgorinGap
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteGalerkin
 open BookProof.SchurGershgorin
 

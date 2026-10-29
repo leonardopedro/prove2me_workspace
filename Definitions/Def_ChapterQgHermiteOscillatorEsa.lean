@@ -108,6 +108,17 @@ theorem expBounded_harmW : ExpBounded (harmW (d := d)) := by
 /-- The harmonic potential, as a polynomial in the coordinates. -/
 def harmPoly : MvPolynomial (Fin d) ℂ := ∑ j : Fin d, C (1 / 4 : ℂ) * X j ^ 2
 
+theorem eval_harmPoly (x : Vd d) :
+    MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (harmPoly (d := d)) = ((harmW x : ℝ) : ℂ) := by
+  have hnorm : ‖x‖ ^ 2 = ∑ i, (x i) ^ 2 := norm_sq_eq_sum x
+  unfold harmPoly harmW
+  rw [map_sum, hnorm]
+  push_cast
+  rw [Finset.sum_div]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  simp
+  ring
+
 
 
 

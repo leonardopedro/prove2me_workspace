@@ -13,9 +13,11 @@ import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterSmDiracYukawa
+import Definitions.Def_ChapterBookBrstInstances
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSmDiracYukawa
 open BookProof.SmCar
 open BookProof.SmDiracYukawa
-open BookProof.SmFullEnclosure
 
 
 
@@ -23,8 +25,7 @@ open scoped TensorProduct
 open BookProof.SmHamiltonian BookProof.SmDiracYukawa BookProof.SmCar
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteProductCore
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
-open BookProof.YangMillsNonAbelianEsa
+open BookProof.FarisLavine BookProof.TensorCore
 
 noncomputable section
 

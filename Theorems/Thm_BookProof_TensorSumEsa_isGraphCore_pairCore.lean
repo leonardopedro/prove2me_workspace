@@ -4,9 +4,10 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
-open BookProof.TensorSumEsa
 
 
 

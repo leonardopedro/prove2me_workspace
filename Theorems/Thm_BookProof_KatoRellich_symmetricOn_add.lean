@@ -4,7 +4,6 @@ import Mathlib
 import Definitions.Def_ChapterKatoRellichRelative
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKatoRellichDeficiency
-open BookProof.KatoRellich
 
 
 

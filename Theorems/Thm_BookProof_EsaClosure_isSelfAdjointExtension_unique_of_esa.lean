@@ -4,6 +4,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 
 

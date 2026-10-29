@@ -12,8 +12,9 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterSmOuterFock
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HermiteProductCore
-open BookProof.SmOuterFock
 
 
 

@@ -7,12 +7,10 @@ import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterNonnegSemigroup
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroupGenerator
-open BookProof.NonnegSemigroupGenerator
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
-open BookProof.NonnegResolvent BookProof.NonnegUnitaryGroup BookProof.NonnegSemigroup
+open BookProof.ClosureUniqueness
 open Filter Topology NormedSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

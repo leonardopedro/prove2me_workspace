@@ -31,7 +31,7 @@ theorem solution {n : ℕ} (c : ι → ℝ) (s : ι → Fin n) (j : Fin n)
     foSymbolFn c (fun i => EuclideanSpace.single (s i) (1 : ℝ))
         (x + t • EuclideanSpace.single j (1 : ℝ))
       = foSymbolFn c (fun i => EuclideanSpace.single (s i) (1 : ℝ)) x := by
-  refine foSymbolFn_add_fibre c _ x _ (fun i => ?_) t
+  refine foSymbolFn_add_fibre (EuclideanSpace ℝ (Fin n)) c _ x _ (fun i => ?_) t
   have h : j ≠ s i := fun hh => hj i hh.symm
   simp [EuclideanSpace.inner_single_left, EuclideanSpace.single_apply, h]
 

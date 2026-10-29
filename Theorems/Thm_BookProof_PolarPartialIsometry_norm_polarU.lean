@@ -8,13 +8,14 @@ import Mathlib
 import Definitions.Def_ChapterPolarPartialIsometry
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.EsaClosure
-open BookProof.PolarPartialIsometry
 
 
 
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.ClosureUniqueness
-open BookProof.FriedrichsSquare BookProof.VonNeumannCore BookProof.UnboundedPolar
+open BookProof.FriedrichsSquare BookProof.VonNeumannCore
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Dom : Submodule ℂ F}

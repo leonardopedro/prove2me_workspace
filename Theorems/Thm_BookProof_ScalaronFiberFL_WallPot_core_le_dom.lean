@@ -12,8 +12,7 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
-open BookProof.NavierStokesFlow.FarisLavineLift
-open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockFL
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL

@@ -24,9 +24,9 @@ theorem solution (nu : ℂ) : nsHamAlgX nu 1 = 0 := by
 
   rw [nsHamAlgX, LinearMap.sum_apply]
   refine Finset.sum_eq_zero fun i _ => ?_
-  have h1 : (genX i * mulOp (nsSymbol nu i)) 1 = 0 := by
-    rw [Module.End.mul_apply, mulOp, LinearMap.mulLeft_apply, mul_one, genX_nsSymbol]
-  have h2 : (mulOp (nsSymbol nu i) * genX i) 1 = 0 := by
+  have h1 : (genX i * BookProof.NsBrstDerivativeGauge.mulOp (nsSymbol nu i)) 1 = 0 := by
+    rw [Module.End.mul_apply, BookProof.NsBrstDerivativeGauge.mulOp, LinearMap.mulLeft_apply, mul_one, genX_nsSymbol]
+  have h2 : (BookProof.NsBrstDerivativeGauge.mulOp (nsSymbol nu i) * genX i) 1 = 0 := by
     rw [Module.End.mul_apply, genX_apply]
-    simp [mulOp]
+    simp [BookProof.NsBrstDerivativeGauge.mulOp]
   rw [LinearMap.add_apply, h1, h2, add_zero]

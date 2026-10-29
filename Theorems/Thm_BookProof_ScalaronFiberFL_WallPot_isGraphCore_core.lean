@@ -13,9 +13,10 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.GraphCore
-open BookProof.NavierStokesFlow.FarisLavineLift
-open BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL
 open BookProof.ScalaronFiberFL.WallPot

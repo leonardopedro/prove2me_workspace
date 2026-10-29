@@ -25,6 +25,8 @@ import Definitions.Def_ChapterNavierStokesHashimoto
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkPerSystemFlowBound
 open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH6

@@ -14,6 +14,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.FullQuadratic
 
 
@@ -25,9 +26,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
-open BookProof.CarlemanSimplex
-open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

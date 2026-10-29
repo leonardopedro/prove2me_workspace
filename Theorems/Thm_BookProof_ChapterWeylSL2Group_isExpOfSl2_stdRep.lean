@@ -3,6 +3,8 @@ import Definitions.Def_ChapterWeylSl2
 import Mathlib
 import Definitions.Def_ChapterWeylSL2Group
 import Definitions.Def_ChapterGleasonPureMixed
+import Definitions.Def_ChapterGleasonPureMixed
+import Definitions.Def_ChapterWeylSL2Group
 open BookProof.ChapterGleasonPureMixed
 open BookProof.ChapterWeylSL2Group
 

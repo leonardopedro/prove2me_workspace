@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterLinftyMultiplication
 import Mathlib
 import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterAbelianGelfandModel
 
 

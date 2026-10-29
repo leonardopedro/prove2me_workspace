@@ -1,16 +1,13 @@
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_inner_adjoint
-
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_apply
 
 
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_continuous_apply
 
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_tendsto_apply_zero
 
-import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_apply_zero
+
 
 
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_norm_le_of_inner_self_bound
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU
+import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_stoneU_op
 
 
 
@@ -32,6 +29,7 @@ continuous.  Here we construct its **infinitesimal generator**
 defined on the domain of vectors whose orbit is differentiable at `0`, and prove that `A`
 is a densely defined self-adjoint operator.
 -/
+open scoped InnerProductSpace
 open Filter Topology MeasureTheory
 
 namespace BookProof.ChapterStoneMeasurable

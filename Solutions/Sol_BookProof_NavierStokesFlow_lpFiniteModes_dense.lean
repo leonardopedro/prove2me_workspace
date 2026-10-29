@@ -1,7 +1,6 @@
 -- Generated from ChapterNavierStokesEsa.lean — solution of BookProof.NavierStokesFlow.lpFiniteModes_dense
 import Mathlib
 import Definitions.Def_ChapterNavierStokesEsa
-import Theorems.Thm_BookProof_NavierStokesFlow_lpSingle_mem_lpFiniteModes
 open BookProof.NavierStokesFlow
 
 

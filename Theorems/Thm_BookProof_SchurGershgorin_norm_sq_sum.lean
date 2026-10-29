@@ -10,6 +10,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsFockGapChain
 import Mathlib
 import Definitions.Def_ChapterSchurGershgorinGap
+import Definitions.Def_ChapterSchurGershgorinGap
 open BookProof.SchurGershgorin
 
 

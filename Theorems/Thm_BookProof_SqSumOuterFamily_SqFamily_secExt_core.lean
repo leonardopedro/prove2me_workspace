@@ -12,10 +12,10 @@ import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
-open BookProof.SqSumOuterFamily
-open BookProof.SqSumOuterFamily.SqFamily
 
 
 

@@ -14,9 +14,12 @@ import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesCanonicalVector
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.CanonicalVector
-open BookProof.SqSumOuterFamily
 
 
 

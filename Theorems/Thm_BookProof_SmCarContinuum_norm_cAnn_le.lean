@@ -5,6 +5,7 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
 import Definitions.Def_ChapterSmCarContinuum
+import Definitions.Def_ChapterSmCarContinuum
 open BookProof.SmCarContinuum
 
 

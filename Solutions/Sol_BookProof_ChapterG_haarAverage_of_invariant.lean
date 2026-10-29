@@ -21,5 +21,3 @@ theorem solution (f : X → ℝ) (hf : ∀ g : G, ∀ x, f (g • x) = f x) :
   have : (fun g : G => f (g⁻¹ • x)) = fun _ => f x := by
     funext g; rw [hf g⁻¹ x]
   rw [this, integral_const]; simp
-
-omit [μG.IsMulLeftInvariant] in

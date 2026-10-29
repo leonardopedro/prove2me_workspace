@@ -74,12 +74,9 @@ def boundedEnergyCore (μ : Measure X) (g : X → ℝ) : Submodule ℂ (Lp ℂ 2
 
 /-! ### The core is dense -/
 
- s_rw [heq]
-      exact tendsto_eLpNorm_indicator_compl μ hg f
-    have h := (Lp.tendsto_Lp_iff_tendsto_eLpNorm''
-      (fun n : ℕ => {x | |g x| ≤ (n : ℝ)}.indicator (f : X → ℂ))
-      (fun n => (Lp.memLp f).indicator (hmeasS n)) (f : X → ℂ) (Lp.memLp f)).2 hten
-    rwa [Lp.toLp_coeFn] at h
+
+
+
 
 /-- Multiplying a bounded-energy state by the energy stays square-integrable. -/
 theorem memLp_mul {μ : Measure X} {g : X → ℝ} (hg : Measurable g) {f : Lp ℂ 2 μ}
@@ -127,16 +124,42 @@ noncomputable def multOp (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :
     refine Subtype.ext (Lp.ext ?_)
     simp only [Submodule.coe_smul, RingHom.id_apply]
     filter_upwards [(memLp_mul hg (show (c • (f : Lp ℂ 2 μ)) ∈ boundedEnergyCore μ g
-       l] :  MemLp (fun x => (starRingEnd ℂ) (F xal_im, zero_sub, Complex.zero_im,
-        neg_eq_zero] at him
-      exact hc hi`w` on the parcel domain `ℝ`:
+        from (c • f).2)).coeFn_toLp,
+      (memLp_mul hg f.2).coeFn_toLp, Lp.coeFn_smul c ((f : Lp ℂ 2 μ)),
+      Lp.coeFn_smul c ((memLp_mul hg f.2).toLp _)] with x h1 h2 h3 h4
+    rw [h1, h4]
+    simp only [Pi.smul_apply, smul_eq_mul]
+    rw [h2, h3]
+    simp only [Pi.smul_apply, smul_eq_mul]
+    ring
+
+
+
+
+
+
+
+/-! ## Essential self-adjointness -/
+
+
+
+/-! ## The `n`-parcel sector of the continuum Fock space -/
+
+section Sector
+
+/-- The total energy of an `n`-parcel configuration `(ξ₁,…,ξₙ)` of the continuum
+Fock space, for the one-parcel field `w` on the parcel domain `ℝ`:
 `E(ξ) = ∑ₖ w(ξₖ)`.  This is how the second-quantized Hamiltonian
 `∫ w(ξ) a†(ξ)a(ξ) dξ` acts on the `n`-parcel sector. -/
-noncomputable def sectorEn_or `L²(ℝ)`, where the operator is
-multiplication by the field `w` itself. -/
-theorem oneParcelHamiltonian_hasZeroDeficiencyOn {w : ℝ → ℝ} (hw : Measurable w) :
-    HasZeroDeficiencyOn (boundedEnergyCore (volume : Measure ℝ) w) (multOp volume hw) :=
-  multOp_hasZeroDeficiencyOn _ _
+noncomputable def sectorEnergy (w : ℝ → ℝ) (n : ℕ) : (Fin n → ℝ) → ℝ :=
+  fun ξ => ∑ k : Fin n, w (ξ k)
+
+
+
+
+
+
+
 
 end Sector
 

@@ -18,9 +18,12 @@ import Definitions.Def_ChapterSmComparison
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.EsaClosure
 open BookProof.StoneBridge
-open BookProof.SmComparison
 
 
 
@@ -29,7 +32,7 @@ open BookProof.SmOneParticle BookProof.SmHamiltonian
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.ScalaronWallEsa BookProof.ScalaronEsa BookProof.WallEsaBddBelow
-open BookProof.TensorSumChain BookProof.TensorCore BookProof.TensorSumEsa
+open BookProof.TensorCore
 open BookProof.EsaClosure BookProof.GraphCore
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent
 open MeasureTheory

@@ -10,6 +10,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteProductCore
 open BookProof.QuadratureEsa
 

@@ -6,6 +6,10 @@ import Definitions.Def_ChapterHermiteLadderOrder
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteLadderShift
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs

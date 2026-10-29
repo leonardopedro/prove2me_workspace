@@ -11,9 +11,11 @@ import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.NsFullEuler
 
 
 

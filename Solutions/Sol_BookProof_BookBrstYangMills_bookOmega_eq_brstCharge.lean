@@ -27,7 +27,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution :
     bookOmega G = Complex.I • brstCharge G.f (gaussGen G) chiOp betaOp := by
   have hglin : Complex.I • glin (gaussGen G) chiOp
-      = (∑ μ, ∑ a, mom μ a * dChi G μ a)
+      = (∑ μ, ∑ a, BookProof.BookBrstYangMills.mom μ a * dChi G μ a)
         - (∑ μ, ∑ a, ∑ b, ∑ c, (G.f a b c) • (mom μ a * Afield μ b * chiOp c)) := by
     have h1 : Complex.I • glin (gaussGen G) chiOp
         = ∑ c, (Complex.I • gaussGen G c) * chiOp c := by

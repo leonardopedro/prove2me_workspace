@@ -93,11 +93,11 @@ noncomputable def matrixFlow (A : Matrix (Fin n) (Fin n) ℂ) (t : ℝ) :
 
 
 
-ng[h  o]efine ⟨fun t => matrixFlow A t *ᵥ x, ⟨?_, fun t => matrixFlow_vec_hasDerivAt A x t⟩, ?_⟩
-  · simp [matrixFlow, Ns mpeon t _e/- t.sorbit of every state is a
-continuous curve): a one-parameter unitary group with no jumps. -/
-theorem nsFlow_continuous : Continuous (nsFlowUnitary d) :=
-  continuous_iff_continuousAt.2 fun t => (nsFlow_hasDerivAt d t).continuousAt
+end MatrixFlow
+
+/-! ## The Navier–Stokes Cauchy problem on the truncation -/
+
+variable {n : ℕ} (d : NSTruncation n)
 
 /-! ## The Lagrangian (parcel) operator generates a complete flow too
 
@@ -105,20 +105,17 @@ The four-term operator `ĥ_full` of Part B — positive advective Laplacian,
 positive viscous term, force drift and the 0-order volume-preservation
 constraint — is Hermitian on the truncation
 (`LagrangianNS.transformed_hamiltonian_hermitian`), so the same argument applies
-to it verbatim: its flow is a one-parameter unitarygrangianNS
+to it verbatim: its flow is a one-parameter unitary group and its Cauchy problem
+is uniquely solvable for all time.  This is the truncated form of the route
+recorded in Part B; the *continuum* statement remains unclaimed. -/
+
+namespace LagrangianNS
 
 variable (L : LagrangianNS n)
 
 /-- The flow of the transformed (Lagrangian) operator, `e^{i t ĥ_full}`. -/
 noncomputable def flowUnitary (t : ℝ) : Matrix (Fin n) (Fin n) ℂ :=
   matrixFlow (Complex.I • L.hFull) t
-
-/-- Every `e^{i t ĥ_full}` is unitary, because `ĥ_full` is Hermitian. -/
-theorem flowUnitary_unitary (t : ℝ) : (L. (/
-theorem cauchy_existsUnique (psi : Fin n → ℂ) :
-    ∃! y : ℝ → Fin n → ℂ,
-      y 0 = psi ∧ ∀ t, HasDerivAt y ((Complex.I • L.hFull) *ᵥ y t) t :=
-  matrixFlow_cauchy_existsUnique (Complex.I • L.hFull) psi
 
 end LagrangianNS
 

@@ -5,6 +5,10 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Mathlib
+import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
+import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
+import Theorems.Thm_BookProof_WallEsaSemibounded_wallHamBddBelow_semibounded
+import Definitions.Def_ChapterStarobinskyPotential
 
 
 /-!

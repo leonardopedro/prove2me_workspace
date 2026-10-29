@@ -520,6 +520,13 @@ theorem mixOp_symmetric (c b b' : Fin d → ℝ) :
   rw [mixOp, LinearMap.add_apply, LinearMap.add_apply, inner_add_left, inner_add_right,
     quadOp_symmetric c x y, foOp_symmetric b b' x y]
 
+/-- Local copy: the generating stub `Thm_BookProof_HermiteCarleman_mixOp_essentiallySelfAdjoint`
+imports this bundle (own-chapter stub), so it cannot be imported back (import cycle);
+proved exactly as in `BookProof/ChapterHermiteCarlemanEsa.lean`. -/
+theorem mixOp_essentiallySelfAdjoint (c b b' : Fin d → ℝ) :
+    EssentiallySelfAdjointOn (polyGaussCore (d := d)) (mixOp c b b') :=
+  ⟨mixOp_deficiencyTrivialAt c b b' (by simp), mixOp_deficiencyTrivialAt c b b' (by simp)⟩
+
 /-- **The complete unitary flow.**  Stone's theorem applied to the closure of the
 Hamiltonian. -/
 theorem mixOp_stone_flow (c b b' : Fin d → ℝ) :

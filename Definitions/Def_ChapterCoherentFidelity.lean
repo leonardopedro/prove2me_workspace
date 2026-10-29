@@ -2,6 +2,7 @@ import Definitions.Def_ChapterCoherentOverlapComplex
 import Definitions.Def_ChapterCoherentGeometry
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
+import Theorems.Thm_BookProof_ChapterCoherentGeometry_bornNumer_eq_exp_neg_dist_sq
 
 
 /-!

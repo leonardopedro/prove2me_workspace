@@ -14,12 +14,11 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.YangMillsFriedrichs
-open BookProof.NsFullLagrangianEsa
 
 
 
 open MvPolynomial
-open BookProof.NsFullLagrangian BookProof.YangMillsNonAbelianEsa BookProof.YangMillsHermite
+open BookProof.NsFullLagrangian BookProof.YangMillsHermite
 open BookProof.YangMillsFriedrichs BookProof.HermiteProductCore BookProof.DirectSumEsa
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.EsaClosure
 

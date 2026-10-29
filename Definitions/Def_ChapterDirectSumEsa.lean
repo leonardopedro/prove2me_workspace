@@ -1,3 +1,7 @@
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_isSymmetricDom
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_hasZeroDeficiencyOn
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterFarisLavine
@@ -395,6 +399,18 @@ def sectorCore (w : ℝ → ℝ) (n : ℕ) : Submodule ℂ (parcelSector n) :=
 /-- **The core of the Fock Hamiltonian**: the algebraic direct sum of the bounded-energy
 cores of the sectors. -/
 def fockCore (w : ℝ → ℝ) : Submodule ℂ fockSpace := dsCore (sectorCore w)
+
+/-- `sectorEnergy`'s measurability is a *theorem* of the source chapter
+(`BookProof/ChapterNavierStokesFockContinuum.lean`) that
+`Definitions.Def_ChapterNavierStokesFockContinuum` does not carry — only its
+definitions.  A `def` whose body needs that proof therefore cannot be published
+unless the proof travels with it, which is what this is: the chapter's proof,
+verbatim.  `private` keeps the name out of the cumulative environment, where the
+chapter's own theorem bundle declares the public `sectorEnergy_measurable`; the
+mangled private name cannot collide with it. -/
+private theorem sectorEnergy_measurable {w : ℝ → ℝ} (hw : Measurable w) (n : ℕ) :
+    Measurable (sectorEnergy w n) :=
+  Finset.univ.measurable_sum fun k _ => hw.comp (measurable_pi_apply k)
 
 /-- **The second-quantized Hamiltonian on the whole continuum Fock space**: on the
 `n`-parcel sector it is multiplication by the total energy `∑ₖ w(ξₖ)`. -/

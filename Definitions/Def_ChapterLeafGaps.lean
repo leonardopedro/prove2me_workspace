@@ -43,118 +43,6 @@ open scoped ENNReal
 -- global preamble carried over from BookProof/ChapterScalaronCoreEsa.lean
 open Filter Topology MeasureTheory SchwartzMap
 
-namespace BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
-
-open LpNat FarisLavine IkebeKato
-
-variable {ι : Type*} (S : ShiftData ι)
--- [hop_mul cluster]
-theorem hop_mul (g : ι → ℂ) (Y : ι → ℂ) (β : ι) :
-    S.hop g β * Y β = S.hop (fun α => g α * Y (S.shift α)) β := by
-  by_cases hb : ∃ α, S.shift α = β
-  · obtain ⟨α, rfl⟩ := hb
-    rw [hop_shift, hop_shift]
-  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, zero_mul]
-
-theorem conj_hop (g : ι → ℂ) (β : ι) :
-    (starRingEnd ℂ) (S.hop g β) = S.hop (fun α => (starRingEnd ℂ) (g α)) β := by
-  by_cases hb : ∃ α, S.shift α = β
-  · obtain ⟨α, rfl⟩ := hb
-    rw [hop_shift, hop_shift]
-  · rw [hop_eq_zero S g hb, hop_eq_zero S _ hb, map_zero]
-
-theorem norm_crossA (X Y : ι → ℂ) (β : ι) :
-    ‖S.crossA X Y β‖ = S.ampSeq X β * ‖Y (S.shift β)‖ := by
-  simp only [crossA, ampSeq, norm_mul, Complex.norm_real, Real.norm_eq_abs,
-    abs_of_nonneg (S.amp_nonneg β), RCLike.norm_conj]
-
-theorem norm_crossB (X Y : ι → ℂ) (β : ι) :
-    ‖S.crossB X Y β‖ = S.amp β * ‖X (S.shift β)‖ * ‖Y β‖ := by
-  simp only [crossB, norm_mul, Complex.norm_real, Real.norm_eq_abs,
-    abs_of_nonneg (S.amp_nonneg β), RCLike.norm_conj]
-
-theorem summable_crossA {X Y : ι → ℂ}
-    (hX : Summable fun β => (S.ampSeq X β) ^ 2) (hY : Summable fun β => ‖Y β‖ ^ 2) :
-    Summable (S.crossA X Y) := by
-  refine Summable.of_norm (Summable.of_nonneg_of_le (fun β => norm_nonneg _) (fun β => ?_)
-    ((hX.add (summable_comp_shift S hY)).mul_left (1 / 2)))
-  rw [norm_crossA S]
-  nlinarith [sq_nonneg (S.ampSeq X β - ‖Y (S.shift β)‖), ampSeq_nonneg S X β,
-    norm_nonneg (Y (S.shift β))]
-
-theorem summable_crossB {X Y : ι → ℂ}
-    (hX : Summable fun β => (S.ampSeq X β) ^ 2) (hY : Summable fun β => ‖Y β‖ ^ 2) :
-    Summable (S.crossB X Y) := by
-  refine Summable.of_norm (Summable.of_nonneg_of_le (fun β => norm_nonneg _) (fun β => ?_)
-    (((summable_comp_shift S hX).add hY).mul_left (1 / 2)))
-  rw [norm_crossB S]
-  have hmono : S.amp β * ‖X (S.shift β)‖ ≤ S.ampSeq X (S.shift β) :=
-    mul_le_mul_of_nonneg_right (S.amp_mono β) (norm_nonneg _)
-  have h0 : 0 ≤ ‖Y β‖ := norm_nonneg _
-  nlinarith [sq_nonneg (S.ampSeq X (S.shift β) - ‖Y β‖), ampSeq_nonneg S X (S.shift β),
-    mul_le_mul_of_nonneg_right hmono h0]
-
-/-- The coordinatewise form of `⟪Hx, y⟫`. -/
-theorem conj_hFun_mul (X Y : ι → ℂ) (β : ι) :
-    (starRingEnd ℂ) (S.hFun X β) * Y β
-      = -Complex.I * S.hop (S.crossA X Y) β + Complex.I * S.crossB X Y β := by
-  have h1 : (starRingEnd ℂ) (S.hop (fun α => (S.amp α : ℂ) * X α) β)
-      = S.hop (fun α => (S.amp α : ℂ) * (starRingEnd ℂ) (X α)) β := by
-    rw [conj_hop]
-    congr 1
-    funext α
-    simp
-  have h2 : S.hop (fun α => (S.amp α : ℂ) * (starRingEnd ℂ) (X α)) β * Y β
-      = S.hop (S.crossA X Y) β := by
-    rw [hop_mul]
-    rfl
-  have hexp : (starRingEnd ℂ) (S.hFun X β) * Y β
-      = -Complex.I * ((starRingEnd ℂ) (S.hop (fun α => (S.amp α : ℂ) * X α) β) * Y β)
-        + Complex.I * ((S.amp β : ℂ) * (starRingEnd ℂ) (X (S.shift β)) * Y β) := by
-    simp only [hFun, map_mul, map_sub, Complex.conj_I, Complex.conj_ofReal]
-    ring
-  rw [hexp, h1, h2]
-  rfl
-
-/-- The coordinatewise form of `⟪x, Hy⟫`. -/
-theorem conj_mul_hFun (X Y : ι → ℂ) (β : ι) :
-    (starRingEnd ℂ) (X β) * S.hFun Y β
-      = -Complex.I * S.crossA X Y β + Complex.I * S.hop (S.crossB X Y) β := by
-  have h2 : (starRingEnd ℂ) (X β) * S.hop (fun α => (S.amp α : ℂ) * Y α) β
-      = S.hop (S.crossB X Y) β := by
-    by_cases hb : ∃ α, S.shift α = β
-    · obtain ⟨α, rfl⟩ := hb
-      rw [hop_shift, hop_shift]
-      simp only [crossB]
-      ring
-    · rw [hop_eq_zero S _ hb, hop_eq_zero S _ hb, mul_zero]
-  have hexp : (starRingEnd ℂ) (X β) * S.hFun Y β
-      = Complex.I * ((starRingEnd ℂ) (X β) * S.hop (fun α => (S.amp α : ℂ) * Y α) β)
-        - Complex.I * ((S.amp β : ℂ) * (starRingEnd ℂ) (X β) * Y (S.shift β)) := by
-    simp only [hFun]
-    ring
-  rw [hexp, h2]
-  simp only [crossA]
-  ring
-
-end BookProof.NavierStokesFlow.ShiftHamiltonian.ShiftData
-
-namespace BookProof.NavierStokesFlow.IkebeKato
-
-open LpNat FarisLavine
-
-variable {ι : Type*}
--- [summable_normSq cluster]
-/-! ## Square summability helpers -/
-
-theorem summable_normSq (f : L2I ι) : Summable fun k => ‖(f : ι → ℂ) k‖ ^ 2 := by
-  have h := lp.hasSum_norm (p := 2) (E := fun _ : ι => ℂ) (by norm_num) f
-  have h2 : ((2 : ℝ≥0∞).toReal) = ((2 : ℕ) : ℝ) := by norm_num
-  rw [h2] at h
-  simpa [Real.rpow_natCast] using h.summable
-
-end BookProof.NavierStokesFlow.IkebeKato
-
 namespace BookProof.NavierStokesFlow.SignedShift.SignedHop
 
 open LpNat FarisLavine IkebeKato ShiftHamiltonian AffineFiber
@@ -162,12 +50,6 @@ open HermiteFarisLavine
 
 variable {ι : Type*}
 variable {sym : ι → ℝ} (S : SignedHop ι sym)
--- [maj_shift cluster]
-@[simp] theorem maj_shift : S.maj.shift = S.shift := rfl
-
-@[simp] theorem hopH_coe (x : maxDom sym) (β : ι) :
-    ((hopH S x : L2I ι) : ι → ℂ) β = S.hFun ((x : L2I ι) : ι → ℂ) β := rfl
-
 theorem norm_crossA_le (X Y : ι → ℂ) (β : ι) :
     ‖S.crossA X Y β‖ ≤ S.maj.ampSeq X β * ‖Y (S.shift β)‖ := by
   simp only [crossA, norm_mul, Complex.norm_real, Real.norm_eq_abs, RCLike.norm_conj]
@@ -305,162 +187,8 @@ open HermiteFarisLavine
 
 variable {ι : Type*}
 variable {sym : ι → ℝ}
--- [listH_cons cluster]
-@[simp] theorem listH_cons (S : SignedHop ι sym) (L : List (SignedHop ι sym)) :
-    listH (S :: L) = SignedHop.hopH S + listH L := rfl
-
-/-- The sum of the family is symmetric on the maximal domain. -/
-theorem listH_symmetricOn (L : List (SignedHop ι sym)) : SymmetricOn (maxDom sym) (listH L) := by
-  induction L with
-  | nil =>
-      intro x y
-      simp [listH]
-  | cons S L ih =>
-      intro x y
-      have h₁ := SignedHop.hopH_symmetricOn S x y
-      have h₂ := ih x y
-      change (inner ℂ (listH (S :: L) x : L2I ι) (y : L2I ι) : ℂ)
-        = inner ℂ (x : L2I ι) (listH (S :: L) y : L2I ι)
-      simp only [listH_cons, LinearMap.add_apply, inner_add_left, inner_add_right]
-      linear_combination h₁ + h₂
-
 end BookProof.NavierStokesFlow.SignedShift
 
-namespace BookProof.NavierStokesFlow.ThreeComponent
-
-open LpNat FarisLavine IkebeKato ShiftHamiltonian SignedShift
-
-variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
--- [velH_symmetricOn cluster]
-theorem velH_symmetricOn : SymmetricOn (maxDom (velSym (velMu A c))) (velH A c) :=
-  SignedShift.listH_symmetricOn _
-
-end BookProof.NavierStokesFlow.ThreeComponent
-
-namespace BookProof.QgOuterFockCoreFL.CoreData
-
-open BookProof.FarisLavine
-open BookProof.DirectSumEsa
-open BookProof.QgOuterFock
-open BookProof.QgOuterFockFL
-open BookProof.YangMillsFriedrichs
-open BookProof.EsaClosure
-open BookProof.QgHermiteOscillator
-open BookProof.HermiteProductCore
-open Filter Topology
-
-noncomputable section
-section Abstract
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
-variable (d : CoreData F)
--- [coreN_apply cluster]
-@[simp] theorem coreN_apply (p : d.C₀) :
-    d.coreN p = d.C.op ⟨(p : F), d.gc.le p.2⟩ := rfl
-
-theorem coreRange_dense : Dense ((d.coreRange : Submodule ℂ F) : Set F) := by
-  rw [Metric.dense_iff]
-  intro f r hr
-  obtain ⟨x, hx⟩ := d.C.surj f
-  obtain ⟨y, hyC, hy1, hy2⟩ := d.gc.approx x (r / 3) (by positivity)
-  refine ⟨d.coreShift ⟨(y : F), hyC⟩, ?_, ⟨⟨(y : F), hyC⟩, rfl⟩⟩
-  have hyy : (⟨(y : F), d.gc.le hyC⟩ : d.C.dom) = y := Subtype.ext rfl
-  have hval : d.coreShift ⟨(y : F), hyC⟩ = d.C.op y + (y : F) := by
-    rw [coreShift_apply, hyy]
-  rw [Metric.mem_ball, dist_eq_norm, hval, ← hx]
-  calc ‖d.C.op y + (y : F) - (d.C.op x + (x : F))‖
-      = ‖(d.C.op y - d.C.op x) + ((y : F) - (x : F))‖ := by congr 1; abel
-    _ ≤ ‖d.C.op y - d.C.op x‖ + ‖(y : F) - (x : F)‖ := norm_add_le _ _
-    _ < r / 3 + r / 3 := by linarith
-    _ < r := by linarith
-
-theorem coreRange_denseRange : DenseRange (d.coreRange.subtypeL) := by
-  have : Set.range (d.coreRange.subtypeL) = (d.coreRange : Set F) := Subtype.range_coe
-  rw [DenseRange, this]
-  exact d.coreRange_dense
-
-theorem coreRange_isUniformInducing : IsUniformInducing (d.coreRange.subtypeL) :=
-  (isometry_subtype_coe (s := (d.coreRange : Set F))).isUniformInducing
-
-theorem ext_apply (x : d.C.dom) : d.ext x = d.extCLM (d.C.op x + (x : F)) := rfl
-
-/-- On the core the extension is the original operator. -/
-theorem ext_core (p : d.C₀) : d.ext ⟨(p : F), d.gc.le p.2⟩ = d.H₀ p := by
-  have hext := ContinuousLinearMap.extend_eq d.resolvedCLM d.coreRange_denseRange
-    d.coreRange_isUniformInducing (d.coreEquiv p)
-  calc d.ext ⟨(p : F), d.gc.le p.2⟩
-      = (d.resolvedCLM.extend d.coreRange.subtypeL)
-          (d.coreRange.subtypeL (d.coreEquiv p)) := rfl
-    _ = d.resolvedCLM (d.coreEquiv p) := hext
-    _ = d.H₀ p := by simp [resolvedCLM, resolvedMap]
-
-theorem gcSeq_mem (x : d.C.dom) (k : ℕ) : ((d.gcSeq x k : d.C.dom) : F) ∈ d.C₀ :=
-  (d.gc.approx x (1 / (k + 1)) (by positivity)).choose_spec.1
-
-theorem gcSeq_norm_lt (x : d.C.dom) (k : ℕ) :
-    ‖((d.gcSeq x k : d.C.dom) : F) - (x : F)‖ < 1 / (k + 1) :=
-  (d.gc.approx x (1 / (k + 1)) (by positivity)).choose_spec.2.1
-
-theorem gcSeq_op_norm_lt (x : d.C.dom) (k : ℕ) :
-    ‖d.C.op (d.gcSeq x k) - d.C.op x‖ < 1 / (k + 1) :=
-  (d.gc.approx x (1 / (k + 1)) (by positivity)).choose_spec.2.2
-
-theorem tendsto_inv_succ : Tendsto (fun k : ℕ => 1 / ((k : ℝ) + 1)) atTop (𝓝 0) :=
-  tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ)
-
-theorem gcSeq_tendsto (x : d.C.dom) :
-    Tendsto (fun k => ((d.gcSeq x k : d.C.dom) : F)) atTop (𝓝 (x : F)) := by
-  rw [tendsto_iff_norm_sub_tendsto_zero]
-  refine squeeze_zero (fun k => norm_nonneg _) (fun k => (d.gcSeq_norm_lt x k).le)
-    tendsto_inv_succ
-
-theorem gcSeq_op_tendsto (x : d.C.dom) :
-    Tendsto (fun k => d.C.op (d.gcSeq x k)) atTop (𝓝 (d.C.op x)) := by
-  rw [tendsto_iff_norm_sub_tendsto_zero]
-  refine squeeze_zero (fun k => norm_nonneg _) (fun k => (d.gcSeq_op_norm_lt x k).le)
-    tendsto_inv_succ
-
-theorem gcSeq_ext_tendsto (x : d.C.dom) :
-    Tendsto (fun k => d.ext (d.gcSeq x k)) atTop (𝓝 (d.ext x)) := by
-  have hs : Tendsto (fun k => d.C.op (d.gcSeq x k) + ((d.gcSeq x k : d.C.dom) : F)) atTop
-      (𝓝 (d.C.op x + (x : F))) := (d.gcSeq_op_tendsto x).add (d.gcSeq_tendsto x)
-  simp only [ext_apply]
-  exact (d.extCLM.continuous.tendsto _).comp hs
-
-theorem ext_gcSeq (x : d.C.dom) (k : ℕ) :
-    d.ext (d.gcSeq x k) = d.H₀ ⟨((d.gcSeq x k : d.C.dom) : F), d.gcSeq_mem x k⟩ := by
-  have := d.ext_core ⟨((d.gcSeq x k : d.C.dom) : F), d.gcSeq_mem x k⟩
-  rw [← this]
-
-theorem coreN_gcSeq (x : d.C.dom) (k : ℕ) :
-    d.coreN ⟨((d.gcSeq x k : d.C.dom) : F), d.gcSeq_mem x k⟩ = d.C.op (d.gcSeq x k) := by
-  rw [coreN_apply]
-
-theorem ext_commForm_tendsto (x : d.C.dom) :
-    Tendsto (fun k => commForm d.ext d.C.op (d.gcSeq x k)) atTop
-      (𝓝 (commForm d.ext d.C.op x)) := by
-  have h1 : Tendsto (fun k => (inner ℂ (d.ext (d.gcSeq x k)) (d.C.op (d.gcSeq x k)) : ℂ))
-      atTop (𝓝 (inner ℂ (d.ext x) (d.C.op x))) :=
-    (d.gcSeq_ext_tendsto x).inner (d.gcSeq_op_tendsto x)
-  have h2 : Tendsto (fun k => (inner ℂ (d.C.op (d.gcSeq x k)) (d.ext (d.gcSeq x k)) : ℂ))
-      atTop (𝓝 (inner ℂ (d.C.op x) (d.ext x))) :=
-    (d.gcSeq_op_tendsto x).inner (d.gcSeq_ext_tendsto x)
-  simp only [commForm]
-  exact (Complex.reCLM.continuous.tendsto _).comp
-    (((h1.sub h2).const_mul Complex.I))
-
-theorem quadForm_tendsto (x : d.C.dom) :
-    Tendsto (fun k => quadForm d.C.op (d.gcSeq x k)) atTop (𝓝 (quadForm d.C.op x)) := by
-  have h1 : Tendsto (fun k => (inner ℂ ((d.gcSeq x k : d.C.dom) : F)
-      (d.C.op (d.gcSeq x k)) : ℂ)) atTop (𝓝 (inner ℂ (x : F) (d.C.op x))) :=
-    (d.gcSeq_tendsto x).inner (d.gcSeq_op_tendsto x)
-  simp only [quadForm]
-  exact (Complex.reCLM.continuous.tendsto _).comp h1
-
-end Abstract
-
-end
-
-end BookProof.QgOuterFockCoreFL.CoreData
 
 namespace BookProof.ChapterUnboundedPosition
 
@@ -499,16 +227,6 @@ open BookProof.HermiteGalerkin BookProof.FriedrichsExtension BookProof.Hashimoto
 
 noncomputable section
 variable {d : ℕ}
--- [starP_mul cluster]
-@[simp] theorem starP_mul (p q : MvPolynomial (Fin d) ℂ) :
-    starP (p * q) = starP p * starP q := map_mul _ _ _
-
-@[simp] theorem starP_X (j : Fin d) : starP (X j : MvPolynomial (Fin d) ℂ) = X j := by
-  simp [starP]
-
-@[simp] theorem starP_C (c : ℂ) : starP (C c : MvPolynomial (Fin d) ℂ) = C ((starRingEnd ℂ) c) := by
-  simp [starP]
-
 theorem starP_smul (c : ℂ) (p : MvPolynomial (Fin d) ℂ) :
     starP (c • p) = ((starRingEnd ℂ) c) • starP p := by
   rw [smul_eq_C_mul, starP_mul, starP_C, smul_eq_C_mul]
@@ -527,33 +245,8 @@ theorem eval_starP (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
   | add p q hp hq => simp [hp, hq]
   | mul_X p i hp => simp [hp]
 
-/-- **The inner product of two core vectors is a Gaussian polynomial integral.** -/
-theorem inner_pgLp_pgLp (p q : MvPolynomial (Fin d) ℂ) :
-    (inner ℂ (pgLp p) (pgLp q) : ℂ) = gaussInt (starP p * q) := by
-  rw [inner_pgLp, gaussInt]
-  refine integral_congr_ae ?_
-  filter_upwards [pgLp_coeFn q] with x hx
-  have hev : MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (starP p * q)
-      = (starRingEnd ℂ) (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p)
-        * MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q := by
-    rw [map_mul, eval_starP]
-  rw [hx, hev, pgFun, pgFun, gaussWD_eq_sq]
-  simp only [map_mul, Complex.conj_ofReal]
-  push_cast
-  ring
-
-@[simp] theorem mulOp_apply (f p : MvPolynomial (Fin d) ℂ) : mulOp f p = f * p := rfl
-
-theorem momOp_apply (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    momOp j p = (-Complex.I) • (pderiv j p - ((1 / 2 : ℝ) : ℂ) • (X j * p)) := rfl
-
 theorem starP_pderiv (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     starP (pderiv j p) = pderiv j (starP p) := (MvPolynomial.pderiv_map).symm
-
-@[simp] theorem starP_neg (p : MvPolynomial (Fin d) ℂ) : starP (-p) = -starP p := map_neg _ _
-
-@[simp] theorem starP_sub (p q : MvPolynomial (Fin d) ℂ) :
-    starP (p - q) = starP p - starP q := map_sub _ _ _
 
 theorem gaussInt_sub (r s : MvPolynomial (Fin d) ℂ) :
     gaussInt (r - s) = gaussInt r - gaussInt s := by
@@ -576,49 +269,14 @@ theorem starP_momOp (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
   rw [momOp_apply, neg_smul, starP_neg, starP_smul, starP_sub, starP_pderiv, starP_real_smul,
     starP_mul, starP_X, Complex.conj_I, neg_smul, neg_neg]
 
-theorem momOp_polySym (j : Fin d) : PolySym (momOp (d := d) j) := by
-  intro p q
-  have hleib := gaussInt_leibniz j (starP p) q
-  have e1 : (X j : MvPolynomial (Fin d) ℂ) * starP p * q = X j * (starP p * q) := by ring
-  have e2 : starP p * (X j * q) = X j * (starP p * q) := by ring
-  have hL : gaussInt (starP (momOp j p) * q)
-      = Complex.I * (gaussInt (pderiv j (starP p) * q)
-          - ((1 / 2 : ℝ) : ℂ) * gaussInt (X j * (starP p * q))) := by
-    rw [starP_momOp, smul_mul_assoc, gaussInt_smul, sub_mul, gaussInt_sub, smul_mul_assoc,
-      gaussInt_smul, e1]
-  have hR : gaussInt (starP p * momOp j q)
-      = -Complex.I * (gaussInt (starP p * pderiv j q)
-          - ((1 / 2 : ℝ) : ℂ) * gaussInt (X j * (starP p * q))) := by
-    rw [momOp_apply, mul_smul_comm, gaussInt_smul, mul_sub, gaussInt_sub, mul_smul_comm,
-      gaussInt_smul, e2]
-  rw [hL, hR]
-  push_cast
-  linear_combination Complex.I * hleib
-
 section Transport
 variable {D : Submodule ℂ (L2d d)}
--- [CoreRep.op_apply cluster]
-theorem CoreRep.op_apply (Φ : CoreRep d D) (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (x : D) :
-    Φ.op T x = Φ.equiv (T (Φ.equiv.symm x)) := rfl
-
 theorem CoreRep.coe_op (Φ : CoreRep d D) (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (x : D) :
     ((Φ.op T x : D) : L2d d) = pgLp (T (Φ.equiv.symm x)) := by
   rw [CoreRep.op_apply, Φ.coe_equiv]
 
 theorem CoreRep.coe_symm (Φ : CoreRep d D) (x : D) : ((x : D) : L2d d) = pgLp (Φ.equiv.symm x) := by
   rw [← Φ.coe_equiv (Φ.equiv.symm x), LinearEquiv.apply_symm_apply]
-
-theorem CoreRep.symmetricOn_op (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
-    (hT : PolySym T) : SymmetricOn D (D.subtype.comp (Φ.op T)) := by
-  intro x y
-  have hx : ((D.subtype.comp (Φ.op T)) x) = pgLp (T (Φ.equiv.symm x)) := Φ.coe_op T x
-  have hy : ((D.subtype.comp (Φ.op T)) y) = pgLp (T (Φ.equiv.symm y)) := Φ.coe_op T y
-  have hcx : ((x : D) : L2d d) = pgLp (Φ.equiv.symm x) := Φ.coe_symm x
-  have hcy : ((y : D) : L2d d) = pgLp (Φ.equiv.symm y) := Φ.coe_symm y
-  have e1 := inner_pgLp_pgLp (T (Φ.equiv.symm x)) (Φ.equiv.symm y)
-  have e2 := inner_pgLp_pgLp (Φ.equiv.symm x) (T (Φ.equiv.symm y))
-  rw [hx, hy, hcx, hcy, e1, e2]
-  exact hT _ _
 
 end Transport
 
@@ -637,31 +295,10 @@ noncomputable section
 variable {d : ℕ}
 section Signed
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
--- [smul_symmetricOn cluster]
-/-- A real multiple of a symmetric operator is symmetric. -/
-theorem smul_symmetricOn {T : D →ₗ[ℂ] D} (r : ℝ)
-    (hT : SymmetricOn D (D.subtype.comp T)) :
-    SymmetricOn D (D.subtype.comp (((r : ℝ) : ℂ) • T)) := by
-  intro x y
-  have h := hT x y
-  simp only [LinearMap.comp_apply, Submodule.subtype_apply, LinearMap.smul_apply,
-    Submodule.coe_smul] at h ⊢
-  rw [inner_smul_left, inner_smul_right, h, Complex.conj_ofReal]
-
 end Signed
 
 section Gravity
 variable {D : Submodule ℂ (L2d 84)}
--- [qgMom_symmetricOn cluster]
-theorem qgMom_symmetricOn (Φ : CoreRep 84 D) (j : Fin 84) :
-    SymmetricOn D (D.subtype.comp (qgMom Φ j)) :=
-  Φ.symmetricOn_op (momOp_polySym j)
-
-theorem qgMomScaled_symmetricOn (Φ : CoreRep 84 D) (j : Fin 84) :
-    SymmetricOn D (D.subtype.comp
-      (((Real.sqrt (qgKappaElliptic j) : ℝ) : ℂ) • qgMom Φ j)) :=
-  smul_symmetricOn _ (qgMom_symmetricOn Φ j)
-
 end Gravity
 
 end
@@ -677,10 +314,6 @@ open BookProof.ChapterStoneResolvent BookProof.EsaClosure
 noncomputable section
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
--- [mulCc_apply cluster]
-@[simp] lemma mulCc_apply (W : E → ℝ) (hW : ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) W)
-    (f : ccSchwartz E) (x : E) :
-    (mulCc W hW f) x = (W x : ℂ) * (f : 𝓢(E, ℂ)) x := rfl
 
 end
 

@@ -12,6 +12,7 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.ScalaronEsa
 open BookProof.ScalaronFiberFL
 open BookProof.ScalaronFiberFL.WallPot

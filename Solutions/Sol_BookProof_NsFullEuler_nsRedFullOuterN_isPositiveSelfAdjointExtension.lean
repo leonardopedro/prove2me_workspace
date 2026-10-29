@@ -42,5 +42,5 @@ theorem solution (nu : ℝ) (k : Fin 3 → ℝ) :
       (fun x => by
         refine ⟨nsRedFockCore_le_friedDom nu k x.2, ?_⟩
         refine lp.ext (funext fun n => ?_)
-        rw [nsRedOuterN_apply, redFried_op_core nu k n ⟨(x : nsRedFockSpace) n, x.2.2 n⟩]
-        exact (dsOp_coe (fun n : ℕ => redHam nu k n) x n).symm)
+        erw [nsRedOuterN_apply, redFried_op_core nu k n ⟨(x : nsRedFockSpace) n, x.2.2 n⟩]
+        exact rfl)

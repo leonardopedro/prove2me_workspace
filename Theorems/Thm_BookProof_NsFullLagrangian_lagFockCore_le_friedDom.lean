@@ -13,10 +13,12 @@ import Definitions.Def_ChapterNavierStokesFullLagrangianFock
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
 open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockFL
-open BookProof.NsFullLagrangian
 
 
 
@@ -24,7 +26,7 @@ open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.StoneBridge BookProof.QgOuterFockFL
-open BookProof.QgOuterFockInteractionFL BookProof.Qg3DGaugeFL
+open BookProof.QgOuterFockInteractionFL
 open BookProof.ChapterStoneResolvent
 
 noncomputable section

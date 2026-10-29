@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 
@@ -306,7 +305,7 @@ theorem qgFLK_nonneg : 0 ≤ qgFLK := by norm_num [qgFLK]
 
 /-- **The relative bound for the `n`-particle gravity Hamiltonian**, uniform in `n`. -/
 theorem qgSectorHam_norm_le (n : ℕ) (u : polyGaussCore (d := n * 84)) :
-    ‖qgSectorHam n u‖ ≤ qgFLK * ‖BookProof.QgOuterFockFL.harmCore u + (u : L2d (n * 84))‖ := by
+    ‖qgSectorHam n u‖ ≤ qgFLK * ‖harmCore u + (u : L2d (n * 84))‖ := by
   rw [qgSectorHam, qgFLK]
   exact norm_sqSumOp_le (km := 1 / 16) (B := 64) (by norm_num)
     (qgKappaN_abs_le n) (by norm_num) (qgSector_potFun_le n) u

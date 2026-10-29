@@ -8,6 +8,8 @@ import Definitions.Def_ChapterWallEsaSemibounded
 import Mathlib
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterScalaronCoreEsa
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.ScalaronEsa
 open BookProof.ScalaronOuterFockFL
 

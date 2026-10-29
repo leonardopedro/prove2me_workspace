@@ -14,6 +14,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.HermiteBand
 open BookProof.HermiteGalerkin

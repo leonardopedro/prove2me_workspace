@@ -17,8 +17,10 @@ import Definitions.Def_ChapterHermiteRelativeBound
 import Mathlib
 import Definitions.Def_ChapterYangMillsBandBounds
 import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.QuadFockEsa
-open BookProof.YangMillsBandBounds
 
 
 
@@ -29,7 +31,7 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
+open BookProof.YangMillsFriedrichs
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 theorem BookProof.YangMillsBandBounds.ym_hermCol_band_bounds (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 → ℝ) :

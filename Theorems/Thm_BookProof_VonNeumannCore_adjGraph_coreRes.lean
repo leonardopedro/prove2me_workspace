@@ -6,6 +6,7 @@ import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.ClosureUniqueness
 open BookProof.VonNeumannCore
 

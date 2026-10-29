@@ -27,5 +27,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (m : ℕ) :
     (fun x => -deriv (deriv (psi (m + 2))) x) = gaussPoly (kinQ m (aCoef m) (bCoef m)) := by
   funext x
-  simp only [psi, deriv2_gaussPoly, gaussPolyDeriv_two_monomial, gaussPoly, Polynomial.eval_neg]
+  simp only [BookProof.HermiteExpWall.psi, deriv2_gaussPoly, gaussPolyDeriv_two_monomial, gaussPoly, Polynomial.eval_neg]
   ring

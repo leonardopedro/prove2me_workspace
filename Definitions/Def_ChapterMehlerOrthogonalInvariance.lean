@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterSolovayCoordinates
 import Mathlib
+import Theorems.Thm_BookProof_ChapterSolovayCoordinates_tailSplitEquiv_map
 
 
 /-!

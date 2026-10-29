@@ -16,6 +16,9 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval

@@ -7,6 +7,7 @@ import Mathlib
 import Definitions.Def_ChapterCayleySpectralModel
 import Definitions.Def_ChapterCayleyTransform
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterCayleySpectralModel
 open BookProof.ChapterCayleyTransform
 open BookProof.ChapterCayleySpectralModel
 

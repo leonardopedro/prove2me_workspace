@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
 import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
-open BookProof.NsCutoffUniformity
 
 
 

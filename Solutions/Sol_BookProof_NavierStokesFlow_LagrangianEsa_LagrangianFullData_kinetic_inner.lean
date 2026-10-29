@@ -23,7 +23,10 @@ set_option maxHeartbeats 1000000 in
 theorem solution (v : L.D) :
     (inner ℂ (v : F) (L.kinetic v : F) : ℂ)
       = (((1 / 2 : ℝ) * ∑ i : Fin 3, ‖(L.P i v : F)‖ ^ 2 : ℝ) : ℂ) := by
-  simp only [kinetic, LinearMap.smul_apply, LinearMap.sum_apply, Submodule.coe_smul,
-    Submodule.coe_sum, inner_smul_right, inner_sum, Complex.ofReal_mul, Complex.ofReal_sum]
+  -- `kinetic` unqualified resolves to an unrelated FullEsa continuous linear map, so the
+  -- unfolding lemma is named in full.
+  simp only [LagrangianFullData.kinetic, LinearMap.smul_apply, LinearMap.sum_apply,
+    Submodule.coe_smul, Submodule.coe_sum, inner_smul_right, inner_sum, Complex.ofReal_mul,
+    Complex.ofReal_sum]
   congr 1
   exact Finset.sum_congr rfl fun i _ => inner_comp_self (L.P_symm i) v

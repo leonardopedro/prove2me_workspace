@@ -37,8 +37,8 @@ variable {C H}
 
 set_option maxHeartbeats 1000000 in
 
-theorem solution (f : qgOuterFock) :
-    ∃ x : qgOuterFriedDom, qgOuterFriedN x + (x : qgOuterFock) = f :=
+theorem solution (f : BookProof.QgOuterFockFL.qgOuterFock) :
+    ∃ x : qgOuterFriedDom, qgOuterFriedN x + (x : BookProof.QgOuterFockFL.qgOuterFock) = f :=
   qgOuterComparison.surj f
 
 set_option maxHeartbeats 1600000 in

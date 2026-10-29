@@ -34,5 +34,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (c : ι → ℝ) (w : ι → V) (f : 𝓢(V, ℂ)) :
     l2Fourier V (opL2 (firstOrderOp c w) (schwartzEquiv V f))
       = (mulSymbolOp (foSymbolFn c w) (𝓕 f)).toLp 2 (volume : Measure V) :=
-  fourier_opL2_eq_mulSymbol _ _ (fourier_firstOrderOp_apply c w)
-    (hasTemperateGrowth_foSymbol c w) f
+  fourier_opL2_eq_mulSymbol V _ _ (fourier_firstOrderOp_apply c w)
+    (hasTemperateGrowth_foSymbol V c w) f

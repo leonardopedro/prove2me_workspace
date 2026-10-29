@@ -17,7 +17,6 @@ variable {n : ℕ} (d : NSTruncation n)
 set_option maxHeartbeats 1000000 in
 theorem solution (psi : Fin n → ℂ) (y : ℝ → Fin n → ℂ)
     (hy : ∀ t, HasDerivAt y ((Complex.I • nsHamiltonian d) *ᵥ y t) t) (hy0 : y 0 = psi)
-    (t : ℝ) : y t = nsFlowUnitary d t *ᵥ psi :=
-  `. -/
-  theorem nsFlow_unique_solution (psi : Fin n → ℂ) (y : ℝ → Fin n → ℂ)
-      (hy : ∀ t, HasDerivA
+    (t : ℝ) : y t = nsFlowUnitary d t *ᵥ psi := by
+  rw [nsFlowUnitary_eq_matrixFlow]
+  exact matrixFlow_unique (Complex.I • nsHamiltonian d) psi y hy hy0 t

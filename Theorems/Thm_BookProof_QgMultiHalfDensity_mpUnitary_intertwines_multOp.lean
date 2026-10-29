@@ -4,6 +4,9 @@ import Mathlib
 import Definitions.Def_ChapterQgMultiHalfDensity
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterQgMultiHalfDensity
 open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.QgMultiHalfDensity

@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 
 import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumOp_le
 

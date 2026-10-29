@@ -6,12 +6,14 @@ import Definitions.Def_ChapterFermionFock
 import Definitions.Def_ChapterSuperBracket
 import Mathlib
 import Definitions.Def_ChapterGradedFock
-open BookProof.GradedFock
+import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterSuperBracket
 
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
-open BookProof.FockSecondQuantization BookProof.FermionFock
+open BookProof.FockSecondQuantization
 open BookProof.ChapterSuperBracket
 
 noncomputable section

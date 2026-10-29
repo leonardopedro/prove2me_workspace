@@ -18,6 +18,12 @@ private theorem genY_apply (j : Fin 3) (p : NSAlg) :
 
 set_option maxHeartbeats 1000000 in
 
+@[simp] private theorem genY_X_uD (i j k : Fin 3) : genY k (X (NSVar.uD i j)) = 0 := by
+  simp [genY_apply]
+
+@[simp] private theorem genY_X_uL (i k : Fin 3) : genY k (X (NSVar.uL i)) = 0 := by
+  simp [genY_apply]
+
 theorem solution (nu : ℂ) (i j : Fin 3) : genY j (nsSymbol nu i) = 0 := by
   have hC : genY j (C nu) = 0 := by simp [genY_apply]
   simp only [nsSymbol, map_sub, map_sum, genY_leibniz, genY_uField, genY_X_uD, genY_X_uL, hC,

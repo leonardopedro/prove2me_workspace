@@ -25,6 +25,10 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Definitions.Def_ChapterSirkEndToEnd
 import Definitions.Def_ChapterStarobinskyPotential
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkEndToEnd
+import Definitions.Def_ChapterSirkPerSystemFlowBound
 open BookProof.EsaClosure
 open BookProof.FarisLavine
 open BookProof.ChapterH4

@@ -3,6 +3,7 @@ import Definitions.Def_ChapterCarlemanTwoStep
 import Mathlib
 import Definitions.Def_ChapterCarlemanGeneralHop
 import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanGeneralHop
 open BookProof.HermiteCarleman
 open BookProof.CarlemanGeneralHop
 

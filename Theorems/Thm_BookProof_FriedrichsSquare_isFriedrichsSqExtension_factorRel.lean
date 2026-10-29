@@ -5,6 +5,7 @@ import Definitions.Def_ChapterClosureUniqueness
 import Mathlib
 import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.FriedrichsSquare
 
 

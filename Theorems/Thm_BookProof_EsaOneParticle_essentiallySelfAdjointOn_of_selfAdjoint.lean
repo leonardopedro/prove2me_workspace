@@ -6,8 +6,8 @@ import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.TensorCore
-open BookProof.EsaOneParticle
 
 
 

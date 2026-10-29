@@ -13,14 +13,14 @@ import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
-open BookProof.Qg3DGaugeFL
 
 
 
 open BookProof.QuantumGravity3DGauge BookProof.Qg3DGaugeEsa
-open BookProof.QgOuterFock BookProof.FarisLavineOnly
+open BookProof.QgOuterFock
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.YangMillsHermite
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent

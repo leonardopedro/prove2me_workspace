@@ -118,6 +118,5 @@ def sirkReconstruction (V : F →L[ℂ] E) : E →L[ℂ] E := V.comp V.adjoint
 
 /-! ## 6. Non-vacuity -/
 
- positivity
 
 end BookProof.ChapterSirkEndToEnd

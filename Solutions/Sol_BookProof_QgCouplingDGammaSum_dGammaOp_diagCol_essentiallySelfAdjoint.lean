@@ -32,7 +32,7 @@ variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 theorem solution {lam : ℕ → ℝ} (hlam : ∀ k, 0 ≤ lam k) :
-    EssentiallySelfAdjointOn (lpFiniteModes Conf) (dGammaOp (diagCol lam)) := by
+    EssentiallySelfAdjointOn (lpFiniteModes Conf) (dGammaOp (BookProof.QgCouplingDGammaSum.diagCol lam)) := by
 
   rw [dGammaOp_diagCol_eq]
   exact ikebeKato_momentum (occEnergy lam) (occEnergy_nonneg hlam)

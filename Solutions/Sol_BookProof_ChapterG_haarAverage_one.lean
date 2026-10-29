@@ -18,5 +18,3 @@ theorem solution : haarAverage (μG := μG) (X := X) (fun _ => 1) = fun _ => 1 :
   funext x
   simp only [haarAverage, integral_const]
   simp
-
-omit [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant] in

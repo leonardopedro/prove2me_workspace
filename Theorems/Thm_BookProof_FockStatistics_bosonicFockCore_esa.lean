@@ -13,17 +13,20 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterFockStatisticsCompletion
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
-open BookProof.FockStatistics
 
 
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
-open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
-open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
+open BookProof.TensorPerm BookProof.PermSector
+open BookProof.SecondQuantizationCore BookProof.DirectSumEsa
 
 noncomputable section
 

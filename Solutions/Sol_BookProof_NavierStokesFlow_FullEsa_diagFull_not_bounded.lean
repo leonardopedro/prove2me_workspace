@@ -6,6 +6,8 @@ import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_not_bounded
 import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_basis
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_norm_basis
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FullEsa
 
@@ -36,7 +38,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution :
     ¬ ∃ C : ℝ, ∀ f : diagUnboundedData.D, ‖diagUnboundedData.hamiltonian f‖ ≤ C * ‖f‖ := by
   rw [diagUnboundedData_hamiltonian]
-  refine diagOp_not_bounded _ fun C => ?_
+  refine _root_.diagOp_not_bounded _ fun C => ?_
   refine ⟨⌈|C|⌉₊ + 1, ?_⟩
   have hc : C ≤ |C| := le_abs_self C
   have hn : |C| ≤ (⌈|C|⌉₊ : ℝ) := Nat.le_ceil _

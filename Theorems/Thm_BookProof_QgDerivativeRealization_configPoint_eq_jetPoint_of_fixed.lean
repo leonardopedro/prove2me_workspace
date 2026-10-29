@@ -4,6 +4,8 @@ import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgDerivativeRealization
 open BookProof.QuantumGravity3DGauge
 open BookProof.QgDerivativeRealization
 

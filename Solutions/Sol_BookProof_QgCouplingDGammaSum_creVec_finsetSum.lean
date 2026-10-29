@@ -31,6 +31,6 @@ theorem solution (s : Finset ι) (f : ι → (ℕ →₀ ℂ)) (x : FockAlg) :
     creVec (∑ i ∈ s, f i) x = ∑ i ∈ s, creVec (f i) x := by
   classical
   induction s using Finset.induction with
-  | empty => simp
+  | empty => simp [creVec_zero]
   | insert a s ha ih =>
     rw [Finset.sum_insert ha, Finset.sum_insert ha, creVec_add, ih]

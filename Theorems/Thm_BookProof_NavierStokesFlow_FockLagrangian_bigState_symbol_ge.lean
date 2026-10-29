@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesFockParcels
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesFockLagrangian
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.FockLagrangian

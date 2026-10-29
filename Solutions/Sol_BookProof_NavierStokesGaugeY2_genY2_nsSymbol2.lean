@@ -24,6 +24,9 @@ private theorem genY2_apply (j : Fin 3) (p : NSAlg) :
 
 set_option maxHeartbeats 1000000 in
 
+@[simp] private theorem genY2_C (j : Fin 3) (c : ℂ) : genY2 j (C c) = 0 := by
+  simp [genY2_apply]
+
 theorem solution (nu : ℂ) (i j : Fin 3) : genY2 j (nsSymbol2 nu i) = 0 := by
   simp only [nsSymbol2, map_sub, map_sum, genY2_leibniz, genY2_uField2, genY2_uDField,
     genY2_X_uL, genY2_C, zero_mul, mul_zero, add_zero, Finset.sum_const_zero, sub_self]

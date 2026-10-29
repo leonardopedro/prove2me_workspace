@@ -1,4 +1,6 @@
 import Definitions.Def_ChapterEsaClosure
+import Theorems.Thm_BookProof_EsaClosure_hashimoto_multishift_selects_esa
+import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
 import Definitions.Def_ChapterNavierStokesHashimoto
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterEsaClosureCore

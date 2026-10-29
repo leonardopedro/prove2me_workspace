@@ -13,8 +13,10 @@ import Mathlib
 import Definitions.Def_ChapterScalaronFockGapChain
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
+import Definitions.Def_ChapterFockCubicQuarticStability
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterTruncationGapLift
 open BookProof.HermiteGalerkin
-open BookProof.ScalaronFockGapChain
 
 
 noncomputable section

@@ -11,6 +11,9 @@ open BookProof.NavierStokesGaugeY
 
 open MvPolynomial BookProof.NavierStokesFlow
 
+@[simp] private theorem genX_apply (j : Fin 3) (p : NSAlg) :
+    BookProof.NavierStokesGaugeY.genX j p = pderiv (NSVar.x j) p := rfl
+
 set_option maxHeartbeats 1000000 in
 theorem solution (nu : ℂ) (i j : Fin 3) : genX j (nsSymbol nu i) = 0 := by
 

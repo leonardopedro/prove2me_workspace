@@ -21,6 +21,9 @@ noncomputable section
 
 variable {n : ℕ}
 
+private theorem diagOp_apply (d : Finset (Fin n) → ℝ) (ψ : FermiFock n) (S : Finset (Fin n)) :
+    (diagOp d ψ) S = (d S : ℂ) * ψ S := rfl
+
 set_option maxHeartbeats 1000000 in
 
 
@@ -28,4 +31,4 @@ theorem solution (om : Fin n → ℝ) (c0 : ℝ) :
     smFermiN om c0 = diagOp (smFermiWeight om c0) := by
   refine LinearMap.ext fun ψ => ?_
   ext S
-  simp [smFermiN, smFermiWeight, fermiEnergy_apply, add_mul]
+  simp [smFermiN, smFermiWeight, fermiEnergy_apply, add_mul, diagOp_apply]

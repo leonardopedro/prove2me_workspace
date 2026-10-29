@@ -8,6 +8,8 @@ import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterUnboundedSpectralModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.UnboundedSpectralModel
 

@@ -15,10 +15,11 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteProductCore
 open BookProof.HermiteRelative
 open BookProof.HyperbolicQuadratic
-open BookProof.QuadraticRotationPerturbed
 
 
 

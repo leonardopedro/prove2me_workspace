@@ -15,9 +15,9 @@ import Definitions.Def_ChapterQgFullEliminated
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.EsaClosure
 open BookProof.StoneBridge
-open BookProof.QgFullEliminated
 
 
 
@@ -26,7 +26,6 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 

@@ -5,6 +5,8 @@ import Definitions.Def_ChapterFriedrichsSquareFactorization
 import Mathlib
 import Definitions.Def_ChapterVonNeumannCore
 import Definitions.Def_ChapterEsaClosureCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterVonNeumannCore
 open BookProof.EsaClosure
 open BookProof.VonNeumannCore
 

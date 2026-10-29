@@ -4,6 +4,8 @@ import Definitions.Def_ChapterBrstReducedTransfer
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Definitions.Def_ChapterFockOneParticleGap
+import Definitions.Def_ChapterQgBrstCompleted
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockOneParticleGap
 open BookProof.QgBrstCompleted
 

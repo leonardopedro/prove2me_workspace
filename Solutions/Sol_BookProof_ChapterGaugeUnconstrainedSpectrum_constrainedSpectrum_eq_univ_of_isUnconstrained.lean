@@ -25,7 +25,14 @@ theorem solution {U : G → Op X}
   by_cases hg : g = 1
   · subst hg
     have hid : diagOp (fun _ : X => (1 : ℂ)) = diagOp d := by
-      rw [← hd, hU1]; ext f x; simp
-    have := diagOp_injective hid
-    exact (congrFun this x).symm
+      rw [← hd, hU1]; ext f x
+      show (fun _ : X => (1:ℂ)) x * f x = f x
+      simp
+    have heq := congrFun (congrArg (fun T : Op X => T (fun _ : X => (1:ℂ))) hid) x
+    have hL : (diagOp (fun _ : X => (1:ℂ))) (fun _ : X => (1:ℂ)) x
+        = (fun _ : X => (1:ℂ)) x * (fun _ : X => (1:ℂ)) x := rfl
+    have hR : (diagOp d) (fun _ : X => (1:ℂ)) x = d x * (fun _ : X => (1:ℂ)) x := rfl
+    rw [hL, hR] at heq
+    simp at heq
+    exact heq.symm
   · exact absurd ⟨d, hd⟩ (hU g hg)

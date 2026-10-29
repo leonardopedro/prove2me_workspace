@@ -8,6 +8,8 @@ import Mathlib
 import Definitions.Def_ChapterUnboundedSpectralModel
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterUnboundedSpectralModel
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.UnboundedSpectralModel

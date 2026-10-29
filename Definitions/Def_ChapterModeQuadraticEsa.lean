@@ -1,4 +1,7 @@
 import Definitions.Def_ChapterCarlemanTwoStep
+import Theorems.Thm_BookProof_CarlemanTwoStep_ladder2_eq_zero
+import Theorems.Thm_BookProof_HermiteProductBasis_pgMap_apply
+import Theorems.Thm_BookProof_YangMillsHermite_weylProd_polySym
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine

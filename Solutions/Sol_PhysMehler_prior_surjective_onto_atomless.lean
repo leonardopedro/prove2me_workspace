@@ -16,6 +16,10 @@ noncomputable section
 open PhysMeasureBasis PhysFunctionalAnalysis PhysHSGaussian
 open PhysMeasureBasis
 
+/-- The source chapter equips the substrate with its Borel σ-algebra as a *local*
+instance, so it is not exported with the published bundle; re-declare it here. -/
+noncomputable local instance substrateMeasurableSpace : MeasurableSpace Substrate := borel _
+
 set_option maxHeartbeats 1000000 in
 theorem solution (μ : Measure Substrate)
     (h1 : IsProbabilityMeasure μ) (h2 : ∀ x, μ {x} = 0) :

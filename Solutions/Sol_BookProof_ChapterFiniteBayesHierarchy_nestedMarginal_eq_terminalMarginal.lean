@@ -23,6 +23,12 @@ variable {S : Type*} [Fintype S] [DecidableEq S]
 
 set_option maxHeartbeats 1000000 in
 
+variable {S : Type*} [Fintype S] [DecidableEq S]
+@[simp] private theorem collapseKernels_cons (k : S → S → ℝ)
+    (ks : List (S → S → ℝ)) :
+    collapseKernels (k :: ks) = compKernel k (collapseKernels ks) := by
+  rfl
+
 theorem solution (ks : List (S → S → ℝ))
     (likelihood : S → ℝ) :
     nestedMarginal ks likelihood =

@@ -23,10 +23,16 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.YangMillsFriedrichs
-open BookProof.YmAbelianFock
 
 
 

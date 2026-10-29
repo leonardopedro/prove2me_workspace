@@ -14,6 +14,8 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HashimotoShiftInvert
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.ChapterStoneMeasurable

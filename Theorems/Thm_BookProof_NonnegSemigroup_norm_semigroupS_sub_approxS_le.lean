@@ -5,12 +5,12 @@ import Definitions.Def_ChapterNonnegResolvent
 import Definitions.Def_ChapterNonnegUnitaryGroup
 import Mathlib
 import Definitions.Def_ChapterNonnegSemigroup
-open BookProof.NonnegSemigroup
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegResolvent
-open BookProof.NonnegUnitaryGroup
+open BookProof.ClosureUniqueness
+open BookProof.NonnegResolvent
+open BookProof.PositiveSquareRoot
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 

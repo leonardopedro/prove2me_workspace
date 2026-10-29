@@ -135,5 +135,3 @@ def constFamily (kappa : Fin D → ℝ) (v : R → Fin D → ℝ) : SqFamily whe
 end Single
 
 end BookProof.FarisLavineOnly
-
-end

@@ -25,10 +25,10 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution (v : Fin 3 → LinfZ) (w : LinfZ) (fr : Fin 3 → ℝ) (nu : ℝ) :
     IsSelfAdjoint (latticeLagCLM v w fr nu) := by
-  have hmom : IsSelfAdjoint (momentum * momentum) := by
-    change star (momentum * momentum) = momentum * momentum
+  have hmom : IsSelfAdjoint (BookProof.ChapterContinuityUnitaryInfinite.momentum * BookProof.ChapterContinuityUnitaryInfinite.momentum) := by
+    change star (BookProof.ChapterContinuityUnitaryInfinite.momentum * BookProof.ChapterContinuityUnitaryInfinite.momentum) = BookProof.ChapterContinuityUnitaryInfinite.momentum * BookProof.ChapterContinuityUnitaryInfinite.momentum
     rw [star_mul, momentum_isSelfAdjoint.star_eq]
-  have hsum : IsSelfAdjoint (∑ _i : Fin 3, momentum * momentum) := by
+  have hsum : IsSelfAdjoint (∑ _i : Fin 3, BookProof.ChapterContinuityUnitaryInfinite.momentum * BookProof.ChapterContinuityUnitaryInfinite.momentum) := by
     change star _ = _
     rw [star_sum]
     exact Finset.sum_congr rfl fun i _ => hmom.star_eq

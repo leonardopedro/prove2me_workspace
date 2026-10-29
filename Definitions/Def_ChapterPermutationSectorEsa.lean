@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterTensorPermutation
+import Theorems.Thm_BookProof_TensorPerm_permOp_succ
 import Definitions.Def_ChapterTwoParticleSectorEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer

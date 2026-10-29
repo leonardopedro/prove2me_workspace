@@ -14,12 +14,15 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.YangMillsHermite
-open BookProof.NsLinearKoopmanEsa
 
 
 
@@ -29,7 +32,6 @@ open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.FullQuadratic
-open BookProof.NsKoopman
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 

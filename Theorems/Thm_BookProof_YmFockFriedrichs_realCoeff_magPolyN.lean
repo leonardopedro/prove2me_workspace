@@ -12,17 +12,18 @@ import Mathlib
 import Definitions.Def_ChapterYangMillsFockFriedrichs
 import Definitions.Def_ChapterSirkFinitePrecision
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.YangMillsHermite
-open BookProof.YmFockFriedrichs
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.QgOuterFock BookProof.StoneBridge BookProof.Qg3DGaugeFL
+open BookProof.QgOuterFock BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent
 
 noncomputable section

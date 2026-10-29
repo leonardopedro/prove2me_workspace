@@ -4,6 +4,8 @@ import Definitions.Def_ChapterQgPhysicalSectorIdentity
 import Mathlib
 import Definitions.Def_ChapterQgDerivativeRealization
 import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterGaugeFixing
+import Definitions.Def_ChapterQgDerivativeRealization
 open BookProof.GaugeFixing
 open BookProof.QgDerivativeRealization
 

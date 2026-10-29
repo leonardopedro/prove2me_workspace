@@ -3,6 +3,8 @@ import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.NsLagrangianDet
 open BookProof.ChapterUnboundedPosition
 

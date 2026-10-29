@@ -5,6 +5,10 @@ import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_scoreSoftmax
 import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterSoftmaxFluctuation
+import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_partition_pos
+import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_partition
+import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_hasDerivAt_exp_mul
+import Theorems.Thm_BookProof_ChapterSoftmaxFluctuation_scoreSoftmax_eq_div
 open BookProof.ChapterSoftmaxTemperatureMonotone
 
 
@@ -45,4 +49,4 @@ set_option maxHeartbeats 1000000 in
 
 theorem solution (s : Fin m → ℝ) (j : Fin m) :
     Differentiable ℝ fun b : ℝ => scoreSoftmax b s j := fun b =>
-  (hasDerivAt_scoreSoftmax b s j).differentiableAt
+  (_root_.hasDerivAt_scoreSoftmax b s j).differentiableAt

@@ -4,7 +4,8 @@ import Definitions.Def_ChapterNsScalarVectorCurry
 import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Mathlib
 import Definitions.Def_ChapterL2TensorPowerUnitary
-open BookProof.L2TensorPower
+import Definitions.Def_ChapterNsScalarFourier
+import Definitions.Def_ChapterScalarDGammaEsa
 
 
 

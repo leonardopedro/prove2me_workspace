@@ -6,6 +6,8 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterShiftedQuadraticMatrixEsa
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.QuadraticRotation

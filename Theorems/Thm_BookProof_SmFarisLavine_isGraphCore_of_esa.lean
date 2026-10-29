@@ -12,11 +12,14 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterQgOuterFockFarisLavine
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterVielbeinFiberFock
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.GraphCore
 open BookProof.QgOuterFockFL
-open BookProof.SmFarisLavine
 
 
 

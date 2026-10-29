@@ -5,6 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterH8Bases
 import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterH8
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterH6
 open BookProof.ChapterH8
 

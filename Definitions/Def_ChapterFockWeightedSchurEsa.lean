@@ -813,6 +813,22 @@ theorem wComm_oscCol : WCommBound oscW oscCol 4 := by
 
 
 
+/-- The entries of the oscillator matrix are **unbounded**: the one-particle operator it
+defines is not bounded, so the unweighted Schur gate of `ChapterFockSchurEsa` cannot
+apply. -/
+theorem oscCol_entries_unbounded (C : ℝ) : ∃ k : ℕ, C ≤ ‖(oscCol k) (k + 1)‖ := by
+  obtain ⟨n, hn⟩ := exists_nat_gt (C ^ 2)
+  refine ⟨n, ?_⟩
+  rw [norm_oscCol_apply, if_pos rfl]
+  by_cases hC : C ≤ 0
+  · exact le_trans hC (Real.sqrt_nonneg _)
+  · have hC : 0 < C := lt_of_not_ge hC
+    have h1 : C ^ 2 < (n : ℝ) + 1 := by linarith
+    have h2 : Real.sqrt (C ^ 2) < Real.sqrt ((n : ℝ) + 1) := by
+      exact Real.sqrt_lt_sqrt (sq_nonneg C) h1
+    rw [Real.sqrt_sq hC.le] at h2
+    exact h2.le
+
 /-- The oscillator matrix satisfies **no** unweighted Schur bound. -/
 theorem oscCol_not_schurBound (K : ℝ) : ¬ SchurBound oscCol K := by
   classical

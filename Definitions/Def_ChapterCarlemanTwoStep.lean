@@ -144,6 +144,8 @@ def ltermG (u : (Fin d →₀ ℕ) → ℂ) (w : ℂ) (lc : (Fin d →₀ ℕ) �
 /-- The raising coefficient of a one-step hop: `√(αᵢ+1)`. -/
 def rc1 (a : Fin d →₀ ℕ) (i : Fin d) : ℝ := Real.sqrt ((a i : ℝ) + 1)
 
+theorem rc1_nonneg (a : Fin d →₀ ℕ) (i : Fin d) : 0 ≤ rc1 a i := by sorry
+
 /-- The lowering coefficient of a one-step hop: `√αᵢ`. -/
 def lc1 (a : Fin d →₀ ℕ) (i : Fin d) : ℝ := Real.sqrt (a i : ℝ)
 
@@ -152,6 +154,12 @@ def rc2 (a : Fin d →₀ ℕ) (i : Fin d) : ℝ := Real.sqrt (((a i : ℝ) + 1)
 
 /-- The lowering coefficient of a two-step hop: `√(αᵢ(αᵢ−1))`. -/
 def lc2 (a : Fin d →₀ ℕ) (i : Fin d) : ℝ := Real.sqrt ((a i : ℝ) * ((a i : ℝ) - 1))
+
+/-- For `αᵢ < 2` the lowering coefficient of a two-step hop vanishes (source: ChapterCarlemanTwoStep.lean). -/
+theorem lc2_vanish (i : Fin d) (a : Fin d →₀ ℕ) (h : a i < 2) : lc2 a i = 0 := by
+  interval_cases hai : (a i)
+  · rw [lc2, hai]; norm_num
+  · rw [lc2, hai]; norm_num
 
 
 

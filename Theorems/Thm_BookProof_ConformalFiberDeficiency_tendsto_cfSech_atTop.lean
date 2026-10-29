@@ -5,7 +5,7 @@ import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterWallDeficiencyObstruction
 import Mathlib
 import Definitions.Def_ChapterConformalFiberDeficiency
-open BookProof.ConformalFiberDeficiency
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 
 
 

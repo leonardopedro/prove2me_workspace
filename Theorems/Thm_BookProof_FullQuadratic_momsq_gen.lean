@@ -15,6 +15,8 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite

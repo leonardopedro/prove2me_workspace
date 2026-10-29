@@ -13,6 +13,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterShiftedHermiteCore
 import Theorems.Thm_BookProof_ShiftedHermiteCore_mulXTPoly_apply
+import Theorems.Thm_BookProof_ShiftedHermiteCore_momTPoly_apply
 open BookProof.ShiftedQuadraticMatrix
 
 
@@ -35,9 +36,6 @@ variable {d : ℕ}
 
 variable {d : ℕ}
 
-
-@[simp] private theorem mulXTPoly_apply (a : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    mulXTPoly a i p = X i * p + ((a i : ℝ) : ℂ) • p := rflanslation vector
 
 set_option maxHeartbeats 1000000 in
 

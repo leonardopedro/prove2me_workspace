@@ -21,10 +21,14 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.FullQuadratic
 open BookProof.QuadFockEsa
-open BookProof.Qg3DDensityEsa
 
 
 
@@ -36,10 +40,9 @@ open BookProof.HermiteRelative
 open BookProof.FullQuadratic
 open BookProof.QuantumGravity3DGauge
 open BookProof.Qg3DGaugeEsa
-open BookProof.Qg3DCrossTermEsa
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.TensorCore BookProof.DirectSumEsa BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa BookProof.FockSecondQuantization BookProof.QuadFockEsa
+open BookProof.FockSecondQuantization BookProof.QuadFockEsa
 
 noncomputable section
 

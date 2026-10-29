@@ -12,6 +12,9 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgOuterFockEllipticFL
 open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock

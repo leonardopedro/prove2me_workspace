@@ -15,6 +15,8 @@ import Definitions.Def_ChapterFullQuadraticEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
 open BookProof.FullQuadratic
@@ -28,9 +30,6 @@ open BookProof.HyperbolicQuadratic
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HermiteRelative
 open BookProof.QuadratureEsa
-open BookProof.CarlemanTwoStep
-open BookProof.CarlemanSimplex
-open BookProof.ModeQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 
 noncomputable section

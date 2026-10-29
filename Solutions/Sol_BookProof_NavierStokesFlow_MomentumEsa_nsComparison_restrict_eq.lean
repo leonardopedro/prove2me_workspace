@@ -37,4 +37,4 @@ theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
       = ⇑((lpFiniteModes ℕ).subtype
           (diagOp (fun k' => (∑ i, p i k' ^ 2) + (∑ i, q i k' ^ 2) + 1) f)) k
   rw [diagMax_coe]
-  simp [DiagonalEsa.diagFun, nsSymbol]
+  simp [DiagonalEsa.diagFun, BookProof.NavierStokesFlow.MomentumEsa.nsSymbol]

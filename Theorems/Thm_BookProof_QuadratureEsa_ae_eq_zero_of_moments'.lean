@@ -11,6 +11,7 @@ import Mathlib
 import Definitions.Def_ChapterQuadratureEsa
 import Definitions.Def_ChapterHermiteFunctions
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteCore
 open BookProof.HermiteProductCore
 open BookProof.QuadratureEsa

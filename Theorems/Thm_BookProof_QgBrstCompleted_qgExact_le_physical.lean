@@ -3,6 +3,8 @@ import Definitions.Def_ChapterQuantumGravityFock
 import Mathlib
 import Definitions.Def_ChapterQgBrstCompleted
 import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterBrstReducedTransfer
+import Definitions.Def_ChapterQgBrstCompleted
 open BookProof.BrstReducedTransfer
 open BookProof.QgBrstCompleted
 

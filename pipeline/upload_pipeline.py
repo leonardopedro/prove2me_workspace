@@ -1332,6 +1332,13 @@ _INFRA_MARKERS = (
     "TimeoutExpired", "poll timeout", "still in flight", "connection",
     "ConnectionError", "HTTPError", "Temporary failure", "timed out",
     "dependency not proved yet", "job still in flight",
+    # The platform's own DB dying mid-materialize (measured 2026-10-21, two
+    # QgOuterFockInteractionFL sols: "ConnectionTerminated error_code:0" while
+    # resolving imports) says nothing about the submission's text, but the
+    # recorded error starts with `verdict ` so the stamp-keyed content check
+    # held both behind their own (unchanged) files indefinitely -- a transient
+    # server fault gated like a CE.
+    "ConnectionTerminated", "DB error",
 )
 
 
@@ -2560,6 +2567,11 @@ def blocked_by(item, published):
     def:ChapterQgTruncationResolvent and def:ChapterYangMillsAbelianFockEsa were
     spent on exactly that before this check existed."""
     src = item_source(item)
+    # A def bundle that opens a namespace IT declares (inlined from a source
+    # chapter that has no bundle of its own) is self-sufficient: the owner lookup
+    # names the item itself, so gating on "owner published" would defer the bundle
+    # on its own existence forever — a self-deadlock, not a missing dependency.
+    own_chapter = item.partition(":")[2] if item.startswith("def:") else None
     for dep in def_imports(src):
         if dep not in published:
             return dep
@@ -2578,6 +2590,8 @@ def blocked_by(item, published):
             continue                      # index unreadable: do not gate on guesses
         if owner is None:
             return f"open {ns} (no provider)"
+        if owner == own_chapter:
+            continue                      # declared by this very bundle
         if owner not in published:
             return f"open {ns} (owner {owner})"
     return None

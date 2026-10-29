@@ -6,6 +6,8 @@ import Definitions.Def_ChapterAbelianClassificationList
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
 import Definitions.Def_ChapterUnitaryTransport
+import Definitions.Def_ChapterSeparableL2Model
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterUnitaryTransport
 open BookProof.ChapterStandardBorelClassification
 

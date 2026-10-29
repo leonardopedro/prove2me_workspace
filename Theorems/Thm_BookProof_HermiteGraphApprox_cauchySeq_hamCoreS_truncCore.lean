@@ -15,10 +15,14 @@ import Definitions.Def_ChapterHermiteGraphApprox
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterHermiteLadderShift
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.ScalaronEsa
 open BookProof.YangMillsHermite
-open BookProof.HermiteGraphApprox
 
 
 

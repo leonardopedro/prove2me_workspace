@@ -12,8 +12,10 @@ import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
 open BookProof.HermiteProductCore
-open BookProof.NsFullEuler
 
 
 

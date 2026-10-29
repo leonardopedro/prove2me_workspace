@@ -21,7 +21,7 @@ variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
 set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] [CompleteSpace G]
     (T : F →L[ℂ] G) (f : 𝓢(V, F)) (x : V) :
-    (𝓕 (postcompCLM T f) : 𝓢(V, G)) x = T ((𝓕 f : 𝓢(V, F)) x) := by
+    (𝓕 (BookProof.NsPartialFourier.postcompCLM T f) : 𝓢(V, G)) x = T ((𝓕 f : 𝓢(V, F)) x) := by
 
   rw [SchwartzMap.fourier_coe, SchwartzMap.fourier_coe, Real.fourier_eq, Real.fourier_eq]
   have hint : Integrable (fun v : V => (𝐞 (-inner ℝ v x) : ℂ) • f v) volume :=

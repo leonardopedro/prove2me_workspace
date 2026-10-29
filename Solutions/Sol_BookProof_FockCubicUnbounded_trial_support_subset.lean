@@ -27,5 +27,5 @@ theorem solution (k n : ℕ) (c : ℝ) :
   by_contra hcon
   simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at hcon
   have : trial k n c γ = 0 := by
-    simp [trial, Ne.symm hcon.1, Ne.symm hcon.2]
+    simp [BookProof.FockCubicUnbounded.trial, Ne.symm hcon.1, Ne.symm hcon.2]
   exact (Finsupp.mem_support_iff.mp hγ) this

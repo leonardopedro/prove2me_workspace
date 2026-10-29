@@ -14,7 +14,7 @@ import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterQgFourierElimination
 import Mathlib
 import Definitions.Def_ChapterQgFullEliminated
-open BookProof.QgFullEliminated
+import Definitions.Def_ChapterQgOuterFockFlow
 
 
 
@@ -23,7 +23,6 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
 
 noncomputable section
 

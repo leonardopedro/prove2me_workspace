@@ -20,6 +20,14 @@ open BookProof.NavierStokesGaugeY2
 
 noncomputable section
 
+-- Inlined from the (partial) published def bundle: `BookProof.NavierStokesGaugeY2.genY2_apply`
+-- is not declared server-side, so restate it locally.
+private theorem genY2_apply_loc (j : Fin 3) (p : NSAlg) :
+    genY2 j p = pderiv (NSVar.y j) p
+      - (∑ i : Fin 3, X (NSVar.uD i j) * pderiv (NSVar.u i) p)
+      - ∑ i : Fin 3, X (NSVar.uL i) * pderiv (NSVar.uD i j) p := by
+  simp [genY2]
+
 set_option maxHeartbeats 1000000 in
 theorem solution (i j : Fin 3) : genY2 j * genU i = genU i * genY2 j := by
 
@@ -30,5 +38,5 @@ theorem solution (i j : Fin 3) : genY2 j * genU i = genU i * genY2 j := by
   have h2 : ∀ k : Fin 3, pderiv (NSVar.u i) (X (NSVar.uL k) * pderiv (NSVar.uD k j) p)
       = X (NSVar.uL k) * pderiv (NSVar.uD k j) (pderiv (NSVar.u i) p) := fun k => by
     rw [pderiv_u_mul_uL, pderiv_swap (NSVar.u i) (NSVar.uD k j)]
-  simp only [Module.End.mul_apply, genU_apply, genY2_apply, map_sub, map_sum,
+  simp only [Module.End.mul_apply, genU_apply, genY2_apply_loc, map_sub, map_sum,
     pderiv_swap (NSVar.u i) (NSVar.y j), h, h2]

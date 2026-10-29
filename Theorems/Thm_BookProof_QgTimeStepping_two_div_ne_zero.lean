@@ -9,6 +9,7 @@ import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgTruncationResolvent
 import Mathlib
 import Definitions.Def_ChapterQgTimeStepping
+import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTimeStepping
 
 

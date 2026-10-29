@@ -5,8 +5,9 @@ import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterContinuityUnitaryInfinite
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 open BookProof.ChapterContinuityUnitaryInfinite
-open BookProof.EsaOneParticle
 
 
 

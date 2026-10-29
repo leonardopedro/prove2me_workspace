@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterQuantumGravityDensitized
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.QuantumGravityDensitized
 
 

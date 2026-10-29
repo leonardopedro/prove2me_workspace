@@ -46,7 +46,7 @@ print(sum(1 for v in st.values() if v.get('status')=='done'))
 EOF
 )
   echo "=== ROUND $i end: done=$done_now${last:+, previous round $last}" | tee -a "$LOG"
-  if [ "$done_now" -eq "$last" ] && [ "$i" -gt 1 ]; then
+  if [ -n "$last" ] && [ "$done_now" -eq "$last" ]; then
     echo "=== no progress in a full round, stopping" | tee -a "$LOG"
     break
   fi

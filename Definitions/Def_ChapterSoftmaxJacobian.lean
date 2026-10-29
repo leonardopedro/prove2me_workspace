@@ -2,6 +2,7 @@ import Definitions.Def_ChapterSoftmaxFluctuation
 import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
+import Theorems.Thm_BookProof_ChapterSoftmaxOrder_scoreSoftmax_le_one
 
 
 /-!

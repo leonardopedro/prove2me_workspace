@@ -10,9 +10,11 @@ import Mathlib
 import Definitions.Def_ChapterSmFarisLavine
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
-open BookProof.SmFarisLavine
 
 
 

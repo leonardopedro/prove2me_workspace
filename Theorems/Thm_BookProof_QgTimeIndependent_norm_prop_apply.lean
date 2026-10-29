@@ -4,6 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterQgTimeIndependentFlow
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterQgTimeIndependentFlow
 open BookProof.QgTimeIndependent
 
 

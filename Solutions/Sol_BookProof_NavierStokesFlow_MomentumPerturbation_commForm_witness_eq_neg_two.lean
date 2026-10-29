@@ -24,6 +24,14 @@ variable {ι : Type*}
 variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
+variable {ι : Type*}
+@[simp] private theorem pertHam_apply (c : ι → ℝ) (u w : L2I ι) (x : maxDom c) :
+    pertHam c u w x = diagMax c x + rankTwo u w (x : L2I ι) := rfl
+
+variable {ι : Type*}
+@[simp] private theorem rankTwo_apply (u w : L2I ι) (x : L2I ι) :
+    rankTwo u w x = (inner ℂ u x : ℂ) • w + (inner ℂ w x : ℂ) • u := rfl
+
 theorem solution :
     commForm (pertHam linSymbol (eState 0) (eState 1)) (diagMax linSymbol)
       ⟨testState, testState_mem_maxDom⟩ = -2 := by

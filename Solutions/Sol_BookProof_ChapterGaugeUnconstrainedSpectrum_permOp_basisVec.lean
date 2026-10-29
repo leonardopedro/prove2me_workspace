@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Definitions.Def_ChapterE4
 open BookProof.ChapterGaugeUnconstrainedSpectrum
-open BookProof.ChapterE4
 
 
 

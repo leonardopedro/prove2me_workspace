@@ -13,18 +13,20 @@ import Definitions.Def_ChapterSmFockEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.HermiteProductCore
 open BookProof.SmHamiltonian
-open BookProof.SmFockEsa
 
 
 
 open MvPolynomial
-open BookProof.SmOneParticle BookProof.SmHamiltonian BookProof.SmOuterFock
+open BookProof.SmOneParticle BookProof.SmHamiltonian
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.TensorCore BookProof.SecondQuantizationCore
-open BookProof.YangMillsNonAbelianEsa
 
 noncomputable section
 

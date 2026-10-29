@@ -7,12 +7,16 @@ import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterA1c
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterWignerOrbitClassification
 open BookProof.ChapterA
 open BookProof.ChapterA.System
+open BookProof.GroupAverage
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.ChapterWignerLittleGroup
-open BookProof.GroupAverage
-open BookProof.GroupAverage
 
 
 

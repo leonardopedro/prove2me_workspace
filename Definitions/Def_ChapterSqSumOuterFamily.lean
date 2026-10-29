@@ -2,7 +2,6 @@ import Theorems.Thm_BookProof_SqSumFarisLavine_norm_sqSumOp_le
 
 import Theorems.Thm_BookProof_SqSumFarisLavine_potFun_le_of_schur
 
-import Theorems.Thm_BookProof_QgOuterFockFL_harmFried_op_core
 
 import Definitions.Def_ChapterQgOuterFockFullFL
 import Definitions.Def_ChapterDirectSumEsa
@@ -143,7 +142,7 @@ theorem outerCore_le_friedDom : outerCore dim ≤ outerFriedDom dim := by
   intro x hx
   refine ⟨fun n => polyGaussCore_le_harmFriedDom (dim n) (hx.2 n), ?_⟩
   have hfun : (fun n : ℕ => opTot (harmFried (dim n)).op ((x : outerFock dim) n))
-      = fun n : ℕ => (QgOuterFockFL.harmCore ⟨(x : outerFock dim) n, hx.2 n⟩ : L2d (dim n)) := by
+      = fun n : ℕ => (QgHermiteOscillator.harmCore ⟨(x : outerFock dim) n, hx.2 n⟩ : L2d (dim n)) := by
     funext n
     rw [opTot_of_mem _ (polyGaussCore_le_harmFriedDom (dim n) (hx.2 n)),
       harmFried_op_core (dim n) ⟨(x : outerFock dim) n, hx.2 n⟩]

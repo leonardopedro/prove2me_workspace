@@ -10,15 +10,15 @@ import Definitions.Def_ChapterGradedFock
 import Mathlib
 import Definitions.Def_ChapterGradedFriedrichs
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
-open BookProof.GradedFriedrichs
 
 
 
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.FarisLavine BookProof.FriedrichsExtension BookProof.YangMillsFriedrichs
 open BookProof.HermiteGalerkin
-open BookProof.FockSecondQuantization BookProof.FermionFock BookProof.GradedFock
+open BookProof.FockSecondQuantization
 
 noncomputable section
 

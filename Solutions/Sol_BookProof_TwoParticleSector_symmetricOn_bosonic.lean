@@ -32,7 +32,8 @@ variable (D : Submodule ℂ Hs.carrier)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (hA : SymmetricOn D₂ A) :
-    SymmetricOn (redDom (bosonicProj Hs) (sectorDom Hs D₂ 2))
+    @SymmetricOn ↥(sector (bosonicProj Hs)) _ _
+      (redDom (bosonicProj Hs) (sectorDom Hs D₂ 2))
       (redOp (sectorOp Hs D₂ A 2) (isReducingProjection_bosonicProj Hs)
         (commutes_symProj (T := sectorOp Hs D₂ A 2)
           (hUD := fun _ hx => swapH_mem_sectorDom Hs D₂ hx) (sectorOp_swapH Hs D₂ A))) := symmetricOn_redOp _ _ (symmetricOn_sectorOp Hs D₂ A hA 2)

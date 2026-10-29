@@ -4,6 +4,7 @@ import Mathlib
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesFlow
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.DirectSumEsa
 
 

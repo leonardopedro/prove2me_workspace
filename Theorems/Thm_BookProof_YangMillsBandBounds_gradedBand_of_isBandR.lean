@@ -17,10 +17,12 @@ import Definitions.Def_ChapterYangMillsBandBounds
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterHermiteBandCalculusHigher
 import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
+import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.HermiteBand
 open BookProof.HermiteBandHigher
 open BookProof.QuadFockEsa
-open BookProof.YangMillsBandBounds
 
 
 
@@ -31,7 +33,7 @@ open BookProof.HermiteBand BookProof.HermiteBandHigher BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa
-open BookProof.YangMillsFriedrichs BookProof.YmAbelianFock
+open BookProof.YangMillsFriedrichs
 open BookProof.NavierStokesFlow.DifferentialL2 BookProof.HermiteRelative
 
 theorem BookProof.YangMillsBandBounds.gradedBand_of_isBandR {d r m : ℕ} (e : ℕ ≃ (Fin d →₀ ℕ))

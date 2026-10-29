@@ -1,3 +1,8 @@
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
+import Theorems.Thm_BookProof_QgOuterFock_dsOp_quadForm_nonneg
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_positive
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_isPositiveSelfAdjointExtension
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_add
 
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_mul
@@ -342,7 +347,7 @@ extension.** -/
 theorem lagSector_friedrichs_extension (lam lam' mu gg : ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 36))) (A : Dom →ₗ[ℂ] L2d (n * 36)),
       IsPositiveSelfAdjointExtension (lagSectorHam lam lam' mu gg n) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨polyGaussCore, lagSectorHam lam lam' mu gg n, lagSectorHam_symmetricOn lam lam' mu gg n,
       lagSectorHam_quadForm_nonneg lam lam' mu gg n⟩
     polyGaussCore_dense
@@ -379,7 +384,7 @@ self-adjoint (Friedrichs) extension.** -/
 theorem lagFullFock_friedrichs_extension (lam lam' mu gg : ℝ) :
     ∃ (Dom : Submodule ℂ lagFockSpace) (A : Dom →ₗ[ℂ] lagFockSpace),
       IsPositiveSelfAdjointExtension (lagFullFockHam lam lam' mu gg) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨lagFockCore, lagFullFockHam lam lam' mu gg, lagFullFockHam_symmetricOn lam lam' mu gg,
       lagFullFockHam_quadForm_nonneg lam lam' mu gg⟩
     lagFockCore_dense
@@ -471,7 +476,7 @@ theorem lagFullOuterN_isPositiveSelfAdjointExtension (lam lam' mu gg : ℝ) :
       refine ⟨lagFockCore_le_friedDom lam lam' mu gg x.2, ?_⟩
       refine lp.ext (funext fun n => ?_)
       rw [lagOuterN_apply, lagFried_op_core lam lam' mu gg n ⟨(x : lagFockSpace) n, x.2.2 n⟩]
-      exact (dsOp_coe (fun n : ℕ => lagSectorHam lam lam' mu gg n) x n).symm)
+      exact rfl)
 
 /-! ## 6. Particle-number conservation — why no lattice is needed -/
 

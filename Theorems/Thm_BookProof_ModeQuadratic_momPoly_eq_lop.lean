@@ -12,6 +12,8 @@ import Mathlib
 import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductBasis
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ModeQuadratic

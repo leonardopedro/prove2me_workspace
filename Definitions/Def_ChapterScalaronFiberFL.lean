@@ -1,4 +1,6 @@
 import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
+import Theorems.Thm_BookProof_WallEsaBddBelow_oscillatorPlus_esa
+import Theorems.Thm_BookProof_SchrodingerCutoff_integral_deriv_eq_zero_of_hasCompactSupport
 
 import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
 

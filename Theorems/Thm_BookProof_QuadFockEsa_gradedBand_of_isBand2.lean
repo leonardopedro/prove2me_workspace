@@ -12,6 +12,8 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Mathlib
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterHermiteBandCalculus
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.HermiteBand
 open BookProof.QuadFockEsa
 

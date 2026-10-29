@@ -1,7 +1,6 @@
 import Definitions.Def_PhysMehler
 import Mathlib
 
-import RandomMap.RandomMap2
 
 /-!
 # The Kopperman tail is infinite dimensional (plan §4.1, Task B2b)

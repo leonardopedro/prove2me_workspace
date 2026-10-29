@@ -6,6 +6,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
 import Definitions.Def_ChapterGradedBandSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
+import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.FockSecondQuantization
 open BookProof.GradedBandSchur
 

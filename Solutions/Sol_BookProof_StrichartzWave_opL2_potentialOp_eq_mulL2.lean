@@ -27,4 +27,4 @@ theorem solution (W : V → ℝ) (hW : Function.HasTemperateGrowth W)
       = (mulL2 (hmem.toLp _)).toLinearMap ∘ₗ (schwartzDomain V).subtype := by
   refine LinearMap.ext fun v => ?_
   obtain ⟨f, rfl⟩ := (schwartzEquiv V).surjective v
-  simpa using opL2_potentialOp_apply_eq_mulL2 W hW hmem f
+  exact opL2_potentialOp_apply_eq_mulL2 W hW hmem f

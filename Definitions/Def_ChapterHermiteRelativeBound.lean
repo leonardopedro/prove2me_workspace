@@ -5,6 +5,24 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+-- The published def bundles above are partial (§2.67): the lemmas this
+-- bundle needs from them live in published *theorem* modules instead.
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_momPoly_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_mulXPoly_apply
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreEquiv_coe
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_pgLp_smul
+import Theorems.Thm_BookProof_YangMillsHermite_momOp_apply
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_apply
+import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym
+import Theorems.Thm_BookProof_YangMillsHermite_momOp_polySym
+import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_add
+import Theorems.Thm_BookProof_YangMillsHermite_PolySym_real_smul
+import Theorems.Thm_BookProof_YangMillsHermite_inner_pgLp_pgLp
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_add
+import Theorems.Thm_BookProof_HyperbolicQuadratic_pgFun_smul
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 import Mathlib
 
 
@@ -184,7 +202,7 @@ def oscL (i : Fin d) : (polyGaussCore (d := d)) →ₗ[ℂ] L2d d :=
 theorem mulXPoly_eq_mulOp (i : Fin d) :
     mulXPoly i = BookProof.YangMillsHermite.mulOp (X i : MvPolynomial (Fin d) ℂ) := by
   refine LinearMap.ext fun p => ?_
-  simp [BookProof.YangMillsHermite.mulOp]
+  simp [mulXPoly_apply, BookProof.YangMillsHermite.mulOp]
 
 theorem momPoly_eq_ymMomOp (i : Fin d) :
     momPoly i = BookProof.YangMillsHermite.momOp i := by
@@ -522,7 +540,7 @@ theorem foOp_linear_apply_eq_mul (b : Fin d → ℝ) (p : MvPolynomial (Fin d) �
   rw [this]
   have hx : ∀ i : Fin d, pgFun ((X i : MvPolynomial (Fin d) ℂ) * p) x
       = ((x i : ℝ) : ℂ) * pgFun p x := fun i => by
-    simpa using posOp_apply_eq_mul i p x
+    simpa [mulXPoly_apply] using posOp_apply_eq_mul i p x
   simp_rw [hx]
   push_cast
   rw [Finset.sum_mul]

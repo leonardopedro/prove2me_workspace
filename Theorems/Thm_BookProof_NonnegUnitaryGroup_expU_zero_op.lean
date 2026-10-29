@@ -5,12 +5,10 @@ import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterNonnegResolvent
 import Mathlib
 import Definitions.Def_ChapterNonnegUnitaryGroup
-open BookProof.NonnegUnitaryGroup
 
 
 
-open BookProof.ClosureUniqueness BookProof.PositiveSquareRoot BookProof.NonnegSquareRoot
-open BookProof.NonnegResolvent
+open BookProof.ClosureUniqueness
 open Filter Topology NormedSpace
 open scoped InnerProductSpace
 

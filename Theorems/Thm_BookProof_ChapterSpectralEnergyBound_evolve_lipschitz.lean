@@ -3,6 +3,8 @@ import Mathlib
 import Definitions.Def_ChapterSpectralEnergyBound
 import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterBornMeasure
+import Definitions.Def_ChapterAbelianAtomicCondensation
+import Definitions.Def_ChapterBornMeasure
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.ChapterBornMeasure
 open BookProof.ChapterSpectralEnergyBound

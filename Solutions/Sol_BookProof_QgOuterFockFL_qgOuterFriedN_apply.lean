@@ -38,8 +38,8 @@ variable {C H}
 set_option maxHeartbeats 1000000 in
 
 theorem solution (x : qgOuterFriedDom) (n : ℕ) :
-    ((qgOuterFriedN x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n
-      = (harmFried (n * 84)).op ⟨((x : qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n, x.2.1 n⟩ :=
+    ((qgOuterFriedN x : BookProof.QgOuterFockFL.qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n
+      = (harmFried (n * 84)).op ⟨((x : BookProof.QgOuterFockFL.qgOuterFock) : ∀ n : ℕ, L2d (n * 84)) n, x.2.1 n⟩ :=
   dsCompOp_fib _ x n
 
 set_option maxHeartbeats 2000000 in

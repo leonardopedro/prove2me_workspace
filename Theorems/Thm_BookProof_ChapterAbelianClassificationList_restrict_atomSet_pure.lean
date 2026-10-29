@@ -7,6 +7,7 @@ import Definitions.Def_ChapterLpRestrictSplit
 import Definitions.Def_ChapterLpScaleMeasure
 import Mathlib
 import Definitions.Def_ChapterAbelianClassificationList
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterAbelianClassificationList
 
 

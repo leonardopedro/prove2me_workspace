@@ -14,6 +14,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterFockWeightedSchurEsa
 open BookProof.QgOneParticleCc
 
 

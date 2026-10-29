@@ -10,6 +10,7 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
 import Definitions.Def_ChapterFockSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
 open BookProof.FockSchur
 
 

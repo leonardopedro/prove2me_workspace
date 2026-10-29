@@ -5,6 +5,8 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesFockContinuum
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 open BookProof.ChapterLinftyMultiplication
 open BookProof.NavierStokesFlow.FockContinuum
 open BookProof.DirectSumEsa

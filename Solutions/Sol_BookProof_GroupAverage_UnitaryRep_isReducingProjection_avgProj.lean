@@ -22,10 +22,9 @@ variable (G) in
 
 set_option maxHeartbeats 1000000 in
 theorem solution : IsReducingProjection rep.avgProj where
-  idem x :=
-  where
-    idem x := rep.avgProj_of_invariant (fun g => rep.act_avgProj g x)
-    symm x y := by
+  idem x := BookProof.GroupAverage.UnitaryRep.avgProj_of_invariant G rep
+    (fun g => BookProof.GroupAverage.UnitaryRep.act_avgProj G rep g x)
+  symm x y := by
       rw [avgProj_apply, avgProj_apply, inner_smul_left, inner_smul_right,
         map_inv₀, Complex.conj_natCast, sum_inner, inner_sum]
       congr 1

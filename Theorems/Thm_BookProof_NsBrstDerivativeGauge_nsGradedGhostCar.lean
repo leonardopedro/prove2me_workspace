@@ -5,6 +5,8 @@ import Mathlib
 import Definitions.Def_ChapterNsBrstDerivativeGauge
 import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNavierStokesGaugeY
+import Definitions.Def_ChapterNsBrstDerivativeGauge
 open BookProof.BRSTNilpotent
 open BookProof.NavierStokesGaugeY
 open BookProof.NsBrstDerivativeGauge

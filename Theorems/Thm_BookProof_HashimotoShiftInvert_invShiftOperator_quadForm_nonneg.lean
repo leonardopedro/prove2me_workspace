@@ -8,6 +8,7 @@ import Definitions.Def_ChapterHashimotoShiftInvert
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockFL
 open BookProof.HashimotoShiftInvert
 

@@ -24,10 +24,10 @@ variable (V) in
 
 set_option maxHeartbeats 1000000 in
 theorem solution (T : F →L[ℂ] G) (m : V) (f : 𝓢(V, F)) :
-    postcompCLM T (vecMomentumOp m f) = vecMomentumOp m (postcompCLM T f) := by
+    BookProof.NsPartialFourier.postcompCLM T (vecMomentumOp m f) = vecMomentumOp m (BookProof.NsPartialFourier.postcompCLM T f) := by
 
-  calc postcompCLM T (vecMomentumOp m f)
-      = (-Complex.I) • postcompCLM T (∂_{m} f : 𝓢(V, F)) := by
+  calc BookProof.NsPartialFourier.postcompCLM T (vecMomentumOp m f)
+      = (-Complex.I) • BookProof.NsPartialFourier.postcompCLM T (∂_{m} f : 𝓢(V, F)) := by
         rw [vecMomentumOp_apply, map_smul]
-    _ = vecMomentumOp m (postcompCLM T f) := by
+    _ = vecMomentumOp m (BookProof.NsPartialFourier.postcompCLM T f) := by
         rw [postcompCLM_lineDerivOp, vecMomentumOp_apply]

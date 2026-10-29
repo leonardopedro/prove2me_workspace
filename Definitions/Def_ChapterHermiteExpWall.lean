@@ -118,12 +118,22 @@ noncomputable def psi (N : ℕ) : ℝ → ℝ := gaussPoly ((Polynomial.X : Poly
 
 
 
-Ca## 5. The reference operators grow polynomially
+/-! ## 5. The reference operators grow polynomially
 
 Both `−d²/dx²` and `−d²/dx² + x²/4` map the monomial core family into itself, shifting the
 degree by at most two, so their `L²` norms along the family grow only polynomially in `N`. -/
 
-theorerereCoreThe two-parameter shape of the polynomial of `(−d²/dx² + x²/4)ψ_{m+2}`. -/
+
+
+
+
+
+
+
+
+
+
+/-- The two-parameter shape of the polynomial of `(−d²/dx² + x²/4)ψ_{m+2}`. -/
 noncomputable def oscQ (m : ℕ) (a b : ℝ) : Polynomial ℝ :=
   Polynomial.C a * Polynomial.X ^ (m + 2) - Polynomial.C b * Polynomial.X ^ m
 
@@ -137,6 +147,44 @@ noncomputable def aCoef (m : ℕ) : ℝ := ((m : ℝ) + 2) + 1 / 2
 /-- The coefficient of `x^m`: `N(N−1)` with `N = m + 2`. -/
 noncomputable def bCoef (m : ℕ) : ℝ := ((m : ℝ) + 2) * ((m : ℝ) + 1)
 
-theorererere``(: : hi(m(m: :  bound -/
 
-/-- **The abstract obsttetermiteExpWall
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-! ## 6. No relative bound -/
+
+
+
+
+
+
+
+end
+
+end BookProof.HermiteExpWall

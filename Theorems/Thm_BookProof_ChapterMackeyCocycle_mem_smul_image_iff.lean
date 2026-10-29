@@ -3,6 +3,7 @@ import Definitions.Def_ChapterMackeyQuasiInvariant
 import Definitions.Def_ChapterPvmCyclicUnitary
 import Mathlib
 import Definitions.Def_ChapterMackeyCocycle
+import Definitions.Def_ChapterMackeyCocycle
 open BookProof.ChapterMackeyCocycle
 
 

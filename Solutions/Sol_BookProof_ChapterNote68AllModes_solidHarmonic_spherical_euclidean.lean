@@ -28,5 +28,6 @@ theorem solution {l μ : ℕ} (hμ : μ ≤ l) {r : ℝ} (hr : 0 < r) {θ : ℝ}
     solidHarmonic (stdVec 0) (stdVec 1) (stdVec 2) l μ
         (spherePt (stdVec 0) (stdVec 1) (stdVec 2) r θ φ)
       = r ^ l * assocLegendre l μ (Real.cos θ) * Real.cos (μ * φ) :=
-  solidHarmonic_spherical (norm_stdVec 0) (norm_stdVec 1) (norm_stdVec 2)
-    (inner_stdVec (by decide)) (inner_stdVec (by decide)) (inner_stdVec (by decide)) hμ hr hθ φ
+  -- The published `solidHarmonic_spherical` node binds `u v e` implicitly (its norm and
+  -- orthogonality hypotheses do not occur in the statement), so the call passes them by name.
+  solidHarmonic_spherical (u := stdVec 0) (v := stdVec 1) (e := stdVec 2) hμ hr hθ φ

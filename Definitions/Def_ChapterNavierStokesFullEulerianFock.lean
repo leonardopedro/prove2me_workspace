@@ -1,3 +1,13 @@
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
+import Theorems.Thm_BookProof_QgOuterFock_dsOp_quadForm_nonneg
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_positive
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_isPositiveSelfAdjointExtension
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
+import Theorems.Thm_BookProof_QgOuterFock_dsOp_quadForm_nonneg
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_positive
+import Theorems.Thm_BookProof_QgOuterFockFL_friedrichsComparison_extends
+import Theorems.Thm_BookProof_QgOuterFockFL_Comparison_isPositiveSelfAdjointExtension
 import Theorems.Thm_BookProof_YangMillsHermite_RealCoeff_sum
 
 import Theorems.Thm_BookProof_YangMillsHermite_realCoeff_X
@@ -304,7 +314,7 @@ theorem nsSectorHam_quadForm_nonneg (nu lam mu gg : ℝ) (n : ℕ)
 theorem nsSector_friedrichs_extension (nu lam mu gg : ℝ) (n : ℕ) :
     ∃ (Dom : Submodule ℂ (L2d (n * 21))) (A : Dom →ₗ[ℂ] L2d (n * 21)),
       IsPositiveSelfAdjointExtension (nsSectorHam nu lam mu gg n) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨polyGaussCore, nsSectorHam nu lam mu gg n, nsSectorHam_symmetricOn nu lam mu gg n,
       nsSectorHam_quadForm_nonneg nu lam mu gg n⟩
     polyGaussCore_dense
@@ -341,7 +351,7 @@ self-adjoint (Friedrichs) extension.** -/
 theorem nsFullFock_friedrichs_extension (nu lam mu gg : ℝ) :
     ∃ (Dom : Submodule ℂ nsFockSpace) (A : Dom →ₗ[ℂ] nsFockSpace),
       IsPositiveSelfAdjointExtension (nsFullFockHam nu lam mu gg) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨nsFockCore, nsFullFockHam nu lam mu gg, nsFullFockHam_symmetricOn nu lam mu gg,
       nsFullFockHam_quadForm_nonneg nu lam mu gg⟩
     nsFockCore_dense
@@ -437,7 +447,7 @@ theorem nsFullOuterN_isPositiveSelfAdjointExtension (nu lam mu gg : ℝ) :
       refine ⟨nsFockCore_le_friedDom nu lam mu gg x.2, ?_⟩
       refine lp.ext (funext fun n => ?_)
       rw [nsOuterN_apply, nsFried_op_core nu lam mu gg n ⟨(x : nsFockSpace) n, x.2.2 n⟩]
-      exact (dsOp_coe (fun n : ℕ => nsSectorHam nu lam mu gg n) x n).symm)
+      exact rfl)
 
 /-! ## 6. Particle-number conservation — why no lattice is needed -/
 

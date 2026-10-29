@@ -24,5 +24,3 @@ theorem solution [MeasurableMul G]
     simp only [smul_smul, mul_inv_rev, inv_inv]
   rw [key]
   exact integral_mul_left_eq_self (fun h => f (h⁻¹ • x)) g₀⁻¹
-
-omit [μG.IsMulLeftInvariant] in

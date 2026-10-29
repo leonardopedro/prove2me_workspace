@@ -383,6 +383,13 @@ lemma cfV_le (y : ℝ) : cfV y ≤ 1 / 4 - Real.exp (-(2 * y)) := by
 /-- **The potential is exponentially unbounded below at `−∞`** — the limit-circle end. -/
 theorem cfV_tendsto_atBot : Tendsto cfV atBot atBot := by
   refine tendsto_atBot_mono cfV_le ?_
+  -- `exp(-2y) → ∞` as `y → -∞`: the identifier `tendsto_exp_neg_two_atBot`
+  -- does not exist in Mathlib (gate FAIL 2026-10-25), so we prove it here.
+  have tendsto_exp_neg_two_atBot : Tendsto (fun y : ℝ => Real.exp (-(2 * y))) atBot atTop := by
+    rw [show (fun y : ℝ => Real.exp (-(2 * y))) = fun y => Real.exp ((-2:ℝ) * y) by
+      funext y; congr 1; ring]
+    exact tendsto_exp_atTop.comp
+      ((tendsto_const_mul_atTop_of_neg (by norm_num : (-2:ℝ) < 0)).2 tendsto_id)
   have h := tendsto_neg_atTop_atBot.comp tendsto_exp_neg_two_atBot
   have h2 := tendsto_atBot_add_const_left atBot (1 / 4 : ℝ) h
   simpa [Function.comp, sub_eq_add_neg] using h2

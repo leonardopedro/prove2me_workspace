@@ -11,10 +11,13 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockCoreFL
-open BookProof.FarisLavineOnly
 
 
 open scoped ENNReal
@@ -40,7 +43,7 @@ open Finset
 open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
-open BookProof.QgOuterFockFullFL BookProof.SqSumOuterFamily
+open BookProof.QgOuterFockFullFL
 
 variable {D : ℕ} {R : Type} [Fintype R]
 

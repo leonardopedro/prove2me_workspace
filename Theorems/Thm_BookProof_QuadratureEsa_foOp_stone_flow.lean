@@ -11,6 +11,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
 open BookProof.HermiteProductCore
 open BookProof.HermiteRelative

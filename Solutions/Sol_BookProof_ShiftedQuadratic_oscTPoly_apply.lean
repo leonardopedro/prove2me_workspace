@@ -42,5 +42,5 @@ theorem solution (a k : Vd d) (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
       + (((a i : ℝ) : ℂ) / 2) • (X i * p)
       + ((((k i : ℝ) : ℂ)) ^ 2 + ((a i : ℝ) : ℂ) ^ 2 / 4) • p := by
   simp only [oscTPoly, LinearMap.add_apply, LinearMap.comp_apply, LinearMap.smul_apply,
-    momTPoly_apply, mulXTPoly_apply, oscPoly, map_add, map_smul, mulXPoly_apply]
+    _root_.momTPoly_apply, mulXTPoly_apply, oscPoly, map_add, map_smul, mulXPoly_apply]
   module

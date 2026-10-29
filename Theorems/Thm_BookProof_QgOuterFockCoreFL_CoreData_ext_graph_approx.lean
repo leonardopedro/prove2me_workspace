@@ -3,6 +3,7 @@ import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterFarisLavineOnly
 import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterLeafGaps
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL
 

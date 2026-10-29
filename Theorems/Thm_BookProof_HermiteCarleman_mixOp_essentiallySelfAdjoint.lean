@@ -11,6 +11,7 @@ import Mathlib
 import Definitions.Def_ChapterHermiteCarlemanEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteProductCore
 open BookProof.HermiteCarleman
 

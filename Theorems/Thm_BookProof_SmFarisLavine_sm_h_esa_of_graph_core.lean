@@ -12,12 +12,15 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterLeafGaps
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSmHamiltonian
 open BookProof.GraphCore
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
 open BookProof.SmHamiltonian
-open BookProof.SmFarisLavine
 
 
 

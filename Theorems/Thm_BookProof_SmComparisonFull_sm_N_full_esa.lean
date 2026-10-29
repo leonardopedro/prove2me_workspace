@@ -9,12 +9,12 @@ import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterSmComparisonFull
 import Definitions.Def_ChapterFarisLavineCore
-open BookProof.SmComparisonFull
+import Definitions.Def_ChapterBddBelowFiberSumEsa
 
 
 
-open BookProof.FarisLavine BookProof.TensorSumChain
-open BookProof.SmComparison BookProof.ScalaronEsa
+open BookProof.FarisLavine
+open BookProof.ScalaronEsa
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open MeasureTheory
 

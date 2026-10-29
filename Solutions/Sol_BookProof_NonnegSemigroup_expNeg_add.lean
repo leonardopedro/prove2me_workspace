@@ -17,6 +17,9 @@ open scoped InnerProductSpace
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
+noncomputable local instance ratNormedAlgebra' : NormedAlgebra ℚ (F →L[ℂ] F) :=
+  NormedAlgebra.restrictScalars ℚ ℂ (F →L[ℂ] F)
+
 set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F) (s t : ℝ) :
     expNeg A (s + t) = expNeg A s * expNeg A t := by

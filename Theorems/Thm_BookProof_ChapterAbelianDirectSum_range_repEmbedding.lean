@@ -3,6 +3,7 @@ import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterAbelianCyclicModel
 import Mathlib
 import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterAbelianDirectSum
 
 

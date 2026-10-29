@@ -7,6 +7,9 @@ import Definitions.Def_ChapterDegSchrodingerCore
 import Mathlib
 import Definitions.Def_ChapterHermiteLadderOrder
 import Definitions.Def_ChapterSirkFinitePrecision
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterHermiteLadderShift
+import Definitions.Def_ChapterSirkFinitePrecision
 open BookProof.SirkFinitePrecision
 open BookProof.SirkFinitePrecision.CertInterval
 open BookProof.HermiteLadder

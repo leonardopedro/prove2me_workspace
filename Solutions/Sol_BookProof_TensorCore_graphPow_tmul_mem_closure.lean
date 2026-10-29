@@ -59,7 +59,11 @@ theorem solution (hcore : IsGraphCore D A) (n : ℕ)
   obtain ⟨b', hb', rfl⟩ := hz
   set u' : (Hs.pow n).carrier := inclPow Hs D₂ n b' with hu'
   set w' : (Hs.pow n).carrier := derPow Hs D₂ A n b' with hw'
-  have hzd' := max_lt_iff.mp (by simpa [Prod.dist_eq, dist_eq_norm] using hzd)
+  -- Current Mathlib's simp normalises `max _ _ < δ` into a conjunction immediately, so we
+  -- state the componentwise bound directly instead of going through `max_lt_iff.mp`.
+  have hzd' : ‖inclPow Hs D₂ n b - inclPow Hs D₂ n b'‖ < δ ∧
+      ‖derPow Hs D₂ A n b - derPow Hs D₂ A n b'‖ < δ := by
+    simpa [graphPow, LinearMap.prod_apply, Prod.dist_eq, dist_eq_norm] using hzd
   have hb₁ : ‖u - u'‖ < δ := by simpa [hu, hu'] using hzd'.1
   have hb₂ : ‖w - w'‖ < δ := by simpa [hw, hw'] using hzd'.2
   have ha'norm : ‖(a' : Hs.carrier)‖ ≤ na + δ := by

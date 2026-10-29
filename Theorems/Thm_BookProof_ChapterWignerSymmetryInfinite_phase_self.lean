@@ -4,6 +4,8 @@ import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterWignerSymmetryInfinite
 import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterNsLagrangianDetConvolution
+import Definitions.Def_ChapterWignerSymmetryInfinite
 open BookProof.NsLagrangianDet
 open BookProof.ChapterWignerSymmetryInfinite
 

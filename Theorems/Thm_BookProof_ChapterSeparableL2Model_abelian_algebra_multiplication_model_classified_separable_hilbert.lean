@@ -6,6 +6,7 @@ import Definitions.Def_ChapterStandardBorelClassification
 import Mathlib
 import Definitions.Def_ChapterSeparableL2Model
 import Definitions.Def_ChapterLinftyMultiplication
+import Definitions.Def_ChapterSeparableL2Model
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterSeparableL2Model
 

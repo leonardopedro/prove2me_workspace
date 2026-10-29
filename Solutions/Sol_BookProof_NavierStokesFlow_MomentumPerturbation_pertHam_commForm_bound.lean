@@ -26,6 +26,10 @@ variable {ι : Type*}
 
 set_option maxHeartbeats 1000000 in
 
+variable {ι : Type*}
+@[simp] private theorem rankTwo_apply (u w : L2I ι) (x : L2I ι) :
+    rankTwo u w x = (inner ℂ u x : ℂ) • w + (inner ℂ w x : ℂ) • u := rfl
+
 theorem solution (c : ι → ℝ) (hc : ∀ k, 1 ≤ c k) (u w : maxDom c)
     (x : maxDom c) :
     |commForm (pertHam c (u : L2I ι) (w : L2I ι)) (diagMax c) x|

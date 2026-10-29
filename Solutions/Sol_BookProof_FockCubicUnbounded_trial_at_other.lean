@@ -25,4 +25,4 @@ theorem solution {k n : ℕ} {c : ℝ} {m : ℕ} (h1 : m ≠ n) (h2 : m ≠ n + 
 
   have hne1 : confAt k n ≠ confAt k m := fun h => h1 (confAt_injective k h).symm
   have hne2 : confAt k (n + 3) ≠ confAt k m := fun h => h2 (confAt_injective k h).symm
-  simp [trial, hne1, hne2]
+  simp [BookProof.FockCubicUnbounded.trial, hne1, hne2]

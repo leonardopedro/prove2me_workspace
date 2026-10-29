@@ -10,6 +10,7 @@ import Definitions.Def_ChapterQuadratureEsa
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterNavierStokesDifferentialL2
+import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteProductCore
 open BookProof.HermiteRelative
 open BookProof.NavierStokesFlow.DifferentialL2

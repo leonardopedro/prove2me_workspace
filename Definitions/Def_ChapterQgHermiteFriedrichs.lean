@@ -14,6 +14,13 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_FriedrichsExtension_friedrichs_extension_exists_complete
+import Theorems.Thm_BookProof_QgHermiteCore_continuous_starobinskyV
+import Theorems.Thm_BookProof_QgHermiteCore_expBounded_starobinskyV
+import Theorems.Thm_BookProof_QgHermiteCore_continuous_scalaronSectorPotential
+import Theorems.Thm_BookProof_QgHermiteCore_expBounded_scalaronSectorPotential
+import Theorems.Thm_BookProof_QgHermiteCore_ExpBounded_comp_coord
+import Theorems.Thm_BookProof_Starobinsky_starobinskyV_nonneg
 
 
 /-!
@@ -476,7 +483,7 @@ theorem hermiteCore_friedrichs_extension_of_nonneg (hWc : Continuous W) (hWb : E
     (hW0 : ∀ x, 0 ≤ W x) :
     ∃ (Dom : Submodule ℂ (L2d d)) (A : Dom →ₗ[ℂ] L2d d),
       IsPositiveSelfAdjointExtension (hamCore W hWc hWb) A :=
-  friedrichs_extension_exists
+  friedrichs_extension_exists_complete
     ⟨_, hamCore W hWc hWb, hamCore_symmetricOn W hWc hWb,
       hamCore_quadForm_nonneg W hWc hWb hW0⟩ polyGaussCore_dense
 

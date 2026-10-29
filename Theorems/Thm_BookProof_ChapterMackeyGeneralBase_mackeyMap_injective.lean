@@ -3,9 +3,9 @@ import Definitions.Def_ChapterOrthogonalSums
 import Mathlib
 import Definitions.Def_ChapterMackeyGeneralBase
 import Definitions.Def_ChapterMackeyImprimitivity
+import Definitions.Def_ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
 open BookProof.ChapterMackeyImprimitivity
-open BookProof.ChapterMackeyGeneralBase
 
 
 open scoped InnerProductSpace

@@ -5,6 +5,7 @@ import Definitions.Def_ChapterAbelianGelfandModel
 import Definitions.Def_ChapterSpectralMultiplication
 import Mathlib
 import Definitions.Def_ChapterSpectralCommutant
+import Definitions.Def_ChapterAbelianCyclicCommutant
 open BookProof.ChapterSpectralCommutant
 
 

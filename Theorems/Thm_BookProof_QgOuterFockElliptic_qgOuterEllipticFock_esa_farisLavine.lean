@@ -13,6 +13,8 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterQgOuterFockEllipticFL
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QuantumGravity3DGauge

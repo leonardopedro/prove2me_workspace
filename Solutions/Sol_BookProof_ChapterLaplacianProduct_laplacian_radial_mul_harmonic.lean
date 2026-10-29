@@ -19,6 +19,10 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
+/-- Mirror copy of `ChapterRadialLaplacian.innerCLM_apply` (dropped from the
+published bundle): `rfl` by the definition of `innerCLM`. -/
+private theorem innerCLM_apply' (x y : E) : innerCLM E x y = ⟪x, y⟫_ℝ := rfl
+
 set_option maxHeartbeats 1000000 in
 
 theorem solution [FiniteDimensional ℝ E] {g : ℝ → ℝ} {H : E → ℝ} {x : E}
@@ -44,7 +48,7 @@ theorem solution [FiniteDimensional ℝ E] {g : ℝ → ℝ} {H : E → ℝ} {x 
     rw [← heuler, ← hsum]
     refine Finset.sum_congr rfl fun i _ => ?_
     rw [fderiv_radial hx hg]
-    simp [mul_assoc]
+    simp [mul_assoc, innerCLM_apply']
   rw [hprod, hcross, hharm, laplacian_radial hx hg]
   field_simp
   ring

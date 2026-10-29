@@ -61,9 +61,7 @@ namespace BookProof.QgFourierElim
 
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
-open BookProof.QgBrstDerivativeGauge
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
-open BookProof.QgVielbeinScalaronGaugeFL
 
 noncomputable section
 
@@ -132,6 +130,20 @@ its essential self-adjointness (`qgFull_esa_farisLavine`) is the statement prove
 added here is that the derivative components carry no independent content — the constraint surface
 is the image of the elimination — so the eliminated presentation describes the same physics with
 the nine vielbein components alone. -/
+
+/-- The field-space components at one momentum: the nine vielbein components `e_ν^i`
+(`Sum.inl`) and the twenty-seven independent derivative variables `D_{μν}^i`
+(`Sum.inr`).  Inlined from `BookProof/ChapterQgVielbeinScalaronGaugeFL/Part1.lean`,
+which has no def bundle of its own on the platform (an unpublished dep cannot be
+imported, and the old `open BookProof.QgVielbeinScalaronGaugeFL` resolved nowhere). -/
+abbrev Comp := (Fin 3 × Fin 3) ⊕ (Fin 3 × Fin 3 × Fin 3)
+
+/-- The vielbein component `e_ν^i`. -/
+def eIdx (nu i : Fin 3) : Comp := Sum.inl (nu, i)
+
+/-- The independent derivative variable `D_{μν}^i`, the coordinate representing the
+spatial derivative `∂_μ e_ν^i`. -/
+def dIdx (mu nu i : Fin 3) : Comp := Sum.inr (mu, nu, i)
 
 /-- **The elimination on configurations of the full model**: the nine vielbein components are kept
 and each derivative component is *defined* to be `i k_μ e_ν^i`. -/

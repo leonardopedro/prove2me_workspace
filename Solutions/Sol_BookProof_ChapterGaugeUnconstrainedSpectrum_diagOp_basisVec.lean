@@ -15,13 +15,14 @@ variable {X : Type*}
 variable {X : Type*}
 
 
-@[simp] private theorem diagOp_apply (d : EllInf) (f : Ell2C) (i : ℕ) :
-    ((diagOp d f : Ell2C) : ℕ → ℂ) i = (d : ℕ → ℂ) i * (f : ℕ → ℂ) i := rfl
+@[simp] private theorem diagOp_apply (d f : X → ℂ) (x : X) :
+    BookProof.ChapterGaugeUnconstrainedSpectrum.diagOp d f x = d x * f x := rfl
 
 set_option maxHeartbeats 1000000 in
 
 theorem solution [DecidableEq X] (d : X → ℂ) (y : X) :
     diagOp d (basisVec y) = d y • basisVec y := by
   funext x
-  simp only [diagOp_apply, basisVec, Pi.smul_apply, smul_eq_mul]
+  simp only [diagOp_apply, BookProof.ChapterGaugeUnconstrainedSpectrum.basisVec,
+    Pi.smul_apply, smul_eq_mul]
   by_cases hx : x = y <;> simp [hx]

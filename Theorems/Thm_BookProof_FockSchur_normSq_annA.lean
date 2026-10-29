@@ -11,6 +11,9 @@ import Mathlib
 import Definitions.Def_ChapterFockSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesFockCanonical
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterNavierStokesFockCanonical
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.NavierStokesFlow.FockCanonical
 open BookProof.FockSchur

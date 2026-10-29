@@ -6,9 +6,11 @@ import Mathlib
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterWignerLittleGroup
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterMaschkeFiniteGroup
+import Definitions.Def_ChapterWignerOrbitClassification
 open BookProof.ChapterMaschkeFiniteGroup
 open BookProof.ChapterWignerLittleGroup
-open BookProof.GroupAverage
 open BookProof.GroupAverage
 
 

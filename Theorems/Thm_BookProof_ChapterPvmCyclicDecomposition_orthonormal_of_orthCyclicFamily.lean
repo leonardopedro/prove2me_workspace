@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterPvmMeasure
 import Mathlib
 import Definitions.Def_ChapterPvmCyclicDecomposition
+import Definitions.Def_ChapterPvmCyclicDecomposition
 open BookProof.ChapterPvmCyclicDecomposition
 
 

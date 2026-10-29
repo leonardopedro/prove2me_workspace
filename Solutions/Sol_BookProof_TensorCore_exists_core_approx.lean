@@ -33,10 +33,11 @@ theorem solution (hcore : IsGraphCore D A) (n : ℕ)
       closure ((Submodule.map (graphPow Hs D₂ A n) (corePow Hs D₂ D n)) : Set _) := hmem
   obtain ⟨z, hz, hdist⟩ := Metric.mem_closure_iff.mp hmem' ε hε
   obtain ⟨y, hy, rfl⟩ := hz
-  refine ⟨y, hy, ?_, ?_⟩
-  · have := (max_lt_iff.mp (by simpa [Prod.dist_eq, dist_eq_norm] using hdist)).1
-    simpa using this
-  · have := (max_lt_iff.mp (by simpa [Prod.dist_eq, dist_eq_norm] using hdist)).2
-    simpa using this
+  -- Current Mathlib's simp normalises `max _ _ < ε` into a conjunction immediately, so we
+  -- state the componentwise bound directly instead of going through `max_lt_iff.mp`.
+  have hconj : ‖inclPow Hs D₂ n x - inclPow Hs D₂ n y‖ < ε ∧
+      ‖derPow Hs D₂ A n x - derPow Hs D₂ A n y‖ < ε := by
+    simpa [graphPow, LinearMap.prod_apply, Prod.dist_eq, dist_eq_norm] using hdist
+  exact ⟨y, hy, hconj.1, hconj.2⟩
 
 /-! ## The sector inside `H^{⊗n}` -/

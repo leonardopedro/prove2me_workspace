@@ -5,6 +5,7 @@ import Definitions.Def_ChapterStoneGroup
 import Definitions.Def_ChapterStoneConverse
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterSirkTrotterKato
+import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.ChapterStoneResolvent

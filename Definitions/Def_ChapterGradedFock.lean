@@ -4,6 +4,10 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
+import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA
+import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA_of_ne
+import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_annA
+import Theorems.Thm_BookProof_FockSecondQuantization_ccr_creA_creA
 
 
 /-!
@@ -233,10 +237,16 @@ theorem liftSnd_neg : liftSnd (α := α) (-S) = - liftSnd S := by
   simp only [LinearMap.neg_apply, liftSnd_otimes, otimes_neg_right]
 
 theorem liftFst_sub : liftFst (β := β) (T - T') = liftFst T - liftFst T' := by
-  rw [sub_eq_add_neg, liftFst_add, liftFst_neg, sub_eq_add_neg]
+  have h1 : (T - T' : Module.End ℂ (α →₀ ℂ)) = T + -T' := sub_eq_add_neg T T'
+  have h2 : liftFst (β := β) T - liftFst (β := β) T' = liftFst (β := β) T + -liftFst (β := β) T' :=
+    sub_eq_add_neg (liftFst (β := β) T) (liftFst (β := β) T')
+  rw [h1, liftFst_add, liftFst_neg, h2]
 
 theorem liftSnd_sub : liftSnd (α := α) (S - S') = liftSnd S - liftSnd S' := by
-  rw [sub_eq_add_neg, liftSnd_add, liftSnd_neg, sub_eq_add_neg]
+  have h1 : (S - S' : Module.End ℂ (β →₀ ℂ)) = S + -S' := sub_eq_add_neg S S'
+  have h2 : liftSnd (α := α) S - liftSnd (α := α) S' = liftSnd (α := α) S + -liftSnd (α := α) S' :=
+    sub_eq_add_neg (liftSnd (α := α) S) (liftSnd (α := α) S')
+  rw [h1, liftSnd_add, liftSnd_neg, h2]
 
 theorem liftFst_zero : liftFst (β := β) (0 : Module.End ℂ (α →₀ ℂ)) = 0 := by
   refine prod_linear_ext fun v w => ?_
@@ -345,6 +355,34 @@ def gCre : Bool → ℕ → Module.End ℂ GradedAlg
   | false, j => bcre j
   | true, j => fcre j
 
+/-- Local copies of the Koszul-sign facts: the published
+`Def_ChapterSuperBracket` bundle exports only `eps`/`sbracket` themselves
+(their lemmas live in the separate `ChapterSuperBracket` theorem nodes), so a
+bundle that rewrites with them must carry its own copy. -/
+lemma eps_false_left (q : Bool) : eps false q = 1 := by
+  simp [eps]
+
+lemma eps_false_right (p : Bool) : eps p false = 1 := by
+  simp [eps]
+
+lemma eps_true_true : eps true true = -1 := by
+  simp [eps]
+
+lemma sbracket_even_even (a b : Module.End ℂ GradedAlg) :
+    sbracket false false a b = a * b - b * a := by
+  rw [sbracket, eps_false_left]
+  norm_num
+
+lemma sbracket_odd_odd (a b : Module.End ℂ GradedAlg) :
+    sbracket true true a b = a * b + b * a := by
+  -- The operator-level ring (`Module.End`) has instance paths for `*`/`-`/numerals
+  -- that do not match library patterns syntactically, so `rw`/`norm_num`/`simp`
+  -- all stall at `(-1 : Module.End) * (b * a)`.  Go pointwise: at the base ring
+  -- the standard simp lemmas apply and `simp` closes it.
+  refine LinearMap.ext fun u => ?_
+  simp only [sbracket, eps_true_true]
+  simp
+
 theorem sbracket_even_odd (a b : Module.End ℂ GradedAlg) :
     sbracket false true a b = a * b - b * a := by
   rw [sbracket, eps_false_left]
@@ -372,11 +410,11 @@ theorem super_canonical (p q : Bool) (j k : ℕ) :
     · rw [liftFst_mul, liftFst_mul, ← liftFst_sub, annA_creA_end_of_ne h, liftFst_zero,
         if_neg (by simp [h])]
   · -- bosonic / fermionic
-    rw [liftFst_liftSnd_comm, sub_self]
-    simp
+    rw [liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
   · -- fermionic / bosonic
-    rw [← liftFst_liftSnd_comm, sub_self]
-    simp
+    rw [← liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
   · -- fermionic / fermionic
     rcases eq_or_ne j k with rfl | h
     · rw [liftSnd_mul, liftSnd_mul, ← liftSnd_add, annF_creF_end, liftSnd_one,
@@ -391,8 +429,10 @@ theorem super_canonical_cre (p q : Bool) (j k : ℕ) :
     simp only [gCre, bcre, fcre, sbracket_even_even, sbracket_even_odd,
       sbracket_odd_even, sbracket_odd_odd]
   · rw [liftFst_mul, liftFst_mul, ← liftFst_sub, creA_creA_end, liftFst_zero]
-  · rw [liftFst_liftSnd_comm, sub_self]
-  · rw [← liftFst_liftSnd_comm, sub_self]
+  · rw [liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
+  · rw [← liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
   · rw [liftSnd_mul, liftSnd_mul, ← liftSnd_add, creF_creF_end, liftSnd_zero]
 
 /-- The graded bracket of two annihilation operators vanishes. -/
@@ -402,8 +442,10 @@ theorem super_canonical_ann (p q : Bool) (j k : ℕ) :
     simp only [gAnn, bann, fann, sbracket_even_even, sbracket_even_odd,
       sbracket_odd_even, sbracket_odd_odd]
   · rw [liftFst_mul, liftFst_mul, ← liftFst_sub, annA_annA_end, liftFst_zero]
-  · rw [liftFst_liftSnd_comm, sub_self]
-  · rw [← liftFst_liftSnd_comm, sub_self]
+  · rw [liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
+  · rw [← liftFst_liftSnd_comm]
+    exact @sub_self (Module.End ℂ GradedAlg) _ _
   · rw [liftSnd_mul, liftSnd_mul, ← liftSnd_add, annF_annF_end, liftSnd_zero]
 
 /-! ### The `ℤ₂` grading -/

@@ -4,7 +4,8 @@ import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
-open BookProof.EsaOneParticle
+import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterPermutationSectorEsa
 
 
 

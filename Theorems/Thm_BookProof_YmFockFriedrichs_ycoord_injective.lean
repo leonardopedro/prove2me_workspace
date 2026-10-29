@@ -11,14 +11,15 @@ import Definitions.Def_ChapterQg3DGaugeFarisLavine
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterYangMillsFockFriedrichs
-open BookProof.YmFockFriedrichs
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterGaussCoreQuadBounds
 
 
 
 open MvPolynomial
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.FriedrichsExtension
 open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.QgOuterFock BookProof.StoneBridge BookProof.Qg3DGaugeFL
+open BookProof.QgOuterFock BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent
 
 noncomputable section

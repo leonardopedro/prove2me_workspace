@@ -12,6 +12,8 @@ import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterHermiteBandCalculusHigher
+import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.FockSecondQuantization
 open BookProof.HermiteBand
 open BookProof.HermiteGalerkin

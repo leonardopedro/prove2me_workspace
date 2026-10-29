@@ -12,8 +12,11 @@ import Mathlib
 import Definitions.Def_ChapterNsFourierElimination
 import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterF7
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterLeafGaps
 open BookProof.ChapterF7
-open BookProof.NsFullEuler
 
 
 

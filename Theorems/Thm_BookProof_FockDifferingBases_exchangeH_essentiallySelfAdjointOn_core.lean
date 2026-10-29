@@ -10,9 +10,12 @@ import Definitions.Def_ChapterA3n
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterA3n
+import Definitions.Def_ChapterFockQuadraticEsa
+import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterNavierStokesIkebeKato
 open BookProof.ChapterA3n
 open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.FockDifferingBases
 
 
 

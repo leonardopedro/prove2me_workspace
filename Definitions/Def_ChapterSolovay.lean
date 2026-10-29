@@ -1,9 +1,8 @@
-import Definitions.Def_PhysMehler
 import Mathlib
 
 import Mathlib.Analysis.InnerProductSpace.Completion
 import Mathlib.Topology.UniformSpace.Completion
-import RandomMap.RandomMap2
+import Definitions.Def_PhysMehler
 
 /-!
 # Chapter S — Solovay-Hilbert Decidability and the Kopperman Tail
@@ -22,6 +21,55 @@ All theorems are `sorry`-free and `axiom`-free (no `EXTERNAL` hypothesis).
 
 open MeasureTheory ProbabilityTheory
 open scoped ENNReal Filter Topology
+
+/-! ## Inlined Kopperman–Solovay scaffolding (was `RandomMap.RandomMap2`)
+
+Verbatim from `timepiece331/RandomMap/RandomMap2.lean`.  The platform compiles a
+bundle against `Mathlib` + `Definitions.*` + `Theorems.*` only, so
+`import RandomMap.RandomMap2` resolves nowhere and the server elaborated this
+whole payload in an EMPTY import environment (attempt 1: `unknown namespace
+`MeasureTheory``, `unknown namespace `ENNReal``, `Unknown identifier `ℕ``).
+Everything below needs only the published `Def_PhysMehler` bundle, whose
+`Substrate`/`rcpPriorOnSubstrate` live in the root namespace `PhysMehler`. -/
+open PhysMehler
+
+noncomputable section
+
+instance substrateMeasurableSpace : MeasurableSpace Substrate := borel _
+instance substrateBorelSpace : BorelSpace Substrate := ⟨rfl⟩
+
+/-- The infinite, unknown tail of the inner wave-function. -/
+abbrev InnerTail := Substrate
+
+/-- The uniform probability measure over the infinite tail. -/
+def tailMeasure : Measure InnerTail := rcpPriorOnSubstrate
+
+instance : IsProbabilityMeasure tailMeasure := rcpPriorOnSubstrate_isProb
+
+/-- The finite known components of the inner wave-function. -/
+abbrev InnerHead (N : ℕ) := Fin N → ℝ
+
+/-- The total sample space of inner wave-functions. -/
+abbrev InnerSpace (N : ℕ) := InnerHead N × InnerTail
+
+/-- The total probability measure, given an arbitrary law on the head. -/
+noncomputable def stateMeasure (N : ℕ) (headDist : Measure (InnerHead N))
+    [IsProbabilityMeasure headDist] : Measure (InnerSpace N) :=
+  headDist.prod tailMeasure
+
+instance (N : ℕ) (headDist : Measure (InnerHead N)) [IsProbabilityMeasure headDist] :
+    IsProbabilityMeasure (stateMeasure N headDist) := by
+  dsimp [stateMeasure]; infer_instance
+
+/-- A macroscopic observable function depends only on the finite head. -/
+def dependsOnlyOnHead {N : ℕ} (f : InnerSpace N → ℂ) : Prop :=
+  ∃ g : InnerHead N → ℂ, f = g ∘ Prod.fst
+
+/-- The Solovay space of outer wave-functions: `L²` over the product measure. -/
+abbrev OuterWaveFunction (N : ℕ) (headDist : Measure (InnerHead N))
+    [IsProbabilityMeasure headDist] := Lp ℂ 2 (stateMeasure N headDist)
+
+end
 
 namespace BookProof.ChapterSolovay
 

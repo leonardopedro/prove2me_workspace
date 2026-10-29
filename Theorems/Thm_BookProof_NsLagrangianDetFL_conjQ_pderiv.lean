@@ -7,13 +7,14 @@ import Definitions.Def_ChapterKoopmanLyapunovFarisLavine
 import Definitions.Def_ChapterNsLagrangianDetConvolution
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianDetFarisLavine
-open BookProof.NsLagrangianDetFL
+import Definitions.Def_ChapterGaussCoreQuadBounds
+import Definitions.Def_ChapterNsLagrangianDetConvolution
 
 
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
-open BookProof.NsKoopman BookProof.KoopmanLyapunov BookProof.NsLagrangianDet
+open BookProof.NsLagrangianDet
 
 noncomputable section
 

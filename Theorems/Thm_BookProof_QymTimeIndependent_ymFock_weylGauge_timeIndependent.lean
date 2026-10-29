@@ -20,6 +20,9 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
+import Definitions.Def_ChapterQymTimeIndependentFlow
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin

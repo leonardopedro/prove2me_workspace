@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterSolovayHilbertTensor
 import Mathlib
 import Definitions.Def_ChapterTensorCompleteness
+import Definitions.Def_ChapterTensorCompleteness
 open BookProof.ChapterTensorCompleteness
 
 

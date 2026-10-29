@@ -10,6 +10,8 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterSirkPerSystemFlowBound
 open BookProof.EsaClosure
 open `BookProof.HashimotoShiftInvert`.
 open BookProof.HermiteGalerkin

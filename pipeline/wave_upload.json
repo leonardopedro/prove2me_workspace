@@ -9105,6 +9105,124 @@
     "faris-lavine",
     "spectral-theory"
    ]
+  },
+  "ChapterQgFourierElimForms": {
+   "definition_name": "ChapterQgFourierElimForms",
+   "namespace": "BookProof.QgFourierElim",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgFourierElimForms.lean",
+   "title": "Chapter QgFourierElim Forms",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgFourierElimination.lean`): the form/field-value layer (FormIdx, torsion/dGauge/gauge3d forms, ind, gCoef, mAbs, formValue, gGram) carved out of ChapterQgFourierElimination under the §2.13 new-name route, since submit-definition cannot update an existing name. See BookProof/ChapterQgFourierElimination.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgFourierElimination.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterQgBrstDerivativeGaugeV2": {
+   "definition_name": "ChapterQgBrstDerivativeGaugeV2",
+   "namespace": "BookProof.QgBrstDerivativeGauge",
+   "file": "/home/leo/prove2me_workspace/Definitions/Def_ChapterQgBrstDerivativeGaugeV2.lean",
+   "title": "Chapter QgBrstDerivativeGauge V2",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgBrstDerivativeGauge.lean`): the BRST derivative-gauge layer (restrictModes, DMode/EMode, extTorsionCoef, gaugeReduce and its lemmas, brstGaugeFixed_esa family) carved out of ChapterQgBrstDerivativeGauge under the §2.13 new-name route, since the platform's served copy is a 9-line stub and submit-definition cannot update an existing name. See BookProof/ChapterQgBrstDerivativeGauge.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgBrstDerivativeGauge.lean",
+   "tags": [
+    "timepiece",
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterQgOuterFockInteractionFLV2": {
+   "definition_name": "ChapterQgOuterFockInteractionFLV2",
+   "namespace": "BookProof.QgOuterFockInteractionFL",
+   "file": "Definitions/Def_ChapterQgOuterFockInteractionFLV2.lean",
+   "title": "Chapter QgOuterFockInteractionFL V2",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterQgOuterFockInteractionFL.lean`): the `QgFamily` Faris-Lavine relative bound `secExt_rel` carved out of ChapterQgOuterFockInteractionFL under the §2.13 new-name route, since the platform's served copy stops at `secExt` and submit-definition cannot update an existing name. See BookProof/ChapterQgOuterFockInteractionFL.lean for full context.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterQgOuterFockInteractionFL.lean",
+   "tags": [
+    "timepiece",
+    "faris-lavine",
+    "spectral-theory"
+   ]
+  },
+  "ChapterCarlemanUnboundedHopPromoted": {
+   "definition_name": "ChapterCarlemanUnboundedHopPromoted",
+   "namespace": "BookProof.CarlemanUnboundedHop",
+   "file": "Definitions/Def_ChapterCarlemanUnboundedHopPromoted.lean",
+   "title": "Carleman flux criterion: the unbounded-hop kernel layer",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterCarlemanUnboundedHop.lean`): the `geoHop` kernel layer (geoHop_herm, geoHop_norm_off, geoHop_col, geoHop_isL2Kernel) carved out of ChapterCarlemanUnboundedHop under the §2.13 new-name route: the served copy stops at `geoHop`, so the `geoHop_essentiallySelfAdjoint`, `kernelOp_symmetric` and `ladderRec_of_deficiency` statements, which carry `geoHop_isL2Kernel` as a term, die server-side with `Unknown identifier`. Published bundles are immutable, so the fix is this auxiliary bundle, which re-carries exactly that cluster in its original namespace. Consumers add a single `import Definitions.Def_ChapterCarlemanUnboundedHopPromoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterCarlemanUnboundedHop.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterFriedrichsCanonicalPromoted": {
+   "definition_name": "ChapterFriedrichsCanonicalPromoted",
+   "namespace": "BookProof.FriedrichsCanonical",
+   "file": "Definitions/Def_ChapterFriedrichsCanonicalPromoted.lean",
+   "title": "The Friedrichs extension is canonical: the promoted facts",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterFriedrichsCanonical.lean`): `resolvent_mem_friedrichsDomain` (the form resolvent lands in the Friedrichs domain, the term proof the `friedrichsOp_resolvent` statement carries) and `qgScalaronPosSymOp_dense` (the Gauss-polynomial core is dense, the hypothesis the quantum-gravity `friedrichs_canonical` / `friedrichs_unique` statements need), carved out of ChapterFriedrichsCanonical under the §2.13 new-name route because the served copy predates both. Consumers add a single `import Definitions.Def_ChapterFriedrichsCanonicalPromoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterFriedrichsCanonical.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterLimitCircleExamplePromoted": {
+   "definition_name": "ChapterLimitCircleExamplePromoted",
+   "namespace": "BookProof.LimitCircleExample",
+   "file": "Definitions/Def_ChapterLimitCircleExamplePromoted.lean",
+   "title": "Limit-circle potential: smoothness of `lcV`",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterLimitCircleExample.lean`): `contDiff_lcV` (the potential `V` is a rational function with nonvanishing denominator, hence smooth), carved out of ChapterLimitCircleExample under the §2.13 new-name route because the served copy predates it, so the three `lcV_not_*` statements die server-side with `Unknown identifier`. Consumers add a single `import Definitions.Def_ChapterLimitCircleExamplePromoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterLimitCircleExample.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterG3Promoted": {
+   "definition_name": "ChapterG3Promoted",
+   "namespace": "BookProof.ChapterG3",
+   "file": "Definitions/Def_ChapterG3Promoted.lean",
+   "title": "Mehler = uniform measure: the sphere layer",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterG3.lean`): the `PhysHSGaussian` sphere layer (`sphereProj`, `sphereUniform`) carved out of ChapterG3 under the §2.13 new-name route: the served copy carries `gaussianE` but not the push-forward of the standard Gaussian under the radial projection, so the three `mehler_uniform_*` statements, which cite `PhysHSGaussian.sphereUniform`, die server-side with `Unknown identifier`. Consumers add a single `import Definitions.Def_ChapterG3Promoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterG3.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterNavierStokesBilinearEsaPromoted": {
+   "definition_name": "ChapterNavierStokesBilinearEsaPromoted",
+   "namespace": "BookProof.NavierStokesFlow",
+   "file": "Definitions/Def_ChapterNavierStokesBilinearEsaPromoted.lean",
+   "title": "Bilinear Navier–Stokes generator: block membership",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesBilinearEsa.lean`): `BilinearEsa.blockVec_mem_maxDom` (each block of a finite-mode state lies in the maximal domain of the fiber comparison operator), carved out of ChapterNavierStokesBilinearEsa under the §2.13 new-name route: the served copy predates it, so the `blockVec_bilH` statement, which carries it as a term proof, dies server-side with `Unknown identifier`. Consumers add a single `import Definitions.Def_ChapterNavierStokesBilinearEsaPromoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesBilinearEsa.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
+  },
+  "ChapterNavierStokesAffineBlockEsaPromoted": {
+   "definition_name": "ChapterNavierStokesAffineBlockEsaPromoted",
+   "namespace": "BookProof.NavierStokesFlow",
+   "file": "Definitions/Def_ChapterNavierStokesAffineBlockEsaPromoted.lean",
+   "title": "Affine-block Navier–Stokes generator: block membership",
+   "nl": "Formal definitions for the timepiece Lean 4 formalization (source chapter `BookProof/ChapterNavierStokesAffineBlockEsa.lean`): `AffineBlock.blockVec_mem_maxDom'` (each block of a finite-mode state lies in the maximal domain of any fiber comparison operator), carved out of ChapterNavierStokesAffineBlockEsa under the §2.13 new-name route: the served copy predates it, so the `blockVec_affBlockH` statement, which carries it as a term proof, dies server-side with `Unknown identifier`. Consumers add a single `import Definitions.Def_ChapterNavierStokesAffineBlockEsaPromoted`.",
+   "source": "https://github.com/leonardopedro/timepiece/blob/61595bc/BookProof/ChapterNavierStokesAffineBlockEsa.lean",
+   "tags": [
+    "timepiece",
+    "formalization",
+    "definitions"
+   ]
   }
  },
  "thms": {
@@ -145844,6 +145962,21 @@
    "tags": [
     "timepiece"
    ]
+  },
+  "BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint": {
+   "name": "BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint",
+   "chapter": "ChapterCarlemanUnboundedHop",
+   "file": "Theorems/Thm_BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint.lean",
+   "sol": "Solutions/Sol_BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint.lean",
+   "ns": "BookProof.CarlemanUnboundedHop",
+   "plen": 3,
+   "title": "`BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint` (b : ℕ → ℝ) {rho : ℝ} (hrho : 0 ≤ rho) (hrho1 : rho < 1) :\n    EssentiallySelfAdjointOn (lpFiniteModes ℕ) (kernelOp (geoHop_isL2Kernel b hrho hrho1))",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCarlemanUnboundedHop`.\n\n`BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint` (b : ℕ → ℝ) {rho : ℝ} (hrho : 0 ≤ rho) (hrho1 : rho < 1) :\n    EssentiallySelfAdjointOn (lpFiniteModes ℕ) (kernelOp (geoHop_isL2Kernel b hrho hrho1))\n\nFormalization note: Lean 4 identifier `BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint`.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
   }
  },
  "sol_order": [
@@ -149585,6 +149718,7 @@
   "BookProof_CarlemanUnboundedHop_geo_summable_tail",
   "BookProof_CarlemanUnboundedHop_not_summable_inv_one_add_nat",
   "BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel",
+  "BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint",
   "BookProof_CarlemanUnboundedHop_geoHop_stone_flow",
   "BookProof_ChapterCayleyInverse_cayley_ofUnitary",
   "BookProof_ChapterCayleyInverse_oneSubU_cayley_injective",

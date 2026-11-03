@@ -40,7 +40,6 @@ import argparse
 import glob
 import json
 import os
-import re
 import subprocess
 import sys
 import time
@@ -52,14 +51,23 @@ sys.path.insert(0, os.path.join(WS, "pipeline"))
 
 import upload_pipeline as up  # noqa: E402
 
+sys.path.insert(0, HERE)
+from audit_dup_providers import decls_of  # noqa: E402
+
 MARK = "parked_pubbundle_dup"
-DECL = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)?(?:noncomputable\s+)?"
-    r"(?:def|abbrev|instance|structure|theorem|lemma)\s+([A-Za-z_]\w*)")
 
 
 def scan_decls(files):
-    """(short name -> set of fully-qualified names) plus fq -> owning file stem."""
+    """(short name -> set of fully-qualified names) plus fq -> owning file stem.
+
+    Delegates the namespace tracking to `audit_dup_providers.decls_of`.  The
+    inline scanner this replaced popped on ANY `^end`, so the first
+    `end <section>`, `end Abstract`, `end Tensor` ... silently closed the
+    enclosing NAMESPACE and every later decl got a short fq name.  Measured
+    2026-11-03: that scan found 22 pending dup-declared thms where the correct
+    one finds 106 (e.g. `BookProof.ChapterMackeyCocycle.vmap_eq_tmap`, declared
+    after `end Identify`, never matched and was never parked).
+    """
     prov, owner = {}, {}
     for f in files:
         stem = os.path.basename(f)
@@ -67,21 +75,9 @@ def scan_decls(files):
             stem = stem[4:]
         if stem.endswith(".lean"):
             stem = stem[:-5]
-        ns = []
-        for ln in open(f, encoding="utf-8", errors="ignore"):
-            m = re.match(r"^namespace\s+([\w.]+)", ln)
-            if m:
-                ns.append(m.group(1))
-                continue
-            if re.match(r"^end\s", ln):
-                if ns:
-                    ns.pop()
-                continue
-            d = DECL.match(ln)
-            if d:
-                fq = ".".join(ns + [d.group(1)])
-                prov.setdefault(d.group(1), set()).add(fq)
-                owner[fq] = stem
+        for fq, _kind in decls_of(f):
+            prov.setdefault(fq.split(".")[-1], set()).add(fq)
+            owner[fq] = stem
     return prov, owner
 
 

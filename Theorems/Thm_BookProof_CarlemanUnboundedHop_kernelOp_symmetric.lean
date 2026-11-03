@@ -15,6 +15,7 @@ open BookProof.CarlemanUnboundedHop
 
 open Finset
 open BookProof.FarisLavine
+open BookProof.NavierStokesFlow
 
 noncomputable section
 

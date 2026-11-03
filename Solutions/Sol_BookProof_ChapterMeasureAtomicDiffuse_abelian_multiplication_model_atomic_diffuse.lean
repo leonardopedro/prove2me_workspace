@@ -3,7 +3,10 @@ import Mathlib
 import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Theorems.Thm_BookProof_ChapterMeasureAtomicDiffuse_exists_atomic_diffuse_decomposition
 import Definitions.Def_ChapterAbelianDirectSum
+import Definitions.Def_ChapterAbelianGelfandModel
 open BookProof.ChapterMeasureAtomicDiffuse
+open BookProof.ChapterAbelianGelfandModel
+open BookProof.ChapterAbelianDirectSum
 
 
 

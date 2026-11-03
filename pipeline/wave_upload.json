@@ -145977,6 +145977,36 @@
     "timepiece",
     "theorems"
    ]
+  },
+  "BookProof_CarlemanUnboundedHop_kernelOp_symmetric": {
+   "name": "BookProof.CarlemanUnboundedHop.kernelOp_symmetric",
+   "chapter": "ChapterCarlemanUnboundedHop",
+   "file": "Theorems/Thm_BookProof_CarlemanUnboundedHop_kernelOp_symmetric.lean",
+   "sol": "Solutions/Sol_BookProof_CarlemanUnboundedHop_kernelOp_symmetric.lean",
+   "ns": "BookProof.CarlemanUnboundedHop",
+   "plen": 2,
+   "title": "`BookProof.CarlemanUnboundedHop.kernelOp_symmetric` {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) :\n    SymmetricOn (lpFiniteModes ℕ) (kernelOp hk)",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCarlemanUnboundedHop`.\n\n`BookProof.CarlemanUnboundedHop.kernelOp_symmetric` {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) :\n    SymmetricOn (lpFiniteModes ℕ) (kernelOp hk)\n\nFormalization note: Lean 4 identifier `BookProof.CarlemanUnboundedHop.kernelOp_symmetric`.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
+  },
+  "BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency": {
+   "name": "BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency",
+   "chapter": "ChapterCarlemanUnboundedHop",
+   "file": "Theorems/Thm_BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency.lean",
+   "sol": "Solutions/Sol_BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency.lean",
+   "ns": "BookProof.CarlemanUnboundedHop",
+   "plen": 4,
+   "title": "`BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency` {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) {z : ℂ} {w : L2N}\n    (hw : ∀ v : lpFiniteModes ℕ, (inner ℂ (kernelOp hk v) (w : L2N) : ℂ)\n        = z * inner ℂ (v : L2N) (w : L2N)) :\n    LadderRecInf a ((w : ℕ → ℂ)) z",
+   "nl": "Prove the following Lean 4 theorem from `ChapterCarlemanUnboundedHop`.\n\n`BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency` {a : ℕ → ℕ → ℂ} (hk : IsL2Kernel a) {z : ℂ} {w : L2N}\n    (hw : ∀ v : lpFiniteModes ℕ, (inner ℂ (kernelOp hk v) (w : L2N) : ℂ)\n        = z * inner ℂ (v : L2N) (w : L2N)) :\n    LadderRecInf a ((w : ℕ → ℂ)) z\n\nFormalization note: Lean 4 identifier `BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency`.",
+   "source": "",
+   "tags": [
+    "timepiece",
+    "theorems"
+   ]
   }
  },
  "sol_order": [
@@ -149720,6 +149750,8 @@
   "BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel",
   "BookProof_CarlemanUnboundedHop_geoHop_essentiallySelfAdjoint",
   "BookProof_CarlemanUnboundedHop_geoHop_stone_flow",
+  "BookProof_CarlemanUnboundedHop_kernelOp_symmetric",
+  "BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency",
   "BookProof_ChapterCayleyInverse_cayley_ofUnitary",
   "BookProof_ChapterCayleyInverse_oneSubU_cayley_injective",
   "BookProof_ChapterCayleyInverse_invCayleyDomain_cayley",

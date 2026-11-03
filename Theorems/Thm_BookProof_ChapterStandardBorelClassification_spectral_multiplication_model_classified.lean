@@ -6,6 +6,8 @@ import Definitions.Def_ChapterAbelianClassificationList
 import Mathlib
 import Definitions.Def_ChapterStandardBorelClassification
 import Definitions.Def_ChapterSeparableL2Model
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterStandardBorelClassification
 
 
@@ -17,6 +19,8 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+open BookProof.ChapterAbelianGelfandModel
+open BookProof.ChapterSpectralMultiplication
 
 variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
   (mu : Measure X)

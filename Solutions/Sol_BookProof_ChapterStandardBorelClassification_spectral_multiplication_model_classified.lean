@@ -6,6 +6,8 @@ import Definitions.Def_ChapterMeasureAtomicDiffuse
 import Definitions.Def_ChapterAtomicDiagonalModel
 import Definitions.Def_ChapterLinftyMultiplication
 import Definitions.Def_ChapterAbelianClassificationList
+import Definitions.Def_ChapterAbelianGelfandModel
+import Definitions.Def_ChapterSpectralMultiplication
 open BookProof.ChapterStandardBorelClassification
 
 
@@ -18,6 +20,9 @@ open MeasureTheory
 open BookProof.ChapterMeasureAtomicDiffuse BookProof.ChapterAtomicDiagonalModel
 open BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterAbelianClassificationList
+open BookProof.ChapterAbelianGelfandModel
+open BookProof.ChapterSpectralMultiplication
+open BookProof.ChapterSpectralDirectSum
 
 variable {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y] (e : X ≃ᵐ Y)
   (mu : Measure X)

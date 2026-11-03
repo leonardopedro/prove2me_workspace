@@ -1,7 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.kernelOp_symmetric
 import Mathlib
 import Definitions.Def_ChapterCarlemanUnboundedHop
-import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesDeficiency
@@ -16,6 +15,7 @@ open BookProof.KernelBound
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat
+open BookProof.NavierStokesFlow
 open BookProof.FarisLavine
 
 noncomputable section

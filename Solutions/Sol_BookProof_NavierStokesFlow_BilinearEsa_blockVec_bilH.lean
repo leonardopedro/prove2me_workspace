@@ -1,11 +1,11 @@
 -- Generated from ChapterNavierStokesBilinearEsa.lean — solution of BookProof.NavierStokesFlow.BilinearEsa.blockVec_bilH
 import Mathlib
 import Definitions.Def_ChapterNavierStokesBilinearEsa
-import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_mem_maxDom
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_mem_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.BilinearEsa
 

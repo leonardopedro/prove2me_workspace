@@ -5,6 +5,7 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Definitions.Def_ChapterNavierStokesAffineBlockEsaPromoted
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.AffineFiber.PairShift
@@ -26,4 +27,4 @@ theorem BookProof.NavierStokesFlow.AffineBlock.blockVec_affBlockH (κ c : J → 
     (v : lpFiniteModes (ℕ × J)) (j : J) :
     blockVec ((affBlockH κ c hκ hc v : L2I (ℕ × J))) j
       = affH (hκ j) (hc j)
-          ⟨blockVec ((v : L2I (ℕ × J))) j, blockVec_mem_maxDom_prime _ v j⟩ := by sorry
+          ⟨blockVec ((v : L2I (ℕ × J))) j, blockVec_mem_maxDom' _ v j⟩ := by sorry

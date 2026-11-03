@@ -4,6 +4,7 @@ import Definitions.Def_ChapterCarlemanUnboundedHop
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesEsa
+import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel
 open BookProof.KernelBound
 open BookProof.CarlemanUnboundedHop
 

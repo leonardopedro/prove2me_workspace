@@ -10,6 +10,7 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterLeafGaps
 import Definitions.Def_ChapterVielbeinFiberFock
+import Theorems.Thm_BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain
 open BookProof.FriedrichsExtension
 open BookProof.FriedrichsExtension.FormDom
 open BookProof.QgOuterFockFL

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_isPositiveSelfAdjointExtension
-import Theorems.Thm_BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_continuous_scalaronW
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_expBounded_scalaronW
 import Definitions.Def_ChapterFarisLavine
@@ -11,6 +10,7 @@ import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
+import Theorems.Thm_BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense
 open BookProof.FriedrichsCanonical
 
 

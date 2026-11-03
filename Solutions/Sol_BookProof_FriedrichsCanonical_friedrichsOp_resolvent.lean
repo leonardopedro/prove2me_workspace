@@ -1,7 +1,6 @@
 -- Generated from ChapterFriedrichsCanonical.lean — solution of BookProof.FriedrichsCanonical.friedrichsOp_resolvent
 import Mathlib
 import Definitions.Def_ChapterFriedrichsCanonical
-import Theorems.Thm_BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain
 import Theorems.Thm_BookProof_FriedrichsCanonical_friedrichsOp_apply
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterFarisLavine
@@ -9,6 +8,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFriedrichsExtension
 import Definitions.Def_ChapterHashimotoShiftInvert
+import Theorems.Thm_BookProof_FriedrichsCanonical_resolvent_mem_friedrichsDomain
 open BookProof.FriedrichsCanonical
 
 

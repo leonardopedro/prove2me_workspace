@@ -1,7 +1,6 @@
 -- Generated from ChapterLimitCircleExample.lean — solution of BookProof.LimitCircleExample.exists_smooth_potential_not_essentiallySelfAdjoint
 import Mathlib
 import Definitions.Def_ChapterLimitCircleExample
-import Theorems.Thm_BookProof_LimitCircleExample_contDiff_lcV
 import Theorems.Thm_BookProof_LimitCircleExample_lcV_not_essentiallySelfAdjoint
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterWallDeficiencyObstruction

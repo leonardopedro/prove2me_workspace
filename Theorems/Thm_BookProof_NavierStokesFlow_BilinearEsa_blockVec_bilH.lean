@@ -6,6 +6,7 @@ import Definitions.Def_ChapterNavierStokesHermiteFarisLavine
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
+import Theorems.Thm_BookProof_NavierStokesFlow_BilinearEsa_blockVec_mem_maxDom
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow

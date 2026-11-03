@@ -8,6 +8,7 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterLimitCircleExample
+import Theorems.Thm_BookProof_LimitCircleExample_contDiff_lcV
 open BookProof.ScalaronEsa
 open BookProof.ScalaronWallEsa
 open BookProof.LimitCircleExample

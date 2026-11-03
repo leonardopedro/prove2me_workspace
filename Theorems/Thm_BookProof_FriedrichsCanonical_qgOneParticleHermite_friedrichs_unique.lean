@@ -10,6 +10,7 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterFriedrichsCanonical
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Theorems.Thm_BookProof_FriedrichsCanonical_qgScalaronPosSymOp_dense
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.YangMillsFriedrichs

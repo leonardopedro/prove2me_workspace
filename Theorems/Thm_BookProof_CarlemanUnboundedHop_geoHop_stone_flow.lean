@@ -7,7 +7,6 @@ import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
-import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_isL2Kernel
 open BookProof.EsaClosure
 open BookProof.KernelBound
 open BookProof.NavierStokesFlow.DiagonalEsa

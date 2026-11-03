@@ -1532,6 +1532,27 @@ def unproved_sibling_imports(path):
     return unproved
 
 
+def _decl_depth_at(txt, pos):
+    """Namespace nesting depth at character offset `pos`.
+
+    Only `namespace` blocks change declaration names, so only those count as
+    "wrapping": a `section` (or `noncomputable section`) around the declaration
+    leaves its name at top level and the platform accepts it (measured: the
+    Carleman `geoHop_essentiallySelfAdjoint` sol, accepted and Proved while
+    sitting inside a `noncomputable section`).  `end` closes either kind, so a
+    close without a counted open drives the depth negative; the caller's test
+    is therefore `> 0`, never `!= 0`.
+    """
+    depth = 0
+    for line in txt[:pos].splitlines():
+        s = line.strip()
+        if re.match(r"namespace\b", s):
+            depth += 1
+        elif s == "end" or re.match(r"end\b", s):
+            depth -= 1
+    return depth
+
+
 def sol_rules_broken(name, path):
     """SKILL three basic rules that a solution file can violate statically.
 
@@ -1549,8 +1570,13 @@ def sol_rules_broken(name, path):
         or re.search(r"(?m)^set_option[^\n]*\bin\s+theorem\s+solution\b", txt)
     if not m:
         return "no top-level `theorem solution` declaration (rule 1)"
-    ns = re.search(r"(?m)^namespace\b", txt)
-    if ns and ns.start() < m.start():
+    # "Wrapped" means the declaration is INSIDE an open namespace/section at
+    # that point, not that the file contains one earlier: a sol that inlines a
+    # helper namespace (the G3 sols inline `PhysHSGaussian` because the sibling
+    # bundle is unpublished) closes it again before `theorem solution`, and the
+    # old `any ^namespace before it` test deferred those files forever without
+    # an attempt ever being spent.  Track the block depth instead.
+    if _decl_depth_at(txt, m.start()) > 0:
         return "`theorem solution` is wrapped in a namespace (rule 1)"
     for mod in re.findall(r"(?m)^\s*import Theorems\.Thm_(\S+)", txt):
         if name in _thm_slugs_for(mod):
@@ -1673,6 +1699,31 @@ def thm_gate_fresh(slug, path):
     status = str(ent.get("status") or "")
     if status.startswith("FAIL"):
         detail = status[4:].strip() or "formal statement does not compile"
+        # `has already been declared` is fatal only when the SERVED bundle
+        # declares the name.  A local-only duplicate is the opposite case and
+        # must not defer: the local Def bundle ran ahead of the platform copy
+        # (it carries the proved lemma, and other PUBLISHED bundles depend on
+        # it -- measured 43/43 local-only decls of Def_ChapterQuantumGravity3DGauge
+        # and 13/14 of Def_ChapterQgMultiHalfDensity are referenced elsewhere,
+        # so the bundle cannot be stripped back to served), while the served
+        # copy lacks the name.  The platform compiles the statement against
+        # SERVED and accepts it, so deferring is a false negative that holds
+        # the stub forever.
+        #
+        # Measured on QuantumGravity3DGauge.pderiv_comm_poly (served lacks it,
+        # local declares it) and QgMultiHalfDensity..._intertwines_multOp
+        # (served mentions it only in a doc-comment bullet, never declares it).
+        # target_declared_in_published_def already applies exactly this
+        # served-first rule to the dup census; without this branch the two
+        # disagree and the gate wins.  WallDeficiencyObstruction.IsL2Ode.
+        # {continuous,memLp} are the other side of the same test -- the served
+        # bundle DOES declare them, so it returns a leaf and they keep
+        # deferring (correctly parked).  Fail closed: if the published-defs
+        # oracle did not load (_PUB_DEF_DECLS empty), no override.
+        if "has already been declared" in detail:
+            shadow = target_declared_in_published_def("thm:" + slug)
+            if _PUB_DEF_DECLS and not shadow:
+                return None
         return "candidate build: " + detail[:140]
     return None
 
@@ -2501,13 +2552,20 @@ def target_declared_in_published_def(item):
     # inside a bundle that actually opens that namespace.
     ns, _, leafname = name.rpartition(".")
     for leaf in _PUB_DEF_DECLS:
-        # Mirror first: it is what the platform will actually re-compile the
-        # statement against.  Reading the local file gated
-        # thm:..._fermiCreate1_eq as a dup of ChapterSpinStatistics even though
-        # the published bundle declares only the six `def`s -- the local copy
-        # carries the theorems the platform never received.
+        # SERVED COPY FIRST: state/published_bundles/ is the platform's own
+        # served text, i.e. exactly what it re-compiles the statement against.
+        # Reading the local file gated thm:..._fermiCreate1_eq as a dup of
+        # ChapterSpinStatistics even though the published bundle declares only
+        # the six `def`s -- the local copy carries the theorems the platform
+        # never received.  The mirror is next (candidate text), local
+        # Definitions/ last (most likely to be ahead of the platform).
+        # Taking the FIRST candidate that exists means a served copy which
+        # lacks the declaration stops the search: that is the not-a-dup answer
+        # (measured on QuantumGravity3DGauge.pderiv_comm_poly, present locally
+        # and in the mirror but absent from the served bundle).
         dtxt = None
-        for cand in (f"{MIRROR}/Definitions/Def_{leaf}.lean",
+        for cand in (f"{WS}/state/published_bundles/Def_{leaf}.lean",
+                     f"{MIRROR}/Definitions/Def_{leaf}.lean",
                      f"{WS}/Definitions/Def_{leaf}.lean"):
             try:
                 dtxt = open(cand, encoding="utf-8").read()
@@ -2516,12 +2574,26 @@ def target_declared_in_published_def(item):
                 continue
         if dtxt is None:
             continue
-        if ns and not re.search(r"(?m)^namespace\s+" + re.escape(ns) + r"\b", dtxt):
-            continue
         for dm in re.finditer(
                 r"(?m)^(?:@\[[^\]]*\]\s*)?(?:theorem|lemma)\s+([A-Za-z0-9_.\'-]+)", dtxt):
-            if dm.group(1).rpartition(".")[2] == leafname:
-                return leaf
+            decl = dm.group(1)
+            if decl.rpartition(".")[2] != leafname:
+                continue
+            # A bundle may open the namespace in pieces and let the
+            # declaration's own dotted name carry the rest:
+            # Def_ChapterWallDeficiencyObstruction writes
+            # `namespace BookProof.WallDeficiencyObstruction` and then
+            # `lemma IsL2Ode.continuous`, whose full name is exactly `name`.
+            # Requiring one `namespace <full dotted prefix>` line therefore
+            # skipped every such declaration -- it silently missed both
+            # WallDeficiencyObstruction dup parks.
+            need = ns
+            if name.endswith(decl) and name != decl:
+                need = name[:len(name) - len(decl)].rstrip(".")
+            if not need or not re.search(
+                    r"(?m)^namespace\s+" + re.escape(need) + r"\b", dtxt):
+                continue
+            return leaf
     return None
 
 

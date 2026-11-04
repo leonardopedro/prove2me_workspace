@@ -1,6 +1,6 @@
 import Theorems.Thm_BookProof_FockQuadratic_wsum_single
 
-import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
+import Definitions.Def_ChapterCarlemanSimplex
 
 import Definitions.Def_ChapterFockQuadraticEsa
 import Definitions.Def_ChapterFarisLavine
@@ -108,6 +108,35 @@ open BookProof.NavierStokesFlow.LpNat BookProof.OperatorSeries BookProof.FockQua
 noncomputable section
 
 variable {ι κ : Type*} {ω : ι → ℝ}
+
+/-! ## 0. Three arithmetic facts on `wsum`/`sig`
+
+The served `Def_ChapterFockQuadraticEsa` bundle declares `wsum` and `sig` but not
+their additivity (`wsum_add`, `wsum_tsub_of_le`) nor `sig_tgt`; the workspace copy
+of that bundle has all three, but it is 375 lines ahead of what the platform
+serves (877 vs 502) and does not compile itself, so it can never be published as
+the source of them.  They are restated here so this bundle compiles against the
+served world — same statements, same proofs as the draft. -/
+
+theorem wsum_add (ω : ι → ℝ) (a b : Idx ι) : wsum ω (a + b) = wsum ω a + wsum ω b := by
+  simp only [wsum]
+  rw [Finsupp.sum_add_index' (by intro i; simp) (by intro i m n; push_cast; ring)]
+
+theorem wsum_tsub_of_le {ω : ι → ℝ} {P a : Idx ι} (h : P ≤ a) :
+    wsum ω (a - P) + wsum ω P = wsum ω a := by
+  rw [← wsum_add, tsub_add_cancel_of_le' h]
+
+/-- The comparison symbol at a hop target, in closed form: the hop moves `σ` by
+`ω(Q) + |Q| − ω(P) − |P|`, which is what `Balanced` below cancels. -/
+theorem sig_tgt {ω : ι → ℝ} {P Q a : Idx ι} (h : P ≤ a) :
+    sig ω (tgt P Q a) = sig ω a - wsum ω P - deg P + wsum ω Q + deg Q := by
+  have hd : (deg (tgt P Q a) : ℝ) + deg P = deg a + deg Q := by
+    exact_mod_cast congrArg (fun n : ℕ => (n : ℝ)) (deg_tgt (Q := Q) h)
+  have hw : wsum ω (tgt P Q a) = wsum ω a - wsum ω P + wsum ω Q := by
+    rw [tgt, wsum_add, ← wsum_tsub_of_le (ω := ω) h]
+    ring
+  simp only [sig, hw]
+  linarith
 
 /-! ## 1. Balanced hops -/
 

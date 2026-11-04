@@ -11,8 +11,17 @@ Samples every 0.5 s into state/scratch/<name>.tsv:
   elapsed_s  total_rss_kb  lean_module   (module being compiled, if any)
 On cap breach / timeout: SIGKILL the whole process group.
 
+`--metric pss` charges each page once (proportional set size,
+/proc/<pid>/smaps_rollup).  Summed VmRSS counts the shared mathlib environment once PER PROCESS,
+so a watchdog over any multi-job compile trips on pages that exist once: the
+2026-11-03 regate of 881 thm stubs at --jobs 4 read 11.9 GiB while the box had
+6 GiB in use, and every chunk was killed 5 s in having compiled nothing.  Use
+pss for parallel compiles; rss stays the default because a single ballooning
+compile is what the cap was written for.
+
 Usage:
   python3 debug/watch_tree.py --name r27 --cap-gb 11 -- <command...>
+  python3 debug/watch_tree.py --metric pss --name r29 --cap-gb 9 --jobs... --
 """
 import argparse
 import os
@@ -25,8 +34,12 @@ SCRATCH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
                        "state", "scratch")
 
 
-def proc_tree(root_pid):
-    """Return [(pid, rss_kb)] of root_pid + descendants."""
+def proc_tree(root_pid, metric="rss"):
+    """Return [(pid, mem_kb)] of root_pid + descendants.
+
+    metric="rss"  -> VmRSS (/proc/<pid>/status)
+    metric="pss"  -> Pss (/proc/<pid>/smaps_rollup), shared pages charged once
+    """
     out = subprocess.run(["ps", "-eo", "pid=,ppid=,"],
                          capture_output=True, text=True).stdout
     kids = {}
@@ -40,11 +53,18 @@ def proc_tree(root_pid):
             continue
         seen.add(pid)
         try:
-            with open(f"/proc/{pid}/status") as fh:
+            if metric == "pss":
                 rss = 0
-                for line in fh:
-                    if line.startswith("VmRSS:"):
-                        rss = int(line.split()[1]); break
+                with open(f"/proc/{pid}/smaps_rollup") as fh:
+                    for line in fh:
+                        if line.startswith("Pss:"):
+                            rss = int(line.split()[1]); break
+            else:
+                with open(f"/proc/{pid}/status") as fh:
+                    rss = 0
+                    for line in fh:
+                        if line.startswith("VmRSS:"):
+                            rss = int(line.split()[1]); break
             res.append((pid, rss))
         except OSError:
             continue
@@ -71,6 +91,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
     ap.add_argument("--cap-gb", type=float, default=11.0)
+    ap.add_argument("--metric", choices=["rss", "pss"], default="rss",
+                    help="rss (VmRSS sum: over-counts shared pages across "
+                         "parallel compiles) or pss (each page charged once)")
     ap.add_argument("--timeout", type=float, default=14400.0)
     ap.add_argument("cmd", nargs=argparse.REMAINDER)
     a = ap.parse_args()
@@ -88,10 +111,10 @@ def main():
                             stderr=subprocess.STDOUT, start_new_session=True)
     verdict, peak = "?", 0
     with open(tsv_path, "w") as tsv:
-        tsv.write("elapsed_s\ttotal_rss_kb\tlean_module\n")
+        tsv.write(f"elapsed_s\ttotal_{a.metric}_kb\tlean_module\n")
         while True:
             time.sleep(0.5)
-            pids = proc_tree(proc.pid)
+            pids = proc_tree(proc.pid, a.metric)
             rss = sum(r for _, r in pids)
             peak = max(peak, rss)
             tsv.write(f"{time.time()-t0:.1f}\t{rss}\t{lean_module_of(pids)}\n")
@@ -108,10 +131,15 @@ def main():
     open(log_path, "wb").write(out or b"")
     elapsed = time.time() - t0
     print(f"{verdict if verdict != '?' else 'rc='+str(proc.returncode)}  "
-          f"elapsed={elapsed:.0f}s  peak_tree_rss={peak/1024/1024:.2f} GiB")
+          f"elapsed={elapsed:.0f}s  peak_tree_{a.metric}={peak/1024/1024:.2f} GiB")
     if verdict.startswith("CAP"):
-        # report which module was compiling at the moment of the kill
-        last = open(tsv_path).read().strip().splitlines()[-1].split("\t")
+        # report which module was compiling at the moment of the kill.  Strip
+        # only the newline: `.strip()` eats the trailing tab of a line whose
+        # module field is empty (watchdog over a non-lean command), and the
+        # "module compiling at kill" report then died on IndexError instead of
+        # telling us what the cap was for (measured 2026-11-03).
+        last = (open(tsv_path).read().rstrip("\n").splitlines()[-1]
+                .split("\t") + ["", ""])[:3]
         print(f"module compiling at kill: {last[2] or '(none/lean startup)'}")
     print(f"timeline: {tsv_path}\noutput:   {log_path}")
     return 0 if verdict == "?" else 1

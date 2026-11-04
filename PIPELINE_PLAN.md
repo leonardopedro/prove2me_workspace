@@ -12618,3 +12618,119 @@ the audit tool exactly.
 
 Neither was run this session: `debug/drain_loop.sh` (pid 442132) and its
 uploader held the writer role throughout.
+
+## Session 31 addendum — the missing-`open` sub-class of class D
+
+The last three class-D items were not missing a *module* but a *namespace*, and
+the distinction matters because importing the bundle is not enough:
+
+| identifier | served declaration | what a file must also do |
+|---|---|---|
+| `lpFiniteModes` | `BookProof.NavierStokesFlow.lpFiniteModes` (`Def_ChapterNavierStokesEsa`) | `open BookProof.NavierStokesFlow` — opening `…NavierStokesFlow.LpNat` / `…DiagonalEsa` does **not** expose it |
+| `mulRep`, `mulRepHom` | `BookProof.ChapterAbelianGelfandModel.{mulRep,mulRepHom}` | `open BookProof.ChapterAbelianGelfandModel` |
+
+Fixed and verified: `kernelOp_symmetric` and `ladderRec_of_deficiency` (stubs
+opened the namespace at 10:40, their **sols** did not, and both items were
+**orphans** — no `thms` row, no `sol_order` row, so `WAVE_THMS[slug]` did not
+exist and the drain could never submit them; `debug/register_orphan_thms.py`
+registers them).  Both statements published and their sols accepted within two
+minutes of the rows existing: **Proved** (`395ac691`, `e69f91b5`).  Also fixed
+`ChapterStandardBorelClassification_spectral_multiplication_model_classified`
+(+ `GelfandModel`/`SpectralMultiplication`/`SpectralDirectSum`),
+`ChapterMeasureAtomicDiffuse_abelian_multiplication_model_atomic_diffuse`
+(never attempted, so no recorded error: the queue's silent member of the class)
+and the untracked `ChapterAbelianGelfandModel_mulRepHom_apply`.
+
+`kernelOp_symmetric` also dropped
+`import Theorems.Thm_BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range`: that
+node is parked as a duplicate because the served `ChapterNavierStokesDeficiency`
+declares `BookProof.NavierStokesFlow.LpNat.inner_eq_sum_range` itself, so the
+import was dead and the name comes from the bundle the sol already imports.
+
+### The local gate cannot see this class
+
+`debug/find_missing_opens.py` scans pending sols for a bare identifier whose only
+served provider is namespaced while the file opens neither that namespace nor
+declares it: **407 candidates**, of which 405 have never been attempted (no
+platform verdict, which is why they are silent).  Their static evidence is
+**not** a verdict: the detector flags `Cx` in
+`Sol_BookProof_ChapterA_cxSystem_isCReal` and that file may well be fine.
+
+Worse, the pipeline's own gate answers "pass" for most of them here:
+`local_compile` returns `True, "local compile skipped (dependency not built in
+this checkout)"` whenever the workspace build lacks a module — probed on a copy
+of the `mulRepHom_apply` sol with its `open` line removed, i.e. on a file that
+demonstrably fails with `Unknown identifier mulRep`.  So a missing-`open` sol
+reaches the platform uncompiled and spends an attempt; the mirror compile
+(`lake env lean` with `LEAN_PATH=state/mirror:…`, as used for the four fixes
+above) is the only local oracle, and it too needs the module's olean.
+
+Consequence: treat the 407 as a compile-verification queue, not a defect list.
+Fix them in batches with the mirror, never from the scan alone.
+
+## Session 32 — `object file … does not exist` is not evidence, and what it hides
+
+The drain's largest guard bucket was `thm gate: candidate build` (351 WAITs in a
+4,000-line window). 940 of the 10,202 `state/thm_gate.json` entries carried a
+`FAIL … object file '…/state/mirror/Definitions/Def_X.olean' … does not exist`,
+and **872 of those objects existed when the census was taken** — the olean was
+missing *at the moment the gate pass compiled the stub*, not afterwards. 559 of
+them pointed at `Def_ChapterMixedLinearEsa` alone.
+
+`thm_gate_fresh` blocks on any `status` starting `FAIL`, so those statements were
+held by evidence that no longer described anything.  `debug/gate_thm_ok.py`
+re-runs the same oracle on named stubs and merges the verdict; it is now driven in
+chunks by `debug/regate_objectfile_thms.sh` (one `state/thm_gate.json` write per
+chunk, `watch_tree` cap per chunk).
+
+| pass | stubs | moved off the phantom FAIL | now `OK` | of which ledger-pending |
+|---|---|---|---|---|
+| 1 | 881 | every one | 131 | 101 |
+| 2 | 243 | 124 | 22 | — |
+
+`OK` entries 867 → 1,021. The recompile is the point, not the clearing: it turns a
+useless string into a real verdict — e.g. `ChapterH8_coordIncl_single` → `OK`,
+`ChapterH7_generationOperator_conjTranspose` → parse error at 22:28, the whole
+`QgOneParticleCc` family → `has already been declared` (parked duplicates), the
+`EsaOneParticle`/`FermionFock` families likewise.
+
+The 119 that still say `object file` are honest: they name six bundles that have
+no olean at all — `Qg3DCrossTermEsa` 31, `SmFullEnclosure` 26, `SmFarisLavine` 25,
+`FockDifferingBasesEsa` 16, `SmComparison` 12, `SmFockEsa` 5 — because those
+bundles cannot compile (below).
+
+### `watch_tree` needs PSS, not summed RSS
+
+The first attempt at the regate used the existing default and was killed 5 s into
+every chunk: `CAP (11.94 GiB > 9.0) elapsed=10s` at `--jobs 4` on a box with 6 GiB
+in use.  Summed `VmRSS` charges the shared mathlib environment once *per process*,
+so the cap fires on pages that exist once.  `--metric pss` (`/proc/<pid>/smaps_rollup`)
+charges each page once; at `--jobs 3 --cap-gb 9` the peak read 6.9–7.9 GiB and
+nine chunks finished in 30 min.  `rss` stays the default (a single ballooning
+compile is what the cap was written for).  Also fixed: the CAP report did
+`.strip()` on the last timeline line, which eats the trailing tab when the killed
+command was not a lean compile, and then died on `IndexError` instead of naming
+the module.
+
+### The six bundles: local drafts that can never publish
+
+`state/mirror/Definitions/` deliberately holds the **served** text for
+`Def_ChapterQg3DGaugeEsa` (164 lines vs 355 in the workspace) and
+`Def_ChapterFockQuadraticEsa` (502 vs 877) — the workspace drafts are ahead of the
+platform and do not compile themselves (`def_gate` FAIL: unknown constant at
+`Qg3DGaugeEsa:313`, unknown identifier at `FockQuadraticEsa:812`).  So a dependent
+bundle that cites a draft-only lemma fails against the served world, correctly:
+
+| bundle | missing against served | items blocked |
+|---|---|---|
+| `Qg3DCrossTermEsa` | `qgSigned_eq_fqOp` (draft `Qg3DGaugeEsa:302`) | 32 + 31 stubs |
+| `FockDifferingBasesEsa` | `commForm_add`, `commForm_eq_neg_two_im`, `freeOp_symmetricOn`, `freeOp_norm_le`, `essentiallySelfAdjointOn_finiteModes_of_bounds` | 36 + 16 stubs |
+| `SmComparison` | `chain_esa` — used at :269, declared nowhere in the tree | 10 + 12 stubs |
+| `SmFarisLavine`, `SmFullEnclosure`, `SmFockEsa` | no olean; import the above | 55 + 31 stubs |
+
+`FockDifferingBasesEsa` is three facts further along: `wsum_add`,
+`wsum_tsub_of_le` and `sig_tgt` are now restated in it (served
+`FockQuadraticEsa` declares `wsum`/`sig` but not their additivity), copied with the
+draft's proofs, and the compile now reaches the five names above instead of dying
+at `sig_tgt`.  The rest is content work in the draft's lemma set, not a gate
+refresh — which is why those items stay pending rather than being re-gated.

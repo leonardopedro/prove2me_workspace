@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFarisLavine
+import Definitions.Def_ChapterNsKoopman
 import Mathlib
 
 
@@ -308,6 +309,16 @@ noncomputable def pushOp (U : F →ₗᵢ[ℂ] G) {D : Submodule ℂ F} (T : D �
     (Submodule.equivMapOfInjective U.toLinearMap U.injective D).symm.toLinearMap
 
 
+
+
+theorem pushOp_apply (U : F →ₗᵢ[ℂ] G) {D : Submodule ℂ F} (T : D →ₗ[ℂ] F)
+    (x : pushDom U D) (x₀ : D) (hx : (x : G) = U (x₀ : F)) :
+    pushOp U T x = U (T x₀) := by
+  have hxx : (Submodule.equivMapOfInjective U.toLinearMap U.injective D) x₀ = x := by
+    apply Subtype.ext; rw [hx]; rfl
+  have h2 : (Submodule.equivMapOfInjective U.toLinearMap U.injective D).symm x = x₀ := by
+    rw [← hxx]; simp
+  exact congrArg (fun z : D => U (T z)) h2
 
 /-- Transported operators are symmetric if the original one is. -/
 theorem symmetricOn_pushOp (U : F →ₗᵢ[ℂ] G) {D : Submodule ℂ F} (T : D →ₗ[ℂ] F)

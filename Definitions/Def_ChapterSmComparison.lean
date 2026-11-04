@@ -1,12 +1,4 @@
-import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
-
-import Theorems.Thm_BookProof_ScalaronWallEsa_wallHam_symmetricOn
-
-import Theorems.Thm_BookProof_WallEsaBddBelow_wallHam_essentiallySelfAdjoint_of_bddBelow
-
-
-
-
+import Definitions.Def_ChapterBddBelowWallEsa
 import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterWallEsaBddBelow
 import Definitions.Def_ChapterTensorSumChain
@@ -97,6 +89,7 @@ open BookProof.SmOneParticle BookProof.SmHamiltonian
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
 open BookProof.HermiteProductCore BookProof.FarisLavine
 open BookProof.ScalaronWallEsa BookProof.ScalaronEsa BookProof.WallEsaBddBelow
+open BookProof.BddBelowWallEsa
 open BookProof.TensorSumChain BookProof.TensorCore BookProof.TensorSumEsa
 open BookProof.EsaClosure BookProof.GraphCore
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent
@@ -236,7 +229,7 @@ def quarticEsaOp : EsaOp where
   op := wallHam (fun x : ℝ => x ^ 4) contDiff_pow4
   dense := ccDomain_dense
   sym := wallHam_symmetricOn _ _
-  esa := wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (c := 0) fun x => by
+  esa := wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (K := 0) fun x => by
     have h : (0 : ℝ) ≤ x ^ 4 := by positivity
     linarith
 
@@ -249,7 +242,7 @@ def quadraticEsaOp : EsaOp where
   op := wallHam (fun x : ℝ => x ^ 2) contDiff_pow2
   dense := ccDomain_dense
   sym := wallHam_symmetricOn _ _
-  esa := wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (c := 0) fun x => by
+  esa := wallHam_essentiallySelfAdjoint_of_bddBelow _ _ (K := 0) fun x => by
     have h : (0 : ℝ) ≤ x ^ 2 := by positivity
     linarith
 
@@ -258,6 +251,31 @@ def quadraticEsaOp : EsaOp where
 (hypercharge). -/
 def smDynChain : EsaOp :=
   chain quarticEsaOp (List.replicate 36 quarticEsaOp ++ List.replicate 3 quadraticEsaOp)
+
+/-! ## The two facts `chain` promises but does not declare
+
+`Def_ChapterTensorSumChain` documents `chain_esa` and `chain_stone_flow` and declares
+neither: its 143 lines contain `EsaOp`, `pair`, `chain` and the two recursion equations, and
+nothing else (no upstream `BookProof/ChapterTensorSumChain.lean` exists, so no revision ever
+had them).  Both are one projection of `EsaOp`'s own fields — `esa` is the essential
+self-adjointness and `exists_stone_flow_of_esa` turns that plus density and symmetry into the
+Stone flow — so they are stated here rather than left as a citation of nothing. -/
+
+/-- **The `n`-factor tensor sum is essentially self-adjoint** on the algebraic tensor product
+of the domains: `chain E L` carries that proof as its `esa` field. -/
+theorem chain_esa (E : EsaOp) (L : List EsaOp) :
+    EssentiallySelfAdjointOn (chain E L).dom (chain E L).op :=
+  (chain E L).esa
+
+/-- **Its complete unitary flow**: the Stone group of the self-adjoint extension the same
+data determines. -/
+theorem chain_stone_flow (E : EsaOp) (L : List EsaOp) :
+    ∃ (G : UnboundedSelfAdjoint (chain E L).space.carrier)
+      (U : ℝ → ((chain E L).space.carrier →L[ℂ] (chain E L).space.carrier)),
+      IsSelfAdjointExtension (chain E L).op G.op ∧ IsStoneFlow G U := by
+  haveI := (chain E L).complete
+  exact BookProof.StoneBridge.exists_stone_flow_of_esa (chain E L).op
+    (chain E L).dense (chain E L).sym (chain E L).esa
 
 /-- **The dynamical part of the Standard-Model comparison operator is essentially
 self-adjoint.**  The `40` uncoupled confining degrees of freedom of `N₀` — `π² + q⁴` on the

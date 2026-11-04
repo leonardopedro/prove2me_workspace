@@ -312,7 +312,7 @@ quantization, `BookProof.SmOuterFock.smFockHam`. -/
 theorem sm_friedrichs_extension (P : SmParams) :
     ∃ (Dom : Submodule ℂ (L2d 163)) (A : Dom →ₗ[ℂ] L2d 163),
       IsPositiveSelfAdjointExtension (smHamiltonian P) A :=
-  friedrichs_extension_exists_complete
+  friedrichs_extension_exists
     ⟨polyGaussCore, smHamiltonian P, smHamiltonian_symmetricOn P,
       smHamiltonian_quadForm_nonneg P⟩
     polyGaussCore_dense

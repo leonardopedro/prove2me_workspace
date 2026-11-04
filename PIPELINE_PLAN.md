@@ -12785,3 +12785,46 @@ The same route does **not** transfer to the `Sm` chain (`chain_esa`/`chain_stone
 `Def_ChapterTensorSumChain`'s docstring and **declared nowhere** — `git log -S "theorem
 chain_esa"` finds no revision that ever had them).  Those thirteen bundles wait on content,
 not on a gate.
+
+### A mirror `.olean` older than its staged `.lean` makes the gate lie
+
+The candidate mirror is only a model of the platform if each staged module's `.olean` was
+built from the *staged* text.  18 of the 23 imports of `Def_ChapterFockDifferingBasesEsa`
+had an `.olean` predating the Nov 3 restaging, several from a build of the **workspace**
+text: `Def_ChapterNavierStokesIkebeKato.olean` still declared `diagMax_quadForm_nonneg` and
+`diagMax_hasSum_quadForm`, which the served 131-line text does not.  So the bundle compiled
+locally and was **rejected by the platform**: `publish FAILED: definition does not compile:
+line 325: Unknown identifier diagMax_quadForm_nonneg`.  The gate had said `OK`.
+
+Repair: rebuild the provider olean from its staged text (`lean -o ... .olean ... .lean` in
+`state/mirror`), then recompile the consumer.  Before trusting a def verdict, the cheap
+check is a *name* audit — it needs no compile and cannot be fooled by a stale olean:
+
+```python
+# every corpus name the bundle uses must be declared by the bundle, by a staged
+# Definitions/*.lean, or by an imported Theorems/Thm_*.lean
+missing = [n for n in used & ws_names if n not in local | served | imported_stubs]
+```
+
+Run over the three bundles this session repaired, it returned 0 for
+`FockDifferingBasesEsa` and the seven names below for the Qg3D pair.
+
+### The seven names the Qg3D bundles were really missing
+
+`Def_ChapterQg3DCrossTermEsa` and `Def_ChapterQg3DDensityEsa` cite
+`fqOp_essentiallySelfAdjoint`, `fqOp_stone_flow`, `fqOp_symmetric`, `coreOp_add`,
+`dsCore_dense`, `dsOp_essentiallySelfAdjointOn` and
+`dGamma_fqPoly_essentiallySelfAdjointOn_core`.  None is declared by the served `Def_` text;
+all seven are published theorem modules except the last, whose own item was **parked on a
+false duplicate verdict**: `park_dup_thms.py` saw the name in
+`Def_ChapterQuadraticFockEsa`'s docstring and concluded the bundle declared it, while
+`GET /theorems?q=<name>` returns nothing for either `dGamma_*` name.  `debug/unpark_items.py`
+reopens items parked on such a verdict (`reopen_failed.py` only selects `failed` or an
+attempt ceiling).  With them reopened, `dGamma_fqPoly_essentiallySelfAdjointOn_core`
+compiles and gates `OK`; it now publishes, and both Qg3D bundles import it instead of
+calling a name that never existed.
+
+Its sibling `dGamma_hermCol_essentiallySelfAdjointOn_core` still fails to elaborate —
+`unknown namespace BookProof.GradedBand…` — because the whole graded-band chapter behind it
+is not served.  Its gate records that honestly, so the drain defers rather than burning
+attempts.

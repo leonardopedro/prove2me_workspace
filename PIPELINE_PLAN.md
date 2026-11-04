@@ -12768,9 +12768,20 @@ the class is much larger than these 31: **1,158** of the 10,202 gate entries now
 `has already been declared`, which is what a def bundle full of theorems does to every stub
 written beside it.
 
-The same route does **not** transfer to `FockDifferingBasesEsa` (its five names need
-`freeOp`'s boundedness and a finite-mode ESA, real statements in `FockQuadraticEsa`'s draft)
-or to the `Sm` chain (`chain_esa`/`chain_stone_flow` are advertised in
+`FockDifferingBasesEsa` was never a content problem at all: the eight names it cites
+(`commForm_add`, `commForm_eq_neg_two_im`, `essentiallySelfAdjointOn_finiteModes_of_bounds`,
+`freeOp_symmetricOn`, `freeOp_norm_le`, `freeOp_commForm`, `pairOp_symmetricOn`,
+`seriesOp_symmetricOn`, `seriesOp_norm_le`, `seriesOp_commForm_le`, `wsum_add`,
+`wsum_tsub_of_le`, `sig_tgt`) are every one of them **published theorem modules**
+(`thm:BookProof_*`, status `done`, with a theorem_id).  The served `Def_` bundles carry the
+definitions only, but the statements live in their `Thm_` siblings, and the bundle imported
+just one of them (`FockQuadratic_wsum_single`).  Adding the eleven imports and deleting the
+three restatements an earlier session had inlined fixed it: `regate_bundles` →
+`ChapterFockDifferingBasesEsa OK`, object-file FAILs 88 → 72, and its 16 dependent stubs turn
+into 1 `OK` and 15 more of the duplicate class.  **Before inlining a lemma, check
+`Theorems/Thm_BookProof_*_<name>.lean` — that is where the served API lives.**
+
+The same route does **not** transfer to the `Sm` chain (`chain_esa`/`chain_stone_flow` are advertised in
 `Def_ChapterTensorSumChain`'s docstring and **declared nowhere** — `git log -S "theorem
 chain_esa"` finds no revision that ever had them).  Those thirteen bundles wait on content,
 not on a gate.

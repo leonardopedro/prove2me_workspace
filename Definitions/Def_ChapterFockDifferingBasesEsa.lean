@@ -1,4 +1,30 @@
+import Theorems.Thm_BookProof_OperatorSeries_commForm_add
+
+import Theorems.Thm_BookProof_OperatorSeries_commForm_eq_neg_two_im
+
+import Theorems.Thm_BookProof_OperatorSeries_essentiallySelfAdjointOn_finiteModes_of_bounds
+
+import Theorems.Thm_BookProof_OperatorSeries_seriesOp_commForm_le
+
+import Theorems.Thm_BookProof_OperatorSeries_seriesOp_norm_le
+
+import Theorems.Thm_BookProof_OperatorSeries_seriesOp_symmetricOn
+
+import Theorems.Thm_BookProof_FockQuadratic_freeOp_symmetricOn
+
+import Theorems.Thm_BookProof_FockQuadratic_freeOp_commForm
+
+import Theorems.Thm_BookProof_FockQuadratic_freeOp_norm_le
+
+import Theorems.Thm_BookProof_FockQuadratic_sig_tgt
+
+import Theorems.Thm_BookProof_FockQuadratic_pairOp_symmetricOn
+
+import Theorems.Thm_BookProof_FockQuadratic_wsum_add
+
 import Theorems.Thm_BookProof_FockQuadratic_wsum_single
+
+import Theorems.Thm_BookProof_FockQuadratic_wsum_tsub_of_le
 
 import Definitions.Def_ChapterCarlemanSimplex
 
@@ -109,34 +135,16 @@ noncomputable section
 
 variable {ι κ : Type*} {ω : ι → ℝ}
 
-/-! ## 0. Three arithmetic facts on `wsum`/`sig`
+/-! ## 0. The served facts this bundle stands on
 
-The served `Def_ChapterFockQuadraticEsa` bundle declares `wsum` and `sig` but not
-their additivity (`wsum_add`, `wsum_tsub_of_le`) nor `sig_tgt`; the workspace copy
-of that bundle has all three, but it is 375 lines ahead of what the platform
-serves (877 vs 502) and does not compile itself, so it can never be published as
-the source of them.  They are restated here so this bundle compiles against the
-served world — same statements, same proofs as the draft. -/
-
-theorem wsum_add (ω : ι → ℝ) (a b : Idx ι) : wsum ω (a + b) = wsum ω a + wsum ω b := by
-  simp only [wsum]
-  rw [Finsupp.sum_add_index' (by intro i; simp) (by intro i m n; push_cast; ring)]
-
-theorem wsum_tsub_of_le {ω : ι → ℝ} {P a : Idx ι} (h : P ≤ a) :
-    wsum ω (a - P) + wsum ω P = wsum ω a := by
-  rw [← wsum_add, tsub_add_cancel_of_le' h]
-
-/-- The comparison symbol at a hop target, in closed form: the hop moves `σ` by
-`ω(Q) + |Q| − ω(P) − |P|`, which is what `Balanced` below cancels. -/
-theorem sig_tgt {ω : ι → ℝ} {P Q a : Idx ι} (h : P ≤ a) :
-    sig ω (tgt P Q a) = sig ω a - wsum ω P - deg P + wsum ω Q + deg Q := by
-  have hd : (deg (tgt P Q a) : ℝ) + deg P = deg a + deg Q := by
-    exact_mod_cast congrArg (fun n : ℕ => (n : ℝ)) (deg_tgt (Q := Q) h)
-  have hw : wsum ω (tgt P Q a) = wsum ω a - wsum ω P + wsum ω Q := by
-    rw [tgt, wsum_add, ← wsum_tsub_of_le (ω := ω) h]
-    ring
-  simp only [sig, hw]
-  linarith
+`wsum_add`, `wsum_tsub_of_le` and `sig_tgt` are declared by the served
+`Def_ChapterFockQuadraticEsa` bundle as definitions and by its published theorem modules as
+statements; `commForm_add`, `commForm_eq_neg_two_im`, `freeOp_symmetricOn`, `freeOp_norm_le`
+and `essentiallySelfAdjointOn_finiteModes_of_bounds` live only in the latter (the served
+`Def_ChapterOperatorSeriesEsa` and `Def_ChapterFockQuadraticEsa` carry their definitions but
+none of their API).  All eight are published modules this bundle imports; nothing is restated
+here, so there is exactly one provider per name.
+-/
 
 /-! ## 1. Balanced hops -/
 

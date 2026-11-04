@@ -12756,13 +12756,17 @@ theorems; a def bundle may hold theorems, it may not cite ones the platform does
 
 Result: `regate_bundles.py` → `ChapterQg3DCrossTermEsa OK`, and `ChapterQg3DDensityEsa OK`
 (same source, previously stuck behind the missing olean — it was never a seventh bundle, just
-the next module in the chain).  Object-file FAILs 119 → 108.
+the next module in the chain).  Object-file FAILs 119 → 88, and `def_gate_fresh` now returns
+`None` for both, so the def chunk may submit them.
 
 **Its 31 theorem stubs are duplicates, not work.**  With the olean in place their gate verdict
 turned into `BookProof.Qg3DDensityEsa.qg3DDensity_esa has already been declared`: each stub
 re-declares, verbatim, a theorem the def bundle now publishes.  That is the
 "target name already declared by published def bundle" class the guard parks on its next
-attempt — no statement repair exists for it, so they must not be re-gated again.
+attempt — no statement repair exists for it, so they must not be re-gated again.  Corpus-wide
+the class is much larger than these 31: **1,158** of the 10,202 gate entries now carry
+`has already been declared`, which is what a def bundle full of theorems does to every stub
+written beside it.
 
 The same route does **not** transfer to `FockDifferingBasesEsa` (its five names need
 `freeOp`'s boundedness and a finite-mode ESA, real statements in `FockQuadraticEsa`'s draft)

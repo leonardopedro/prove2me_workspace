@@ -12734,3 +12734,39 @@ bundle that cites a draft-only lemma fails against the served world, correctly:
 draft's proofs, and the compile now reaches the five names above instead of dying
 at `sig_tgt`.  The rest is content work in the draft's lemma set, not a gate
 refresh — which is why those items stay pending rather than being re-gated.
+
+### Why those bundles cannot compile, and the one repair that worked
+
+The five missing names above are not a mirror artifact.  The base modules they cite —
+`Def_ChapterQuantumGravity3DGauge` (43 theorems in the workspace, **0** in the served text),
+`Def_ChapterQg3DGaugeEsa` (15 / 0), `Def_ChapterFullQuadraticEsa` (35 / 0),
+`Def_ChapterQuantumGravityDensitized` (30 / 0) — are published as **definitions only**: the
+operators `qgMom`, `torsionOps`, `signedOp`, `coreOp`, `pgLp`, `CoreRep` are served, the
+lemmas that unfold them are not.  155 of the 700 served def modules are in this state.  The
+drafts cite those unfoldings as if they were published (`rw [qgMom, CoreRep.coe_op, …]`), so
+they fail against the served world — correctly, and with no import that could fix it.
+
+`Def_ChapterQg3DCrossTermEsa` is the case that is repairable within one bundle: its proof of
+`qgSigned_eq_fqOp` only *inverts* the transport, so the bundle now carries the dozen
+`rfl`-level unfoldings it needs (`mulXPoly_apply`, `momPoly_apply`, `coreOp_coreEquiv`,
+`coreOp_coe`, `momPoly_eq_ymMomOp`, `coreRepPoly_equiv`, `pgLp_eq_pgMap`, `signedOp_apply`,
+`torsionOps_eq`) plus the polynomial identity `qgFqQ i j x_i x_j = ½ Σ_m T_m²` and the four
+lemmas that chain it to `fqOp`.  Precedent: `Def_ChapterSmComparison` already carried its own
+theorems; a def bundle may hold theorems, it may not cite ones the platform does not serve.
+
+Result: `regate_bundles.py` → `ChapterQg3DCrossTermEsa OK`, and `ChapterQg3DDensityEsa OK`
+(same source, previously stuck behind the missing olean — it was never a seventh bundle, just
+the next module in the chain).  Object-file FAILs 119 → 108.
+
+**Its 31 theorem stubs are duplicates, not work.**  With the olean in place their gate verdict
+turned into `BookProof.Qg3DDensityEsa.qg3DDensity_esa has already been declared`: each stub
+re-declares, verbatim, a theorem the def bundle now publishes.  That is the
+"target name already declared by published def bundle" class the guard parks on its next
+attempt — no statement repair exists for it, so they must not be re-gated again.
+
+The same route does **not** transfer to `FockDifferingBasesEsa` (its five names need
+`freeOp`'s boundedness and a finite-mode ESA, real statements in `FockQuadraticEsa`'s draft)
+or to the `Sm` chain (`chain_esa`/`chain_stone_flow` are advertised in
+`Def_ChapterTensorSumChain`'s docstring and **declared nowhere** — `git log -S "theorem
+chain_esa"` finds no revision that ever had them).  Those thirteen bundles wait on content,
+not on a gate.

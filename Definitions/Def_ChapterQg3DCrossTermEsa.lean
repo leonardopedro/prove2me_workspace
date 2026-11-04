@@ -116,6 +116,247 @@ theorem fqPoly_add_coupling (P Q Q' C : Fin 84 → Fin 84 → ℝ) (b b' : Fin 8
   refine Finset.sum_congr rfl fun j _ => ?_
   abel
 
+/-! ## 1b. The transported API of the served base modules
+
+`Def_ChapterQuantumGravity3DGauge`, `Def_ChapterQg3DGaugeEsa` and
+`Def_ChapterNavierStokesDifferentialL2` are published as *definitions only*: the operators
+`qgMom`, `torsionOps`, `signedOp`, `coreOp`, `pgLp` are there, the lemmas that unfold them are
+not.  The identification `signedOp κ (qgMom Φ) (torsionOps Φ) = fqOp (diag κ/2) qgFqQ 0 0 0`
+has to invert that transport, so this bundle carries the few unfoldings it needs, exactly as
+`Def_ChapterSmComparison` carries its own.  Every statement below is its definition read
+literally (`rfl`, or one `rw` of a definitional equality) — none of it is new mathematics.
+-/
+
+theorem mulXPoly_apply {d : ℕ} (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    mulXPoly i p = X i * p := rfl
+
+theorem momPoly_apply {d : ℕ} (i : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+    momPoly i p = C (-Complex.I) * (pderiv i p - C (1 / 2 : ℂ) * (X i * p)) := rfl
+
+theorem coreOp_coreEquiv {d : ℕ}
+    (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
+    (p : MvPolynomial (Fin d) ℂ) : coreOp T (coreEquiv p) = coreEquiv (T p) := by
+  simp [coreOp]
+
+theorem coreOp_coe {d : ℕ}
+    (T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ)
+    (p : MvPolynomial (Fin d) ℂ) :
+    ((coreOp T (coreEquiv p) : polyGaussCore (d := d)) : L2d d) = pgLp (T p) := by
+  rw [coreOp_coreEquiv, coreEquiv_coe]
+
+theorem momPoly_eq_ymMomOp (i : Fin 84) :
+    momPoly i = BookProof.YangMillsHermite.momOp i := by
+  refine LinearMap.ext fun p => ?_
+  rw [momPoly_apply, BookProof.YangMillsHermite.momOp_apply]
+  rw [MvPolynomial.smul_eq_C_mul, MvPolynomial.smul_eq_C_mul]
+  push_cast
+  ring
+
+theorem coreRepPoly_equiv (p : MvPolynomial (Fin 84) ℂ) :
+    (coreRepPoly 84).equiv p = coreEquiv p := by
+  refine Subtype.ext ?_
+  rw [(coreRepPoly 84).coe_equiv p, coreEquiv_coe p]
+
+theorem pgLp_eq_pgMap (p : MvPolynomial (Fin 84) ℂ) : pgLp p = pgMap (d := 84) p := rfl
+
+section Signed
+
+variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {D : Submodule ℂ F}
+
+theorem signedOp_apply {n m : ℕ} (kappa : Fin n → ℝ) (pi : Fin n → D →ₗ[ℂ] D)
+    (Bf : Fin m → D →ₗ[ℂ] D) (x : D) :
+    signedOp kappa pi Bf x
+      = ((1 / 2 : ℝ) : ℂ)
+        • ((∑ i, ((kappa i : ℝ) : ℂ) • ((pi i (pi i x) : D) : F))
+            + ∑ a, ((Bf a (Bf a x) : D) : F)) := by
+  simp [signedOp, signedOpDom]
+
+end Signed
+
+theorem torsionOps_eq {D : Submodule ℂ (L2d 84)} (Φ : CoreRep 84 D) (m : Fin 64) :
+    torsionOps Φ m = Φ.op (mulOp (torsionP m)) := rfl
+
+/-! ## 1c. The polynomial identity behind the identification -/
+
+theorem sum_single_X (c : Fin 84) :
+    ∑ i : Fin 84, ((if i = c then (1 : ℝ) else 0 : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = X c := by
+  rw [Finset.sum_eq_single c]
+  · simp
+  · intro b _ hb
+    simp [hb]
+  · intro hc
+    exact absurd (Finset.mem_univ c) hc
+
+theorem sum_torsionVec_X (m : Fin 64) :
+    ∑ i : Fin 84, ((torsionVec m i : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = torsionP m := by
+  have hsplit : ∀ i : Fin 84, ((torsionVec m i : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+      = ((if i = torsionIdx1 m then (1 : ℝ) else 0 : ℝ) : ℂ) • (X i : MvPolynomial (Fin 84) ℂ)
+        - ((if i = torsionIdx2 m then (1 : ℝ) else 0 : ℝ) : ℂ)
+            • (X i : MvPolynomial (Fin 84) ℂ) := by
+    intro i
+    rw [← sub_smul]
+    congr 1
+    simp [torsionVec]
+  rw [Finset.sum_congr rfl fun i _ => hsplit i, Finset.sum_sub_distrib, sum_single_X,
+    sum_single_X]
+  rfl
+
+theorem triple_swap {α : Type*} [AddCommMonoid α] (F : Fin 64 → Fin 84 → Fin 84 → α) :
+    ∑ i : Fin 84, ∑ j : Fin 84, ∑ m : Fin 64, F m i j
+      = ∑ m : Fin 64, ∑ i : Fin 84, ∑ j : Fin 84, F m i j := by
+  calc ∑ i : Fin 84, ∑ j : Fin 84, ∑ m : Fin 64, F m i j
+      = ∑ i : Fin 84, ∑ m : Fin 64, ∑ j : Fin 84, F m i j :=
+        Finset.sum_congr rfl fun _ _ => Finset.sum_comm
+    _ = ∑ m : Fin 64, ∑ i : Fin 84, ∑ j : Fin 84, F m i j := Finset.sum_comm
+
+/-- **The torsion potential is the quadratic form of `qgFqQ`**:
+`Σ_{i,j} qgFqQ i j · x_i x_j = ½ Σ_m T_m²`. -/
+theorem qgFqQ_quadratic_eq :
+    ∑ i : Fin 84, ∑ j : Fin 84, ((qgFqQ i j : ℝ) : ℂ)
+        • ((X i : MvPolynomial (Fin 84) ℂ) * X j)
+      = ((1 / 2 : ℝ) : ℂ) • ∑ m : Fin 64, torsionP m * torsionP m := by
+  have hL : ∑ i : Fin 84, ∑ j : Fin 84, ((qgFqQ i j : ℝ) : ℂ)
+        • ((X i : MvPolynomial (Fin 84) ℂ) * X j)
+      = ∑ i : Fin 84, ∑ j : Fin 84, ∑ m : Fin 64,
+          (((1 / 2 : ℝ) : ℂ) * ((torsionVec m i : ℝ) : ℂ) * ((torsionVec m j : ℝ) : ℂ))
+            • ((X i : MvPolynomial (Fin 84) ℂ) * X j) := by
+    refine Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => ?_
+    have hc : ((qgFqQ i j : ℝ) : ℂ)
+        = ∑ m : Fin 64,
+            (((1 / 2 : ℝ) : ℂ) * ((torsionVec m i : ℝ) : ℂ) * ((torsionVec m j : ℝ) : ℂ)) := by
+      rw [qgFqQ]
+      push_cast
+      rw [Finset.mul_sum]
+      exact Finset.sum_congr rfl fun m _ => by ring
+    rw [hc, Finset.sum_smul]
+  have hR : ((1 / 2 : ℝ) : ℂ) • ∑ m : Fin 64, torsionP m * torsionP m
+      = ∑ m : Fin 64, ∑ i : Fin 84, ∑ j : Fin 84,
+          (((1 / 2 : ℝ) : ℂ) * ((torsionVec m i : ℝ) : ℂ) * ((torsionVec m j : ℝ) : ℂ))
+            • ((X i : MvPolynomial (Fin 84) ℂ) * X j) := by
+    rw [Finset.smul_sum]
+    refine Finset.sum_congr rfl fun m _ => ?_
+    rw [← sum_torsionVec_X m, Finset.sum_mul_sum, Finset.smul_sum]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [Finset.smul_sum]
+    refine Finset.sum_congr rfl fun j _ => ?_
+    rw [smul_mul_smul_comm, smul_smul]
+    congr 1
+    ring
+  rw [hL, hR, triple_swap]
+
+theorem qgSignedPoly_apply (kappa : Fin 84 → ℝ) (p : MvPolynomial (Fin 84) ℂ) :
+    qgSignedPoly kappa p
+      = ((1 / 2 : ℝ) : ℂ)
+        • ((∑ j : Fin 84, ((kappa j : ℝ) : ℂ) • pmom j (pmom j p))
+            + ∑ m : Fin 64, torsionP m * (torsionP m * p)) := by
+  simp [qgSignedPoly]
+
+theorem weylProd_self (S : MvPolynomial (Fin 84) ℂ →ₗ[ℂ] MvPolynomial (Fin 84) ℂ)
+    (p : MvPolynomial (Fin 84) ℂ) : weylProd S S p = S (S p) := by
+  simp only [weylProd, LinearMap.smul_apply, LinearMap.add_apply, LinearMap.comp_apply]
+  rw [← two_smul ℂ (S (S p)), smul_smul]
+  norm_num
+
+/-- **The identification at polynomial level.**  The two-signed gravity Hamiltonian is the
+general real quadratic Hamiltonian with momentum matrix `diag(κ/2)`, coordinate matrix
+`qgFqQ`, no cross term and no first-order term. -/
+theorem qgSignedPoly_eq_fqPoly (kappa : Fin 84 → ℝ) :
+    qgSignedPoly kappa = fqPoly (qgFqP kappa) qgFqQ 0 0 0 := by
+  refine LinearMap.ext fun p => ?_
+  have hfo : foPoly (d := 84) 0 0 p = 0 := by simp [foPoly]
+  have hmom : ∑ i : Fin 84, ∑ j : Fin 84,
+      ((qgFqP kappa i j : ℝ) : ℂ) • weylProd (momPoly i) (momPoly j) p
+        = ∑ j : Fin 84, ((kappa j / 2 : ℝ) : ℂ) • pmom j (pmom j p) := by
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [Finset.sum_eq_single i]
+    · rw [qgFqP, if_pos rfl, weylProd_self, momPoly_eq_ymMomOp]
+    · intro b _ hb
+      simp [qgFqP, Ne.symm hb]
+    · intro hi
+      exact absurd (Finset.mem_univ i) hi
+  have hw : ∀ i j : Fin 84, weylProd (mulXPoly i) (mulXPoly j) p
+      = ((X i : MvPolynomial (Fin 84) ℂ) * X j) * p := by
+    intro i j
+    simp only [weylProd, LinearMap.smul_apply, LinearMap.add_apply, LinearMap.comp_apply,
+      mulXPoly_apply]
+    rw [show (X i : MvPolynomial (Fin 84) ℂ) * (X j * p) = (X i * X j) * p by ring,
+      show (X j : MvPolynomial (Fin 84) ℂ) * (X i * p) = (X i * X j) * p by ring,
+      ← two_smul ℂ ((X i * X j : MvPolynomial (Fin 84) ℂ) * p), smul_smul]
+    norm_num
+  have hmul : ∑ i : Fin 84, ∑ j : Fin 84,
+      ((qgFqQ i j : ℝ) : ℂ) • weylProd (mulXPoly i) (mulXPoly j) p
+        = (((1 / 2 : ℝ) : ℂ) • ∑ m : Fin 64, torsionP m * torsionP m) * p := by
+    calc ∑ i : Fin 84, ∑ j : Fin 84,
+            ((qgFqQ i j : ℝ) : ℂ) • weylProd (mulXPoly i) (mulXPoly j) p
+        = (∑ i : Fin 84, ∑ j : Fin 84,
+            ((qgFqQ i j : ℝ) : ℂ) • ((X i : MvPolynomial (Fin 84) ℂ) * X j)) * p := by
+          rw [Finset.sum_mul]
+          refine Finset.sum_congr rfl fun i _ => ?_
+          rw [Finset.sum_mul]
+          refine Finset.sum_congr rfl fun j _ => ?_
+          rw [hw i j, smul_mul_assoc]
+      _ = _ := by rw [qgFqQ_quadratic_eq]
+  have hfq : fqPoly (qgFqP kappa) qgFqQ 0 0 0 p
+      = (∑ i : Fin 84, ∑ j : Fin 84,
+          ((qgFqP kappa i j : ℝ) : ℂ) • weylProd (momPoly i) (momPoly j) p)
+        + ∑ i : Fin 84, ∑ j : Fin 84,
+            ((qgFqQ i j : ℝ) : ℂ) • weylProd (mulXPoly i) (mulXPoly j) p := by
+    rw [fqPoly, fqQuadPoly]
+    simp only [LinearMap.add_apply, LinearMap.sum_apply, LinearMap.smul_apply, Pi.zero_apply,
+      Complex.ofReal_zero, zero_smul, add_zero, hfo]
+    rw [← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl fun i _ => Finset.sum_add_distrib
+  rw [qgSignedPoly_apply, hfq, hmom, hmul, smul_add]
+  congr 1
+  · rw [Finset.smul_sum]
+    refine Finset.sum_congr rfl fun j _ => ?_
+    rw [smul_smul]
+    congr 1
+    push_cast
+    ring
+  · rw [Finset.smul_sum, smul_mul_assoc, Finset.sum_mul, Finset.smul_sum]
+    refine Finset.sum_congr rfl fun m _ => ?_
+    rw [mul_assoc]
+
+theorem pgLp_qgSignedPoly (kappa : Fin 84 → ℝ) (p : MvPolynomial (Fin 84) ℂ) :
+    pgLp (qgSignedPoly kappa p)
+      = ((1 / 2 : ℝ) : ℂ)
+        • ((∑ j : Fin 84, ((kappa j : ℝ) : ℂ) • pgLp (pmom j (pmom j p)))
+            + ∑ m : Fin 64, pgLp (torsionP m * (torsionP m * p))) := by
+  rw [qgSignedPoly_apply]
+  simp only [pgLp_eq_pgMap, map_smul, map_add, map_sum]
+
+set_option maxHeartbeats 4000000 in
+-- the `L²` coercions of the Gauss–polynomial core make these defeq checks expensive
+set_option maxRecDepth 8000 in
+/-- **The identification on the core.**  For every real signature the field-space operator
+`signedOp κ (qgMom Φ) (torsionOps Φ)` on the Gauss–polynomial core is the general quadratic
+Hamiltonian `fqOp (diag(κ/2)) qgFqQ 0 0 0`. -/
+theorem qgSigned_eq_fqOp (kappa : Fin 84 → ℝ) :
+    signedOp kappa (qgMom (coreRepPoly 84)) (torsionOps (coreRepPoly 84))
+      = fqOp (qgFqP kappa) qgFqQ 0 0 0 := by
+  refine LinearMap.ext fun x => ?_
+  obtain ⟨p, rfl⟩ := (coreEquiv (d := 84)).surjective x
+  have hx : ((coreRepPoly 84).equiv.symm (coreEquiv p) : MvPolynomial (Fin 84) ℂ) = p := by
+    rw [← coreRepPoly_equiv p, LinearEquiv.symm_apply_apply]
+  have hmom : ∀ j : Fin 84,
+      ((qgMom (coreRepPoly 84) j (qgMom (coreRepPoly 84) j (coreEquiv p))
+        : polyGaussCore (d := 84)) : L2d 84) = pgLp (pmom j (pmom j p)) := by
+    intro j
+    rw [qgMom, CoreRep.coe_op, CoreRep.op_apply, LinearEquiv.symm_apply_apply, hx]
+  have htor : ∀ m : Fin 64,
+      ((torsionOps (coreRepPoly 84) m (torsionOps (coreRepPoly 84) m (coreEquiv p))
+        : polyGaussCore (d := 84)) : L2d 84) = pgLp (torsionP m * (torsionP m * p)) := by
+    intro m
+    rw [torsionOps_eq, CoreRep.coe_op, CoreRep.op_apply, LinearEquiv.symm_apply_apply, hx]
+    rfl
+  rw [signedOp_apply]
+  simp only [hmom, htor]
+  rw [fqOp, LinearMap.comp_apply, Submodule.subtype_apply, coreOp_coe,
+    ← qgSignedPoly_eq_fqPoly kappa, pgLp_qgSignedPoly]
+
 /-- The kinetic-plus-torsion operator with an arbitrary Weyl-ordered quadratic coupling. -/
 def qgWithCoupling (kappa : Fin 84 → ℝ) (Q' C : Fin 84 → Fin 84 → ℝ) (b b' : Fin 84 → ℝ) :
     (polyGaussCore (d := 84)) →ₗ[ℂ] L2d 84 :=

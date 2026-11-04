@@ -12828,3 +12828,40 @@ Its sibling `dGamma_hermCol_essentiallySelfAdjointOn_core` still fails to elabor
 `unknown namespace BookProof.GradedBand…` — because the whole graded-band chapter behind it
 is not served.  Its gate records that honestly, so the drain defers rather than burning
 attempts.
+
+### The graded-band tower: 286 def items were "done" without ever being published
+
+Publishing `ChapterGradedBandSchurEsa` is not one upload.  The candidate mirror's
+`Def_ChapterFockWeightedSchurEsa.lean` was a **9-line** "Generated def bundle for …" stub and
+the workspace bundle is 867 lines that compile; `state/published_bundles/` holds the same
+stub.  The item read `done` because the runner *reused* a platform definition of that name
+(`reused: true`, `reused_status: published`) instead of submitting our text.  **286 def
+items are in that state**, which is the single root of the whole missing-API class: the
+platform has the names, not the declarations, so every theorem stub and bundle that cites
+them fails with `Unknown identifier`.
+
+The tower, measured from the platform's own `blocked_by` verdicts:
+
+```text
+ChapterDegSchrodingerCore   ← root, text did not compile on the platform
+  ChapterDegKatoEsa
+    ChapterFockSchurEsa
+      ChapterFockWeightedSchurEsa
+        ChapterGradedBandSchurEsa
+          Thm_QuadFockEsa_dGamma_{hermCol,fqPoly}_essentiallySelfAdjointOn_core
+            def:ChapterQg3DCrossTermEsa / def:ChapterQg3DDensityEsa
+```
+
+Each level refuses to submit until the one below is published, and the platform's verdict on
+the root was concrete: `publish FAILED: definition does not compile: line 204: Unknown
+identifier gaussInt_neg`.  `gaussInt_neg` is declared by `Def_ChapterQgHermiteFriedrichs` and
+published as `Thm_BookProof_QgHermiteFriedrichs_gaussInt_neg`; the bundle imported the hollow
+`Def_` and not the `Thm_`.  `debug/add_thm_provider_imports.py` finds that class without
+compiling (a stale `.olean` cannot fool it, but a dotted use like
+`QgHermiteFriedrichs.inner_pgLp_pgLp` needs the compiler), and `debug/unpark_items.py
+--republish` clears a reuse record so the bundle's own text is finally submitted.
+
+`ChapterDegSchrodingerCore` now carries 17 published theorem imports and **compiles clean**
+against rebuilt-from-served providers; the platform verdict it was stuck on is gone.  The
+five levels above it are unbuilt: `ChapterFockSchurEsa` alone needs 4 imports and still has
+`hop_essentiallySelfAdjointOn_core`, which no module publishes.

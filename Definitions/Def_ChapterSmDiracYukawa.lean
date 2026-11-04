@@ -1,8 +1,17 @@
+import Theorems.Thm_BookProof_SmOneParticle_IsMixing_conjTranspose_mul
+
+import Theorems.Thm_BookProof_SmOneParticle_unitary_entry_norm_le_one
+
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterSmOneParticle
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
+import Theorems.Thm_BookProof_SmCar_inner_eq_sum
+import Theorems.Thm_BookProof_SmCar_normSq_eq_sum
+import Theorems.Thm_BookProof_SmCar_fermiEnergy_apply
+import Theorems.Thm_BookProof_SmCar_fermiBilin_symmetric
+import Theorems.Thm_BookProof_SmCar_norm_fermiBilin_le
 
 
 /-!

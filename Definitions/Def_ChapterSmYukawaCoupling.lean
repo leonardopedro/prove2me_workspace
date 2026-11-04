@@ -70,6 +70,7 @@ open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteP
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.FarisLavine BookProof.TensorCore BookProof.TensorSumEsa
 open BookProof.YangMillsNonAbelianEsa BookProof.SmFullEnclosure BookProof.TensorKatoRellich
+open BookProof.QgHermiteFriedrichs
 
 noncomputable section
 

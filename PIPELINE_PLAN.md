@@ -12865,3 +12865,63 @@ compiling (a stale `.olean` cannot fool it, but a dotted use like
 against rebuilt-from-served providers; the platform verdict it was stuck on is gone.  The
 five levels above it are unbuilt: `ChapterFockSchurEsa` alone needs 4 imports and still has
 `hop_essentiallySelfAdjointOn_core`, which no module publishes.
+
+## Session 33 — the mirror's `Def_` copy is the DRAFT, and that is what blocks a bundle
+
+Six bundles of the `Sm` chain were stuck with `BLOCKED by Thm_…` even though their
+own text compiled: `regate_bundles` refuses to call a bundle `OK` when one of the
+`Theorems.*` stubs it imports cannot build in the mirror.  Every one of those stubs
+failed with
+
+```text
+`BookProof.<Ns>.<name>` has already been declared
+```
+
+because the *declaring* module was the mirror's copy of a `Def_` bundle holding the
+**workspace draft**, while the platform serves the pruned text that declares
+definitions only (`state/published_bundles/`).  The stub is not a duplicate — it is
+the only place the pruned-away lemma exists.  This is §Session 32's "a mirror
+`.olean` older than its staged `.lean` makes the gate lie", except the mirror text
+is *newer* than served, so the lie runs the other way: the gate says OK for text
+the platform will reject, and BLOCKED once the stub is the only declaration.
+
+| mirror module | draft | served | stubs it falsely declared |
+|---|---|---|---|
+| `Def_ChapterSmCarAlgebra` | 513 | 185 | `inner_eq_sum`, `normSq_eq_sum`, `fermiEnergy_apply`, `fermiBilin_symmetric`, `norm_fermiBilin_le` |
+| `Def_ChapterQgOuterFockCoreFL` | 363 | 234 (olean still from Oct 29) | `CoreData.ext_core`, `ext_essentiallySelfAdjointOn`, … |
+| `Def_ChapterFarisLavineCore` | 537 | 158 | `essentiallySelfAdjointOn_restrict_of_graph_core` |
+
+The server-side face of the same class: `def:ChapterSmFarisLavine` attempt 1 came back
+`publish FAILED: definition does not compile: line 160: Invalid field ext_essentiallySelfAdjointOn`,
+i.e. the bundle was calling a draft-only lemma — `debug/def_import_fix.py` then found the
+`Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_essentiallySelfAdjointOn` node for it.
+After the provider reset and the import, attempt 2 was **accepted** and the bundle is
+`DONE` (18:31), which releases the 20 items waiting on it.
+
+`debug/unblock_def_bundle.py` runs that loop (`regate` → build the named stub → on
+`already been declared` reset the declaring mirror module to its served text and
+rebuild the olean; if the served text declares the name too, drop that one redundant
+import).  Backups go to `state/scratch/mirror_served_bak/`, never `/tmp`.  Never write
+into `state/mirror` in place: `state/pubstage` is a hardlink farm off it.
+
+Result for the chain (`r39_sm2`): 13 of 15 bundles `OK`; `SmGaugeConnection` needed three
+`Thm_BookProof_ChapterCPTHamiltonian_*_conjTranspose` imports and `SmFarisLavine` the
+provider reset above.  All six repaired bundles now gate `OK`: `SmComparisonEsa`,
+`SmComparisonFull`, `SmFullEnclosure`, `SmFockEsa`, `SmDiracYukawa`, `SmFarisLavine`.
+
+### What is left, by class (census at 18:30)
+
+Pending theorems 928.  Their `state/thm_gate.json` verdicts:
+
+| class | count |
+|---|---|
+| `has already been declared` (stub duplicates a published def theorem) | 464 |
+| `FAIL` (statement does not elaborate) | 156 |
+| `OK` — submittable, waiting for the drain's turn | 140 |
+| no gate entry | 100 |
+| `object file … does not exist` (recompilable) | 68 |
+
+All 27 pending def bundles are gate-`OK`; they now wait on *theorem* dependencies the
+platform reports by name (`DegEnergy.energy_bound`, `SirkSingleTime.strongResAt_of_ne_zero`,
+`PermSector.permRep_commutes_sectorCore`, `QuadFockEsa.dGamma_fqPoly_essentiallySelfAdjointOn_core`, …).
+That is the publication chain (def → thm → sol), not a gate, so no local recompile moves them.

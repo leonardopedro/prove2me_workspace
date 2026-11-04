@@ -6,6 +6,9 @@ import Definitions.Def_ChapterSmDiracYukawa
 import Definitions.Def_ChapterSmDiracSpinor
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
+import Theorems.Thm_BookProof_ChapterCPTHamiltonian_Kin_conjTranspose
+import Theorems.Thm_BookProof_ChapterCPTHamiltonian_MassA_conjTranspose
+import Theorems.Thm_BookProof_ChapterCPTHamiltonian_MassB_conjTranspose
 
 
 /-!

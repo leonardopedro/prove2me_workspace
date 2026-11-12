@@ -5,6 +5,7 @@ import Definitions.Def_ChapterGhostField
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.GhostField
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct

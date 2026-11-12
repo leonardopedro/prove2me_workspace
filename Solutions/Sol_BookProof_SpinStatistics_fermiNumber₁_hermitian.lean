@@ -8,6 +8,7 @@ open BookProof.SpinStatistics
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : fermiNumber1ᴴ = fermiNumber1 := by

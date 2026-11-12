@@ -9,5 +9,6 @@ open BookProof.ChapterGhostMajoranaRep
 
 
 open Matrix BookProof.GhostField
+open scoped Matrix
 
 theorem BookProof.ChapterGhostMajoranaRep.psi_not_selfAdjoint : psi ≠ psiᴴ := by sorry

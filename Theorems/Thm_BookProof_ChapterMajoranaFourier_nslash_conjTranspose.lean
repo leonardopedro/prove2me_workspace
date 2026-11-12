@@ -10,5 +10,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterMajoranaFourier.nslash_conjTranspose (n : Fin 3 → ℝ) : (nslash n)ᴴ = -nslash n := by sorry

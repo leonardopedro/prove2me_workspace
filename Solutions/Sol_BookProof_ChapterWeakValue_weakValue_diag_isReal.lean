@@ -4,6 +4,7 @@ import Definitions.Def_ChapterWeakValue
 import Theorems.Thm_BookProof_ChapterWeakValue_ip_conj_mulVec
 import Theorems.Thm_BookProof_ChapterWeakValue_weakValue_diag
 open BookProof.ChapterWeakValue
+open scoped Matrix
 
 
 

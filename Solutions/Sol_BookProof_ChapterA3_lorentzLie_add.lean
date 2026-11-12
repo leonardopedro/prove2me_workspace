@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {A₁ A₂ : Matrix (Fin 4) (Fin 4) ℝ}

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSirkWhitening
 import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 open BookProof.ChapterSirkGramWhitening
+open scoped Matrix
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 

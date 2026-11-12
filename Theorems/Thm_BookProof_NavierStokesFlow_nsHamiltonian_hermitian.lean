@@ -5,6 +5,7 @@ import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct

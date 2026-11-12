@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.upsilon_apply_comb (T : Matrix (Fin 2) (Fin 2) ℂ) (x : Fin 4 → ℂ) :

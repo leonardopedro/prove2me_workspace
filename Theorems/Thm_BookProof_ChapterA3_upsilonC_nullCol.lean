@@ -7,6 +7,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.upsilonC_nullCol (T : Matrix (Fin 2) (Fin 2) ℂ) (μ : Fin 4) :

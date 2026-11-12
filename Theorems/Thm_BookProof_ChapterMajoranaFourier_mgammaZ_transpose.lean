@@ -10,6 +10,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterMajoranaFourier.mgammaZ_transpose (μ : Fin 4) :
     (mgammaZ μ)ᵀ = if μ = 0 then -mgammaZ μ else mgammaZ μ := by sorry

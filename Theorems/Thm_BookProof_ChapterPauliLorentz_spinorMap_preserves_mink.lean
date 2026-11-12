@@ -5,6 +5,7 @@ open BookProof.ChapterPauliLorentz
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterPauliLorentz.spinorMap_preserves_mink (T : Matrix (Fin 2) (Fin 2) ℂ) (hT : T.det = 1)

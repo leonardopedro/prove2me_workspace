@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.kinSum_conjTranspose (k : Fin 3 → ℝ) :
     (∑ j : Fin 3, (k j : ℂ) • Kin j)ᴴ = ∑ j : Fin 3, (k j : ℂ) • Kin j := by sorry

@@ -6,6 +6,7 @@ open BookProof.ChapterGravityIrrep
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterGravityIrrep.symTracelessPart_symm (M : Matrix (Fin 3) (Fin 3) ℝ) :

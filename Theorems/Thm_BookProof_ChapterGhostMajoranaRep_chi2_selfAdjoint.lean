@@ -9,5 +9,6 @@ open BookProof.ChapterGhostMajoranaRep
 
 
 open Matrix BookProof.GhostField
+open scoped Matrix
 
 theorem BookProof.ChapterGhostMajoranaRep.chi2_selfAdjoint : chi2ᴴ = chi2 := by sorry

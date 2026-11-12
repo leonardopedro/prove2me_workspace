@@ -5,6 +5,7 @@ open BookProof.ChapterPauliLorentz
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterPauliLorentz.sigma2_herm : σ2ᴴ = σ2 := by sorry

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterWeakValue
 import Theorems.Thm_BookProof_ChapterWeakValue_projMat_mulVec
 open BookProof.ChapterWeakValue
+open scoped Matrix
 
 
 

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesCauchy
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Matrix.Norms.Operator

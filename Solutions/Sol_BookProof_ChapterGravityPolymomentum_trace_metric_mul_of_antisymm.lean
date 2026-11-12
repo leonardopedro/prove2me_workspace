@@ -11,6 +11,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {M : Matrix (Fin 4) (Fin 4) ℝ} (hM : Mᵀ = -M) :

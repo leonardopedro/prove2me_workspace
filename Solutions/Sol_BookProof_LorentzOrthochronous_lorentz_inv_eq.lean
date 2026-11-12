@@ -10,6 +10,7 @@ open BookProof.LorentzOrthochronous
 
 open Matrix
 open BookProof.LorentzGroup
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {l : Matrix (Fin 4) (Fin 4) ℝ} (h : IsLorentz l) :

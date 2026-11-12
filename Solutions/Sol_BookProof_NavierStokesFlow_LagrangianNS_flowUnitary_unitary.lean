@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
+open scoped Matrix
 
 
 

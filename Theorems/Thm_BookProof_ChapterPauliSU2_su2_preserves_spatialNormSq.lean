@@ -11,6 +11,7 @@ open scoped BigOperators
 
 
 open BookProof.ChapterPauliLorentz
+open scoped Matrix
 
 theorem BookProof.ChapterPauliSU2.su2_preserves_spatialNormSq {T : Matrix (Fin 2) (Fin 2) ℂ}
     (hU : Tᴴ * T = 1) (hT : T.det = 1) (x : Fin 4 → ℝ) :

@@ -16,6 +16,7 @@ open Matrix Complex
 
 
 open BookProof.ChapterWignerLittleGroup BookProof.ChapterWignerLittleGroupOrbits
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {p : Fin 4 → ℝ} (hneg : minkSq p < 0) :

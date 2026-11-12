@@ -10,5 +10,4 @@ open MeasureTheory
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {H : Type*} [NormedAddCommGroup H]
 
-theorem BookProof.Howland.isPropagator_id : IsPropagator (fun (_ _ : ℝ) (x : H) => x) where
-  refl := by sorry
+theorem BookProof.Howland.isPropagator_id : IsPropagator (fun (_ _ : ℝ) (x : H) => x) := by sorry

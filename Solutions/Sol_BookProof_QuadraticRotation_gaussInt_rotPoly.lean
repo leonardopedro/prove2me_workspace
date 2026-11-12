@@ -13,6 +13,7 @@ open BookProof.HermiteProductCore BookProof.HermiteProductBasis
 open BookProof.FarisLavine
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.HyperbolicQuadratic
+open scoped Matrix
 
 noncomputable section
 

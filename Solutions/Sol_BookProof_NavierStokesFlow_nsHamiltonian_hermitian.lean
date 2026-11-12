@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_nsAdvection_hermitian
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

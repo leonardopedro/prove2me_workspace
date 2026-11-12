@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 variable {n : ℕ}
 

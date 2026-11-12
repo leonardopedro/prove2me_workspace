@@ -6,5 +6,6 @@ open BookProof.GhostField
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.GhostField.psiDag_eq_conjTranspose : psiDag = psiᴴ := by sorry

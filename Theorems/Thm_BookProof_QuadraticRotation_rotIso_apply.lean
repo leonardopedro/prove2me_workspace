@@ -10,6 +10,7 @@ import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
+open scoped Matrix
 
 variable {d : ℕ}
 

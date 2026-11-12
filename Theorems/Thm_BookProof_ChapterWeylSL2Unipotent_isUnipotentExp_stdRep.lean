@@ -24,9 +24,4 @@ variable (hU : ∀ t : ℂ, rho (uPlus t) = expSum E n t)
 variable {N : ℕ}
 
 theorem BookProof.ChapterWeylSL2Unipotent.isUnipotentExp_stdRep :
-    IsUnipotentExp stdRep (Matrix.toLin' eMat) (Matrix.toLin' fMat) 2 where
-  two_le := by sorry
-  nilpotent_E := by sorry
-  nilpotent_F := by sorry
-  expE := by sorry
-  expF := by sorry
+    IsUnipotentExp stdRep (Matrix.toLin' eMat) (Matrix.toLin' fMat) 2 := by sorry

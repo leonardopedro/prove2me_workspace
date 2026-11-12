@@ -16,5 +16,4 @@ variable {R : F →L[ℂ] F} {T : Submodule ℂ (F × F)}
 
 
 theorem BookProof.ResolventCorrespondence.isNonnegSelfAdjoint_relOfCLM (h0 : 0 ≤ R) (h1 : R ≤ 1) :
-    IsNonnegSelfAdjoint (relOfCLM R) where
-  adj := by sorry
+    IsNonnegSelfAdjoint (relOfCLM R) := by sorry

@@ -7,6 +7,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin 3) : adBoost j ∈ LorentzLie := by

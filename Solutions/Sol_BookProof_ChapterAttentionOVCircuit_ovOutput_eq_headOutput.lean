@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterAttentionOVCircuit_mulVec_headOutput
 import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
+open scoped Matrix
 
 
 

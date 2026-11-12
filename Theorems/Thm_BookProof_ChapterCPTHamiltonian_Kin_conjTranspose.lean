@@ -9,5 +9,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.Kin_conjTranspose (j : Fin 3) : (Kin j)ᴴ = Kin j := by sorry

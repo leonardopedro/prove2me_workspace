@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (j : Fin 3) : (KinZ j)ᵀ = KinZ j := by

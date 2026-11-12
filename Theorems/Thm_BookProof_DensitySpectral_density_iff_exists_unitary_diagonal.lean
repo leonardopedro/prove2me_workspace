@@ -9,6 +9,7 @@ open BookProof.DensitySpectral
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators ComplexOrder
 
 variable {n : Type*} [Fintype n] [DecidableEq n]

@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianNS_kinetic_posSemidef
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianNS_viscous_posSemidef
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
+open scoped Matrix
 
 
 

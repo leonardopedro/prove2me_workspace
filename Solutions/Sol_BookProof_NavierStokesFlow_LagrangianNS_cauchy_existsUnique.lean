@@ -6,6 +6,7 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianNS
+open scoped Matrix
 
 
 

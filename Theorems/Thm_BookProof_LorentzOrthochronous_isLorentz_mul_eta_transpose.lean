@@ -9,6 +9,7 @@ open BookProof.LorentzOrthochronous
 
 open Matrix
 open BookProof.LorentzGroup
+open scoped Matrix
 
 theorem BookProof.LorentzOrthochronous.isLorentz_mul_eta_transpose {l : Matrix (Fin 4) (Fin 4) ℝ} (h : IsLorentz l) :
     l * eta * lᵀ = eta := by sorry

@@ -10,6 +10,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterMajoranaFourier.mgamma_conjTranspose (μ : Fin 4) :
     (mgamma μ)ᴴ = if μ = 0 then -mgamma μ else mgamma μ := by sorry

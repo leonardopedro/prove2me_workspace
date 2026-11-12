@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterF4
 import Theorems.Thm_BookProof_ChapterF4_hermitian_flow_unitary
 open BookProof.ChapterF4
+open scoped Matrix
 
 
 

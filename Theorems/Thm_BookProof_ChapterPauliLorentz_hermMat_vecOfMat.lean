@@ -5,6 +5,7 @@ open BookProof.ChapterPauliLorentz
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterPauliLorentz.hermMat_vecOfMat {H : Matrix (Fin 2) (Fin 2) ℂ} (hH : Hᴴ = H) :

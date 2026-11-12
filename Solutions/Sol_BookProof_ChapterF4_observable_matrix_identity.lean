@@ -7,6 +7,7 @@ open BookProof.ChapterF4
 
 open scoped BigOperators Matrix
 open Matrix
+open scoped Matrix
 
 variable {d k : ℕ}
 

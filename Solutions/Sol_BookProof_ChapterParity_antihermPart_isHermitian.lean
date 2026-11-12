@@ -6,6 +6,7 @@ open BookProof.ChapterParity
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 variable {n : Type*}

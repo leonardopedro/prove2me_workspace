@@ -19,6 +19,7 @@ open BookProof.SmGaugeConnection
 open Matrix Kronecker
 open BookProof.YangMillsSU3 BookProof.ChapterCPTHamiltonian BookProof.SmCar
 open BookProof.SmDiracYukawa BookProof.SmDiracSpinor BookProof.FarisLavine
+open scoped Matrix
 
 noncomputable section
 

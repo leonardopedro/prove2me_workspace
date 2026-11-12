@@ -8,6 +8,7 @@ open BookProof.NavierStokesEulerian
 
 
 open BookProof.NavierStokesFlow Matrix
+open scoped Matrix
 
 theorem BookProof.NavierStokesEulerian.nsBrst_symmetrization_hermitian {n : ℕ} (d : NSTruncation n) :
     (nsBrstCharge d + (nsBrstCharge d)ᴴ)ᴴ = nsBrstCharge d + (nsBrstCharge d)ᴴ := by sorry

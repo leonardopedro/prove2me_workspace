@@ -8,6 +8,7 @@ open BookProof.ChapterG
 
 open scoped ComplexConjugate InnerProductSpace Matrix
 open MeasureTheory
+open scoped Matrix
 
 variable {G : Type*} [Group G] [MeasurableSpace G]
 variable {μG : Measure G} [IsProbabilityMeasure μG] [μG.IsMulLeftInvariant]

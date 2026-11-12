@@ -5,6 +5,7 @@ open BookProof.ChapterPauliLorentz
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterPauliLorentz.sigma3_herm : σ3ᴴ = σ3 := by sorry

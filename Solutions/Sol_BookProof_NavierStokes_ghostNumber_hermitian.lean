@@ -8,6 +8,7 @@ open BookProof.NavierStokes
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : ghostNumberᴴ = ghostNumber := by

@@ -12,6 +12,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 theorem BookProof.ChapterGravityPolymomentum.proj_transpose (v : Fin 4 → ℝ) (M : Matrix (Fin 4) (Fin 4) ℝ) :
     proj v (Mᵀ) = (proj v M)ᵀ := by sorry

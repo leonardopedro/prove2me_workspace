@@ -14,6 +14,7 @@ open BookProof.ChapterParityMajoranaQuant
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 

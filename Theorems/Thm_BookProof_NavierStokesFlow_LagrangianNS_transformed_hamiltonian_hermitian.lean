@@ -7,6 +7,7 @@ import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.ChapterF7
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct

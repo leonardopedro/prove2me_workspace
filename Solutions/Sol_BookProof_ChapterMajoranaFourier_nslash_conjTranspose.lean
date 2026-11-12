@@ -11,6 +11,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : Fin 3 → ℝ) : (nslash n)ᴴ = -nslash n := by

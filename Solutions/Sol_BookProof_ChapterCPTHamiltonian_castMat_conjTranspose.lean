@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (M : Matrix (Fin 4) (Fin 4) ℤ) :

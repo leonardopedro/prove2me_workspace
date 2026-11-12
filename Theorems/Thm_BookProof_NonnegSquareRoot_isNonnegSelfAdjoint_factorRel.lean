@@ -24,5 +24,4 @@ variable {T S : Submodule ℂ (F × F)}
 variable {a : ℝ}
 variable {D : Submodule ℂ F}
 
-theorem BookProof.NonnegSquareRoot.isNonnegSelfAdjoint_factorRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (factorRel A) where
-  adj := by sorry
+theorem BookProof.NonnegSquareRoot.isNonnegSelfAdjoint_factorRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (factorRel A) := by sorry

@@ -5,6 +5,7 @@ import Definitions.Def_ChapterAttentionQKCircuit
 import Definitions.Def_ChapterSoftmaxSharpness
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionQKCircuit
+open scoped Matrix
 
 
 open scoped BigOperators

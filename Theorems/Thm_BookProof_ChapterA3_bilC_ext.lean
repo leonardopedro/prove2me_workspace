@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.bilC_ext {A B : Matrix (Fin 4) (Fin 4) ℂ} (hA : Aᵀ = A) (hB : Bᵀ = B)

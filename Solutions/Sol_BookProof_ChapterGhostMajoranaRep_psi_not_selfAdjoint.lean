@@ -8,6 +8,7 @@ open BookProof.ChapterGhostMajoranaRep
 
 
 open Matrix BookProof.GhostField
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : psi ≠ psiᴴ := by

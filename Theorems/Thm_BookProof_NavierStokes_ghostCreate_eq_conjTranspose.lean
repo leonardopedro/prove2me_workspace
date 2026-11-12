@@ -6,5 +6,6 @@ open BookProof.NavierStokes
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.NavierStokes.ghostCreate_eq_conjTranspose : ghostCreate = ghostAnnihᴴ := by sorry

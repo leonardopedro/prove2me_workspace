@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct

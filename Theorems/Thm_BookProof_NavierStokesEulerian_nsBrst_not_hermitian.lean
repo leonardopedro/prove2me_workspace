@@ -11,6 +11,7 @@ open BookProof.NavierStokesEulerian
 
 open BookProof.NavierStokesFlow Matrix
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 theorem BookProof.NavierStokesEulerian.nsBrst_not_hermitian {n : ℕ} (d : NSTruncation n) (h : nsDivergence d ≠ 0) :
     (nsBrstCharge d)ᴴ ≠ nsBrstCharge d := by sorry

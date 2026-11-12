@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.castMat_conjTranspose (M : Matrix (Fin 4) (Fin 4) ℤ) :
     ((Int.castRingHom ℂ).mapMatrix M)ᴴ = (Int.castRingHom ℂ).mapMatrix Mᵀ := by sorry

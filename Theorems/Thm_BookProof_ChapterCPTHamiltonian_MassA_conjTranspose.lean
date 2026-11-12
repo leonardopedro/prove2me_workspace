@@ -9,5 +9,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.MassA_conjTranspose : (MassA)ᴴ = -MassA := by sorry

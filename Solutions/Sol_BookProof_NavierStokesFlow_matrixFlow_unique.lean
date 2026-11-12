@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_neg_hasDerivAt
 import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_mul_neg
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

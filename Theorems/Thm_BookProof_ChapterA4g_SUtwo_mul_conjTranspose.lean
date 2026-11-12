@@ -11,6 +11,7 @@ open scoped ComplexConjugate
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterA4g.SUtwo_mul_conjTranspose {S : Matrix (Fin 2) (Fin 2) ℂ}
     (hS : S ∈ SUtwo) : S * Sᴴ = 1 := by sorry

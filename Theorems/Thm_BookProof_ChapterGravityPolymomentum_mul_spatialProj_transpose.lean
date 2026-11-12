@@ -10,6 +10,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 theorem BookProof.ChapterGravityPolymomentum.mul_spatialProj_transpose (v : Fin 4 → ℝ) (M : Matrix (Fin 4) (Fin 4) ℝ) :
     M * (spatialProj v)ᵀ = M + vecMulVec (M.mulVec (lower v)) v := by sorry

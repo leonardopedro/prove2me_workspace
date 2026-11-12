@@ -11,6 +11,7 @@ open scoped BigOperators
 
 
 open BookProof.ChapterPauliLorentz
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {T : Matrix (Fin 2) (Fin 2) ℂ} (hT : Tᴴ * T = 1)

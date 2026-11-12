@@ -13,5 +13,6 @@ open Matrix
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega BookProof.ChapterLorentzRealRep
 open Module
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRepSum.gram_10Ps : ∀ (i : Fin 6) (j : Fin 4), ((b10 i)ᵀ * bPs j).trace = 0 := by sorry

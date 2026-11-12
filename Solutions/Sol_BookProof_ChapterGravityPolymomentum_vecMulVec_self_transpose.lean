@@ -10,6 +10,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin 4 → ℝ) :

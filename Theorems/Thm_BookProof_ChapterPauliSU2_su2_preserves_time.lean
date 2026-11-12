@@ -11,6 +11,7 @@ open scoped BigOperators
 
 
 open BookProof.ChapterPauliLorentz
+open scoped Matrix
 
 theorem BookProof.ChapterPauliSU2.su2_preserves_time {T : Matrix (Fin 2) (Fin 2) ℂ} (hT : Tᴴ * T = 1)
     (x : Fin 4 → ℝ) :

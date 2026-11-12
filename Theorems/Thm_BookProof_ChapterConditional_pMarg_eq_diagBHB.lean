@@ -6,6 +6,7 @@ open BookProof.ChapterConditional
 
 open scoped BigOperators Matrix
 open Finset
+open scoped Matrix
 
 
 variable {X Y : Type*} [Fintype X] [Fintype Y] [DecidableEq X]

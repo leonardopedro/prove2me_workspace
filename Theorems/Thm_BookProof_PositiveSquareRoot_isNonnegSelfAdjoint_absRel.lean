@@ -23,5 +23,4 @@ variable [CompleteSpace F]
 variable {D : Submodule ℂ F}
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
-theorem BookProof.PositiveSquareRoot.isNonnegSelfAdjoint_absRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (absRel A) where
-  adj := by sorry
+theorem BookProof.PositiveSquareRoot.isNonnegSelfAdjoint_absRel (A : D →ₗ[ℂ] F) : IsNonnegSelfAdjoint (absRel A) := by sorry

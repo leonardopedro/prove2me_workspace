@@ -12,6 +12,7 @@ open scoped ComplexConjugate
 
 
 open BookProof.ChapterParity
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {I : Type*} [Fintype I] [DecidableEq I]

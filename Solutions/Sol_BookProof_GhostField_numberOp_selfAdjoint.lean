@@ -7,6 +7,7 @@ open BookProof.GhostField
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : numberOp = numberOpᴴ := by

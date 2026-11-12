@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.chargeConj_mgamma_commutes (μ : Fin 4) (v : Fin 4 → ℂ) :

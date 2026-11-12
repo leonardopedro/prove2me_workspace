@@ -10,6 +10,7 @@ open scoped BigOperators
 
 
 open BookProof.ChapterPauliLorentz
+open scoped Matrix
 
 theorem BookProof.ChapterPauliSU2.spinorAction_trace_of_unitary {T : Matrix (Fin 2) (Fin 2) ℂ}
     (hT : Tᴴ * T = 1) (X : Matrix (Fin 2) (Fin 2) ℂ) :

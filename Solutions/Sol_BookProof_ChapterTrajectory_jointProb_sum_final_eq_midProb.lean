@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterTrajectory
 import Theorems.Thm_BookProof_ChapterTrajectory_transProb_sum
 open BookProof.ChapterTrajectory
+open scoped Matrix
 
 
 

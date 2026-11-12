@@ -4,6 +4,7 @@ import Definitions.Def_ChapterAttentionOVCircuit
 import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
+open scoped Matrix
 
 
 

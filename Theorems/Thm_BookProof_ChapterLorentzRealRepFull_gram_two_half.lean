@@ -15,5 +15,6 @@ open Matrix
 open BookProof.ChapterA3 BookProof.ChapterPinOmega BookProof.ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 open Module
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRepFull.gram_two_half : ∀ (i : Fin 2) (j : Fin 4), ((w2 i)ᵀ * bHalf j).trace = 0 := by sorry

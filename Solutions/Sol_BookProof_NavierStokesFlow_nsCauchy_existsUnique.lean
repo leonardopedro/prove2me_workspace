@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_matrixFlow_cauchy_existsUnique
 import Definitions.Def_ChapterNavierStokesFlow
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

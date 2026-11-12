@@ -5,6 +5,7 @@ open BookProof.ChapterPauliLorentz
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterPauliLorentz.sigma1_herm : σ1ᴴ = σ1 := by sorry

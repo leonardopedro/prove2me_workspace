@@ -10,6 +10,7 @@ open scoped BigOperators
 
 
 open BookProof.ChapterPauliLorentz
+open scoped Matrix
 
 theorem BookProof.ChapterPauliSU2.spinorAction_isHermitian (T : Matrix (Fin 2) (Fin 2) ℂ)
     {X : Matrix (Fin 2) (Fin 2) ℂ} (hX : Xᴴ = X) :

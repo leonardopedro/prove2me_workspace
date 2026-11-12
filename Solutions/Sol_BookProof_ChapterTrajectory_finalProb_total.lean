@@ -4,6 +4,7 @@ import Definitions.Def_ChapterTrajectory
 import Theorems.Thm_BookProof_ChapterTrajectory_jointProb_sum_final_eq_midProb
 import Theorems.Thm_BookProof_ChapterTrajectory_midProb_sum
 open BookProof.ChapterTrajectory
+open scoped Matrix
 
 
 

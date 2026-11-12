@@ -4,6 +4,7 @@ import Definitions.Def_ChapterSoftmaxOrder
 import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
 open BookProof.ChapterAttentionQKCircuit
+open scoped Matrix
 
 
 open scoped BigOperators

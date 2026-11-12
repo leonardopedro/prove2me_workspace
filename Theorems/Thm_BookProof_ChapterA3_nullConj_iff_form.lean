@@ -7,6 +7,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.nullConj_iff_form (T : Matrix (Fin 2) (Fin 2) ℂ) :

@@ -10,5 +10,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterMajoranaFourier.Aop_conjTranspose (n : Fin 3 → ℝ) : (Aop n)ᴴ = Aop n := by sorry

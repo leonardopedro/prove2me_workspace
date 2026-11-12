@@ -11,6 +11,7 @@ open scoped ComplexConjugate
 
 
 open BookProof.ChapterParity
+open scoped Matrix
 
 theorem BookProof.ChapterParityHiggs.realityOp_realityOp {I : Type*} [Fintype I] [DecidableEq I]
     (M : Matrix I I ℂ) (v : I → ℂ) :

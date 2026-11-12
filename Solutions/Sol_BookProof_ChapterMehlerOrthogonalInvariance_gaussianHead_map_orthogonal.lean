@@ -8,6 +8,7 @@ open BookProof.ChapterMehlerOrthogonalInvariance
 
 
 open MeasureTheory ProbabilityTheory Matrix
+open scoped Matrix
 open scoped RealInnerProductSpace
 
 noncomputable section

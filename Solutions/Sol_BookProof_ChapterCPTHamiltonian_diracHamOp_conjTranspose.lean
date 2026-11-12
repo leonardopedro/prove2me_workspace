@@ -12,6 +12,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (k : Fin 3 → ℝ) (m1 m2 : ℝ) :

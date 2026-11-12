@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterSirkGramWhitening
 import Theorems.Thm_BookProof_ChapterSirkGramWhitening_gramOp_eq_toEuclideanCLM
 open BookProof.ChapterSirkGramWhitening
+open scoped Matrix
 
 
 

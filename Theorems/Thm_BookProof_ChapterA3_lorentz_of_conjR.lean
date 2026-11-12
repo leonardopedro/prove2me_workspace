@@ -7,6 +7,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.lorentz_of_conjR (S : Matrix (Fin 4) (Fin 4) ℝ) (hS : IsUnit S.det)

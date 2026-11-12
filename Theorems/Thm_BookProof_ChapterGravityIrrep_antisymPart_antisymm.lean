@@ -6,6 +6,7 @@ open BookProof.ChapterGravityIrrep
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterGravityIrrep.antisymPart_antisymm (M : Matrix (Fin 3) (Fin 3) ℝ) :

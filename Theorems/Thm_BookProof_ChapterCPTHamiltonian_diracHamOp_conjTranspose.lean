@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.diracHamOp_conjTranspose (k : Fin 3 → ℝ) (m1 m2 : ℝ) :
     (diracHamOp k m1 m2)ᴴ = -diracHamOp k m1 m2 := by sorry

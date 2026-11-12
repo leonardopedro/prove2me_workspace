@@ -8,6 +8,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.ChapterA3.lorentzLie_of_intModel (Az : Matrix (Fin 4) (Fin 4) ℤ)
     (h : Az * minkowskiMatZ + minkowskiMatZ * Azᵀ = 0) :

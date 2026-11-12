@@ -11,6 +11,7 @@ open scoped ComplexConjugate
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterA4g.SUtwo_conjTranspose_mem {S : Matrix (Fin 2) (Fin 2) ℂ}
     (hS : S ∈ SUtwo) : Sᴴ ∈ SUtwo := by sorry

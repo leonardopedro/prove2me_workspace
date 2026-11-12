@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {n : ℕ} (v : Fin n → Matrix (Fin 4) (Fin 4) ℝ)

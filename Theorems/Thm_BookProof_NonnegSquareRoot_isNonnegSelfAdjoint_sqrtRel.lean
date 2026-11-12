@@ -22,5 +22,4 @@ variable {T S : Submodule ℂ (F × F)}
 
 
 theorem BookProof.NonnegSquareRoot.isNonnegSelfAdjoint_sqrtRel (hT : IsNonnegSelfAdjoint T) :
-    IsNonnegSelfAdjoint (sqrtRel hT) where
-  adj := by sorry
+    IsNonnegSelfAdjoint (sqrtRel hT) := by sorry

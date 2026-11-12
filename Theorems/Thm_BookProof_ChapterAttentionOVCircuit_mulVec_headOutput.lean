@@ -6,6 +6,7 @@ import Definitions.Def_ChapterSoftmaxSharpness
 import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionOVCircuit
+open scoped Matrix
 
 
 open scoped BigOperators

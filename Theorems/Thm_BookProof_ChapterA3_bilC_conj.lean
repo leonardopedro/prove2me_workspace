@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.bilC_conj (A M : Matrix (Fin 4) (Fin 4) ℂ) (x : Fin 4 → ℂ) :

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterContinuityUnitary
 import Theorems.Thm_BookProof_ChapterContinuityUnitary_momentum_hermitian
 import Theorems.Thm_BookProof_ChapterContinuityUnitary_velocityOp_hermitian
 open BookProof.ChapterContinuityUnitary
+open scoped Matrix
 
 
 

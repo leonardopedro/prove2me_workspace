@@ -12,5 +12,4 @@ variable [NormedAddCommGroup K] [InnerProductSpace ℂ K]
 
 
 theorem BookProof.ChapterMackeyQuasiInvariant.unitaryCocycle_one (μ : Measure X) :
-    UnitaryCocycle (G := G) (K := K) μ (fun _ _ => LinearIsometryEquiv.refl ℂ K) where
-  one := by sorry
+    UnitaryCocycle (G := G) (K := K) μ (fun _ _ => LinearIsometryEquiv.refl ℂ K) := by sorry

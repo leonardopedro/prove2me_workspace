@@ -5,6 +5,7 @@ import Definitions.Def_ChapterContinuityUnitary
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.ChapterContinuityUnitary
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct

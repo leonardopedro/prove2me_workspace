@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterNavierStokesCauchy
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

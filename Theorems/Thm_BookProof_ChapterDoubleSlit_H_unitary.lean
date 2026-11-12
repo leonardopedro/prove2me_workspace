@@ -5,6 +5,7 @@ open BookProof.ChapterDoubleSlit
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 theorem BookProof.ChapterDoubleSlit.H_unitary : Hᴴ * H = 1 := by sorry

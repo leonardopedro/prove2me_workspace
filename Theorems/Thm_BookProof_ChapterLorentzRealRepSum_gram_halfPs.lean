@@ -13,5 +13,6 @@ open Matrix
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega BookProof.ChapterLorentzRealRep
 open Module
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRepSum.gram_halfPs : ∀ (i j : Fin 4), ((bHalf i)ᵀ * bPs j).trace = 0 := by sorry

@@ -4,6 +4,7 @@ import Definitions.Def_ChapterWeakValue
 import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterTrajectory
 open BookProof.ChapterWeakValue
+open scoped Matrix
 
 
 open scoped BigOperators Matrix

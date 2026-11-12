@@ -4,6 +4,7 @@ import Definitions.Def_ChapterAttentionQKCircuit
 import Theorems.Thm_BookProof_ChapterAttentionQKCircuit_qkMatrix_gauge
 import Theorems.Thm_BookProof_ChapterAttentionQKCircuit_scoreSoftmax_qkScore_congr
 open BookProof.ChapterAttentionQKCircuit
+open scoped Matrix
 
 
 

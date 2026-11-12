@@ -7,6 +7,7 @@ open BookProof.ChapterDoubleSlit
 
 
 open Matrix
+open scoped Matrix
 open scoped BigOperators
 
 set_option maxHeartbeats 1000000 in

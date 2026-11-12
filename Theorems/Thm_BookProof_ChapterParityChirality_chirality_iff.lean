@@ -14,6 +14,7 @@ open scoped Kronecker
 open BookProof.ChapterA3
 open BookProof.ChapterParity
 open BookProof.ChapterParitySU2
+open scoped Matrix
 
 theorem BookProof.ChapterParityChirality.chirality_iff (v : Fin 2 × Fin 4 → ℂ) :
     isigma3 *ᵥ v = igamma5 *ᵥ v ↔ chi *ᵥ v = -v := by sorry

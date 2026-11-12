@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesFlow
 import Theorems.Thm_BookProof_NavierStokesFlow_nsHamiltonian_hermitian
 import Theorems.Thm_BookProof_ChapterContinuityUnitary_exp_smul_I_unitary
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

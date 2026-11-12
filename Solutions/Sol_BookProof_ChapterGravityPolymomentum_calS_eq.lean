@@ -18,6 +18,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 variable {e T : ℝ} {S Tc : Matrix (Fin 4) (Fin 4) ℝ} {u v : Fin 4 → ℝ}
 

@@ -10,6 +10,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 set_option maxHeartbeats 1000000 in

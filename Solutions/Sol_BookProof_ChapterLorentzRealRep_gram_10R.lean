@@ -13,6 +13,7 @@ open Matrix
 
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : ∀ i j : Fin 6, ((b10R i)ᵀ * b10R j).trace = if i = j then (4 : ℝ) else 0 := by

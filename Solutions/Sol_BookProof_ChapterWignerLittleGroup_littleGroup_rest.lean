@@ -8,6 +8,7 @@ open BookProof.ChapterWignerLittleGroup
 
 
 open Matrix Complex
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution {m : ℝ} (hm : m ≠ 0) : littleGroup (restMom m) = SU2 := by

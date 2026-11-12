@@ -10,5 +10,6 @@ open Matrix
 
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRep.gram_ps : ∀ i j : Fin 4, ((bPs i)ᵀ * bPs j).trace = if i = j then 4 else 0 := by sorry

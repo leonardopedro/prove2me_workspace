@@ -10,5 +10,6 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 theorem BookProof.ChapterGravityPolymomentum.metric_transpose : (metric : Matrix (Fin 4) (Fin 4) ℝ)ᵀ = metric := by sorry

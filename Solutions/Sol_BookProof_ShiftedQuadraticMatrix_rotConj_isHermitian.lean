@@ -26,6 +26,7 @@ open BookProof.ShiftedHermiteCore
 open BookProof.ShiftedQuadratic
 open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
+open scoped Matrix
 
 noncomputable section
 

@@ -44,5 +44,4 @@ theorem ext_prime : ∀ {T S : UnboundedSelfAdjoint H}, T.domain = S.domain →
 /-- **Stone's theorem, forward direction.**  A self-adjoint operator `A` generates a
 one-parameter unitary group `t ↦ e^{-itA}`, which is weakly measurable (indeed strongly
 continuous, see `UnboundedSelfAdjoint.continuous_stoneU_apply`). -/
-noncomputable def stoneGroup (T : UnboundedSelfAdjoint H) : WeakMeasurableUnitaryGroup H where
-  U := by sorry
+noncomputable def stoneGroup (T : UnboundedSelfAdjoint H) : WeakMeasurableUnitaryGroup H := by sorry

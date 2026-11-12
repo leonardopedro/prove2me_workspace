@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesFlow
 import Theorems.Thm_BookProof_NavierStokesFlow_nsFlow_norm_preserving
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

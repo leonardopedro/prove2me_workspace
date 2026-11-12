@@ -9,6 +9,7 @@ open BookProof.ChapterGravityPolymomentum
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 theorem BookProof.ChapterGravityPolymomentum.vecMulVec_self_transpose (v : Fin 4 → ℝ) :
     (vecMulVec v v)ᵀ = vecMulVec v v := by sorry

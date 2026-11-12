@@ -6,5 +6,6 @@ open BookProof.SpinStatistics
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.SpinStatistics.fermiCreate2_eq_conjTranspose : fermiCreate2 = fermiAnnih2ᴴ := by sorry

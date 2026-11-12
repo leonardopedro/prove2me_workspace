@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterContinuityUnitary
 open BookProof.ChapterContinuityUnitary
+open scoped Matrix
 
 
 

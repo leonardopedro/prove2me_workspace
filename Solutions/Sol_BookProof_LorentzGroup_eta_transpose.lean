@@ -7,6 +7,7 @@ open BookProof.LorentzGroup
 
 
 open Matrix
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : etaᵀ = eta := by

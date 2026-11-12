@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.ChapterA3.mgamma_conjTranspose (μ : Fin 4) :
     (mgamma μ)ᴴ = (if μ = 0 then (-1 : ℂ) else 1) • mgamma μ := by sorry

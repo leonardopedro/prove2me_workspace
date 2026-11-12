@@ -6,6 +6,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem BookProof.ChapterA3.paulisigma_herm (μ : Fin 4) : (pauliσ μ)ᴴ = pauliσ μ := by sorry

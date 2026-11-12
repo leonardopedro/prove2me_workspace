@@ -9,5 +9,6 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterCPTHamiltonian.KinZ_transpose (j : Fin 3) : (KinZ j)ᵀ = KinZ j := by sorry

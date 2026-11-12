@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_GhostField_psiDag_eq_conjTranspose
 import Definitions.Def_ChapterGhostField
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.NavierStokesFlow
+open scoped Matrix
 
 
 

@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterAttentionQKCircuit
 open BookProof.ChapterAttentionQKCircuit
+open scoped Matrix
 
 
 

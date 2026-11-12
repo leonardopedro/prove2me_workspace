@@ -7,6 +7,7 @@ open BookProof.ChapterA3
 
 
 open Matrix
+open scoped Matrix
 open scoped ComplexConjugate
 
 theorem solution (μ : Fin 4) : (pauliσ μ)ᴴ = pauliσ μ := by

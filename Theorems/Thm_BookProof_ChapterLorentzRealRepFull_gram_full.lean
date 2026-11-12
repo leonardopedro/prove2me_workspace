@@ -14,5 +14,6 @@ open Matrix
 open BookProof.ChapterA3 BookProof.ChapterPinOmega BookProof.ChapterLorentzRealRep
 open BookProof.ChapterLorentzRealRepSum
 open Module
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRepFull.gram_full : ∀ i j : Fin 16, ((bFull i)ᵀ * bFull j).trace = if i = j then 4 else 0 := by sorry

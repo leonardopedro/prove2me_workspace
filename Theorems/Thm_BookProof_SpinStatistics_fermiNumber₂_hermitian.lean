@@ -6,5 +6,6 @@ open BookProof.SpinStatistics
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.SpinStatistics.fermiNumber2_hermitian : fermiNumber2ᴴ = fermiNumber2 := by sorry

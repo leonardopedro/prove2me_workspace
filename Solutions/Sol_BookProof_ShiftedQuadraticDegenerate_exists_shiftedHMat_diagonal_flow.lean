@@ -36,6 +36,7 @@ open BookProof.ShiftedQuadraticMatrix
 open BookProof.FarisLavine
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.StoneEigenflow
+open scoped Matrix
 
 noncomputable section
 

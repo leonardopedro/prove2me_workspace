@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterTrajectory
 open BookProof.ChapterTrajectory
+open scoped Matrix
 
 
 

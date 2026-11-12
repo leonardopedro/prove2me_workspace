@@ -35,6 +35,7 @@ open BookProof.QuadraticRotation
 open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.HermiteProductCore
+open scoped Matrix
 
 noncomputable section
 

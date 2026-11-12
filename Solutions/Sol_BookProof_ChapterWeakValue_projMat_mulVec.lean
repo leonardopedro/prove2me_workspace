@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterWeakValue
 open BookProof.ChapterWeakValue
+open scoped Matrix
 
 
 

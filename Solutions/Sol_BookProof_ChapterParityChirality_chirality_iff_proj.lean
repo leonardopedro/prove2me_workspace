@@ -15,6 +15,7 @@ open scoped Kronecker
 open BookProof.ChapterA3
 open BookProof.ChapterParity
 open BookProof.ChapterParitySU2
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (v : Fin 2 × Fin 4 → ℂ) :

@@ -8,6 +8,7 @@ open BookProof.ChapterWeakValue
 
 open scoped BigOperators Matrix
 open BookProof.ChapterDoubleSlit
+open scoped Matrix
 
 
 variable {n : ℕ}

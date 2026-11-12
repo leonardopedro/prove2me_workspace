@@ -10,6 +10,7 @@ open BookProof.ChapterGravityMetric
 open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
+open scoped Matrix
 
 theorem BookProof.ChapterGravityMetric.spatialMetric_symm (v : Fin 4 → ℝ) :
     (spatialMetric v)ᵀ = spatialMetric v := by sorry

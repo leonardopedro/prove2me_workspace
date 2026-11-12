@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterG
 open MeasureTheory
 open BookProof.ChapterG
+open scoped Matrix
 
 
 

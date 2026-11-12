@@ -5,6 +5,7 @@ import Theorems.Thm_BookProof_ChapterH7_generationOperator_conjTranspose
 import Definitions.Def_ChapterH4
 import Definitions.Def_ChapterH6
 open BookProof.ChapterH7
+open scoped Matrix
 
 
 

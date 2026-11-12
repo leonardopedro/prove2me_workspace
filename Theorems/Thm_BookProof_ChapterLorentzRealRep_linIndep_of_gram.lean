@@ -10,6 +10,7 @@ open Matrix
 
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega
+open scoped Matrix
 
 theorem BookProof.ChapterLorentzRealRep.linIndep_of_gram {n : ℕ} (v : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
     (h : ∀ i j, ((v i)ᵀ * v j).trace = if i = j then (4 : ℝ) else 0) :

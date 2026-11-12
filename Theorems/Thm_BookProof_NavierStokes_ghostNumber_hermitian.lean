@@ -6,5 +6,6 @@ open BookProof.NavierStokes
 
 
 open Matrix
+open scoped Matrix
 
 theorem BookProof.NavierStokes.ghostNumber_hermitian : ghostNumberᴴ = ghostNumber := by sorry

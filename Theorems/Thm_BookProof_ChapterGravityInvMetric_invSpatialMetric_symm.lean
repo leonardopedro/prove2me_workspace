@@ -12,6 +12,7 @@ open Matrix
 open scoped BigOperators
 open BookProof.ChapterGravityProjector
 open BookProof.ChapterGravityMetric
+open scoped Matrix
 
 theorem BookProof.ChapterGravityInvMetric.invSpatialMetric_symm (v : Fin 4 → ℝ) :
     (invSpatialMetric v)ᵀ = invSpatialMetric v := by sorry

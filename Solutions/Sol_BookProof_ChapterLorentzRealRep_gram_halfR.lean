@@ -13,6 +13,7 @@ open Matrix
 
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

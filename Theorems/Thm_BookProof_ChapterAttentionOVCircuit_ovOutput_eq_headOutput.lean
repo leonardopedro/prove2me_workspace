@@ -5,6 +5,7 @@ import Mathlib
 import Definitions.Def_ChapterAttentionOVCircuit
 import Definitions.Def_ChapterAttentionOutput
 open BookProof.ChapterAttentionOVCircuit
+open scoped Matrix
 
 
 open scoped BigOperators

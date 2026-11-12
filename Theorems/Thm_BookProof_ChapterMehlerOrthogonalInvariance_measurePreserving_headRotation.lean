@@ -5,6 +5,7 @@ import Definitions.Def_ChapterMehlerOrthogonalInvariance
 
 
 open MeasureTheory ProbabilityTheory Matrix
+open scoped Matrix
 open scoped RealInnerProductSpace
 
 noncomputable section

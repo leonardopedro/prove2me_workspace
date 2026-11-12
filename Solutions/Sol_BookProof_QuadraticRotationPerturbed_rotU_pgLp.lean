@@ -31,6 +31,7 @@ open BookProof.KatoRellich
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.HermiteProductBasis
 open BookProof.HermiteProductCore
+open scoped Matrix
 
 noncomputable section
 

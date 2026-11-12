@@ -9,6 +9,7 @@ open Matrix
 
 
 open BookProof.ChapterA3
+open scoped Matrix
 
 theorem BookProof.ChapterMajoranaFourier.majoranaFourier_boostBlock_unitary
     (m q : ℝ) (hm : 0 ≤ m) (hq : 0 < q)

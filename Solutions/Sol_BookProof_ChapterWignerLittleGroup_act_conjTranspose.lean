@@ -6,6 +6,7 @@ open BookProof.ChapterWignerLittleGroup
 
 
 open Matrix Complex
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution (A X : Matrix (Fin 2) (Fin 2) ℂ) (hX : Xᴴ = X) :

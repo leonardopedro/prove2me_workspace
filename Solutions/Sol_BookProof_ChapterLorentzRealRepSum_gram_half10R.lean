@@ -17,6 +17,7 @@ open Matrix
 
 open BookProof.ChapterA3 BookProof.ChapterPinOmega BookProof.ChapterLorentzRealRep
 open Module
+open scoped Matrix
 
 set_option maxHeartbeats 1000000 in
 theorem solution : ∀ (i : Fin 4) (j : Fin 6), ((bHalfR i)ᵀ * b10R j).trace = (0 : ℝ) := by

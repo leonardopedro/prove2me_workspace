@@ -12,6 +12,7 @@ open Matrix Finset
 
 
 open BookProof.ChapterA3 BookProof.ChapterGammaCommutant
+open scoped Matrix
 
 variable {A : Fin 4 → M4}
 

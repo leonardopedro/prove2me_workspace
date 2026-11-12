@@ -8,6 +8,7 @@ open BookProof.ChapterWignerLittleGroup
 
 
 open Matrix Complex
+open scoped Matrix
 
 
 @[simp] private theorem hermOfMom_conjTranspose (p : Fin 4 → ℝ) :

@@ -14586,8 +14586,13 @@ processes on a long bundle is what trips the OOM killer on this 15 GB machine.
 | `ScalaronFockEsa` | FAIL `ccDomain_dense` | **OK** | `ScalaronCoreEsa` olean refreshed |
 | `ScalaronWallEsa` | FAIL `symmetricOn_inclusion` | **OK** | same |
 
-`def_gate.json` now reads **644 OK / 56 blocked / 16 failing / 2 no-source**
-(was 640 / 55 / 21 / 2).
+`def_gate.json` now reads **645 OK / 56 blocked / 15 failing / 2 no-source**
+(was 644 / 56 / 16 / 2 after §7.2, and 640 / 55 / 21 / 2 before Session 36).
+The Session 37 swing: `FockQuadraticEsa` and `QgCouplingDGammaSum` FAIL→OK
+(the lemmas in §7.3), and `FockPairPerturbation` was re-gated for the first time
+and is a real FAIL — it re-carries `up_self`/`creA_single` in
+`BookProof.FockSecondQuantization` because the *published* def text predates
+them, so it can only compile against the served world (§7.4 class), not ours.
 
 ### 7.3 Real source defects found underneath
 
@@ -14603,15 +14608,37 @@ These are not staleness and are the actual work left:
   A one-line keyhole repair (e.g. `:= by sorry`) is **wrong here**: the bundle
   is imported by sols, and `sorryAx` in a published def is what the platform's
   soundness guard rejects.  It needs the section reconstructed.
-* `Def_ChapterOperatorSeriesEsa` — carries `seriesOp` and `summable_apply` only;
+* ~~`Def_ChapterOperatorSeriesEsa` — carries `seriesOp` and `summable_apply` only;
   `seriesOp_symmetricOn` and `seriesOp_norm_le`, both cited by
-  `Def_ChapterFockQuadraticEsa:817`, were never written.  Both are short
-  triangle-inequality/tsum proofs.
+  `Def_ChapterFockQuadraticEsa:817`, were never written.~~ **Filled 2026-11-12**
+  (Session 37): the whole §1–§3 lemma set was transplanted from
+  `BookProof/ChapterOperatorSeriesEsa.lean` — `commForm_eq_neg_two_im`,
+  `commForm_add`, `seriesOp_apply`, `seriesOp_hasSum`, `seriesOp_symmetricOn`,
+  `seriesOp_norm_le`, `seriesOp_commForm_le`,
+  `essentiallySelfAdjointOn_finiteModes_of_bounds`,
+  `essentiallySelfAdjointOn_finiteModes_of_series` — and the four consumers that
+  had been importing the `sorry` stubs for those names (`CoreBoundsEsa`,
+  `FockDifferingBasesEsa`, `FockQuadraticEsa`) dropped the imports.  The
+  `Thm_*_OperatorSeries_*` nodes stay as the published restatements.
 * Same shape: `potCore_pgLp` (`ScalaronHermiteEsa`), `multOp_isSymmetricDom`
   (`ScalaronDensitizedTransfer`), `tendsto_zero_of_le_sirkBound`
-  (`SirkPerSystemFlowBound`), `coe_dGammaOp` + `toLpL_apply`
-  (`FockSecondQuantization` → `QgCouplingDGammaSum`), `fqOp_essentiallySelfAdjoint`
+  (`SirkPerSystemFlowBound`), `fqOp_essentiallySelfAdjoint`
   reachability (`Qg3DGaugeEsa`, blocked behind `ModeQuadraticEsa`).
+* ~~`coe_dGammaOp` + `toLpL_apply` (`FockSecondQuantization` →
+  `QgCouplingDGammaSum`)~~ **Filled 2026-11-12** (Session 37), together with the
+  five occupation-number lemmas `QgCouplingDGammaSum` turned out to need as
+  well (`up_dn`, `annA_apply`, `creA_apply`, `support_subset_modes`,
+  `coe_fockEquiv_symm`), all transplanted from
+  `BookProof/ChapterFockSecondQuantization.lean`; `FockQuadraticEsa`,
+  `FockSchurEsa`, `QgCouplingDGammaSum` and `FockDifferingBasesEsa` re-gate OK.
+  `QgCouplingDGammaSum` still cites five `sorry` theorem stubs it does not own
+  (`creVec_apply`, `dGamma_eq_sum`, `dGamma_friedrichs_extension`,
+  `dGammaOp_quadForm_nonneg`, `ikebeKato_momentum`) — the repo-wide convention
+  for a bundle citing a sibling lemma, but it means its verdict is a
+  `GATE_TRUTH=published`-class one, not a self-contained proof.
+  `Def_ChapterFockSecondQuantization` remains hollow elsewhere (54 of the
+  chapter's 94 declarations are still absent: the whole `inner_dGamma_*` /
+  Friedrichs / Hashimoto / Yang–Mills block).
 * Proof bugs: `BookBrstYangMills:661` (`rw [I_smul_gaussGen, sub_mul]` finds no
   pattern), `StrichartzHermiteQG:72` (`simpa` with
   `HilbertBasis.repr_apply_apply` lands on the conjugated inner product),

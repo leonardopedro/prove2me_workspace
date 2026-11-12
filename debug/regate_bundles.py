@@ -122,7 +122,19 @@ def main():
             s = f"{WS}/Theorems/{m}.lean"
             if os.path.exists(s):
                 open(dst, "w").write(open(s).read())
-            if not os.path.exists(f"{MIRROR}/Theorems/{m}.olean"):
+            # Rebuild the stub whenever the mirror's .olean is older than the
+            # source it has to reflect, not only when it is missing.  Stub
+            # oleans built before the stubs were slimmed still carry the whole
+            # chapter body, so a bundle importing one sees that chapter's
+            # definitions as already declared (`...L2N has already been
+            # declared`) and its verdict is meaningless -- this is what made
+            # Def_ChapterNavierStokesDeficiency FAIL on 2026-11-12 while
+            # compiling clean against a refreshed stub.  A stub whose statement
+            # changed is the same class: the stale olean is the old statement.
+            ole = f"{MIRROR}/Theorems/{m}.olean"
+            if (not os.path.exists(ole) or
+                    (os.path.exists(s) and
+                     os.path.getmtime(s) > os.path.getmtime(ole))):
                 work_t.append(m)
 
     jobs, res = a.jobs, {}

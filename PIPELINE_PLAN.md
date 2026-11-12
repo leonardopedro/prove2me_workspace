@@ -20,6 +20,18 @@ the transplant of the **timepiece** Lean 4 project onto **prove2.me**.
 
 ## §2. CURRENT RUNBOOK (2026-10-03) — read this before §1
 
+**CURRENT STATE (2026-11-08 10:40, `--status`).** plan 20041 = 706 def + 9660
+thm + 9660 sol; ledger 15650 → **15774 done**, 1333 → **1210 pending**, 1 failed,
+3056 parked. Per-kind pending: thm 586 → 553, sol 725 → 636, def 22 → 21.
+Four def bundles published this session (`ChapterFockSchurEsa`,
+`ChapterWignerSymmetryInfinite`, `ChapterNavierStokesSignFlip`,
+`ChapterFockWeightedSchurEsaPromoted`) and 18 sols repaired (§ Session 41). 30 ledger-`done` sols are SKETCH
+(accepted as a reduction). The actionable backlog is, in order: (a) the 30
+`--only`-blocked def bundles, (b) 522 pending stubs whose local compile gate
+still fails on skeleton served bundles (`unknown namespace BookProof.<Ch>`),
+(c) red sols (latest platform submission not accepted).  Session 41 appended at
+the end of this file is the latest state + the fixes it landed.
+
 Everything in §1 that reports counts is stale. §1 is kept for its failure catalogue
 (the drift classes in `references/prove2me-lean4.33-translation/`, and the repair
 recipes in §5d/§6.3/§6.4, which remain valid and are cross-referenced below).
@@ -12925,3 +12937,1563 @@ All 27 pending def bundles are gate-`OK`; they now wait on *theorem* dependencie
 platform reports by name (`DegEnergy.energy_bound`, `SirkSingleTime.strongResAt_of_ne_zero`,
 `PermSector.permRep_commutes_sectorCore`, `QuadFockEsa.dGamma_fqPoly_essentiallySelfAdjointOn_core`, …).
 That is the publication chain (def → thm → sol), not a gate, so no local recompile moves them.
+
+## Session 34 — the served cache is what the platform has, and 39 stubs were fixable text
+
+Two things were measured here: what a *refreshed* cache says about the pending
+bundles, and which `FAIL` statement verdicts are real text errors rather than
+provider bookkeeping.
+
+### The cache refresh (read-only)
+
+`debug/cache_published_bundles.py` re-read `publish-jobs` and wrote 680 published
+definition bundles (13 new: the `Sm` chain — `SmComparison`, `SmComparisonFull`,
+`SmFarisLavine`, `TensorSumEsa`, `TensorSumChain`, `TensorKatoRellich`,
+`EsaOneParticleDGamma`, `DegSchrodingerCore`, `DegEnergyEstimate`,
+`ConvolutionCalc`, `HermiteLadderOrder`, `QgFullEliminated`,
+`FockDifferingBasesEsa`) and, via `--theorems`, 415 `Theorems.*` modules (410 new;
+`Thm_BookProof_QgFourierElim_formValue_gauge3d_elimConfig` has no published job).
+No bundle text changed, so no cached text was stale — the 13 are *additions*.
+
+`debug/pubstage_check.py` stages def deps from that cache but theorem stubs from
+`Theorems/` in the *workspace*, so `--theorems` does not change a def verdict.
+That is deliberate (the workspace stub is what the pipeline submits) but it means
+the published-truth gate cannot see a hollow served stub — see below.
+
+### Re-gate of the 22 dependents of the refreshed bundles
+
+`GATE_TRUTH=published`, `CANDIDATE_MIRROR=$PWD/state/mirror`, report in
+`state/regate/deps_refreshed.tsv`: **16 OK, 6 FAIL**, and the six failures are one
+new class:
+
+| bundle | unbound name | declared (locally) by |
+|---|---|---|
+| `ChapterFockStatisticsCompletion` | `GroupAverage.UnitaryRep.avgProj…` | `Def_ChapterGroupAverageEsa` |
+| `ChapterHermiteGraphApprox` | `crePoly_hermiteMv` | `Def_ChapterHermiteProductBasis` |
+| `ChapterQgSymmetricSector` | `commForm_congr` | `Def_ChapterQgOuterFockCoreFL` |
+| `ChapterSmComparisonEsa` | `realCoeff_smFormPoly` | `Def_ChapterSmHamiltonian` |
+| `ChapterSmFullEnclosure` | `smFermiHam_eq` | `Def_ChapterSmDiracYukawa` |
+| `ChapterSmYukawaCoupling` | `QgHermiteFriedrichs.norm_sq_pgLp` | `Def_ChapterQgHermiteFriedrichs` |
+
+The citing side imports the declaring bundle and still fails: the platform serves
+the **pruned** copy, which keeps `def`s and drops the lemmas.  A lemma that lives
+in a sibling def bundle therefore does not exist in the platform's world at all,
+and no import or `open` can reach it.  Copying the lemma in is not a one-liner
+either — its own proof cites further pruned lemmas of the same module
+(`realCoeff_smMagG`, `pderiv_hermiteMv`, …), so the copy would have to be a
+subgraph.  These six need a decision (inline the subgraph, or prove and publish
+the cited theorem so a `Them_*` module exists), not another gate pass.
+
+### Statement repairs that were real text errors (39 stubs)
+
+`debug/repair_stmt_elab.py` handles the mechanical one; the rest were edited in
+place.  Every repair was re-gated with `debug/gate_thm_ok.py` (mirror world):
+
+| class | files | repair | gate |
+|---|---|---|---|
+| `open \`BookProof.HashimotoShiftInvert\`.` (generator emitted a backticked module name plus a period) | 20 | `open BookProof.HashimotoShiftInvert` | 13 OK / 3 fixed below / 4 `already declared` |
+| unknown namespace `BookProof.KatoRellich` (namespace only exists in `Def_ChapterKatoRellichDeficiencyCore`) | 3 | add that import | 1 OK, 2 more below |
+| `Application type mismatch` from a duplicated `variable {F : Type*}` line (two `F`s, different instance sets) | 2 | keep one `variable`/`L` pair, `F` first (`autoImplicit=false` rejects `L : LagrangianFullData F` before `F`) | OK |
+| `ImprimitivitySystem` ambiguous: two published structures share the leaf name, so Lean picks the `Fintype` one and asks for `[Fintype X]` | 21 | qualify as `BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem` | 21 OK |
+| `unexpected token 'ᴴ'` (notation is `scoped[Matrix]`) | 2 | `open scoped Matrix` | 1 OK / 1 `already declared` |
+| `Fields missing: expE, expF` (`where`-stub truncated after the first field) | 2 | complete the structure fields | OK |
+| `unsolved goals` (stub kept the first `have` of the real proof and dropped the rest) | 2 | reduce to `by sorry` | OK |
+
+Prefixing `[Fintype X]` was tried first on the Mackey family and is **wrong**: it
+makes the other structure applicable and turns 19 bundles into an ambiguity.  The
+original text was fine; only the name needed qualifying.
+
+Still blocked, and not a text error: `QgOuterFockCoreFL_coreN_gcSeq` /
+`_ext_gcSeq` project `CoreData.gcSeq_mem`, which is a lemma of its own def bundle
+and therefore absent on the platform; `QgPhysicalSectorIdentity_coupling_
+essentiallySelfAdjointOn_core` resolves `fockH` to `DirectSumEsa.fockH` and cites
+`deg_pair_le_two`, likewise unpublished.
+
+### Why the 26 pending defs cannot be pushed from here
+
+All 26 are gate-`OK` **and** stamp-fresh; the drain is not withholding them.  It
+submits them and the platform answers
+
+```text
+WAIT (theorem dependency not proved yet: BookProof.DegEnergy.energy_bound, …)
+```
+
+so their publication is downstream of proving the theorems they cite — the
+def → thm → sol chain, not a gate.  Six of them are additionally in the
+pruned-sibling class above.
+
+The other 17 were gated in published truth for the first time
+(`state/regate/pending_defs_rest.tsv`): **12 OK, 5 FAIL**, in two sub-classes of
+the same cause — a name that only exists inside a bundle the platform has not
+published or has pruned:
+
+* provider not published *yet*: `unknown namespace BookProof.FockWeightedSchur`
+  (`ChapterGradedBandSchurEsa`) and `BookProof.GradedBandSchur`
+  (`ChapterYangMillsAbelianFockEsa`).  Those two clear themselves once the parent
+  bundle publishes; the gate needs a cache refresh + regate after that, it does
+  not re-open on its own.
+* pruned sibling lemma: `prop` (`ChapterFiniteSectionSingleTime`), `up_self`
+  (`ChapterFockSchurEsa`), `coreOp_coe` (`ChapterNsLinearKoopmanEsa`).
+
+So the pending defs split 12 ready / 8 provider-blocked / 6 theorem-blocked, and
+only the first group can move on a gate pass.
+
+## Session 35 — the 69-stub re-gate: 14 real fixes, 297 nodes that could never publish
+
+Re-gating the 69 stubs whose earlier class-D repairs had only rewritten imports
+(`state/logs/regate_thm2_1120.log`, `CANDIDATE_MIRROR=state/mirror`) returned
+**0 OK / 69 FAIL** — the repairs had addressed the wrong layer twice.  The
+verdicts were three classes, and only one of them is a text defect:
+
+* **namespace, not module (14).** `Thm_BookProof_TensorSumEsa_pflow_neg` already
+  imported the bundle that declares `structure OneParticleFlow` and still said
+  `Unknown identifier OneParticleFlow`: the declaration sits in
+  `namespace BookProof.FlowDGamma` and the stub opened only `TensorCore` /
+  `FarisLavine` / `GraphCore`.  `open A` never exposes a name declared in
+  `A.B`.  `debug/fix_unknown_ns.py` (new) resolves each `Unknown identifier X`
+  against the mirror's declarations and inserts the module import *and* the
+  exact owning namespace.  14 stubs then compiled, and the re-gate agrees
+  (`state/thm_gate.json`: 14 OK / 55 not OK).
+* **duplicate of a PUBLISHED bundle (52).** `has already been declared`, with
+  the declaring text in the served cache — `theorem pflow_neg` is line 407 of
+  the published `Def_ChapterTensorSumEsa`.  The server compile is the same
+  verdict, so these can never publish as problems.  `debug/park_pubbundle_dups.py
+  --apply` parked the whole class: **297 thm + 297 sol** (ledger backup
+  `state/pipeline.json.bak_pubdup`, `--undo` releases the marker).
+* **provider unpublished (3).** `single_mem_secCore`, `sectorEnergy_measurable`:
+  no served declaration to open, so they wait for their bundle.
+
+Ledger after: pending 1824 → 1230 (thm 848 → 551), parked 2848 → 3442.
+
+`gate_thm_ok.py` defaults to `CANDIDATE_MIRROR=/tmp/def_candidate`; run against
+a mirror that has no oleans it writes 49 `FAIL … object file does not exist`
+entries into `state/thm_gate.json`.  Pass `CANDIDATE_MIRROR=$PWD/state/mirror`
+(the Workspace rule bans the `/tmp` default anyway).
+
+### Why the 14 cannot be submitted yet
+
+The platform refuses a def or thm whose imported theorem is not `Proved`
+(`thms_not_proved`, line 806), and the 14 gate-OK stubs import one of four
+unpublished bundles.  Those four are in turn blocked on **44 helper theorems** —
+`BookProof_PermSector_permRep_commutes_sectorCore`,
+`BookProof_DegEnergy_energy_bound`, `BookProof_ConvolutionCalc_lapCS_cnv`,
+`BookProof_FockSecondQuantization_opCol_apply`, …
+
+These 44 are **not** missing from the wave spec: all 44 have a `thms` entry, a
+`sol_order` row, a stub and a sol.  They are also members of `ORDER`, so nothing
+needs registering (`debug/register_orphan_thms.py` is not the tool for them).
+Their ledger absence only means `st["items"].get("thm:<slug>") == {}` — never
+attempted.  What actually held them back is the thm gate: an absent
+`state/thm_gate.json` entry DEFERS (`thm_gate_fresh`), so the drain skipped them
+by design and the def bundles waiting on them could never advance.  The fix is
+`gate_thm_ok.py` over the 44 and then a `--kind thm --only-file` pass; 39 of the
+44 have every `import Theorems.Thm_*` dependency already `done`, so they are
+submittable as soon as they gate, and the 5 `PermSector` / `GroupAverage` ones
+follow once their siblings publish.
+
+One submission this session went to `attempts: 5` / `failed`:
+`BookProof_TensorSumEsa_instContinuousSMulRealTensorProductComplexCarrier` is a
+malformed stub — it declares `def pflow … := by sorry` instead of the theorem,
+so the platform cannot split a formal statement.  Attempts were already
+exhausted; the stub is not submittable and needs regenerating.
+
+### The 44 helpers: gated 30 OK, and then a guard circularity
+
+`gate_thm_ok.py` over the 44 (`state/scratch/helpers44.txt`,
+`state/logs/gate_helpers44_1105.log`): **30 OK, 14 FAIL** — and all 14 FAILs are
+the published-bundle duplicate class again (10 `PermSector`, 2 `GroupAverage`,
+`ScalaronEsa_ccEquiv_coe`, `TensorCore_sectorCore_le_sectorDom`), i.e. the same
+nodes the 297-park could not reach because their ledger status is *absent*
+rather than pending.
+
+Submitting the 30 proved the helpers are **already problem nodes** on the
+platform: `blocked_by` answers `target already published on the platform
+(BookProof.ConvolutionCalc.cnv_apply)` and defers.  Their per-node status is
+however not uniform, measured through the API:
+
+| helper | status |
+|---|---|
+| `BookProof.ConvolutionCalc.cnv_apply` | `Proved` |
+| `BookProof.DegEnergy.energy_bound` | `Open` |
+| `BookProof.PermSector.permRep_commutes_sectorCore` | job exists, no `theorem_id` |
+
+And the sol pass over the same 44 defers with `theorem not published yet` /
+`sibling theorem not published on the platform: BookProof.DegEnergy.norm_cx`.
+So an `Open` node is blocked twice over: the thm pass will not submit it
+(`target already published`), and the sol pass will not submit its proof
+(`theorem not published yet`).  Nothing in this pass can break that; it needs a
+decision — either the thm guard treats "exists but `Open`" as *submit the
+solution against the existing node* instead of deferring, or the 44 are accepted
+as proof work and their sols are pushed by a route that does not pre-check the
+platform's theorem status.
+
+`def:ChapterDegKatoEsa` (waits on `DegEnergy.*`, `ConvolutionCalc.*`) and
+`def:ChapterFockStatisticsEsa` (waits on `PermSector.*`, which is a *published
+bundle* duplicate and therefore can never be a problem) are the two ends of this
+chain and neither is a text defect.
+
+### Session 36: the empty-preamble stubs were a generator bug, not statement defects
+
+79 `Theorems/Thm_*.lean` files began directly with `theorem` — no `import`, no
+`open`, no `variable`; their comment header ends `-- Generated from X.lean — `
+and then nothing. Every one failed the offline gate with what looked like a
+statement error (`Unknown identifier X`, `Unknown identifier E`,
+`Unknown identifier secCore`), which is why the "unresolved stub provider" class
+kept coming back: the missing provider was the chapter's own `variable` line,
+not a name in any published bundle.
+
+Root cause in `scripts/wave_generate.py::structural_preamble`: in the
+code-scanning branch a `-/` only did `i += 2`. A block comment that opens and
+closes on ONE line (`/-! ## G.0 — … -/`, i.e. every `/-!` section header)
+therefore left `depth` at 1, and every later line of the chapter counted as
+comment text. For ChapterG the preamble came back as just the module-level
+`open scoped …`: `open MeasureTheory` (line 140) and the `variable` block
+(235–237) were silently dropped. Fixed by decrementing `depth` on the closer.
+
+Repair of the existing files: `debug/regen_headerless_stubs.py` re-runs the
+generator for the affected nodes and takes ONLY the header from it, keeping the
+declaration already on disk — the sketch spans of several of these chapters are
+stale (`look misaligned`, ChapterG 4/43), and a full regeneration wrote
+`theorem … : haarAverage (μG := by sorry`, a truncated statement. It handles the
+79 found (`state/scratch/noimport79.txt`; 24 still pending), and `--force`
+re-does them after a change to the generator itself.
+
+Result on the 24 pending: **15 gate OK** (`state/thm_gate.json`). The other 9 are
+not stub defects: 6 `QgSymmetricSector` await the still-unpublished
+`Def_ChapterFockStatisticsEsa` (no olean in the mirror), 2 import a def bundle
+whose own `import Theorems.…IkebeKato_summable_normSq` collides with
+`Def_ChapterLeafGaps` (the def-side shadow class), and
+`ScalaronOuterFockFL_exists_band₂` is the published-bundle duplicate class.
+
+### Session 36b: the Open-node closed loop, and how the DegEnergy chain broke it
+
+The 44 helpers the pending def bundles import exist on the platform as problem
+nodes, but a node born `Open` was blocked twice over: the thm column deferred it
+(`blocked_by` -> "target already published on the platform") and the sol column
+deferred the proof ("theorem not published yet"), because the two columns read
+different records and neither ever learned the node's `theorem_id`.
+
+Changes (all in `pipeline/upload_pipeline.py`, no submission policy weakened):
+
+* `thm_stub_name(item)` resolves a `thm:` item's platform name from its own
+  Sol/Thm file. `WAVE_THMS` only knows the wave chapters, so a helper such as
+  `BookProof.DegEnergy.energy_bound` was invisible to every name-based job
+  lookup and `sync_state` could never record it.
+* `sync_state` now records a `thm:` item whose publish job exists as done with
+  its `theorem_id` and the node's real status (`theorem_status`), not just
+  `reused_status: published`.
+* `resolve_existing_thm_item(st, item)` does the same inline, for both chunk
+  loops, and runs BEFORE `blocked_by` -- that predicate is what closed the loop.
+  A `thm:` item carries the statement job; the proof belongs to its `sol:` item,
+  so recording the node is correct in both the Proved and the Open case.
+
+Measured on the DegEnergy chain (17:00-17:17):
+
+| step | result |
+|---|---|
+| `Thm_BookProof_DegEnergy_norm_cx` | stub ended `:= by` + a leaked proof body (stub sanity); fixed to `:= by sorry`, gate OK, published DONE |
+| `debug/drop_shadowed_imports.py` | 91 pending sols carried `import Theorems.Thm_X` for a declaration the published def bundle already carries; imports dropped (sol bodies untouched) |
+| sols submitted | `lapCS_conj`, `integral_dcoord_mul` both **Proved** on the platform; `dcoord_cx_sq` DONE; `energy_bound` accepted as **SKETCH_ACCEPTED** (node still `Open`) |
+| `def:ChapterDegKatoEsa` | now fails only with `theorem dependency not proved yet`, i.e. it retries itself and burns no attempt |
+
+Gate note: run `debug/gate_thm_ok.py` with `CANDIDATE_MIRROR=$PWD/state/mirror`.
+The default `/tmp/def_candidate` has 662 Definitions oleans against the mirror's
+706, so it reports `object file .../Def_X.olean not found` for bundles that are
+built (6 of the 24 stub repairs looked like dep failures for exactly this
+reason), and it keeps the candidate mirror in `/tmp`, which AGENTS.md rule 4
+forbids -- the mirror on disk under `state/mirror` is the supported location.
+
+### Session 36c: publishing the def queue — DegKatoEsa published, and the pruned-text wall
+
+`def:ChapterDegKatoEsa` is **published** (19:02). It took four helper proofs, all
+of which are now `Proved` on the platform: `DegEnergy.norm_cx` (proof was
+`simp [cx]`; `simp only [cx]` + `Complex.norm_real` does it, and a dead auxiliary
+theorem in the same file had to go), `DegEnergy.energy_bound` (auto-flipped once
+norm_cx proved — the reduction semantics), `ConvolutionCalc.lapCS_cnv`,
+`ConvolutionCalc.lapCS_reflect` and `cnv_finset_sum` (its solution was missing
+`import Theorems.Thm_BookProof_ConvolutionCalc_cnv_apply`, which the published
+bundle does not carry).
+
+Then the other 23, re-gated with `GATE_TRUTH=published` against
+`CANDIDATE_MIRROR=$PWD/state/mirror`: **17 OK**, 6 not — 1 `Unknown identifier`
+(`ChapterFockStatisticsCompletion: exists_ne_zero_bosonic`), 1 `unknown
+namespace BookProof.GradedBandSchur` (`ChapterYangMillsAbelianFockEsa`), and 4
+`BLOCKED by Thm_…` (a dead/absent theorem module).
+
+**The wall: 222 parked thms were parked on a false premise.** 820 parked thms
+carry `declared by published def bundle <X>`; for **222** of them the published
+bundle text (`state/published_bundles/Def_X.lean`) does not declare the name at
+all — the bundle was republished *pruned* after the park was written, so the
+name is a legitimate problem statement. Reopened all 222 (+199 sols); the drain
+is publishing them bottom-up and 2 of the PermSector leaves already closed
+(`permRep_mem_sectorCore`, `TensorCore_sectorCore_le_sectorDom`: thm done + sol
+done).
+
+**Second wall: the candidate mirror carries UNPRUNED def text.** The platform
+publishes `Def_ChapterPermutationSectorEsa` without
+`permRep_commutes_sectorCore` (verified: the name is absent from
+`state/published_bundles/`), but `state/mirror/Definitions/` still has the old
+text that declares it. So `gate_thm_ok.py` answers ``... has already been
+declared`` for the statement, and the uploader's *offline mirror* check answers
+`Unknown identifier permRep_mem_sectorCore` for the same item — the two checks
+disagree because one compiles the mirror's rich text and the other the platform's
+pruned text. Until the mirror's `Definitions/` copies are replaced with the
+served `state/published_bundles/` text (the `pubstage_check.ensure_stage`
+recipe, applied to the mirror itself), this PermSector chain and every other
+pruned-bundle statement stay gated. No amount of stub editing fixes it.
+
+The third gate in the way is the **cached offline verdict**: `submission_guard`
+reads `state/offline_pending_check.json` and defers on any old `FAIL:` whose
+file mtime is older than the cache. Reopened items therefore keep deferring on a
+verdict written before their dependency was proved. Refresh it with
+`python3 debug/check_pending_offline.py --kind thm --only <chapter>`; after the
+PermSector leaves were proved, that check flipped both
+`…_commutes_sectorCore` statements from `FAIL` to `ok` and the uploader then
+resolved them as "reusing existing platform node (Open)" — no submission spent.
+
+State at the end of this pass: defs 678 done / 23 pending; the PermSector chain
+is one `restrictOp_sectorOp_permOp` thesis away from `def:ChapterFockStatisticsEsa`.
+
+### Session 37: SKETCH_ACCEPTED — why an accepted proof leaves the node Open, and the ledger
+
+**The mechanism, measured end-to-end on one node.** `BookProof.DegEnergy.energy_bound`
+was submitted at 17:12 with `Sol_BookProof_DegEnergy_energy_bound.lean`, which
+imports `Theorems.Thm_BookProof_DegEnergy_norm_cx`. That node existed but was
+still `Open` at that moment (its own proof landed at 18:38). Verdict:
+`SKETCH_ACCEPTED` — the server accepts a proof that CITIES an Open child as a
+*reduction*, not a proof, and keeps the parent `Open` until every imported child
+is `Proved` (bottom-up resolution). At 18:41 the node flipped to `Proved` by
+itself, with no further submission from us. The same pattern is visible in the
+queue: `FriedrichsExtension_friedrichs_hashimoto_selects`,
+`QuantumGravity3DGauge_qgMomScaled_symmetricOn` and
+`…_qg3DElliptic_friedrichs_extension` are all sketches waiting on the single
+child `BookProof.FriedrichsExtension.friedrichs_extension_exists`.
+
+**Why the ledger lied.** Both success paths wrote
+`{"status": "done", "submission_id": …}` and threw the payload away —
+`_apply_verify_verdict` mapped `ACCEPTED` and `SKETCH_ACCEPTED` to the same
+"terminal, no error". So `done` meant "proved" and "accepted as a reduction"
+at once, and `--status` could not tell them apart (the plan itself warned about
+this: "published" and "proved" are different counters).
+
+**The fix (pipeline/upload_pipeline.py).**
+* `_record_sol_success(st, item, sid, payload)` is now the only writer of an
+  accepted submission. It keeps `status: done` + `submission_id` (never
+  resubmit) and adds `verdict` (the platform's own word), `proved` (the TARGET
+  node's state now, from `theorem_status`), `node_status`, and for a sketch
+  `sketch: true` plus `open_children` — the imported `Theorems.Thm_*` names
+  that are not `Proved`, computed by `open_theorem_children()`. A sketch whose
+  children have since been proved therefore reads
+  `verdict: SKETCH_ACCEPTED, proved: true`, which is exactly the truth.
+* Both call sites (`do_wave_sol` re-poll and `run_chunk_pipelined`'s poll round)
+  pass the payload through, and still keep `attempts`, `reduction_bases`,
+  `submission_src`, `platform_solver_submission` (the wholesale replace used to
+  drop `submission_src`, weakening the stale-verdict guard).
+* `--sync` annotates legacy `done` records from the platform's own verdict (one
+  GET per record, budget-guarded, resumable: "re-run to continue").
+* `--status` reports them apart: `N done sol(s) are SKETCH (reduction, node still
+  Open)` and `M legacy record(s) carry no verdict yet`.
+
+Measured on the first 267 annotated records: **264 `ACCEPTED` (node Proved), 3
+`SKETCH_ACCEPTED` (all three since flipped to Proved by their children)** — so
+the sketch class is real but small, which is why it hid.
+
+**Full annotation (23:09).** All 7,366 done solutions now carry `proved`:
+
+| class | count |
+|---|---|
+| `ACCEPTED`, node Proved | 4636 |
+| node already Proved before we submitted (`reused_status: Proved`, no submission of ours) | 2712 |
+| **`SKETCH_ACCEPTED`, node still Open** | **11** |
+| `SKETCH_ACCEPTED`, since flipped to Proved by its children | 7 |
+
+The 11 are a chain plus two siblings, each with its blocker recorded in
+`open_children` — e.g. `SirkSingleTime.strongResAt_of_abs_sub_lt` →
+`…_of_pos_of_pos` → `…_of_ne_zero` → `…_resolventConvergence`, and both
+`SmOuterFock.smSector_friedrichs_extension` and
+`…_sm_dGamma_friedrichs_extension` wait on the single
+`FriedrichsExtension.friedrichs_extension_exists`.
+
+**That leaf is `Disproved`, not Open — which changes what the 11 mean.** The
+first version of this annotation recorded one flat `open_children` list, so a
+sketch behind a dead statement looked like pending work. Asked of the platform
+directly (2026-11-05, `GET theorems/<id>` on every recorded child):
+
+| child status | sketches behind it |
+|---|---|
+| `Open` | 8 (SirkSingleTime ×5, QgTruncationResolvent, ChapterH8, ChapterSolovayTailDimension) |
+| `Disproved` | 2 direct (`SmOuterFock.smSector_friedrichs_extension`, `…_sm_dGamma_friedrichs_extension`, both citing `FriedrichsExtension.friedrichs_extension_exists`, disproved since 2026-10-05) + 1 transitive (`…_sm_dGamma_stone_flow`, whose only child is the first) |
+
+So `open_theorem_children(path, st=None)` now returns
+`(open_children, dead_children)` and the record carries `dead_children` plus a
+`blocked` sentence for the unreachable class; `--status` prints the split
+(`8 waiting on an Open child, 3 unreachable (a cited statement is Disproved)`).
+The transitive step reads the ledger itself: a child with no status of its own
+problem — we recorded it as dead — is dead here too, no extra API call.
+A Disproved child is never proved, so those three nodes cannot flip whatever is
+submitted — the honest reading is dead, not pending, and the Sirk chain's leaf
+is the only remaining real work in this class. `--sync` refreshes
+`dead_children` for sketch records that predate the field.
+
+### Session 38: the candidate mirror lives in the repo, and its stale oleans are detectable
+
+**Why `/tmp` had to go.** `AGENTS.md` rule 4: `/tmp` is tmpfs on this box and an
+OOM killed the machine on 2026-10-27, taking the whole candidate mirror with it.
+Thirteen debug tools still defaulted `CANDIDATE_MIRROR` to `/tmp/def_candidate`
+(`gate_thm_ok`, `build_candidate_mirror`, `regate_bundles`, `root_failures`,
+`compile_roots`, `fix_dup_regions`, `fix_stub_import_dups`,
+`add_missing_stub_imports`, `thm_gate_from_mirror`, `_one_def`, `_one_def2`,
+`_compile_thm_cand`, `_one_sol2`). All of them now default to
+`<repo>/state/mirror`, the same tree `sync_stale_mirror`, `regate_capped.sh`,
+`_compile_defs.sh` and the `_inc` gates already used; the environment override
+is unchanged, so a deliberate `/tmp` tree is still possible. Left alone on
+purpose: `debug/def_fix_loop.py` (`/tmp/published_mirror` is a different
+artifact) and `thm_gate_from_mirror.py --report` (a dated 2026-10-12 build
+report, not a generated default).
+
+**`gate_thm_ok.py --check`.** Prints the mirror that would be used, whether its
+`Theorems/` tree exists, and per slug: source present, whether the mirror copy is
+identical or would be overwritten, whether an olean already exists, and what the
+current `thm_gate.json` entry means for submission (`fresh OK -- submits`,
+`fresh FAIL -- defers`, `STALE stamp ... -- defers`). Exit 0 when every stub has
+a source, 1 when one does not, 2 when the mirror tree is missing. No staging, no
+compile, no gate write -- verified: `state/thm_gate.json` mtime unchanged across
+a `--check` run.
+
+**Stale definition oleans.** A def bundle's olean is what every downstream
+compile links against, so one built from an older text turns a real proof into a
+mirror artifact. Measured 2026-11-06 on `state/mirror` (701 workspace defs, all
+present):
+
+| class | count | meaning |
+|---|---|---|
+| `content` | 343 | mirror `.lean` differs from the workspace text |
+| `no-olean` | 0 | no compiled output at all |
+| `oleans-old` | 393 | `.olean` mtime older than its `.lean` (overlap 175 with `content`, so **561 distinct stale modules**) |
+
+`sync_stale_mirror.py` now classifies these three (`stale_classes()`), reports
+them with `--check` (exit 1 while anything is stale, 0 when consistent) and
+refreshes them in topological order as before, restoring the old `.lean` +
+`.olean` on a rebuild failure. `--only <substr>` restricts a refresh to one
+module plus its own stale imports. Verified end-to-end on
+`Def_ChapterSoftmaxOrder` (olean from 2026-10-27 -> rebuilt in 11 s -> `--check`
+clean, exit 0).
+
+**The artifact this explains.** `gate_thm_ok.py CarlemanSimplex_deg_single`
+reported `FAIL ... unknown namespace BookProof.CarlemanSimplex` after the default
+moved to `state/mirror`; the module's def text there is stale by `content`, so
+that FAIL is the mirror talking, not the stub. The gate entry was reverted to its
+previous value (it was already a FAIL, same stamp) and the mirror backlog left
+for a deliberate refresh: `python3 debug/sync_stale_mirror.py --defs-only
+--limit 20` in chunks, since a def bundle can take minutes.
+
+### Session 39: the failed-sol repair round (16 items, 10 fixed and resubmitting)
+
+**Inventory, measured from the ledger.** 7,448 theorem nodes are published (thm
+item `done`); 78 of them have no `done` solution yet -- 19 `parked`, 30 `pending`
+and 29 with no `sol:` record at all. Of the 793 pending sol items, **16 carry
+`attempts > 0`** and a platform verdict; those are the real failure set (the
+remaining 777 have never been submitted). Verdict split: 14 `CE`, 1 `SORRY`,
+1 `WA`.
+
+**Fixed and recompiling clean locally (10)** -- a local `_one_sol2.sh` pass is the
+gate before resubmission:
+
+| slug | cause | fix |
+|---|---|---|
+| `ChapterSirkPerSystemFlowBound_{lagrangian,nsDiff,ns}_sirk_flow_error_bound` | `unexpected token; expected 'private', 'scoped' or identifier` | the generator emitted `` open `BookProof.HashimotoShiftInvert`. `` (backtick-quoted namespace, followed by a stray `.`); the namespace is already opened above, so the line is deleted |
+| `YangMillsAbelianEsa_ymAbelian_hashimoto_selects` | same backtick `open` | same |
+| `ChapterSolovayTailDimension_tail_infinite_dimensional` | `Unknown identifier _root_.InnerTail` | `InnerTail` is a ROOT `abbrev` declared in `Def_ChapterSolovay`, which the solution never imported -- added |
+| `ChapterStoneTheorem_stone_bijection` | `Function expected at UnboundedSelfAdjoint` | the structure lives in `BookProof.ChapterStoneResolvent`; the file opened only `ChapterStoneMeasurable`/`ChapterStoneTheorem`, so the name resolved to something else -- opened the right namespace |
+
+Already compiling before this round (their submitted revision was older):
+`ChapterQuadraticRotation_quadPoly_apply'`, `QuantumGravity3DGauge_pderiv_comm_poly`,
+`ChapterSeparableL2Model_separableSpace_of_linearIsometry` (the `SORRY` verdict is
+stale), `ChapterSeparableL2Model_abelian_multiplication_model_classified_separable_hilbert`,
+`ChapterMackeyGeneralBase_mackey_imprimitivity_general` (locally OK, but its
+platform verdict was `WA`, so the local file does not match the target statement
+-- statement work, not proof work).
+
+Also needed: three theorem stubs had no olean in `state/mirror` at all
+(`ChapterSirkPerSystemFlowBound_sirk_scheme_bound`,
+`ChapterSolovayTailDimension_substrate_infinite_dimensional`,
+`ChapterStoneResolvent_UnboundedSelfAdjoint_ext_prime`), so every solution
+importing them failed locally with `object file ... does not exist` -- a mirror
+artifact, not a verdict. `debug/gate_thm_ok.py` staged and compiled them (3 OK)
+and the solutions then reported their real errors.
+
+**Still open (6).** All are statement-shape problems, not proof gaps -- the
+generated statement applies a name that is not a function of that shape at that
+point, so the fix needs the target's authoritative `formal_statement`:
+`ChapterA_IsRReal_cxSystem_isCReal` (`cxSystem`), `EsaPair_dGamma_essentiallySelfAdjoint_ofBounded`
+(`fockSectorCore Hs ⊤ D n` vs the 1-argument def of that name),
+`QgTruncationResolvent_starobinsky_qgContinuum_momentumCutoff_flow_convergence`
+(`qgContinuumModes`), `ChapterSeparableL2Model_abelian_algebra_multiplication_model_classified_separable_hilbert`
+(`characterSpace`), `ChapterH8_krylovOrthonormal_span` (`span_gramSchmidtNormed`
+unknown + `unsolved goals`), and the `WA` Mackey item above.
+
+**While this runs.** The upload drain keeps submitting the rest of the 793 pending
+sols, and `debug/drain_mirror.sh` (chunked `sync_stale_mirror.py --limit 12`)
+continues the 559-module stale-olean backlog in `state/mirror` -- that backlog is
+what produced the false `unknown namespace` gate FAILs in Session 38, so fixing it
+protects later gate runs.
+
+#### Session 39 results (13:35): 8 of the 16 accepted, 8 remain with named causes
+
+Ledger after the round: **7,378 done sols (up 8), 785 pending, 1,622 parked.**
+
+| slug | outcome |
+|---|---|
+| `ChapterSirkPerSystemFlowBound_lagrangian/nsDiff/ns_sirk_flow_error_bound` | **ACCEPTED** (backtick `open` deleted) |
+| `ChapterSolovayTailDimension_tail_infinite_dimensional` | **ACCEPTED** (import `Def_ChapterSolovay`) |
+| `ChapterStoneTheorem_stone_bijection` | **ACCEPTED** (`open BookProof.ChapterStoneResolvent`) |
+| `YangMillsAbelianEsa_ymAbelian_hashimoto_selects` | **ACCEPTED** (backtick `open` deleted; the local mirror cannot build the imported stub -- `has already been declared` against `Def_ChapterYangMillsAbelianEsa` -- but the platform's module does exist, so the import resolves server-side) |
+| `ChapterSeparableL2Model_abelian_algebra_multiplication_model_classified_separable_hilbert` | **ACCEPTED** (`open Complex WeakDual` + `universe u v`) |
+| `ChapterSeparableL2Model_separableSpace_of_linearIsometry` | **ACCEPTED** (`universe u`) |
+| `ChapterSeparableL2Model_abelian_multiplication_model_classified_separable_hilbert` | pending: platform `Failed to resolve platform imports` (platform-side, not the text) |
+| `ChapterA_IsRReal_cxSystem_isCReal`, `EsaPair_dGamma_essentiallySelfAdjoint_ofBounded`, `QgTruncationResolvent_starobinsky_qgContinuum_momentumCutoff_flow_convergence` | pending: `Unknown identifier` **on the platform at the same line**, even after importing+opening the declaring module (`Def_Complexification`, `Def_ChapterSecondQuantizationCoreEsa`, `Def_ChapterQgContinuumModeInstance`). The local mirror has those declarations; the platform's *published* bundles do not -- the def bundles need republishing before these proofs can cite them. |
+| `QuantumGravity3DGauge_pderiv_comm_poly` | fixed the statement (`{d : ℕ}` was dropped, so `d` was an autoImplicit variable locally and unknown on the server); proof still needs a pderiv-commutativity lemma that Mathlib does not provide (`MvPolynomial.pderiv_comm` does not exist) |
+| `ChapterH8_krylovOrthonormal_span` | `span_gramSchmidtNormed` / `span_gramSchmidt_Iio` do not exist (`Def_ChapterH8Bases` has `gramSchmidtNormed` and Mathlib `InnerProductSpace.span_gramSchmidtNormed_range`); needs the proof rebuilt against the real lemma names |
+| `ChapterMackeyGeneralBase_mackey_imprimitivity_general` | `WA`: compiles locally, does not match the target statement -- statement work, not proof work |
+| `QuadraticRotation_quadPoly_apply'` | the platform rejected this exact text (`unsolved goals`, stamp unchanged) while the local toolchain accepts it: the platform environment is not byte-identical to `timepiece331`. Not resubmittable without a different proof |
+
+**Harness bug found and fixed.** `debug/_one_sol2.sh` elaborated without
+`-DautoImplicit=false`, so a solution that used a name it never imported
+compiled here and failed there with `Unknown identifier` -- exactly the four
+first-round misdiagnoses (`cxSystem`, `fockSectorCore`, `qgContinuumModes`,
+`characterSpace`, all saved by autoImplicit locally). The harness now passes the
+same flag the server uses; every "locally OK" claim above is under that flag.
+
+**Submission guard, correctly refusing.** Four items came back
+`WAIT (guard defer: platform rejected the current text)` because the file stamp
+still equals `error_src`; that is the §2.40 rule working as designed -- no attempt
+is spent re-sending text the server already refused unchanged.
+
+#### Session 39 second round (16:25): the four "platform lacks the declaration" items were an `open`, not a republish
+
+Ledger now: **7,386 done sols (up 8), 777 pending, 1,622 parked, 1 thm `failed`, 1
+unsubmittable** (its source is not in this checkout). Same 16-item failure set as
+above, so this round closed six of the eight that were still open.
+
+| slug | outcome | what actually fixed it |
+|---|---|---|
+| `ChapterH5_krylov_no_inversion_eq_standard` | **ACCEPTED** | already accepted earlier; verdict confirmed after the transient DB error |
+| `ChapterH8_krylovOrthonormal_span` | **ACCEPTED** | proof rebuilt against the lemma names that exist: `InnerProductSpace.span_gramSchmidtNormed` + `span_gramSchmidt_Iio`, with the `Fin n` range rewritten to `krylovOrthonormalSeq H v '' Set.Iio n` (`span_gramSchmidtNormed` does not exist) |
+| `ChapterA_IsRReal_cxSystem_isCReal` | **SKETCH_ACCEPTED** | `cxSystem` is in `BookProof.Complexification` (`Def_Complexification`), not `BookProof.ChapterA` -- adding `open BookProof.Complexification` alongside the import was the whole fix |
+| `EsaPair_dGamma_essentiallySelfAdjoint_ofBounded` | **ACCEPTED** | `fockSectorCore` is in `BookProof.SecondQuantizationCore` (`Def_ChapterSecondQuantizationCoreEsa`) -- `open BookProof.SecondQuantizationCore` alongside the import |
+| `QgTruncationResolvent_starobinsky_qgContinuum_momentumCutoff_flow_convergence` | **ACCEPTED** | the `Unknown identifier qgContinuumModes` had been fixed in the earlier round; only the transient platform DB error stood between the fix and its verdict. Re-polling the same `submission_id` `ef6a0ee8` returned `ACCEPTED` |
+| `QuantumGravity3DGauge_pderiv_comm_poly` | open | statement fixed; the proof still needs a pderiv-commutativity lemma Mathlib lacks |
+| `ChapterMackeyGeneralBase_mackey_imprimitivity_general` | open | `WA`: compiles, statement does not match the target -- statement work |
+| `QuadraticRotation_quadPoly_apply'` | open | platform rejects the exact text the local toolchain accepts; needs a different proof, not a resubmission |
+
+**The lesson, filling §2.40's blind spot.** Three of the four `Unknown identifier`
+failures had already been "fixed" by importing the declaring module, and the
+platform still said `Unknown identifier` at that line. The conclusion recorded at
+13:35 -- *the platform's published bundles lack those declarations, republish
+first* -- was wrong, and the cheap check that disproves it is to compile the
+**published** text of the bundle (`GET submissions/<id>/solution`) instead of the
+draft in `Definitions/`: both `Def_Complexification` and
+`Def_ChapterSecondQuantizationCoreEsa` declare the names. An import brings a name
+into scope only through its namespace, so the missing token was `open`, and
+`-DautoImplicit=false` cannot mask that. Before concluding that a def bundle needs
+republishing, the open question is which namespace declares the name, not whether
+the bundle exists.
+
+### Session 40: 84 of the first drain chunk's defers are five EMPTY published def bundles
+
+After the drain restarted, its first chunk deferred 122 items on `offline mirror:`
+and 96 on `thm gate:`. The `offline mirror:` block is not the stale-olean
+backlog: 84 of them are one cause, `open BookProof.<X>` where the platform's
+published `Def_ChapterX` does not declare the namespace `<X>` at all.
+
+| namespace the statements open | published `state/published_bundles/Def_…` | workspace `Definitions/Def_…` | defers in chunk 1 |
+|---|---|---|---|
+| `BookProof.CarlemanTwoStep` | 182 B, no namespace, `noncomputable section` and nothing else | 7,800 B, `namespace BookProof.CarlemanTwoStep` (L45) | 43 |
+| `BookProof.CarlemanSimplex` | 365 B, `namespace BookProof.**Chapter**CarlemanSimplex` (empty body) | 25,850 B, `namespace BookProof.CarlemanSimplex` (L52) | 33 |
+| `BookProof.GradedBandSchur` | 338 B, `namespace BookProof.**Chapter**GradedBandSchurEsa` (empty body) | 7,911 B | 8 |
+| `BookProof.QgTimeIndependent` | 200 B, no namespace at all | 6,830 B | 2 |
+| `BookProof.ModeQuadratic` | 370 B, `namespace BookProof.**Chapter**ModeQuadraticEsa` (empty body) | 24,186 B | 2 |
+
+These are **skeleton bundles from an early generator** (`# Chapter ChapterX` /
+"Definitions to be added from source chapter", namespaced `BookProof.ChapterX`).
+They were published once and are immutable -- `submit-definition` answers `A
+theorem or definition with name "ChapterX" already exists` (161 flips, §2.13),
+and `debug/flip_def_republish.py` documents the refusal. So no amount of ledger
+flipping repairs them.
+
+**Reach.** `grep -rl Definitions.Def_<X>` over `Theorems/` + `Solutions/`:
+CarlemanTwoStep 305 files, CarlemanSimplex 180, QgTimeIndependentFlow 155,
+ModeQuadraticEsa 145, GradedBandSchurEsa 60 -- ~845 statement/solution files
+that cannot compile in the platform's world, which is why the deferred count will
+keep re-appearing in every chunk until the bundles exist.
+
+**The sanctioned remedy is already in this repo's idiom:** the §2.13 *new-name*
+route (`Def_ChapterXPromoted` / `…V2` re-carrying the declarations in the original
+namespace, e.g. `Def_ChapterG3Promoted`, `Def_ChapterFriedrichsCanonicalPromoted`).
+For these five the whole chapter body has to be re-carried, not a single cluster,
+and each of the ~845 consumers needs one added
+`import Definitions.Def_ChapterXPromoted` line -- a scripted edit
+(`debug/add_missing_def_imports.py` does exactly this shape). That is a
+multi-step change plus five platform publishes, so it is queued as a decision
+rather than started here.
+
+**No workaround avoids the publish.** A statement cannot import the workspace
+text instead: `import Definitions.Def_ChapterX` *is* the empty bundle, so the
+declarations genuinely are not on the platform. Parking the affected items keeps
+them out of every chunk but loses nothing: they cannot be accepted as written
+until the declarations exist under a published name.
+
+# Session 41 (2026-11-08) — sol repairs, and the def gate that refused 7 bundles
+
+Platform **0.13.9** (workspace `SKILL.md` still says 0.13.6: the endpoint shapes
+used here — `/verify`, `/definitions`, `/theorems/:id/submissions` — are
+unchanged, but the skill text is stale; refresh before the next API change).
+
+## State at session start (`--status`)
+
+plan 20040 = 705 def + 9660 thm + 9660 sol; ledger **15650 done / 1333 pending /
+1 failed / 3056 parked**; pending sol 725, thm 586, def 22. One drain
+(`debug/drain_loop.sh`) runs from 07:42 and resolves ~84 items in the first
+hour (`state/logs/drain_loop_1108.log`).
+
+## 1. The def gate was refusing bundles over seven slug→name misses
+
+`do_wave_def` defers a bundle with `theorem dependency not proved yet: <name>`
+when any `import Theorems.Thm_X` in it is not `Proved`.  `thm_imports()` maps
+slug → dotted name **through `pipeline/wave_upload.json`**, and seven theorem
+modules imported by def bundles are not wave nodes (they were proved directly on
+the platform and never entered the spec), so the lookup returned the raw slug,
+`thms_not_proved()` found no job for a slug, and the bundle was unuploadable
+forever:
+
+| unresolved slug | importing bundle |
+|---|---|
+| `BookProof_FockSecondQuantization_dn_self` | ChapterFockSchurEsa |
+| `BookProof_NavierStokesFlow_LpNat_inner_eq_sum_range` | ChapterNavierStokesCarleman |
+| `BookProof_…_CanonicalVector_lower_raise`, `…_cFun_aFun_self` | ChapterNavierStokesLagrangianCanonical |
+| `BookProof_NavierStokesFlow_AffineBlock_blockVec_mem_maxDom_prime` | ChapterNavierStokesSignFlip |
+| `BookProof_ChapterStoneMeasurable_norm_le_of_inner_self_bound` | ChapterStoneConverse |
+| `BookProof_ChapterWignerSymmetry_key_complex_prime` | ChapterWignerSymmetryInfinite |
+
+**Fix:** `upload_pipeline._stub_fqname(slug)` reads the first
+`^theorem <fqname>` from `Theorems/Thm_<slug>.lean` and `thm_imports` falls back
+to it (the stub's declaration is the authoritative slug→name map, `_prime`
+included).  Measured effect: ChapterFockSchurEsa (28 deps), ChapterWignerSymmetry
+Infinite, ChapterNavierStokesSignFlip now have **zero** unproved deps (gate OK,
+drain will publish them; FockSchurEsa alone holds 27 gated sols).  The other
+three still wait on genuinely Open theorems, which is correct behaviour.
+
+## 2. Sol repair round — 18 sols re-verdicted, 15 fixed
+
+Census of all 747 pending sols with the production guard
+(`debug/sol_fix_queue.py`, now writing `state/scratch/fixq_*` instead of `/tmp`):
+
+| class | n | meaning |
+|---|---|---|
+| SUBMIT | 183 | guard defers nothing — the drain's queue |
+| pub-sib | 361 | waits on a sibling theorem node (ordering, not a defect) |
+| pub-def | 165 | waits on one of the 22 pending def bundles |
+| miss-ident | 17 | real |
+| other-defect | 12 | real (generator mangling) |
+| miss-namespace | 5 | hollow-`open` (the §2.32 class) |
+| mirror-artifact | 4 | mirror only |
+
+Fixes, all verified with `debug/_one_sol2.sh` against `state/mirror`
+(`-DautoImplicit=false`, i.e. the server's world):
+
+* **Absent `BookProof.` qualification (5).** The stubs are generated inside
+  `namespace BookProof`, so a proof that writes `CarlemanTwoStep.foo` or
+  `ChapterG.IsUnconstrainedGaugeFixing` resolves against the *root* namespace and
+  dies with `Unknown identifier`.  Fully qualified in
+  `CarlemanGeneralHop_{ibd,obd}[_shift]_mass_le` and
+  `ChapterGaugeIncompleteFixing_chapterG_isUnconstrainedGaugeFixing_vacuous`.
+* **Missing `open` (1).** `QuantumGravityHalfDensity_qg_halfDensity_transfer`
+  cites `HasZeroDeficiencyOn`, declared in `BookProof.NavierStokesFlow`: added
+  the `open` (the import was already there).
+* **Generator artefacts (3).**
+  `FriedrichsSquare_isFriedrichsSqExtension_factorRel` had a doubled `where`
+  (`extends_sq v := where extends_sq v := …`) — collapsed to one structure
+  block; `QuantumGravityFock_superBracket_bosOp_ghostOp` was missing the
+  `(V := QGGraded)` implicit that the target statement carries (rule 1: exact
+  type); `QgOuterFockFlow_secData_ext_symmetricOn` opened
+  `BookProof.QgOuterFockFlow`, a namespace that does not exist anywhere
+  (the published `Def_ChapterQgOuterFockFlow` is a 411-byte skeleton and the
+  local file is empty too) — the `open` was dropped, nothing else needed it.
+* **Apostrophe-named chapter lemma (3).** `deg_tsub_of_le`, `shiftm_shiftm`,
+  `sum_ltermP` cite `tsub_add_cancel_of_le'`, which is a *chapter* lemma.  Its
+  node is `Theorems.Thm_…_tsub_add_cancel_of_le_prime`, and on the platform the
+  name with the apostrophe does not resolve (`Unknown identifier`), so each sol
+  now carries a `private theorem tsub_cancel_le` with the same statement
+  (proof: `Finsupp.le_def` + `omega`) and calls that.  This is the §6.1
+  apostrophe rule biting from the *consumer* side.
+* `debug/_compile_thm_cand.sh` built the two missing statement oleans that made
+  `FriedrichsSquare_isFriedrichsSqExtension_factorRel` unjudgeable
+  (`Thm_BookProof_FriedrichsSquare_fst_mem_clDom_of_mem_factorRel`,
+  `Thm_BookProof_ClosureUniqueness_mem_factorGraph_sqOp`).
+* 16 more of the 38 analysed sols re-verified **OK** against the current mirror
+  without any edit — their recorded failures predate the Promoted bundles.
+
+Still red and **not** sol-editable: `ChapterEulerGenericDensity_product_probability`
+(its statement carries a free `n` — the source relies on `autoImplicit`, so the
+published statement cannot elaborate and no proof can match it) and
+`TensorSumEsa_instContinuousSMulRealTensorProductComplexCarrier`,
+`NavierStokesFlow_AffineFiber_affData_amp₁/₂` (the stubs declare `solution₁`,
+`affData_amp₁₁` — both *parked* nodes with generator-mangled statements).
+
+## 3. Fresh failed-submission sweep — the red class is still mostly stale
+
+* `debug/poll_failed_submissions.py` (12 workers, 7579 theorems): **610**
+  theorems have at least one of our non-accepted submissions (CE 1615, FAILED
+  284, ERROR 45, WA 14, SORRY 1) → `state/failed_submissions.json`.
+* `debug/sweep_red_latest.py`: **397** sols whose LATEST submission is not
+  accepted (CE 308, FAILED 46, PENDING 27, ERROR 10, WA 6) →
+  `state/red_latest.json`.
+* Theorem status behind every red (`state/scratch/red_thm_status_1108.json`):
+  **366 Proved** (the red is a stale failed retry — nothing to do), **10
+  Disproved** (impossible, correctly parked), **21 Open** — of those 21, 8 were
+  the Carleman submissions now fixed, and the rest are PENDING/ERROR in flight.
+
+So the historical "many failed sols" is ~95% publication gate, not proof
+failures; the sol-editable slice is small and this session closed most of it.
+
+## 4. Tool hygiene
+
+Three tools wrote to `/tmp` (`poll_failed_submissions`, `sweep_red_latest`,
+`sol_fix_queue`); per AGENTS.md rule 4 their outputs now land in
+`state/scratch/`.  `debug/check_pending_offline.py` still hardcodes
+`MIRROR=/tmp/published_mirror` (wiped on reboot); `debug/_one_sol2.sh` uses the
+persistent `state/mirror`, which is the harness to prefer.
+
+## 5. `ChapterFockWeightedSchurEsaPromoted` — built, gated, PUBLISHED
+
+The served `Def_ChapterFockWeightedSchurEsa` is a 197-byte skeleton, so 47 theorem
+stubs and 47 sols died on `unknown namespace BookProof.FockWeightedSchur`.  Recipe
+that worked (repeatable for the other skeleton chapters):
+
+1. `debug/make_promoted_def.py ChapterFockWeightedSchurEsa` — re-carries the
+   chapter's definitions in the original namespace, drops the theorem nodes.  The
+   generator leaves **docstrings of the dropped theorems** behind, and the file
+   then fails with `unexpected token '/-!'`; `debug/strip_promoted_theorems.py`
+   wants a bare chapter name (it prepends `Def_`/appends `Promoted`) and may not
+   catch a multi-line `/-! … -/` header — deleting the dangling doc blocks by hand
+   was faster than fixing the tool.
+2. It also kept **five theorem nodes** in the bundle (`diagMax_wSym_eq`,
+   `dGamma_essentiallySelfAdjointOn_core_w`, `dGamma_stone_flow_w`,
+   `oscCol_entries_unbounded`, `osc_essentiallySelfAdjointOn_core`) whose bodies
+   cite node lemmas — carrying a node parks it.  Removed them and their doc
+   blocks; the remaining definitions (`wdeg`, `wSym`, `wgt`, the three weighted
+   Schur gates, `oscCol`, `oscW`) are exactly what the 47 statements need.
+3. `state/def_gate.json` needs an entry or the uploader defers with *"chapter not
+   covered by the last def build"*: `python3 debug/regate_bundles.py
+   ChapterFockWeightedSchurEsaPromoted` compiles it against `state/mirror` and
+   writes the verdict + stamp for that target only (seconds, not the 4.5 h full
+   `build_candidate_mirror`).
+4. Register it with **all five** metadata keys — `definition_name`, `file`,
+   `namespace`, **`title`**, `nl`, and `source`/`tags`.  A missing `title` makes
+   the uploader raise `KeyError: 'title'` *after* the submit and burn an attempt
+   (measured twice, 09:34 and 09:41).
+5. Repoint the consumers: 94 files (47 `Theorems/Thm_BookProof_FockWeightedSchur_*`
+   + 47 `Solutions/Sol_…`) had `import Definitions.Def_ChapterFockWeightedSchurEsa`
+   and `open BookProof.FockWeightedSchur`; the skeleton provides nothing, so the
+   import is replaced, not added.  Both sampled stubs then compile against the
+   mirror.  Published 09:51 (`def_id d860b53f-…`).
+
+### Blocker found and left open: `ChapterModeQuadraticEsaPromoted`
+
+Same shape, 52 thms behind `BookProof.ModeQuadratic`, and the generated bundle is
+**not** publishable yet: it cites `crePoly_hermiteMv`, `pderiv_hermiteMv`,
+`polySym_sum` (all published theorems — imports added, oleans built into
+`state/mirror`) and then dies on `PolySym.real_smul` / `PolySym.add` field
+notation.  Those are *namespace lemmas* of `BookProof.YangMillsHermite.PolySym`
+that no stub declares (`grep Theorems/ …PolySym` has only the `polySym_*`
+statements), so the bundle cannot get them from an import.  Next step is either a
+`PolySym` Promoted bundle or rewriting `polySym_mqQuadPoly` to chain the existing
+`polySym_*` lemmas without field notation.
+
+### Def publishes that moved the count this session
+
+`ChapterFockSchurEsa` (08:50), `ChapterWignerSymmetryInfinite`,
+`ChapterNavierStokesSignFlip`, `ChapterFockWeightedSchurEsaPromoted` (09:51).
+`ChapterNsOneBodyDGamma` **failed to publish**: *"definition does not compile:
+line 129: unknown namespace `MvPolynomial`; line 130: unknown namespace
+`BookProof.YangMillsHermite`"* — the local gate passed because `state/mirror` has
+a *draft* `Def_ChapterYangMillsHermite` that the platform's served copy lacks
+(§2.36 divergence, this time in the def bundle itself).  It holds 99 items.
+
+## 6. `ChapterModeQuadraticEsaPromoted` PUBLISHED — the two traps, and a sweep
+
+The blocker left open in §5 is closed.  `def_id ddb4825e-87a9-4462-b9ad-d4157fd1f7d0`,
+publish job `PUBLISHED` 13:11; its 52 theorem statements went 13:24–14:49 (all
+`Open`, all 52 resolvable on the platform).  Two traps, both silent in
+`state/mirror` and both fatal on the server:
+
+**Trap A — the bundle imports an unproved theorem stub.**  The generated Promoted
+bundle carried `import Theorems.Thm_BookProof_CarlemanTwoStep_ladder2_eq_zero`
+from the missing-import harness, and that problem node is `Open`.
+`submit-definition` enforces "imported platform theorems must be Proved at
+submission time", so the item answered
+`WAIT (theorem dependency not proved yet: …)` on every chunk — no attempt burned,
+no progress ever.  A Promoted bundle is **definitions only**, so all three
+`import Theorems.Thm_*` lines in it were dead weight: removed them and the
+dependency gate cleared.  Check with `python3 -c 'import
+sys;sys.path.insert(0,"pipeline");import upload_pipeline as up;
+print(up.thm_imports("Definitions/Def_ChapterXPromoted.lean"))'` — an empty list
+is what a Promoted bundle should print.
+
+**Trap B — the served copy of the *dependency* is a skeleton.**  With the
+dependencies gone the bundle then failed its own gate on
+`unknown namespace BookProof.CarlemanTwoStep`: the platform's served
+`Def_ChapterCarlemanTwoStep` is a **182-byte skeleton** (0 declarations), so the
+bundle's `open` could never resolve there, while `state/mirror` stages the
+workspace text (which does declare it) and said OK.  Nothing in the bundle used
+that namespace, so the import and the `open` both went.  Whenever a def bundle
+`open`s a namespace, the provider must be a *published* bundle that actually
+declares it — for a skeleton chapter that means the Promoted sibling, not the
+original name.
+
+**Corollary for statements.**  Two of the 52 failed with `Unknown identifier
+pvec` / `rcp`: `submit-problem` compiles the statement's own preamble (imports +
+opens from `Theorems/Thm_*.lean`), and an `open` in *another* file never travels.
+`pvec`, `rcp`, `lcp` live in `BookProof.CarlemanSimplex`, so those two stubs
+needed `open BookProof.CarlemanSimplex` themselves; the local mirror hid it for
+the same reason as Trap B until the def olean was rebuilt.
+
+**Same pair, second instance: `ChapterGradedBandSchurEsaPromoted`.**
+`def_id cd93c4a4-9259-41f3-a788-d1cd374ba63e`, `PUBLISHED` 17:34.  Its unproved
+import (`FockWeightedSchur.dGamma_essentiallySelfAdjointOn_core_w`) was also the
+only thing pulling in the `BookProof.FockWeightedSchur` namespace, so deleting it
+exposed the skeleton again — the fix is
+`import Definitions.Def_ChapterFockWeightedSchurEsaPromoted` **instead of** the
+skeleton import, not merely deleting the `Theorems` line.
+
+### `debug/sweep_skeleton_defs.py` (report at `state/skeleton_defs.json`)
+
+Read-only sweep for both traps, no submissions:
+
+* **skeletons** — every `state/published_bundles/Def_*.lean` (the platform's
+  verbatim text) whose declarations are empty while the workspace file has some.
+  Today: 6 — `ChapterCarlemanSimplex`, `ChapterCarlemanTwoStep`,
+  `ChapterFockWeightedSchurEsa`, `ChapterGradedBandSchurEsa`,
+  `ChapterModeQuadraticEsa`, `ChapterQgTimeIndependentFlow` — and all 6 now have
+  a **PUBLISHED** Promoted sibling, so the skeleton route is exhausted.
+* **unproved imports** — every *unpublished* def bundle importing a
+  `Theorems.Thm_*` stub whose platform status is not `Proved`, with
+  `used_in_body` distinguishing the two verdicts: `used=False` is a removable
+  import (the §2.13 cases above), `used=True` means the bundle's own proofs cite
+  a problem node, and there the only honest route is to prove the theorem first.
+  13 such bundles remain (`ChapterFiniteSectionSingleTime` ×4,
+  `ChapterHermiteGraphApprox`, `ChapterNsLinearKoopmanEsa`,
+  `ChapterQg3DCrossTermEsa`, `ChapterQg3DDensityEsa`, `ChapterQgSymmetricSector`
+  ×2, `ChapterSmComparisonEsa`, `ChapterSmYukawaCoupling`,
+  `ChapterYangMillsAbelianFockEsa`), all `used=True`.
+
+The detector is cheap: the served text is already cached, so the declaration diff
+needs no compile and no API.  `--no-api` runs it offline (it then cannot resolve
+theorem statuses, so treat the second section as "unknown").
+
+### Proof leg: what published, and what is still red
+
+With the def and the 52 statements up, the solution nodes for these two chapters
+went from 52/60 to **55/60 Proved**:
+
+* `polySym_mqQuadPoly`, `polySym_fqQuadPoly` — the proofs used
+  `polySym_momPoly` / `polySym_mulXPoly` unqualified, which only resolved
+  through the *drifted local* def bundle (`Definitions/Def_ChapterFullQuadraticEsa`
+  still carries the chapter's theorem proofs; the published text does not).
+  Fixed by importing `Theorems.Thm_BookProof_HermiteRelative_polySym_momPoly` /
+  `…_polySym_mulXPoly` (both `Proved`) and **fully qualifying** the names, since
+  the local bundle's own copy makes the bare name ambiguous in the mirror.
+* `shiftm_self_eq` — its proof cited `tsub_add_cancel_of_le'`, a CarlemanSimplex
+  **problem node** (`Open`), so the import could never clear the guard.  The
+  cancellation is two lines; inlined it (`ext`, `Finsupp.tsub_apply`,
+  `Nat.sub_add_cancel` via `omega`) and the import went away.
+
+Still red, with the reason each one is red:
+
+| node | blocker |
+|---|---|
+| `fqQuadPoly_rotMat` | proof: after unfolding, the goal keeps `↑(if … then 1 else 0) • …`; `sub_smul`/`ite_smul`/`sum_ite_eq` do not reach through the ℝ→ℂ coercion of the `1/0` `ite`, so neither `simp` nor `Finset.sum_eq_single` collapses the double sum. Needs a `map_ite`-style rewrite of the coefficient. |
+| `mqOp_hermiteCore`, `momPoly_eq_lop`, `fqOp_hermiteCore` | import `Theorems.Thm_BookProof_QuadratureEsa_foOp_hermiteCore` / `…_momPoly_eq_cre_sub_ann`, both **parked** statement nodes — nothing can be submitted until those are unparked. |
+| `polySym_mqPoly` | imports `Theorems.Thm_polySym_foPoly`, a legacy stub (`Theorems/Thm_polySym_foPoly.lean`, no `BookProof_` prefix) whose statement node is still `pending`; `debug/gate_thm_ok.py` cannot gate it because it normalizes every slug to `Thm_BookProof_<slug>`. |
+
+## 7. The PermSector skeleton cluster (Session of 2026-11-09)
+
+`sol:BookProof_FockStatistics_essentiallySelfAdjointOn_bosonic_core_of_esa`
+failed on the platform with `Unknown identifier
+essentiallySelfAdjointOn_bosonic_core`, although the workspace text of
+`Definitions/Def_ChapterPermutationSectorEsa.lean` declares it.  Cause: the
+**served** copy is the 195-line skeleton (`bosonicProj`, `fermionicProj` only)
+while the workspace file is 30 KB.  The same is true of five bundles it stands
+on, all cached under `state/published_bundles/`:
+
+| served bundle | served | workspace |
+|---|---|---|
+| `Def_ChapterTwoParticleSectorEsa` | 5.1 KB | 20 KB |
+| `Def_ChapterTensorGraphCore` | 5.6 KB | 23 KB |
+| `Def_ChapterReducingSubspaceEsa` | 5.9 KB | 13 KB |
+| `Def_ChapterGroupAverageEsa` | 4.1 KB | 9.5 KB |
+| `Def_ChapterGraphCoreTransfer` | 4.6 KB | 18 KB |
+| `Def_ChapterFarisLavineCore` | 7.2 KB | 29 KB |
+
+All six are now carried by §2.13 new-name bundles, in dependency order, each
+generated with `debug/make_promoted_def.py <chapter> --whole`, gated with
+`debug/regate_bundles.py` and published:
+
+1. `Def_ChapterFarisLavineCorePromoted` — PUBLISHED (imports Mathlib only, so it
+   is the bottom of the chain)
+2. `Def_ChapterGraphCoreTransferPromoted` — PUBLISHED
+3. `Def_ChapterTensorGraphCorePromoted` — PUBLISHED
+4. `Def_ChapterReducingSubspaceEsaPromoted` — PUBLISHED
+5. `Def_ChapterGroupAverageEsaPromoted` — PUBLISHED
+
+Two mechanical traps cost one wasted attempt each and are worth remembering:
+
+* a promoted bundle must **not** also import the skeleton it replaces, nor any
+  sibling that does (`Def_ChapterNsKoopman` and the skeleton
+  `Def_ChapterFarisLavineCore` are enough to produce
+  `import … failed, environment already contains 'BookProof.FarisLavine.SymmetricOn'`);
+* a `Theorems.Thm_*` import that pulls a *skeleton* Definitions module collides
+  the same way, so a lemma the promoted bundle already carries must have its
+  `Theorems.` import removed (it is redundant anyway: `--whole` re-carries the
+  chapter's own theorem proofs).
+
+### Blocker left open: `Def_ChapterTwoParticleSectorEsaPromoted`
+
+Built (`debug/make_promoted_def.py ChapterTwoParticleSectorEsa --whole`, 25
+decls) and compiling against the mirror **except** at its line
+
+```
+import Theorems.Thm_BookProof_ReducedEsa_mem_sector_symProj_iff
+```
+
+That node module imports the skeleton `Def_ChapterFarisLavineCore` /
+`Def_ChapterReducingSubspaceEsa`, so importing it alongside the promoted copies
+collides.  The bundle genuinely uses the lemma
+(`mem_sector_symProj_iff (swapH_involutive Hs)`), and its declaration lives in
+that node, not in the chapter text, so `--carry` cannot pull it in.  Two ways
+out, neither taken yet:
+
+1. inline the two-line argument that consumes the lemma in
+   `Definitions/Def_ChapterTwoParticleSectorEsa.lean`, or
+2. carry the lemma's *proved* body (available in
+   `Solutions/Sol_BookProof_ReducedEsa_mem_sector_symProj_iff.lean`) into the
+   promoted bundle under `BookProof.ReducedEsa`.
+
+Until then `Def_ChapterPermutationSectorEsaPromoted` (built, 38 decls, imports
+the promoted chain) cannot compile either, because it still imports the skeleton
+`Def_ChapterTwoParticleSectorEsa`, and with it the FockStatistics solutions stay
+red.  Both bundles are registered in `pipeline/wave_upload.json`; their def-gate
+verdicts are stale/FAIL, which makes the def chunk defer them without spending
+attempts.
+
+### Correction (same session): the served bundles are *pruned*, not empty
+
+`state/published_bundles/` contradicts the "skeleton" premise above.  The
+served copies of the six bundles are **defs-only prune**, and they do declare
+the definitions the consumers' statements name:
+
+| served bundle | served | declares |
+|---|---|---|
+| `Def_ChapterTwoParticleSectorEsa` | 5.1 KB | `swapTwo`, `swapH`, `swapDom`, `bosonicProj`, `fermionicProj` |
+| `Def_ChapterPermutationSectorEsa` | 5.9 KB | `Good`, `bosonicProj n`, `fermionicProj n` |
+| `Def_ChapterTensorGraphCore` | 5.6 KB | `IPSpace`, `inclPow`, `derPow`, `corePow`, `sectorDom`, `sectorCore`, `sectorOp` |
+
+What a pruned bundle lacks is its *lemmas*, and those are published as `Thm_*`
+nodes.  So `open BookProof.TwoParticleSector` never failed, and
+`Unknown identifier essentiallySelfAdjointOn_bosonic_core` was a **missing node**,
+not a missing def bundle: the solution cites
+`thm:BookProof_PermSector_essentiallySelfAdjointOn_bosonic_core`, which was still
+`pending`.
+
+Two consequences, both acted on:
+
+* **Do not publish a Promoted twin of a pruned bundle.**  On the platform
+  `BookProof.TwoParticleSector.bosonicProj` is already declared by the served
+  module, so a Promoted bundle that re-declares it can never be imported
+  alongside the served one -- and every consumer imports the served one.
+  `Definitions/Def_ChapterTwoParticleSectorEsaPromoted.lean` was deleted and
+  never entered the plan.  `def:ChapterPermutationSectorEsaPromoted` stays in the
+  plan (1 attempt, `publish FAILED: Unknown identifier inclPow_tmul …`) but its
+  def-gate verdict is FAIL, so the def chunk defers it without spending
+  attempts; the `--whole` text must not be published.
+  (`Def_ChapterTensorGraphCorePromoted` and the four bundles under it *are*
+  published: their served copies, whatever they declare, are what the platform
+  already had, and the promoted chain was verified to compile there.  Leave them.)
+
+* **The blocker is the node chain.**  16 `thm:BookProof_{Perm,TwoParticle}*`
+  stubs were pending, and their statements were broken in two mechanical ways,
+  both repaired in place:
+
+  1. the pruned def bundle no longer declares the sibling *lemmas* the statement
+     cites, so the stub needs one `import Theorems.Thm_BookProof_…` per cited
+     node (`isReducingProjection_bosonicProj`, `permRep_mem_sectorCore`,
+     `commutes_symProj`, `swapH_mem_sectorCore`, …);
+  2. `Good … where incl _ := by sorry` stops after the first of the structure's
+     three fields -- the proof text was a `where` block and the statement
+     extractor kept only its first line.  `der _ := by sorry` and
+     `core _ := by sorry` were appended to the four `good_*` stubs.
+
+`state/thm_gate.json` cannot judge this class: the candidate mirror stages the
+*workspace* def text, which still declares the lemma, so the stub answers
+`` `…` has already been declared `` -- the opposite of the platform's state.  The
+pipeline's `thm_gate_fresh` already treats that as non-blocking when the served
+bundle does not declare the name (`target_declared_in_published_def`), but a
+verdict was needed for the *stamp* check, so `debug/gate_thm_ok.py` was rerun for
+the 16.  The served-world verdict comes from the new
+`debug/stub_served_check.py`, which reuses `pubstage_check`'s stage (a hardlink
+copy of the mirror with the published text of the stub's whole `Definitions`
+closure staged over it, those recompiled, then the stub's own `Theorems.`
+imports built first -- in that world they compile, because the sibling lemma is
+not in the pruned def module).
+
+### Where the PermSector/TwoParticle chain stands (end of this session)
+
+Published in this session, in this order (all `done` in `state/pipeline.json`):
+
+* 16 node statements `thm:BookProof_{Perm,TwoParticle}Sector_*` — `good_refl`,
+  `good_trans`, `good_liftTail`, `good_swapFirst`, `symmetricOn_{bosonic,
+  fermionic}`, `essentiallySelfAdjointOn_{bosonic,fermionic}` and their `_core`
+  twins, `restrictOp_sectorOp_{permOp,swapH}`, plus the TwoParticle
+  `isReducingProjection_*` / `swapH_mem_*` / `sectorOp_swapH` stubs;
+* the four PermSector solutions `essentiallySelfAdjointOn_{bosonic,fermionic}
+  {,_core}` — **the lemma `BookProof.PermSector.essentiallySelfAdjointOn_bosonic_core`
+  the FockStatistics solutions were calling is now Proved**, which is what the
+  "Unknown identifier" verdicts were about.
+
+Three statement repairs were needed beyond the imports above:
+
+1. `Good … where incl _ := by sorry` (4 stubs) → `:= by sorry`.  A `Prop`-valued
+   structure is a `Prop`, so `by sorry` *is* the stubbed statement, and the
+   `where` form both missed the other two fields and tripped
+   `submission_guard`'s "exactly one `:= by sorry`" sanity check.
+2. `EssentiallySelfAdjointOn` in the two TwoParticle `essentiallySelfAdjointOn_*`
+   stubs needs its ambient space spelled out:
+   `EssentiallySelfAdjointOn (F := sector (bosonicProj Hs)) …`.  Without it the
+   elaborator leaves `F` a metavariable and rejects the `redOp` argument
+   (`has type ↥(redDom …) →ₗ ↥(sector …) but is expected to have type ↥?m.33 →ₗ ↥?m.25`).
+   Verified in the served world before submitting (the stage copy compiles with
+   the annotation, not without).
+3. `sol:BookProof_FockStatistics_essentiallySelfAdjointOn_bosonic_core_of_esa`
+   needed `import Theorems.Thm_BookProof_PermSector_essentiallySelfAdjointOn_bosonic_core`
+   — its statement cites the lemma through a pruned def bundle that cannot
+   declare it.
+
+Pipeline changes made here (all three are the same lesson — a verdict about the
+ENVIRONMENT must not be stored as a verdict about the text):
+
+* `thm_gate_fresh` ignores a `candidate build: … error: object file …` FAIL:
+  the mirror never built a module the stub imports, so the stub was never
+  elaborated.  Match the prefix only — the stored status is cut at 300 chars and
+  the first version of this fix matched the (truncated-away) tail.
+* `_identifier_now_published` (next to `_import_now_published`): a solution
+  rejected with `Unknown identifier X` is released once a `thm:` whose slug ends
+  in `_X` is `done`.  Measured on the bosonic core solution: the text was
+  correct, only its dependency was late.
+* `debug/stub_served_check.py` (new): compiles a `Theorems/*.lean` stub in the
+  platform's *served* world (published def texts staged over the mirror), which
+  is the only way to see "this statement needs one more `Theorems.` import".
+  `--closure` stages the full 67-module transitive closure (~3 h); the default
+  stages the stubs' direct imports (14 modules, ~40 min).
+
+**Next step, precisely:** the two solutions
+`Sol_BookProof_FockStatistics_essentiallySelfAdjointOn_{bosonic,fermionic}_core_of_esa`
+now fail with `Your proof does not match the target type` / `hdense has type
+Dense ↑D✝ but is expected Dense ↑D` — their `variable` blocks do not line up
+with the node statements' binder kinds.  The node text is authoritative; align
+the solution's `variable` block with it (note the node declares
+`variable {Hs} [CompleteSpace Hs.carrier] {D} (A) …` *and then* re-declares
+`variable (Hs) (D) (A)`, so `Hs D A` are explicit and the instance sits between
+them).  The error text is truncated in `state/pipeline.json` at 300 chars — read
+the full verdict from the submission (`--sync` keeps it) or re-run the offline
+check against a freshly built `state/published_mirror`.
+
+### Session 41: the mirror moves into the repo, and the FockStatistics target turns out to be unprovable
+
+**The published mirror is repo-local now** (`state/published_mirror`), not
+`/tmp/published_mirror` — `/tmp` is tmpfs here and the last reboot had taken the
+oracle with it (AGENTS.md rule 4). Defaults changed in
+`debug/build_published_mirror.py`, `debug/check_pending_offline.py`
+(`MIRROR`, and `DEP_CACHE` -> `state/thm_dep_olean`), `debug/def_mirror.py`,
+`debug/parallel_mirror_catchup.py` and `pipeline/upload_pipeline.py`
+(`PROVE2ME_MIRROR` default). `DEF_MIRROR` still overrides.
+
+**Root cause of the object-file cascade: two stale caches, not a broken bundle
+set.** The mirror stages only what `def_mirror.published_set()` reports, and
+that came from `state/defs_index.json` — written 2026-10-06. Anything published
+after that date was withheld, so every statement importing
+`Def_ChapterFockStatisticsEsa`, `Def_ChapterSecondQuantizationCoreEsa`, … died
+with `object file … does not exist` — a mirror artifact that read as a defect in
+the statement. Refreshed with
+`debug/cache_published_bundles.py` (705 bundles) and
+`debug/platform_def_index.py` (705 PUBLISHED of 722), and `published_set()` now
+also counts a bundle whose text sits in `state/published_bundles/`: the index
+records only the NEWEST job, and a later FAILED job does not revoke an earlier
+PUBLISHED one — the platform keeps serving the accepted text
+(`Def_ChapterSecondQuantizationCoreEsa`, 17 such bundles).
+
+Two new tools, both repo-local:
+
+* `debug/parallel_mirror_build.py` — wave-scheduled deps-first builder (a module
+  is dispatched only once every mirror dependency has an olean), same
+  `lean -o <olean> <src>` invocation, cwd=MIRROR, `LEAN_PATH=MIRROR:base` as the
+  serial builder, so oleans are interchangeable and `--reuse` skips them.
+  `--only <slug>` / `--sol <slug>` restrict to an import closure; `JOBS` defaults
+  to 3 (a Mathlib importer is ~1.5 GB and this box has 15 GB — admitting more
+  has already taken the machine down). The serial builder needs ~10 h for 7228
+  modules and was killed in favour of this.
+* `debug/align_sol_to_node.py` — rebuilds a solution's declaration from its NODE
+  text (opens, `variable` block, `include … in`, statement copied verbatim; only
+  the name becomes `solution`), grafting the solution's existing proof term on.
+  The type is then identical by construction, so "does not match the target
+  type" cannot recur for a reason in the declaration.
+
+Two oracle bugs fixed in `check_pending_offline.py` while measuring the above:
+
+* phase 1 built a PUBLISHED sibling from the local stub over the mirror-fill
+  symlink; when that build failed the scratch lost a valid published olean and
+  every importer FAILED with `object file …/Theorems/<mod>.olean does not exist`.
+  A module that has a mirror olean is now used as-is (737 red-sol verdicts of
+  this shape were being reported as proof failures, measured on
+  `Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj`).
+* `_link_mirror_oleans` was correct; the `--only` merge path was not the
+  problem — the verdicts above were. Verdicts outside `--only` survive by
+  design, so a stale `/tmp/published_mirror` string in
+  `state/offline_pending_check.json` is history, not a live path.
+
+**TwoParticle core chain: published.** `thm:…_essentiallySelfAdjointOn_{bosonic,
+fermionic}_core` were blocked on three things, in this order:
+
+1. The statements needed `import Theorems.Thm_BookProof_ReducedEsa_commutes_{sym,
+   asym}Proj` (the pruned TwoParticle bundle cannot declare `commutes_symProj`)
+   and `EssentiallySelfAdjointOn (F := sector (…Proj Hs))` — without the ambient
+   space the elaborator leaves `F` a metavariable and rejects the `redOp`
+   argument.
+2. `thm:…_restrictOp_sectorOp_swapH` was still **Open** on the platform (the
+   gate read `sibling theorem not published`), so its solution went first. Its
+   proof had been failing on `restrictOp`: the served
+   `Def_ChapterGraphCoreTransfer` keeps `restrictOp` but NOT its `@[simp]`
+   lemma `restrictOp_apply`, so `simpa` could not unfold it. `restrictOp` is a
+   `def` equal to `T ∘ₗ Submodule.inclusion h`, so `exact` on
+   `sectorOp_swapH` typechecks by definitional equality — no lemma needed.
+3. The thm gate itself: `state/mirror` (the candidate universe) fails these
+   stubs with `… commutes_symProj has already been declared`, because the
+   candidate mirror's def bundles are the LOCAL unpruned ones. Compiling the
+   stub in the PUBLISHED world is both the faithful and the working gate:
+   `CANDIDATE_MIRROR=$PWD/state/published_mirror python3 debug/gate_thm_ok.py
+   <slug>` (same oracle, same stamp, `thm_gate_fresh` cannot tell the
+   difference, and `check_pending_offline --kind thm` had already said `ok`).
+
+Result: `sol:…_restrictOp_sectorOp_swapH`, both core thm nodes and both core
+solutions are `done` — 7646 done, 0 failed.
+
+**FockStatistics: the three solutions cannot publish, and no proof can.**
+`bosonicFock_esa` and the two `*_core_of_esa` now carry declarations textually
+identical to their nodes (`debug/align_sol_to_node.py`), and the proof terms
+still fail with `hdense has type Dense ↑D✝ but is expected Dense ↑D`. The
+dagger is not a coercion artifact: the node preamble declares the same name
+twice —
+
+    variable {Hs : IPSpace} … {D : Submodule ℂ Hs.carrier} (A) (hdense) (hsym) (hesa)
+    variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
+
+— and Lean treats a re-declaration with a different binder annotation as a NEW
+variable. Verified in isolation (`variable {α : Type} (x : α)` then
+`variable (α : Type)`: `#check (x : α)` fails, `x : α✝`), and the elaborated
+statement prints as
+
+    ∀ {D} (A) (hdense) (hsym) (hesa) (Hs_1) (D_1) (A_1) {D₀} (hcore) (n),
+      EssentiallySelfAdjointOn (redDom (bosonicProj Hs_1 n) …) (bosonicCoreOp Hs_1 D_1 A_1 …)
+
+i.e. the hypotheses constrain `D`/`A` while the conclusion is about `D_1`/`A_1`,
+which nothing constrains beyond `IsGraphCore D₀ A_1` (a graph-core condition —
+it carries no symmetry). The published target cannot be proved. The platform's
+stored *preamble* has the same duplicate lines (fetched from `GET /theorems`),
+so this is the target the server compares against, not a local-text quirk: a
+solution matching it is unprovable, a solution not matching it is rejected.
+
+The upstream chapter (`timepiece/BookProof/Toolbox/ChapterFockStatisticsEsa.lean`)
+has a single clean block and an actual proof for each of the three — the
+duplicate lines were introduced by stub generation, then published. The repair
+is one line per node (drop `variable (Hs) (D) (A)`; `D₀` likewise), after which
+the existing proofs typecheck. Publishing the repair requires *replacing an
+Open node's stored preamble*, which the pipeline has no path for: `find_existing`
+matches by name and reuses the node, and `PATCH /theorems/:id` only accepts
+`deprecated`. Every stub in the chapter generated this way is suspect — the
+`_sectorDom_of_esa` twin is clean and proved, so the defect is not uniform.
+Parking the three sol items is the alternative to republishing; neither was done
+without a decision. The *test* of the repair is already green: the three proofs
+are exactly the chapter's, and they compile against a clean block.
+
+`debug/align_sol_to_node.py` also greps as the tool to reuse for any future
+`Your proof does not match the target type` verdict, but note what it cannot do:
+it makes the declaration identical to the node, it does not make the node
+provable.
+
+## 8. The FockStatistics duplicate-`variable` class — three `_inc` twins, published (2026-11-10)
+
+The three remaining `ChapterFockStatisticsEsa` sol items
+(`bosonicFock_esa`, `essentiallySelfAdjointOn_bosonic_core_of_esa`,
+`essentiallySelfAdjointOn_fermionic_core_of_esa`) were parked at the end of the
+previous session with a statement defect that no proof could close (§7 tail):
+
+    variable {Hs : IPSpace} … {D : Submodule ℂ Hs.carrier} (A) (hdense) (hsym) (hesa)
+    variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
+
+The stub generator emitted the variable block twice. Lean treats a
+re-declaration with a different binder annotation as a NEW variable, so the
+elaborated target reads `∀ {D} (A) (hdense) (hsym) (hesa) (Hs_1) (D_1) (A_1) …,
+EssentiallySelfAdjointOn (redDom (bosonicProj Hs_1 n) …)`: the hypotheses
+constrain one `(D, A)` and the conclusion is about an unrelated one. The
+platform stores the same preamble, so the node cannot be proved as published
+and no matching proof can be accepted.
+
+**Decision: republish as `_inc` twins** (the §2.64/SignFlip precedent), not
+in-place replacement — `find_existing` matches by name and `PATCH /theorems/:id`
+only accepts `deprecated`, so a stored preamble cannot be edited.
+
+1. `debug/clone_redecl_inc.py` cloned the three slugs (stub + sol + wave entry +
+   `sol_order` slot + ledger seed), then the duplicated lines were dropped from
+   all six `_inc` files, leaving exactly the upstream block:
+   `variable {Hs} [CompleteSpace Hs.carrier] {D} (A) (hdense) (hsym) (hesa)`
+   plus `variable {D₀ : Submodule ℂ Hs.carrier}` for the two core statements.
+   Nothing else in the statement changed.
+2. `debug/gate_thm_ok.py` compiled the three new stubs into `state/mirror`
+   (**3 OK**) — the only oracle a new stub needs, no full candidate rebuild.
+3. Sol repairs beyond the variable block (both found locally before submission):
+   * `bosonicFock_esa_inc` cannot go through
+     `essentiallySelfAdjointOn_bosonic_of_esa` — that sibling node is itself
+     broken (duplicate block, thm `done`, sol still `pending`). The proof now
+     inlines the step: `essentiallySelfAdjointOn_bosonic Hs D A n
+     (essentiallySelfAdjointOn_sectorDom_of_esa A hdense hsym hesa n)`.
+   * the core sols imported `Theorems.Thm_BookProof_PermSector_…_core`, which
+     has **no olean in the mirror** because the workspace
+     `Def_ChapterPermutationSectorEsa` already declares that name (gate FAIL
+     "has already been declared"). That workspace bundle is a NEWER revision
+     than the published one: the published `Def_ChapterPermutationSectorEsa`
+     (`state/published_bundles/`, 195 lines) declares none of
+     `essentiallySelfAdjointOn_bosonic/_core/_fermionic_core`, so server-side
+     the name can only come from the theorem node. Removing those imports
+     therefore made the local compile pass but the server reject all three
+     (`Unknown identifier`). **Lesson: the local mirror is built from workspace
+     definitions, so a `Def_*.lean` that was regenerated after publication
+     hides the serverside need for a theorem-node import.** Restoring the
+     thm-node imports is what makes them compile on the platform; that state
+     cannot be reproduced locally, so the second submission round was verified
+     by the platform compiler alone.
+4. **All three `_inc` nodes are Proved** (`bosonicFock_esa_inc`
+   `489aabf9`, `…_bosonic_core_of_esa_inc` `e27fbd0d`,
+   `…_fermionic_core_of_esa_inc` `90cfdee2`), each thm+sol in one attempt.
+5. The three broken nodes were **retired** (`PATCH {"deprecated": true}` +
+   a `natural_language_statement` note naming the replacement; `deprecated_at`
+   set on all three) and their sol items **parked** in the ledger with the
+   reason, so no drain burns attempts on an unprovable target.
+
+**Open, same class, not touched**: `essentiallySelfAdjointOn_bosonic_of_esa`
+and `essentiallySelfAdjointOn_fermionic_of_esa` have the identical duplicate
+block; their thms are `done` and their sols `pending`. They are the next
+candidates for `_inc` twins (and would then be the natural dependency for
+`fermionicFock_esa_inc`-style statements). The sweep to run: every thm stub in
+the chapter whose `variable` block repeats a binder line.
+
+**Mirror rebuild**: the full `state/mirror` rebuild completed (7200 modules,
+4 workers); `state/mirror_build_failures.json` holds 1493 failures, and the
+two PermSector `_core` stubs are among them for the "already declared" reason
+above — that is a workspace-vs-published drift artifact, not a broken mirror.
+
+## 8.1 The duplicated-`variable` class is not three nodes but a generator bug (2026-11-10)
+
+§8 fixed three `_inc` twins by hand and left the class open. The sweep it asked
+for was run: **37 stubs in `ChapterFockStatisticsEsa`/`…Completion` carry the
+same defect** — 9 already published (thm `done`, sol `pending`, unprovable),
+19 pending, plus the 3 twins from §8.
+
+**The defect, measured.** `debug/probe/DupVar.lean` declares `(D)` twice and
+prints the elaborated type:
+
+    theorem probe_dup : ∀ {Hs} [inst…] (D P Q : Set Hs), D ⊆ P → Q = Q
+                        → ∀ (D_1 P_1 : Set Hs), D_1 ⊆ P_1
+
+The hypotheses constrain the first `(D, P)`, the conclusion the second: the node
+is false, so no proof can exist however good the proof is. `include hsym` is
+what drags the first set into the binder list.
+
+**Root cause, in the generator.** `scripts/wave_generate.py` deduped `variable`
+commands by *exact block signature*. The two blocks are never textually equal —
+`variable {Hs} [CompleteSpace Hs.carrier] {D} (A) (hdense) (hsym) (hesa)` versus
+`variable (Hs) (D) (A)` — so both survived. Fixed with
+`dedupe_variable_names()`: the first declaration of a name wins and later
+re-declarations are dropped, so nothing references a name before it is declared
+(always elaboration-safe) and hypotheses/statement resolve to the same binder.
+
+**Tools** (all in `debug/`):
+* `dedup_variable_binders.py` — the same rule over one file or a slug pair;
+  `--dry-run` leaves the four §8 files and every healthy stub untouched.
+* `clone_dupvar_inc.py` — `_inc` twin for a published node (stub + sol rename,
+  wave entry, `sol_order` slot, ledger seed).
+* `retire_dupvar_nodes.py` — `PATCH {"deprecated": true}` + reason + replacement
+  name, parks the old sol item, and refuses to retire a node whose twin is not
+  yet `Proved`.
+* `add_missing_def_imports.py --solutions` — sols needed the same treatment the
+  stubs did; the flag is new.
+
+**Route taken.** 17 pending stubs were fixed **in place** (a not-yet-published
+stub can simply be corrected) — they still needed `_inc` twins for a different
+reason: 13 of them FAIL the mirror gate with `has already been declared`, because
+the published `Def_ChapterFockStatisticsCompletion` carries those theorems as
+part of the chapter. 26 twins in total, each gated OK in `state/mirror`
+(`state/logs/fs_gate*.log`), then published thm-first so the sols' `Theorems.*`
+imports exist server-side.
+
+**Result.** 26 statements published; **25 twins `Proved`** (one attempt each
+except where noted), **8 originals retired** (`deprecated_at` set; their sol
+items parked). `debug/retire_dupvar_nodes.py` deliberately skipped
+`fermionicFock_symmetricOn` — its twin is a *sketch*: the proof reduces to
+`BookProof.PermSector.symmetricOn_fermionic`, a node that is itself not `Proved`.
+Its original sol item is parked with that note, so nothing burns attempts.
+
+**Two failures worth recording:**
+* `bosonicFockOp_single` / `fermionicFockOp_single` gate OK locally and were
+  rejected with `Unknown identifier single_mem_dsCore`: the *workspace*
+  `Def_ChapterDirectSumEsa` declares it, the *published* one does not (9 decls
+  served, 29 in the workspace). Parked at first as "republish the bundle" —
+  wrong call. The lemma is already a **Proved theorem node**
+  (`BookProof.DirectSumEsa.single_mem_dsCore`), so the fix was one import line
+  in each stub, the same lesson as §8's PermSector note: server-side, a name the
+  bundle does not carry can come from a node. Both are `Proved` now, and the
+  gate needed no hand-editing: `thm_gate_fresh` deliberately overrides a
+  `has already been declared` / `object file … does not exist` FAIL when the
+  *served* bundle does not declare the name (the QuantumGravity3DGauge
+  precedent), so recording the honest mirror FAIL was enough to unblock them.
+* Sols cloned from a stub carried the stub's import gaps, so the first wave
+  spent one attempt each on `Unknown identifier SymmetricOn / fockSectorDom /
+  permRep / sectorEmb`. Compiling a sol in `state/mirror` *before* submitting is
+  what the last three waves did, and they went through clean.
+
+**Unblocked, and closed (same session).** `fermionicFock_symmetricOn_inc` was a
+sketch only because `BookProof.PermSector.symmetricOn_fermionic` had a published
+statement and an unsubmitted sol. That sol compiled clean in `state/mirror` and
+was **Proved on the first attempt**, which flipped the twin to `Proved` too; the
+ninth original (`fermionicFock_symmetricOn`) was then retired. Final tally:
+**26/26 twins `Proved`, 9/9 originals retired.**
+
+**Corpus sweep: the class is confined to one chapter.** A naive
+"any re-declared binder" scan flags 583 stubs, but 442 of them are `done/done`
+— statement published and sol Proved, so their targets were fine and the
+duplicate was a dead declaration. The harmful shape is narrower: a hypothesis
+the stub `include`s mentions `N` while `N` is declared again *after* it, so the
+hypothesis binds the early `N` and the conclusion the late one.
+`debug/find_dupvar_conflicts.py` implements exactly that test (7 of the 9 known
+bad nodes flagged; the two `exists_ne_zero_h…FockDom` cases have no `include`
+and are harmless, which is why they were twinned for tidiness, not necessity).
+Corpus result: **10 stubs, all in `ChapterFockStatisticsEsa`/`…Completion`, all
+already replaced by this section's twins.** No other chapter carries the
+pattern, so the generator fix is the whole remaining defence.
+
+## 8.2 Sketch bookkeeping and the sketch-blocking queue (2026-11-10)
+
+`--status` warned `94 done sol(s) are SKETCH`. Two separate things were hiding
+behind that number.
+
+**1. Most of them were already Proved.** A sketch is accepted when its proof
+reduces to child statements that are not `Proved`; the platform flips the node
+to `Proved` by itself once the last child lands (seen on
+`FockStatistics.fermionicFock_symmetricOn_inc`). `--sync` only re-checks items
+that are still `pending`, so those flips never reached the ledger and the count
+only ever grew. `debug/reconcile_sketches.py` walks the `SKETCH_ACCEPTED`
+records, reads each node's real status, and marks the proved ones: **42 of 94
+were already Proved**; the honest count is **52**, of which 49 wait on an Open
+child and 3 cite a Disproved statement.
+
+**2. The queue is short and ranked.** 49 blocked sketches hang off 61 distinct
+children; the top of the list is
+
+    6  BookProof.CarlemanSimplex.mem_simplexF
+    4  BookProof.CarlemanSimplex.mem_sBd          (itself a sketch)
+    4  BookProof.FriedrichsExtension.friedrichs_extension_exists   (parked, 2 attempts)
+    3  BookProof.CarlemanGeneralHop.mem_ibd / mem_obd
+    3  BookProof.FockWeightedSchur.dGamma_essentiallySelfAdjointOn_core_w
+
+so a handful of proofs flips a fifth of the backlog. `ModeQuadratic.momPoly_eq_lop`
+was taken from that list this session: its sol imported the *parked* node
+`Theorems.Thm_BookProof_QuadratureEsa_momPoly_eq_cre_sub_ann` (parked as a
+published-bundle duplicate — the name already exists in `Def_ChapterQuadratureEsa`,
+which the sol imports), which the guard refuses as "sibling theorem not
+published"; dropping that one import line let it submit, and it is **Proved**.
+
+**New tool.** `debug/check_sol_imports.py` answers "is every import of this
+stub/sol actually available on the platform?" before an attempt is spent: a
+`Definitions.` import must be a PUBLISHED def job, a `Theorems.` import a
+PUBLISHED problem. It found the parked-node import above. Run it on a sol before
+its first submission; the alternative is the platform's error text, which points
+at `open` lines instead of the bad import.
+
+**Open, needs platform-side investigation: the Carleman import cluster.**
+Three nodes fail identically, in two chapters, on every attempt:
+
+    sol:…CarlemanSimplex_mem_simplexF       2 attempts   blocks 6 sketches
+    sol:…CarlemanGeneralHop_mem_ibd         2 attempts   blocks 3
+    sol:…CarlemanGeneralHop_mem_obd         2 attempts   blocks 3
+
+    line 7: unknown namespace `BookProof.CarlemanGeneralHop`
+    line 12: unknown namespace `Finset`
+    line 13: unknown namespace `BookProof.HermiteCarleman`
+
+`Finset` is Mathlib, so the whole environment is empty — the *entire* import
+block failed, not one module — while each file compiles clean in `state/mirror`.
+The evidence points at one shared import:
+
+* the only `Theorems.` import common to all three sols is
+  `Theorems.Thm_BookProof_HermiteCarleman_mem_cube`;
+* the lemma cannot be had any other way. `mem_cube` is declared in
+  `Def_ChapterHermiteCarlemanEsa`, but that module **cannot be imported beside**
+  `Def_ChapterHermiteCarlemanEsaPromoted` — Lean answers `import
+  Definitions.Def_ChapterHermiteCarlemanEsa failed, environment already contains
+  'BookProof.HermiteCarleman.rterm' from …Promoted` — and the Promoted bundle
+  names `mem_cube` only in a comment. Dropping the node import makes the lemma
+  `Unknown identifier`, verified in the mirror.
+
+So the import is both necessary and, apparently, unmaterializable server-side.
+Next attempt should not be another blind submission: either publish the lemma as
+a fresh node whose preamble imports only the Promoted bundle (the `_inc`
+pattern, one node unblocks 9 sketches), or get the platform to say why
+`Theorems.Thm_BookProof_HermiteCarleman_mem_cube` fails to materialize while its
+node reads back `Proved`. Six attempts have been spent on these three; each has
+three left.
+
+**Resolved (2026-11-11).** Published `Thm_BookProof_HermiteCarleman_mem_cube_inc` (restated from the
+original `mem_cube` in a preamble that imports only the Promoted bundle, sidestepping the
+`Def_ChapterHermiteCarlemanEsa` / `...Promoted` duplicate-`rterm` collision), then repointed the 15
+solutions that imported the unmaterializable node at it (renaming `mem_cube` → `mem_cube_inc`), and
+added the missing `rc1_nonneg` / `not_summable_inv_natCast_succ` provider imports that the Promoted
+swap had dropped.  Also forced the four still-legacy Carleman statement stubs (`mem_faceK`,
+`mem_innK`, `sum_shiftK`, `flux_identityH`) into the wave spec (they were wrongly filtered out as
+"embedded duplicates" because the workspace `Def_ChapterCarlemanTwoStep` declares those names while
+the published bundle does not) and published them after reflowing the `variable {…} {z : ℂ}`
+continuation lines that the ambient-variable preflight gate misread.  All 15 consumer solutions
+plus `flux_identityH` and `ladderH_eq_zero` are `done` on the platform; the 9 sketches the cluster
+was blocking can now flip bottom-up.  `--status` exits 0 at 16172 done / 837 pending.
+
+## Session 36 (2026-10-28) — the def-gate regate campaign: 9 of 21 chain targets green, 38 gate FAILs left, and the real shape of the sol-red class
+
+This session did **no uploading**: it spent its budget on the binding
+constraint, the def gate, and on a census of the red-sol backlog that the next
+session should drain.
+
+### 1. The regate loop (now the canonical repair path)
+
+`state/def_gate.json` moved **400 → 448 OK** of 694 entries
+(`448 OK / 206 BLOCKED / 38 FAIL / 1 NOSRC`). The loop is
+
+    audit → edit → regate
+
+* `python3 debug/audit2.py Definitions/Def_ChapterFoo.lean` — names **every**
+  declaration the bundle cites that neither it nor its imported bundles (and
+  their source chapters) provide. This is the single biggest time saver of the
+  session: the previous one-error-per-regate cost ~10 min each, and a bundle
+  typically had 3. It reports `OWN-MISSING` (decl of the bundle's *own* source
+  chapter) and `IMP-MISSING` (decl of an imported bundle's chapter) separately,
+  because they need different fixes.
+* `python3 debug/regate_bundles.py --targets-file /tmp/rNN.txt --report
+  /tmp/regate_rNN.tsv`, serial (`--jobs 1`), with
+  `PROVE2ME_SKIP_LOCAL_COMPILE=1 CANDIDATE_MIRROR=$PWD/state/mirror
+  TIMEPIECE_PROJ=…/timepiece331`. Logs land in `/tmp/regate_rNN.tsv.logs/`.
+
+Nine of the 21 targets in the r5 wave are now `OK`: H9,
+HermiteGalerkinFriedrichs, HashimotoShiftInvert, FriedrichsExtension,
+QgHermiteFriedrichs, DegSchrodingerCore, DegKatoEsa, FockSchurEsa,
+HermiteRelativeBound. The gate stamps (`sha1[:16]` per bundle) let you tell a
+stale verdict from a live one — **always check the stamp before chasing an
+error**: 13 of the 38 current FAILs are stale and just need a regate.
+
+### 2. The repair classes, in the order they cost time
+
+1. **Stale olean.** The mirror's `.olean` predates the workspace text, so a
+   bundle that *does* declare a name still gets `Unknown identifier`. Regate the
+   host bundle; no edit. Corollary: a heavily-imported bundle whose *text* was
+   gutted still serves its old olean's declaration set — that is how
+   `Def_ChapterComplexShiftCore` (34 importers, 9 lines of text) supplies
+   `closed_of_selfAdjointCriterion`.
+2. **Missing declaration from an imported bundle** → `import
+   Theorems.Thm_BookProof_<Ch>_<decl>` **only after a cycle check**. BFS the
+   `^import` graph in both directions including Thm stubs; several stubs look
+   free and are not (`Thm_BookProof_HashimotoShiftInvert_closed_of_*` cycles
+   through StoneBridge→EsaClosure→Hashimoto, for example).
+3. **Missing own-chapter declaration.** A stub of your own chapter imports your
+   own bundle, so the import is *always* a cycle: copy the declaration (with its
+   docstring) out of `BookProof/<Chapter>.lean` into the bundle, immediately
+   before its first use. Verify source line offsets with an `assert` on the
+   extracted text before writing — an off-by-one silently inserted a block
+   between a docstring and its theorem, which Lean rejects as
+   `unexpected identifier; expected command`.
+4. **Duplicate declaration** (`has already been declared`). Dedup against the
+   *freshly built* imported bundle, not the source chapter: `up_self`,
+   `inner_pgLp_pgLp`, `dn_self`, `starP_mul` in LeafGaps and the whole
+   FockStatistics `variable` family were all "already declared" because a
+   sibling bundle legitimately ships them.
+5. **Bundle corruption.** Three bundles had whole regions commented out or
+   spliced mid-token (`QuantumGravity3DGauge`: lines 11–180 became one
+   accidental comment; `FockSecondQuantization`: 12 sites; `FockSchurEsa`: 5
+   stray `import` lines *inside* the module docstring). The only reliable repair
+   is a systematic bundle-vs-source diff, not local patching. When inserting
+   imports, anchor on the existing `^import` group — index arithmetic lands
+   inside `/-- … -/` and the file still looks plausible.
+6. **Two bundles shipping the same declaration.** `environment already contains
+   'X' from <bundle>` on an *importer*: remove the copy from the downstream
+   bundle (`LeafGaps` vs `NavierStokesShiftHamiltonian` for
+   `ShiftData.conj_mul_hFun` is still open, and it blocks three bundles).
+7. **Self-import.** `Def_ChapterQgOuterFockFarisLavine` imported itself on line
+   1 — a one-line bug that produced a misleading "stale olean" symptom.
+
+### 3. OOM: run one regate at a time
+
+The box has 15 GB and Lean bundle compiles are heavy. Two regate processes
+alive at once (a `nohup`'d survivor plus a fresh launch) is enough to trigger
+the OOM killer; that is what killed rounds 6, 26 and several intermediate runs
+mid-target. Before launching: `ps aux | grep regate_bundles | grep -v grep`.
+Launch long runs with `setsid nohup … < /dev/null &` — and expect a session end
+to take them down anyway, so re-check on resume instead of assuming completion.
+If a single bundle OOMs alone, suspect a pathological `isDefEq` (§Session 27).
+
+### 4. Red-sol census (the next session's work)
+
+`debug/poll_failed_submissions.py --workers 8` re-derived the platform-side red
+set from scratch: **663 slugs** carry at least one FAILED submission of ours
+(`state/failed_submissions.json`, queue in
+`state/scratch/failed_submission_slugs.txt`). By error class over 1103+
+submissions:
+
+    1103  Unknown identifier …            (the dominant class)
+     368  bare "Compile error in your proof:"
+     208  unknown namespace …
+      82  unknown import: Theorems.Thm_BookProof_NavierStokes*
+      31  unknown import: Theorems.Thm_BookProof_Hyperbolic*
+      26  Failed to resolve platform imports
+      15  Failed to materialize the target's dependencies
+      14  unknown import: Theorems.Thm_BookProof_HermiteBand*
+      13  proof does not match the target type
+      12  rejected by the soundness guard
+
+Two structural readings:
+
+* The `unknown import: Theorems.…` class is **not a sol bug at all** — the sol
+  cites a node that was never published (or was parked as a duplicate). Fix by
+  `debug/check_sol_imports.py` (does every `Theorems.` import resolve to a
+  PUBLISHED problem, every `Definitions.` import to a PUBLISHED def job?) and
+  then either publish the provider or drop the import.
+* The `Unknown identifier` / `unknown namespace` class is mostly the **hollow
+  published bundle** class already documented in §2.42: the platform copy of a
+  def bundle carries fewer declarations than the local file, so no amount of
+  local sol editing fixes it — the bundle must be republished. `diagnose_failed_sols.py`
+  classifies each identifier into stub-missing / bundle-hollow /
+  decl-not-served / absent; run it before touching any sol text.
+
+### 5. Pipeline deltas committed this session
+
+`pipeline/upload_pipeline.py` gains the sol-side machinery the red class needs:
+`_identifier_now_published` (import a node the moment the platform publishes the
+identifier a failed submission named), `open_theorem_children` +
+`_record_sol_success` (record a sketch's Open children so `--status` can count
+blocked sketches honestly), `thm_stub_name` / `resolve_existing_thm_item`
+(handle a theorem whose slug and declared name disagree), and a
+`thm_gate_fresh` guard. `pipeline/wave_upload.json` is re-serialized (ASCII
+escapes → UTF-8; three semantic entries changed: `thms`, `defs`, `sol_order`).

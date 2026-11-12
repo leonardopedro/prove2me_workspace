@@ -20,6 +20,7 @@ is genuinely unavailable).  A bounded run exits 0 at the bound, so short-lived h
 can drive the same append-only state in chunks.
 """
 import argparse
+import concurrent.futures
 import hashlib
 import json
 import os
@@ -41,7 +42,9 @@ PIPE = f"{WS}/pipeline"
 # them (verified byte-identical against the API `definition` payload).  The
 # local Definitions/ copy runs ahead of what is published, so any guard that
 # asks "does the published bundle already declare X?" must read the mirror.
-MIRROR = os.environ.get("PROVE2ME_MIRROR", "/tmp/published_mirror")
+# Repo-local by default: /tmp is tmpfs here, so an OOM or reboot wipes the
+# mirror and every guard reading it silently degrades (AGENTS.md rule 4).
+MIRROR = os.environ.get("PROVE2ME_MIRROR", f"{WS}/state/published_mirror")
 CANONICAL_WS = "/home/leo/prove2me_workspace"
 
 # Lean gate: LAKE_BIN override, else `lake` on PATH, else the elan v4.33.1
@@ -976,12 +979,12 @@ def do_wave_sol(st, item, slug):
             if PIPELINE_MODE:
                 INFLIGHT[rec["submission_id"]] = (item, "verify")
                 return SUBMITTED
-            terminal, err = _apply_verify_verdict(
-                api("GET", "verify", params={"submission_id": rec["submission_id"]}))
+            payload = api("GET", "verify", params={"submission_id": rec["submission_id"]})
+            terminal, err = _apply_verify_verdict(payload)
             if not terminal:
                 return "verify still in flight"
             if err is None:
-                st["items"][item] = {"status": "done", "submission_id": rec["submission_id"]}
+                _record_sol_success(st, item, rec["submission_id"], payload)
                 return None
             # The submission is finished (and failed): drop its id so a later retry
             # builds a fresh submission instead of re-reading this dead verdict.
@@ -1388,6 +1391,22 @@ def _recorded_platform_fail(kind, name, path):
     # keeps the §2.40 defer.
     if _import_now_published(err):
         return None
+    if _identifier_now_published(err):
+        return None
+    # `unknown namespace` in a DEF bundle's verdict is the same class: the
+    # platform compiles against the published bundles only, so ONE unresolved
+    # `import Definitions.Def_X` leaves the body with no imports at all and every
+    # `open` in it fails.  Measured 2026-11-08 on def:ChapterNsOneBodyDGamma,
+    # whose verdict starts `line 129: unknown namespace `MvPolynomial`` --
+    # Mathlib's own namespace, which cannot be unknown unless the import list
+    # itself was not processed -- and then names each `BookProof.*` namespace.
+    # Every one of its `Definitions.Def_*` imports is published now, and the
+    # candidate gate re-compiles the text in a mirror of the platform's world,
+    # so the stamp no longer means what it meant: keep deferring and the bundle
+    # is stranded forever (its 780 waiting items with it).
+    if (kind == "def" and "unknown namespace" in err
+            and def_gate_fresh(name, path) is None):
+        return None
     return f"platform rejected the current text: {err[:200]}"
 
 
@@ -1413,6 +1432,38 @@ def _import_now_published(err):
         # Catalogue unreadable: the defer decision must not depend on it
         # (fail-open, same contract as the rest of this function).
         return False
+
+
+_UNKNOWN_ID_RE = re.compile(r"Unknown identifier [`'‘]?([A-Za-z_][\w.']*)")
+
+
+def _identifier_now_published(err):
+    """True when `err` is an `Unknown identifier X` verdict and X publishes now.
+
+    Same contract as `_import_now_published`: the verdict describes the
+    ENVIRONMENT the text was compiled in, not the text.  Measured 2026-11-09:
+    `sol:BookProof_FockStatistics_essentiallySelfAdjointOn_bosonic_core_of_esa`
+    was rejected with `line 44: Unknown identifier
+    essentiallySelfAdjointOn_bosonic_core` because the PermSector node it cites
+    was still unpublished; the identical text compiles once that node is Proved,
+    so holding it behind its own unchanged stamp strands a correct solution
+    (this is the same fix as the `unknown import` fail-open above, one
+    identifier further in).
+    """
+    names = {m.group(1).split(".")[-1] for m in _UNKNOWN_ID_RE.finditer(err)}
+    if not names:
+        return False
+    try:
+        items = (_state_snapshot() or {}).get("items", {})
+        for item, rec in items.items():
+            if not item.startswith("thm:") or rec.get("status") != "done":
+                continue
+            slug = item[4:]
+            if any(slug.endswith("_" + n) for n in names):
+                return True
+    except Exception:
+        return False
+    return False
 
 
 def _state_snapshot():
@@ -1724,6 +1775,24 @@ def thm_gate_fresh(slug, path):
             shadow = target_declared_in_published_def("thm:" + slug)
             if _PUB_DEF_DECLS and not shadow:
                 return None
+        # `object file … does not exist`: the mirror never built a module the
+        # stub imports, so the stub's own declaration was never elaborated and
+        # the verdict says nothing about the statement.  This is the same
+        # artifact class `offline_fail` ignores (`_offline_artifact` §‎2.36), and
+        # for the same reason: `submission_guard` has already established that
+        # every `Theorems.` import of the item is a PUBLISHED node and every
+        # `Definitions.` import a published bundle, so the module exists on the
+        # platform.  Measured 2026-11-09 on the PermSector/TwoParticle node
+        # stubs: the candidate mirror cannot build their sibling stubs at all
+        # (the workspace def text still declares the lemma, so a stub for the
+        # same name fails with `has already been declared` and leaves no olean),
+        # and the 6 items were deferred forever with no statement-level evidence
+        # against them.
+        # (Match the prefix only: the recorded status is cut at 300 chars, so
+        # the tail `… does not exist` is usually gone -- measured on the first
+        # run, 2026-11-09.)
+        if "error: object file" in detail:
+            return None
         return "candidate build: " + detail[:140]
     return None
 
@@ -1984,10 +2053,88 @@ def platform_jobs():
     return jobs
 
 
+def thm_stub_name(item):
+    """The platform's dotted name for a `thm:` item, read from its own files.
+
+    `WAVE_THMS` only knows the wave chapters. A helper published as its own
+    problem node -- `BookProof.DegEnergy.energy_bound` for the def bundles that
+    import `Theorems.Thm_BookProof_DegEnergy_*` -- is absent from it, so a
+    name-only lookup missed the node entirely: `sync_state` never recorded it,
+    the thm item stayed pending, and `blocked_by` then deferred it forever with
+    "target already published on the platform".  The solution file records the
+    name verbatim (`-- ... solution of <name>`), which is authoritative.
+    """
+    slug = item.partition(":")[2]
+    rec = WAVE_THMS.get(slug) or {}
+    if rec.get("name"):
+        return rec["name"]
+    for cand in (f"{WS}/Solutions/Sol_{slug}.lean",
+                 f"{WS}/Theorems/Thm_{slug}.lean"):
+        try:
+            txt = open(cand, encoding="utf-8").read()
+        except OSError:
+            continue
+        m = re.search(r"solution of ([A-Za-z0-9_.'\-]+)", txt) \
+            or re.search(r"(?m)^theorem\s+([A-Za-z0-9_.'\-]+)", txt)
+        if m:
+            return m.group(1)
+    return None
+
+
+def resolve_existing_thm_item(st, item):
+    """Record a `thm:` item whose node the platform already holds as done.
+
+    `blocked_by` refuses such an item ("target already published on the
+    platform") before dispatch, so it never reaches `find_existing` -- correct
+    for an identical duplicate, wrong for a node whose proof is still ours to
+    submit.  A `thm:` item carries the STATEMENT job, and that job is done
+    either way; recording the node's `theorem_id` and its real status is what
+    lets the matching `sol:` item submit.  Without this an `Open` helper was
+    blocked twice over (thm: already published, sol: theorem not published yet)
+    and the 26 def bundles that import those helpers could never publish.
+
+    Returns True when the item was resolved here.
+    """
+    if not item.startswith("thm:"):
+        return False
+    if (st["items"].get(item) or {}).get("status") == "done":
+        return False
+    name = thm_stub_name(item)
+    if not name:
+        return False
+    try:
+        if name not in published_theorems():
+            return False
+    except Exception:
+        return False
+    tid = (platform_jobs().get(name) or {}).get("theorem_id")
+    if not tid:
+        return False
+    tstat = _THM_STATUS.get(tid)
+    if tstat is None:
+        tstat = (api("GET", f"theorems/{tid}") or {}).get("status")
+    _THM_STATUS[tid] = tstat
+    st["items"][item] = {"status": "done", "theorem_id": tid, "reused": True,
+                         "reused_status": tstat,
+                         "synced_from": "existing-node"}
+    save_state(st)
+    log(f"{item}: reusing existing platform node {name} ({tstat})")
+    return True
+
+
 def sync_state(st):
     """Append-only reconciliation with the platform (publish jobs are the source
     of truth, §3): mark plan items the platform already holds as done so a chunk
-    never re-submits an existing node.  Never downgrades an existing record."""
+    never re-submits an existing node.  Never downgrades an existing record.
+
+    A `thm:` item whose node already exists is recorded done even when the
+    theorem is still `Open`: the statement job is what the thm item carries,
+    the proof belongs to its `sol:` item.  Recording the node's `theorem_id`
+    and its real status is what lets the sol pass submit — without it an `Open`
+    helper was blocked twice over (thm: "target already published", sol:
+    "theorem not published yet") and the 26 def bundles importing those helpers
+    could never publish.
+    """
     jobs = platform_jobs()
     added = 0
     for item in ORDER:
@@ -1997,17 +2144,30 @@ def sync_state(st):
         if kind == "def":
             j = jobs.get(name)
         elif kind == "thm":
-            j = jobs.get((WAVE_THMS.get(name) or {}).get("name", name))
+            j = jobs.get(thm_stub_name(item) or name)
         else:
             continue  # solutions have no publish job; do_wave_sol resolves them
-        if j and j.get("status") == "PUBLISHED":
+        if j and j.get("status") == "PUBLISHED" and j.get("theorem_id"):
+            tid = j.get("theorem_id")
             st["items"][item] = {"status": "done", "job_id": j.get("id"),
                                  "reused": True, "reused_status": "published",
                                  "synced_from": "publish-jobs"}
             if kind == "def":
-                st["items"][item]["def_id"] = j.get("theorem_id")
+                st["items"][item]["def_id"] = tid
             else:
-                st["items"][item]["theorem_id"] = j.get("theorem_id")
+                st["items"][item]["theorem_id"] = tid
+                # Cache the GET: the sol guard and do_wave_sol both read this.
+                tstat = _THM_STATUS.get(tid)
+                if tstat is None:
+                    tstat = (api("GET", f"theorems/{tid}") or {}).get("status")
+                _THM_STATUS[tid] = tstat
+                st["items"][item]["theorem_status"] = tstat
+                if tstat == "Proved":
+                    st["items"][item]["reused_status"] = "Proved"
+                else:
+                    st["items"][item]["note"] = (
+                        "node already exists on the platform "
+                        f"(status {tstat}); its solution is the sol: item")
             added += 1
     # A solution has no publish job, but a node the platform reports as `Proved`
     # already carries a verified proof — there is nothing left to submit for it.
@@ -2016,12 +2176,90 @@ def sync_state(st):
     # the same fact one item at a time.  Resolved by theorem_id, never by name:
     # the theorem catalogue is global and names collide across accounts.
     solved = 0
+    annotated = 0
     checked = 0
+    # Every `done` solution written before the verdict annotation existed has
+    # `done` meaning "the server accepted something" -- which is either a proof
+    # or a SKETCH (a reduction over an Open child).  The only authority on which
+    # is the platform's own /verify payload, so this pass asks once per record.
+    # It is the bulk of the work (thousands of records, one GET each), so it runs
+    # in a small pool instead of one round-trip at a time.
+    legacy = []
     for item in ORDER:
         if not item.startswith("sol:"):
             continue
-        if st["items"].get(item, {}).get("status") == "done":
+        rec0 = st["items"].get(item) or {}
+        if rec0.get("status") != "done" or rec0.get("proved") is not None:
             continue
+        # A record that was closed because the platform's theorem was ALREADY
+        # Proved carries no submission of ours and needs no request: the node's
+        # state is the fact the record is about.
+        if (rec0.get("reused_status") == "Proved"
+                or "already Proved" in str(rec0.get("skipped", ""))):
+            rec0["proved"] = True
+            rec0["node_status"] = "Proved"
+            rec0["verdict_source"] = "platform theorem already Proved"
+            annotated += 1
+            continue
+        if rec0.get("submission_id"):
+            legacy.append((item, rec0["submission_id"]))
+    if legacy:
+        def _fetch(pair):
+            it, sid = pair
+            if over_budget():
+                return it, sid, None
+            try:
+                return it, sid, api("GET", "verify", params={"submission_id": sid})
+            except Exception:
+                return it, sid, None
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+            for it, sid, payload in ex.map(_fetch, legacy):
+                stt = (payload or {}).get("status")
+                if stt in ("ACCEPTED", "SKETCH_ACCEPTED", "Proved"):
+                    _record_sol_success(st, it, sid, payload)
+                    annotated += 1
+        save_state(st)
+        log(f"sync: annotated {annotated}/{len(legacy)} accepted submission(s) "
+            f"with their verdict")
+    for item in ORDER:
+        if not item.startswith("sol:"):
+            continue
+        rec0 = st["items"].get(item) or {}
+        if rec0.get("status") == "done":
+            # A sketch recorded before `dead_children` existed, or whose cited
+            # children changed status since, still reads only `open_children` --
+            # the difference between "waiting" and "can never be Proved".
+            # Recompute both fields together (a name may have moved between them)
+            # and write only when something actually changed.
+            if (rec0.get("sketch") and not rec0.get("proved")
+                    and not over_budget()):
+                slug0 = item.partition(":")[2]
+                try:
+                    kids0, dead0 = open_theorem_children(
+                        f"{WS}/Solutions/Sol_{slug0}.lean", st)
+                except Exception:
+                    kids0 = dead0 = None       # API/budget: leave the record
+                if kids0 is not None:
+                    want = dict(rec0)
+                    if kids0:
+                        want["open_children"] = kids0
+                    else:
+                        want.pop("open_children", None)
+                    if dead0:
+                        want["dead_children"] = dead0
+                        want["blocked"] = (
+                            f"cites {dead0[0]}, which the platform holds as "
+                            f"Disproved (or which itself cites one), so this "
+                            f"node can never be Proved")
+                    else:
+                        want.pop("dead_children", None)
+                        want.pop("blocked", None)
+                    if want != rec0:
+                        rec0.clear()
+                        rec0.update(want)
+                        annotated += 1
+            continue          # annotated by the parallel pass above
         if over_budget():
             log(f"sync: wall-clock budget reached after {checked} pending solution(s); "
                 f"re-run to finish reconciling")
@@ -2039,6 +2277,7 @@ def sync_state(st):
             prev = st["items"].get(item) or {}
             rec = {"status": "done", "theorem_id": tid,
                    "reused": True, "reused_status": "Proved",
+                   "proved": True,
                    "skipped": "theorem already Proved on platform",
                    "synced_from": "theorems"}
             for k in ("submission_id", "submission_src", "platform_solver_submission"):
@@ -2047,8 +2286,9 @@ def sync_state(st):
             st["items"][item] = rec
             solved += 1
     save_state(st)
-    log(f"sync: marked {added} already-published item(s) and {solved} "
-        f"already-proved solution(s) done")
+    log(f"sync: marked {added} already-published item(s), {solved} "
+        f"already-proved solution(s) done, annotated {annotated} record(s) "
+        f"with their verdict/blocker")
     return added + solved
 
 
@@ -2079,8 +2319,20 @@ def plan_progress(st, miss=(), kinds=None):
             continue
         k = i.partition(":")[0]
         by_kind[k] = by_kind.get(k, 0) + 1
+    # `done` covers two different outcomes: a submission whose proof the
+    # platform accepted, and a submission accepted only as a SKETCH (a
+    # reduction whose imported children are still Open).  Report them apart so
+    # the plan is not read as more proved than the platform holds.
+    sol_done = [recs.get(i, {}) for i in in_plan
+                if i.startswith("sol:") and recs.get(i, {}).get("status") == "done"]
     return {
         "in_plan": len(in_plan),
+        "sol_sketch": sum(1 for r in sol_done
+                          if r.get("sketch") and not r.get("proved")),
+        "sol_sketch_dead": sum(1 for r in sol_done
+                               if r.get("sketch") and not r.get("proved")
+                               and r.get("dead_children")),
+        "sol_unannotated": sum(1 for r in sol_done if "proved" not in r),
         "done": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "done"),
         "failed": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "failed"),
         "parked": sum(1 for i in in_plan if recs.get(i, {}).get("status") == "parked"),
@@ -2125,6 +2377,13 @@ def cmd_status():
           f" / {p['parked']} parked"
           + (f" ({p['orphans']} orphans ignored)" if p["orphans"] else ""))
     print(f"pending by kind: {p['pending_by_kind']}")
+    if p["sol_sketch"] or p["sol_unannotated"]:
+        live = p["sol_sketch"] - p["sol_sketch_dead"]
+        print(f"solutions: {p['sol_sketch']} done sol(s) are SKETCH (accepted as a"
+              f" reduction, node still Open) -- {live} waiting on an Open child, "
+              f"{p['sol_sketch_dead']} unreachable (a cited statement is Disproved)"
+              + (f"; {p['sol_unannotated']} legacy record(s) carry no verdict yet "
+                 f"(`--sync` annotates them)" if p["sol_unannotated"] else ""))
     nxt = [i for i in ORDER if i not in miss
            and st["items"].get(i, {}).get("status") not in ("done", "failed", "parked")][:8]
     print(f"next : {', '.join(nxt) if nxt else '(nothing pending)'}")
@@ -2200,6 +2459,24 @@ def thms_not_proved(names):
     return out
 
 
+def _stub_fqname(slug):
+    """Fully-qualified theorem name declared by `Theorems/Thm_<slug>.lean`.
+
+    A def bundle may import a theorem that is NOT a wave node (`dn_self`, the
+    `_prime` sanitized names, …): those were proved directly on the platform and
+    never entered `pipeline/wave_upload.json`.  `thm_imports` then returned the
+    raw slug, `thms_not_proved` found no job for it, and the def was deferred
+    forever with `theorem dependency not proved yet: <slug>` -- measured
+    2026-11-08 on 7 bundles (ChapterFockSchurEsa, …), 165 sols behind them.
+    The stub's own declaration line is the authoritative slug -> name map."""
+    try:
+        txt = open(f"{WS}/Theorems/Thm_{slug}.lean", encoding="utf-8").read()
+    except OSError:
+        return None
+    m = re.search(r"(?m)^theorem\s+([A-Za-z_][\w.']*)", txt)
+    return m.group(1) if m else None
+
+
 def thm_imports(path):
     """`import Theorems.Thm_XXX` names a def bundle imports from platform theorems.
 
@@ -2222,7 +2499,8 @@ def thm_imports(path):
         # `hermiteBasis.apply`, which matches nothing.
         rec = WAVE_THMS.get(slug) or WAVE_THMS.get(slug.replace("_prime", "'")) \
             or {}
-        out.append(rec.get("name") or slug.replace("_prime", "'"))
+        out.append(rec.get("name") or _stub_fqname(slug)
+                   or slug.replace("_prime", "'"))
     return out
 
 
@@ -2590,8 +2868,16 @@ def target_declared_in_published_def(item):
             need = ns
             if name.endswith(decl) and name != decl:
                 need = name[:len(name) - len(decl)].rstrip(".")
-            if not need or not re.search(
-                    r"(?m)^namespace\s+" + re.escape(need) + r"\b", dtxt):
+            # ...and the namespace may equally be opened NESTED:
+            #   namespace BookProof.ChapterStoneResolvent
+            #   namespace UnboundedSelfAdjoint
+            # so no single line ever reads `namespace BookProof.ChapterStone
+            # Resolvent.UnboundedSelfAdjoint`.  Same lesson as _scan_local_
+            # namespaces (which answered "no provider" for every such open):
+            # resolve against the scope stack, not one regex.  Measured
+            # 2026-11-08: 6 ChapterStoneResolvent thm parks whose dup WAS in
+            # the served text, reported as not-shadowed, holding 9 sols.
+            if not need or need not in _scan_local_namespaces(dtxt):
                 continue
             return leaf
     return None
@@ -2717,6 +3003,127 @@ def _apply_verify_verdict(p):
     return False, None
 
 
+def open_theorem_children(path, st=None):
+    """`Theorems.Thm_*` imports of a solution whose platform theorem is not Proved.
+
+    This is what makes a submission a SKETCH: the server accepts a proof that
+    cites an Open child as a *reduction* and keeps the target Open until every
+    imported child is Proved (bottom-up).  Measured on
+    `BookProof.DegEnergy.energy_bound`: its solution imports
+    `Thm_BookProof_DegEnergy_norm_cx`, that node was published-but-Open at
+    17:12, the verdict came back SKETCH_ACCEPTED, and the node flipped to Proved
+    only after norm_cx's own proof landed (18:41).
+
+    Returns `(open_children, dead_children)`.  The split matters: a child that
+    is `Disproved` can never become Proved, so a sketch behind it will stay Open
+    no matter what is submitted -- that is unreachable, not pending.  With `st`
+    the ledger is consulted as well, so a child that is itself a sketch we have
+    already recorded as dead counts as dead too (`sm_dGamma_stone_flow` ->
+    `sm_dGamma_friedrichs_extension` -> the Disproved leaf).  Measured
+    2026-11-05: of the 11 remaining sketches, 3 (the SmOuterFock chain) are
+    unreachable behind `FriedrichsExtension.friedrichs_extension_exists`, which
+    the platform holds as Disproved, and the other 8 wait on a genuinely Open
+    child.
+    """
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except OSError:
+        return [], []
+    opens, dead = [], []
+    for m in re.findall(r"(?m)^import Theorems\.(Thm_\S+)", txt):
+        slug = m[4:]
+        name = thm_stub_name("thm:" + slug)
+        if not name or name in opens or name in dead:
+            continue
+        try:
+            tid = (platform_jobs().get(name) or {}).get("theorem_id")
+        except Exception:
+            return opens, dead
+        stat = _THM_STATUS.get(tid)
+        if stat is None and tid:
+            stat = theorem_status(tid)
+            if stat is not None:
+                _THM_STATUS[tid] = stat
+        if stat == "Disproved":
+            dead.append(name)
+        elif stat != "Proved":
+            child_rec = (st or {}).get("items", {}).get(
+                "sol:" + name.replace(".", "_")) or {}
+            if child_rec.get("dead_children"):
+                dead.append(name)      # Open, but already known unreachable
+            else:
+                opens.append(name)
+    return opens[:8], dead[:8]
+
+
+def _record_sol_success(st, item, sid, payload=None):
+    """Record an accepted submission without claiming a proof it does not have.
+
+    `ACCEPTED` is a proof; `SKETCH_ACCEPTED` is a reduction (the proof cites a
+    child that is still Open).  Both are terminal, so the item must stay `done`
+    and must never be resubmitted, but the ledger said `done` for both -- which
+    is how 15 items read as solved while their nodes stayed `Open`.  Keep the
+    platform's own word in `verdict`, and add `proved` / `sketch` /
+    `open_children` so `--status` can report reductions separately.
+    """
+    status = (payload or {}).get("status")
+    prev = st["items"].get(item) or {}
+    rec = {"status": "done", "submission_id": sid}
+    for k in ("attempts", "reduction_bases", "submission_src",
+              "platform_solver_submission"):
+        if prev.get(k) is not None:
+            rec[k] = prev[k]
+    if not status:
+        st["items"][item] = rec          # no payload read: unknown, do not guess
+        return rec
+    rec["verdict"] = status
+    # `proved` describes the TARGET NODE's state right now, `verdict` the
+    # submission's own word.  A sketch whose children have since been proved
+    # reads `verdict: SKETCH_ACCEPTED, proved: True`, which is the truth: the
+    # server flipped it bottom-up and no further submission is owed.
+    slug = item.partition(":")[2]
+    tid = (st["items"].get(f"thm:{slug}") or {}).get("theorem_id")
+    if status != "SKETCH_ACCEPTED":
+        # A plain ACCEPTED proof verified against children that were all Proved,
+        # so the node is Proved and no extra GET is owed.  Only a sketch can have
+        # flipped since, which is the one case worth asking about.
+        rec["node_status"] = "Proved"
+        rec["proved"] = True
+    else:
+        node = None
+        if tid:
+            try:
+                node = theorem_status(tid)
+            except Exception:
+                node = None      # budget/API: annotate on the next pass
+        if node:
+            rec["node_status"] = node
+            rec["proved"] = node == "Proved"
+        else:
+            rec["proved"] = False
+    if status == "SKETCH_ACCEPTED":
+        try:
+            kids, dead = open_theorem_children(f"{WS}/Solutions/Sol_{slug}.lean", st)
+        except Exception:
+            kids, dead = [], []
+        rec["sketch"] = True
+        if kids:
+            rec["open_children"] = kids
+        if dead:
+            # Not pending work: a cited statement the platform holds as
+            # Disproved can never be proved, so this node cannot flip.  Say so
+            # instead of leaving the reader to retry it forever.
+            rec["dead_children"] = dead
+            rec["blocked"] = (f"cites {dead[0]}, which the platform holds as "
+                              f"Disproved, so this node can never be Proved")
+        log(f"{item}: accepted as a SKETCH (reduction), not a proof -- "
+            f"{len(kids) + len(dead)} imported child(ren) not Proved"
+            + (f": {', '.join((kids + dead)[:3])}" if (kids or dead) else "")
+            + (f" [UNREACHABLE: {dead[0]} is Disproved]" if dead else ""))
+    st["items"][item] = rec
+    return rec
+
+
 def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_seconds):
     """Bounded chunk with several submissions in flight at once.
 
@@ -2756,6 +3163,12 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
             if kinds and item.partition(":")[0] not in kinds:
                 continue
             if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+                continue
+            # BEFORE `blocked_by`: that predicate refuses a thm whose name the
+            # platform already holds, and an Open node is then refused by the sol
+            # pass too -- a closed loop (see resolve_existing_thm_item).
+            if item.startswith("thm:") and resolve_existing_thm_item(st, item):
+                processed += 1
                 continue
             if published:
                 dep = blocked_by(item, published)
@@ -2820,10 +3233,10 @@ def run_chunk_pipelined(st, miss, kinds, published, parallel, max_items, max_sec
                     terminal, err = _apply_publish_verdict(
                         st, item, api("GET", f"publish-jobs/{ident}", None))
                 else:
-                    terminal, err = _apply_verify_verdict(
-                        api("GET", "verify", params={"submission_id": ident}))
+                    payload = api("GET", "verify", params={"submission_id": ident})
+                    terminal, err = _apply_verify_verdict(payload)
                     if terminal and err is None:
-                        st["items"][item] = {"status": "done", "submission_id": ident}
+                        _record_sol_success(st, item, ident, payload)
             except Exception as e:
                 log(f"{item}: poll error {type(e).__name__}: {e}")
                 continue
@@ -2980,6 +3393,9 @@ def main(argv=None):
         if kinds and item.partition(":")[0] not in kinds:
             continue
         if ONLY_ITEMS and not any(o in item for o in ONLY_ITEMS):
+            continue
+        if item.startswith("thm:") and resolve_existing_thm_item(st, item):
+            processed += 1
             continue
         if published:
             dep = blocked_by(item, published)

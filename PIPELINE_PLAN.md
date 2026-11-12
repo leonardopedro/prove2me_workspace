@@ -14375,9 +14375,9 @@ was blocking can now flip bottom-up.  `--status` exits 0 at 16172 done / 837 pen
 
 ## Session 36 (2026-10-28) — the def-gate regate campaign: 9 of 21 chain targets green, 38 gate FAILs left, and the real shape of the sol-red class
 
-This session did **no uploading**: it spent its budget on the binding
-constraint, the def gate, and on a census of the red-sol backlog that the next
-session should drain.
+Most of the session went on the binding constraint (the def gate) and on a
+census of the red-sol backlog; a bounded upload round at the end submitted
+what the guard would accept (see §6).
 
 ### 1. The regate loop (now the canonical repair path)
 
@@ -14497,3 +14497,26 @@ blocked sketches honestly), `thm_stub_name` / `resolve_existing_thm_item`
 (handle a theorem whose slug and declared name disagree), and a
 `thm_gate_fresh` guard. `pipeline/wave_upload.json` is re-serialized (ASCII
 escapes → UTF-8; three semantic entries changed: `thms`, `defs`, `sol_order`).
+
+### 6. The upload round and the next sol class
+
+Two bounded chunks were run after the repairs (`--kind thm --max-items 40`,
+`--kind sol --max-items 30`, `--parallel 4`): **4 thm + 9 sol submissions
+accepted**, everything else guard-deferred with a concrete local reason, which
+is the useful outcome — a defer names the defect, a submission spends a verdict.
+The eleven stubs that ended in a `where` field block now close with a single
+`:= by sorry`, and 543 statements that use `ᴴ` / `ᵀ` / `*ᵥ` now `open scoped
+Matrix`; without it Lean reports `unexpected token 'ᴴ'` and the whole statement
+fails to parse. That is a **generator** defect (it emits the notation without
+the scope), not a per-node one, so check the generator before fixing more.
+
+The sol verdicts from this round split into two live classes:
+
+* `unknown namespace BookProof.SmFockEsa` / `BookProof.KatoRellich` (and every
+  namespace in the same error block, `MvPolynomial` included) — the **entire
+  import block failed**, i.e. one imported module does not materialize on the
+  platform. Same signature as the Carleman cluster (§8.2): find the single
+  shared import, publish it under a fresh `_inc` name, repoint the consumers.
+* `Unknown identifier comparison_dom_dense` — the decl is in a *sibling* node
+  that is not published yet, so the sol needs that provider published first
+  (the guard's "sibling theorem not published" defer names it).

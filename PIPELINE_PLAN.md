@@ -14586,8 +14586,9 @@ processes on a long bundle is what trips the OOM killer on this 15 GB machine.
 | `ScalaronFockEsa` | FAIL `ccDomain_dense` | **OK** | `ScalaronCoreEsa` olean refreshed |
 | `ScalaronWallEsa` | FAIL `symmetricOn_inclusion` | **OK** | same |
 
-`def_gate.json` now reads **645 OK / 56 blocked / 15 failing / 2 no-source**
-(was 644 / 56 / 16 / 2 after §7.2, and 640 / 55 / 21 / 2 before Session 36).
+`def_gate.json` now reads **646 OK / 56 blocked / 14 failing / 2 no-source**
+(was 644 / 56 / 16 / 2 after §7.2, and 640 / 55 / 21 / 2 before Session 36;
+Session 38 added `NavierStokesFockCanonical`).
 The Session 37 swing: `FockQuadraticEsa` and `QgCouplingDGammaSum` FAIL→OK
 (the lemmas in §7.3), and `FockPairPerturbation` was re-gated for the first time
 and is a real FAIL — it re-carries `up_self`/`creA_single` in
@@ -14598,16 +14599,31 @@ them, so it can only compile against the served world (§7.4 class), not ours.
 
 These are not staleness and are the actual work left:
 
-* `Def_ChapterNavierStokesFockCanonical` — a *lost section*.  Line 372 is a
+* ~~`Def_ChapterNavierStokesFockCanonical` — a *lost section*.  Line 372 is a
   fragment (`βi)m (fockSym κ)) x) :`) where the whole "Hamiltonian" block should
   be; the block's helpers (`hsumleft`, `hsumright`, `hmode`) and both headline
   theorems (`fock_hamiltonian_eq`, and the `modeData`/`shiftH` comparison it is
   proved from) are gone from the file, while `fock_canonical_essentiallySelfAdjointOn_core`
-  still cites them.  The published contract of the missing theorem is in
-  `Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq`.
-  A one-line keyhole repair (e.g. `:= by sorry`) is **wrong here**: the bundle
-  is imported by sols, and `sorryAx` in a published def is what the platform's
-  soundness guard rejects.  It needs the section reconstructed.
+  still cites them.~~ **Reconstructed 2026-11-12** (Session 38) from
+  `BookProof/ChapterNavierStokesFockCanonical.lean`: `coe_sum_apply'`,
+  `fock_comparison_eq`, `hop_modeData_eq`, `mode_hamiltonian_eq`,
+  `fock_hamiltonian_eq` — so `fock_canonical_essentiallySelfAdjointOn_core` is
+  now *proved* from the Faris–Lavine core rather than from a stub, presumably
+  the first time since the section was lost.  The bundle is gate-OK.
+  Two caveats worth knowing before trusting chapter text as a transplant source:
+  the book chapter had **never been compiled** here, and two `ring` steps in
+  `mode_hamiltonian_eq` fail as written because the left side reaches `x` as
+  `↑↑x` while the right reaches it through `Submodule.inclusion` and `subtype`
+  (`↑↑↑x`), which `simp`/`ring`/`rfl` will not unify.  Unfolding the inclusion
+  (`Submodule.inclusion, LinearMap.codRestrict_apply, Subtype.coe_mk,
+  Submodule.coe_subtype, Subtype.coe_eta`) before `push_cast` fixes it.  So
+  "copy the chapter proof" is not a guarantee — see §7.5.
+  Note also that every `Thm_*` node whose lemma now lives in the def no longer
+  compiles *standalone* (`… has already been declared`); that is the
+  pre-existing shape of this tree, confirmed on the untouched pair
+  `Def_ChapterNavierStokesIkebeKato` / `Thm_*_IkebeKato_diagMax_quadForm_nonneg`,
+  and is what `GATE_TRUTH=published` exists for.  Nothing new is broken by the
+  transplant.
 * ~~`Def_ChapterOperatorSeriesEsa` — carries `seriesOp` and `summable_apply` only;
   `seriesOp_symmetricOn` and `seriesOp_norm_le`, both cited by
   `Def_ChapterFockQuadraticEsa:817`, were never written.~~ **Filled 2026-11-12**
@@ -14657,7 +14673,24 @@ original bundle lacks — while our *repo* copy of the original now has them
 are gateable only with `GATE_TRUTH=published`, against the pruned published
 texts, and should be excluded from a default-lane regate.
 
-### 7.5 Next
+### 7.5 The book chapters here are not a compile-checked source
+
+`BookProof/Chapter*.lean` are the book text, and the gate never compiles them —
+it builds `Definitions/Def_Chapter*` and `Theorems/Thm_*` only.  A transplant
+from a chapter is therefore a transplant of *unverified* Lean.  Session 38 hit
+two kinds of damage in one file:
+
+* a genuine proof gap (`mode_hamiltonian_eq`'s two `ring` steps, §7.3) — a
+  coercion-chain mismatch, not arithmetic;
+* a real *loss*: `Def_ChapterNavierStokesFockCanonical` line 372 held a fragment
+  (`βi)m (fockSym κ)) x) :`) where the section should have been, i.e. the def
+  side had been truncated and the chapter was the only surviving copy.
+
+So the rule for the rest of §7.3 is: transplant, then compile, and expect the
+chapter proof to need repair.  Do not assume "it is in the chapter" means "it
+checks".
+
+### 7.6 Next
 
 1. **Rebuild the whole mirror** (`debug/build_candidate_mirror.py`, ~4.5 h) so
    every verdict is about source the repo actually has.  Until then a regate of a

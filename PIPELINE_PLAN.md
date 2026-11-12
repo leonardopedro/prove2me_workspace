@@ -14520,3 +14520,121 @@ The sol verdicts from this round split into two live classes:
 * `Unknown identifier comparison_dom_dense` — the decl is in a *sibling* node
   that is not published yet, so the sol needs that provider published first
   (the guard's "sibling theorem not published" defer names it).
+
+---
+
+## 7. `state/mirror` oleans were built from **pre-repair** chapter texts (2026-11-12)
+
+The 21 gate FAILs left by Session 36 were re-gated after the repairs.  Four of
+them compile clean as soon as the world they are compiled in is consistent, and
+the reason the other seventeen keep failing is not (mostly) their own source.
+
+### 7.1 The finding
+
+`state/mirror` is a *snapshot*: every `Definitions/*.olean` in it was produced by
+`build_candidate_mirror.py` from the chapter text **as it was at build time**.
+Session 36 then edited 250 of those def sources (the repairs that replaced
+hollow bundles with real ones and dropped the declarations leaf selection had
+duplicated).  An olean keeps every declaration of the source it was built from,
+so any module that imports a stale olean sees that module's *old* declaration
+set:
+
+* **`... has already been declared`** — the stale olean still carries a
+  declaration the import no longer has.  `Def_ChapterShiftedQuadraticEsa.olean`
+  (repo source: no Hashimoto content at all) still exports
+  `BookProof.HashimotoShiftInvert.shiftMap`, so recompiling
+  `Def_ChapterHashimotoShiftInvert` — which defines exactly that — fails with
+  "already declared" on **every one of its declarations**, and
+  `Def_ChapterHashimotoComplexShifts`, `Def_ChapterLeafGaps`,
+  `Def_ChapterModeQuadraticEsa` (via `HermiteCarlemanEsaPromoted`),
+  `Def_ChapterPermutationSectorEsaPromoted`, `Def_ChapterSirkGramWhitening` (via
+  `SirkDiffusiveDecay`) fail the same way.
+* **`Unknown identifier`** — the mirror never built the module that has the
+  declaration, or built it before the declaration existed
+  (`norm_cshiftMap_ge`, `cshiftMap_injective`, `closed_of_selfAdjointCriterion`,
+  `fqOp_essentiallySelfAdjoint`, `ccDomain_dense`, `symmetricOn_inclusion`).
+  Adding the import is correct but not sufficient while the olean is stale.
+* **theorem stubs** are the same class: a stub olean built from the *full*
+  chapter still exports that chapter's definitions.  That is what made
+  `Def_ChapterNavierStokesDeficiency` report "`LpNat.L2N` has already been
+  declared" while the file compiles clean once
+  `Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors.olean`
+  is rebuilt from the 18-line stub source.
+
+So a `FAIL` from this mirror is only evidence about the bundle when the closure
+of its imports is itself consistent.  **mtime is not a usable staleness test**
+(`Def_ChapterComplexShiftCore.lean` has not changed since 2026-10-02 and its
+olean is still full of declarations its source does not contain); compare the
+olean's declaration set, or simply rebuild.
+
+### 7.2 What was rebuilt, and what it bought
+
+`debug/refresh_stale_defs.py --files <topo-list>` recompiles a set of mirror def
+bundles in dependency order, staging the repo source first; `debug/gate_loop.py`
+compiles one target, reads the error, refreshes the module that declares the
+name it names (or the module whose olean the error says is missing), and
+retries — which is what finally distinguished "the bundle is wrong" from "the
+world is wrong". Both are one-compile-at-a-time: two concurrent `lean`
+processes on a long bundle is what trips the OOM killer on this 15 GB machine.
+
+55 def bundles were rebuilt (30 clean).  Re-gated afterwards:
+
+| bundle | before | now | what it needed |
+|---|---|---|---|
+| `NavierStokesDeficiency` | FAIL dup `L2N` | **OK** | stub olean rebuilt (§7.1) |
+| `HalfLineLimitCircle` | FAIL `DeficiencyTrivialAt` | **OK** | `open BookProof.FarisLavine` sat *below* its first use (line 98 vs line 64) — moved above |
+| `ScalaronFockEsa` | FAIL `ccDomain_dense` | **OK** | `ScalaronCoreEsa` olean refreshed |
+| `ScalaronWallEsa` | FAIL `symmetricOn_inclusion` | **OK** | same |
+
+`def_gate.json` now reads **644 OK / 56 blocked / 16 failing / 2 no-source**
+(was 640 / 55 / 21 / 2).
+
+### 7.3 Real source defects found underneath
+
+These are not staleness and are the actual work left:
+
+* `Def_ChapterNavierStokesFockCanonical` — a *lost section*.  Line 372 is a
+  fragment (`βi)m (fockSym κ)) x) :`) where the whole "Hamiltonian" block should
+  be; the block's helpers (`hsumleft`, `hsumright`, `hmode`) and both headline
+  theorems (`fock_hamiltonian_eq`, and the `modeData`/`shiftH` comparison it is
+  proved from) are gone from the file, while `fock_canonical_essentiallySelfAdjointOn_core`
+  still cites them.  The published contract of the missing theorem is in
+  `Theorems/Thm_BookProof_NavierStokesFlow_FockCanonical_fock_hamiltonian_eq`.
+  A one-line keyhole repair (e.g. `:= by sorry`) is **wrong here**: the bundle
+  is imported by sols, and `sorryAx` in a published def is what the platform's
+  soundness guard rejects.  It needs the section reconstructed.
+* `Def_ChapterOperatorSeriesEsa` — carries `seriesOp` and `summable_apply` only;
+  `seriesOp_symmetricOn` and `seriesOp_norm_le`, both cited by
+  `Def_ChapterFockQuadraticEsa:817`, were never written.  Both are short
+  triangle-inequality/tsum proofs.
+* Same shape: `potCore_pgLp` (`ScalaronHermiteEsa`), `multOp_isSymmetricDom`
+  (`ScalaronDensitizedTransfer`), `tendsto_zero_of_le_sirkBound`
+  (`SirkPerSystemFlowBound`), `coe_dGammaOp` + `toLpL_apply`
+  (`FockSecondQuantization` → `QgCouplingDGammaSum`), `fqOp_essentiallySelfAdjoint`
+  reachability (`Qg3DGaugeEsa`, blocked behind `ModeQuadraticEsa`).
+* Proof bugs: `BookBrstYangMills:661` (`rw [I_smul_gaussGen, sub_mul]` finds no
+  pattern), `StrichartzHermiteQG:72` (`simpa` with
+  `HilbertBasis.repr_apply_apply` lands on the conjugated inner product),
+  `TwoParticleSectorEsa` (zero cases of `swapTwo_involutive` needed
+  `LinearIsometryEquiv.map_zero` — `simp` had no lemma for the equiv — and
+  `redOp`'s `Commutes` argument no longer matches `commutes_symProj`).
+
+### 7.4 The promoted-bundle clash is a *world* difference, not a defect
+
+`Def_ChapterModeQuadraticEsa` and `Def_ChapterPermutationSectorEsaPromoted` fail
+with `environment already contains 'BookProof.FarisLavine.SymmetricOn' /
+'HermiteCarleman.rterm'` because a `*Promoted` bundle exists precisely to
+re-declare, under the original names, definitions the **platform's** copy of the
+original bundle lacks — while our *repo* copy of the original now has them
+(Session 36 filled it in).  The two can never compile together locally.  These
+are gateable only with `GATE_TRUTH=published`, against the pruned published
+texts, and should be excluded from a default-lane regate.
+
+### 7.5 Next
+
+1. **Rebuild the whole mirror** (`debug/build_candidate_mirror.py`, ~4.5 h) so
+   every verdict is about source the repo actually has.  Until then a regate of a
+   bundle whose closure contains a stale olean is measuring the snapshot.
+2. Then `debug/gate_loop.py --targets-file` the remainder: most of the sixteen
+   should fall out with the closure consistent, leaving the §7.3 list, which is
+   real proof work.

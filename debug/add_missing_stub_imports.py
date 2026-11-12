@@ -32,7 +32,7 @@ sys.path.insert(0, HERE)
 from fix_stub_import_dups import decl_sets  # noqa: E402
 from restore_opens import scan  # noqa: E402
 
-MIRROR = os.environ.get("CANDIDATE_MIRROR", "/tmp/def_candidate")
+MIRROR = os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror"))
 PATH_BIN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin"
 ERR = re.compile(r"Unknown (?:identifier|constant) `([^`]+)`")
 THM_NAME = re.compile(r"^theorem\s+([A-Za-z_][\w.'!?]*)", re.M)

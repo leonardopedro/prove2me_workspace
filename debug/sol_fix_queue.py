@@ -18,7 +18,7 @@ records ONE class:
   goals             `unsolved goals`              -> real, actionable
   other-defect      anything else that is not a publication gate
 
-Writes /tmp/fixq_<class>.txt (one slug per line) and prints the census with an
+Writes state/scratch/fixq_<class>.txt (one slug per line) and prints the census with an
 example per class.  Also reports how many of each class carry a STALE cached
 verdict (the local file was edited after it: it cannot be trusted, §2.37-3).
 
@@ -118,12 +118,12 @@ def main():
         rows.append((cls, name, detail, stale, st[key].get("attempts", 0)))
 
     census = collections.Counter(r[0] for r in rows)
-    open("/tmp/fixq_all.tsv", "w").write(
+    open(f"{WS}/state/scratch/fixq_all.tsv", "w").write(
         "".join(f"{c}\t{n}\t{d}\t{'stale' if s else 'fresh'}\t{a}\n"
                 for c, n, d, s, a in rows))
     for cls in CLASSES:
         names = [n for c, n, _, _, _ in rows if c == cls]
-        open(f"/tmp/fixq_{cls}.txt", "w").write(
+        open(f"{WS}/state/scratch/fixq_{cls}.txt", "w").write(
             "".join(f"{n}\n" for n in names))
     print(f"pending sols with a local source: {len(rows)}")
     print(f"{'class':16s} {'n':>5s}  {'stale-verdict':>13s}  example detail")
@@ -133,7 +133,7 @@ def main():
             continue
         stale = sum(1 for r in sel if r[3])
         print(f"{cls:16s} {len(sel):5d}  {stale:13d}  {sel[0][2][:70]}")
-    print(f"\ncensus written to /tmp/fixq_all.tsv, per-class lists to /tmp/fixq_<class>.txt")
+    print(f"\ncensus written to state/scratch/fixq_all.tsv, per-class lists to state/scratch/fixq_<class>.txt")
 
     if args.cls:
         sel = [r for r in rows if r[0] == args.cls]

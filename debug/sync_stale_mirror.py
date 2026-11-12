@@ -4,13 +4,25 @@ The mirror's Def copies go stale whenever a file is edited but not re-gated
 (regate only stages the *target* file). Targets then compile against old
 upstream oleans -> unknown-identifier / duplicate-decl ghosts. This script:
 
-  1. diffs WS vs mirror for Definitions/*.lean (and Theorems/*.lean),
+  1. classifies every Definitions/*.lean (and Theorems/*.lean) as stale or not:
+     `content` (mirror text != workspace text), `no-olean` (no compiled
+     output) or `oleans-old` (the .olean is older than the .lean it should
+     have been built from -- the only evidence available, since an olean
+     records no hash of its source),
   2. stages the WS copy of every stale module,
   3. recompiles them in topological (import) order,
   4. restores BOTH the old .lean and old .olean if a rebuild fails, so the
      mirror never ends up with a .lean that its .olean disagrees with.
 
-Usage: python3 debug/sync_stale_mirror.py [--scope closure-of-fails] [--limit N]
+A stale definition olean is not harmless: `debug/gate_thm_ok.py` compiles a
+stub against whatever the mirror holds, so a bundle whose olean predates its
+text makes every stub importing it fail with `unknown namespace` /
+`unknown identifier` -- a mirror artifact recorded as a FAIL verdict (measured
+2026-11-06: `BookProof.CarlemanSimplex` in state/mirror).
+
+Usage:
+  python3 debug/sync_stale_mirror.py --check [--defs-only]   # report, exit 1 if stale
+  python3 debug/sync_stale_mirror.py [--scope closure-of-fails] [--limit N]
 """
 import argparse
 import collections
@@ -36,6 +48,32 @@ def lake(cmd):
                           capture_output=True, text=True).stdout.strip()
 
 
+def stale_classes(d, f):
+    """Why a mirror module is out of date, as a list of class names ([] = fine)."""
+    ws = os.path.join(WS, d, f)
+    mi = os.path.join(MIRROR, d, f)
+    olean = os.path.join(MIRROR, d, f[:-5] + ".olean")
+    out = []
+    try:
+        if open(ws, "rb").read() != open(mi, "rb").read():
+            out.append("content")
+    except OSError:
+        out.append("content")            # no mirror copy at all: stage it
+    if d == "Definitions":
+        # A def bundle must have an olean -- it is what every downstream
+        # compile links against.  Thm stubs are staged on demand, so a missing
+        # olean there is by design and is not staleness.
+        if not os.path.exists(olean):
+            out.append("no-olean")
+        elif os.path.getmtime(olean) < os.path.getmtime(mi):
+            # The output is older than its input, so it was not built from this
+            # text.  An olean stores no hash of its source, so mtime is the only
+            # signal; it under-reports (a copy2 staged .lean keeps the old mtime)
+            # but never over-reports.
+            out.append("oleans-old")
+    return out
+
+
 def imports_of(path, prefix):
     try:
         t = open(path, encoding="utf-8", errors="ignore").read()
@@ -51,6 +89,13 @@ def main():
                     help="skip Theorems/* (mirror Thm stubs are staged by regate "
                          "on demand; absence there is by design)")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--check", action="store_true",
+                    help="report the stale classes and exit (1 if anything is "
+                         "stale, 0 if the mirror is consistent); no staging, "
+                         "no compile")
+    ap.add_argument("--only", action="append", default=[],
+                    help="refresh only modules whose name contains this string "
+                         "(repeatable); its stale imports are refreshed too")
     a = ap.parse_args()
 
     deps = {}
@@ -65,19 +110,16 @@ def main():
                          imports_of(os.path.join(WS, d, f), "Theorems")]
 
     stale = []
+    why = {}
     for d in (["Definitions"] if a.defs_only else ["Definitions", "Theorems"]):
         for f in os.listdir(os.path.join(WS, d)):
             if not f.endswith(".lean"):
                 continue
             key = f"{d}/{f[:-5]}"
-            ws = os.path.join(WS, d, f)
-            mi = os.path.join(MIRROR, d, f)
-            try:
-                same = open(ws, "rb").read() == open(mi, "rb").read()
-            except OSError:
-                same = False
-            if not same:
+            classes = stale_classes(d, f)
+            if classes:
                 stale.append(key)
+                why[key] = classes
 
     if a.scope == "closure-of-fails":
         gate = json.load(open(os.path.join(WS, "state", "def_gate.json")))
@@ -92,10 +134,36 @@ def main():
                     seen.add(w); q.append(w)
         stale = [s for s in stale if s in seen]
 
+    if a.only:
+        hit = [k for k in stale if any(o in k for o in a.only)]
+        if not hit:
+            print(f"no stale module matches {a.only}"
+                  + (" -- mirror consistent for this filter" if a.check else ""),
+                  flush=True)
+            return 0
+        all_stale = set(stale)
+        keep, q = set(hit), list(hit)
+        while q:                    # the target's own stale imports, too
+            for dep in deps.get(q.pop(), ()):
+                if dep in all_stale and dep not in keep:
+                    keep.add(dep)
+                    q.append(dep)
+        stale = [k for k in stale if k in keep]
+
+    if a.check:
+        print(f"mirror: {MIRROR}")
+        for c in ("content", "no-olean", "oleans-old"):
+            names = sorted(k.split("/", 1)[1] for k, v in why.items()
+                           if k in set(stale) and c in v)
+            print(f"  {c:<12} {len(names):5d}"
+                  + (f"  e.g. {', '.join(names[:3])}" if names else ""))
+        print(f"stale in scope: {len(stale)} (of "
+              f"{sum(1 for d in (['Definitions'] if a.defs_only else ['Definitions', 'Theorems']) for f in os.listdir(os.path.join(WS, d)) if f.endswith('.lean'))}"
+              f" module(s) checked)")
+        return 1 if stale else 0
+
     stale_set = set(stale)
     print(f"stale modules in scope: {len(stale)}", flush=True)
-    if a.limit:
-        stale = stale[:a.limit]
 
     order, seen, stack = [], set(), set()
 
@@ -113,6 +181,13 @@ def main():
     for m in sorted(stale):
         visit(m)
     print(f"rebuild order: {len(order)}", flush=True)
+    if a.limit:
+        # Truncate AFTER the topological sort, never before: a prefix of that
+        # order is closed under stale dependencies (a dep always sorts first),
+        # so `--limit 20` in chunks cannot cut a module away from the dep it
+        # needs -- which would fail and restore, making the chunk look empty.
+        order = order[:a.limit]
+        print(f"limited to {len(order)} module(s)", flush=True)
 
     base = lake('printf %s "$LEAN_PATH"')
     lean = lake("command -v lean")

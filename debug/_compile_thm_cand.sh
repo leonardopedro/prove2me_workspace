@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -u
-M=/tmp/def_candidate
-PROJ=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace/../timepiece331
+WS=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
+M="${CANDIDATE_MIRROR:-$WS/state/mirror}"
+PROJ=$WS/../timepiece331
 export PATH=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH
 m="$1"
 [ -f "$M/Theorems/$m.lean" ] || { echo "NOSRC $1"; exit 0; }

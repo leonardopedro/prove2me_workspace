@@ -54,11 +54,14 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 WS = os.environ.get("PROVE2ME_WS") or os.path.dirname(HERE)
 PROJ = os.environ.get("TIMEPIECE_PROJ") or f"{WS}/../timepiece331"
-MIRROR = "/tmp/published_mirror"
+# Repo-local: /tmp is tmpfs here and the mirror is the oracle for every
+# statement check, so it must outlive a reboot (AGENTS.md rule 4). Built by
+# debug/build_published_mirror.py.
+MIRROR = os.environ.get("DEF_MIRROR") or f"{WS}/state/published_mirror"
 # Persistent root holding .oleans the mirror ships as source only: a published
 # `Theorems.*` module without a mirror .olean made every item importing it fail
 # with `object file ... does not exist` -- an oracle artifact, not a defect.
-DEP_CACHE = "/tmp/thm_dep_olean"
+DEP_CACHE = f"{WS}/state/thm_dep_olean"
 OUT = f"{WS}/state/offline_pending_check.json"
 
 
@@ -467,7 +470,33 @@ def run_sol(lean, env, names, only, jobs):
     os.makedirs(thm_out, exist_ok=True)
     _link_mirror_oleans(thm_out)
 
-    wanted = []
+    # Transitive closure over Theorems.* imports: a stub that itself imports a
+    # sibling stub (helper statements) used to leave that sibling unbuilt in the
+    # scratch root, and because scratch/Theorems is the first root holding a
+    # `.lean` for it, the sol compile died with `object file .../Thm_Y.olean does
+    # not exist` -- an oracle artifact, not a proof failure (measured 2026-10-30:
+    # 227 of 323 red-sol verdicts were this artifact, 86 distinct missing stubs).
+    wanted, _want_seen = [], set()
+
+    def _want(mod):
+        if mod in _want_seen:
+            return
+        _want_seen.add(mod)
+        src = _stub_declaring(mod)
+        if src is not None:
+            try:
+                txt = open(src, encoding="utf-8").read()
+            except OSError:
+                txt = ""
+            for sib in STATEMENT_IMPORT.findall(txt):
+                _want(sib)
+        # Appended AFTER the imports: `wanted` is a post-order, so a module
+        # always follows every stub it imports.  Phase 1 still runs the builds
+        # concurrently (order alone does not sequence threads), but the retry
+        # pass below relies on this order to rebuild a straggler with all of
+        # its imports already on disk.
+        wanted.append(mod)
+
     for name in names:
         if not _match(only, name):
             continue
@@ -475,8 +504,7 @@ def run_sol(lean, env, names, only, jobs):
         if not os.path.exists(path):
             continue
         for mod in STATEMENT_IMPORT.findall(open(path, encoding="utf-8").read()):
-            if mod not in wanted:
-                wanted.append(mod)
+            _want(mod)
 
     built = {}
 
@@ -492,11 +520,22 @@ def run_sol(lean, env, names, only, jobs):
             if os.path.exists(f"{MIRROR}/Theorems/{mod}.lean"):
                 return mod, "FAIL:no local Theorems stub (sibling unpublished)"
             return mod, ("SKIP:no local Theorems/%s.lean" % mod)
+        # A PUBLISHED sibling already has an olean in the mirror, and that olean
+        # is the declaration the server compiles the solution against.  Building
+        # the local stub over it was worse than useless: `-o` had to unlink the
+        # mirror-fill symlink first, so when that build failed the scratch lost a
+        # perfectly good published olean and every item importing the sibling
+        # then FAILED with `object file .../Theorems/<mod>.olean does not exist`
+        # -- an oracle artifact reported as a broken proof (measured 2026-11-09
+        # on the FockStatistics core solutions, via
+        # Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj).  Only
+        # UNPUBLISHED modules are built here; the mirror stays the oracle.
+        if os.path.exists(f"{MIRROR}/Theorems/{mod}.olean"):
+            return mod, "ok"
         shutil.copy2(src, os.path.join(thm_out, f"{mod}.lean"))
         olean_p = os.path.join(thm_out, f"{mod}.olean")
-        # A mirror-fill symlink may already sit here (this module is published).
-        # `-o` would follow it and OVERWRITE THE MIRROR's olean with the local
-        # stub's -- unlink so the write lands in the scratch instead.
+        # `-o` would follow a mirror-fill symlink and OVERWRITE the MIRROR's
+        # olean with the local stub's -- unlink so the write lands in the scratch.
         if os.path.islink(olean_p):
             os.remove(olean_p)
         # cwd must be the scratch root: Lean 4.33 rejects an input file that
@@ -511,6 +550,18 @@ def run_sol(lean, env, names, only, jobs):
     with cf.ThreadPoolExecutor(max_workers=jobs) as ex:
         for mod, res in ex.map(build, wanted):
             built[mod] = res
+    # Dependency-order race: `ex.map` compiles concurrently, so a stub that
+    # imports a sibling stub can be started before that sibling's olean exists
+    # and fail with `object file .../offline-sol-*/Theorems/Thm_Y.olean of
+    # module Theorems.Thm_Y does not exist` -- an oracle artifact that was
+    # reported as a proof failure (measured 2026-10-30: jacobiLag/secondOrder,
+    # lagrangianCore/symmetricOn failed on one run and passed on the next).
+    # One serial retry in post-order (imports first) rebuilds whatever the
+    # parallel pass could not have resolved yet.  TIMEOUTs are left alone:
+    # they are a load signal, not a dependency signal.
+    stragglers = [m for m in wanted if built.get(m, "FAIL").startswith("FAIL")]
+    for mod in stragglers:
+        built[mod] = build(mod)[1]
 
     out = {}
 

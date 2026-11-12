@@ -2,7 +2,7 @@
 # Compile one def bundle inside the candidate mirror; used in dependency order.
 set -u
 WS=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/prove2me_workspace
-M=/tmp/def_candidate
+M="${CANDIDATE_MIRROR:-$WS/state/mirror}"
 PROJ=$WS/../timepiece331
 export PATH=/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin:$PATH
 # Accept EITHER a chapter name or a full module id, so callers can pass whichever

@@ -25,7 +25,9 @@ import sys
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(WS, "..", "timepiece331", "BookProof")
-CAND = "/tmp/def_candidate/Definitions"
+CAND = os.path.join(
+    os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror")),
+    "Definitions")
 DECL_RE = re.compile(
     r"(?m)^(?:noncomputable\s+)?(?:def|theorem|lemma|instance|abbrev)\s+([A-Za-z0-9_.]+)")
 NS_RE_TMPL = r"(?m)^namespace (BookProof\.%s)\s*$"

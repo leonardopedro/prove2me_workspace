@@ -30,7 +30,7 @@ import time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ = os.environ.get("TIMEPIECE_PROJ", os.path.join(WS, "..", "timepiece331"))
-MIRROR = os.environ.get("CANDIDATE_MIRROR", "/tmp/def_candidate")
+MIRROR = os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror"))
 PATH_BIN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin"
 
 
@@ -69,6 +69,15 @@ def main():
     lean = lake("command -v lean")
     env = dict(os.environ, PATH=PATH_BIN + ":" + os.environ["PATH"])
 
+    # GATE_TRUTH=published compiles in the world the PLATFORM has: published
+    # (pruned) def texts over the mirror, published-truth oleans, theorem stubs
+    # built.  The default mirror world is richer than the platform -- its def
+    # copies still carry the lemmas that were published as `Thm_*` nodes -- so it
+    # says OK for bundles the server rejects with `Unknown identifier`
+    # (Def_ChapterEsaOneParticleDGamma: gate OK, platform FAIL).  Use this for any
+    # bundle that cites a sibling lemma rather than only its own definitions.
+    truth = os.environ.get("GATE_TRUTH", "").strip().lower()
+
     def compile_one(kind, m):
         src = "Definitions" if kind == "D" else "Theorems"
         full = f"{MIRROR}/{src}/{m}.lean"
@@ -92,7 +101,7 @@ def main():
         if r.returncode == 0:
             return kind, m, "OK"
         err = next((l for l in out.splitlines() if "error" in l), "")
-        logdir = (a.report + ".logs") if a.report else "/tmp/regate_logs"
+        logdir = (a.report + ".logs") if a.report else f"{WS}/state/logs/regate"
         os.makedirs(logdir, exist_ok=True)
         open(f"{logdir}/{kind}_{m}.log", "w").write(out)
         return kind, m, "FAIL " + err.strip().replace("\t", " ")[:300]
@@ -117,6 +126,22 @@ def main():
                 work_t.append(m)
 
     jobs, res = a.jobs, {}
+    if truth == "published":
+        sys.path.insert(0, os.path.join(WS, "debug"))
+        import pubstage_check as PS
+        PS.ensure_stage()
+        lean_path = f"{PS.STAGE}:{PS.MIRROR}:{base}"
+        for t in targets:
+            if not os.path.exists(f"{WS}/Definitions/Def_{t}.lean"):
+                continue
+            rc, err, bad = PS.check_one(f"Def_{t}", lean, lean_path, quiet=True)
+            if rc == 0:
+                res[("D", f"Def_{t}")] = "OK"
+            elif bad:
+                res[("D", f"Def_{t}")] = f"BLOCKED by Thm_{bad[0]}"
+            else:
+                res[("D", f"Def_{t}")] = "FAIL " + err[:300]
+        work_d = [t for t in targets if os.path.exists(f"{WS}/Definitions/Def_{t}.lean")]
     todo = [("T", m) for m in sorted(set(work_t))] + [("D", m) for m in work_d]
     # Two WAVES, not one pool.  `ThreadPoolExecutor.map` pulls from a shared
     # iterator, so with --jobs>1 a bundle could start before the theorem stub it
@@ -137,8 +162,9 @@ def main():
                 kind, m, r = compile_one(*x)
                 res[(kind, m)] = r
 
-    run([("T", m) for m in sorted(set(work_t))])
-    run([("D", m) for m in work_d])
+    if truth != "published":
+        run([("T", m) for m in sorted(set(work_t))])
+        run([("D", m) for m in work_d])
 
     print(f"theorem stubs compiled: "
           f"{sum(1 for (k, _), v in res.items() if k == 'T' and v == 'OK')}"

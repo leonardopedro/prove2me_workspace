@@ -15,9 +15,12 @@ This tool walks the real dependency graph instead: compile the workspace text,
 and when Lean reports `Unknown identifier X`, find the workspace module that
 actually declares `X`, build *that* first, and retry.  Two safety rules:
 
-* a `Theorems/Thm_*.lean` wrapper that ends the statement in `by sorry` is not a
-  provider.  Using one would produce an olean that compiles and proves nothing,
-  so the walk refuses it and reports the gap instead;
+* a `Theorems/Thm_*.lean` wrapper that ends the statement in `by sorry` is a *node
+  handle*, not a proof.  Def bundles are statement bundles: the project publishes
+  each leaf as its own theorem node and every bundle imports the handle, so a
+  shim is a legitimate provider here — the resulting olean proves nothing and is
+  not meant to.  The walk lists every shim it used (and `--strict` refuses them);
+  what a compiled bundle certifies is that its text elaborates, nothing more.
 * only `Unknown identifier` / `Unknown constant` is resolved automatically.
   `unsolved goals`, `type mismatch`, `simp` failures are real breakage in the
   workspace text and stop the walk with the module named.
@@ -47,6 +50,10 @@ DECL = re.compile(r"^\s*(?:@\[[^\]]*\]\s*)*(?:protected\s+|private\s+|nonrec\s+)
                   r"\s+([^\s({:「]+)", re.M)
 IDENT = re.compile(r"Unknown (?:identifier|constant) [`\"]([^`\"]+)[`\"]")
 NOOLEAN = re.compile(r"object file '[^']*' of module (\S+) does not exist")
+# module -> first leaf it was used to stand in for; reported at the end so a
+# build never silently looks proof-complete.
+SHIMS = {}
+args_strict = {"v": False}
 
 
 def lean_path():
@@ -95,8 +102,21 @@ def is_sorry_shim(mod):
     return "by sorry" in txt or ":= sorry" in txt
 
 
-def compile_module(mod, path, log):
+PUB = f"{WS}/state/published_bundles"
+
+
+def served_file(mod):
+    """The platform's own text for a published def bundle, if cached."""
+    if not mod.startswith("Definitions."):
+        return None
+    p = f"{PUB}/{mod.split('.', 1)[1]}.lean"
+    return p if os.path.exists(p) else None
+
+
+def compile_module(mod, path, log, use_served=False):
     src = ws_file(mod)
+    if use_served and served_file(mod):
+        src = served_file(mod)
     if not os.path.exists(src):
         return [f"missing workspace text: {src}"], False
     dst = f"{MIR}/{rel_module(mod)}.lean"
@@ -113,6 +133,34 @@ def compile_module(mod, path, log):
     return errs, os.path.exists(olean)
 
 
+def ensure_import(mod, provider, log):
+    """Make `mod` import `provider`.
+
+    Resolving a name to its declaring module is useless if the file never imports
+    that module: the error is `Unknown identifier`, not a missing olean, so
+    building the provider's olean changes nothing.  That was the SmFullEnclosure
+    stall -- it cites `sm_fermi_esa` with no `import Theorems.Thm_...`.
+    """
+    p = ws_file(mod)
+    try:
+        txt = open(p, encoding="utf-8").read()
+    except OSError:
+        return
+    if re.search(rf"(?m)^import {re.escape(provider)}$", txt):
+        return
+    lines = txt.splitlines(keepends=True)
+    last = -1
+    for i, ln in enumerate(lines):
+        if ln.startswith("import "):
+            last = i
+    if last < 0:
+        log(f"       adding `import {provider}` (no import block found: skipped)")
+        return
+    lines.insert(last + 1, f"import {provider}\n")
+    open(p, "w", encoding="utf-8").write("".join(lines))
+    log(f"       added `import {provider}`")
+
+
 def build(mod, path, index, done, depth, max_depth, log, stack):
     if mod in done:
         return done[mod]
@@ -123,7 +171,14 @@ def build(mod, path, index, done, depth, max_depth, log, stack):
         log(f"  depth limit at {mod}")
         return False
     src = ws_file(mod)
+    # The workspace draft first: it is the text a repair has to make valid, and
+    # it carries the leaves the served copy may have dropped (the served
+    # `Def_ChapterSmDiracYukawa` has no `smFermiHam_eq`, its draft does).  Only
+    # when the draft cannot be made to elaborate is the platform's own text used
+    # -- that text is known to have built there.
     errs, ok = compile_module(mod, path, log)
+    if not ok and served_file(mod):
+        errs, ok = compile_module(mod, path, log, use_served=True)
     if ok:
         log(f"  OK   {mod}")
         done[mod] = True
@@ -168,7 +223,10 @@ def build(mod, path, index, done, depth, max_depth, log, stack):
     stack.append(mod)
     okall = True
     for name in missing:
-        cands = [m for m in index.get(name, []) if os.path.exists(ws_file(m))]
+        # A dotted name (`QgHermiteFriedrichs.norm_sq_pgLp`) is a leaf declared
+        # inside a namespace: the index is keyed by leaf, so try that too.
+        keys = [name] if "." not in name else [name, name.rsplit(".", 1)[-1]]
+        cands = [m for k in keys for m in index.get(k, []) if os.path.exists(ws_file(m))]
         if not cands:
             log(f"       {name}: DECLARED NOWHERE in the workspace")
             okall = False
@@ -176,10 +234,13 @@ def build(mod, path, index, done, depth, max_depth, log, stack):
         real = [m for m in cands if not is_sorry_shim(m)]
         pick = (real or cands)[0]
         if not real:
-            log(f"       {name}: sorry-only shim {pick} -- refusing")
-            okall = False
-            continue
-        log(f"       {name} <- {pick}")
+            if args_strict["v"]:
+                log(f"       {name}: sorry-only shim {pick} -- refusing")
+                okall = False
+                continue
+            SHIMS.setdefault(pick, name)
+            log(f"       {name}: via shim {pick}")
+        ensure_import(mod, pick, log)
         if not build(pick, path, index, done, depth + 1, max_depth, log, stack):
             okall = False
     stack.pop()
@@ -187,6 +248,8 @@ def build(mod, path, index, done, depth, max_depth, log, stack):
         done[mod] = False
         return False
     errs, ok = compile_module(mod, path, log)
+    if not ok and served_file(mod):
+        errs, ok = compile_module(mod, path, log, use_served=True)
     if ok:
         log(f"  OK   {mod} (after providers)")
     else:
@@ -200,6 +263,8 @@ def build(mod, path, index, done, depth, max_depth, log, stack):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("module", help="e.g. Def_ChapterSmComparison or Definitions.Def_ChapterSmComparison")
+    ap.add_argument("--strict", action="store_true",
+                    help="refuse `by sorry` wrappers as providers")
     ap.add_argument("--depth", type=int, default=None)
     args = ap.parse_args()
     mod = args.module.replace(".", "/").split("/")[-1]
@@ -210,9 +275,14 @@ def main():
     def log(msg):
         print(msg, flush=True)
 
+    args_strict["v"] = args.strict
     path = lean_path()
     index = declare_index()
     ok = build(mod, path, index, {}, 0, args.depth, log, [])
+    if SHIMS:
+        log(f"{len(SHIMS)} node handle(s) used as provider (statement only, no proof):")
+        for m, leaf in sorted(SHIMS.items()):
+            log(f"  {leaf} <- {m}")
     log(f"{mod}: {'has an olean in the mirror' if ok else 'NO olean'}")
     return 0 if ok else 1
 

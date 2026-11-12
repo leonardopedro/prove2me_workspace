@@ -544,6 +544,17 @@ def structural_preamble(bt, upto_byte):
                 i += 2
                 continue
             if line.startswith("-/", i):
+                # A block comment that OPENS AND CLOSES on one line (`/-! ## G.0 —
+                # ... -/`) must close the depth it just opened. Skipping the
+                # closer without decrementing left `depth` stuck at 1 at the
+                # first single-line section header, so every later line of the
+                # chapter counted as comment text: `structural_preamble` for
+                # ChapterG returned only its module-level `open scoped` line and
+                # lost `open MeasureTheory` (line 140) and the `variable` block
+                # at 235-237 -- the stubs for `haarAverage_*` came out with an
+                # EMPTY preamble and failed the gate with `Unknown identifier X`.
+                if depth > 0:
+                    depth -= 1
                 i += 2
                 continue
             if line.startswith("--", i):
@@ -1335,6 +1346,109 @@ def scoped_opens_before(pre):
     return list(reversed(out))
 
 
+def _split_binder_groups(block):
+    """Split a `variable` payload into `{...}` / `(...)` / `[...]` / bare groups."""
+    s = re.sub(r"^variable\s+", "", " ".join(x.strip() for x in block)).strip()
+    out, i, n = [], 0, len(s)
+    while i < n:
+        if s[i].isspace():
+            i += 1
+            continue
+        if s[i] in "{([":
+            depth, j = 0, i
+            while j < n:
+                if s[j] in "{([":
+                    depth += 1
+                elif s[j] in "})]":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            out.append(s[i:j + 1])
+            i = j + 1
+            continue
+        j = i
+        while j < n and s[j] not in "{([":
+            j += 1
+        out.append(s[i:j].strip())
+        i = j
+    return [g for g in out if g]
+
+
+def _binder_group_names(g):
+    """Names a binder group introduces (empty for an anonymous instance)."""
+    if g[:1] not in "{([":
+        return g.split(":", 1)[0].split()
+    inner, depth = g[1:-1], 0
+    for k, ch in enumerate(inner):
+        if ch in "{([":
+            depth += 1
+        elif ch in "})]":
+            depth -= 1
+        elif ch == ":" and depth == 0:
+            return inner[:k].split()
+    return []
+
+
+_VAR_STOP = ("theorem", "lemma", "def", "abbrev", "instance", "structure",
+             "end", "namespace", "open", "import", "noncomputable",
+             "set_option", "omit", "include", "attribute", "section",
+             "variable", "universe", "example", "--", "/-")
+
+
+def dedupe_variable_names(text):
+    """Drop binder groups whose name an earlier `variable` already declared."""
+    lines = text.split("\n")
+    cmds = []
+    i = 0
+    while i < len(lines):
+        if not re.match(r"^variable(\s|$)", lines[i]):
+            i += 1
+            continue
+        block, j = [lines[i]], i + 1
+        while (j < len(lines) and lines[j][:1].isspace() and lines[j].strip()
+               and not lines[j].strip().startswith(_VAR_STOP)):
+            block.append(lines[j])
+            j += 1
+        cmds.append((i, j, _split_binder_groups(block)))
+        i = j
+    seen_name, seen_anon, drop = set(), set(), [set() for _ in cmds]
+    for ci, (_s, _e, groups) in enumerate(cmds):
+        for gi, g in enumerate(groups):
+            names = _binder_group_names(g)
+            if names:
+                if any(nm in seen_name for nm in names):
+                    drop[ci].add(gi)
+                else:
+                    seen_name.update(names)
+            else:
+                sig = re.sub(r"\s+", " ", g)
+                if sig in seen_anon:
+                    drop[ci].add(gi)
+                else:
+                    seen_anon.add(sig)
+    if not any(drop):
+        return text
+    out = list(lines)
+    for ci in range(len(cmds) - 1, -1, -1):
+        if not drop[ci]:
+            continue
+        start, end, groups = cmds[ci]
+        kept = [g for gi, g in enumerate(groups) if gi not in drop[ci]]
+        newlines = []
+        if kept:
+            cur = "variable"
+            for g in kept:
+                if len(cur) + 1 + len(g) > 78 and cur != "variable":
+                    newlines.append(cur)
+                    cur = "  " + g
+                else:
+                    cur += " " + g
+            newlines.append(cur)
+        out[start:end] = newlines
+    return "\n".join(out)
+
+
 def build_thm(bt, leaf, decls, node, modns):
     ctx = structural_preamble(bt, node.s)
     stmt = fmt_name(the_statement(bt, node), node.uname)
@@ -1383,6 +1497,16 @@ def build_thm(bt, leaf, decls, node, modns):
     # once from extract_namespace_variables and once from the copied context --
     # and Lean's auto-bound `d` then shadows the theorem's own `d`, so `W` picks
     # up type `Vd d<vs>` and `hamCore W` fails with `Application type mismatch`.
+    #
+    # Exact-block dedupe is not enough: the copied context can carry the
+    # chapter's `variable (Hs) (D) (A)` while the section block declares the same
+    # names with the hypotheses after them. Lean reads the re-declaration as NEW
+    # variables, so `include hsum ... in` binders the hypotheses on one
+    # `(D, A)` and the conclusion mentions another, and the node can never be
+    # proved (PIPELINE_PLAN §8.1). Keep the FIRST declaration of every name and
+    # drop the later re-declarations; that is always elaboration-safe, because
+    # a surviving binder never refers to a name declared after it.
+    text = dedupe_variable_names(text)
     _seen_var = set()
     _kept = []
     _lines = text.split("\n")

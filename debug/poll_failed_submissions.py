@@ -11,7 +11,7 @@ non-accepted status that were created by our user, and write a report:
     state/failed_submissions.json
         {"<slug>": {"theorem_id":..., "submissions":[{"id","status",
                      "error_message","created_at"}]}}
-    /tmp/failed_submission_slugs.txt   one slug per line (fix queue)
+    state/scratch/failed_submission_slugs.txt   one slug per line (fix queue)
 
 Usage:  python3 debug/poll_failed_submissions.py [--workers 12] [--limit 0]
 """
@@ -79,7 +79,7 @@ def main():
     c = Counter(s["status"] for v in out.values() for s in v["submissions"])
     print(f"theorems with our FAILED submissions: {len(out)}  -> {path}")
     print("status breakdown:", dict(c.most_common()))
-    with open("/tmp/failed_submission_slugs.txt", "w") as fh:
+    with open(f"{WS}/state/scratch/failed_submission_slugs.txt", "w") as fh:
         for s in sorted(out):
             fh.write(s + "\n")
     for s in sorted(out)[:15]:

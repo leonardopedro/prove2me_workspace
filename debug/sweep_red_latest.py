@@ -9,7 +9,7 @@ fact ACCEPTED on the platform).  This tool asks for the submission list without
 a status filter and compares the newest entry, giving the real red set:
 
     state/red_latest.json     {slug: {theorem_id, latest: {status,error,created_at}}}
-    /tmp/red_latest_slugs.txt one slug per line
+    state/scratch/red_latest_slugs.txt one slug per line
 
 Usage:  python3 debug/sweep_red_latest.py [--workers 12] [--limit 0]
 """
@@ -81,7 +81,7 @@ def main():
     c = Counter(v["latest"]["status"] for v in out.values())
     print(f"true-red sols: {len(out)}  -> {path}")
     print("latest-status breakdown:", dict(c.most_common()))
-    with open("/tmp/red_latest_slugs.txt", "w") as fh:
+    with open("state/scratch/red_latest_slugs.txt", "w") as fh:
         for s in sorted(out):
             fh.write(s + "\n")
     return 0

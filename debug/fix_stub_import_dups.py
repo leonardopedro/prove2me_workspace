@@ -36,7 +36,7 @@ from restore_opens import scan  # noqa: E402
 
 DEFS = os.path.join(WS, "Definitions")
 THMS = os.path.join(WS, "Theorems")
-MIRROR = os.environ.get("CANDIDATE_MIRROR", "/tmp/def_candidate")
+MIRROR = os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror"))
 PATH_BIN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin"
 
 THM_NAME = re.compile(r"^theorem\s+([A-Za-z_][\w.'!?]*)", re.M)

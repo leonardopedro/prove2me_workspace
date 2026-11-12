@@ -9,7 +9,8 @@ downstream noise (they showed up as `object file ... not found` rows,
 import os
 import re
 
-MIRROR = os.environ.get("CANDIDATE_MIRROR", "/tmp/def_candidate")
+WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MIRROR = os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror"))
 REPORT = os.environ.get("BUILD_REPORT", "/tmp/build133_report.tsv")
 IMP = re.compile(r"^import\s+(Definitions\.\S+|Theorems\.\S+)", re.M)
 

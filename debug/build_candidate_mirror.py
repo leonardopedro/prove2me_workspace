@@ -25,7 +25,7 @@ import time
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJ = os.environ.get("TIMEPIECE_PROJ", os.path.join(WS, "..", "timepiece331"))
-MIRROR = os.environ.get("CANDIDATE_MIRROR", "/tmp/def_candidate")
+MIRROR = os.environ.get("CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror"))
 PUB_DEFS = f"{WS}/state/published_bundles"
 PATH_BIN = "/media/leo/e7ed9d6f-5f0a-4e19-a74e-83424bc154ba/.elan/bin"
 

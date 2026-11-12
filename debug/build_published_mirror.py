@@ -41,7 +41,10 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 WS = os.environ.get("PROVE2ME_WS") or os.path.dirname(HERE)
 PROJ = os.environ.get("TIMEPIECE_PROJ") or os.environ.get("PROVE2ME_PROJ") or ""
-MIRROR = os.environ.get("DEF_MIRROR") or "/tmp/published_mirror"
+# Repo-local, never /tmp: this mirror is the oracle every offline statement
+# check runs against, and /tmp is tmpfs on this box -- an OOM or reboot wipes
+# it and takes the whole oracle with it (AGENTS.md rule 4).
+MIRROR = os.environ.get("DEF_MIRROR") or os.path.join(WS, "state", "published_mirror")
 CANDIDATE = "--set" in sys.argv and "wave" in sys.argv
 
 _dm = os.path.join(HERE, "def_mirror.py")

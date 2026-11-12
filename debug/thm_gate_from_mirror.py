@@ -3,7 +3,7 @@
 
 `build_candidate_mirror.py` now writes the thm gate as it goes, but that pass
 recompiles ~1,000 modules.  The mirror it leaves behind already contains the
-evidence: a stub compiled iff `/tmp/def_candidate/Theorems/<mod>.olean` exists.
+evidence: a stub compiled iff `state/mirror/Theorems/<mod>.olean` exists.
 Reading that gives the same verdict for the cost of a directory listing.
 
 Stamping follows the def-gate contract (`sha1` of the workspace file), so a stub
@@ -15,7 +15,7 @@ stub), `NOTBUILT` (compiled by neither tool -- the stub was never in the build's
 dependency closure, so its imports are unverified and it must not be submitted).
 
 Usage:
-  python3 debug/thm_gate_from_mirror.py [--mirror /tmp/def_candidate]
+  python3 debug/thm_gate_from_mirror.py [--mirror state/mirror]
 
 Statuses mirror `build_candidate_mirror`'s vocabulary, plus one crucial third
 state:
@@ -46,8 +46,8 @@ WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mirror", default=os.environ.get("CANDIDATE_MIRROR",
-                                                      "/tmp/def_candidate"))
+    ap.add_argument("--mirror", default=os.environ.get(
+        "CANDIDATE_MIRROR", os.path.join(WS, "state", "mirror")))
     ap.add_argument("--report", default="/tmp/def_gate_20261012.tsv",
                     help="build report whose `FAIL Definitions/...` rows name the "
                          "stubs the compiler actually rejected")

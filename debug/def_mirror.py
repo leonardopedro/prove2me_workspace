@@ -57,8 +57,26 @@ def published_set():
     """
     if os.path.exists(INDEX):
         idx = json.load(open(INDEX, encoding="utf-8"))
-        return {b for b, rec in idx.get("bundles", {}).items()
-                if rec.get("status") == "PUBLISHED"}
+        out = {b for b, rec in idx.get("bundles", {}).items()
+               if rec.get("status") == "PUBLISHED"}
+        # The index records the NEWEST publish job per bundle, and a later
+        # FAILED job does not revoke an earlier PUBLISHED one -- the platform
+        # keeps serving the accepted text.  `state/published_bundles/` holds
+        # exactly that accepted text (cache_published_bundles.py resolves
+        # newest-per-`theorem_name` the same way), so its presence is proof the
+        # bundle is served.  Without this, a bundle whose last re-publish failed
+        # was withheld from the mirror, and every statement importing it failed
+        # on `object file ... does not exist` -- a mirror artifact reported as a
+        # defect in the statement.  Measured on
+        # Def_ChapterSecondQuantizationCoreEsa, which
+        # Thm_BookProof_FockStatistics_essentiallySelfAdjointOn_sectorDom_of_esa
+        # legitimately imports.
+        cached = os.path.join(WS, "state", "published_bundles")
+        if os.path.isdir(cached):
+            for f in os.listdir(cached):
+                if f.startswith("Def_") and f.endswith(".lean"):
+                    out.add(f[len("Def_"):-len(".lean")])
+        return out
     return set(json.load(open(PUBLISHED, encoding="utf-8")))
 
 

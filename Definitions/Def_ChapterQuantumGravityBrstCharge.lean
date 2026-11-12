@@ -2,6 +2,7 @@ import Definitions.Def_ChapterBRSTNilpotent
 import Definitions.Def_ChapterQuantumGravity3DGauge
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_BRSTNilpotent_brst_charge_nilpotent
 
 
 /-!
@@ -481,7 +482,7 @@ theorem linGen_bracket (A B : Matrix (Fin d) (Fin d) ℝ) :
       = (A j k * B l m) • (if k = l then elemGen (d := d) j m else 0)
         - (A j k * B l m) • (if j = m then elemGen (d := d) l k else 0) := by
     intro j k l m
-    rw [← smul_sub, elemGen_bracket, smul_sub]
+    erw [← smul_sub, elemGen_bracket, smul_sub]
   rw [Finset.sum_congr rfl fun j _ => Finset.sum_congr rfl fun k _ =>
     Finset.sum_congr rfl fun l _ => Finset.sum_congr rfl fun m _ => hterm j k l m,
     ← sum4_sub_distrib, linGen_contract_left, linGen_contract_right, linGen_sub]

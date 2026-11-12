@@ -1,3 +1,5 @@
+import Theorems.Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_quadForm_nonneg
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterYangMillsAbelianEsa
 import Definitions.Def_ChapterQymTimeIndependentFlow
@@ -7,7 +9,6 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFullQuadraticEsa
-import Definitions.Def_ChapterGradedBandSchurEsa
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
@@ -20,6 +21,14 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_FullQuadratic_polySym_fqPoly
+import Theorems.Thm_BookProof_HermiteBand_isBand2_fqPoly
+import Theorems.Thm_BookProof_QuadFockEsa_dGamma_hermCol_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
+import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_op_apply
+import Theorems.Thm_BookProof_YangMillsHermite_ymHamiltonian_symmetricOn
+import Theorems.Thm_BookProof_YangMillsAbelianEsa_ymAbelianPoly_eq_fqPoly
 
 
 /-!
@@ -73,7 +82,7 @@ Everything is `sorry`-free and `axiom`-free.
 namespace BookProof.YmAbelianFock
 
 open MvPolynomial BookProof.HermiteProductCore BookProof.HermiteProductBasis
-open BookProof.HermiteBand BookProof.GradedBandSchur BookProof.QuadFockEsa
+open BookProof.HermiteBand BookProof.QuadFockEsa
 open BookProof.FockSecondQuantization BookProof.NavierStokesFlow
 open BookProof.HermiteGalerkin BookProof.FarisLavine
 open BookProof.YangMillsHermite BookProof.FullQuadratic BookProof.YangMillsAbelianEsa

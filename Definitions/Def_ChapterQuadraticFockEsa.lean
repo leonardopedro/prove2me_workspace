@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterHermiteBandCalculus
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterFullQuadraticEsa
@@ -9,6 +10,10 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterYangMillsHermite
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_symm
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
+import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
+import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
 import Mathlib
 
 

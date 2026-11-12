@@ -3,6 +3,7 @@ import Definitions.Def_ChapterPinOmega
 import Definitions.Def_ChapterLorentzRealRep
 import Definitions.Def_ChapterLorentzRealRepSum
 import Mathlib
+import Theorems.Thm_BookProof_ChapterLorentzRealRepSum_finrank_WHalf
 
 
 /-!

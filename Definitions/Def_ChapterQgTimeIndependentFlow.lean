@@ -1,7 +1,7 @@
 
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore

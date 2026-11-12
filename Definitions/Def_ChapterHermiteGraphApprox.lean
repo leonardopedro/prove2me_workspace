@@ -14,6 +14,20 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_DegEnergy_dcoord_conj
+import Theorems.Thm_BookProof_DegEnergy_integral_dcoord_mul
+import Theorems.Thm_BookProof_HermiteLadder_hamPolyL_apply
+
+import Theorems.Thm_BookProof_HermiteLadder_exists_ladderOrd_hamPolyL
+import Definitions.Def_ChapterNsKoopman
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMv
+import Theorems.Thm_BookProof_HermiteProductBasis_pderiv_hermiteMv
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
+import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
+import Theorems.Thm_BookProof_ConvolutionCalc_hasCompactSupport_dcoord
+import Theorems.Thm_BookProof_ConvolutionCalc_hasCompactSupport_finsetSum
 
 
 /-!
@@ -387,11 +401,24 @@ theorem coef_htrunc (v : L2d d) (F : Finset (Fin d →₀ ℕ)) (b : Fin d →�
   simp only [inner_smul_right, inner_hermiteMvLp, mul_ite, mul_one, mul_zero]
   rw [Finset.sum_ite_eq]
 
+/-- `hermiteMvBasis` and `hermiteMvLp` agree pointwise.
+
+`Def_ChapterHermiteProductBasis` proves this as the `@[simp]` lemma
+`hermiteMvBasis_apply`, but the PLATFORM's served copy of that bundle does not
+carry it (the served text stops after the `def`), so `simp` sees
+`hermiteMvBasis a` and `hermiteMvLp a` as different terms and `tendsto_htrunc`
+was left with an unprovable-looking equality (measured 2026-11-08: the bundle
+gated FAIL `406:88: unsolved goals` only because of this one missing simp
+lemma).  Re-derive it from the definition, which both copies declare. -/
+private theorem hermiteMvBasis_eq_hermiteMvLp (a : Fin d →₀ ℕ) :
+    hermiteMvBasis (d := d) a = hermiteMvLp (d := d) a := by
+  rw [hermiteMvBasis, HilbertBasis.coe_mk]
+
 theorem tendsto_htrunc (v : L2d d) : Tendsto (htrunc v) atTop (𝓝 v) := by
   have h := hermiteMvBasis.hasSum_repr v
   have heq : htrunc v = fun F => ∑ a ∈ F, hermiteMvBasis.repr v a • hermiteMvBasis a := by
     funext F
-    simp [htrunc, coef_eq_repr]
+    simp [htrunc, coef_eq_repr, hermiteMvBasis_eq_hermiteMvLp]
   rw [heq]
   exact h
 

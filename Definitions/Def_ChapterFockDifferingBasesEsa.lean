@@ -20,6 +20,8 @@ import Theorems.Thm_BookProof_FockQuadratic_sig_tgt
 
 import Theorems.Thm_BookProof_FockQuadratic_pairOp_symmetricOn
 
+import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_diagMax_quadForm_nonneg
+
 import Theorems.Thm_BookProof_FockQuadratic_wsum_add
 
 import Theorems.Thm_BookProof_FockQuadratic_wsum_single

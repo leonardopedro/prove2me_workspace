@@ -1,9 +1,9 @@
 import Definitions.Def_ChapterScalaronDensitizedTransfer
-import Theorems.Thm_BookProof_ChapterLinftyMultiplication_multOp_coeFn
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_multOp_hasZeroDeficiencyOn
+import Theorems.Thm_BookProof_QuantumGravityDensitized_densitized_hasZeroDeficiencyOn_transfer
 import Definitions.Def_ChapterNavierStokesFockContinuum
 import Definitions.Def_ChapterQuantumGravityHalfDensity
 import Mathlib
-open BookProof.ChapterLinftyMultiplication
 
 
 /-!

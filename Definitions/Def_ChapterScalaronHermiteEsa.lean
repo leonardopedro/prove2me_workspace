@@ -8,6 +8,7 @@ import Definitions.Def_ChapterQgHermiteFriedrichs
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+import Theorems.Thm_BookProof_QgHermiteCore_exists_exp_bound_mvPolyEval
 
 
 /-!

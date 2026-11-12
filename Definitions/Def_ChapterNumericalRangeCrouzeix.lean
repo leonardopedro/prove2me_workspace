@@ -478,6 +478,14 @@ def NumBallLE (A : E →L[ℂ] E) (c : ℂ) (r : ℝ) : Prop :=
 
 
 
+theorem inner_sub_const_smul (A : E →L[ℂ] E) (c : ℂ) (x : E) :
+    (⟪ x, (A - c • (1 : E →L[ℂ] E)) x ⟫_ℂ) = ⟪ x, A x ⟫_ℂ - c * (‖x‖ ^ 2 : ℝ) := by
+  have hx : (A - c • (1 : E →L[ℂ] E)) x = A x - c • x := by
+    simp [ContinuousLinearMap.sub_apply, ContinuousLinearMap.smul_apply]
+  rw [hx, inner_sub_right, inner_smul_right, inner_self_eq_norm_sq_to_K]
+  push_cast
+  rfl
+
 /-- `NumBallLE` is exactly the inclusion of the numerical range in a closed ball. -/
 theorem numBallLE_iff_numRange_subset [CompleteSpace E] (A : E →L[ℂ] E) (c : ℂ) {r : ℝ} :
     NumBallLE A c r ↔ BookProof.ChapterH9.numRange A ⊆ Metric.closedBall c r := by

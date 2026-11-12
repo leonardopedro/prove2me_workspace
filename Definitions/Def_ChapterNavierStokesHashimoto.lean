@@ -7,6 +7,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
+import Theorems.Thm_BookProof_EsaClosure_hashimoto_multishift_selects_esa
 
 
 /-!

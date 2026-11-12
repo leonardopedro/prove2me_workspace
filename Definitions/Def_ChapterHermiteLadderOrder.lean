@@ -4,6 +4,18 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
 import Mathlib
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_annPoly_hermiteMvLp
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_apply
+import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_C
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_X
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_mul
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_cpoly_sub
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_coreD
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_gaussInt_neg
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_inner_pgLp_pgLp
+import Theorems.Thm_BookProof_HermiteProductBasis_crePoly_hermiteMvLp
 
 
 /-!
@@ -335,7 +347,9 @@ def mulL (q : MvPolynomial (Fin d) ℂ) : MvPolynomial (Fin d) ℂ →ₗ[ℂ] M
 
 theorem mulL_X_eq (i : Fin d) : mulL (X i : MvPolynomial (Fin d) ℂ) = annPoly i + crePoly i := by
   refine LinearMap.ext fun p => ?_
-  simp
+  -- `annPoly_apply` / `crePoly_apply` arrive as theorem nodes, and a published
+  -- node carries no `@[simp]` attribute -- name them instead of relying on it.
+  simp [annPoly_apply, crePoly_apply]
 
 theorem ladderOrd_mulL_X (i : Fin d) : LadderOrd (mulL (X i : MvPolynomial (Fin d) ℂ)) 1 := by
   rw [mulL_X_eq]
@@ -424,7 +438,19 @@ theorem hn_zero_eq (v : L2d d) : hn 0 v = ENNReal.ofReal (‖v‖ ^ 2) := by
   simp only [hpt]
   rw [← ENNReal.ofReal_tsum_of_nonneg (fun a => by positivity) hsum.summable, hsum.tsum_eq]
 
+/-- **The norm bound on the core.**  An operator of ladder order `n` satisfies
+`‖T v‖² ≤ C ‖v‖²_n` on the core.
 
+Inlined from `BookProof/Toolbox/ChapterHermiteLadderOrder.lean` (line 435): the chapter's
+`exists_hamCoreS_bound` in `Def_ChapterHermiteGraphApprox` destructures it, so the ladder
+bundle has to carry it. -/
+theorem LadderOrd.norm_sq_le {T : MvPolynomial (Fin d) ℂ →ₗ[ℂ] MvPolynomial (Fin d) ℂ} {n : ℕ}
+    (hT : LadderOrd T n) :
+    ∃ C : ℝ≥0∞, C ≠ ⊤ ∧ ∀ p, ENNReal.ofReal (‖pgLp (T p)‖ ^ 2) ≤ C * hn n (pgLp p) := by
+  obtain ⟨C, hC, h⟩ := hT 0
+  refine ⟨C, hC, fun p => ?_⟩
+  rw [← hn_zero_eq]
+  simpa using h p
 
 end
 

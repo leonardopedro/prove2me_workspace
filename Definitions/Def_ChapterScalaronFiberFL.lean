@@ -23,6 +23,9 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterScalaronWallEsa
 import Definitions.Def_ChapterStrichartzWave
 import Mathlib
+import Theorems.Thm_BookProof_ScalaronWallEsa_kinOpR_apply
+import Theorems.Thm_BookProof_WallEsaSemibounded_inner_toLp_self
+import Theorems.Thm_BookProof_WallEsaSemibounded_ccEquiv_norm_sq
 
 
 /-!

@@ -228,6 +228,13 @@ theorem spinorInv_mul_spinor (T : Matrix (Fin 2) (Fin 2) ℂ)
 
 
 
+/-- For `T ∈ SL(2,ℂ)`, `SpinorInv T` is the genuine matrix inverse of
+`Spinor T`. -/
+theorem spinor_inv_eq (T : Matrix (Fin 2) (Fin 2) ℂ)
+    (hdet : T 0 0 * T 1 1 - T 0 1 * T 1 0 = 1) :
+    (Spinor T)⁻¹ = SpinorInv T :=
+  Matrix.inv_eq_right_inv (spinor_mul_spinorInv T hdet)
+
 /-- **Lemma 48 (bridge).**  For `T ∈ SL(2,ℂ)`, conjugation of the Majorana basis
 `{iγ^μ}` by the spin-group element `Spinor T = Σ T Σ⁻¹` is realised by the
 Pauli-cover matrix `Υ(T)`:

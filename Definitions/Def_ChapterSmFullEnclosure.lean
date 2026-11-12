@@ -13,6 +13,9 @@ import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Mathlib
 import Theorems.Thm_BookProof_SmDiracYukawa_sm_fermi_esa
+import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_eq
+import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_symmetricOn
+import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 
 
 /-!

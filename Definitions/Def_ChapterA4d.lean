@@ -1,6 +1,9 @@
 import Definitions.Def_ChapterA3h
 import Definitions.Def_ChapterA4c
 import Mathlib
+import Theorems.Thm_BookProof_ChapterA3_upsilon_mem_lorentz
+import Theorems.Thm_BookProof_ChapterA3_pauli_expand
+import Theorems.Thm_BookProof_ChapterA3_upsilon_re
 
 
 /-!

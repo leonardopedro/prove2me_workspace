@@ -4,11 +4,19 @@ import Definitions.Def_ChapterFlowDGammaEsa
 import Definitions.Def_ChapterEsaOneParticleDGamma
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneSeparable
+import Theorems.Thm_BookProof_ChapterStoneSeparable_mulSA_position_unbounded
 import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
+import Theorems.Thm_BookProof_GraphCore_isGraphCore_pushOp
+import Theorems.Thm_BookProof_GraphCore_pushDom_mono
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_pushOp
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
+import Theorems.Thm_BookProof_TensorCore_norm_tmul_sub_le
 
 
 /-!
@@ -108,16 +116,16 @@ def pairDom : Submodule ℂ (Hs.carrier ⊗[ℂ] Ks.carrier) :=
 def pairOp : pairDom Hs Ks DA DB →ₗ[ℂ] (Hs.carrier ⊗[ℂ] Ks.carrier) :=
   sumPoly Hs Ks DA DB A B ∘ₗ
     (LinearEquiv.ofInjective (inclPair Hs Ks DA DB).toLinearMap
-      (inclPair Hs Ks DA DB).injective).symm.toLinearMap
+      (fun a b h => (inclPair Hs Ks DA DB).injective h)).symm.toLinearMap
 
 theorem pairOp_apply (x : pairDom Hs Ks DA DB) (x₀ : DA ⊗[ℂ] DB)
     (hx : (x : Hs.carrier ⊗[ℂ] Ks.carrier) = inclPair Hs Ks DA DB x₀) :
     pairOp Hs Ks DA DB A B x = sumPoly Hs Ks DA DB A B x₀ := by
   have hxx : (LinearEquiv.ofInjective (inclPair Hs Ks DA DB).toLinearMap
-      (inclPair Hs Ks DA DB).injective) x₀ = x := by
+      (fun a b h => (inclPair Hs Ks DA DB).injective h)) x₀ = x := by
     apply Subtype.ext; rw [hx]; rfl
   have h2 : (LinearEquiv.ofInjective (inclPair Hs Ks DA DB).toLinearMap
-      (inclPair Hs Ks DA DB).injective).symm x = x₀ := by
+      (fun a b h => (inclPair Hs Ks DA DB).injective h)).symm x = x₀ := by
     rw [← hxx]; simp
   exact congrArg (fun z => sumPoly Hs Ks DA DB A B z) h2
 
@@ -154,6 +162,7 @@ section Symmetry
 variable (Hs Ks : IPSpace) (DA : Submodule ℂ Hs.carrier) (DB : Submodule ℂ Ks.carrier)
   (A : DA →ₗ[ℂ] Hs.carrier) (B : DB →ₗ[ℂ] Ks.carrier)
 
+set_option maxHeartbeats 1000000 in
 /-- The tensor sum of two symmetric operators is symmetric, on the algebraic level. -/
 theorem sumPoly_symm (hA : SymmetricOn DA A) (hB : SymmetricOn DB B) :
     ∀ x y : DA ⊗[ℂ] DB,
@@ -173,17 +182,60 @@ theorem sumPoly_symm (hA : SymmetricOn DA A) (hB : SymmetricOn DB B) :
         obtain ⟨c, d, rfl⟩ := ht
         simp only [sumPoly_tmul, inclPair_tmul, inner_add_left, inner_add_right,
           TensorProduct.inner_tmul, hA a c, hB b d]
-    | zero => simp
+    | zero =>
+      have hz1 : (inclPair Hs Ks DA DB) (0 : DA ⊗[ℂ] DB) = 0 := by simp [inclPair]
+      have hz2 : (sumPoly Hs Ks DA DB A B) (0 : DA ⊗[ℂ] DB) = 0 := by simp [sumPoly]
+      rw [hz1, hz2]
+      exact (inner_zero_right _).trans (inner_zero_right _).symm
     | add s t _ _ hs ht => simp only [map_add, inner_add_right, hs, ht]
-    | smul r s _ hs => simp only [map_smul, inner_smul_right, hs]
+    | smul r s _ hs =>
+      have h1 : (inclPair Hs Ks DA DB) (r • s) = r • (inclPair Hs Ks DA DB) s := by
+        simp [inclPair]
+      have h2 : (sumPoly Hs Ks DA DB A B) (r • s) = r • (sumPoly Hs Ks DA DB A B) s := by
+        simp [sumPoly]
+      rw [h1, h2]
+      -- The `have`s pin the statement's instances (elaboration is
+      -- left-to-right there), unlike a bare `exact a.trans b.trans c`, whose
+      -- instance metavariables are still unresolved when the middle argument
+      -- is checked.
+      have e1 : inner ℂ ((sumPoly Hs Ks DA DB A B) (a ⊗ₜ[ℂ] b))
+          (r • (inclPair Hs Ks DA DB) s)
+          = r * inner ℂ ((sumPoly Hs Ks DA DB A B) (a ⊗ₜ[ℂ] b))
+            ((inclPair Hs Ks DA DB) s) := by
+        exact inner_smul_right ((sumPoly Hs Ks DA DB A B) (a ⊗ₜ[ℂ] b))
+          ((inclPair Hs Ks DA DB) s) r
+      have e2 : inner ℂ ((inclPair Hs Ks DA DB) (a ⊗ₜ[ℂ] b))
+          (r • (sumPoly Hs Ks DA DB A B) s)
+          = r * inner ℂ ((inclPair Hs Ks DA DB) (a ⊗ₜ[ℂ] b))
+            ((sumPoly Hs Ks DA DB A B) s) := by
+        exact inner_smul_right ((inclPair Hs Ks DA DB) (a ⊗ₜ[ℂ] b))
+          ((sumPoly Hs Ks DA DB A B) s) r
+      rw [e1, e2]
+      exact congrArg (fun z => r * z) hs
   intro x y
   induction (hspan x) using Submodule.span_induction with
   | mem t ht =>
       obtain ⟨a, b, rfl⟩ := ht
       exact hpure a b y
-  | zero => simp
+  | zero =>
+      have hz1 : (inclPair Hs Ks DA DB) (0 : DA ⊗[ℂ] DB) = 0 := by simp [inclPair]
+      rw [hz1]
+      exact (inner_zero_left _).symm
   | add s t _ _ hs ht => simp only [map_add, inner_add_left, hs, ht]
-  | smul r s _ hs => simp only [map_smul, inner_smul_left, hs]
+  | smul r s _ hs =>
+      have h1 : (inclPair Hs Ks DA DB) (r • s) = r • (inclPair Hs Ks DA DB) s := by
+        simp [inclPair]
+      have h2 : (sumPoly Hs Ks DA DB A B) (r • s) = r • (sumPoly Hs Ks DA DB A B) s := by
+        simp [sumPoly]
+      rw [h1, h2]
+      have e1 : inner ℂ (r • (sumPoly Hs Ks DA DB A B) s) ((inclPair Hs Ks DA DB) y)
+          = star r * inner ℂ ((sumPoly Hs Ks DA DB A B) s) ((inclPair Hs Ks DA DB) y) := by
+        exact inner_smul_left ((sumPoly Hs Ks DA DB A B) s) ((inclPair Hs Ks DA DB) y) r
+      have e2 : inner ℂ (r • (inclPair Hs Ks DA DB) s) ((sumPoly Hs Ks DA DB A B) y)
+          = star r * inner ℂ ((inclPair Hs Ks DA DB) s) ((sumPoly Hs Ks DA DB A B) y) := by
+        exact inner_smul_left ((inclPair Hs Ks DA DB) s) ((sumPoly Hs Ks DA DB A B) y) r
+      rw [e1, e2]
+      exact congrArg (fun z => star r * z) hs
 
 /-- The tensor sum is symmetric on its domain inside `H ⊗ K`. -/
 theorem symmetricOn_pairOp (hA : SymmetricOn DA A) (hB : SymmetricOn DB B) :
@@ -408,9 +460,15 @@ theorem hasDerivAt_pflow (x : DA ⊗[ℂ] DB) (t : ℝ) :
   induction (mem_span_tmul x) using Submodule.span_induction with
   | mem y hy => obtain ⟨p, q, rfl⟩ := hy; exact hpure p q
   | zero =>
-      have h : HasDerivAt (fun _ : ℝ => (0 : Hs.carrier ⊗[ℂ] Ks.carrier)) 0 t :=
-        hasDerivAt_const _ _
-      simpa using h
+      -- `simpa using h` re-elaborated the goal with a different (but intended
+      -- to be equal) instance path and the defeq check failed; rewriting the
+      -- function to the literal constant keeps the goal's own instances, so
+      -- `hasDerivAt_const` unifies against them directly.
+      have h0 : (fun s : ℝ => inclPair Hs Ks DA DB (pflow P Q s (0 : DA ⊗[ℂ] DB)))
+          = fun _ : ℝ => (0 : Hs.carrier ⊗[ℂ] Ks.carrier) := by
+        funext s; simp [inclPair, pflow, map_zero]
+      rw [h0]
+      exact hasDerivAt_const _ _
   | add a b _ _ ha hb =>
       have h := ha.add hb
       convert h using 1
@@ -758,10 +816,9 @@ theorem exists_pair_of_mem_pairCorePoly {DA' : Submodule ℂ Hs.carrier}
         have := hextA ⟨(a : Hs.carrier), haD⟩
         simpa using this
       have hB : B' b = B ⟨(b : Ks.carrier), hbD⟩ := by
-        have := hextB ⟨(b : Ks.carrier), hbD⟩
-        simpa using this
+        exact hextB ⟨(b : Ks.carrier), hbD⟩
       simp [sumPoly_tmul, hA, hB]
-  | zero => exact ⟨0, by simp, by simp⟩
+  | zero => exact ⟨0, by simp [inclPair, map_zero], by simp [map_zero]⟩
   | add s t _ _ hs ht =>
       obtain ⟨s', hs₁, hs₂⟩ := hs
       obtain ⟨t', ht₁, ht₂⟩ := ht
@@ -879,7 +936,7 @@ theorem positionCube_essentiallySelfAdjoint :
 theorem positionCube_first_not_bounded :
     ¬ ∃ C : ℝ, ∀ x : (mulSA positionField).domain,
       ‖(mulSA positionField).op x‖ ≤ C * ‖(x : BookProof.ChapterContinuityUnitaryInfinite.L2Z)‖ :=
-  mulSA_position_unbounded
+  BookProof.ChapterStoneSeparable.mulSA_position_unbounded
 
 end Instance
 

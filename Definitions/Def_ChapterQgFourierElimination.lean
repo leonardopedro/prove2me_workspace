@@ -165,8 +165,8 @@ def elimConfig (k : Mom) (z : Fin 3 × Fin 3 → ℂ) : Comp → ℂ
 
 
 
-/-! ## 5. Non-vacuity -/
 
+/-! ## 5. Non-vacuity -/
 
 
 end

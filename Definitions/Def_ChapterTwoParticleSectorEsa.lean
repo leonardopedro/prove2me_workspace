@@ -3,6 +3,7 @@ import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Mathlib
+import Theorems.Thm_BookProof_ReducedEsa_mem_sector_symProj_iff
 
 
 /-!

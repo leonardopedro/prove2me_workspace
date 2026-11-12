@@ -75,6 +75,7 @@ namespace BookProof.ScalaronFock
 open BookProof.FarisLavine BookProof BookProof.ScalaronEsa
 open BookProof.DirectSumEsa BookProof.StoneBridge BookProof.EsaClosure
 open BookProof.QuantumGravityDensitized BookProof.ChapterStoneResolvent
+open BookProof.Starobinsky
 
 noncomputable section
 

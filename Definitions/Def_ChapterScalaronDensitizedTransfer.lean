@@ -8,6 +8,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterQuantumGravityDensitized
 import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_FockContinuum_boundedEnergyCore_dense
 
 
 /-!

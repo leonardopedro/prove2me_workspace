@@ -1,3 +1,4 @@
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterSirkTrotterKato

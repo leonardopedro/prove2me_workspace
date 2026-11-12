@@ -133,6 +133,12 @@ noncomputable def multOp (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :
     simp only [Pi.smul_apply, smul_eq_mul]
     ring
 
+theorem multOp_coeFn (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
+    (f : boundedEnergyCore μ g) :
+    (((multOp μ hg f : boundedEnergyCore μ g) : Lp ℂ 2 μ) : X → ℂ)
+      =ᵐ[μ] fun x => (g x : ℂ) * ((f : Lp ℂ 2 μ) : X → ℂ) x :=
+  (memLp_mul hg f.2).coeFn_toLp
+
 
 
 

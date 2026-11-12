@@ -1,4 +1,6 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_isSymmetricDom
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_annih_basis
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_not_bounded
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpDiag_basis
 
@@ -6,6 +8,11 @@ import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_fockDom_dense
 
 import Definitions.Def_ChapterNavierStokesFockSpace
 import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_creat_basis
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_hFull_eigenvector
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_LagrangianFullData_hasZeroDeficiencyOn_of_commonEigenvectors
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianEsa_NSFullData_hasZeroDeficiencyOn_of_lagrangian
+import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_lpBasis_total
 
 
 /-!
@@ -420,7 +427,6 @@ noncomputable def lagrangianFockData (nu : ℝ) (hnu : 0 ≤ nu) (p q dr : Fin 3
   constraint_symm := dGamma_isSymmetricDom _
   nu_nonneg := hnu
 
-omit [DecidableEq M] in
 /-- **Essential self-adjointness of the full transformed Navier–Stokes
 Hamiltonian `ĥ_full = ½∑Pᵢ² + ν∑Qᵢ² + ∑fᵢDᵢ + C` on the Fock space of a Fock
 space**, unconditionally.  The occupation-number states are a total family of
@@ -495,7 +501,6 @@ section Transfer
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {M : Type*} [DecidableEq M]
 
-omit [DecidableEq M] in
 /-- **Essential self-adjointness of the full Navier–Stokes Hamiltonian, obtained
 after the Lagrangian change of variables on the Fock space of a Fock space.**
 If a unitary change of variables carries untruncated Eulerian Navier–Stokes data

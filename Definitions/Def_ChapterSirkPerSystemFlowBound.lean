@@ -21,6 +21,7 @@ import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_ChapterSirkSpectralGeometry_sirk_end_to_end_crouzeix_domain
 
 
 /-!

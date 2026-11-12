@@ -4,6 +4,7 @@ import Definitions.Def_ChapterFockSchurEsa
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
+import Theorems.Thm_BookProof_FockWeightedSchur_dGamma_essentiallySelfAdjointOn_core_w
 
 
 /-!

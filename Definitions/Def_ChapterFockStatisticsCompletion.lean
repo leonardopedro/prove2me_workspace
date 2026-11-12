@@ -38,6 +38,19 @@ import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterTensorPermutation
 import Mathlib
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_essentiallySelfAdjointOn
+import Theorems.Thm_BookProof_DirectSumEsa_dsOp_symmetricOn
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_pushOp
+import Theorems.Thm_BookProof_ReducedEsa_essentiallySelfAdjointOn_red
+import Theorems.Thm_BookProof_ReducedEsa_symmetricOn_redOp
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Theorems.Thm_BookProof_TensorCore_symmetricOn_sectorOp
+import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_apply
+-- The non-vacuity witness is a PROVED node: the served Def_ChapterPermutationSectorEsa
+-- is a 195-line skeleton (Good/bosonicProj/fermionicProj only), so its theorems are not
+-- on the platform's import path even though the workspace bundle declares them.
+import Theorems.Thm_BookProof_PermSector_exists_ne_zero_bosonic
+import Theorems.Thm_BookProof_PermSector_exists_ne_zero_fermionic
 
 
 /-!

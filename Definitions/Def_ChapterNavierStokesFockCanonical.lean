@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesFockManyMode
 import Definitions.Def_ChapterNavierStokesHermiteCanonical
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_HermiteCanonical_sqrt_mul_sqrt
 
 
 /-!

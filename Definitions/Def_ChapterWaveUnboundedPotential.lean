@@ -1,4 +1,5 @@
 import Definitions.Def_ChapterStrichartzWave
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterWaveBoundedPotential
 import Mathlib

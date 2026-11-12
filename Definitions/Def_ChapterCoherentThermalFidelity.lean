@@ -4,6 +4,8 @@ import Definitions.Def_ChapterDisplacedThermalOverlap
 import Definitions.Def_ChapterCoherentOccupation
 import Definitions.Def_ChapterCoherentTemperature
 import Mathlib
+import Theorems.Thm_BookProof_ChapterCoherentOccupation_coherentOccupation_eq
+import Theorems.Thm_BookProof_ChapterCoherentOccupation_hasSum_expSeries
 
 
 /-!

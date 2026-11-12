@@ -7,6 +7,8 @@ import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
+import Theorems.Thm_BookProof_TensorPerm_purePow_ne_zero
+import Theorems.Thm_BookProof_TensorPerm_inner_purePow
 
 
 /-!

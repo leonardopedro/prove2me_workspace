@@ -1,4 +1,8 @@
+import Mathlib
 import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
+import Theorems.Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs
+import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_one_particle
+import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
 
 
 
@@ -33,7 +37,6 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
-import Mathlib
 
 
 /-!
@@ -637,8 +640,16 @@ theorem parcelPi_symmetricOn (n : ℕ) (p : Fin n) (i : Fin 6) :
 
 theorem parcelField_symmetricOn (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) (r : Fin 7) :
     SymmetricOn (polyGaussCore (d := n * 6))
-      ((polyGaussCore (d := n * 6)).subtype.comp (parcelField nu k n p r)) :=
-  (coreRepPoly (n * 6)).symmetricOn_op (mulOp_polySym (realCoeff_liftParcel_spFormPoly nu k n p r))
+      ((polyGaussCore (d := n * 6)).subtype.comp (parcelField nu k n p r)) := by
+  -- `realCoeff_liftParcel_spFormPoly` is proved in this same chapter, so its
+  -- stub imports this bundle back (an import cycle compiles nowhere).  Its
+  -- two-line proof is inlined instead: `redFormPoly_eq_liftParcel` is declared
+  -- above in this file and `realCoeff_redFormPoly` comes from
+  -- Def_ChapterNsFourierElimination, which this bundle already imports.
+  have h : RealCoeff (liftParcel p (spFormPoly nu k r) : MvPolynomial (Fin (n * 6)) ℂ) := by
+    rw [← redFormPoly_eq_liftParcel]
+    exact realCoeff_redFormPoly nu k n p r
+  exact (coreRepPoly (n * 6)).symmetricOn_op (mulOp_polySym h)
 
 /-- Every one-parcel summand is symmetric on the core. -/
 theorem redParcelHam_symmetricOn (nu : ℝ) (k : Fin 3 → ℝ) (n : ℕ) (p : Fin n) :

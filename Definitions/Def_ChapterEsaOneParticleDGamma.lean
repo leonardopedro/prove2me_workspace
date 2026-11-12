@@ -2,6 +2,8 @@
 
 
 import Theorems.Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain
+import Theorems.Thm_BookProof_SecondQuantizationCore_essentiallySelfAdjointOn_fockSectorCore
+import Theorems.Thm_BookProof_SecondQuantizationCore_symmetricOn_dGammaCoreOp
 
 import Definitions.Def_ChapterFlowDGammaEsa
 import Definitions.Def_ChapterEsaClosureCore
@@ -13,6 +15,14 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Mathlib
+import Theorems.Thm_BookProof_GraphCore_essentiallySelfAdjointOn_of_graphCore
+import Theorems.Thm_BookProof_GraphCore_mem_pushDom
+import Theorems.Thm_BookProof_GraphCore_pushOp_apply
+import Theorems.Thm_BookProof_GraphCore_IsGraphCore_refl
+import Theorems.Thm_BookProof_GraphCore_symmetricOn_restrictOp
+import Theorems.Thm_BookProof_GraphCore_IsGraphCore_trans
+import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
+import Theorems.Thm_BookProof_TensorCore_sectorOp_apply
 
 
 /-!
@@ -174,7 +184,10 @@ theorem fockSectorCore_graph_le (n : ℕ) (x : fockSectorCore Hs D₂ D n) :
           (fockSectorCore_le_fockSectorDom Hs D₂ D n) x
         = sectorEmb Hs n
             (sectorOp Hs D₂ A₂ n ⟨s, sectorCore_le_sectorDom Hs D₂ D n hs⟩) := by
-      rw [restrictOp_apply]
+      -- `restrictOp T h` is `T ∘ inclusion h`, so the left side is *definitionally*
+      -- `fockSectorOp … ⟨x, h x.2⟩`; the published `Def_ChapterGraphCoreTransfer`
+      -- keeps `restrictOp` but not its `restrictOp_apply` lemma, so this goes
+      -- through `exact` (defeq) instead of naming a lemma the platform omits.
       exact pushOp_apply (sectorEmb Hs n) (sectorOp Hs D₂ A₂ n) _
         ⟨s, sectorCore_le_sectorDom Hs D₂ D n hs⟩ hsx.symm
     rw [h1, h2, hu2]
@@ -403,8 +416,8 @@ theorem positionCore_eig (k : ℤ) :
   ext j
   by_cases hj : j = k
   · subst hj
-    simp [positionCore, deltaVec, positionField, lp.single_apply]
-  · simp [positionCore, deltaVec, positionField, lp.single_apply, hj]
+    simp [positionCore, restrictOp, mulOp, deltaVec, positionField, lp.single_apply]
+  · simp [positionCore, restrictOp, mulOp, deltaVec, positionField, lp.single_apply, hj]
 
 /-- **The restricted position operator is essentially self-adjoint**: its eigenvectors span a
 dense subspace. -/

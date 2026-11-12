@@ -1,3 +1,4 @@
+import Theorems.Thm_BookProof_StrichartzWave_exists_smooth_cutoff
 import Definitions.Def_ChapterFourierMultiplierEsa
 import Definitions.Def_ChapterWaveUnboundedPotential
 import Definitions.Def_ChapterFarisLavine
@@ -184,7 +185,6 @@ theorem mixedLinearOp_symmetric (b m : V) :
 
 /-! ## 3. Compactly supported test functions suffice for the momentum operator -/
 
-omit [MeasurableSpace V] [BorelSpace V] in
 /-- A sequence of smooth compactly supported cut-offs `χ(x/(n+1))`: bounded by `1`, with
 uniformly bounded derivative, and eventually equal to `1` near any given point. -/
 lemma exists_cutoff_seq :
@@ -208,7 +208,13 @@ lemma exists_cutoff_seq :
   set L : ℕ → (V →L[ℝ] V) := fun n => (c n) • ContinuousLinearMap.id ℝ V with hL
   have hLnorm : ∀ n, ‖L n‖ ≤ 1 := by
     intro n
-    calc ‖L n‖ ≤ ‖c n‖ * ‖ContinuousLinearMap.id ℝ V‖ := norm_smul_le _ _
+    calc ‖L n‖ ≤ ‖c n‖ * ‖ContinuousLinearMap.id ℝ V‖ := by
+          -- `norm_smul_le _ _` left the module type a metavariable, so Lean
+          -- refused to solve `IsBoundedSMul ?α ?β` ("typeclass instance problem
+          -- is stuck", 2026-10-31).  Both arguments pinned: the instances are
+          -- then fully determined and elaborate.
+          rw [hL]
+          exact norm_smul_le (c n : ℝ) (ContinuousLinearMap.id ℝ V : V →L[ℝ] V)
       _ ≤ 1 * 1 := by
           gcongr
           · rw [Real.norm_eq_abs, abs_of_pos (hcpos n)]; exact hcle n

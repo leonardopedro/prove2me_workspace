@@ -1,5 +1,6 @@
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterKatoRellichRelative
+import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_relBounded
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore

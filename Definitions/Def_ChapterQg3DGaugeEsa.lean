@@ -9,6 +9,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 
 
 /-!

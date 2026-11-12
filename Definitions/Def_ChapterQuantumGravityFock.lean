@@ -1,4 +1,3 @@
-import Theorems.Thm_BookProof_NavierStokesFlow_FockOfFock_confEnergy_zero
 import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA
 import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA_of_ne
 

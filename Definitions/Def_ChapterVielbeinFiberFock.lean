@@ -1,5 +1,6 @@
 
 import Definitions.Def_ChapterScalaronFockEsa
+import Theorems.Thm_BookProof_ScalaronFock_nestedCore_dense
 import Definitions.Def_ChapterScalaronEdge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterDirectSumEsa
@@ -9,6 +10,10 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterStarobinskyPotential
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_symmetric
+import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_deficiencyTrivialAt
+import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_esa
+import Theorems.Thm_BookProof_ScalaronFock_fockSmoothPotential_stone_flow
 open BookProof.Starobinsky
 
 

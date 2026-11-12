@@ -1,4 +1,9 @@
 import Definitions.Def_ChapterQgFourierElimination
+import Theorems.Thm_BookProof_QgFourierElim_formValue_torsion_elimConfig
+import Theorems.Thm_BookProof_QgFourierElim_formValue_dGauge_elimConfig
+import Theorems.Thm_BookProof_QgFourierElim_formValue_gauge3d_elimConfig
+import Theorems.Thm_BookProof_QgFourierElim_eq_elimConfig_of_gauge_fixed
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_esa_on_core
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterEsaClosureCore
@@ -12,6 +17,12 @@ import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterStoneBridge
 import Mathlib
+import Definitions.Def_ChapterQgFourierElimForms
+import Theorems.Thm_BookProof_DirectSumEsa_dsCore_dense
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_commForm_congr
+import Theorems.Thm_BookProof_QgOuterFockCoreFL_quadForm_congr
+import Theorems.Thm_BookProof_ScalaronEsa_ccDomain_dense
+import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 
 
 /-!
@@ -70,7 +81,7 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
+open BookProof.QgFourierElim
 
 noncomputable section
 
@@ -421,6 +432,13 @@ theorem quadForm_eq_of_gauge_fixed (k : Mom) (w : Comp → ℂ)
 involved the nine vielbein components, so the elimination leaves it unchanged. -/
 def eTrace (x : EGMode) : ℝ := if x.2.1 = x.2.2 then 1 else 0
 
+/-- The trace part of the vielbein: the combination the scalaron couples to.  The derivative
+variables do not carry it. -/
+def gTrace (x : GMode) : ℝ :=
+  match x.2 with
+  | Sum.inl (nu, i) => if nu = i then 1 else 0
+  | Sum.inr _ => 0
+
 /-- The trace of the rebuilt model is the trace of the full model, read on the vielbein
 components. -/
 theorem eTrace_eq_gTrace (x : EGMode) : eTrace x = gTrace (x.1, eIdx x.2.1 x.2.2) := rfl
@@ -588,6 +606,31 @@ theorem starobinsky_qgElimFull_stone_flow (M alpha : ℝ) (halpha : 0 < alpha) (
 
 /-! ## 7. Momentum and particle-number conservation -/
 
+section QgFullNumber
+variable {ι : Type*}
+
+/-- **The outer Hamiltonian conserves the particle number.**  For any assignment of a
+particle number to the modes that is constant on the bands, the sector of a fixed particle
+number is invariant: a core vector supported in the sector `num = n` is mapped by the
+Hamiltonian to a vector supported in the same sector.  No lattice regularization is
+involved: the number sectors, not a spatial cutoff, are what makes the outer Hamiltonian
+block diagonal. -/
+theorem secHam_number_conserving (W : WallPot) (Q : QgModeData ι) {num : ι → ℕ}
+    (hnum : ∀ a b, b ∈ Q.nbr a → num b = num a) (x : secCore (ι := ι)) {n : ℕ}
+    (hx : ∀ a, num a ≠ n → (x : Sec ι) a = 0) (a : ι) (ha : num a ≠ n) :
+    (secHam W Q x : Sec ι) a = 0 := by
+  have hb : ∀ b ∈ Q.nbr a, fibOf x b = 0 := by
+    intro b hbm
+    refine fibOf_eq_zero (hx b ?_)
+    rw [hnum a b hbm]
+    exact ha
+  rw [secHam_apply, fibOf_eq_zero (hx a ha), map_zero,
+    Finset.sum_eq_zero (fun b hbm => by rw [hb b hbm]; simp),
+    Finset.sum_eq_zero (fun b hbm => by rw [hb b hbm, map_zero, smul_zero])]
+  simp
+
+end QgFullNumber
+
 /-- **Momentum conservation** for the rebuilt model: the bands are the momentum blocks. -/
 theorem qgElimFull_momentum_conserving (W : WallPot) (g : ℝ) (num : Mom → ℕ)
     (x : secCore (ι := EGMode)) {n : ℕ}
@@ -635,6 +678,9 @@ theorem elimCoef_gauge3d_ne_zero (k : Mom) (hk : k 0 ≠ 0) :
 
 /-- The rebuilt quadratic form is not the zero form: its diagonal entry on a vielbein component is
 positive at any non-zero momentum. -/
+theorem conj_mul_self_ofReal (z : ℂ) : (starRingEnd ℂ) z * z = ((‖z‖ ^ 2 : ℝ) : ℂ) := by
+  simpa using RCLike.conj_mul (K := ℂ) z
+
 theorem eGram_diag_ne_zero (k : Mom) (hk : k 0 ≠ 0) :
     eGram ((k, (1, 0)) : EGMode) (k, (1, 0)) ≠ 0 := by
   have hsum : eGram ((k, (1, 0)) : EGMode) (k, (1, 0))

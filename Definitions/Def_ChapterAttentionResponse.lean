@@ -3,6 +3,7 @@ import Definitions.Def_ChapterSoftmaxTemperatureMonotone
 import Definitions.Def_ChapterSoftmaxOrder
 import Definitions.Def_ChapterSoftmaxSharpness
 import Mathlib
+import Theorems.Thm_BookProof_ChapterAttentionOutput_headOutput_eq_sum
 
 
 /-!

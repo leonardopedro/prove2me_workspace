@@ -1,6 +1,7 @@
 
 import Definitions.Def_ChapterNavierStokesEsa
 import Mathlib
+import Theorems.Thm_BookProof_NavierStokesFlow_hasZeroDeficiencyOn_of_total_eigenvectors
 
 
 /-!

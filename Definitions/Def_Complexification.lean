@@ -29,6 +29,20 @@ Everything here is `sorry`-free and `axiom`-free (only `propext`,
 `Classical.choice`, `Quot.sound`).
 -/
 
+namespace BookProof.Complexification
+
+set_option linter.unusedSectionVars false
+
+variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W]
+
+/-- The complexification of a real inner-product space `W`, modelled as pairs
+`⟨re, im⟩` thought of as `re + i · im`. -/
+structure Cx (W : Type*) where
+  /-- Real part of a vector of the complexification. -/
+  re : W
+  /-- Imaginary part of a vector of the complexification. -/
+  im : W
+
 namespace Cx
 
 @[ext] lemma ext {x y : Cx W} (h1 : x.re = y.re) (h2 : x.im = y.im) : x = y := by

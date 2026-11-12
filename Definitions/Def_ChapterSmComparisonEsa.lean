@@ -14,6 +14,9 @@ import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
 import Theorems.Thm_BookProof_KatoRellich_essentiallySelfAdjointOn_add_bounded
+import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
+import Theorems.Thm_BookProof_SmHamiltonian_realCoeff_smFormPoly
+import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_coe_op
 
 
 /-!

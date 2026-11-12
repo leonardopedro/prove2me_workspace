@@ -20,6 +20,7 @@ import Theorems.Thm_BookProof_FullQuadratic_fqOp_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_symmetric
 import Theorems.Thm_BookProof_FullQuadratic_fqOp_stone_flow
 import Theorems.Thm_BookProof_QuadFockEsa_dGamma_fqPoly_essentiallySelfAdjointOn_core
+import Theorems.Thm_BookProof_NavierStokesFlow_DifferentialL2_coreOp_coe
 
 
 /-!

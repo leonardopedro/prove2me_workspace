@@ -1,5 +1,4 @@
 import Definitions.Def_ChapterShiftedQuadraticEsa
-import Theorems.Thm_BookProof_ShiftedQuadratic_minkowskiCoeff_ne_zero
 import Definitions.Def_ChapterQuadraticRotationEsa
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore

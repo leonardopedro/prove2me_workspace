@@ -11,6 +11,7 @@ import Theorems.Thm_BookProof_NavierStokesFlow_eq_zero_of_inner_right_eq_zero_on
 import Theorems.Thm_BookProof_GraphCore_mem_pushDom
 
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
+import Theorems.Thm_BookProof_ChapterStoneSeparable_mulSA_position_unbounded
 
 
 
@@ -598,7 +599,7 @@ theorem dGamma_position_essentiallySelfAdjointOn_fockCore
 theorem position_not_bounded :
     ¬ ∃ C : ℝ, ∀ x : (mulSA positionField).domain,
       ‖(mulSA positionField).op x‖ ≤ C * ‖(x : BookProof.ChapterContinuityUnitaryInfinite.L2Z)‖ :=
-  mulSA_position_unbounded
+  BookProof.ChapterStoneSeparable.mulSA_position_unbounded
 
 end Position
 

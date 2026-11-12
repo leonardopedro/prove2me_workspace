@@ -1,5 +1,4 @@
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_memLpTwo_of_le
-import Theorems.Thm_BookProof_OperatorSeries_commForm_eq_neg_two_im
 
 import Theorems.Thm_BookProof_NavierStokesFlow_IkebeKato_summable_normSq
 
@@ -10,7 +9,6 @@ import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Mathlib
-import Theorems.Thm_BookProof_OperatorSeries_essentiallySelfAdjointOn_finiteModes_of_bounds
 
 
 /-!

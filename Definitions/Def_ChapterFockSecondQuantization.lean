@@ -103,13 +103,11 @@ theorem dn_of_ne {i j : ℕ} (α : Conf) (h : i ≠ j) : dn j α i = α i := by
   · subst h; simp
   · rw [dn_of_ne _ h, up_of_ne _ h]
 
-
-
-
-
-
-
-
+theorem up_dn (j : ℕ) {α : Conf} (h : 1 ≤ α j) : up j (dn j α) = α := by
+  refine Finsupp.ext fun i => ?_
+  by_cases hi : i = j
+  · subst hi; simp; omega
+  · rw [up_of_ne _ hi, dn_of_ne _ hi]
 
 /-! ## Annihilation and creation at the algebraic level -/
 
@@ -134,15 +132,57 @@ def creA (j : ℕ) : FockAlg →ₗ[ℂ] FockAlg :=
       = c • Finsupp.single (up j β) ((Real.sqrt ((β j : ℝ) + 1) : ℝ) : ℂ) := by
   simp [creA, LinearMap.toSpanSingleton]
 
+/-- The coordinates of `a_j u`. -/
+theorem annA_apply (j : ℕ) (u : FockAlg) (α : Conf) :
+    annA j u α = ((Real.sqrt ((α j : ℝ) + 1) : ℝ) : ℂ) * u (up j α) := by
+  induction u using Finsupp.induction_linear with
+  | zero => simp
+  | add f g hf hg => simp [hf, hg]; ring
+  | single β c =>
+    rw [annA_single]
+    by_cases hb : β = up j α
+    · subst hb
+      simp [mul_comm]
+    · have h1 : (Finsupp.single β c : FockAlg) (up j α) = 0 := by
+        simp [Ne.symm hb]
+      rw [h1, mul_zero]
+      by_cases hj : β j = 0
+      · simp [hj]
+      · have hne : dn j β ≠ α := by
+          intro hc
+          exact hb (by rw [← hc, up_dn j (by omega)])
+        simp [hne]
 
-
-
-
-
-
-
-
-
+/-- The coordinates of `a_j† u`. -/
+theorem creA_apply (j : ℕ) (u : FockAlg) (α : Conf) :
+    creA j u α = ((Real.sqrt (α j) : ℝ) : ℂ) * u (dn j α) := by
+  induction u using Finsupp.induction_linear with
+  | zero => simp
+  | add f g hf hg => simp [hf, hg]; ring
+  | single β c =>
+    rw [creA_single]
+    by_cases hb : β = dn j α
+    · subst hb
+      by_cases hj : 1 ≤ α j
+      · rw [up_dn j hj]
+        have hcast : ((α j - 1 : ℕ) : ℝ) + 1 = (α j : ℝ) := by
+          rw [Nat.cast_sub (R := ℝ) hj]; ring
+        simp only [dn_self, hcast, Finsupp.smul_apply, Finsupp.single_eq_same, smul_eq_mul]
+        rw [mul_comm]
+      · have h0 : α j = 0 := by omega
+        have hne : up j (dn j α) ≠ α := by
+          intro hc
+          have := congrArg (fun f : Conf => f j) hc
+          simp at this
+          omega
+        simp [hne, h0]
+    · have h1 : (Finsupp.single β c : FockAlg) (dn j α) = 0 := by
+        simp [Ne.symm hb]
+      rw [h1, mul_zero]
+      have hne : up j β ≠ α := by
+        intro hc
+        exact hb (by rw [← hc, dn_up])
+      simp [hne]
 
 
 
@@ -158,6 +198,9 @@ def creA (j : ℕ) : FockAlg →ₗ[ℂ] FockAlg :=
 
 /-- The set of modes excited by a state of the algebraic Fock space. -/
 def modes (u : FockAlg) : Finset ℕ := u.support.biUnion Finsupp.support
+
+theorem support_subset_modes {u : FockAlg} {β : Conf} (h : β ∈ u.support) :
+    β.support ⊆ modes u := fun _ hi => Finset.mem_biUnion.mpr ⟨β, h, hi⟩
 
 
 
@@ -181,6 +224,8 @@ def toLpL : FockAlg →ₗ[ℂ] Fock where
   map_smul' c u := by
     refine lp.ext (funext fun α => ?_)
     simp [toLp]
+
+@[simp] theorem toLpL_apply (u : FockAlg) : toLpL u = toLp u := rfl
 
 theorem toLp_injective : Function.Injective toLp := by
   intro u v h
@@ -206,6 +251,10 @@ def fockEquiv : FockAlg ≃ₗ[ℂ] lpFiniteModes Conf := by
 
 @[simp] theorem coe_fockEquiv (u : FockAlg) : ((fockEquiv u : lpFiniteModes Conf) : Fock)
     = toLp u := rfl
+
+theorem coe_fockEquiv_symm (x : lpFiniteModes Conf) :
+    ((x : lpFiniteModes Conf) : Fock) = toLp (fockEquiv.symm x) := by
+  rw [← coe_fockEquiv, LinearEquiv.apply_symm_apply]
 
 /-! ## Second quantization -/
 
@@ -247,6 +296,10 @@ def closureModes (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) : Finset ℕ :
 space. -/
 def dGammaOp (col : ℕ → (ℕ →₀ ℂ)) : lpFiniteModes Conf →ₗ[ℂ] Fock :=
   (lpFiniteModes Conf).subtype.comp (fockEquiv.conj (dGamma col))
+
+theorem coe_dGammaOp (col : ℕ → (ℕ →₀ ℂ)) (x : lpFiniteModes Conf) :
+    dGammaOp col x = toLp (dGamma col (fockEquiv.symm x)) := by
+  simp [dGammaOp, LinearEquiv.conj_apply, coe_fockEquiv]
 
 /-! ## The matrix of a one-particle operator -/
 

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Theorems.Thm_BookProof_QgTruncationResolvent_esa_core_of_ext
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

@@ -1,6 +1,5 @@
 -- Generated from ChapterQgOuterFockFlow.lean — solution of BookProof.QgOuterFockFlow.starobinsky_qgContinuum_numerical_flow_convergence
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockFlow_qgOuterFock_numerical_flow_convergence
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
@@ -13,11 +12,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-open BookProof.QgOuterFockFlow
-
-
-
-
 open Filter Topology
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgContinuumModeInstance

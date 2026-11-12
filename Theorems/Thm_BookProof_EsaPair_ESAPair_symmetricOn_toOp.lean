@@ -16,6 +16,7 @@ open BookProof.TensorCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.EsaPair
 
 noncomputable section
 

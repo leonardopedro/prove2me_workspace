@@ -9,6 +9,7 @@ import Definitions.Def_ChapterGroupAverageEsa
 
 
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa
+open BookProof.GroupAverage
 
 noncomputable section
 

@@ -1,7 +1,6 @@
 -- Generated from ChapterFockStatisticsCompletion.lean — solution of BookProof.FockStatistics.essentiallySelfAdjointOn_cbosonic
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsCompletion
-import Theorems.Thm_BookProof_EsaOneParticle_essentiallySelfAdjointOn_fockSectorDom_esa
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_avgProj_mem
 import Theorems.Thm_BookProof_GroupAverage_UnitaryRep_commutes_avgProj
 import Theorems.Thm_BookProof_ReducedEsa_essentiallySelfAdjointOn_red
@@ -11,6 +10,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterMaschkeFiniteGroup
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.GroupAverage.UnitaryRep
 open BookProof.FockStatistics
 
@@ -28,9 +28,8 @@ noncomputable section
 variable {G : Type*} [Group G] [Fintype G] {F : Type*} [NormedAddCommGroup F]
   [InnerProductSpace ℂ F]
 variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
-variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
-  (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
-  (hesa : EssentiallySelfAdjointOn D A)
+variable [CompleteSpace Hs.carrier] (hdense : Dense (D : Set Hs.carrier))
+  (hsym : SymmetricOn D A) (hesa : EssentiallySelfAdjointOn D A)
 
 set_option maxHeartbeats 1000000 in
 include hdense hesa hsym in

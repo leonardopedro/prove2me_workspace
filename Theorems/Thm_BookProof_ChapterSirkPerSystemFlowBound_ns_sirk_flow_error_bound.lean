@@ -31,7 +31,7 @@ open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.NSHashimoto
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.ThreeComponent

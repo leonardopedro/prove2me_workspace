@@ -11,9 +11,11 @@ open BookProof.ChapterSeparableL2Model
 
 
 
+universe u v
+
 noncomputable section
 
-open MeasureTheory TopologicalSpace
+open MeasureTheory TopologicalSpace Complex WeakDual
 
 
 open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel

@@ -1,7 +1,6 @@
 -- Generated from ChapterSmFockEsa.lean — solution of BookProof.SmFockEsa.sm_dGamma_esa
 import Mathlib
 import Definitions.Def_ChapterSmFockEsa
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Theorems.Thm_BookProof_SmComparisonEsa_sm_h_esa
 import Theorems.Thm_BookProof_SmHamiltonian_smHamiltonian_symmetricOn
 import Definitions.Def_ChapterSmOneParticle
@@ -16,6 +15,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.SmFockEsa
 
 

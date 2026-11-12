@@ -9,6 +9,7 @@ open scoped ComplexOrder
 
 
 open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterAbelianGelfandModel
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]

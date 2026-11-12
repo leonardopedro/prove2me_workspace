@@ -19,8 +19,8 @@ open FullEsa
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {d : ℕ} (c : ComparisonData F d)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterAbelianDiagonalCountable BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.FullEsa.NSFullData
+set_option maxHeartbeats 1000000 in
 theorem solution (d : ℕ) (p q : Fin d → ℕ → ℝ) :
     (diagComparisonData d p q).comparison
       = diagOp (fun k => (∑ i, p i k ^ 2) + (∑ i, q i k ^ 2) + 1) := by

@@ -5,7 +5,7 @@ import Definitions.Def_ChapterQgVielbeinModeInstance
 import Definitions.Def_ChapterQgContinuumModeInstance
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
-import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterQgOuterFockFlow

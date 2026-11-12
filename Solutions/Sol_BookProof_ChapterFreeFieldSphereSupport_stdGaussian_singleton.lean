@@ -19,7 +19,7 @@ set_option maxHeartbeats 1000000 in
 theorem solution (hn : 0 < n) (x : EuclideanSpace ℝ (Fin n)) :
     stdGaussian n {x} = 0 := by
 
-  rw [ ChapterFreeFieldGaussian.stdGaussian, Measure.map_apply ];
+  rw [ BookProof.ChapterFreeFieldGaussian.stdGaussian, Measure.map_apply ];
   · rw [ show ( WithLp.toLp 2 ⁻¹' { x } : Set ( Fin n → ℝ ) ) = { fun i => x i } from ?_ ];
     · convert MeasureTheory.Measure.pi_pi _ _;
       rotate_right;

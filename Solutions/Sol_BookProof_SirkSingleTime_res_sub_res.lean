@@ -1,7 +1,6 @@
 -- Generated from ChapterSirkSingleTimeShift.lean — solution of BookProof.SirkSingleTime.res_sub_res
 import Mathlib
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_op_res
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterStoneResolvent

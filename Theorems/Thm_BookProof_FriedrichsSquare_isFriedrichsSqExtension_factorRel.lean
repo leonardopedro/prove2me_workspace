@@ -19,5 +19,4 @@ variable [CompleteSpace F]
 
 theorem BookProof.FriedrichsSquare.isFriedrichsSqExtension_factorRel [CompleteSpace F] (A : D →ₗ[ℂ] F)
     (hsym : SymmetricOn D A) (hstab : ∀ v : D, (A v : F) ∈ D) :
-    IsFriedrichsSqExtension A hstab (factorRel A) where
-  extends_sq v := by sorry
+    IsFriedrichsSqExtension A hstab (factorRel A) := by sorry

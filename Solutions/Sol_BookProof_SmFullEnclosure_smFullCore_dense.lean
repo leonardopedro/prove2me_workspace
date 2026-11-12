@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
 import Theorems.Thm_BookProof_SmFullEnclosure_fullDom_dense
-import Theorems.Thm_BookProof_TensorSumEsa_dense_cpairDom
 import Definitions.Def_ChapterSmHamiltonian
 import Definitions.Def_ChapterSmCarAlgebra
 import Definitions.Def_ChapterYangMillsHermite

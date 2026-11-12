@@ -5,6 +5,8 @@ import Mathlib
 import Definitions.Def_ChapterTensorSumEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterFlowDGammaEsa
+open BookProof.FlowDGamma
 open BookProof.TensorCore
 
 

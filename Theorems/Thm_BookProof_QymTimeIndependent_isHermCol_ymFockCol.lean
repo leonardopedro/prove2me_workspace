@@ -5,7 +5,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
@@ -22,10 +22,6 @@ open BookProof.FockSecondQuantization
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
-open BookProof.QymTimeIndependent
-
-
-
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge

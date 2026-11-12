@@ -1,7 +1,6 @@
 -- Generated from ChapterSqSumOuterFamily.lean — solution of BookProof.SqSumOuterFamily.SqFamily.esa_farisLavine
 import Mathlib
 import Definitions.Def_ChapterSqSumOuterFamily
-import Theorems.Thm_BookProof_SqSumOuterFamily_outerCore_le_friedDom
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_flc_nonneg
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secExt_symmetricOn
 import Theorems.Thm_BookProof_SqSumOuterFamily_SqFamily_secExt_rel

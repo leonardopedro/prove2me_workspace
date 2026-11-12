@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.geoHop_col
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency

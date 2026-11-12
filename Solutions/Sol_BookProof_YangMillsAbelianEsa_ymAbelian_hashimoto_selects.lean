@@ -31,7 +31,6 @@ open BookProof.FullQuadratic
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin BookProof.YangMillsFriedrichs
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite

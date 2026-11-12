@@ -26,6 +26,8 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H)
 variable (hcyc : DenseRange (repVec pi xi))
 
+include hcyc
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hxi : ‖xi‖ = 1) :
     ∃ (mu : Measure X) (_ : IsProbabilityMeasure mu) (U : Lp ℂ 2 mu ≃ₗᵢ[ℂ] H),

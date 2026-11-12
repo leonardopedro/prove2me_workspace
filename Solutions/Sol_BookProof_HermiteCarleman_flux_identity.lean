@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.flux_identity
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HermiteCarleman_sum_cube_split
 import Theorems.Thm_BookProof_HermiteCarleman_sum_lterm
 import Definitions.Def_ChapterHermiteProductCore

@@ -1,15 +1,16 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.ladder2_eq_zero
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_faceK
 import Theorems.Thm_BookProof_CarlemanTwoStep_rc2_nonneg
+import Theorems.Thm_BookProof_CarlemanTwoStep_rc1_nonneg
 import Theorems.Thm_BookProof_CarlemanTwoStep_flux_identity2
 import Theorems.Thm_BookProof_CarlemanTwoStep_flux_boundG
 import Theorems.Thm_BookProof_CarlemanTwoStep_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_shifted_facesK_le
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 
@@ -153,7 +154,7 @@ theorem solution {B : ℝ} (hz : z.im ≠ 0)
   have hlow : ∀ N : ℕ, N₀ ≤ N → ‖u a₀‖ ^ 2 ≤ ∑ a ∈ cube d N, ‖u a‖ ^ 2 := by
     intro N hN
     refine Finset.single_le_sum (f := fun a => ‖u a‖ ^ 2) (fun a _ => by positivity) ?_
-    rw [mem_cube]
+    rw [mem_cube_inc]
     intro i
     exact le_trans (Finset.le_sup (f := fun i : Fin d => a₀ i) (Finset.mem_univ i)) hN
   have hcpos : 0 < |z.im| * ‖u a₀‖ ^ 2 := by

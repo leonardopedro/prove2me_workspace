@@ -26,7 +26,7 @@ import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency

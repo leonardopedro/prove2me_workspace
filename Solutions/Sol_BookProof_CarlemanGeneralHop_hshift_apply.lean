@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.hshift_apply
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanGeneralHop
 
 

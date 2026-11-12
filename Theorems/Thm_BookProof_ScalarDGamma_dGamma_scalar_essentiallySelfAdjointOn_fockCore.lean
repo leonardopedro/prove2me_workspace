@@ -9,6 +9,7 @@ import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
 open BookProof.ScalarDGamma
@@ -17,6 +18,7 @@ open BookProof.ScalarDGamma
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

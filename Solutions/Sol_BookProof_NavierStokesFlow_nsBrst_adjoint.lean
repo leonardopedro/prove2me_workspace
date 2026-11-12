@@ -14,8 +14,8 @@ variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.GhostField
+set_option maxHeartbeats 1000000 in
 theorem solution : (nsBrstCharge d)ᴴ = nsDivergence d ⊗ₖ BookProof.GhostField.psi := by
 
   have hD : (nsDivergence d)ᴴ = nsDivergence d := by

@@ -29,8 +29,8 @@ open Filter Topology
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.QgOuterFockFL
+set_option maxHeartbeats 1000000 in
 theorem solution {γ : ℂ} (hγ : γ.im ≠ 0) :
     IsShiftInvertC ell2UnboundedExample γ (ell2Resolvent hγ) := by
     refine isShiftInvertC_of_rightInverse ell2Example_symmetricOn hγ ?_

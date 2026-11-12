@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.geoHop_bound
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 open BookProof.CarlemanUnboundedHop
 
 

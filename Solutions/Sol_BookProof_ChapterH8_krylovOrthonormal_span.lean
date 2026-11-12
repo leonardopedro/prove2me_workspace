@@ -23,6 +23,8 @@ theorem solution (H : E →ₗ[ℂ] E) (v : E) (n : ℕ) :
     Submodule.span ℂ (Set.range (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ)))
       = krylovSpan H v n := by
 
+  -- `Fin n` ranges are the first `n` members of the `ℕ`-indexed sequence, so the
+  -- Gram–Schmidt span lemmas (`Iio`, then `Normed`) apply verbatim.
   have hrange : (Set.range (fun i : Fin n => krylovOrthonormalSeq H v (i : ℕ)))
       = krylovOrthonormalSeq H v '' Set.Iio n := by
     ext x
@@ -31,7 +33,8 @@ theorem solution (H : E →ₗ[ℂ] E) (v : E) (n : ℕ) :
       exact ⟨i, i.2, rfl⟩
     · rintro ⟨i, hi, rfl⟩
       exact ⟨⟨i, hi⟩, rfl⟩
-  rw [hrange, krylovOrthonormalSeq, span_gramSchmidtNormed, span_gramSchmidt_Iio, krylovSpan]
+  rw [hrange, krylovOrthonormalSeq, InnerProductSpace.span_gramSchmidtNormed,
+    InnerProductSpace.span_gramSchmidt_Iio, krylovSpan]
   congr 1
   ext x
   constructor

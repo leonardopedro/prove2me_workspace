@@ -14,6 +14,7 @@ import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGaugeUnconstrainedSpectrum
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_PermSector_permOp_mem_sectorCore
 open BookProof.DirectSumEsa
 open BookProof.ChapterGaugeUnconstrainedSpectrum
 open BookProof.GraphCore

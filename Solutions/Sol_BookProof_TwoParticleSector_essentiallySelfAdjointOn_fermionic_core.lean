@@ -37,7 +37,7 @@ variable (D : Submodule ℂ Hs.carrier)
 set_option maxHeartbeats 1000000 in
 theorem solution (hcore : IsGraphCore D A)
     (hesa : EssentiallySelfAdjointOn (sectorDom Hs D₂ 2) (sectorOp Hs D₂ A 2)) :
-    EssentiallySelfAdjointOn
+    EssentiallySelfAdjointOn (F := sector (fermionicProj Hs))
       (redDom (fermionicProj Hs) (sectorCore Hs D₂ D 2))
       (redOp (restrictOp (sectorOp Hs D₂ A 2) (sectorCore_le_sectorDom Hs D₂ D 2))
         (isReducingProjection_fermionicProj Hs)

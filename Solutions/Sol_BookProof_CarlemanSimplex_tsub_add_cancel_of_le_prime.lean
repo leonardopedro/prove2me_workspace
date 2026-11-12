@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.tsub_add_cancel_of_le'
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 
 
 

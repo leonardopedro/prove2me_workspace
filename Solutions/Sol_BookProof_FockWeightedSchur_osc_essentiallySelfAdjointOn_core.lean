@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.osc_essentiallySelfAdjointOn_core
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_dGamma_essentiallySelfAdjointOn_core_w
 import Theorems.Thm_BookProof_FockWeightedSchur_oscW_ge_one
 import Theorems.Thm_BookProof_FockWeightedSchur_isHermCol_oscCol

@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.isHermCol_oscCol
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_oscCol_apply
 import Definitions.Def_ChapterCoreBoundsEsa
 import Definitions.Def_ChapterFockSchurEsa

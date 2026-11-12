@@ -62,7 +62,11 @@ theorem solution (b : HilbertBasis ℕ ℂ F) (w : ℕ → ℝ) {m : ℝ} (hm : 
     have hx : (0 : ℝ) ≤ ‖(x : F)‖ ^ 2 := sq_nonneg _
     nlinarith
   · have hnorm : 0 < ‖toLp u‖ := by
-      have : toLp u ≠ 0 := fun hc => hu (toLp_injective (by simpa using hc))
+      -- `by simpa using hc` simplified the goal to `toLp u = toLp 0` while
+      -- `hc : toLp u = 0`, so the `exact`-step inside it never type-checked
+      -- (platform CE, 2026-10-31).  Bridge with `toLp_zero`, as the sibling
+      -- `YangMillsFockGapChain` solution already does.
+      have : toLp u ≠ 0 := fun hc => hu (toLp_injective (hc.trans toLp_zero.symm))
       exact norm_pos_iff.mpr this
     have hquad := hgap u h0
     have hpos : 0 < m * ‖toLp u‖ ^ 2 := by positivity

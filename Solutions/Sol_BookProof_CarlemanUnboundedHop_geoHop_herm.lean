@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.geoHop_herm
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 open BookProof.CarlemanUnboundedHop
 
 

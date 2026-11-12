@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.faceK_multiplicity
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_faceK
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 

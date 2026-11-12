@@ -12,5 +12,5 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 
 noncomputable section
 
-theorem BookProof.QuantumGravity3DGauge.pderiv_comm_poly (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+theorem BookProof.QuantumGravity3DGauge.pderiv_comm_poly {d : ℕ} (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     pderiv j (pderiv k p) = pderiv k (pderiv j p) := by sorry

@@ -1,10 +1,10 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.sum_simplex_hop_im
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_simplex_split
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_ltermP
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 

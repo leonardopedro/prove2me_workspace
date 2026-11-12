@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
 import Theorems.Thm_BookProof_SmComparisonEsa_smFlN_esa
-import Theorems.Thm_BookProof_SmFarisLavine_sm_h_esa_of_comparison_esa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterQgHermiteCore

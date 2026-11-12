@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.ladder_eq_zero_of_carleman
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 open BookProof.CarlemanUnboundedHop
 
 

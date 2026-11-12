@@ -2,6 +2,7 @@
 import Mathlib
 import Definitions.Def_ChapterSolovayTailDimension
 import Definitions.Def_PhysMeasureBasis
+import Definitions.Def_ChapterSolovay
 open PhysMeasureBasis
 open BookProof.ChapterSolovayTailDimension
 

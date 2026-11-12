@@ -1,6 +1,6 @@
 -- Generated from ChapterModeQuadraticEsa.lean — solution of BookProof.ModeQuadratic.lop_lop_hermiteMv
 import Mathlib
-import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterModeQuadraticEsaPromoted
 import Theorems.Thm_BookProof_ModeQuadratic_add_single_one_one
 import Theorems.Thm_BookProof_ModeQuadratic_sub_single_one_one
 import Theorems.Thm_BookProof_ModeQuadratic_add_single_apply_self
@@ -13,7 +13,7 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadratureEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato

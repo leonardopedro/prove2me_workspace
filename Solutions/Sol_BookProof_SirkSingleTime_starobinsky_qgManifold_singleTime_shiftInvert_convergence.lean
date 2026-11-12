@@ -22,7 +22,7 @@ open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 
 noncomputable section
 

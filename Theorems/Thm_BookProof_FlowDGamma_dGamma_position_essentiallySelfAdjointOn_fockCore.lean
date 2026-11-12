@@ -11,6 +11,7 @@ import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+open BookProof.FlowDGamma
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.DirectSumEsa
 open BookProof.GraphCore

@@ -41,4 +41,4 @@ theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) {L : Finset �
     · exact inner_creVec_annA col u v k (hL k (Finset.mem_union_left _ hku))
     · have h0 : annA k u = 0 := annA_eq_zero_of_not_mem_modes hku
       rw [h0, map_zero]
-      simp
+      simp [toLp_zero]

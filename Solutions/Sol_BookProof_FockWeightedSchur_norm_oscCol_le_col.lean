@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.norm_oscCol_le_col
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_sqrt_le_of_one_le
 import Theorems.Thm_BookProof_FockWeightedSchur_norm_oscCol_apply
 import Definitions.Def_ChapterFockSecondQuantization

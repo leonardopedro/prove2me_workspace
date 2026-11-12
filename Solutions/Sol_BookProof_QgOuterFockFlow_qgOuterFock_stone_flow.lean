@@ -1,9 +1,7 @@
 -- Generated from ChapterQgOuterFockFlow.lean — solution of BookProof.QgOuterFockFlow.qgOuterFock_stone_flow
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockFlow_secN_dom_dense
 import Theorems.Thm_BookProof_QgOuterFockFlow_secData_ext_symmetricOn
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
@@ -15,11 +13,6 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
-open BookProof.QgOuterFockFlow
-
-
-
-
 open Filter Topology
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgContinuumModeInstance

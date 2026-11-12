@@ -1,6 +1,6 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.starobinsky_brstGaugeFixed_esa
 import Mathlib
-import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 import Theorems.Thm_BookProof_QgContinuumModeInstance_starobinsky_qgContinuum_esa
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL

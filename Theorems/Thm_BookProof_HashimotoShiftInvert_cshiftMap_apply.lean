@@ -2,7 +2,6 @@
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
 import Definitions.Def_ChapterComplexShiftCore
-import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HashimotoShiftInvert
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] {Dom : Submodule ℂ F}

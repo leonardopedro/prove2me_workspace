@@ -1,5 +1,6 @@
 -- Generated from ChapterQuadraticFockEsa.lean — theorem BookProof.QuadFockEsa.hermCol_eq_coef
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs

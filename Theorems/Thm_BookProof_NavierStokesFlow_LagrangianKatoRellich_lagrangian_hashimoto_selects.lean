@@ -10,8 +10,9 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesLagrangianEsa
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianEsa
@@ -26,9 +27,8 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (L : LagrangianFullData F)
 
 theorem BookProof.NavierStokesFlow.LagrangianKatoRellich.lagrangian_hashimoto_selects
     (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L))

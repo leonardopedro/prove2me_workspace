@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
 import Theorems.Thm_BookProof_HermiteGraphApprox_coef_htrunc
-import Theorems.Thm_BookProof_HermiteLadder_coef_sub
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterScalaronCoreEsa

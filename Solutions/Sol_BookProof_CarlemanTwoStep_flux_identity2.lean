@@ -1,12 +1,12 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.flux_identity2
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_cube_hop_im
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_vanish
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_shift
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc2_vanish
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 

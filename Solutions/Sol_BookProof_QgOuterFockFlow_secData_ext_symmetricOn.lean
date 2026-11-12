@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockFlow
 import Theorems.Thm_BookProof_QgOuterFockCoreFL_CoreData_ext_symmetricOn
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_symmetricOn
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterQgContinuumModeInstance
@@ -13,7 +12,6 @@ import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
-open BookProof.QgOuterFockFlow
 
 
 

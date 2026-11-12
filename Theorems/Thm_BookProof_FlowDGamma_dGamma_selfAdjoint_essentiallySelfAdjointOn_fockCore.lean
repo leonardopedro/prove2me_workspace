@@ -11,6 +11,7 @@ import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+open BookProof.FlowDGamma
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.ChapterStoneMeasurable

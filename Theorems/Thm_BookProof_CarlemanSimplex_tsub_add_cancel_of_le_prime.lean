@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.tsub_add_cancel_of_le'
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Definitions.Def_ChapterA4
 
 variable {d : ℕ}

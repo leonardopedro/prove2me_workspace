@@ -24,6 +24,7 @@ open BookProof.FockNumberPreservingGap BookProof.FarisLavine
 open BookProof.HermiteGalerkin BookProof.HermiteCore
 open BookProof.YangMillsFriedrichs
 open MeasureTheory
+open BookProof.FockDiagonalGapChain
 
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]

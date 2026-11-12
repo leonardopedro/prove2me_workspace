@@ -24,4 +24,7 @@ theorem solution :
     rw [lp.norm_single (by norm_num), lp.norm_single (by norm_num)] at h
     simp only [positionField, mul_one, norm_one] at h
     simp only [Complex.norm_real, Real.norm_eq_abs] at h
-    rw [abs_
+    rw [abs_of_nonneg (by positivity)] at h
+    push_cast at h
+    linarith
+

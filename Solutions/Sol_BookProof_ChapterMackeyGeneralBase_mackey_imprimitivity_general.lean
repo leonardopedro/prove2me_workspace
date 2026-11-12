@@ -18,10 +18,14 @@ open scoped InnerProductSpace
 
 open BookProof.ChapterOrthogonalSums
 
-variable {G : Type*} [Group G] {X : Type*} [MulAction G X]
+-- The platform target was published from an earlier text whose variable block
+-- still carried `[Fintype X]` (the finite-base structure), so its `∀` opens that
+-- instance binder.  It is unused by the statement, but `solution` must open the
+-- SAME binders in the SAME order or the type check fails with `WA`.
+variable {G : Type*} [Group G] {X : Type*} [Fintype X] [MulAction G X]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
-variable {G : Type*} [Group G] {X : Type*} [MulAction G X]
+variable {G : Type*} [Group G] {X : Type*} [Fintype X] [MulAction G X]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 variable (S : ImprimitivitySystem G X E)
 variable (S : ImprimitivitySystem G X E) (x₀ : X) (s : X → G)

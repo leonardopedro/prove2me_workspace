@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.sum_mterm_im
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_mterm_conj
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 

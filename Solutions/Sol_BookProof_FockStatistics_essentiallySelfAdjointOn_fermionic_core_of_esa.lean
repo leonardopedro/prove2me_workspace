@@ -15,18 +15,21 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterFockStatisticsCompletion
-open BookProof.FockStatistics
-
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+open BookProof.DirectSumEsa
+open BookProof.GraphCore
+open BookProof.TensorCore
 
 
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorPerm BookProof.PermSector
+open BookProof.SecondQuantizationCore BookProof.DirectSumEsa
+open BookProof.FockStatistics
 open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
-open BookProof.DirectSumEsa
-open BookProof.GraphCore
-open BookProof.TensorCore
 
 noncomputable section
 
@@ -43,6 +46,7 @@ set_option maxHeartbeats 1000000 in
 include hdense hesa hsym in
 theorem solution (hcore : IsGraphCore D₀ A) (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (fermionicProj Hs n) (sectorCore Hs D D₀ n))
-      (fermionicCoreOp Hs D A D₀ n) :=
-  essentiallySelfAdjointOn_fermionic_core Hs D A D₀ n hcore
-      (essentiallySelfAdjointOn_sectorDom_of_esa A hdense hsym hesa n)
+      (fermionicCoreOp Hs D A D₀ n) := 
+  essentiallySelfAdjointOn_fermionic_core (Hs := Hs) (D₂ := D) (A := A) (D := D₀)
+      n hcore
+      (essentiallySelfAdjointOn_sectorDom_of_esa (Hs := Hs) (D := D) A hdense hsym hesa n)

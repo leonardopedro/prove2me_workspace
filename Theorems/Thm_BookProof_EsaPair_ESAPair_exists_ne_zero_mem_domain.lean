@@ -7,6 +7,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
 
@@ -14,6 +15,8 @@ open BookProof.TensorCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.EsaPair
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

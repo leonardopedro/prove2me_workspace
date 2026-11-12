@@ -9,8 +9,9 @@ import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
+import Definitions.Def_ChapterKatoRellichDeficiencyCore
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency

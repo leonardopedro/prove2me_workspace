@@ -15,6 +15,7 @@ import Definitions.Def_ChapterQgFourierElimination
 import Mathlib
 import Definitions.Def_ChapterQgFullEliminated
 import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterQgFourierElimForms
 
 
 

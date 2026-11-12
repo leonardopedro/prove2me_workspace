@@ -21,10 +21,10 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable [TopologicalSpace.SeparableSpace H]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.ChapterStoneResolvent
+set_option maxHeartbeats 1000000 in
 theorem solution (T : UnboundedSelfAdjoint H) : T.stoneGroup.gen = T := by
 
   refine ext_prime T.genDomain_eq_domain ?_

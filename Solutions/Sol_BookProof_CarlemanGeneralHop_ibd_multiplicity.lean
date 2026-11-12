@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.ibd_multiplicity
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_ibd
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanGeneralHop
 
 

@@ -10,7 +10,8 @@ import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
+import Definitions.Def_ChapterQgContinuumModeInstance
 open BookProof.QgTruncationResolvent
 
 
@@ -20,6 +21,7 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
+open BookProof.QgContinuumModeInstance
 
 noncomputable section
 

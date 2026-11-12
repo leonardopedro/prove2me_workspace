@@ -23,5 +23,4 @@ variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] 
   (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.PermSector.good_swapFirst (n : ℕ) :
-    Good Hs D₂ A D (n + 2) (swapFirst (domSpace Hs D₂) n) (swapFirst Hs n) where
-  incl t := by sorry
+    Good Hs D₂ A D (n + 2) (swapFirst (domSpace Hs D₂) n) (swapFirst Hs n) := by sorry

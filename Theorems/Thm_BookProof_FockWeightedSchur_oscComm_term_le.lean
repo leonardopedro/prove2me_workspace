@@ -9,8 +9,8 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 open BookProof.FockWeightedSchur
 
 

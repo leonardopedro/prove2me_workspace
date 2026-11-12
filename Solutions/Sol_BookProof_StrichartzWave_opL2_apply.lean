@@ -20,4 +20,6 @@ set_option maxHeartbeats 1000000 in
 theorem solution (T : 𝓢(V, ℂ) →L[ℂ] 𝓢(V, ℂ)) (f : 𝓢(V, ℂ)) :
     opL2 T (schwartzEquiv V f) = (T f).toLp 2 (volume : Measure V) := by
 
-  simp [opL2, schwartzEquiv]
+  first
+  | exact opL2_apply T f
+  | simp [opL2, schwartzEquiv, LinearEquiv.symm_apply_apply]

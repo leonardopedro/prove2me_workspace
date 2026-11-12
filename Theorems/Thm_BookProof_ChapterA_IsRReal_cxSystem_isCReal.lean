@@ -2,11 +2,13 @@
 import Mathlib
 import Definitions.Def_ChapterA1c
 import Definitions.Def_ChapterA
+import Definitions.Def_Complexification
 open BookProof.ChapterA
 open BookProof.ChapterA
 
 
 open scoped ComplexConjugate InnerProductSpace RealInnerProductSpace
+open BookProof.Complexification
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] [CompleteSpace V]
 variable {W : Type*} [NormedAddCommGroup W] [InnerProductSpace ℝ W] [CompleteSpace W]

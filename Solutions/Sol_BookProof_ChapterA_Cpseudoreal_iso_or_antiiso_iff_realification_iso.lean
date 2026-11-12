@@ -1,7 +1,6 @@
 -- Generated from ChapterA2e.lean — solution of BookProof.ChapterA.Cpseudoreal_iso_or_antiiso_iff_realification_iso
 import Mathlib
 import Definitions.Def_ChapterA2e
-import Theorems.Thm_BookProof_ChapterA_Cpseudoreal_realification_dichotomy
 import Definitions.Def_ChapterA
 import Definitions.Def_ChapterA1
 open BookProof.ChapterA

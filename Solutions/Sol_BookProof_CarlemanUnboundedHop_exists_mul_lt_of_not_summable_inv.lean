@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.exists_mul_lt_of_not_summable_inv
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 open BookProof.CarlemanUnboundedHop
 
 

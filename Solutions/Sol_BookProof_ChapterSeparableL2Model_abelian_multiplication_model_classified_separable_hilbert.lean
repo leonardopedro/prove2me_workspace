@@ -13,6 +13,8 @@ open BookProof.ChapterSeparableL2Model
 
 
 
+universe u
+
 noncomputable section
 
 open MeasureTheory TopologicalSpace

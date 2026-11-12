@@ -1,6 +1,6 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.isSchrodingerSolution_prop
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Theorems.Thm_BookProof_QgTimeIndependent_hasDerivAt_prop
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent

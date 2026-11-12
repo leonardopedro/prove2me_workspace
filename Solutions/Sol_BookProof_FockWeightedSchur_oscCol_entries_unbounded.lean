@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.oscCol_entries_unbounded
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_norm_oscCol_apply
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterCoreBoundsEsa

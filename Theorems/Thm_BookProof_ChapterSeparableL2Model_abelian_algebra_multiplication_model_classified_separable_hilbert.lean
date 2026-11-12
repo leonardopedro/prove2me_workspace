@@ -20,6 +20,11 @@ open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
 
+universe u
+-- `characterSpace` is Mathlib's `WeakDual.characterSpace` (a Def that uses it
+-- opens `WeakDual`); the stub referenced it bare.
+open WeakDual
+
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
@@ -29,6 +34,8 @@ variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [Measura
 variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+universe v
+
 variable {A : Type v} [CommCStarAlgebra A]
 
 theorem BookProof.ChapterSeparableL2Model.abelian_algebra_multiplication_model_classified_separable_hilbert

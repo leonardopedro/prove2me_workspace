@@ -1,9 +1,6 @@
 -- Generated from ChapterHermiteGraphApprox.lean — solution of BookProof.HermiteGraphApprox.potLp_polyW_eq
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
-import Theorems.Thm_BookProof_DegSchrodinger_continuous_polyW
-import Theorems.Thm_BookProof_DegSchrodinger_expBounded_polyW
-import Theorems.Thm_BookProof_DegSchrodinger_pgFun_mul_polyW
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave

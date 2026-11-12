@@ -28,11 +28,11 @@ variable {F : BiDegree → Type} (S : DerivativeVariableFixingSystem F)
 
 set_option maxHeartbeats 1000000 in
 theorem solution
-    (hfix : BookProof.QgPhysicalSectorIdentity.gaugeField
+    (hfix : BookProof.GaugeFixing.gaugeField
         BookProof.QgPhysicalSectorIdentity.matrixModel.toGaugeFixingSystem = 0) :
     BookProof.QgPhysicalSectorIdentity.matrixModel.mul (1, 0) (1, 0)
         BookProof.QgPhysicalSectorIdentity.matrixModel.B
-        (BookProof.QgPhysicalSectorIdentity.gaugeField
+        (BookProof.GaugeFixing.gaugeField
           BookProof.QgPhysicalSectorIdentity.matrixModel.toGaugeFixingSystem) = 0 := by
 
   rw [hfix]

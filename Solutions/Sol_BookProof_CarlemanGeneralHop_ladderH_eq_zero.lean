@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.ladderH_eq_zero
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_obd
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_ibd
 import Theorems.Thm_BookProof_CarlemanGeneralHop_amp_eq_zero_of_not_mem_obd
@@ -12,9 +12,9 @@ import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_mass_le
 import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_shift_mass_le
 import Theorems.Thm_BookProof_CarlemanGeneralHop_flux_identityH
 import Theorems.Thm_BookProof_CarlemanTwoStep_not_summable_inv_natCast_succ
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -163,7 +163,7 @@ theorem solution {B Camp : ℝ} (hz : z.im ≠ 0) (hCamp : 0 ≤ Camp)
   have hlow : ∀ N : ℕ, N₀ ≤ N → ‖u a₀‖ ^ 2 ≤ ∑ a ∈ cube d N, ‖u a‖ ^ 2 := by
     intro N hN
     refine Finset.single_le_sum (f := fun a => ‖u a‖ ^ 2) (fun a _ => by positivity) ?_
-    rw [mem_cube]
+    rw [mem_cube_inc]
     intro i
     exact le_trans (Finset.le_sup (f := fun i : Fin d => a₀ i) (Finset.mem_univ i)) hN
   have hcpos : 0 < |z.im| * ‖u a₀‖ ^ 2 := by
@@ -202,4 +202,4 @@ theorem solution {B Camp : ℝ} (hz : z.im ≠ 0) (hCamp : 0 ≤ Camp)
     have h5 := hcomp2.mul_left ((|z.im| * ‖u a₀‖ ^ 2) / (2 * Camp))⁻¹
     refine h5.congr fun N => ?_
     field_simp
-  exact CarlemanTwoStep.not_summable_inv_natCast_succ ((summable_nat_add_iff N₀).mp h4)
+  exact BookProof.CarlemanTwoStep.not_summable_inv_natCast_succ ((summable_nat_add_iff N₀).mp h4)

@@ -15,6 +15,6 @@ open scoped BigOperators Matrix Kronecker ComplexOrder TensorProduct
 variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterF7
+set_option maxHeartbeats 1000000 in
 theorem solution : L.kinetic.PosSemidef := (sum_sq_posSemidef L.P_herm).smul (by norm_num)

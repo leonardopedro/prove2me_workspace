@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.sum_wsq_normSq_annA
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_eq_sum
 import Theorems.Thm_BookProof_FockSchur_normSq_annA
 import Theorems.Thm_BookProof_FockSecondQuantization_support_subset_modes

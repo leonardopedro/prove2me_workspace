@@ -28,7 +28,7 @@ import Definitions.Def_ChapterStoneResolvent
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
 open BookProof.FarisLavine
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.QuantumGravityDensitized
 open BookProof.Starobinsky
 open BookProof.StoneBridge

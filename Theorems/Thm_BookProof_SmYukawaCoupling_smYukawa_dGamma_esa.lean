@@ -31,6 +31,7 @@ open BookProof.SmHamiltonian BookProof.SmDiracYukawa BookProof.SmCar BookProof.S
 open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs BookProof.HermiteProductCore
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore
 open BookProof.FarisLavine BookProof.TensorCore
+open BookProof.SmFullEnclosure
 
 noncomputable section
 

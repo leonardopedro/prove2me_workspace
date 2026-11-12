@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.dGammaOp_commForm_bound_w
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_im_inner_dGamma_wgt_bound
 import Theorems.Thm_BookProof_FockWeightedSchur_diagMax_wSym_eq
 import Theorems.Thm_BookProof_FockSecondQuantization_coe_dGammaOp

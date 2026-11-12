@@ -19,6 +19,8 @@ open BookProof.ChapterAbelianGelfandModel BookProof.ChapterAbelianCyclicModel
 open BookProof.ChapterAbelianDirectSum BookProof.ChapterLinftyMultiplication
 open BookProof.ChapterStandardBorelClassification
 
+universe u
+
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]

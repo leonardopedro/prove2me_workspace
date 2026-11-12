@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.re_inner_wgt
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_wgt_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_inner_toLp
 import Definitions.Def_ChapterCoreBoundsEsa

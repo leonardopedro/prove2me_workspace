@@ -24,12 +24,11 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
-variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
+variable (L : LagrangianFullData F)
 
+open BookProof.HashimotoShiftInvert BookProof.NavierStokesFlow.LagrangianEsa
 set_option maxHeartbeats 1000000 in
-open `BookProof.HashimotoShiftInvert`. BookProof.NavierStokesFlow.LagrangianEsa
 theorem solution
     (hesa : EssentiallySelfAdjointOn L.D (lagrangianCore L))
     (bas : HilbertBasis ℕ ℂ F) (γ : ℕ → ℂ) (hγ : ∀ j, (γ j).im ≠ 0) :

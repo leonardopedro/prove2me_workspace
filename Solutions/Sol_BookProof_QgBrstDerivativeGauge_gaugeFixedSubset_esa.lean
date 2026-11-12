@@ -1,6 +1,6 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.gaugeFixedSubset_esa
 import Mathlib
-import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 import Theorems.Thm_BookProof_QgBrstDerivativeGauge_restrict_essentiallySelfAdjointOn
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL

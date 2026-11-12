@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.sum_le_of_vanishing
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterCoreBoundsEsa
 import Definitions.Def_ChapterFockSchurEsa

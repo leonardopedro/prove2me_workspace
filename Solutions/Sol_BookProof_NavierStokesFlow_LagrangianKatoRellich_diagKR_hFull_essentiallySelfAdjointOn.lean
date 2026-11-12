@@ -3,7 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_hFull_essentiallySelfAdjointOn_of_drive_eq_P
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_drive
-import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_constraint_bound
+import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagOp_zero_symbol
 import Theorems.Thm_BookProof_FarisLavine_essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder_hasZeroDeficiencyOn
 import Definitions.Def_ChapterFarisLavine
@@ -31,11 +31,18 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat
+set_option maxHeartbeats 1000000 in
 theorem solution :
-    EssentiallySelfAdjointOn diagKR.D (lagrangianCore diagKR) := by
-  hFull_essentiallySelfAdjointOn_of_drive_eq_P diagKR diagKR_drive le_rfl
-    diagKR_constraint_bound
+    EssentiallySelfAdjointOn diagKR.D (lagrangianCore diagKR) :=
+  -- `diagKR_constraint_bound` as published on the platform carries the WRONG
+  -- statement (`HasZeroDeficiencyOn diagKR.D (secondOrder diagKR)`), so the
+  -- pointwise bound the caller needs is proved here instead (source:
+  -- `BookProof/ChapterNavierStokesLagrangianKatoRellich.lean:466`).
+  have hC : ∀ v : diagKR.D, ‖(diagKR.constraintOp v : L2N)‖ ≤ 0 * ‖(v : L2N)‖ := by
+    intro v
+    rw [show diagKR.constraintOp = 0 from diagOp_zero_symbol]
+    simp
+  hFull_essentiallySelfAdjointOn_of_drive_eq_P diagKR diagKR_drive le_rfl hC
     ((essentiallySelfAdjointOn_iff_hasZeroDeficiencyOn diagKR.D (secondOrder diagKR)).mpr
       diagKR_secondOrder_hasZeroDeficiencyOn)

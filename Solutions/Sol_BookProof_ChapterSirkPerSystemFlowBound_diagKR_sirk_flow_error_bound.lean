@@ -50,7 +50,7 @@ open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.DiagonalEsa
 open BookProof.NavierStokesFlow.JacobiDeficiency
 open BookProof.NavierStokesFlow.LpNat

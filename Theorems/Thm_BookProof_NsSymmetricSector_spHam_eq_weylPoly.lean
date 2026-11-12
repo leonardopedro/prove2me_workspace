@@ -19,6 +19,7 @@ import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
+open BookProof.YangMillsNonAbelianEsa
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 

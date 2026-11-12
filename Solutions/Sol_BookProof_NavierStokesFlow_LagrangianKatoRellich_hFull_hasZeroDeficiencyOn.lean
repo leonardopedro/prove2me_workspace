@@ -27,8 +27,8 @@ open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerk
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.LagrangianEsa
+set_option maxHeartbeats 1000000 in
 theorem solution [CompleteSpace F] {kap kap' cc : ℝ}
     (hkap : 0 ≤ kap) (hkap' : 0 ≤ kap') (hcc : 0 ≤ cc)
     (hdrift : ∀ v : L.D,

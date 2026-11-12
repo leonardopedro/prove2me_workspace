@@ -30,5 +30,4 @@ theorem BookProof.PermSector.good_trans {n : ℕ}
     {uD vD : ((domSpace Hs D₂).pow n).carrier ≃ₗᵢ[ℂ] ((domSpace Hs D₂).pow n).carrier}
     {uH vH : (Hs.pow n).carrier ≃ₗᵢ[ℂ] (Hs.pow n).carrier}
     (hu : Good Hs D₂ A D n uD uH) (hv : Good Hs D₂ A D n vD vH) :
-    Good Hs D₂ A D n (uD.trans vD) (uH.trans vH) where
-  incl t := by sorry
+    Good Hs D₂ A D n (uD.trans vD) (uH.trans vH) := by sorry

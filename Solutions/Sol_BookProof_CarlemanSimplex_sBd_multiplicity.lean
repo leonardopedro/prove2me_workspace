@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.sBd_multiplicity
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_sBd
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 

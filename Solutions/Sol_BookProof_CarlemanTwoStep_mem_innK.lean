@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.mem_innK
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 
@@ -22,4 +22,4 @@ theorem solution {d N : ℕ} {i : Fin d} {k : ℕ} {a : Fin d →₀ ℕ} :
     a ∈ innK d N i k ↔ (∀ j, a j ≤ N) ∧ a i + k ≤ N := by
 
   classical
-  rw [innK, Finset.mem_filter, mem_cube]
+  rw [innK, Finset.mem_filter, mem_cube_inc]

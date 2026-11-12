@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterFockStatisticsEsa
 import Theorems.Thm_BookProof_FockStatistics_essentiallySelfAdjointOn_sectorDom_of_esa
-import Theorems.Thm_BookProof_PermSector_essentiallySelfAdjointOn_bosonic_core
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterReducingSubspaceEsa
 import Definitions.Def_ChapterGroupAverageEsa
@@ -15,18 +14,22 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterFockStatisticsCompletion
-open BookProof.FockStatistics
-
+import Theorems.Thm_BookProof_PermSector_essentiallySelfAdjointOn_bosonic_core
+import Definitions.Def_ChapterBddBelowFiberSumEsa
+import Definitions.Def_ChapterScalarDGammaEsa
+open BookProof.DirectSumEsa
+open BookProof.GraphCore
+open BookProof.TensorCore
 
 
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorPerm BookProof.PermSector
+open BookProof.SecondQuantizationCore BookProof.DirectSumEsa
+open BookProof.FockStatistics
 open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
-open BookProof.DirectSumEsa
-open BookProof.GraphCore
-open BookProof.TensorCore
 
 noncomputable section
 
@@ -43,6 +46,7 @@ set_option maxHeartbeats 1000000 in
 include hdense hesa hsym in
 theorem solution (hcore : IsGraphCore D₀ A) (n : ℕ) :
     EssentiallySelfAdjointOn (redDom (bosonicProj Hs n) (sectorCore Hs D D₀ n))
-      (bosonicCoreOp Hs D A D₀ n) :=
-  essentiallySelfAdjointOn_bosonic_core Hs D A D₀ n hcore
-      (essentiallySelfAdjointOn_sectorDom_of_esa A hdense hsym hesa n)
+      (bosonicCoreOp Hs D A D₀ n) := 
+  essentiallySelfAdjointOn_bosonic_core (Hs := Hs) (D₂ := D) (A := A) (D := D₀)
+      n hcore
+      (essentiallySelfAdjointOn_sectorDom_of_esa (Hs := Hs) (D := D) A hdense hsym hesa n)

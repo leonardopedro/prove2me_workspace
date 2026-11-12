@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.normSq_dGamma_le_of_sector
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_wdeg_nonneg
 import Theorems.Thm_BookProof_FockWeightedSchur_sum_wsq_normSq_annA
 import Theorems.Thm_BookProof_FockWeightedSchur_w_pos

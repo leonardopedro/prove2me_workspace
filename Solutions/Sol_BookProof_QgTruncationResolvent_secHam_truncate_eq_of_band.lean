@@ -1,7 +1,6 @@
 -- Generated from ChapterQgTruncationResolvent.lean — solution of BookProof.QgTruncationResolvent.secHam_truncate_eq_of_band
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge

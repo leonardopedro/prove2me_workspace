@@ -15,6 +15,7 @@ open BookProof.QgOuterFockFL
 
 open BookProof.PositiveSquareRoot
 open BookProof.HashimotoShiftInvert
+open BookProof.NonnegSquareRoot
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}

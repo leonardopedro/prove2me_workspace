@@ -9,6 +9,8 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterFlowDGammaEsa
+open BookProof.FlowDGamma
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneMeasurable.WeakMeasurableUnitaryGroup
 open BookProof.TensorCore

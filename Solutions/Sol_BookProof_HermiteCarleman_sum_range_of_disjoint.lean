@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.sum_range_of_disjoint
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine

@@ -26,3 +26,5 @@ variable {N : ℕ}
 theorem BookProof.ChapterWeylSL2Unipotent.isExpOfSl2_of_unipotent (h : IsUnipotentExp rho E F N) :
     IsExpOfSl2 rho (sl2OfUnipotent h) N where
   two_le := by sorry
+  expE := by sorry
+  expF := by sorry

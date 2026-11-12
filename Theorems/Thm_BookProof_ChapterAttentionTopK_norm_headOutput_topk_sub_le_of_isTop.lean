@@ -8,6 +8,7 @@ import Definitions.Def_ChapterAttentionMasking
 import Definitions.Def_ChapterAttentionOutput
 import Definitions.Def_ChapterAttentionTopK
 import Definitions.Def_ChapterObservableExpectation
+import Definitions.Def_ChapterAttentionSparse
 open BookProof.ChapterObservableExpectation
 open BookProof.ChapterSoftmaxSharpness
 open BookProof.ChapterAttentionTopK
@@ -21,6 +22,7 @@ noncomputable section
 open BookProof.ChapterSoftmaxSharpness BookProof.ChapterSoftmaxOrder
 open BookProof.ChapterAttentionMasking
 open BookProof.ChapterAttentionOutput
+open BookProof.ChapterAttentionSparse
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 

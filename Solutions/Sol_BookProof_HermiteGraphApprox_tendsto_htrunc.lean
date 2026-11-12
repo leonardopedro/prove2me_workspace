@@ -1,7 +1,6 @@
 -- Generated from ChapterHermiteGraphApprox.lean — solution of BookProof.HermiteGraphApprox.tendsto_htrunc
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
-import Theorems.Thm_BookProof_HermiteLadder_coef_eq_repr
 import Theorems.Thm_BookProof_HermiteProductBasis_hermiteMvBasis_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave

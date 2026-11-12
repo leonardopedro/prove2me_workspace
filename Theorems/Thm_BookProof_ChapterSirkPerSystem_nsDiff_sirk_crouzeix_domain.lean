@@ -25,7 +25,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 open BookProof.EsaClosure
 open BookProof.ChapterH4
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.ChapterSirkPerSystem

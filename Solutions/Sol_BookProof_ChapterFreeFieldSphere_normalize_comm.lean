@@ -18,4 +18,5 @@ set_option maxHeartbeats 1000000 in
 theorem solution (L : EuclideanSpace ℝ (Fin n) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin n))
     (x : EuclideanSpace ℝ (Fin n)) : normalize (L x) = L (normalize x) := by
 
-  simp [ normalize, L.norm_map ]
+  rw [show normalize (L x) = ‖L x‖⁻¹ • L x from rfl,
+    show normalize x = ‖x‖⁻¹ • x from rfl, L.norm_map, L.map_smul]

@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.wRow_oscCol
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_oscW_pos
 import Theorems.Thm_BookProof_FockWeightedSchur_support_oscCol_subset
 import Theorems.Thm_BookProof_FockWeightedSchur_sum_pair_le

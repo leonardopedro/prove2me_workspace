@@ -24,8 +24,8 @@ open BookProof.ChapterCyclicDecomposition BookProof.ChapterCyclicDirectSum
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
 
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (T : H →L[ℂ] H) (hT : IsStarNormal T) (xi : H)
+
+include hT
 
 set_option maxHeartbeats 1000000 in
 theorem solution :

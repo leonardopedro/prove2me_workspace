@@ -26,8 +26,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable (L : LagrangianFullData F)
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterAbelianDiagonalCountable BookProof.NavierStokesFlow.DiagonalEsa BookProof.NavierStokesFlow.JacobiDeficiency BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.LagrangianEsa
+set_option maxHeartbeats 1000000 in
 theorem solution : diagKR.drift = diagOp (fun n => 3 * (n : ℝ)) :=
   : ℝ)))
         = diagOp fun n => (3 / 2 : ℝ) * (n : ℝ) ^ 2

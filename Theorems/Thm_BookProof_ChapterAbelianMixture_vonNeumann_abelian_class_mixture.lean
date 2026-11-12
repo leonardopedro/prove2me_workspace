@@ -1,4 +1,32 @@
--- Generated from ChapterAbelianMixture.lean — 
+-- Generated from ChapterAbelianMixture.lean — theorem BookProof.ChapterAbelianMixture.vonNeumann_abelian_class_mixture
+import Mathlib
+import Definitions.Def_ChapterAbelianMixture
+import Definitions.Def_ChapterLinftyMultiplication
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_memLp_top_one
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_memLp_top_mul
+import Theorems.Thm_BookProof_ChapterLinftyMultiplication_memLp_top_conj
+open BookProof.ChapterLinftyMultiplication
+open BookProof.ChapterAbelianMixture
+
+
+noncomputable section
+
+open MeasureTheory ENNReal
+
+
+
+
+
+
+
+
+
+
+
+
+
+open BookProof.ChapterLinftyMultiplication
+
 theorem BookProof.ChapterAbelianMixture.vonNeumann_abelian_class_mixture :
     (multOp (μ := mixtureMeasure) (fun _ : ℝ => (1 : ℂ)) memLp_top_one
         = ContinuousLinearMap.id ℂ (Lp ℂ 2 mixtureMeasure)) ∧

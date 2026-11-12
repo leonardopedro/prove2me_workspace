@@ -1,11 +1,11 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sum_shiftK
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Theorems.Thm_BookProof_CarlemanTwoStep_mem_innK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_add_singleK
 import Theorems.Thm_BookProof_CarlemanTwoStep_sub_singleK_apply
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 
@@ -31,7 +31,7 @@ theorem solution (d N : ℕ) (i : Fin d) (k : ℕ) (F : (Fin d →₀ ℕ) → �
   refine Finset.sum_nbij' (fun a => a - Finsupp.single i k) (fun b => b + Finsupp.single i k)
     ?_ ?_ ?_ ?_ ?_
   · intro a ha
-    simp only [Finset.mem_filter, mem_cube] at ha
+    simp only [Finset.mem_filter, mem_cube_inc] at ha
     rw [mem_innK]
     refine ⟨fun j => le_trans (by simp [Finsupp.tsub_apply]) (ha.1 j), ?_⟩
     rw [sub_singleK_apply]
@@ -40,7 +40,7 @@ theorem solution (d N : ℕ) (i : Fin d) (k : ℕ) (F : (Fin d →₀ ℕ) → �
     omega
   · intro b hb
     rw [mem_innK] at hb
-    simp only [Finset.mem_filter, mem_cube]
+    simp only [Finset.mem_filter, mem_cube_inc]
     refine ⟨fun j => ?_, ?_⟩
     · by_cases hj : j = i
       · subst hj; simp; omega

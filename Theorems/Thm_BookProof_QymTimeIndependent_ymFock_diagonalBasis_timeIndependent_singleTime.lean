@@ -4,7 +4,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
@@ -29,12 +29,8 @@ import Definitions.Def_ChapterSirkBandLedger
 open BookProof.EsaClosure
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
-open BookProof.QymTimeIndependent
-
-
-
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
@@ -50,7 +46,7 @@ variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 →
 
 
 theorem BookProof.QymTimeIndependent.ymFock_diagonalBasis_timeIndependent_singleTime (en : ℕ ≃ Conf) (lam : ℕ → ℝ)
-    (hlam : ∀ k, 0 ≤ lam k) (hdiag : ymFockCol e fabc = diagCol lam) :
+    (hlam : ∀ k, 0 ≤ lam k) (hdiag : ymFockCol e fabc = BookProof.QgCouplingDGammaSum.diagCol lam) :
     ∃ (T : UnboundedSelfAdjoint Fock) (S : ℕ → UnboundedSelfAdjoint Fock),
       IsSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) T.op ∧
         (∀ n, IsSelfAdjointExtension

@@ -20,6 +20,4 @@ variable {d : ℕ}
 
 variable (S : Finset (Fin d))
 
-theorem BookProof.DegEnergy.norm_cx (χ : Vd d → ℝ) (x : Vd d) : ‖cx χ x‖ = |χ x| := by
-  simp [cx]
-
+theorem BookProof.DegEnergy.norm_cx (χ : Vd d → ℝ) (x : Vd d) : ‖cx χ x‖ = |χ x| := by sorry

@@ -10,6 +10,7 @@ import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorCore
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore

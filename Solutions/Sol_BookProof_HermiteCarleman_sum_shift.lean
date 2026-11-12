@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.sum_shift
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
 import Theorems.Thm_BookProof_HermiteCarleman_sub_add_single
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
@@ -42,8 +42,8 @@ theorem solution (d N : ℕ) (i : Fin d) (F : (Fin d →₀ ℕ) → ℂ)
   refine Finset.sum_nbij' (fun a => a - Finsupp.single i 1) (fun b => b + Finsupp.single i 1)
     ?_ ?_ ?_ ?_ ?_
   · intro a ha
-    simp only [Finset.mem_filter, mem_cube] at ha
-    rw [inn, Finset.mem_filter, mem_cube]
+    simp only [Finset.mem_filter, mem_cube_inc] at ha
+    rw [inn, Finset.mem_filter, mem_cube_inc]
     refine ⟨fun j => le_trans (by simp) (ha.1 j), ?_⟩
     have h1 : (a - Finsupp.single i 1 : Fin d →₀ ℕ) i = a i - 1 := by simp
     rw [h1]
@@ -51,8 +51,8 @@ theorem solution (d N : ℕ) (i : Fin d) (F : (Fin d →₀ ℕ) → ℂ)
     have h3 := ha.2
     omega
   · intro b hb
-    rw [inn, Finset.mem_filter, mem_cube] at hb
-    simp only [Finset.mem_filter, mem_cube]
+    rw [inn, Finset.mem_filter, mem_cube_inc] at hb
+    simp only [Finset.mem_filter, mem_cube_inc]
     refine ⟨fun j => ?_, ?_⟩
     · by_cases hj : j = i
       · subst hj; simp; omega

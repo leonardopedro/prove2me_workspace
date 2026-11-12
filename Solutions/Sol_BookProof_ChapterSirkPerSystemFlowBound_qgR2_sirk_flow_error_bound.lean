@@ -52,7 +52,7 @@ open BookProof.FarisLavine
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.QuantumGravityDensitized
 open BookProof.ChapterSirkEndToEnd
 

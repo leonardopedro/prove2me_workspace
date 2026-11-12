@@ -1,7 +1,6 @@
 -- Generated from PhysMehler.lean — solution of PhysMehler.pi02_invariant_of_formalism
 import Mathlib
 import Definitions.Def_PhysMehler
-import Theorems.Thm_PhysMehler_arith_truth_invariant
 import Definitions.Def_ChapterA4
 open PhysMehler
 

@@ -11,7 +11,6 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterShiftedQuadraticEsa
-import Definitions.Def_ChapterVielbeinFiberFock
 open BookProof.EsaClosure
 open BookProof.StoneBridge
 open BookProof.ScalaronFock
@@ -29,6 +28,7 @@ noncomputable section
 variable {E : ℕ → Type*} [∀ n, NormedAddCommGroup (E n)] [∀ n, InnerProductSpace ℝ (E n)]
   [∀ n, FiniteDimensional ℝ (E n)] [∀ n, MeasurableSpace (E n)] [∀ n, BorelSpace (E n)]
 
+set_option maxHeartbeats 1000000 in
 theorem BookProof.ScalaronFock.fockSmoothPotential_stone_flow (W : ∀ n, E n → ℝ)
     (hW : ∀ n, ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (W n)) :
     ∃ (T : UnboundedSelfAdjoint (nestedFock E)) (U : ℝ → (nestedFock E →L[ℂ] nestedFock E)),

@@ -1,8 +1,6 @@
 -- Generated from ChapterEsaOneParticleDGamma.lean — solution of BookProof.EsaOneParticle.positionCore_not_isSelfAdjointOn
 import Mathlib
 import Definitions.Def_ChapterEsaOneParticleDGamma
-import Theorems.Thm_BookProof_EsaOneParticle_not_isSelfAdjointOn_restrict
-import Theorems.Thm_BookProof_EsaOneParticle_Dfin_ne_mulDomain
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore

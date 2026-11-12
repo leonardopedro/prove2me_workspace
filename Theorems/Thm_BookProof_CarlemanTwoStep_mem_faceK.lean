@@ -1,7 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.mem_faceK
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.HermiteCarleman
 open BookProof.CarlemanTwoStep
 

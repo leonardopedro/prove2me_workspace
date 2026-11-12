@@ -5,7 +5,7 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -14,7 +14,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgOuterFockEsa
 import Definitions.Def_ChapterSqSumOuterFamily
 import Definitions.Def_ChapterGaussCoreQuadBounds
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock

@@ -10,6 +10,7 @@ open BookProof.ChapterStoneTheorem
 
 
 open scoped InnerProductSpace
+open BookProof.ChapterStoneResolvent
 
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]

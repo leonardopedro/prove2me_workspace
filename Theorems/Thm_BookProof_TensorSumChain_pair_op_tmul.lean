@@ -10,6 +10,7 @@ import Definitions.Def_ChapterPermutationSectorEsa
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.TensorCore
+open BookProof.TensorSumEsa
 
 noncomputable section
 

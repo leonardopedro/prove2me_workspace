@@ -1,6 +1,6 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.hasDerivAt_prop
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_stoneU_op
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent

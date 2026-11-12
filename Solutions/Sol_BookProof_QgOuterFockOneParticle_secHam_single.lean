@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterQgOuterFockOneParticle
 import Theorems.Thm_BookProof_QgOuterFockOneParticle_single_mem_secCore
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_apply
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterScalaronFiberFL

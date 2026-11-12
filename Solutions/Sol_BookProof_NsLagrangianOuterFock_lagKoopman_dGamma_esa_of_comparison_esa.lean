@@ -1,9 +1,6 @@
 -- Generated from ChapterNsLagrangianOuterFockEsa.lean — solution of BookProof.NsLagrangianOuterFock.lagKoopman_dGamma_esa_of_comparison_esa
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianOuterFockEsa
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
-import Theorems.Thm_BookProof_NsLagrangianDetFL_lagKoopmanOp_symmetricOn
-import Theorems.Thm_BookProof_NsLagrangianDetFL_lagKoopman_esa_of_comparison_esa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
@@ -21,6 +18,8 @@ import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterEsaOneParticleDGamma
+import Definitions.Def_ChapterNsLagrangianDetFarisLavine
 open BookProof.NsLagrangianOuterFock
 
 

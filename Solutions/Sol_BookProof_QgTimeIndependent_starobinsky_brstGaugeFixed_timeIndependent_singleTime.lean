@@ -1,14 +1,16 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.starobinsky_brstGaugeFixed_timeIndependent_singleTime
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Theorems.Thm_BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime
-import Theorems.Thm_BookProof_QgBrstDerivativeGauge_gaugeReduce_gram
 import Theorems.Thm_BookProof_QgTruncationResolvent_momWindow_exhausts
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgContinuumModeInstance
 open BookProof.QgTimeIndependent
 
 
@@ -17,7 +19,10 @@ open BookProof.QgTimeIndependent
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
+open BookProof.QgBrstDerivativeGauge
+open BookProof.ScalaronOuterFockFL
+open BookProof.QgContinuumModeInstance
 
 noncomputable section
 

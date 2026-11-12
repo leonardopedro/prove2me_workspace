@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.sum_cube_split
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
@@ -39,7 +39,7 @@ theorem solution (d N : ℕ) (i : Fin d) (F : (Fin d →₀ ℕ) → ℂ) :
   congr 1
   refine Finset.sum_congr ?_ fun _ _ => rfl
   ext a
-  simp only [Finset.mem_filter, mem_cube]
+  simp only [Finset.mem_filter, mem_cube_inc]
   constructor
   · rintro ⟨h1, h2⟩; exact ⟨h1, by have := h1 i; omega⟩
   · rintro ⟨h1, h2⟩; exact ⟨h1, by omega⟩

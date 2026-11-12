@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_summable_normSq_lp
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_row_summable
 import Definitions.Def_ChapterKernelBound

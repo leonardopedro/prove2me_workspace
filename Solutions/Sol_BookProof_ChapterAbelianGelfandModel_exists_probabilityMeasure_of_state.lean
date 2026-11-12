@@ -21,6 +21,8 @@ variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
   [MeasurableSpace X] [BorelSpace X]
   (psi : C(X, ℂ) →ₗ[ℂ] ℂ) (hpos : ∀ g : C(X, ℂ), 0 ≤ psi (star g * g))
 
+include hpos
+
 set_option maxHeartbeats 1000000 in
 theorem solution (hone : psi 1 = 1) :
     ∃ mu : Measure X, IsProbabilityMeasure mu ∧

@@ -1,8 +1,6 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.sum_range_of_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Mathlib
 import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterGaussCoreQuadBounds
+import Mathlib
 open BookProof.CarlemanTwoStep
 
 
@@ -23,3 +21,5 @@ theorem BookProof.CarlemanTwoStep.sum_range_of_multiplicity {B : ℝ} (m : ℕ)
     (hm : ∀ (a : Fin d →₀ ℕ) (M : ℕ),
       (((Finset.range M).filter (fun N => a ∈ G N)).card) ≤ m)
     (M : ℕ) : ∑ N ∈ Finset.range M, ∑ a ∈ G N, ‖u a‖ ^ 2 ≤ (m : ℝ) * B := by sorry
+
+-- rebased: dropped unused GaussCoreQuadBounds import

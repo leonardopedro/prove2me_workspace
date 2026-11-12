@@ -1,6 +1,6 @@
 -- Generated from ChapterGradedBandSchurEsa.lean — solution of BookProof.GradedBandSchur.degW_pos
 import Mathlib
-import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Theorems.Thm_BookProof_GradedBandSchur_degW_ge_one
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterFockSchurEsa

@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.sum_cube_splitK
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 
@@ -27,7 +27,7 @@ theorem solution (d N : ℕ) (i : Fin d) (k : ℕ) (F : (Fin d →₀ ℕ) → �
   congr 1
   refine Finset.sum_congr ?_ fun _ _ => rfl
   ext a
-  simp only [Finset.mem_filter, mem_cube]
+  simp only [Finset.mem_filter, mem_cube_inc]
   constructor
   · rintro ⟨h1, h2⟩; exact ⟨h1, by omega⟩
   · rintro ⟨h1, h2⟩; exact ⟨h1, by omega⟩

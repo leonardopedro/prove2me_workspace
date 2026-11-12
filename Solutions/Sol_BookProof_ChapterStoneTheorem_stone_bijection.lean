@@ -7,6 +7,7 @@ import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_gen_sto
 import Theorems.Thm_BookProof_ChapterStoneMeasurable_WeakMeasurableUnitaryGroup_gen_stoneU_eq
 open BookProof.ChapterStoneMeasurable
 open BookProof.ChapterStoneTheorem
+open BookProof.ChapterStoneResolvent
 
 
 

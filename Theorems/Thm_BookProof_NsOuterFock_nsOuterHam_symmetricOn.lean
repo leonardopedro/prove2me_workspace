@@ -24,6 +24,7 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL
 open BookProof.QgOuterFockInteractionFL
+open BookProof.SqSumOuterFamily
 
 noncomputable section
 

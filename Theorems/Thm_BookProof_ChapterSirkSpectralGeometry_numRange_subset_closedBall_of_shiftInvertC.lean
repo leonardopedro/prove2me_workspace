@@ -10,7 +10,7 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterH9
 import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.ChapterSirkSpectralGeometry
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

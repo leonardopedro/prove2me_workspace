@@ -11,7 +11,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterStoneResolvent
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 open BookProof.QgTruncationResolvent
 
 

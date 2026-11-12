@@ -7,10 +7,8 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
 import Definitions.Def_ChapterQgHermiteOscillatorEsa
-import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterQgHermiteFriedrichs
-open BookProof.GaussCoreQuadBounds
 open BookProof.HermiteProductCore
 open BookProof.QgHermiteFriedrichs
 open BookProof.QgHermiteOscillator

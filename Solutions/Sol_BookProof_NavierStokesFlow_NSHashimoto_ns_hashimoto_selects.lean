@@ -28,7 +28,7 @@ open BookProof.HermiteGalerkin
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 

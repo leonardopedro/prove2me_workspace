@@ -14,7 +14,7 @@ import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.NavierStokesFlow

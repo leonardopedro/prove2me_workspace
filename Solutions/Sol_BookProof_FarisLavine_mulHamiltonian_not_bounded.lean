@@ -32,8 +32,8 @@ theorem solution (lam : ℕ → ℝ) (hlam : ∀ C : ℝ, ∃ n, C < |lam n|) :
     ext m
     by_cases hmn : m = n
     · subst hmn
-      simp [mulHamiltonian, mulBasis, mulSymbolFun, lp.single_apply]
-    · simp [mulHamiltonian, mulBasis, mulSymbolFun, lp.single_apply, Pi.single_eq_of_ne hmn]
+      simp [mulHamiltonian, mulSymbolOp, mulBasis, mulSymbolFun, lp.single_apply]
+    · simp [mulHamiltonian, mulSymbolOp, mulBasis, mulSymbolFun, lp.single_apply, Pi.single_eq_of_ne hmn]
   have hnorm : ‖(lp.single 2 n (1 : ℂ) : L2Nat)‖ = 1 := by
     simp
   rw [hval, norm_smul] at hb

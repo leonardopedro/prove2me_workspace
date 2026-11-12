@@ -1,4 +1,45 @@
--- Generated from ChapterQgVielbeinModeInstance.lean — 
+-- Generated from ChapterQgVielbeinModeInstance.lean — theorem BookProof.QgVielbeinModeInstance.qgLattice_ext_core
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterFarisLavine
+import Mathlib
+import Definitions.Def_ChapterQgVielbeinModeInstance
+import Definitions.Def_ChapterQgOuterFockCoreFL
+import Definitions.Def_ChapterScalaronFiberFL
+open BookProof.QgOuterFockCoreFL
+open BookProof.QgOuterFockCoreFL.CoreData
+open BookProof.ScalaronFiberFL
+open BookProof.ScalaronFiberFL.WallPot
+open BookProof.QgVielbeinModeInstance
+
+
+
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
+
+noncomputable section
+
+variable {ι : Type*}
+
+
+
+
+
+
+variable [Fintype ι] [DecidableEq ι]
+
+
+
+
+
+
+
+
+
+
+
+variable (L : ℕ) [NeZero L]
+
+
 theorem BookProof.QgVielbeinModeInstance.qgLattice_ext_core (W : WallPot) (sig : VMode L → ℝ) (hsig : ∀ a, 1 ≤ sig a) (g : ℝ)
     (p : secCore (ι := VMode L)) :
     (secData W (qgLatticeModes L sig hsig g)).ext

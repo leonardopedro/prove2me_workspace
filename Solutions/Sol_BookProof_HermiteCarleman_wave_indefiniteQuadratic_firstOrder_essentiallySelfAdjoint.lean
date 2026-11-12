@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.wave_indefiniteQuadratic_firstOrder_essentiallySelfAdjoint
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HermiteCarleman_mixOp_essentiallySelfAdjoint
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine

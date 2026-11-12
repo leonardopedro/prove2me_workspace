@@ -1,7 +1,6 @@
 -- Generated from ChapterQgVielbeinModeInstance.lean — solution of BookProof.QgVielbeinModeInstance.qgLattice_ext_core
 import Mathlib
 import Definitions.Def_ChapterQgVielbeinModeInstance
-import Theorems.Thm_BookProof_ScalaronOuterFockFL_secData_ext_core
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterFarisLavine

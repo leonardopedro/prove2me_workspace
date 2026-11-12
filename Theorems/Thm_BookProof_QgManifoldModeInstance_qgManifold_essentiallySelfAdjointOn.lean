@@ -14,7 +14,7 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterLeafGaps
 import Definitions.Def_ChapterQgOuterFockFlow
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterSirkBandLedger
 open BookProof.FockSecondQuantization
 open BookProof.QgOuterFockCoreFL

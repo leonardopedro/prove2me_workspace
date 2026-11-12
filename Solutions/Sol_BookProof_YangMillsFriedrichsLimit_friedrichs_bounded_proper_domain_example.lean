@@ -1,5 +1,6 @@
 -- Generated from ChapterYangMillsFriedrichsLimit.lean — solution of BookProof.YangMillsFriedrichsLimit.friedrichs_bounded_proper_domain_example
 import Mathlib
+import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_memℓp_one_div_succ
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_friedrichs_bounded_nontrivial_example
 import Theorems.Thm_BookProof_YangMillsFriedrichsLimit_not_mem_span_of_repr_ne_zero
@@ -39,4 +40,4 @@ theorem solution :
       simpa using hne
     have hnot : x ∉ D := not_mem_span_of_repr_ne_zero b x hcoeff
     intro htop
-    exact hnot (by rw [htop]; trivi
+    exact hnot (by rw [htop]; trivial)

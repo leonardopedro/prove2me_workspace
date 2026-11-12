@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.mixOp_symmetric
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HyperbolicQuadratic_quadOp_symmetric
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine

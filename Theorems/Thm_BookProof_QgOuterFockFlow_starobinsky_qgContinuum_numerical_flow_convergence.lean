@@ -5,14 +5,12 @@ import Definitions.Def_ChapterQgContinuumModeInstance
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFlow
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterQgOuterFockFlow
 open BookProof.EsaClosure
 open BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockCoreFL.CoreData
@@ -20,10 +18,6 @@ open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent
 open BookProof.StoneBridge
-open BookProof.QgOuterFockFlow
-
-
-
 open Filter Topology
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgContinuumModeInstance

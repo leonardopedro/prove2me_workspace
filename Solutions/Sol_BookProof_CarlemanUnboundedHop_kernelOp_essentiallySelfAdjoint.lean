@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.kernelOp_essentiallySelfAdjoint
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_kernelOp_deficiencyTrivialAt
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa

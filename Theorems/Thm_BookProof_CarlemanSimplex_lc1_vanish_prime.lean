@@ -1,7 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.lc1_vanish'
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
@@ -10,6 +11,7 @@ variable {lam : (Fin d →₀ ℕ) → ℝ} {w : Fin d → ℂ} {W M : Fin d →
 
 
 open Finset
+open BookProof.CarlemanTwoStep
 
 noncomputable section
 

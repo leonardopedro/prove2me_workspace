@@ -14,9 +14,10 @@ open BookProof.HashimotoShiftInvert BookProof.QuantumGravityDensitized
 noncomputable section
 
 set_option maxHeartbeats 1000000 in
-theorem solution (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
+theorem solution {d : ℕ} (j k : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     pderiv j (pderiv k p) = pderiv k (pderiv j p) := by
-
+  -- Second partials commute: both sides are additive, so it suffices to check
+  -- constants and the one-variable multiplication step of `induction_on`.
   classical
   induction p using MvPolynomial.induction_on with
   | C a => simp

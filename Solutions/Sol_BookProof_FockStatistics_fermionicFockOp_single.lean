@@ -32,11 +32,7 @@ variable {F G : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {Hs : IPSpace} [CompleteSpace Hs.carrier] {D : Submodule ℂ Hs.carrier}
   (A : D →ₗ[ℂ] Hs.carrier) (hdense : Dense (D : Set Hs.carrier)) (hsym : SymmetricOn D A)
   (hesa : EssentiallySelfAdjointOn D A)
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
 variable (D₀ : Submodule ℂ Hs.carrier)
-variable {D₀ : Submodule ℂ Hs.carrier}
-variable (Hs : IPSpace) (D : Submodule ℂ Hs.carrier) (A : D →ₗ[ℂ] Hs.carrier)
-  (D₀ : Submodule ℂ Hs.carrier)
 
 set_option maxHeartbeats 1000000 in
 theorem solution (n : ℕ)

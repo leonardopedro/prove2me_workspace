@@ -26,6 +26,7 @@ open BookProof.DirectSumEsa
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL
 open BookProof.GaussCoreQuadBounds BookProof.SqSumFarisLavine
+open BookProof.SqSumOuterFamily
 
 noncomputable section
 

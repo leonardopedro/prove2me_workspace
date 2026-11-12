@@ -38,7 +38,7 @@ theorem BookProof.QgPhysicalSectorIdentity.coupling_essentiallySelfAdjointOn_cor
     (h : ι × ι → ℂ)
     (hsum : Summable fun k : ι × ι => ‖h k‖ * (ω k.1 + ω k.2 + 2)) :
     EssentiallySelfAdjointOn (lpFiniteModes (Idx ι))
-      ((fockH hω (fun k : ι × ι => creIdx k.1) (fun k : ι × ι => annIdx k.2) h
-          (fun p : ι × ι => deg_pair_le_two p.1 p.2)
+      (        (FockQuadratic.fockH hω (fun k : ι × ι => creIdx k.1) (fun k : ι × ι => annIdx k.2) h
+          (fun p : ι × ι => (by simp [creIdx, annIdx]))
           (coupling_weighted_summable h hsum)).comp
         (Submodule.inclusion (finiteModes_le_maxDom (sig ω)))) := by sorry

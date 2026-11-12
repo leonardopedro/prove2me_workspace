@@ -20,4 +20,4 @@ theorem solution (f : ℤ → ℝ) :
     · rintro ⟨eta, h⟩
       exact (mulOp_adjoint_apply f h).2
     · intro hphi
-      exact ⟨mulOp f ⟨phi, h
+      exact ⟨mulOp f ⟨phi, hphi⟩, fun psi => mulOp_symmetric f psi ⟨phi, hphi⟩⟩

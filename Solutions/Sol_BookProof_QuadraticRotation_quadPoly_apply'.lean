@@ -23,4 +23,9 @@ theorem solution (c : Fin d → ℝ) (p : MvPolynomial (Fin d) ℂ) :
     quadPoly c p = ∑ i, ((c i : ℝ) : ℂ) •
       (momPoly i (momPoly i p) + (1/4 : ℂ) • (X i * (X i * p))) := by
 
-  simp [quadPoly, oscPoly, LinearMap.sum_apply]
+  -- The platform's published def bundles STRIP the theorem `mulXPoly_apply`
+  -- (`@[simp]` in the workspace, a `Thm_*` node on the platform), so the local
+  -- `simp [quadPoly, oscPoly]` closes here and leaves `mulXPoly i ?x` unreduced
+  -- there.  Reduce term by term instead: each summand is definitionally equal.
+  rw [quadPoly, LinearMap.sum_apply]
+  exact Finset.sum_congr rfl fun i _ => rfl

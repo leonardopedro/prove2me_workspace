@@ -1,11 +1,5 @@
 -- Generated from ChapterQgOuterFockFlow.lean — solution of BookProof.QgOuterFockFlow.comparison_dom_dense
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFlow
-open BookProof.QgOuterFockFlow
-
-
-
-
 open Filter Topology
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgContinuumModeInstance

@@ -3,6 +3,7 @@ import Mathlib
 import Definitions.Def_ChapterQuadraticFockEsa
 import Theorems.Thm_BookProof_QuadFockEsa_pgLp_hcomb
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs

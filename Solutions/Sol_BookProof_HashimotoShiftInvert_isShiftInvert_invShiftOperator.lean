@@ -21,8 +21,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteS
   {Dom : Submodule ℂ F}
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.QgOuterFockFL
+set_option maxHeartbeats 1000000 in
 theorem solution (R : F →L[ℂ] F) (hinj : Function.Injective R) (γ : ℝ) :
     IsShiftInvert (invShiftOperator R hinj γ) γ R := by
 

@@ -2,8 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterDegKatoEsa
 import Theorems.Thm_BookProof_DegKatoEsa_norm_le_cut_tail
-import Theorems.Thm_BookProof_QgOneParticleCc_exists_cut_derivative_bounds
-import Theorems.Thm_BookProof_QgOneParticleCc_tendsto_tailNorm
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterQgHermiteCore

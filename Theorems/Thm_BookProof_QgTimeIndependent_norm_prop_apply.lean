@@ -1,10 +1,10 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — theorem BookProof.QgTimeIndependent.norm_prop_apply
 import Definitions.Def_ChapterSirkTrotterKato
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 open BookProof.QgTimeIndependent
 
 

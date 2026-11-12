@@ -19,6 +19,7 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterLeafGaps
 import Definitions.Def_ChapterSirkBandLedger
+import Definitions.Def_ChapterNsFourierElimination
 open BookProof.YangMillsHermite
 
 
@@ -29,6 +30,7 @@ open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.QgOuterFockFL
 open BookProof.FockSecondQuantization BookProof.FockSchur
 open BookProof.HermiteGalerkin BookProof.NavierStokesFlow BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.EsaClosure
+open BookProof.NsFullEuler
 
 noncomputable section
 

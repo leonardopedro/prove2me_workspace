@@ -19,6 +19,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
+open BookProof.FockStatistics
 open BookProof.HermiteProductCore
 open BookProof.TensorCore
 

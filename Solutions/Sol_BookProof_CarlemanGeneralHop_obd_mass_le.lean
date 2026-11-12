@@ -1,10 +1,10 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.obd_mass_le
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_obd_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -26,6 +26,6 @@ theorem solution {B : ℝ} (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ 
     (p m : Fin d →₀ ℕ) (hp : ∀ k, p k ≤ 2) (M : ℕ) :
     ∑ N ∈ Finset.range M, ∑ a ∈ obd d N p m, ‖u a‖ ^ 2 ≤ 2 * B := by
 
-  have := CarlemanTwoStep.sum_range_of_multiplicity (u := u) 2 hbes
+  have := BookProof.CarlemanTwoStep.sum_range_of_multiplicity (u := u) 2 hbes
     (fun N => obd d N p m) (obd_multiplicity p m hp) M
   simpa using this

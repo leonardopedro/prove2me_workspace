@@ -1,13 +1,12 @@
 -- Generated from ChapterModeQuadraticEsa.lean — solution of BookProof.ModeQuadratic.momPoly_eq_lop
 import Mathlib
-import Definitions.Def_ChapterModeQuadraticEsa
-import Theorems.Thm_BookProof_QuadratureEsa_momPoly_eq_cre_sub_ann
+import Definitions.Def_ChapterModeQuadraticEsaPromoted
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadratureEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato

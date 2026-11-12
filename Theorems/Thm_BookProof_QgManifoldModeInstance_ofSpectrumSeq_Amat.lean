@@ -12,7 +12,7 @@ import Mathlib
 import Definitions.Def_ChapterQgManifoldModeInstance
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterQgOuterFockFlow
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterShiftedQuadraticEsa
 
 

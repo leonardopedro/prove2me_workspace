@@ -11,6 +11,7 @@ import Definitions.Def_ChapterRelationShiftInvert
 
 open BookProof.PositiveSquareRoot
 open BookProof.HashimotoShiftInvert
+open BookProof.NonnegUnitaryGroup
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T T₁ T₂ : Submodule ℂ (F × F)}

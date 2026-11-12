@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterNsSymmetricSector
 import Theorems.Thm_BookProof_NsSymmetricSector_nsSpOp_symmetricOn
 import Theorems.Thm_BookProof_NsSymmetricSector_nsSpOp_esa
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Definitions.Def_ChapterNsOneBodyDGamma
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterYangMillsFriedrichs
@@ -20,6 +19,7 @@ import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.NsSymmetricSector
 
 

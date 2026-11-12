@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.mem_face
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
@@ -35,4 +35,4 @@ theorem solution {d N : ℕ} {i : Fin d} {a : Fin d →₀ ℕ} :
     a ∈ face d N i ↔ (∀ j, a j ≤ N) ∧ a i = N := by
 
   classical
-  rw [face, Finset.mem_filter, mem_cube]
+  rw [face, Finset.mem_filter, mem_cube_inc]

@@ -1,5 +1,6 @@
 -- Generated from ChapterQuadraticFockEsa.lean — theorem BookProof.QuadFockEsa.inner_hermiteMvLp_hcomb
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs

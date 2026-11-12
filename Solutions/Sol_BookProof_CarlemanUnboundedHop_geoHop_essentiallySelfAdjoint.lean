@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_kernelOp_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_geo_summable_tail
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_geoHop_bound

@@ -1,7 +1,7 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.ladder_eq_zero
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
 import Theorems.Thm_BookProof_HermiteCarleman_flux_identity
 import Theorems.Thm_BookProof_HermiteCarleman_flux_bound
 import Theorems.Thm_BookProof_HermiteCarleman_faces_le
@@ -93,7 +93,7 @@ theorem solution {B : ℝ} (hz : z.im ≠ 0)
   have hlow : ∀ N : ℕ, N₀ ≤ N → ‖u a₀‖ ^ 2 ≤ ∑ a ∈ cube d N, ‖u a‖ ^ 2 := by
     intro N hN
     refine Finset.single_le_sum (f := fun a => ‖u a‖ ^ 2) (fun a _ => by positivity) ?_
-    rw [mem_cube]
+    rw [mem_cube_inc]
     intro i
     exact le_trans (Finset.le_sup (f := fun i : Fin d => a₀ i) (Finset.mem_univ i)) hN
   have hcpos : 0 < |z.im| * ‖u a₀‖ ^ 2 := by

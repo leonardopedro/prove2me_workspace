@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.ladderRec_of_deficiency
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesDeficiency
 import Definitions.Def_ChapterNavierStokesEsa

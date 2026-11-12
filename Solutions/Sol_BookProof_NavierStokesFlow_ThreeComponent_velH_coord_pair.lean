@@ -21,8 +21,8 @@ open LpNat BookProof.FarisLavine IkebeKato ShiftHamiltonian SignedShift
 
 variable (A : Matrix (Fin 3) (Fin 3) ℝ) (c : Fin 3 → ℝ)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.HermiteFarisLavine BookProof.NavierStokesFlow.SignedShift.SignedHop
+set_option maxHeartbeats 1000000 in
 theorem solution :
     ((velH A c (velState A c ![0, 0, 0]) : L2I Vel) : Vel → ℂ) ![1, 1, 0]
       = Complex.I * (((A 0 1 + A 1 0) / 2 : ℝ) : ℂ) := by

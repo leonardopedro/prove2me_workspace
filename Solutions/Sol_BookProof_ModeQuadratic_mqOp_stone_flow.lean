@@ -1,6 +1,6 @@
 -- Generated from ChapterModeQuadraticEsa.lean — solution of BookProof.ModeQuadratic.mqOp_stone_flow
 import Mathlib
-import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterModeQuadraticEsaPromoted
 import Theorems.Thm_BookProof_ModeQuadratic_mqOp_symmetric
 import Theorems.Thm_BookProof_ModeQuadratic_mqOp_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
@@ -10,7 +10,7 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadratureEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHermiteProductCore

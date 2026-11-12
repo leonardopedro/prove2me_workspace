@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanTwoStep.lean — solution of BookProof.CarlemanTwoStep.facesK_le
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_faceK_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanTwoStep
 
 

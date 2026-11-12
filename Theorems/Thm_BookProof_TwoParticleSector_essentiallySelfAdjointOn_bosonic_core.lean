@@ -11,6 +11,10 @@ import Theorems.Thm_BookProof_TensorCore_sectorCore_le_sectorDom
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorCore
+import Theorems.Thm_BookProof_TwoParticleSector_restrictOp_sectorOp_swapH
+import Theorems.Thm_BookProof_TwoParticleSector_isReducingProjection_bosonicProj
+import Theorems.Thm_BookProof_ReducedEsa_commutes_symProj
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
 open BookProof.TensorCore
@@ -31,7 +35,7 @@ variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TwoParticleSector.essentiallySelfAdjointOn_bosonic_core (hcore : IsGraphCore D A)
     (hesa : EssentiallySelfAdjointOn (sectorDom Hs D₂ 2) (sectorOp Hs D₂ A 2)) :
-    EssentiallySelfAdjointOn
+    EssentiallySelfAdjointOn (F := sector (bosonicProj Hs))
       (redDom (bosonicProj Hs) (sectorCore Hs D₂ D 2))
       (redOp (restrictOp (sectorOp Hs D₂ A 2) (sectorCore_le_sectorDom Hs D₂ D 2))
         (isReducingProjection_bosonicProj Hs)

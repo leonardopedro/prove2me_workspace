@@ -8,7 +8,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
@@ -25,11 +25,6 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-open BookProof.QymTimeIndependent
-
-
-
-
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
@@ -41,7 +36,7 @@ open BookProof.NavierStokesFlow
 open BookProof.EsaClosure
 open BookProof.FockOneParticleGap
 open BookProof.FockSecondQuantization
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section
@@ -52,7 +47,7 @@ variable (e : ℕ ≃ (Fin 99 →₀ ℕ)) (fabc : Fin 8 → Fin 8 → Fin 8 →
 
 set_option maxHeartbeats 1000000 in
 theorem solution (en : ℕ ≃ Conf) (lam : ℕ → ℝ)
-    (hlam : ∀ k, 0 ≤ lam k) (hdiag : ymFockCol e fabc = diagCol lam) :
+    (hlam : ∀ k, 0 ≤ lam k) (hdiag : ymFockCol e fabc = BookProof.QgCouplingDGammaSum.diagCol lam) :
     ∃ (T : UnboundedSelfAdjoint Fock) (S : ℕ → UnboundedSelfAdjoint Fock),
       IsSelfAdjointExtension (dGammaOp (ymFockCol e fabc)) T.op ∧
         (∀ n, IsSelfAdjointExtension
@@ -67,7 +62,7 @@ theorem solution (en : ℕ ≃ Conf) (lam : ℕ → ℝ)
           IsShiftInvertC T.op (((l : ℝ) : ℂ) * Complex.I) (-(T.resCLM l)) ∧
             (∀ n, IsShiftInvertC (S n).op (((l : ℝ) : ℂ) * Complex.I) (-((S n).resCLM l))) ∧
             ∀ u : Fock, Tendsto (fun n => -((S n).resCLM l u)) atTop (𝓝 (-(T.resCLM l u)))) ∧
-        ∀ (v : Fock) (t : ℝ), Tendsto (fun n => (S n).stoneU t v) atTop (𝓝 (T.stoneU t v)) :=
-  0 →
-            IsShiftInvertC T.op (((l : ℝ) : ℂ) * Complex.I) (-(T.resCLM l)) ∧
-              (∀ n, IsShiftInvertC (S n).op ((
+        ∀ (v : Fock) (t : ℝ), Tendsto (fun n => (S n).stoneU t v) atTop (𝓝 (T.stoneU t v)) := by
+  refine ymFock_timeIndependent_singleTime_of_esa e fabc en ?_
+  rw [hdiag]
+  exact dGammaOp_diagCol_essentiallySelfAdjoint hlam

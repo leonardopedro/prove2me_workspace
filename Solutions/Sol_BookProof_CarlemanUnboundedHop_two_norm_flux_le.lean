@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.two_norm_flux_le
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_theta_le_Theta
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_Theta_nonneg
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_Theta_antitone

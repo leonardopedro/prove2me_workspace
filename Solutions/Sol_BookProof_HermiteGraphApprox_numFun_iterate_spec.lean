@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
 import Theorems.Thm_BookProof_HermiteGraphApprox_contDiff_Lfun
 import Theorems.Thm_BookProof_HermiteGraphApprox_hasCompactSupport_Lfun
-import Theorems.Thm_BookProof_DegSchrodinger_contDiff_polyW
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterScalaronCoreEsa

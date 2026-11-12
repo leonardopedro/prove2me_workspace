@@ -1,10 +1,10 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.ibd_mass_le
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -26,6 +26,6 @@ theorem solution {B : ℝ} (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ 
     (m : Fin d →₀ ℕ) (M : ℕ) :
     ∑ N ∈ Finset.range M, ∑ b ∈ ibd d N m, ‖u b‖ ^ 2 ≤ B := by
 
-  have := CarlemanTwoStep.sum_range_of_multiplicity (u := u) 1 hbes
+  have := BookProof.CarlemanTwoStep.sum_range_of_multiplicity (u := u) 1 hbes
     (fun N => ibd d N m) (ibd_multiplicity m) M
   simpa using this

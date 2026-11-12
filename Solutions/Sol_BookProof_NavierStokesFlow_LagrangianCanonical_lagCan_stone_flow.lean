@@ -24,8 +24,8 @@ open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.EsaClosure BookProof.StoneBridge
+set_option maxHeartbeats 1000000 in
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     ∃ (T : UnboundedSelfAdjoint (L2I Vel)) (U : ℝ → (L2I Vel →L[ℂ] L2I Vel)),
       IsSelfAdjointExtension (lagrangianCore (lagCanData nu hnu f)) T.op ∧ IsStoneFlow T U :=

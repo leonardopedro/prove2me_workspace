@@ -20,7 +20,7 @@ open BookProof.ChapterOrthogonalSums
 variable {G : Type*} [Group G] {X : Type*} [MulAction G X]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
-variable (S : ImprimitivitySystem G X E)
+variable (S : BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem G X E)
 
 theorem BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem.inner_pvm_eq_zero {x y : X} (hxy : x ≠ y) (ψ φ : E) :
     ⟪S.p x ψ, S.p y φ⟫_ℂ = 0 := by sorry

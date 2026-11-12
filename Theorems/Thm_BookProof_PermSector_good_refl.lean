@@ -23,5 +23,4 @@ variable (Hs : IPSpace) (D₂ : Submodule ℂ Hs.carrier) (A : D₂ →ₗ[ℂ] 
   (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.PermSector.good_refl (n : ℕ) :
-    Good Hs D₂ A D n (LinearIsometryEquiv.refl ℂ _) (LinearIsometryEquiv.refl ℂ _) where
-  incl _ := by sorry
+    Good Hs D₂ A D n (LinearIsometryEquiv.refl ℂ _) (LinearIsometryEquiv.refl ℂ _) := by sorry

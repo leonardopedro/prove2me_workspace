@@ -1,7 +1,6 @@
 -- Generated from ChapterHermiteGraphApprox.lean — solution of BookProof.HermiteGraphApprox.contDiff_lapCS
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
-import Theorems.Thm_BookProof_QgOneParticleCc_contDiff_dcoord
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterScalaronCoreEsa

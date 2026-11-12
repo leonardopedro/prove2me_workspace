@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterSmYukawaCoupling
 import Theorems.Thm_BookProof_SmYukawaCoupling_smYukawa_h_esa
 import Theorems.Thm_BookProof_SmYukawaCoupling_smYukawaFullHam_symmetricOn
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Theorems.Thm_BookProof_SmFullEnclosure_smFullCore_dense
 import Definitions.Def_ChapterSmDiracYukawa
 import Definitions.Def_ChapterSmCarAlgebra
@@ -21,6 +20,7 @@ import Definitions.Def_ChapterTensorKatoRellich
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterSmHamiltonian
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.SmYukawaCoupling
 
 

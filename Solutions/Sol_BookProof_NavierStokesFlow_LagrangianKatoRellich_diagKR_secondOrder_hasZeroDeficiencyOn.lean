@@ -4,6 +4,7 @@ import Definitions.Def_ChapterNavierStokesLagrangianKatoRellich
 import Theorems.Thm_BookProof_NavierStokesFlow_LagrangianKatoRellich_diagKR_secondOrder
 import Definitions.Def_ChapterNavierStokesFarisLavineLift
 import Definitions.Def_ChapterSirkBandLedger
+import Theorems.Thm_BookProof_NavierStokesFlow_DiagonalEsa_diagOp_hasZeroDeficiencyOn
 open BookProof.NavierStokesFlow
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 
@@ -16,8 +17,8 @@ open Filter Topology
 open FullEsa LagrangianEsa BookProof.FarisLavine BookProof.KatoRellich
 open BookProof.EsaClosure BookProof.HashimotoShiftInvert BookProof.HermiteGalerkin
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.LagrangianEsa BookProof.NavierStokesFlow.LpNat BookProof.NavierStokesFlow.DiagonalEsa
+set_option maxHeartbeats 1000000 in
 theorem solution :
     HasZeroDeficiencyOn diagKR.D (secondOrder diagKR) := by
 

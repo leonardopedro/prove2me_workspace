@@ -7,7 +7,7 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterQgCouplingDGammaSum
@@ -23,11 +23,6 @@ import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesIkebeKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-open BookProof.QymTimeIndependent
-
-
-
-
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
@@ -38,7 +33,7 @@ open BookProof.YangMillsHermite BookProof.HermiteGalerkin BookProof.HermiteProdu
 open BookProof.NavierStokesFlow
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
 
 noncomputable section

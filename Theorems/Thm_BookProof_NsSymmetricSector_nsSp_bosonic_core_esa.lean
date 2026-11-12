@@ -20,6 +20,9 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
+import Definitions.Def_ChapterFockStatisticsEsa
+open BookProof.YangMillsNonAbelianEsa
+open BookProof.FockStatistics
 open BookProof.DirectSumEsa
 open BookProof.HermiteProductCore
 

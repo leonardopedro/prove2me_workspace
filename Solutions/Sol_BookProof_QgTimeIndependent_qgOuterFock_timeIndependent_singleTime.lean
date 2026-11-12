@@ -1,9 +1,6 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.qgOuterFock_timeIndependent_singleTime
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
-import Theorems.Thm_BookProof_QgTimeIndependent_norm_prop_apply
-import Theorems.Thm_BookProof_QgTimeIndependent_prop_apply_prop
-import Theorems.Thm_BookProof_QgTimeIndependent_prop_time_translation
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Theorems.Thm_BookProof_QgTimeIndependent_eq_prop_of_isSchrodingerSolution
 import Theorems.Thm_BookProof_SirkSingleTime_qgOuterFock_singleTime_shiftInvert_convergence
 import Definitions.Def_ChapterSirkTrotterKato
@@ -11,6 +8,10 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterScalaronFiberFL
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterQgTruncationResolvent
 open BookProof.QgTimeIndependent
 
 
@@ -19,7 +20,12 @@ open BookProof.QgTimeIndependent
 open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
+open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
+open BookProof.QgTruncationResolvent
+-- `qgOuterFock_singleTime_shiftInvert_convergence` is declared in this
+-- namespace by its thm stub (the stub opens it; the sol did not).
+open BookProof.SirkSingleTime
 
 noncomputable section
 

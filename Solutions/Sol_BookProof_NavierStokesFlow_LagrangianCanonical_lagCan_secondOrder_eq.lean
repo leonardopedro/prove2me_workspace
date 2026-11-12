@@ -25,8 +25,8 @@ open CanonicalVector ThreeComponent
 
 variable (nu : ℝ)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.BRSTNilpotent BookProof.ChapterF7 BookProof.NavierStokesFlow.LagrangianEsa.LagrangianFullData
+set_option maxHeartbeats 1000000 in
 theorem solution (hnu : 0 < nu) (f : Fin 3 → ℝ) :
     secondOrder (lagCanData nu hnu f) = lagT nu := by
   simp only [lagCanData, lagT]

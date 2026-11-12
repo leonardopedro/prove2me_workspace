@@ -14,6 +14,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterA4
 import Definitions.Def_ChapterQgFourierElimination
+import Definitions.Def_ChapterQgFourierElimForms
 open BookProof.QgFullEliminated
 
 
@@ -24,7 +25,7 @@ open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
 open BookProof.StoneBridge BookProof.EsaClosure BookProof.ChapterStoneResolvent
 open BookProof.DirectSumEsa BookProof.ScalaronEsa
-open BookProof.QgVielbeinScalaronGaugeFL BookProof.QgFourierElim
+open BookProof.QgFourierElim
 
 noncomputable section
 

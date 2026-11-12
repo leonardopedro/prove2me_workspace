@@ -2,7 +2,7 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterDirectSumEsa
 import Mathlib
@@ -15,10 +15,10 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterSqSumOuterFamily
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteProductCore
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent

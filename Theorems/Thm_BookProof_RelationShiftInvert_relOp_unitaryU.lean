@@ -6,6 +6,9 @@ import Definitions.Def_ChapterNonnegUnitaryGroup
 import Definitions.Def_ChapterComplexShiftCore
 import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
+import Theorems.Thm_BookProof_RelationShiftInvert_unitaryU_mem_relDomain
+open BookProof.NonnegUnitaryGroup
+open BookProof.RelationShiftInvert
 
 
 

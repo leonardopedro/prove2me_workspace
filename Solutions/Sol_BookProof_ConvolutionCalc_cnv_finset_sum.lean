@@ -1,6 +1,7 @@
 -- Generated from ChapterConvolutionCalc.lean — solution of BookProof.ConvolutionCalc.cnv_finset_sum
 import Mathlib
 import Definitions.Def_ChapterConvolutionCalc
+import Theorems.Thm_BookProof_ConvolutionCalc_cnv_apply
 import Definitions.Def_ChapterQgOneParticleCcEsa
 import Definitions.Def_ChapterDegSchrodingerCore
 import Definitions.Def_ChapterHermiteProductCore

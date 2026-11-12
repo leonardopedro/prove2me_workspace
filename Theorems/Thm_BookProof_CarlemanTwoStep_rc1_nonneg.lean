@@ -1,7 +1,7 @@
 -- Generated from ChapterCarlemanTwoStep.lean — theorem BookProof.CarlemanTwoStep.rc1_nonneg
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Mathlib
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.CarlemanTwoStep
 

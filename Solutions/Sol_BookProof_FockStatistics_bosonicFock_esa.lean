@@ -15,16 +15,18 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterFockStatisticsCompletion
-open BookProof.FockStatistics
-
+import Definitions.Def_ChapterScalarDGammaEsa
+open BookProof.TensorCore
 
 
 
 open scoped TensorProduct ENNReal
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa BookProof.TensorCore
+open BookProof.TensorPerm BookProof.PermSector
+open BookProof.SecondQuantizationCore BookProof.DirectSumEsa
+open BookProof.FockStatistics
 open BookProof.GroupAverage BookProof.TensorPerm BookProof.PermSector
 open BookProof.SecondQuantizationCore BookProof.EsaOneParticle BookProof.DirectSumEsa
-open BookProof.TensorCore
 
 noncomputable section
 
@@ -41,6 +43,7 @@ variable {D₀ : Submodule ℂ Hs.carrier}
 set_option maxHeartbeats 1000000 in
 include hdense hesa hsym in
 theorem solution :
-    EssentiallySelfAdjointOn (bosonicFockDom Hs D) (bosonicFockOp Hs D A) :=
-  dsOp_essentiallySelfAdjointOn _
-      (fun n => essentiallySelfAdjointOn_bosonic_of_esa A hdense hsym hesa n)
+    EssentiallySelfAdjointOn (bosonicFockDom Hs D) (bosonicFockOp Hs D A) := 
+  dsOp_essentiallySelfAdjointOn (fun n : ℕ => bosonicSectorOp Hs D A n)
+      (fun n => essentiallySelfAdjointOn_bosonic_of_esa (Hs := Hs) (D := D)
+        A hdense hsym hesa n)

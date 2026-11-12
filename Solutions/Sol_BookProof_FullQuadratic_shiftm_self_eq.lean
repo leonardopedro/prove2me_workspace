@@ -1,7 +1,6 @@
 -- Generated from ChapterFullQuadraticEsa.lean — solution of BookProof.FullQuadratic.shiftm_self_eq
 import Mathlib
 import Definitions.Def_ChapterFullQuadraticEsa
-import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterFarisLavine
@@ -9,9 +8,9 @@ import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterNavierStokesDifferentialL2
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadratureEsa
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterCarlemanSimplex
-import Definitions.Def_ChapterModeQuadraticEsa
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterCarlemanSimplexPromoted
+import Definitions.Def_ChapterModeQuadraticEsaPromoted
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
@@ -41,10 +40,18 @@ variable {d : ℕ}
 set_option maxHeartbeats 1000000 in
 theorem solution {a : Fin d →₀ ℕ} {i : Fin d} (h : 1 ≤ a i) : shiftm a i i = a := by
 
+  -- `tsub_add_cancel_of_le'` is a CarlemanSimplex *problem node* (Open), so it
+  -- cannot be imported; the cancellation is two lines, inline it.
+  have hcancel : ∀ {P : Fin d →₀ ℕ}, P ≤ a → a - P + P = a := by
+    intro P hP
+    ext k
+    have hk : P k ≤ a k := (Finsupp.le_def.mp hP) k
+    simp only [Finsupp.add_apply, Finsupp.tsub_apply]
+    omega
   have hle : Finsupp.single i 1 ≤ a := by
     rw [Finsupp.le_def]
     intro k
     by_cases hk : k = i
     · subst hk; simpa using h
     · simp [Ne.symm hk]
-  rw [shiftm, tsub_add_cancel_of_le' hle]
+  rw [shiftm, hcancel hle]

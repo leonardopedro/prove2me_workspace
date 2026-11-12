@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSmFullEnclosure
 import Theorems.Thm_BookProof_SmDiracYukawa_smFermiHam_eq
-import Theorems.Thm_BookProof_TensorSumEsa_cpairOp_apply
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterDirectSumEsa

@@ -1,14 +1,14 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.sum_ltermP
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_add
 import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_tsub_of_le
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_simplexF
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_sInn
 import Theorems.Thm_BookProof_CarlemanSimplex_ltermP_shift
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 
@@ -23,6 +23,18 @@ variable {d : ℕ}
 
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
+
+/-- Cancellation of a truncated subtraction below a multi-index.  The platform's
+published `ChapterCarlemanSimplex` bundle predates this lemma, and a solution may
+not rely on unpublished declarations, so it is proved locally (§5a embed helper). -/
+private theorem tsub_cancel_le {P a : Fin d →₀ ℕ} (h : P ≤ a) : a - P + P = a := by
+  ext j
+  have hj : P j ≤ a j := by
+    have := h
+    rw [Finsupp.le_def] at this
+    exact this j
+  simp only [Finsupp.add_apply, Finsupp.tsub_apply]
+  omega
 
 set_option maxHeartbeats 1000000 in
 theorem solution {w : ℂ} {rc lc : (Fin d →₀ ℕ) → ℝ} {P : Fin d →₀ ℕ}
@@ -49,10 +61,10 @@ theorem solution {w : ℂ} {rc lc : (Fin d →₀ ℕ) → ℝ} {P : Fin d →�
       refine ⟨by rw [deg_add]; omega, le_add_self⟩
     · intro a ha
       simp only [Finset.mem_filter] at ha
-      exact tsub_add_cancel_of_le' ha.2
+      exact tsub_cancel_le ha.2
     · intro b _; exact add_tsub_cancel_right b P
     · intro a ha
       simp only [Finset.mem_filter] at ha
-      rw [tsub_add_cancel_of_le' ha.2]
+      rw [tsub_cancel_le ha.2]
   rw [hstep, map_sum]
   exact Finset.sum_congr rfl fun b _ => ltermP_shift hcomp b

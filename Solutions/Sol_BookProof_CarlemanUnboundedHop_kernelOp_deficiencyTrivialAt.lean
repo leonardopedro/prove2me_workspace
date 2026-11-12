@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.kernelOp_deficiencyTrivialAt
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_ladder_eq_zero_of_carleman
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_summable_normSq_lp
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_ladderRec_of_deficiency

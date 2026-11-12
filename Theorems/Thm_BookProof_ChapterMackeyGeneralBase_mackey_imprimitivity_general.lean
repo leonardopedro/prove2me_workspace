@@ -16,12 +16,12 @@ open BookProof.ChapterOrthogonalSums
 variable {G : Type*} [Group G] {X : Type*} [MulAction G X]
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
-variable (S : ImprimitivitySystem G X E)
-variable (S : ImprimitivitySystem G X E) (x₀ : X) (s : X → G)
+variable (S : BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem G X E)
+variable (S : BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem G X E) (x₀ : X) (s : X → G)
 variable {S x₀ s}
 
 theorem BookProof.ChapterMackeyGeneralBase.mackey_imprimitivity_general [CompleteSpace E] [DecidableEq X]
-    (S : ImprimitivitySystem G X E) (x₀ : X) (htrans : ∀ x : X, ∃ g : G, g • x₀ = x) :
+    (S : BookProof.ChapterMackeyGeneralBase.ImprimitivitySystem G X E) (x₀ : X) (htrans : ∀ x : X, ∃ g : G, g • x₀ = x) :
     ∃ s : X → G, (∀ x, s x • x₀ = x) ∧
       (∀ ψ φ : E, mackeyMap S s (ψ + φ) = mackeyMap S s ψ + mackeyMap S s φ) ∧
       (∀ (a : ℂ) (ψ : E), mackeyMap S s (a • ψ) = a • mackeyMap S s ψ) ∧

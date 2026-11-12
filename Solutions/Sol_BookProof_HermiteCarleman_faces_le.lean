@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.faces_le
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HermiteCarleman_mem_face
 import Theorems.Thm_BookProof_HermiteCarleman_sum_range_of_disjoint
 import Definitions.Def_ChapterHermiteProductCore

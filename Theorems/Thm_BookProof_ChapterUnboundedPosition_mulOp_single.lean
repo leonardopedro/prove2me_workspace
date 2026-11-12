@@ -1,6 +1,7 @@
 -- Generated from ChapterUnboundedPosition.lean — theorem BookProof.ChapterUnboundedPosition.mulOp_single
 import Mathlib
 import Definitions.Def_ChapterUnboundedPosition
+import Theorems.Thm_BookProof_ChapterUnboundedPosition_single_mem_mulDomain
 import Definitions.Def_ChapterContinuityUnitaryInfinite
 import Definitions.Def_ChapterF7
 import Definitions.Def_ChapterF7

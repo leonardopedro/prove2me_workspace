@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.ladder_eq_zero_of_carleman
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_eq_zero_of_flux_small
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_Theta_nonneg
 import Theorems.Thm_BookProof_CarlemanUnboundedHop_two_norm_flux_le

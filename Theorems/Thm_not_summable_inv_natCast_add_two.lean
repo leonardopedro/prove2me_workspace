@@ -1,5 +1,5 @@
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 
 open BookProof.ChapterCarlemanSimplex
 

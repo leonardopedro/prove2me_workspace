@@ -1,7 +1,6 @@
 -- Generated from ChapterYangMillsNonAbelianEsa.lean — solution of BookProof.YangMillsNonAbelianEsa.polyW_weylPotPoly
 import Mathlib
 import Definitions.Def_ChapterYangMillsNonAbelianEsa
-import Theorems.Thm_BookProof_DegSchrodinger_polyW_ofReal
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterQgHermiteCore

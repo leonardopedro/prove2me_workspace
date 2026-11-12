@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterNsLagrangianOuterFockEsa
 import Theorems.Thm_BookProof_NsLagrangianOuterFock_lagOneOp_symmetricOn
-import Theorems.Thm_BookProof_EsaOneParticle_symmetricOn_dGammaCoreOp_of_esa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterGraphCoreTransfer
 import Definitions.Def_ChapterTensorGraphCore
@@ -21,6 +20,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesEsa
 import Definitions.Def_ChapterNavierStokesThreeComponent
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.NsLagrangianOuterFock
 
 

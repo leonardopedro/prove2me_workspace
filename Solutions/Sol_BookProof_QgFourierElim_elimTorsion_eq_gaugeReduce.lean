@@ -2,15 +2,14 @@
 import Mathlib
 import Definitions.Def_ChapterQgFourierElimination
 import Theorems.Thm_BookProof_QgFourierElim_elimTorsion_eq_torsionCoef
-import Theorems.Thm_BookProof_QgBrstDerivativeGauge_gaugeReduce_extTorsionCoef
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterQgVielbeinModeInstance
 import Definitions.Def_ChapterQgContinuumModeInstance
-import Definitions.Def_ChapterQgBrstDerivativeGauge
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgOuterFockCoreFL
 import Definitions.Def_ChapterA4
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 open BookProof.QgFourierElim
 
 
@@ -18,9 +17,8 @@ open BookProof.QgFourierElim
 
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgVielbeinModeInstance BookProof.QgContinuumModeInstance
-open BookProof.QgBrstDerivativeGauge
 open BookProof.FarisLavine BookProof.QgOuterFockCoreFL
-open BookProof.QgVielbeinScalaronGaugeFL
+open BookProof.QgBrstDerivativeGauge
 
 noncomputable section
 

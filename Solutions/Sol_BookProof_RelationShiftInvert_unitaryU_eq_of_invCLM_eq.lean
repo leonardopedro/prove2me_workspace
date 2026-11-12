@@ -1,7 +1,6 @@
 -- Generated from ChapterRelationShiftInvert.lean — solution of BookProof.RelationShiftInvert.unitaryU_eq_of_invCLM_eq
 import Mathlib
 import Definitions.Def_ChapterRelationShiftInvert
-import Theorems.Thm_BookProof_PositiveSquareRoot_rel_eq_of_invCLM_eq
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegSquareRoot
 import Definitions.Def_ChapterNonnegResolvent

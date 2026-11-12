@@ -1,9 +1,6 @@
 -- Generated from ChapterSmComparisonEsa.lean — solution of BookProof.SmComparisonEsa.potLp_polyW
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
-import Theorems.Thm_BookProof_DegSchrodinger_continuous_polyW
-import Theorems.Thm_BookProof_DegSchrodinger_expBounded_polyW
-import Theorems.Thm_BookProof_DegSchrodinger_pgFun_mul_polyW
 import Theorems.Thm_BookProof_QgHermiteFriedrichs_potLp_coeFn
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa

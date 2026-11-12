@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterDegKatoEsa
 import Theorems.Thm_BookProof_DegKatoEsa_inner_ae_eq
-import Theorems.Thm_BookProof_DegSchrodinger_ccHamS_coeFn
 import Theorems.Thm_BookProof_ScalaronEsa_ccEquiv_coe
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave

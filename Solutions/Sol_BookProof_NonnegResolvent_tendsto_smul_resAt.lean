@@ -1,7 +1,6 @@
 -- Generated from ChapterNonnegResolvent.lean — solution of BookProof.NonnegResolvent.tendsto_smul_resAt
 import Mathlib
 import Definitions.Def_ChapterNonnegResolvent
-import Theorems.Thm_BookProof_NonnegResolvent_tendsto_smul_invCLMAt
 import Definitions.Def_ChapterClosureUniqueness
 import Definitions.Def_ChapterPositiveSquareRootUnique
 import Definitions.Def_ChapterNonnegSquareRoot

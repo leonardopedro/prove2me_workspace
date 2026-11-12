@@ -4,8 +4,8 @@ import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterHyperbolicQuadraticEsa
 import Definitions.Def_ChapterHermiteRelativeBound
 import Definitions.Def_ChapterQuadratureEsa
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Definitions.Def_ChapterModeQuadraticEsa
 import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterEsaClosureCore
@@ -21,6 +21,7 @@ open BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow.DifferentialL2
 open BookProof.YangMillsHermite
 open BookProof.FullQuadratic
+open BookProof.CarlemanSimplex
 
 
 

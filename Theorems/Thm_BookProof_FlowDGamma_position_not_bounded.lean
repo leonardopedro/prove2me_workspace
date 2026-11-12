@@ -9,6 +9,7 @@ import Definitions.Def_ChapterUnboundedPosition
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterShiftedQuadraticEsa
+open BookProof.FlowDGamma
 open BookProof.ChapterContinuityUnitaryInfinite
 open BookProof.ChapterUnboundedPosition
 

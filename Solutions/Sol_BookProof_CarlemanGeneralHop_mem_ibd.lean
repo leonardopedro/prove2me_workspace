@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.mem_ibd
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -25,4 +25,4 @@ theorem solution {N : ℕ} {m b : Fin d →₀ ℕ} :
     b ∈ ibd d N m ↔ (∀ k, b k ≤ N + 1) ∧ (∀ k, m k ≤ b k) ∧ ¬ (∀ k, b k ≤ N) := by
 
   classical
-  rw [ibd, Finset.mem_filter, mem_cube]
+  rw [ibd, Finset.mem_filter, mem_cube_inc]

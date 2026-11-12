@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — theorem BookProof.CarlemanUnboundedHop.geoHop_essentiallySelfAdjoint
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterKernelBound
 import Definitions.Def_ChapterNavierStokesEsa

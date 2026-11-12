@@ -1,6 +1,6 @@
 -- Generated from ChapterQgBrstDerivativeGauge.lean — solution of BookProof.QgBrstDerivativeGauge.restrict_essentiallySelfAdjointOn
 import Mathlib
-import Definitions.Def_ChapterQgBrstDerivativeGauge
+import Definitions.Def_ChapterQgBrstDerivativeGaugeV2
 import Theorems.Thm_BookProof_ScalaronOuterFockFL_secHam_essentiallySelfAdjointOn
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterScalaronOuterFockFL

@@ -13,8 +13,8 @@ variable {E : Type*} [AddCommGroup E] [Module ℂ E] {ι : Type*} [Fintype ι]
 variable {n : ℕ} (L : LagrangianNS n)
 variable {n : ℕ} (d : NSTruncation n)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.CanonicalVector
+set_option maxHeartbeats 1000000 in
 theorem solution :
     nsHamiltonian d = ∑ a : NSWordIndex, nsCoeff d.nu a • ((nsWord a).map (nsGen d)).prod := by
 

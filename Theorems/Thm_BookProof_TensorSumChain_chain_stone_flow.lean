@@ -16,6 +16,7 @@ open BookProof.StoneBridge
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.TensorCore
+open BookProof.ChapterStoneResolvent
 
 noncomputable section
 

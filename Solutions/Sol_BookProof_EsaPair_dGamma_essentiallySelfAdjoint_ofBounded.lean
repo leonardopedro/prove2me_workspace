@@ -8,6 +8,7 @@ import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterSirkTrotterKatoGalerkin
 import Definitions.Def_ChapterTensorGraphCore
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.EsaPair
 
 
@@ -17,6 +18,10 @@ open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
 open BookProof.DirectSumEsa
 open BookProof.TensorCore
+-- `fockSectorCore` lives in `BookProof.SecondQuantizationCore`
+-- (`Definitions.Def_ChapterSecondQuantizationCoreEsa`); the published bundle was
+-- compiled from its published text on 2026-11-06 and does declare it.
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

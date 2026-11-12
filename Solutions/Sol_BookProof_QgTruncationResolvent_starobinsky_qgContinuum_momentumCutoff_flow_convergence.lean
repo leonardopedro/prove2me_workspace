@@ -14,6 +14,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterQgContinuumModeInstance
 open BookProof.QgTruncationResolvent
 
 
@@ -27,6 +28,10 @@ open BookProof.ScalaronEsa BookProof.DirectSumEsa
 open BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
+-- `CMode` lives in `BookProof.QgContinuumModeInstance`
+-- (`Definitions.Def_ChapterQgContinuumModeInstance`); its published bundle was
+-- compiled from the published text on 2026-11-06 and does declare it.
+open BookProof.QgContinuumModeInstance
 
 noncomputable section
 

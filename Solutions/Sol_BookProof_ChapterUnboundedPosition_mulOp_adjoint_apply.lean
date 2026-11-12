@@ -24,4 +24,7 @@ theorem solution (f : ℤ → ℝ) {phi eta : L2Z}
       simpa [Complex.conj_ofReal] using hk
     refine ⟨hpt, ?_⟩
     change Memℓp _ 2
-    have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta :
+    have hfun : (fun k => (f k : ℂ) * (phi : ℤ → ℂ) k) = (eta : ℤ → ℂ) := funext hpt
+    rw [hfun]
+    exact lp.memℓp eta
+

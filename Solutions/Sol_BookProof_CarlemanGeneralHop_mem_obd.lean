@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.mem_obd
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -25,4 +25,4 @@ theorem solution {N : ℕ} {p m a : Fin d →₀ ℕ} :
     a ∈ obd d N p m ↔ (∀ k, a k ≤ N) ∧ (∀ k, m k ≤ a k) ∧ ∃ k, N < a k + p k := by
 
   classical
-  rw [obd, Finset.mem_filter, mem_cube]
+  rw [obd, Finset.mem_filter, mem_cube_inc]

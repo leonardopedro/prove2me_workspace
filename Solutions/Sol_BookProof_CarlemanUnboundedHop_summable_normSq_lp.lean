@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanUnboundedHop.lean — solution of BookProof.CarlemanUnboundedHop.summable_normSq_lp
 import Mathlib
-import Definitions.Def_ChapterCarlemanUnboundedHop
+import Definitions.Def_ChapterCarlemanUnboundedHopPromoted
 import Definitions.Def_ChapterNavierStokesDeficiency
 open BookProof.NavierStokesFlow.LpNat
 open BookProof.CarlemanUnboundedHop

@@ -1,6 +1,6 @@
 -- Generated from ChapterQgTimeIndependentFlow.lean — solution of BookProof.QgTimeIndependent.starobinsky_qgManifold_timeIndependent_singleTime
 import Mathlib
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Theorems.Thm_BookProof_QgTimeIndependent_qgOuterFock_timeIndependent_singleTime
 import Theorems.Thm_BookProof_QgManifoldModeInstance_VielbeinSpectrum_energyWindow_exhausts
 import Definitions.Def_ChapterSirkTrotterKato
@@ -9,6 +9,8 @@ import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterHashimotoComplexShifts
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
+import Definitions.Def_ChapterScalaronOuterFockFL
+import Definitions.Def_ChapterQgManifoldModeInstance
 open BookProof.QgTimeIndependent
 
 
@@ -18,7 +20,9 @@ open Filter Topology
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.EsaClosure
 open BookProof.FockSecondQuantization
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
+open BookProof.ScalaronOuterFockFL
+open BookProof.QgManifoldModeInstance
 
 noncomputable section
 

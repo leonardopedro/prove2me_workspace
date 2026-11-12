@@ -16,6 +16,7 @@ open BookProof.ChapterWignerLittleGroup
 
 
 open BookProof.FarisLavine BookProof.GraphCore BookProof.ReducedEsa
+open BookProof.GroupAverage
 
 noncomputable section
 

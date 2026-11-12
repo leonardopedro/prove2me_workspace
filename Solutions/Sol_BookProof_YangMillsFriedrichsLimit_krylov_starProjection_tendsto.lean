@@ -15,8 +15,8 @@ open BookProof.FarisLavine BookProof.YangMillsFriedrichs
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterH5 BookProof.ChapterH9
+set_option maxHeartbeats 1000000 in
 theorem solution (A : F →L[ℂ] F) (v : F)
     (hdense : Dense ((⨆ n : ℕ, krylovSpan A.toLinearMap v n : Submodule ℂ F) : Set F)) (u : F) :
     Filter.Tendsto (fun n : ℕ => (krylovSpan A.toLinearMap v n).starProjection u)

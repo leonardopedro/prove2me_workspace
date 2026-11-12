@@ -8,6 +8,7 @@ import Definitions.Def_ChapterYangMillsNonAbelianEsa
 import Mathlib
 import Definitions.Def_ChapterNsReducedCoreEsa
 import Definitions.Def_ChapterHermiteProductCore
+open BookProof.YangMillsNonAbelianEsa
 open BookProof.HermiteProductCore
 
 

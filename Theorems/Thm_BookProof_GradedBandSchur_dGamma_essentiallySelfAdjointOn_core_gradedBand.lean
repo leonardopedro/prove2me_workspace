@@ -4,7 +4,7 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
-import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterFockSecondQuantization
 import Definitions.Def_ChapterNavierStokesEsa

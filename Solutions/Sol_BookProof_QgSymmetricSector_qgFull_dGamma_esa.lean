@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQgSymmetricSector
 import Theorems.Thm_BookProof_QgSymmetricSector_qgFullOp_symmetricOn
 import Theorems.Thm_BookProof_QgSymmetricSector_qgFullOp_esa
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Theorems.Thm_BookProof_QgTruncationResolvent_secCore_dense
 import Definitions.Def_ChapterScalaronOuterFockFL
 import Definitions.Def_ChapterQgVielbeinModeInstance
@@ -21,6 +20,8 @@ import Definitions.Def_ChapterSecondQuantizationCoreEsa
 import Definitions.Def_ChapterScalaronFiberFL
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
+import Definitions.Def_ChapterQgFourierElimForms
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.QgSymmetricSector
 
 
@@ -28,7 +29,7 @@ open BookProof.QgSymmetricSector
 
 open scoped TensorProduct
 open BookProof.ScalaronOuterFockFL BookProof.QgVielbeinModeInstance
-open BookProof.QgContinuumModeInstance BookProof.QgVielbeinScalaronGaugeFL
+open BookProof.QgContinuumModeInstance
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore BookProof.FockStatistics
 open BookProof.PermSector BookProof.ReducedEsa BookProof.GroupAverage BookProof.TensorPerm
 open BookProof.DirectSumEsa BookProof.SecondQuantizationCore BookProof.ScalaronFiberFL

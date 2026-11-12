@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.sum_lterm
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HermiteCarleman_sum_shift
 import Theorems.Thm_BookProof_HermiteCarleman_lterm_shift
 import Definitions.Def_ChapterHermiteProductCore

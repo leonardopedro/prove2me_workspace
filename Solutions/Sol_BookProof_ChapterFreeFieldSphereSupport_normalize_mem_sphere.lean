@@ -19,4 +19,4 @@ set_option maxHeartbeats 1000000 in
 theorem solution {x : EuclideanSpace ℝ (Fin n)} (hx : x ≠ 0) :
     normalize x ∈ Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1 := by
 
-  simp [ ChapterFreeFieldSphere.normalize, norm_smul, hx ]
+  simp [ BookProof.ChapterFreeFieldSphere.normalize, norm_smul, hx ]

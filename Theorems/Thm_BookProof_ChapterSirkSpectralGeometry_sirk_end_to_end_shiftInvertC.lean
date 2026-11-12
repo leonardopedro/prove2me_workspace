@@ -12,7 +12,7 @@ import Definitions.Def_ChapterSirkEndToEnd
 open BookProof.ChapterH4
 open BookProof.ChapterH6
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.ChapterSirkEndToEnd
 open BookProof.ChapterSirkSpectralGeometry
 

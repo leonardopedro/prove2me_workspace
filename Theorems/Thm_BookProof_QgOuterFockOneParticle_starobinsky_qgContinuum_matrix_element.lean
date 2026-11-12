@@ -8,6 +8,8 @@ import Definitions.Def_ChapterQgOuterFockOneParticle
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterQgOuterFockFlow
+import Definitions.Def_ChapterQgContinuumModeInstance
+open BookProof.QgContinuumModeInstance
 open BookProof.ScalaronEsa
 
 

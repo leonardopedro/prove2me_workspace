@@ -3,7 +3,6 @@ import Mathlib
 import Definitions.Def_ChapterQg3DCrossTermEsa
 import Theorems.Thm_BookProof_Qg3DCrossTermEsa_qg3DCross_esa
 import Theorems.Thm_BookProof_Qg3DCrossTermEsa_qg3DCross_symmetricOn
-import Theorems.Thm_BookProof_EsaOneParticle_dGamma_essentiallySelfAdjointOn_of_esa
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesDifferentialL2
@@ -22,6 +21,7 @@ import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterDirectSumEsa
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterHermiteProductCore
+import Definitions.Def_ChapterEsaOneParticleDGamma
 open BookProof.Qg3DCrossTermEsa
 
 

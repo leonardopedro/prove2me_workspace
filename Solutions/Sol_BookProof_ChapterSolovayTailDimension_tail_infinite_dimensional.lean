@@ -1,6 +1,7 @@
 -- Generated from ChapterSolovayTailDimension.lean — solution of BookProof.ChapterSolovayTailDimension.tail_infinite_dimensional
 import Mathlib
 import Definitions.Def_ChapterSolovayTailDimension
+import Definitions.Def_ChapterSolovay
 import Theorems.Thm_BookProof_ChapterSolovayTailDimension_substrate_infinite_dimensional
 import Definitions.Def_PhysMeasureBasis
 open BookProof.ChapterSolovayTailDimension

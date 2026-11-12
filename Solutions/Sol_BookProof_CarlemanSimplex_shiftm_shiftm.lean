@@ -1,9 +1,9 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.shiftm_shiftm
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_tsub_add_cancel_of_le_prime
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 
@@ -19,6 +19,18 @@ variable {d : ℕ}
 variable {d : ℕ}
 variable {u : (Fin d →₀ ℕ) → ℂ}
 
+/-- Cancellation of a truncated subtraction below a multi-index.  The platform's
+published `ChapterCarlemanSimplex` bundle predates this lemma, and a solution may
+not rely on unpublished declarations, so it is proved locally (§5a embed helper). -/
+private theorem tsub_cancel_le {P a : Fin d →₀ ℕ} (h : P ≤ a) : a - P + P = a := by
+  ext j
+  have hj : P j ≤ a j := by
+    have := h
+    rw [Finsupp.le_def] at this
+    exact this j
+  simp only [Finsupp.add_apply, Finsupp.tsub_apply]
+  omega
+
 set_option maxHeartbeats 1000000 in
 theorem solution {a : Fin d →₀ ℕ} {i j : Fin d} (h : 1 ≤ a j) :
     shiftm (shiftm a i j) j i = a := by
@@ -29,4 +41,4 @@ theorem solution {a : Fin d →₀ ℕ} {i j : Fin d} (h : 1 ≤ a j) :
     by_cases hk : k = j
     · subst hk; simpa using h
     · simp [Ne.symm hk]
-  rw [shiftm, shiftm, add_tsub_cancel_right, tsub_add_cancel_of_le' hle]
+  rw [shiftm, shiftm, add_tsub_cancel_right, tsub_cancel_le hle]

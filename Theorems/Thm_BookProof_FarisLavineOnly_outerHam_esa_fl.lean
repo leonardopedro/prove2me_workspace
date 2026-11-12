@@ -42,6 +42,7 @@ open BookProof.FarisLavine BookProof.DirectSumEsa
 open BookProof.HermiteProductCore BookProof.QgHermiteOscillator
 open BookProof.QgOuterFock BookProof.QgOuterFockFL BookProof.QgOuterFockCoreFL
 open BookProof.QgOuterFockFullFL
+open BookProof.SqSumOuterFamily
 
 
 theorem BookProof.FarisLavineOnly.outerHam_esa_fl (F : SqFamily) :

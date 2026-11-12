@@ -10,6 +10,7 @@ import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
 import Definitions.Def_ChapterNsFullLagrangianFockEsa
 import Definitions.Def_ChapterHermiteProductCore
+open BookProof.YangMillsNonAbelianEsa
 open BookProof.HermiteProductCore
 
 

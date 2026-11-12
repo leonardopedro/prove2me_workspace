@@ -25,6 +25,9 @@ import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterNsLagrangianDetFarisLavine
+import Definitions.Def_ChapterFockStatisticsEsa
+open BookProof.FockStatistics
 open BookProof.HermiteProductCore
 
 
@@ -37,6 +40,7 @@ open BookProof.YangMillsHermite BookProof.HermiteProductCore
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.LagrangianCanonical
 open BookProof.NavierStokesFlow.LagrangianKatoRellich
 open BookProof.NavierStokesFlow.ThreeComponent BookProof.NavierStokesFlow.IkebeKato
+open BookProof.NsLagrangianDetFL
 
 noncomputable section
 

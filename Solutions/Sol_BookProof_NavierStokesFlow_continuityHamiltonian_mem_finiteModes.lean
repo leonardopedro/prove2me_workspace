@@ -18,8 +18,8 @@ variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {ι : Type*}
 
-set_option maxHeartbeats 1000000 in
 open BookProof.ChapterContinuityUnitary BookProof.ChapterContinuityUnitaryInfinite
+set_option maxHeartbeats 1000000 in
 theorem solution (v : LinfZ) {f : L2Z} (hf : f ∈ finiteModes) :
     continuityHamiltonian v f ∈ finiteModes :=
   /

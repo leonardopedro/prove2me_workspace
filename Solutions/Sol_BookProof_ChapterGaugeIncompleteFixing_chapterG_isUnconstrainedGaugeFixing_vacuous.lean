@@ -18,6 +18,6 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteS
 set_option maxHeartbeats 1000000 in
 
 theorem solution {X Y : Type*} (π : X → Y) :
-    ¬ ChapterG.IsUnconstrainedGaugeFixing π := by
+    ¬ BookProof.ChapterG.IsUnconstrainedGaugeFixing π := by
   rintro ⟨g, hg, f, hf⟩
   exact hf (funext fun x => f.property g hg x)

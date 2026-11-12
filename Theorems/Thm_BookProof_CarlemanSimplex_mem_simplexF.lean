@@ -1,8 +1,8 @@
 -- Generated from ChapterCarlemanSimplex.lean — theorem BookProof.CarlemanSimplex.mem_simplexF
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterCarlemanSimplexPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Definitions.Def_ChapterGaussCoreQuadBounds
 open BookProof.HermiteCarleman
 open BookProof.CarlemanSimplex

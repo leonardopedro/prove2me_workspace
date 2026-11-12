@@ -30,7 +30,7 @@ noncomputable section
 
 set_option maxHeartbeats 1000000 in
 theorem solution (A : BoseAlg →ₗ[ℂ] BoseAlg) (B : FermAlg →ₗ[ℂ] FermAlg) :
-    superBracket 0 1 (bosOp A) (ghostOp B) = 0 := by
+    superBracket (V := QGGraded) 0 1 (bosOp A) (ghostOp B) = 0 := by
 
   refine LinearMap.ext fun z => ?_
   rw [superBracket_even_odd, bosOp_ghostOp_comm, sub_self]

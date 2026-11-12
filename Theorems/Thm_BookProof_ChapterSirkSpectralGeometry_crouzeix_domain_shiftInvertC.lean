@@ -11,7 +11,7 @@ import Definitions.Def_ChapterH9
 import Definitions.Def_ChapterHashimotoComplexShifts
 open BookProof.ChapterH4
 open BookProof.ChapterH9
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.ChapterSirkSpectralGeometry
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]

@@ -1,7 +1,6 @@
 -- Generated from ChapterNsCutoffUniformity.lean — solution of BookProof.NsCutoffUniformity.norm_coeff_redMomentumPoly_le
 import Mathlib
 import Definitions.Def_ChapterNsCutoffUniformity
-import Theorems.Thm_BookProof_NsCutoffUniformity_norm_coeff_C_mul_X_le
 import Definitions.Def_ChapterNavierStokesFullEulerianFock
 open BookProof.NsCutoffUniformity
 

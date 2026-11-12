@@ -8,16 +8,11 @@ import Definitions.Def_ChapterStoneBridge
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterEsaClosureCore
 import Mathlib
-import Definitions.Def_ChapterQgOuterFockFlow
 import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterNavierStokesCanonicalVector
 import Definitions.Def_ChapterQgOuterFockFarisLavine
 open BookProof.NavierStokesFlow.CanonicalVector
 open BookProof.QgOuterFockFL
-open BookProof.QgOuterFockFlow
-
-
-
 open Filter Topology
 open BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.QgContinuumModeInstance

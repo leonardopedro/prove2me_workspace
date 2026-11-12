@@ -18,7 +18,7 @@ import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterYangMillsAbelianEsa
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.HermiteGalerkin
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite

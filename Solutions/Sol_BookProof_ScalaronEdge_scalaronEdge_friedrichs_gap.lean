@@ -37,8 +37,8 @@ variable (M alpha : ℝ)
 
 variable (M alpha : ℝ)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.FriedrichsExtension.FormDom
+set_option maxHeartbeats 1000000 in
 theorem solution (hM : 0 < M) (halpha : 0 < alpha) (c : ℝ) (hc : 0 < c)
     (hcs : c < edgeShelf M alpha) :
     ∃ E₀ : ℝ, 0 < E₀ ∧ ∃ (Dom : Submodule ℂ (Lp ℂ 2 (volume : Measure ℝ)))

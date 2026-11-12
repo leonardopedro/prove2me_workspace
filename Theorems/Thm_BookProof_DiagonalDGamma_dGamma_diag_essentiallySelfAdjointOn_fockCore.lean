@@ -11,6 +11,7 @@ import Definitions.Def_ChapterAbelianAtomicCondensation
 import Definitions.Def_ChapterBddBelowFiberSumEsa
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterSecondQuantizationCoreEsa
 open BookProof.ChapterAbelianDiagonalCountable
 open BookProof.DirectSumEsa
 open BookProof.GraphCore
@@ -20,6 +21,7 @@ open BookProof.TensorCore
 
 open scoped TensorProduct
 open BookProof.FarisLavine BookProof.GraphCore BookProof.TensorCore
+open BookProof.SecondQuantizationCore
 
 noncomputable section
 

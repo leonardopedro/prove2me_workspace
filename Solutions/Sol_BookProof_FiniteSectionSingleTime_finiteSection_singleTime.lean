@@ -16,7 +16,7 @@ import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterEsaClosureCore
@@ -43,7 +43,7 @@ open BookProof.QgTruncationResolvent BookProof.SirkSingleTime BookProof.QgTimeIn
 open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow BookProof.NavierStokesFlow.IkebeKato
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent

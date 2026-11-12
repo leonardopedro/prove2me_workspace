@@ -32,8 +32,8 @@ variable {ι : Type*}
 variable {S : ι → Type*} [∀ m, NormedAddCommGroup (S m)] [∀ m, InnerProductSpace ℂ (S m)]
 variable {D : ∀ m, Submodule ℂ (S m)}
 
-set_option maxHeartbeats 1000000 in
 open BookProof.DirectSumEsa BookProof.NavierStokesFlow.FarisLavineLift.ComparisonData BookProof.NavierStokesFlow.FullEsa BookProof.NavierStokesFlow.FullEsa.NSFullData
+set_option maxHeartbeats 1000000 in
 theorem solution
     (H N : ∀ m, D m →ₗ[ℂ] D m) (c₁ c₂ : ℝ) (hc₁ : 0 ≤ c₁) (hc₂ : 0 ≤ c₂)
     (farisLavine : ∀ (D' : Submodule ℂ (lp S 2)) (H' N' : D' →ₗ[ℂ] D') (a b : ℝ),

@@ -1,7 +1,6 @@
 -- Generated from ChapterStoneEvolution.lean — solution of BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint.hasDerivAt_approxU_apply
 import Mathlib
 import Definitions.Def_ChapterStoneEvolution
-import Theorems.Thm_BookProof_ChapterStoneResolvent_hasDerivAt_apply
 import Theorems.Thm_BookProof_ChapterStoneResolvent_UnboundedSelfAdjoint_hasDerivAt_approxU
 open BookProof.ChapterStoneResolvent
 open BookProof.ChapterStoneResolvent.UnboundedSelfAdjoint

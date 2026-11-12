@@ -25,6 +25,7 @@ import Definitions.Def_ChapterNavierStokesLagrangianCanonical
 import Definitions.Def_ChapterPermutationSectorEsa
 import Definitions.Def_ChapterScalarDGammaEsa
 import Definitions.Def_ChapterShiftedQuadraticEsa
+open BookProof.FockStatistics
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.TensorCore
 

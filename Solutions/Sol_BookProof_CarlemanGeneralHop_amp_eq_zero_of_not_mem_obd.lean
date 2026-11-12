@@ -1,12 +1,12 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.amp_eq_zero_of_not_mem_obd
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_hshift_apply
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_hopB
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_obd
-import Theorems.Thm_BookProof_HermiteCarleman_mem_cube
-import Definitions.Def_ChapterCarlemanTwoStep
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Theorems.Thm_BookProof_HermiteCarleman_mem_cube_inc
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -32,9 +32,9 @@ theorem solution {N : ℕ} {p m : Fin d →₀ ℕ} {c : (Fin d →₀ ℕ) → 
   rw [Finset.mem_sdiff] at ha
   by_cases hm : ∀ k, m k ≤ a k
   · exfalso
-    refine hne (mem_obd.mpr ⟨mem_cube.mp ha.1, hm, ?_⟩)
+    refine hne (mem_obd.mpr ⟨mem_cube_inc.mp ha.1, hm, ?_⟩)
     have hnot : hshift p m a ∉ cube d N := fun hc => ha.2 (mem_hopB.mpr ⟨hm, hc⟩)
-    rw [mem_cube] at hnot
+    rw [mem_cube_inc] at hnot
     push_neg at hnot
     obtain ⟨k, hk⟩ := hnot
     rw [hshift_apply] at hk

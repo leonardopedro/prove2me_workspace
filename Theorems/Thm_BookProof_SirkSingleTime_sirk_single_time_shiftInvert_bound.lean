@@ -8,7 +8,7 @@ import Definitions.Def_ChapterH6
 import Definitions.Def_ChapterSirkEndToEnd
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterShiftedQuadraticEsa
 import Definitions.Def_ChapterSirkEndToEnd
 open BookProof.ChapterH4

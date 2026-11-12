@@ -27,10 +27,8 @@ variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H) (hcyc : DenseRange (repVec pi xi))
 
-variable {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]
-  [MeasurableSpace X] [BorelSpace X]
-variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
-variable (pi : C(X, ℂ) →⋆ₐ[ℂ] (H →L[ℂ] H)) (xi : H) (hcyc : DenseRange (repVec pi xi))
+
+include hcyc
 
 set_option maxHeartbeats 1000000 in
 theorem solution {S R : H →L[ℂ] H}

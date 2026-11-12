@@ -1,6 +1,6 @@
 -- Generated from ChapterFockWeightedSchurEsa.lean — solution of BookProof.FockWeightedSchur.annA_wgt
 import Mathlib
-import Definitions.Def_ChapterFockWeightedSchurEsa
+import Definitions.Def_ChapterFockWeightedSchurEsaPromoted
 import Theorems.Thm_BookProof_FockWeightedSchur_wSym_up
 import Theorems.Thm_BookProof_FockWeightedSchur_wgt_apply
 import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply

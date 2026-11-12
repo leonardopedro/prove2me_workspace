@@ -8,6 +8,8 @@ import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterFlowDGammaEsa
+open BookProof.FlowDGamma
 open BookProof.GraphCore
 open BookProof.TensorCore
 

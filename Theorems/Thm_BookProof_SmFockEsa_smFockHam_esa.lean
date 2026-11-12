@@ -1,32 +1,11 @@
 -- Generated from ChapterSmFockEsa.lean — theorem BookProof.SmFockEsa.smFockHam_esa
-import Definitions.Def_ChapterSmOneParticle
-import Definitions.Def_ChapterSmOuterFock
-import Definitions.Def_ChapterYangMillsHermite
-import Definitions.Def_ChapterYangMillsFriedrichs
-import Definitions.Def_ChapterFarisLavine
-import Definitions.Def_ChapterDirectSumEsa
-import Definitions.Def_ChapterTensorGraphCore
-import Definitions.Def_ChapterSecondQuantizationCoreEsa
-import Definitions.Def_ChapterYangMillsNonAbelianEsa
-import Mathlib
 import Definitions.Def_ChapterSmFockEsa
 import Definitions.Def_ChapterFarisLavineCore
-import Definitions.Def_ChapterHermiteProductCore
-import Definitions.Def_ChapterSmHamiltonian
-import Definitions.Def_ChapterPermutationSectorEsa
-import Definitions.Def_ChapterScalarDGammaEsa
-import Definitions.Def_ChapterShiftedQuadraticEsa
-import Definitions.Def_ChapterSmHamiltonian
-open BookProof.HermiteProductCore
-open BookProof.SmHamiltonian
-
-
+import Mathlib
 
 open MvPolynomial
-open BookProof.SmOneParticle BookProof.SmHamiltonian
-open BookProof.YangMillsHermite BookProof.YangMillsFriedrichs
-open BookProof.HermiteProductCore BookProof.FarisLavine BookProof.DirectSumEsa
-open BookProof.TensorCore BookProof.SecondQuantizationCore
+open BookProof.FarisLavine
+open BookProof.SmOuterFock BookProof.SmHamiltonian
 
 noncomputable section
 

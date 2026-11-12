@@ -18,6 +18,7 @@ open BookProof.FarisLavine
 open BookProof.ScalaronEsa
 open BookProof.StoneBridge BookProof.ChapterStoneResolvent BookProof.EsaClosure
 open MeasureTheory
+open BookProof.SmComparison
 
 noncomputable section
 

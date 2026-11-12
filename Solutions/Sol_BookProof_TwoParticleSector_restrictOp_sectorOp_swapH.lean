@@ -34,5 +34,8 @@ theorem solution (x : sectorCore Hs D₂ D 2) :
         ⟨swapH Hs (x : (Hs.pow 2).carrier), swapH_mem_sectorCore Hs D₂ D x.2⟩
       = swapH Hs (restrictOp (sectorOp Hs D₂ A 2) (sectorCore_le_sectorDom Hs D₂ D 2) x) := by
 
-  simpa using
+  -- `restrictOp_apply` is not in the served bundle (only `restrictOp`, a def
+  -- equal to `T ∘ₗ Submodule.inclusion h`, is), so let the elaborator use the
+  -- definitional equality instead of a simp lemma.
+  exact
     sectorOp_swapH Hs D₂ A ⟨(x : (Hs.pow 2).carrier), sectorCore_le_sectorDom Hs D₂ D 2 x.2⟩

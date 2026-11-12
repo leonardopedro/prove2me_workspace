@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.flux_identityQ
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_simplex_hop_im
 import Theorems.Thm_BookProof_CarlemanSimplex_sum_mterm_im
@@ -9,8 +9,8 @@ import Theorems.Thm_BookProof_CarlemanSimplex_lcp_shift
 import Theorems.Thm_BookProof_CarlemanSimplex_lcp_vanish
 import Theorems.Thm_BookProof_CarlemanSimplex_lc1_vanish_prime
 import Theorems.Thm_BookProof_CarlemanTwoStep_lc1_shift
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanSimplex
 
 

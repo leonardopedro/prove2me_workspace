@@ -30,4 +30,4 @@ open BookProof.FockSecondQuantization
 noncomputable section
 
 theorem BookProof.QuantumGravityFock.superBracket_bosOp_ghostOp (A : BoseAlg →ₗ[ℂ] BoseAlg) (B : FermAlg →ₗ[ℂ] FermAlg) :
-    superBracket 0 1 (bosOp A) (ghostOp B) = 0 := by sorry
+    superBracket (V := QGGraded) 0 1 (bosOp A) (ghostOp B) = 0 := by sorry

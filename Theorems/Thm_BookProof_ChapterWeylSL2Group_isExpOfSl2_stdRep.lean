@@ -18,5 +18,4 @@ variable {V : Type u} [AddCommGroup V] [Module ℂ V]
 
 variable {rho : Representation ℂ (Matrix.SpecialLinearGroup (Fin 2) ℂ) V} {R : Sl2Rep V} {N : ℕ}
 
-theorem BookProof.ChapterWeylSL2Group.isExpOfSl2_stdRep : IsExpOfSl2 stdRep stdSl2 2 where
-  two_le := by sorry
+theorem BookProof.ChapterWeylSL2Group.isExpOfSl2_stdRep : IsExpOfSl2 stdRep stdSl2 2 := by sorry

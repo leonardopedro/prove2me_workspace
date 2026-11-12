@@ -27,6 +27,8 @@ variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [Measurab
   [BorelSpace Y] (mu : Measure Y) [IsFiniteMeasure mu] [mu.WeaklyRegular]
 variable {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [MeasurableSpace Y]
   [BorelSpace Y] (D : Set C(Y, ℂ)) [Countable D]
+universe u
+
 variable {Y : Type u} [TopologicalSpace Y] [CompactSpace Y] [T2Space Y] [MeasurableSpace Y]
   [BorelSpace Y] (mu : Measure Y) [IsProbabilityMeasure mu] [mu.WeaklyRegular]
 

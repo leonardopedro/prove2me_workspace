@@ -1,9 +1,6 @@
 -- Generated from ChapterDiagonalDGammaEsa.lean — solution of BookProof.DiagonalDGamma.dGamma_diag_essentiallySelfAdjointOn_fockCore
 import Mathlib
 import Definitions.Def_ChapterDiagonalDGammaEsa
-import Theorems.Thm_BookProof_DiagonalDGamma_dGamma_diagonal_essentiallySelfAdjointOn_fockCore
-import Theorems.Thm_BookProof_DiagonalDGamma_diagOp_eig
-import Theorems.Thm_BookProof_DiagonalDGamma_range_diagVec
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterAbelianDiagonalCountable
 import Definitions.Def_ChapterDirectSumEsa

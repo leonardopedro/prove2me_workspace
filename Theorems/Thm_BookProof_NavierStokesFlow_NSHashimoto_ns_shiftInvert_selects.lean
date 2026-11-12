@@ -13,7 +13,7 @@ import Definitions.Def_ChapterNavierStokesThreeComponent
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 open BookProof.HashimotoShiftInvert
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.NavierStokesFlow.ThreeComponent
 open BookProof.NavierStokesFlow

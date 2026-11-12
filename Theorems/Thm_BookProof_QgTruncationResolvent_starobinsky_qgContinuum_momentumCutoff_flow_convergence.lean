@@ -12,8 +12,9 @@ import Definitions.Def_ChapterEsaClosureCore
 import Definitions.Def_ChapterSirkTrotterKato
 import Definitions.Def_ChapterStoneResolvent
 import Definitions.Def_ChapterStoneUnitary
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterQgContinuumModeInstance
 open BookProof.EsaClosure
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent
@@ -27,6 +28,7 @@ open BookProof.FarisLavine BookProof.EsaClosure BookProof.StoneBridge
 open BookProof.ChapterStoneResolvent BookProof.ChapterSirkTrotterKato
 open BookProof.QgOuterFockCoreFL BookProof.ScalaronFiberFL BookProof.ScalaronOuterFockFL
 open BookProof.ScalaronEsa BookProof.DirectSumEsa
+open BookProof.QgContinuumModeInstance
 
 noncomputable section
 

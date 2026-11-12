@@ -8,6 +8,9 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterTensorGraphCore
 import Theorems.Thm_BookProof_TwoParticleSector_isReducingProjection_bosonicProj
 import Definitions.Def_ChapterPermutationSectorEsa
+import Theorems.Thm_BookProof_ReducedEsa_commutes_symProj
+import Theorems.Thm_BookProof_TwoParticleSector_swapH_mem_sectorDom
+import Theorems.Thm_BookProof_TwoParticleSector_sectorOp_swapH
 open BookProof.TensorCore
 open BookProof.TwoParticleSector
 
@@ -26,7 +29,7 @@ variable (D : Submodule ℂ Hs.carrier)
 
 theorem BookProof.TwoParticleSector.essentiallySelfAdjointOn_bosonic
     (hesa : EssentiallySelfAdjointOn (sectorDom Hs D₂ 2) (sectorOp Hs D₂ A 2)) :
-    EssentiallySelfAdjointOn
+    EssentiallySelfAdjointOn (F := sector (bosonicProj Hs))
       (redDom (bosonicProj Hs) (sectorDom Hs D₂ 2))
       (redOp (sectorOp Hs D₂ A 2) (isReducingProjection_bosonicProj Hs)
         (commutes_symProj (T := sectorOp Hs D₂ A 2)

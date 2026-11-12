@@ -1,6 +1,6 @@
 -- Generated from ChapterGradedBandSchurEsa.lean — solution of BookProof.GradedBandSchur.dGamma_essentiallySelfAdjointOn_core_gradedBand
 import Mathlib
-import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Theorems.Thm_BookProof_GradedBandSchur_degW_ge_one
 import Theorems.Thm_BookProof_GradedBandSchur_wRow_of_gradedBand
 import Theorems.Thm_BookProof_GradedBandSchur_wCol_of_gradedBand

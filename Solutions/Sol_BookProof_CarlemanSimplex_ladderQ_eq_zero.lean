@@ -1,6 +1,6 @@
 -- Generated from ChapterCarlemanSimplex.lean — solution of BookProof.CarlemanSimplex.ladderQ_eq_zero
 import Mathlib
-import Definitions.Def_ChapterCarlemanSimplex
+import Definitions.Def_ChapterCarlemanSimplexPromoted
 import Theorems.Thm_BookProof_CarlemanSimplex_apply_le_deg
 import Theorems.Thm_BookProof_CarlemanSimplex_deg_single
 import Theorems.Thm_BookProof_CarlemanSimplex_mem_simplexF
@@ -11,8 +11,10 @@ import Theorems.Thm_BookProof_CarlemanSimplex_flux_identityQ
 import Theorems.Thm_BookProof_CarlemanSimplex_flux_bound_on
 import Theorems.Thm_BookProof_CarlemanSimplex_sBd_mass_le
 import Theorems.Thm_BookProof_CarlemanSimplex_not_summable_inv_natCast_add_two
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
+import Theorems.Thm_BookProof_CarlemanSimplex_shifted_sBd_mass_le
+import Theorems.Thm_BookProof_CarlemanTwoStep_rc1_nonneg
 open BookProof.CarlemanSimplex
 
 

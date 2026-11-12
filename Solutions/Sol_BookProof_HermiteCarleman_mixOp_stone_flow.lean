@@ -1,6 +1,6 @@
 -- Generated from ChapterHermiteCarlemanEsa.lean — solution of BookProof.HermiteCarleman.mixOp_stone_flow
 import Mathlib
-import Definitions.Def_ChapterHermiteCarlemanEsa
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
 import Theorems.Thm_BookProof_HermiteCarleman_mixOp_symmetric
 import Theorems.Thm_BookProof_HermiteCarleman_mixOp_essentiallySelfAdjoint
 import Theorems.Thm_BookProof_StoneBridge_exists_stone_flow_of_esa

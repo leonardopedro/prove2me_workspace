@@ -17,3 +17,5 @@ theorem solution (f : ℤ → ℝ) (n : ℤ) (c : ℂ) :
     ext k
     by_cases hk : k = n
     · subst hk
+      simp [mulOp, lp.single_apply]
+    · simp [mulOp, lp.single_apply, hk]

@@ -2,7 +2,6 @@
 import Mathlib
 import Definitions.Def_ChapterSmComparisonEsa
 import Theorems.Thm_BookProof_SmComparisonEsa_realCoeff_smPhi
-import Theorems.Thm_BookProof_DegSchrodinger_polyW_ofReal
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterScalaronCoreEsa
 import Definitions.Def_ChapterQgHermiteCore

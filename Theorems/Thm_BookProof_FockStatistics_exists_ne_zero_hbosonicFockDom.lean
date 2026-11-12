@@ -5,11 +5,13 @@ import Definitions.Def_ChapterFockStatisticsCompletion
 import Definitions.Def_ChapterTensorGraphCore
 import Definitions.Def_ChapterGroupAverageEsa
 import Definitions.Def_ChapterPermutationSectorEsa
+import Definitions.Def_ChapterFarisLavineCore
 open BookProof.TensorCore
 
 
 
 open BookProof.ReducedEsa
+open BookProof.FarisLavine
 
 noncomputable section
 

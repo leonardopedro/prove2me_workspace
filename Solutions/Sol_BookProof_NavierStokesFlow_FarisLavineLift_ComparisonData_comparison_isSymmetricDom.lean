@@ -21,8 +21,8 @@ open FullEsa
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {d : ℕ} (c : ComparisonData F d)
 
-set_option maxHeartbeats 1000000 in
 open BookProof.NavierStokesFlow.CanonicalVector BookProof.NavierStokesFlow.FullEsa.NSFullData BookProof.SirkFinitePrecision BookProof.SirkFinitePrecision.CertInterval BookProof.NavierStokesFlow.FarisLavineLift
+set_option maxHeartbeats 1000000 in
 theorem solution : IsSymmetricDom c.comparison := by
 
   have hid : IsSymmetricDom (LinearMap.id : c.D →ₗ[ℂ] c.D) := by

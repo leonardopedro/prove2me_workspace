@@ -1,7 +1,6 @@
 -- Generated from ChapterHermiteGraphApprox.lean — solution of BookProof.HermiteGraphApprox.coreD_coreD_eq
 import Mathlib
 import Definitions.Def_ChapterHermiteGraphApprox
-import Theorems.Thm_BookProof_HermiteLadder_C_half_add_C_half
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterStrichartzWave
 import Definitions.Def_ChapterScalaronCoreEsa

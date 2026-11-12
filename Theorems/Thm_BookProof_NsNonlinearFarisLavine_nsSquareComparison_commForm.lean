@@ -8,6 +8,7 @@ import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterShiftedQuadraticEsa
+import Definitions.Def_ChapterNsKoopman
 open BookProof.HermiteProductCore
 open BookProof.YangMillsHermite
 
@@ -15,6 +16,7 @@ open BookProof.YangMillsHermite
 
 open MvPolynomial
 open BookProof.HermiteProductCore BookProof.YangMillsHermite BookProof.FarisLavine
+open BookProof.NsKoopman
 
 noncomputable section
 

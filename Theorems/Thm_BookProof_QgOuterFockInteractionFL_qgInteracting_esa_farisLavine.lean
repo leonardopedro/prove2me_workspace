@@ -18,6 +18,7 @@ import Definitions.Def_ChapterQgOuterFockFarisLavine
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterLeafGaps
 import Definitions.Def_ChapterQgOuterFockInteractionFL
+import Definitions.Def_ChapterQgOuterFockInteractionFLV2
 open BookProof.HermiteProductCore
 open BookProof.QgOuterFock
 open BookProof.QgOuterFockFL

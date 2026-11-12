@@ -5,7 +5,7 @@ import Definitions.Def_ChapterFockWeightedSchurEsa
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
-import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterQuadraticFockEsa
 open BookProof.GradedBandSchur
 

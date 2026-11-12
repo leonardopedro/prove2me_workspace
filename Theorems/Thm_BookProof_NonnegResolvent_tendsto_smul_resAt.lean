@@ -9,6 +9,7 @@ import Definitions.Def_ChapterNonnegResolvent
 
 open BookProof.ClosureUniqueness
 open scoped ComplexOrder
+open BookProof.PositiveSquareRoot
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F] [CompleteSpace F]
 variable {T : Submodule ℂ (F × F)} {a b : ℝ}

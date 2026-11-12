@@ -1,12 +1,12 @@
 -- Generated from ChapterCarlemanGeneralHop.lean — solution of BookProof.CarlemanGeneralHop.ibd_shift_mass_le
 import Mathlib
-import Definitions.Def_ChapterCarlemanGeneralHop
+import Definitions.Def_ChapterCarlemanGeneralHopPromoted
 import Theorems.Thm_BookProof_CarlemanGeneralHop_hshift_hshift
 import Theorems.Thm_BookProof_CarlemanGeneralHop_mem_ibd
 import Theorems.Thm_BookProof_CarlemanGeneralHop_ibd_image_multiplicity
 import Theorems.Thm_BookProof_CarlemanTwoStep_sum_range_of_multiplicity
-import Definitions.Def_ChapterHermiteCarlemanEsa
-import Definitions.Def_ChapterCarlemanTwoStep
+import Definitions.Def_ChapterHermiteCarlemanEsaPromoted
+import Definitions.Def_ChapterCarlemanTwoStepPromoted
 open BookProof.CarlemanGeneralHop
 
 
@@ -38,6 +38,6 @@ theorem solution {B : ℝ} (hbes : ∀ F : Finset (Fin d →₀ ℕ), ∑ a ∈ 
     have := congrArg (hshift m p) hxy
     rwa [hshift_hshift hx.2.1, hshift_hshift hy.2.1] at this
   simp_rw [hinj]
-  have := CarlemanTwoStep.sum_range_of_multiplicity (u := u) 1 hbes
+  have := BookProof.CarlemanTwoStep.sum_range_of_multiplicity (u := u) 1 hbes
     (fun N => (ibd d N m).image (hshift p m)) (ibd_image_multiplicity p m) M
   simpa using this

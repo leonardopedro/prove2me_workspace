@@ -41,3 +41,4 @@ theorem solution (col : ℕ → (ℕ →₀ ℂ)) (u v : FockAlg) {L : Finset �
     · exact inner_annA_creVec col u v j (hL j (Finset.mem_union_right _ hjv))
     · have h0 : annA j v = 0 := annA_eq_zero_of_not_mem_modes hjv
       rw [h0, map_zero]
+      simp [toLp_zero]

@@ -2,6 +2,7 @@
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterHermiteProductBasis
 import Definitions.Def_ChapterGradedBandSchurEsa
+import Definitions.Def_ChapterGradedBandSchurEsaPromoted
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterFarisLavine
@@ -13,7 +14,7 @@ import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterSirkSingleTimeShift
 import Definitions.Def_ChapterFiniteSectionSingleTime
 import Definitions.Def_ChapterQymTimeIndependentFlow
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Mathlib
 import Definitions.Def_ChapterYangMillsAbelianFockEsa
 import Definitions.Def_ChapterFarisLavineCore
@@ -26,7 +27,7 @@ import Definitions.Def_ChapterYangMillsAbelianEsa
 import Definitions.Def_ChapterYangMillsHermite
 import Definitions.Def_ChapterGaussCoreQuadBounds
 import Definitions.Def_ChapterHermiteBandCalculusHigher
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterQuadraticFockEsa
 import Definitions.Def_ChapterQymTimeIndependentFlow
 import Definitions.Def_ChapterSirkBandLedger

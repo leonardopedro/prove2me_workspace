@@ -2,7 +2,7 @@
 import Definitions.Def_ChapterFarisLavine
 import Definitions.Def_ChapterQgTruncationResolvent
 import Definitions.Def_ChapterSirkSingleTimeShift
-import Definitions.Def_ChapterQgTimeIndependentFlow
+import Definitions.Def_ChapterQgTimeIndependentFlowPromoted
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterNavierStokesAffineFiberEsa
 import Mathlib
@@ -20,7 +20,7 @@ import Definitions.Def_ChapterStoneUnitary
 import Definitions.Def_ChapterQymTimeIndependentFlow
 import Definitions.Def_ChapterShiftedQuadraticEsa
 open BookProof.EsaClosure
-open `BookProof.HashimotoShiftInvert`.
+open BookProof.HashimotoShiftInvert
 open BookProof.NavierStokesFlow.IkebeKato
 open BookProof.ChapterSirkTrotterKato
 open BookProof.ChapterStoneResolvent

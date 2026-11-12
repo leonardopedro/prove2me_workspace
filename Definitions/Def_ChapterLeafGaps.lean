@@ -319,25 +319,8 @@ end
 
 end BookProof.ScalaronEsa
 
-namespace BookProof.ScalaronWallEsa
-
-open MeasureTheory SchwartzMap Set
-open BookProof.FarisLavine BookProof.StrichartzWave BookProof.ScalaronEsa
-open BookProof.Starobinsky BookProof.StoneBridge BookProof.EsaClosure
-open BookProof.ChapterStoneResolvent
-open BookProof.WeakSecondDeriv
-
-noncomputable section
--- [kinOpR_apply cluster]
-lemma kinOpR_apply (f : 𝓢(ℝ, ℂ)) (x : ℝ) :
-    (kinOpR f) x = -deriv (deriv (f : ℝ → ℂ)) x := by
-  have h : kinOpR f
-      = (∑ _i : Fin 1, ((-1 : ℝ) : ℂ) • secondDeriv (1 : ℝ) f) + ((0 : ℝ) : ℂ) • f := by
-    simp [kinOpR, constCoeffOp]
-  rw [h]
-  simp [secondDeriv]
-  rfl
-
-end
-
-end BookProof.ScalaronWallEsa
+-- `BookProof.ScalaronWallEsa.kinOpR_apply` used to live here: leaf selection had
+-- dropped it from the published `Def_ChapterScalaronWallEsa`, so the cluster was
+-- re-carried.  That bundle now declares it itself (line 456), and re-carrying it
+-- on top of the import made the whole bundle fail with
+-- `... has already been declared`.  Consumers keep importing `LeafGaps`.

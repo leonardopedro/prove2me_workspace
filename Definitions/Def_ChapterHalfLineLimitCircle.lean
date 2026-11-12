@@ -59,6 +59,8 @@ Everything in this module is `sorry`-free and `axiom`-free.
 
 namespace BookProof.ConformalSignFlip
 
+open BookProof.FarisLavine
+
 theorem deficiencyTrivialAt_neg {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
     {D : Submodule ℂ F} (H : D →ₗ[ℂ] F) (z : ℂ) :
     DeficiencyTrivialAt D (-H) z ↔ DeficiencyTrivialAt D H (-z) := by

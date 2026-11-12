@@ -5,6 +5,9 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichs
 import Definitions.Def_ChapterYangMillsFriedrichsLimit
 import Mathlib
+import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_injective
+import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective
+import Theorems.Thm_BookProof_HashimotoShiftInvert_norm_cshiftMap_ge
 
 
 /-!

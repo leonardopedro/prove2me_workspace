@@ -68,10 +68,11 @@ variable {X}
 /-- The swap is self-inverse. -/
 theorem swapTwo_involutive (t : X ⊗[ℂ] (X ⊗[ℂ] ℂ)) : swapTwo X (swapTwo X t) = t := by
   induction t using TensorProduct.induction_on with
-  | zero => simp
+  | zero => rw [LinearIsometryEquiv.map_zero, LinearIsometryEquiv.map_zero]
   | tmul x b =>
       induction b using TensorProduct.induction_on with
-      | zero => simp
+      | zero => rw [TensorProduct.tmul_zero, LinearIsometryEquiv.map_zero,
+          LinearIsometryEquiv.map_zero]
       | tmul y c => simp
       | add u v hu hv => simp [TensorProduct.tmul_add, hu, hv]
   | add u v hu hv => simp [hu, hv]
@@ -79,7 +80,7 @@ theorem swapTwo_involutive (t : X ⊗[ℂ] (X ⊗[ℂ] ℂ)) : swapTwo X (swapTw
 /-- The swap preserves the inner product. -/
 theorem swapTwo_inner (t s : X ⊗[ℂ] (X ⊗[ℂ] ℂ)) :
     (inner ℂ (swapTwo X t) (swapTwo X s) : ℂ) = inner ℂ t s :=
-  (swapTwo X).inner_map_map t s
+  LinearIsometryEquiv.inner_map_map (swapTwo X) t s
 
 /-! ## The swap on the two-particle space and on its domain -/
 

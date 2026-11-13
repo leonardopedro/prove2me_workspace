@@ -110,11 +110,12 @@ def sirkReconstruction (V : F →L[ℂ] E) : E →L[ℂ] E := V.comp V.adjoint
 
 /-! ## 5. Convergence in the reduction order, and uniformity in time -/
 
-
-
-
-
-
+/-- A nonnegative error dominated at every order by the SIRK bound tends to `0`:
+the bound itself decays exponentially in the reduction order. -/
+theorem tendsto_zero_of_le_sirkBound (err : ℕ → ℝ) (C Dmin h nv : ℝ) (hh : 0 < h)
+    (hnn : ∀ m, 0 ≤ err m) (hle : ∀ m, err m ≤ sirkBound C Dmin h nv m) :
+    Tendsto err atTop (𝓝 0) :=
+  squeeze_zero hnn hle (sirk_error_decay_exponential C Dmin h nv hh)
 
 /-! ## 6. Non-vacuity -/
 

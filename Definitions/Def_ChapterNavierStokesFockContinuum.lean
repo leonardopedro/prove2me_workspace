@@ -139,11 +139,16 @@ theorem multOp_coeFn (μ : Measure X) {g : X → ℝ} (hg : Measurable g)
       =ᵐ[μ] fun x => (g x : ℂ) * ((f : Lp ℂ 2 μ) : X → ℂ) x :=
   (memLp_mul hg f.2).coeFn_toLp
 
-
-
-
-
-
+/-- The multiplication operator is symmetric on the core: its value is real, so it
+can be moved across the inner product. -/
+theorem multOp_isSymmetricDom (μ : Measure X) {g : X → ℝ} (hg : Measurable g) :
+    IsSymmetricDom (multOp μ hg) := by
+  intro x y
+  rw [L2.inner_def, L2.inner_def]
+  refine integral_congr_ae ?_
+  filter_upwards [multOp_coeFn μ hg x, multOp_coeFn μ hg y] with a hx hy
+  simp only [RCLike.inner_apply, hx, hy, map_mul, Complex.conj_ofReal]
+  ring
 
 /-! ## Essential self-adjointness -/
 

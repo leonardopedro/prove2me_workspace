@@ -174,6 +174,13 @@ def potCore (W : Vd d → ℝ) (hWc : Continuous W) (hWb : ExpBounded W) :
     (polyGaussCore (d := d)) →ₗ[ℂ] L2d d :=
   (potPolyMap W hWc hWb).comp (coreEquiv (d := d)).symm.toLinearMap
 
+/-- **On a polynomial core vector the potential is multiplication by `W`.** -/
+theorem potCore_pgLp (W : Vd d → ℝ) (hWc : Continuous W) (hWb : ExpBounded W)
+    (p : MvPolynomial (Fin d) ℂ) :
+    potCore W hWc hWb ⟨pgLp p, pgLp_mem_core p⟩ = potLp W hWc hWb p := by
+  simp only [potCore, LinearMap.comp_apply, LinearEquiv.coe_coe, coreEquiv_symm_pgLp]
+  rfl
+
 
 
 

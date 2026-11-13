@@ -14636,10 +14636,20 @@ These are not staleness and are the actual work left:
   had been importing the `sorry` stubs for those names (`CoreBoundsEsa`,
   `FockDifferingBasesEsa`, `FockQuadraticEsa`) dropped the imports.  The
   `Thm_*_OperatorSeries_*` nodes stay as the published restatements.
-* Same shape: `potCore_pgLp` (`ScalaronHermiteEsa`), `multOp_isSymmetricDom`
+* ~~Same shape: `potCore_pgLp` (`ScalaronHermiteEsa`), `multOp_isSymmetricDom`
   (`ScalaronDensitizedTransfer`), `tendsto_zero_of_le_sirkBound`
-  (`SirkPerSystemFlowBound`), `fqOp_essentiallySelfAdjoint`
-  reachability (`Qg3DGaugeEsa`, blocked behind `ModeQuadraticEsa`).
+  (`SirkPerSystemFlowBound`)~~ **Written 2026-11-13** (Session 40), each in its
+owning bundle — `Def_ChapterQgHermiteOscillatorEsa`, `Def_ChapterNavierStokes-
+  FockContinuum`, `Def_ChapterSirkEndToEnd` — with the chapter's proof, all three
+  bundles gate-OK.  `HermiteQuadraticEsa` and `DirectSumEsa` only needed the
+  stub import dropped and are OK.  The other three consumers then moved to their
+  *next* absent declaration, which is the honest scoreboard:
+  `ScalaronHermiteEsa` → `starobinskyV`, `ScalaronDensitizedTransfer` →
+  `halfDensityUnitary_apply`, `SirkPerSystemFlowBound` →
+  `ym_sirk_crouzeix_domain` (chapter sources: `ChapterScalaronCoreEsa`,
+  `ChapterQuantumGravityHalfDensity`, `ChapterSirkPerSystem`).
+* Still open: `fqOp_essentiallySelfAdjoint` reachability (`Qg3DGaugeEsa`, blocked
+  behind `ModeQuadraticEsa`).
 * ~~`coe_dGammaOp` + `toLpL_apply` (`FockSecondQuantization` →
   `QgCouplingDGammaSum`)~~ **Filled 2026-11-12** (Session 37), together with the
   five occupation-number lemmas `QgCouplingDGammaSum` turned out to need as

@@ -14736,7 +14736,44 @@ So the rule for the rest of §7.3 is: transplant, then compile, and expect the
 chapter proof to need repair.  Do not assume "it is in the chapter" means "it
 checks".
 
-### 7.7 Next
+### 7.7 Re-gate of all 39 importers of the two repaired bundles (Session 40)
+
+`Def_ChapterOperatorSeriesEsa` and `Def_ChapterFockSecondQuantization` each gained
+many declarations this session, and 39 bundles import one of them.  All 39 were
+re-gated from **current** workspace source (`debug/regate_serial.py`, which
+`SIGSTOP`s the running mirror rebuild around each compile so the two never hold
+memory at once).  **23 unchanged, 16 moved**:
+
+* **7 improved** — `BandEnclosure`, `FockFieldPerturbation`,
+  `FockInteractionStability`, `FockNumberPreservingGap`, `RitzCertificate`,
+  `TruncationGapLift` were `BLOCKED` and are now OK (their blockers compile),
+  and `FockPairPerturbation` went FAIL → OK.
+* **9 regressed**, and *none* of them on a declaration from either repaired
+  bundle — all nine are import-time `… has already been declared` clashes
+  between **re-carrier twins**, a class that only shows up when one module
+  imports both:
+  * `FockWeightedSchurEsaPromoted` vs `FockWeightedSchurEsa` on
+    `BookProof.FockWeightedSchur.wSym` — `GradedBandSchurEsa`,
+    `NsLinearKoopmanEsa`, `Qg3DCrossTermEsa`, `Qg3DDensityEsa`,
+    `QuadraticFockEsa`;
+  * `LeafGaps` vs `NavierStokesShiftHamiltonian` on
+    `ShiftHamiltonian.ShiftData.conj_mul_hFun` (`LeafGaps:110`) —
+    `NsOneBodyDGamma`, `QymTimeIndependentFlow`, `YangMillsAbelianFockEsa`,
+    `YangMillsBandBounds`.
+
+  Both twins declare the name in source (`wSym`: 30 occurrences in
+  `FockWeightedSchurEsa`, 5 in the `Promoted` twin), so this is structural, not a
+  stale-olean artifact.  It is not caused by the repairs either: compiling
+  `HEAD`'s `Def_ChapterQuadraticFockEsa` fails on exactly the same import.  Their
+  previous `OK` was the snapshot: a dependent whose olean predates the duplicate.
+
+The clean fix is *not* to prune the twins' declarations — the `*Promoted`
+bundles exist precisely to re-declare what the **published** def lacks, so they
+are only valid in the published world (§7.4).  Either a consumer imports the
+twin or the original, never both, or the pair is gated with
+`GATE_TRUTH=published`.
+
+### 7.8 Next
 
 1. **Rebuild the whole mirror** (`debug/build_candidate_mirror.py`, ~4.5 h) so
    every verdict is about source the repo actually has.  Until then a regate of a

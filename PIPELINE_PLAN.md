@@ -14781,3 +14781,42 @@ twin or the original, never both, or the pair is gated with
 2. Then `debug/gate_loop.py --targets-file` the remainder: most of the sixteen
    should fall out with the closure consistent, leaving the §7.3 list, which is
    real proof work.
+
+### 7.9 The Theorems-stub import cycle, and the three roots closed from it (Session 41)
+
+The mirror rebuild (§7.2) made the fan-out under three bundles visible:
+`HashimotoShiftInvert` (192 dependents), `EsaClosureCore` (173), `NsKoopman` (39).
+All three were **BLOCKED** on their own declarations:
+
+* `Def_ChapterComplexShiftCore` was a header with an empty body, so
+  `HashimotoShiftInvert` still imported `Theorems.Thm_…_closed_of_selfAdjointCriterion`
+  — a generated stub whose closure came back through
+  `Def_ChapterShiftedQuadraticEsa` into `HashimotoShiftInvert` itself.  Lean only
+  survived that source cycle with stale oleans; from clean source the bundle saw
+  its own declarations return through the stub (`… has already been declared`).
+  Filling the bundle with the chapter's nine declarations
+  (`cshiftMap`, `cshiftRange`, `closed_of_selfAdjointCriterion`, …) let both
+  consumers drop the stub import, which breaks the cycle at its root.
+* `Def_ChapterEsaClosureCore` had the same shape with four
+  `Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_*` stubs; pruned.
+* `Def_ChapterLorentzRealRepSum` had an empty `## Dimensions` section, so
+  `ChapterLorentzRealRepFull` asked for a `finrank_W10` nobody declared.  Restored
+  `finrank_WHalf/W10/WPs/sup` with the sibling bundle's idiom
+  (`rw [W]; exact h.trans (by simp)`) — `simpa [W] using h` hits an instance
+  diamond here.
+* `Def_ChapterNsKoopman` re-declared 33 names that its imports already provide
+  (`starP_*` from `YangMillsHermite`, the Faris–Lavine toolkit, `CoreRep.op_apply`,
+  …) and deleted them.  `debug/dedup_decl.py` drives that from Lean's
+  `… has already been declared` errors: the error line is the declaration header,
+  the span runs back over the decl's doc block (blank lines allowed) and forward
+  to the next top-level decl, and every round is recompiled with a rollback if a
+  *new* syntax error appears.  Two spans needed hand correction — a `set_option …
+  in` line above a declaration belongs to it, and a declaration deleted together
+  with the doc comment of the *following* declaration leaves two adjacent `/-- … -/`
+  blocks (`unexpected token '/--'; expected 'lemma'`).
+
+All five bundles now compile from source (`rc=0`): `ComplexShiftCore`,
+`LorentzRealRepSum`, `LorentzRealRepFull`, `NsKoopman`, `EsaClosureCore`,
+`HashimotoShiftInvert`.  Their dependents must be re-gated serially
+(`debug/regate_serial.py`) before the `state/def_gate.json` counts mean anything;
+the 255 BLOCKED are still measured against the pre-repair roots.

@@ -155,14 +155,28 @@ theorem span_bAllR_eq :
 
 /-! ## Dimensions -/
 
+/-- The `(1/2,1/2)` representation has dimension `4`. -/
+theorem finrank_WHalf : finrank ℝ WHalf = 4 := by
+  have h := finrank_span_eq_card bHalfR_linearIndependent
+  rw [WHalf]
+  exact h.trans (by simp)
 
+/-- The `(1,0)` representation has dimension `6`. -/
+theorem finrank_W10 : finrank ℝ W10 = 6 := by
+  have h := finrank_span_eq_card b10R_linearIndependent
+  rw [W10]
+  exact h.trans (by simp)
 
+/-- The pseudo-`(1/2,1/2)` representation has dimension `4`. -/
+theorem finrank_WPs : finrank ℝ WPs = 4 := by
+  have h := finrank_span_eq_card bPsR_linearIndependent
+  rw [WPs]
+  exact h.trans (by simp)
 
-
-
-
-
-
-
+/-- The sum of the three representation spaces has dimension `14`. -/
+theorem finrank_sup : finrank ℝ ↥(WHalf ⊔ W10 ⊔ WPs) = 14 := by
+  have h := finrank_span_eq_card bAllR_linearIndependent
+  rw [span_bAllR_eq] at h
+  exact h.trans (by simp)
 
 end BookProof.ChapterLorentzRealRepSum

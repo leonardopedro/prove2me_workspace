@@ -2,10 +2,6 @@ import Definitions.Def_ChapterFarisLavineCore
 import Definitions.Def_ChapterComplexShiftCore
 import Definitions.Def_ChapterFarisLavine
 import Mathlib
-import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_apply
-import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_injective
-import Theorems.Thm_BookProof_HashimotoShiftInvert_norm_cshiftMap_ge
-import Theorems.Thm_BookProof_HashimotoShiftInvert_cshiftMap_surjective
 
 
 /-!

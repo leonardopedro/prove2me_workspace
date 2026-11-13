@@ -16,19 +16,10 @@ noncomputable section
 
 variable {d : ℕ}
 
-@[simp] theorem starP_add (p q : MvPolynomial (Fin d) ℂ) :
-    starP (p + q) = starP p + starP q := map_add _ _ _
 
-@[simp] theorem starP_mul (p q : MvPolynomial (Fin d) ℂ) :
-    starP (p * q) = starP p * starP q := map_mul _ _ _
 
-@[simp] theorem starP_X (j : Fin d) : starP (X j : MvPolynomial (Fin d) ℂ) = X j := by
-  simp [starP]
 
-@[simp] theorem starP_C (c : ℂ) : starP (C c : MvPolynomial (Fin d) ℂ) = C ((starRingEnd ℂ) c) := by
-  simp [starP]
 
-@[simp] theorem starP_zero : starP (0 : MvPolynomial (Fin d) ℂ) = 0 := map_zero _
 
 theorem starP_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial (Fin d) ℂ) :
     starP (∑ i ∈ s, f i) = ∑ i ∈ s, starP (f i) := map_sum _ _ _
@@ -60,7 +51,6 @@ theorem RealCoeff.sum {ι : Type*} {s : Finset ι} {f : ι → MvPolynomial (Fin
   rw [RealCoeff, starP_sum]
   exact Finset.sum_congr rfl h
 
-theorem realCoeff_X (j : Fin d) : RealCoeff (X j : MvPolynomial (Fin d) ℂ) := starP_X j
 
 /-- Conjugation of the coefficients is conjugation of the values at real points. -/
 theorem eval_starP (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
@@ -72,34 +62,8 @@ theorem eval_starP (p : MvPolynomial (Fin d) ℂ) (x : Vd d) :
   | add p q hp hq => simp [hp, hq]
   | mul_X p i hp => simp [hp]
 
-/-- **The inner product of two core vectors is a Gaussian polynomial integral.** -/
-theorem inner_pgLp_pgLp (p q : MvPolynomial (Fin d) ℂ) :
-    (inner ℂ (pgLp p) (pgLp q) : ℂ) = gaussInt (starP p * q) := by
-  rw [inner_pgLp, gaussInt]
-  refine integral_congr_ae ?_
-  filter_upwards [pgLp_coeFn q] with x hx
-  have hev : MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) (starP p * q)
-      = (starRingEnd ℂ) (MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) p)
-        * MvPolynomial.eval (fun i => ((x i : ℝ) : ℂ)) q := by
-    rw [map_mul, eval_starP]
-  rw [hx, hev, pgFun, pgFun, gaussWD_eq_sq]
-  simp only [map_mul, Complex.conj_ofReal]
-  push_cast
-  ring
 
-/-! ## Polynomial-level operators and Gauss symmetry -/
 
-theorem PolySym.add {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
-    (hS : PolySym S) (hT : PolySym T) : PolySym (S + T) := by
-  intro p q
-  simp only [LinearMap.add_apply, starP_add, add_mul, mul_add]
-  rw [gaussInt_add, gaussInt_add, hS, hT]
-
-theorem PolySym.real_smul {t : ℝ} {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)} (hT : PolySym T) :
-    PolySym (((t : ℂ)) • T) := by
-  intro p q
-  simp only [LinearMap.smul_apply, starP_real_smul, smul_mul_assoc, mul_smul_comm]
-  rw [gaussInt_smul, gaussInt_smul, hT]
 
 theorem PolyAdj.symm_of {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
     (h : PolyAdj S T) (h' : PolyAdj T S) : PolySym (S + T) := by
@@ -115,37 +79,15 @@ theorem PolySym.comp_adj {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
   intro p q
   rw [LinearMap.comp_apply, LinearMap.comp_apply, hS, hT]
 
-/-- **The Weyl-ordered product of two symmetric operators is symmetric** (F.5). -/
-theorem weylProd_polySym {S T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
-    (hS : PolySym S) (hT : PolySym T) : PolySym (weylProd S T) :=
-  PolySym.real_smul ((hS.comp_adj hT).symm_of (hT.comp_adj hS))
 
-/-! ### Multiplication operators (F.2) -/
 
-@[simp] theorem mulOp_apply (f p : MvPolynomial (Fin d) ℂ) : mulOp f p = f * p := rfl
 
-/-- **Multiplication by a real polynomial is Gauss symmetric.** -/
-theorem mulOp_polySym {f : MvPolynomial (Fin d) ℂ} (hf : RealCoeff f) : PolySym (mulOp f) := by
-  intro p q
-  simp only [mulOp_apply, starP_mul, show starP f = f from hf]
-  congr 1
-  ring
 
-/-! ### Momentum operators (F.3) -/
-
-theorem derOp_apply (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    derOp j p = pderiv j p - ((1 / 2 : ℝ) : ℂ) • (X j * p) := rfl
-
-theorem momOp_apply (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
-    momOp j p = (-Complex.I) • (pderiv j p - ((1 / 2 : ℝ) : ℂ) • (X j * p)) := rfl
 
 theorem starP_pderiv (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
     starP (pderiv j p) = pderiv j (starP p) := (MvPolynomial.pderiv_map).symm
 
-@[simp] theorem starP_neg (p : MvPolynomial (Fin d) ℂ) : starP (-p) = -starP p := map_neg _ _
 
-@[simp] theorem starP_sub (p q : MvPolynomial (Fin d) ℂ) :
-    starP (p - q) = starP p - starP q := map_sub _ _ _
 
 theorem gaussInt_sub (r s : MvPolynomial (Fin d) ℂ) :
     gaussInt (r - s) = gaussInt r - gaussInt s := by
@@ -170,26 +112,6 @@ theorem starP_momOp (j : Fin d) (p : MvPolynomial (Fin d) ℂ) :
   rw [momOp_apply, neg_smul, starP_neg, starP_smul, starP_sub, starP_pderiv, starP_real_smul,
     starP_mul, starP_X, Complex.conj_I, neg_smul, neg_neg]
 
-/-- **The momentum operator is Gauss symmetric** (F.3) — this is exactly the
-`d`-dimensional Gaussian integration by parts `gaussInt_pderiv`. -/
-theorem momOp_polySym (j : Fin d) : PolySym (momOp (d := d) j) := by
-  intro p q
-  have hleib := gaussInt_leibniz j (starP p) q
-  have e1 : (X j : MvPolynomial (Fin d) ℂ) * starP p * q = X j * (starP p * q) := by ring
-  have e2 : starP p * (X j * q) = X j * (starP p * q) := by ring
-  have hL : gaussInt (starP (momOp j p) * q)
-      = Complex.I * (gaussInt (pderiv j (starP p) * q)
-          - ((1 / 2 : ℝ) : ℂ) * gaussInt (X j * (starP p * q))) := by
-    rw [starP_momOp, smul_mul_assoc, gaussInt_smul, sub_mul, gaussInt_sub, smul_mul_assoc,
-      gaussInt_smul, e1]
-  have hR : gaussInt (starP p * momOp j q)
-      = -Complex.I * (gaussInt (starP p * pderiv j q)
-          - ((1 / 2 : ℝ) : ℂ) * gaussInt (X j * (starP p * q))) := by
-    rw [momOp_apply, mul_smul_comm, gaussInt_smul, mul_sub, gaussInt_sub, mul_smul_comm,
-      gaussInt_smul, e2]
-  rw [hL, hR]
-  push_cast
-  linear_combination Complex.I * hleib
 
 end
 
@@ -207,60 +129,9 @@ noncomputable section
 
 variable {d : ℕ}
 
-theorem pderiv_aeval_self (i : Fin d) (q : Polynomial ℂ) :
-    pderiv i (Polynomial.aeval (X i : MvPolynomial (Fin d) ℂ) q)
-      = Polynomial.aeval (X i) (Polynomial.derivative q) := by
-  induction q using Polynomial.induction_on with
-  | C c => simp
-  | add p q hp hq => simp [hp, hq]
-  | monomial n c ih =>
-      simp only [Polynomial.derivative_C_mul, Polynomial.derivative_X_pow, map_mul,
-        Polynomial.aeval_C, map_pow, Polynomial.aeval_X]
-      rw [Derivation.leibniz]
-      simp [mul_comm, mul_assoc, algebraMap_eq]
 
-theorem pderiv_aeval_other {i j : Fin d} (h : j ≠ i) (q : Polynomial ℂ) :
-    pderiv j (Polynomial.aeval (X i : MvPolynomial (Fin d) ℂ) q) = 0 := by
-  induction q using Polynomial.induction_on with
-  | C c => simp
-  | add p q hp hq => simp [hp, hq]
-  | monomial n c ih =>
-      simp only [map_mul, Polynomial.aeval_C, map_pow, Polynomial.aeval_X]
-      rw [Derivation.leibniz]
-      simp [h, algebraMap_eq]
 
-theorem pderiv_hermiteFactor_self (i : Fin d) (n : ℕ) :
-    pderiv i (hermiteFactor i n) = (n : ℂ) • hermiteFactor i (n - 1) := by
-  cases n with
-  | zero => simp [hermiteFactor, hermiteCx_zero]
-  | succ m =>
-      rw [hermiteFactor, pderiv_aeval_self]
-      have h : Polynomial.derivative (hermiteCx (m + 1)) = ((m : ℂ) + 1) • hermiteCx m := by
-        have hm := congrArg (Polynomial.map (Int.castRingHom ℂ)) (derivative_hermiteZ m)
-        simpa [hermiteCx, Polynomial.derivative_map, Polynomial.smul_eq_C_mul,
-          Polynomial.map_mul] using hm
-      rw [h]
-      simp [hermiteFactor, map_smul]
 
-theorem pderiv_hermiteMv (i : Fin d) (a : Fin d →₀ ℕ) :
-    pderiv i (hermiteMv a) = ((a i : ℂ)) • hermiteMv (a - Finsupp.single i 1) := by
-  classical
-  have hrest : ∀ b : Fin d →₀ ℕ, (∀ j : Fin d, j ≠ i → b j = a j) →
-      ∏ j ∈ Finset.univ.erase i, hermiteFactor j (b j)
-        = ∏ j ∈ Finset.univ.erase i, hermiteFactor j (a j) :=
-    fun b hb => Finset.prod_congr rfl fun j hj => by rw [hb j (Finset.ne_of_mem_erase hj)]
-  have hsub : ∀ j : Fin d, j ≠ i → (a - Finsupp.single i 1 : Fin d →₀ ℕ) j = a j := by
-    intro j hj; simp [Finsupp.tsub_apply, hj]
-  have hsi : (a - Finsupp.single i 1 : Fin d →₀ ℕ) i = a i - 1 := by simp [Finsupp.tsub_apply]
-  have hzero : pderiv i (∏ j ∈ Finset.univ.erase i, hermiteFactor j (a j)) = 0 := by
-    refine Finset.prod_induction _ (fun p => pderiv i p = 0) ?_ (by simp) ?_
-    · intro p q hp hq
-      rw [Derivation.leibniz, hp, hq]; simp
-    · intro j hj
-      exact pderiv_aeval_other (Finset.ne_of_mem_erase hj).symm _
-  rw [hermiteMv_erase i a, hermiteMv_erase i (a - Finsupp.single i 1), hrest _ hsub, hsi,
-    Derivation.leibniz, hzero, pderiv_hermiteFactor_self]
-  simp [mul_comm]
 
 end
 
@@ -273,290 +144,7 @@ open Filter Topology
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℂ F]
 variable {D : Submodule ℂ F}
 
-theorem inner_im_swap (a b : F) : (inner ℂ b a : ℂ).im = -(inner ℂ a b : ℂ).im := by
-  rw [← inner_conj_symm (𝕜 := ℂ) a b, Complex.conj_im, neg_neg]
 
-/-- The expectation of a symmetric operator is real. -/
-
-theorem inner_apply_self_im (T : D →ₗ[ℂ] F) (hT : SymmetricOn D T) (x : D) :
-    (inner ℂ (T x) (x : F) : ℂ).im = 0 := by
-  have h := congrArg Complex.im (hT x x)
-  rw [inner_im_swap (T x) (x : F)] at h
-  linarith
-
-/-- The quadratic form of a symmetric operator is real. -/
-
-theorem quadForm_im (N : D →ₗ[ℂ] F) (hN : SymmetricOn D N) (x : D) :
-    (inner ℂ (x : F) (N x) : ℂ).im = 0 := by
-  rw [inner_im_swap (N x) (x : F), inner_apply_self_im N hN x, neg_zero]
-
-/-- The commutator form is `-2 Im ⟪H x, N x⟫`; in particular it is real, and the
-Faris–Lavine hypothesis `± i[H, N] ≤ c N` is the bound `|commForm| ≤ c quadForm`. -/
-
-theorem commForm_eq (H N : D →ₗ[ℂ] F) (x : D) :
-    commForm H N x = -2 * (inner ℂ (H x) (N x) : ℂ).im := by
-  rw [commForm, Complex.mul_re]
-  simp [Complex.sub_im, inner_im_swap (H x) (N x)]
-  ring
-
-/-! ## The computation of Faris–Lavine
-
-With `N` replaced by `N + 1` (which changes neither the commutator form, since
-`⟪H x, x⟫` is real, nor the validity of the bound, since the form of `N` only
-grows), the vector `g = (N+1)⁻¹ w` is admissible, and the deficiency identity at
-`d i` reads `Im ⟪H g, (N+1) g⟫ = d ⟪g, (N+1) g⟫`.  The commutator bound turns
-this into `2|d| t ≤ c t` with `t = ⟪g, (N+1)g⟫ ≥ ‖g‖²`, so `t = 0` as soon as
-`2|d| > c`. -/
-
-/-- **The Faris–Lavine estimate.**  Under the hypotheses of Theorem 1 the
-deficiency space of `H*` at `d i` is trivial for every real `d` with `2|d| > c`;
-equivalently the range of `H + d i` is dense. -/
-
-theorem deficiencyTrivialAt_of_farisLavine
-    (H N : D →ₗ[ℂ] F) (c d : ℝ)
-    (hH : SymmetricOn D H) (hN : SymmetricOn D N)
-    (hc : 0 ≤ c)
-    (hNpos : ∀ x : D, 0 ≤ quadForm N x)
-    (hNsurj : ∀ f : F, ∃ x : D, N x + (x : F) = f)
-    (hcomm : ∀ x : D, |commForm H N x| ≤ c * quadForm N x)
-    (hd : c < 2 * |d|) :
-    DeficiencyTrivialAt D H ((d : ℂ) * Complex.I) := by
-  intro w hw
-  obtain ⟨g, hg⟩ := hNsurj w
-  have key := hw g
-  rw [← hg, inner_add_right, inner_add_right] at key
-  have him := congrArg Complex.im key
-  simp only [Complex.add_im, Complex.mul_im, Complex.mul_re, Complex.ofReal_re,
-    Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.add_re] at him
-  have hBim : (inner ℂ (H g) (g : F) : ℂ).im = 0 := inner_apply_self_im H hH g
-  have hPim : (inner ℂ (g : F) (N g) : ℂ).im = 0 := quadForm_im N hN g
-  have hQim : (inner ℂ (g : F) (g : F) : ℂ).im = 0 := by
-    simpa using inner_self_im (𝕜 := ℂ) (g : F)
-  have hQre : (inner ℂ (g : F) (g : F) : ℂ).re = ‖(g : F)‖ ^ 2 := by
-    simpa using inner_self_eq_norm_sq (𝕜 := ℂ) (g : F)
-  set t : ℝ := quadForm N g + ‖(g : F)‖ ^ 2 with ht
-  have hAim : (inner ℂ (H g) (N g) : ℂ).im = d * t := by
-    rw [hBim, hPim, hQim, hQre] at him
-    simp only [quadForm, ht]
-    linarith [him]
-  have htnn : 0 ≤ t := by have := hNpos g; positivity
-  have habs : |commForm H N g| = 2 * |d| * t := by
-    rw [commForm_eq, hAim, abs_mul, abs_mul, abs_of_nonneg htnn]
-    norm_num
-    ring
-  have h1 : 2 * |d| * t ≤ c * quadForm N g := habs ▸ hcomm g
-  have h2 : c * quadForm N g ≤ c * t := by
-    have hle : quadForm N g ≤ t := by rw [ht]; nlinarith [sq_nonneg ‖(g : F)‖]
-    exact mul_le_mul_of_nonneg_left hle hc
-  have ht0 : t = 0 := by nlinarith
-  have hgz : (g : F) = 0 := by
-    have hnn := hNpos g
-    have h4 : ‖(g : F)‖ ^ 2 = 0 := by rw [ht] at ht0; nlinarith [sq_nonneg ‖(g : F)‖]
-    exact norm_eq_zero.mp (by nlinarith [norm_nonneg (g : F)])
-  have hg0 : g = 0 := Subtype.ext hgz
-  rw [← hg, hg0]
-  simp
-
-/-! ## From dense ranges at one conjugate pair to essential self-adjointness -/
-
-/-- The Pythagoras identity for a symmetric operator: `H x` and `d i x` are
-orthogonal, because `⟪H x, x⟫` is real. -/
-
-theorem norm_sub_smul_sq (H : D →ₗ[ℂ] F) (hH : SymmetricOn D H) (d : ℝ) (x : D) :
-    ‖H x - ((d : ℂ) * Complex.I) • (x : F)‖ ^ 2 = ‖H x‖ ^ 2 + d ^ 2 * ‖(x : F)‖ ^ 2 := by
-  rw [norm_sub_sq (𝕜 := ℂ)]
-  have h1 : (inner ℂ (H x) (((d : ℂ) * Complex.I) • (x : F)) : ℂ)
-      = ((d : ℂ) * Complex.I) * inner ℂ (H x) (x : F) := inner_smul_right _ _ _
-  have h2 : RCLike.re (inner ℂ (H x) (((d : ℂ) * Complex.I) • (x : F)) : ℂ) = 0 := by
-    rw [h1]; simp [inner_apply_self_im H hH x]
-  have h3 : ‖((d : ℂ) * Complex.I) • (x : F)‖ ^ 2 = d ^ 2 * ‖(x : F)‖ ^ 2 := by
-    rw [norm_smul]; simp [mul_pow, sq_abs]
-  rw [h2, h3]; ring
-
-/-- Triviality of a deficiency space is the same as weak density of a range, and
-for a complete space weak density is density. -/
-
-theorem dense_range_of_deficiencyTrivialAt [CompleteSpace F] (H : D →ₗ[ℂ] F) (w₀ : ℂ)
-    (h : DeficiencyTrivialAt D H (starRingEnd ℂ w₀)) :
-    Dense (Set.range fun x : D => H x - w₀ • (x : F)) := by
-  set K : Submodule ℂ F := LinearMap.range (H - w₀ • D.subtype) with hK
-  have hset : (K : Set F) = Set.range fun x : D => H x - w₀ • (x : F) := by
-    ext u
-    constructor
-    · rintro ⟨x, rfl⟩; exact ⟨x, by simp [LinearMap.sub_apply]⟩
-    · rintro ⟨x, rfl⟩; exact ⟨x, by simp [LinearMap.sub_apply]⟩
-  rw [← hset, Submodule.dense_iff_topologicalClosure_eq_top,
-    Submodule.topologicalClosure_eq_top_iff, Submodule.eq_bot_iff]
-  intro f hf
-  refine h f fun v => ?_
-  have hv := (Submodule.mem_orthogonal K f).mp hf (H v - w₀ • (v : F))
-    ⟨v, by simp [LinearMap.sub_apply]⟩
-  rw [inner_sub_left, inner_smul_left, sub_eq_zero] at hv
-  exact hv
-
-/-- **The graph closure of a symmetric operator with dense range hits every
-vector.**  If the range of `H - d i` is dense (`d ≠ 0` real), then for every `y`
-there are `u, z` in the closure of the graph of `H` — that is, `⟪H v, u⟫ = ⟪v, z⟫`
-for all `v` in the domain, with `⟪z, u⟫` still real — such that `z - d i u = y`.
-
-This is the only place where completeness of the space is used.  The proof is
-the classical one: the identity `‖H x - d i x‖² = ‖H x‖² + d²‖x‖²` makes both an
-approximating sequence and its image Cauchy. -/
-
-theorem exists_weak_graph_limit [CompleteSpace F] (H : D →ₗ[ℂ] F) (hH : SymmetricOn D H)
-    (d : ℝ) (hd : d ≠ 0)
-    (hdense : Dense (Set.range fun x : D => H x - ((d : ℂ) * Complex.I) • (x : F)))
-    (y : F) :
-    ∃ u z : F, (∀ v : D, (inner ℂ (H v) u : ℂ) = inner ℂ (v : F) z) ∧
-      z - ((d : ℂ) * Complex.I) • u = y ∧ (inner ℂ z u : ℂ).im = 0 := by
-  have hdpos : 0 < |d| := abs_pos.mpr hd
-  have hchoice : ∀ n : ℕ, ∃ x : D, ‖(H x - ((d : ℂ) * Complex.I) • (x : F)) - y‖ < 1 / (n + 1) := by
-    intro n
-    have hpos : (0 : ℝ) < 1 / (n + 1) := by positivity
-    obtain ⟨p, hp1, x, hx⟩ := Metric.dense_iff.mp hdense y (1 / (n + 1)) hpos
-    refine ⟨x, ?_⟩
-    rw [← hx] at hp1
-    simpa [dist_eq_norm] using hp1
-  choose x hx using hchoice
-  set Y : ℕ → F := fun n => H (x n) - ((d : ℂ) * Complex.I) • ((x n : F)) with hY
-  have hYtend : Filter.Tendsto Y Filter.atTop (nhds y) := by
-    rw [tendsto_iff_norm_sub_tendsto_zero]
-    refine squeeze_zero (fun n => norm_nonneg _) (fun n => (hx n).le) ?_
-    exact tendsto_one_div_add_atTop_nhds_zero_nat
-  have hYcauchy : CauchySeq Y := hYtend.cauchySeq
-  have hest : ∀ m n : ℕ, |d| * ‖(x m : F) - (x n : F)‖ ≤ ‖Y m - Y n‖ ∧
-      ‖H (x m) - H (x n)‖ ≤ ‖Y m - Y n‖ := by
-    intro m n
-    have hsplit : Y m - Y n = H (x m - x n) - ((d : ℂ) * Complex.I) • ((x m - x n : D) : F) := by
-      simp [hY, map_sub, smul_sub]
-      abel
-    have hsq := norm_sub_smul_sq H hH d (x m - x n)
-    rw [← hsplit] at hsq
-    have hcoe : ((x m - x n : D) : F) = (x m : F) - (x n : F) := rfl
-    rw [hcoe, map_sub] at hsq
-    constructor
-    · nlinarith [norm_nonneg (Y m - Y n), norm_nonneg ((x m : F) - (x n : F)),
-        norm_nonneg (H (x m) - H (x n)), sq_abs d, sq_nonneg (‖H (x m) - H (x n)‖)]
-    · nlinarith [norm_nonneg (Y m - Y n), norm_nonneg ((x m : F) - (x n : F)),
-        norm_nonneg (H (x m) - H (x n)), sq_nonneg d, sq_nonneg (d * ‖(x m : F) - (x n : F)‖)]
-  have hxcauchy : CauchySeq (fun n => (x n : F)) := by
-    rw [Metric.cauchySeq_iff]
-    intro ε hε
-    obtain ⟨N, hN⟩ := Metric.cauchySeq_iff.mp hYcauchy (ε * |d|) (by positivity)
-    refine ⟨N, fun m hm n hn => ?_⟩
-    have h1 := (hest m n).1
-    have h2 := hN m hm n hn
-    rw [dist_eq_norm] at h2 ⊢
-    nlinarith
-  have hHxcauchy : CauchySeq (fun n => H (x n)) := by
-    rw [Metric.cauchySeq_iff]
-    intro ε hε
-    obtain ⟨N, hN⟩ := Metric.cauchySeq_iff.mp hYcauchy ε hε
-    refine ⟨N, fun m hm n hn => ?_⟩
-    have h1 := (hest m n).2
-    have h2 := hN m hm n hn
-    rw [dist_eq_norm] at h2 ⊢
-    linarith
-  obtain ⟨u, hu⟩ := cauchySeq_tendsto_of_complete hxcauchy
-  obtain ⟨z, hz⟩ := cauchySeq_tendsto_of_complete hHxcauchy
-  refine ⟨u, z, ?_, ?_, ?_⟩
-  · intro v
-    have h1 : Filter.Tendsto (fun n => (inner ℂ (H v) (x n : F) : ℂ)) Filter.atTop
-        (nhds (inner ℂ (H v) u)) := Filter.Tendsto.inner tendsto_const_nhds hu
-    have h2 : Filter.Tendsto (fun n => (inner ℂ (v : F) (H (x n)) : ℂ)) Filter.atTop
-        (nhds (inner ℂ (v : F) z)) := Filter.Tendsto.inner tendsto_const_nhds hz
-    have heq : ∀ n, (inner ℂ (H v) (x n : F) : ℂ) = inner ℂ (v : F) (H (x n)) := fun n => hH v (x n)
-    exact tendsto_nhds_unique (by simpa [heq] using h1) h2
-  · have hlim : Filter.Tendsto Y Filter.atTop (nhds (z - ((d : ℂ) * Complex.I) • u)) := by
-      simpa [hY] using hz.sub (Filter.Tendsto.const_smul hu ((d : ℂ) * Complex.I))
-    exact tendsto_nhds_unique hlim hYtend
-  · have h1 : Filter.Tendsto (fun n => (inner ℂ (H (x n)) (x n : F) : ℂ)) Filter.atTop
-        (nhds (inner ℂ z u)) := Filter.Tendsto.inner hz hu
-    have h2 : Filter.Tendsto (fun n => (inner ℂ (H (x n)) (x n : F) : ℂ).im) Filter.atTop
-        (nhds ((inner ℂ z u : ℂ).im)) := (Complex.continuous_im.tendsto _).comp h1
-    have h3 : ∀ n, (inner ℂ (H (x n)) (x n : F) : ℂ).im = 0 :=
-      fun n => inner_apply_self_im H hH (x n)
-    simp only [h3] at h2
-    exact tendsto_nhds_unique h2 tendsto_const_nhds
-
-/-- **The basic criterion.**  For a symmetric operator, if the deficiency space
-at one point `e i` (`e ≠ 0` real) vanishes and the range of `H - e i` is dense,
-then the deficiency space at *every* non-real point vanishes.  This is what turns
-the Faris–Lavine estimate — valid only for `2|d| > c` — into essential
-self-adjointness. -/
-
-theorem deficiencyTrivialAt_of_dense_range [CompleteSpace F] (H : D →ₗ[ℂ] F)
-    (hH : SymmetricOn D H) (e : ℝ) (he : e ≠ 0) (σ : ℂ) (hσ : σ.im ≠ 0)
-    (hdense : Dense (Set.range fun x : D => H x - ((e : ℂ) * Complex.I) • (x : F)))
-    (hdef : DeficiencyTrivialAt D H ((e : ℂ) * Complex.I)) :
-    DeficiencyTrivialAt D H σ := by
-  intro w hw
-  obtain ⟨u, z, hu, hzy, him⟩ :=
-    exists_weak_graph_limit H hH e he hdense ((σ - (e : ℂ) * Complex.I) • w)
-  have hzeq : z = ((e : ℂ) * Complex.I) • u + (σ - (e : ℂ) * Complex.I) • w := by
-    rw [← hzy]; abel
-  have hs : ∀ v : D, (inner ℂ (H v) (w - u) : ℂ)
-      = ((e : ℂ) * Complex.I) * inner ℂ (v : F) (w - u) := by
-    intro v
-    rw [inner_sub_right, inner_sub_right, hw v, hu v, hzeq, inner_add_right,
-      inner_smul_right, inner_smul_right]
-    ring
-  have hwu : w = u := sub_eq_zero.mp (hdef (w - u) hs)
-  have hzs : z = σ • w := by rw [hzeq, ← hwu]; module
-  have hinner : (inner ℂ z u : ℂ) = starRingEnd ℂ σ * ((‖w‖ ^ 2 : ℝ) : ℂ) := by
-    rw [hzs, ← hwu, inner_smul_left, inner_self_eq_norm_sq_to_K]
-    norm_cast
-  rw [hinner, Complex.mul_im] at him
-  simp only [Complex.ofReal_im, Complex.ofReal_re, Complex.conj_im, mul_zero, zero_add] at him
-  have hnorm : ‖w‖ ^ 2 = 0 := by
-    rcases mul_eq_zero.mp him with h | h
-    · exact absurd (by linarith [neg_eq_zero.mp h] : σ.im = 0) hσ
-    · exact h
-  exact norm_eq_zero.mp (by nlinarith [norm_nonneg w])
-
-/-! ## Theorem 1 of Faris–Lavine -/
-
-/-- **Theorem 1 (Faris–Lavine 1974).**  Let `H` be a Hermitian operator and `N`
-a positive operator on a common dense domain `D` of a Hilbert space, such that
-
-* `± i[H, N] ≤ c N` as quadratic forms on `D` (hypothesis (ii) of the paper), and
-* `N + 1` maps `D` onto the whole space — the one consequence of "`N ≥ 0` is
-  self-adjoint" that the argument uses.
-
-Then `H` is essentially self-adjoint: both deficiency spaces of its adjoint
-vanish.
-
-Hypothesis (i) of the paper, `𝒟(N) ⊆ 𝒟(H)`, is built into the statement by
-giving `H` and `N` the same domain; the conclusion is about the restriction of
-`H` to `𝒟(N)`, which is the sharper statement.  Density of `D` is not needed as a
-hypothesis: it follows from surjectivity of `N + 1`. -/
-
-theorem essentiallySelfAdjointOn_of_farisLavine [CompleteSpace F]
-    (H N : D →ₗ[ℂ] F) (c : ℝ)
-    (hH : SymmetricOn D H) (hN : SymmetricOn D N)
-    (hc : 0 ≤ c)
-    (hNpos : ∀ x : D, 0 ≤ quadForm N x)
-    (hNsurj : ∀ f : F, ∃ x : D, N x + (x : F) = f)
-    (hcomm : ∀ x : D, |commForm H N x| ≤ c * quadForm N x) :
-    EssentiallySelfAdjointOn D H := by
-  set d : ℝ := c + 1 with hdd
-  have hdpos : 0 < d := by simp [hdd]; linarith
-  have hdabs : |d| = d := abs_of_pos hdpos
-  have hd0 : d ≠ 0 := ne_of_gt hdpos
-  have hdgt : c < 2 * |d| := by rw [hdabs, hdd]; linarith
-  have hplus : DeficiencyTrivialAt D H ((d : ℂ) * Complex.I) :=
-    deficiencyTrivialAt_of_farisLavine H N c d hH hN hc hNpos hNsurj hcomm hdgt
-  have hminus : DeficiencyTrivialAt D H (((-d : ℝ) : ℂ) * Complex.I) := by
-    refine deficiencyTrivialAt_of_farisLavine H N c (-d) hH hN hc hNpos hNsurj hcomm ?_
-    rwa [abs_neg]
-  have hconj : starRingEnd ℂ ((d : ℂ) * Complex.I) = ((-d : ℝ) : ℂ) * Complex.I := by
-    simp
-  have hdense : Dense (Set.range fun x : D => H x - ((d : ℂ) * Complex.I) • (x : F)) :=
-    dense_range_of_deficiencyTrivialAt H ((d : ℂ) * Complex.I) (by rw [hconj]; exact hminus)
-  exact ⟨deficiencyTrivialAt_of_dense_range H hH d hd0 Complex.I (by simp) hdense hplus,
-    deficiencyTrivialAt_of_dense_range H hH d hd0 (-Complex.I) (by simp) hdense hplus⟩
-
--- square-comparison criterion (ChapterFarisLavineDenseCore), same missing-cluster reason.
 theorem norm_le_norm_add_of_pos (N : D →ₗ[ℂ] F)
     (hNpos : ∀ x : D, 0 ≤ quadForm N x) (g : D) :
     ‖N g‖ ^ 2 + ‖(g : F)‖ ^ 2 ≤ ‖N g + (g : F)‖ ^ 2 := by
@@ -984,32 +572,12 @@ open MvPolynomial BookProof.HermiteProductCore BookProof.FarisLavine
 variable {d : ℕ}
 variable {D : Submodule ℂ (L2d d)}
 
-theorem CoreRep.op_apply (Φ : CoreRep d D) (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (x : D) :
-    Φ.op T x = Φ.equiv (T (Φ.equiv.symm x)) := rfl
-
 theorem CoreRep.coe_op (Φ : CoreRep d D) (T : Module.End ℂ (MvPolynomial (Fin d) ℂ)) (x : D) :
     ((Φ.op T x : D) : L2d d) = pgLp (T (Φ.equiv.symm x)) := by
   rw [CoreRep.op_apply, Φ.coe_equiv]
 
 theorem CoreRep.coe_symm (Φ : CoreRep d D) (x : D) : ((x : D) : L2d d) = pgLp (Φ.equiv.symm x) := by
   rw [← Φ.coe_equiv (Φ.equiv.symm x), LinearEquiv.apply_symm_apply]
-
-set_option maxHeartbeats 1000000 in
--- the `L²` coercions in the rewrite chain need more than the default budget
-/-- **Gauss-symmetric polynomial operators transport to symmetric operators on the
-core.** -/
-
-theorem CoreRep.symmetricOn_op (Φ : CoreRep d D) {T : Module.End ℂ (MvPolynomial (Fin d) ℂ)}
-    (hT : PolySym T) : SymmetricOn D (D.subtype.comp (Φ.op T)) := by
-  intro x y
-  have hx : ((D.subtype.comp (Φ.op T)) x) = pgLp (T (Φ.equiv.symm x)) := Φ.coe_op T x
-  have hy : ((D.subtype.comp (Φ.op T)) y) = pgLp (T (Φ.equiv.symm y)) := Φ.coe_op T y
-  have hcx : ((x : D) : L2d d) = pgLp (Φ.equiv.symm x) := Φ.coe_symm x
-  have hcy : ((y : D) : L2d d) = pgLp (Φ.equiv.symm y) := Φ.coe_symm y
-  have e1 := inner_pgLp_pgLp (T (Φ.equiv.symm x)) (Φ.equiv.symm y)
-  have e2 := inner_pgLp_pgLp (Φ.equiv.symm x) (T (Φ.equiv.symm y))
-  rw [hx, hy, hcx, hcy, e1, e2]
-  exact hT _ _
 
 end BookProof.YangMillsHermite
 

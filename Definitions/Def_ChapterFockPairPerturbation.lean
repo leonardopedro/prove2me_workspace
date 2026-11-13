@@ -9,11 +9,7 @@ import Definitions.Def_ChapterHermiteGalerkinFriedrichs
 import Definitions.Def_ChapterHermiteProductCore
 import Definitions.Def_ChapterYangMillsHermite
 import Mathlib
-import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA
-import Theorems.Thm_BookProof_FockSecondQuantization_ccr_annA_creA_of_ne
-import Theorems.Thm_BookProof_FockSecondQuantization_up_of_ne
 import Theorems.Thm_BookProof_FockFieldPerturbation_annVec_apply
-import Theorems.Thm_BookProof_FockSecondQuantization_creVec_apply
 import Theorems.Thm_BookProof_FockFieldPerturbation_inner_creVec_annVec
 import Theorems.Thm_BookProof_FockFieldPerturbation_numberQuad_nonneg
 import Theorems.Thm_BookProof_FockFieldPerturbation_l2norm_nonneg
@@ -22,11 +18,7 @@ import Theorems.Thm_BookProof_FockNumberPreservingGap_number_quadForm_ge
 import Theorems.Thm_BookProof_FockFieldPerturbation_number_le_dGamma_quadForm
 import Theorems.Thm_BookProof_YangMillsFockGapChain_isPosCol_shiftCol_opCol_of_form_gap
 import Theorems.Thm_BookProof_FockOneParticleGap_norm_toLp_sq
-import Theorems.Thm_BookProof_FockSecondQuantization_annA_apply
-import Theorems.Thm_BookProof_FockSecondQuantization_creA_apply
 import Theorems.Thm_BookProof_YangMillsFockGapChain_ym_isPosCol_shiftCol
-import Theorems.Thm_BookProof_FockSecondQuantization_annA_single
-import Theorems.Thm_BookProof_FockSecondQuantization_dn_up
 
 
 /-!
@@ -87,16 +79,11 @@ noncomputable section
 
 namespace BookProof.FockSecondQuantization
 
-/-- `creA_single` — the creation operator applied to a single basis vector.  The published
-`Def_ChapterFockSecondQuantization` text predates this lemma, so it is restated here for
-the consumer. -/
-@[simp] theorem up_self (j : ℕ) (α : Conf) : up j α j = α j + 1 := by
-  simp [up]
-
-@[simp] theorem creA_single (j : ℕ) (β : Conf) (c : ℂ) :
-    creA j (Finsupp.single β c)
-      = c • Finsupp.single (up j β) ((Real.sqrt ((β j : ℝ) + 1) : ℝ) : ℂ) := by
-  simp [creA, LinearMap.toSpanSingleton]
+-- `up_self` and `creA_single` used to be restated here because the published
+-- `Def_ChapterFockSecondQuantization` text predated them.  The workspace bundle now
+-- declares both (`up_self` from the start, `creA_single` with the annihilation and
+-- creation operators), so restating them is a duplicate declaration and the bundle
+-- cannot compile at all.
 
 end BookProof.FockSecondQuantization
 

@@ -1,8 +1,4 @@
 import Mathlib
-import Theorems.Thm_BookProof_FockSecondQuantization_isPosCol_opCol
-import Theorems.Thm_BookProof_FockSecondQuantization_secondQuantization_friedrichs
-import Theorems.Thm_BookProof_FockSecondQuantization_dGamma_one_particle
-import Theorems.Thm_BookProof_FockSecondQuantization_opCol_apply
 
 
 
@@ -13,11 +9,8 @@ import Theorems.Thm_BookProof_YangMillsHermite_CoreRep_symmetricOn_op
 import Theorems.Thm_BookProof_YangMillsHermite_momOp_polySym
 
 
-import Theorems.Thm_BookProof_FockSecondQuantization_isHermCol_opCol
 
-import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_symmetricOn
 
-import Theorems.Thm_BookProof_FockSecondQuantization_dGammaOp_quadForm_nonneg
 
 
 import Theorems.Thm_BookProof_YangMillsHermite_mulOp_polySym

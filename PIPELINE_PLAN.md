@@ -14617,7 +14617,7 @@ These are not staleness and are the actual work left:
   (`↑↑↑x`), which `simp`/`ring`/`rfl` will not unify.  Unfolding the inclusion
   (`Submodule.inclusion, LinearMap.codRestrict_apply, Subtype.coe_mk,
   Submodule.coe_subtype, Subtype.coe_eta`) before `push_cast` fixes it.  So
-  "copy the chapter proof" is not a guarantee — see §7.5.
+  "copy the chapter proof" is not a guarantee — see §7.6.
   Note also that every `Thm_*` node whose lemma now lives in the def no longer
   compiles *standalone* (`… has already been declared`); that is the
   pre-existing shape of this tree, confirmed on the untouched pair
@@ -14673,7 +14673,43 @@ original bundle lacks — while our *repo* copy of the original now has them
 are gateable only with `GATE_TRUTH=published`, against the pruned published
 texts, and should be excluded from a default-lane regate.
 
-### 7.5 The book chapters here are not a compile-checked source
+### 7.5 `Def_ChapterFockSecondQuantization` — hollow block filled (Session 39)
+
+`inner_dGamma_*` through `dGamma_friedrichs_extension` (and the one-particle
+matrix section after it) were absent: 54 of the chapter's 97 declarations, so
+every consumer carried `Thm_*` stubs for symmetry, positivity and the Friedrichs
+extension, and `FockSchurEsa` alone imported **24** of them.  The whole region
+was transplanted from `BookProof/ChapterFockSecondQuantization.lean`; the bundle
+now has 89 declarations, gate-OK, `sorry`-free.
+
+Consumers re-gated after the transplant (`state/mirror`, one compile at a time):
+**OK** — `FockSchurEsa`, `QgCouplingDGammaSum`, `FockPairPerturbation`,
+`FermionFock`, `GradedFock`, `GradedFriedrichs`, `QuantumGravityFock`,
+`ScalaronFockGapChain`.  **Still FAIL, both pre-existing and unrelated:**
+`QuadraticFockEsa` (`Def_ChapterGradedBandSchurEsaPromoted` re-declares
+`GradedBandSchur.degW` from `Def_ChapterGradedBandSchurEsa`), and
+`NsOneBodyDGamma` / `YangMillsAbelianFockEsa` (`Def_ChapterLeafGaps` re-declares
+`ShiftData.conj_mul_hFun` from `Def_ChapterNavierStokesShiftHamiltonian`).
+`NsOneBodyDGamma` was checked against its `HEAD` text and fails identically, so
+the pruning did not cause it: these are the §7.1/§7.4 re-carrier clashes, and
+`LeafGaps:110` is the next cluster to prune.
+
+Two things the transplant needed that the chapter did not:
+
+* `toLpL`'s `map_add'` proof leaves `u α + v α = ((fun α => u α) + fun α => v α) α`
+  — it needs the `rfl` the workspace copy already had (§7.6 again);
+* `FockPairPerturbation` restated `up_self`/`creA_single` "because the published
+  text predates them".  Against the filled bundle those are duplicate
+  declarations, so the bundle could not compile at all; the restatements are
+  removed and the bundle is OK.
+
+Still hollow in this chapter (8 declarations, left deliberately): the Hashimoto
+selection (`dGammaOpB_symmetricOn`, `dGammaOpB_quadForm_nonneg`,
+`dGamma_hashimoto_selects`, `secondQuantization_hashimoto_selects`) and the
+Yang–Mills tail (`coe_ymOnePart`, `ymFockCol_apply`,
+`ym_fock_friedrichs_extension`, `ym_fock_hashimoto_selects`).
+
+### 7.6 The book chapters here are not a compile-checked source
 
 `BookProof/Chapter*.lean` are the book text, and the gate never compiles them —
 it builds `Definitions/Def_Chapter*` and `Theorems/Thm_*` only.  A transplant
@@ -14690,7 +14726,7 @@ So the rule for the rest of §7.3 is: transplant, then compile, and expect the
 chapter proof to need repair.  Do not assume "it is in the chapter" means "it
 checks".
 
-### 7.6 Next
+### 7.7 Next
 
 1. **Rebuild the whole mirror** (`debug/build_candidate_mirror.py`, ~4.5 h) so
    every verdict is about source the repo actually has.  Until then a regate of a

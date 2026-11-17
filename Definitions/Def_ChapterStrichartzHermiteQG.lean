@@ -69,7 +69,7 @@ theorem inner_hermiteLp_eq_zero_iff {w : L2R} :
   · intro h
     have hrep : hermiteRepr w = 0 := by
       ext n
-      simpa [hermiteRepr, HilbertBasis.repr_apply_apply] using h n
+      simpa [hermiteRepr, HilbertBasis.repr_apply_apply, hermiteBasis_apply] using h n
     have := congrArg hermiteRepr.symm hrep
     simpa using this
   · rintro rfl n
